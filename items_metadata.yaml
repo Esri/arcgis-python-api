@@ -1027,7 +1027,7 @@ labs:
   description: This is the completed solution for the Find Places Tutorial.
   licenseInfo: ""
   tags: ["GIS", "Labs"]
-- title: Display WebMap
+- title: Display Map
   url: https://www.arcgis.com/home/item.html?id=3ab4fe26fe954783b800803e77fd8937
   path: ./labs/display_web_map.ipynb
   thumbnail: ./static/thumbnails/default.png
