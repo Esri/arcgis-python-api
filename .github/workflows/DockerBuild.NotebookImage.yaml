@@ -58,7 +58,7 @@ jobs:
         uses: docker/build-push-action@v6
         with:
           # relative path to the place where source code with Dockerfile is located
-          context: ./docker
+          context: ./docker/NotebookImage
           file: ./docker/NotebookImage.Dockerfile
           build-args: |
             python_version=${{ inputs.python_version }}
