@@ -1,0 +1,37 @@
+arcgis.geometry.filters module
+==============================
+
+.. automodule:: arcgis.geometry.filters
+
+intersects
+__________
+.. automethod:: arcgis.geometry.filters.intersects
+
+contains
+____
+.. automethod:: arcgis.geometry.filters.contains
+
+crosses
+_____
+.. automethod:: arcgis.geometry.filters.crosses
+
+envelope_intersects
+_____
+.. automethod:: arcgis.geometry.filters.envelope_intersects
+
+index_intersects
+_______
+.. automethod:: arcgis.geometry.filters.index_intersects
+
+overlaps
+__________
+.. automethod:: arcgis.geometry.filters.overlaps
+
+touches
+_______
+.. automethod:: arcgis.geometry.filters.touches
+
+within
+______________
+.. automethod:: arcgis.geometry.filters.within
+

@@ -1,0 +1,1446 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <title>arcgis.auth package &mdash; arcgis 2.0.0 documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="_static/theme_overrides.css" type="text/css" />
+
+  
+  
+    <link rel="shortcut icon" href="_static/favicon.ico"/>
+  
+
+  
+  
+
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/doctools.js"></script>
+        <script src="_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="arcgis.auth.tools package" href="arcgis.auth.tools.html" />
+    <link rel="prev" title="EntityRecognizer" href="arcgis.learn.text.html" />
+<!-- This code block is inserted close near the <head> tag. See http://bit.ly/2BHUQzB -->
+<!-- The point of this code block is to send us google analytics on website views -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-NJGGV5');</script>
+ 
+
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="index.html" class="icon icon-home"> arcgis
+          
+
+          
+            
+            <img src="_static/python_api_logo.png" class="logo" alt="Logo"/>
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                2.0.0
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p><span class="caption-text">arcgis</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="arcgis.gis.toc.html">arcgis.gis module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="arcgis.env.html">arcgis.env module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="arcgis.features.toc.html">arcgis.features module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="arcgis.raster.toc.html">arcgis.raster module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="arcgis.network.toc.html">arcgis.network module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="arcgis.geoanalytics.toc.html">arcgis.geoanalytics module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="arcgis.geocoding.html">arcgis.geocoding module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="arcgis.geoenrichment.html">arcgis.geoenrichment module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="arcgis.geometry.html">arcgis.geometry module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="arcgis.geoprocessing.html">arcgis.geoprocessing module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="arcgis.mapping.toc.html">arcgis.mapping module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="arcgis.realtime.html">arcgis.realtime module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="arcgis.schematics.html">arcgis.schematics module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="arcgis.widgets.html">arcgis.widgets module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="arcgis.apps.html">arcgis.apps module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="arcgis.learn.toc.html">arcgis.learn module</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">arcgis.auth package</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#subpackages">Subpackages</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="arcgis.auth.tools.html">arcgis.auth.tools package</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#submodules">Submodules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#module-arcgis.auth.api">arcgis.auth.api module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#module-arcgis.auth">Module contents</a></li>
+</ul>
+</li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">arcgis</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
+        
+      <li>arcgis.auth package</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+<!-- This code block is inserted close near the <body> tag. See http://bit.ly/2BHUQzB -->
+<!-- The point of this code block is to send us google analytics on website views -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NJGGV5"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+
+  <section id="arcgis-auth-package">
+<h1>arcgis.auth package<a class="headerlink" href="#arcgis-auth-package" title="Permalink to this headline">¶</a></h1>
+<section id="subpackages">
+<h2>Subpackages<a class="headerlink" href="#subpackages" title="Permalink to this headline">¶</a></h2>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="arcgis.auth.tools.html">arcgis.auth.tools package</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.auth.tools.html#submodules">Submodules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.auth.tools.html#module-arcgis.auth.tools.certificate">arcgis.auth.tools.certificate module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.auth.tools.html#module-arcgis.auth.tools.verifycontext">arcgis.auth.tools.verifycontext module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.auth.tools.html#module-arcgis.auth.tools">Module contents</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</section>
+<section id="submodules">
+<h2>Submodules<a class="headerlink" href="#submodules" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="module-arcgis.auth.api">
+<span id="arcgis-auth-api-module"></span><h2>arcgis.auth.api module<a class="headerlink" href="#module-arcgis.auth.api" title="Permalink to this headline">¶</a></h2>
+<dl class="py class">
+<dt id="arcgis.auth.api.EsriSession">
+<em class="property">class </em><code class="sig-prename descclassname">arcgis.auth.api.</code><code class="sig-name descname">EsriSession</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">auth</span><span class="p">:</span> <span class="n">AuthBase</span> <span class="o">=</span> <span class="default_value">None</span></em>, <em class="sig-param"><span class="n">cert</span><span class="p">:</span> <span class="n">Tuple<span class="p">[</span>str<span class="p">]</span></span> <span class="o">=</span> <span class="default_value">None</span></em>, <em class="sig-param"><span class="n">verify_cert</span><span class="p">:</span> <span class="n">bool</span> <span class="o">=</span> <span class="default_value">True</span></em>, <em class="sig-param"><span class="n">allow_redirects</span><span class="p">:</span> <span class="n">bool</span> <span class="o">=</span> <span class="default_value">True</span></em>, <em class="sig-param"><span class="n">headers</span><span class="p">:</span> <span class="n">Dict<span class="p">[</span>str<span class="p">, </span>Any<span class="p">]</span></span> <span class="o">=</span> <span class="default_value">None</span></em>, <em class="sig-param"><span class="n">referer</span><span class="o">=</span><span class="default_value">'http'</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.auth.api.EsriSession" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>The <cite>EsriSession</cite> class is designed to simplify access to the Esri WebGIS
+environments without the additional components of the <cite>arcgis</cite> or <cite>arcpy</cite>
+modules.  It is designed to allow users to connect and manage all HTTP calls
+themselves with no hand holding.</p>
+<p>Security is handled through the <cite>requests</cite> authentication model. Leveraging
+authentication handlers and primarily connecting to 10.8.1+ enterprise components.</p>
+<p>The supported Authentication Schemes are:</p>
+<blockquote>
+<div><ol class="arabic simple">
+<li><p>Username/Password</p></li>
+<li><p>Oauth 2</p></li>
+<li><p>IWA/NTLM</p></li>
+<li><p>Basic</p></li>
+<li><p>Digest</p></li>
+<li><p>PKI</p></li>
+<li><p>API Keys</p></li>
+<li><p>User Provided Tokens</p></li>
+<li><p>Kerberos</p></li>
+</ol>
+</div></blockquote>
+<p>Anyone can extend the authentication handlers by creating a class and inheriting
+from <cite>requests.auth.AuthBase</cite>.</p>
+<p>The <cite>EsriSession</cite> authentication supports authentication chaining.  Meaning
+users can stack authentication methods.</p>
+<blockquote>
+<div><p><cite>auth1 + auth2 + auth3</cite></p>
+</div></blockquote>
+<p>It is recommended that you do not stack unneeded authenicators because they
+can caused unintended failures.</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 20%" />
+<col style="width: 80%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><strong>Argument</strong></p></td>
+<td><p><strong>Description</strong></p></td>
+</tr>
+<tr class="row-even"><td><p>auth</p></td>
+<td><p>Optional AuthBase. This is a security handler that performs some sort
+of security check.</p></td>
+</tr>
+<tr class="row-odd"><td><p>cert</p></td>
+<td><p>Optional Tuple. The client side certificate as a tuple or string. It
+should be noted that <cite>EsriSession</cite> does not support encrypted private
+keys.</p></td>
+</tr>
+<tr class="row-even"><td><p>verify_cert</p></td>
+<td><p>Optional Bool. When <cite>False</cite> all SSL certificate errors are ignored.
+The default is <cite>True</cite>.</p></td>
+</tr>
+<tr class="row-odd"><td><p>allow_redirects</p></td>
+<td><p>Optional Bool. When <cite>False</cite> if the URL redirects a user, an error
+will be raised.  The default is <cite>True</cite></p></td>
+</tr>
+<tr class="row-even"><td><p>headers</p></td>
+<td><p>Optional Dict. An additional set of key/value(s) to append to any
+request’s header.</p></td>
+</tr>
+<tr class="row-odd"><td><p>referer</p></td>
+<td><p>Optional Str. The <cite>referer</cite> header value.  The default is <cite>http</cite>. This
+is mainly used with <cite>token</cite> security.</p></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Optional Arguments</strong></p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 14%" />
+<col style="width: 86%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><strong>Argument</strong></p></td>
+<td><p><strong>Description</strong></p></td>
+</tr>
+<tr class="row-even"><td><p>trust_env</p></td>
+<td><p>Optional Bool. The default is <cite>True</cite>. If <cite>False</cite> proxies will cause
+an error to be raised if set by <strong>.netrc</strong> files.</p></td>
+</tr>
+<tr class="row-odd"><td><p>stream</p></td>
+<td><p>Optional Bool.  To enable handling streaming responses, set stream to
+True and iterate over the response with <cite>iter_lines</cite>. The default is
+<cite>False</cite>.</p></td>
+</tr>
+<tr class="row-even"><td><p>check_hostname</p></td>
+<td><p>Optional Bool. When connecting to a side via IP Address with an SSL
+certificate, the hostname will not match.  This allows a user to
+specify the hostname in the headers parameters and ignore hostname
+errors.</p></td>
+</tr>
+<tr class="row-odd"><td><p>retries</p></td>
+<td><p>Optional Int. The max number of tries to retry a service for 50x errors.</p></td>
+</tr>
+<tr class="row-even"><td><p>backoff_factor</p></td>
+<td><p>Optional float. The amount of time in seconds to wait between retries.</p></td>
+</tr>
+<tr class="row-odd"><td><p>status_to_retry</p></td>
+<td><p>Optional Tuple. The status codes to run retries on.  The default is
+(413, 429, 503, 500, 502, 504).</p></td>
+</tr>
+<tr class="row-even"><td><p>method_whitelist</p></td>
+<td><p>Optional List.  When <cite>retries</cite> is specified, the user can specifiy what methods are retried.
+The default is <cite>‘POST’, ‘DELETE’, ‘GET’, ‘HEAD’, ‘OPTIONS’, ‘PUT’, ‘TRACE’</cite></p></td>
+</tr>
+<tr class="row-odd"><td><p>proxies</p></td>
+<td><p>Optional Dict. A key/value mapping where the keys are the transfer protocol and the value is the &lt;url&gt;:&lt;port&gt;.</p>
+<p><strong>example</strong></p>
+<p><code class="docutils literal notranslate"><span class="pre">`python</span>
+<span class="pre">proxies</span> <span class="pre">=</span> <span class="pre">{&quot;http&quot;</span> <span class="pre">:</span> <span class="pre">127.0.0.1:8080,</span> <span class="pre">&quot;https&quot;</span> <span class="pre">:</span> <span class="pre">127.0.0.1:8081}</span>
+<span class="pre">session</span> <span class="pre">=</span> <span class="pre">EsriSession(proxies=proxies)</span>
+<span class="pre">`</span></code></p>
+</td>
+</tr>
+</tbody>
+</table>
+<dl class="py method">
+<dt id="arcgis.auth.api.EsriSession.adapters">
+<em class="property">property </em><code class="sig-name descname">adapters</code><a class="headerlink" href="#arcgis.auth.api.EsriSession.adapters" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns an dictionary of mounted adapters.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>dict</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt id="arcgis.auth.api.EsriSession.allow_redirects">
+<code class="sig-name descname">allow_redirects</code><em class="property"> = None</em><a class="headerlink" href="#arcgis.auth.api.EsriSession.allow_redirects" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="arcgis.auth.api.EsriSession.auth">
+<em class="property">property </em><code class="sig-name descname">auth</code><a class="headerlink" href="#arcgis.auth.api.EsriSession.auth" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get/Set the Authentication Handler for the Session</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="arcgis.auth.api.EsriSession.cert">
+<em class="property">property </em><code class="sig-name descname">cert</code><a class="headerlink" href="#arcgis.auth.api.EsriSession.cert" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get/Set the users certificate as a (private, public) keys.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>Tuple[str]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="arcgis.auth.api.EsriSession.close">
+<code class="sig-name descname">close</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.auth.api.EsriSession.close" title="Permalink to this definition">¶</a></dt>
+<dd><p>Closes all adapters and as such the session</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="arcgis.auth.api.EsriSession.delete">
+<code class="sig-name descname">delete</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">url</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span> &#x2192; requests.Response<a class="headerlink" href="#arcgis.auth.api.EsriSession.delete" title="Permalink to this definition">¶</a></dt>
+<dd><p>Sends a DELETE request. Returns <code class="xref py py-class docutils literal notranslate"><span class="pre">Response</span></code> object.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>url</strong> – URL for the new <code class="xref py py-class docutils literal notranslate"><span class="pre">Request</span></code> object.</p></li>
+<li><p><strong>**kwargs</strong> – Optional arguments that <code class="docutils literal notranslate"><span class="pre">request</span></code> takes.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>requests.Response</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="arcgis.auth.api.EsriSession.get">
+<code class="sig-name descname">get</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">url</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span> &#x2192; requests.Response<a class="headerlink" href="#arcgis.auth.api.EsriSession.get" title="Permalink to this definition">¶</a></dt>
+<dd><p>Sends a GET request. Returns <code class="xref py py-class docutils literal notranslate"><span class="pre">Response</span></code> object.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>url</strong> – URL for the new <code class="xref py py-class docutils literal notranslate"><span class="pre">Request</span></code> object.</p></li>
+<li><p><strong>**kwargs</strong> – Optional arguments that <code class="docutils literal notranslate"><span class="pre">request</span></code> takes.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>requests.Response</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="arcgis.auth.api.EsriSession.head">
+<code class="sig-name descname">head</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">url</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span> &#x2192; requests.Response<a class="headerlink" href="#arcgis.auth.api.EsriSession.head" title="Permalink to this definition">¶</a></dt>
+<dd><p>Sends a HEAD request. Returns <code class="xref py py-class docutils literal notranslate"><span class="pre">Response</span></code> object.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>url</strong> – URL for the new <code class="xref py py-class docutils literal notranslate"><span class="pre">Request</span></code> object.</p></li>
+<li><p><strong>**kwargs</strong> – Optional arguments that <code class="docutils literal notranslate"><span class="pre">request</span></code> takes.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>requests.Response</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="arcgis.auth.api.EsriSession.headers">
+<em class="property">property </em><code class="sig-name descname">headers</code><a class="headerlink" href="#arcgis.auth.api.EsriSession.headers" title="Permalink to this definition">¶</a></dt>
+<dd><p>Gets/Sets the headers from the current session object</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="arcgis.auth.api.EsriSession.mount">
+<code class="sig-name descname">mount</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">prefix</span><span class="p">:</span> <span class="n">str</span></em>, <em class="sig-param"><span class="n">adapter</span><span class="p">:</span> <span class="n">HTTPAdatper</span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.auth.api.EsriSession.mount" title="Permalink to this definition">¶</a></dt>
+<dd><p>Registers a connection adapter to a prefix.</p>
+<p>Adapters are sorted in descending order by prefix length.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="arcgis.auth.api.EsriSession.options">
+<code class="sig-name descname">options</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">url</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span> &#x2192; requests.Response<a class="headerlink" href="#arcgis.auth.api.EsriSession.options" title="Permalink to this definition">¶</a></dt>
+<dd><p>Sends a OPTIONS request. Returns <code class="xref py py-class docutils literal notranslate"><span class="pre">Response</span></code> object.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>url</strong> – URL for the new <code class="xref py py-class docutils literal notranslate"><span class="pre">Request</span></code> object.</p></li>
+<li><p><strong>**kwargs</strong> – Optional arguments that <code class="docutils literal notranslate"><span class="pre">request</span></code> takes.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>requests.Response</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="arcgis.auth.api.EsriSession.patch">
+<code class="sig-name descname">patch</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">url</span></em>, <em class="sig-param"><span class="n">data</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span> &#x2192; requests.Response<a class="headerlink" href="#arcgis.auth.api.EsriSession.patch" title="Permalink to this definition">¶</a></dt>
+<dd><p>Sends a PATCH request. Returns <code class="xref py py-class docutils literal notranslate"><span class="pre">Response</span></code> object.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>url</strong> – URL for the new <code class="xref py py-class docutils literal notranslate"><span class="pre">Request</span></code> object.</p></li>
+<li><p><strong>data</strong> – (optional) Dictionary, list of tuples, bytes, or file-like
+object to send in the body of the <code class="xref py py-class docutils literal notranslate"><span class="pre">Request</span></code>.</p></li>
+<li><p><strong>**kwargs</strong> – Optional arguments that <code class="docutils literal notranslate"><span class="pre">request</span></code> takes.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>requests.Response</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="arcgis.auth.api.EsriSession.post">
+<code class="sig-name descname">post</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">url</span></em>, <em class="sig-param"><span class="n">data</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">json</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span> &#x2192; requests.Response<a class="headerlink" href="#arcgis.auth.api.EsriSession.post" title="Permalink to this definition">¶</a></dt>
+<dd><p>Sends a POST request. Returns <code class="xref py py-class docutils literal notranslate"><span class="pre">Response</span></code> object.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>url</strong> – URL for the new <code class="xref py py-class docutils literal notranslate"><span class="pre">Request</span></code> object.</p></li>
+<li><p><strong>data</strong> – (optional) Dictionary, list of tuples, bytes, or file-like
+object to send in the body of the <code class="xref py py-class docutils literal notranslate"><span class="pre">Request</span></code>.</p></li>
+<li><p><strong>json</strong> – (optional) json to send in the body of the <code class="xref py py-class docutils literal notranslate"><span class="pre">Request</span></code>.</p></li>
+<li><p><strong>**kwargs</strong> – Optional arguments that <code class="docutils literal notranslate"><span class="pre">request</span></code> takes.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>requests.Response</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="arcgis.auth.api.EsriSession.proxies">
+<em class="property">property </em><code class="sig-name descname">proxies</code><a class="headerlink" href="#arcgis.auth.api.EsriSession.proxies" title="Permalink to this definition">¶</a></dt>
+<dd><p>Dictionary mapping protocol or protocol and host to the URL of the proxy.
+(e.g. {‘http’: ‘foo.bar:3128’, ‘http://host.name’: ‘foo.bar:4012’}) to
+be used on each <code class="xref py py-class docutils literal notranslate"><span class="pre">Request</span></code>.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>dict</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="arcgis.auth.api.EsriSession.put">
+<code class="sig-name descname">put</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">url</span></em>, <em class="sig-param"><span class="n">data</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span> &#x2192; requests.Response<a class="headerlink" href="#arcgis.auth.api.EsriSession.put" title="Permalink to this definition">¶</a></dt>
+<dd><p>Sends a PUT request. Returns <code class="xref py py-class docutils literal notranslate"><span class="pre">Response</span></code> object.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>url</strong> – URL for the new <code class="xref py py-class docutils literal notranslate"><span class="pre">Request</span></code> object.</p></li>
+<li><p><strong>data</strong> – (optional) Dictionary, list of tuples, bytes, or file-like
+object to send in the body of the <code class="xref py py-class docutils literal notranslate"><span class="pre">Request</span></code>.</p></li>
+<li><p><strong>**kwargs</strong> – Optional arguments that <code class="docutils literal notranslate"><span class="pre">request</span></code> takes.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>requests.Response</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="arcgis.auth.api.EsriSession.referer">
+<em class="property">property </em><code class="sig-name descname">referer</code><a class="headerlink" href="#arcgis.auth.api.EsriSession.referer" title="Permalink to this definition">¶</a></dt>
+<dd><p>Gets/Sets the referer</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="arcgis.auth.api.EsriSession.stream">
+<em class="property">property </em><code class="sig-name descname">stream</code><a class="headerlink" href="#arcgis.auth.api.EsriSession.stream" title="Permalink to this definition">¶</a></dt>
+<dd><p>Gets/Sets the stream property for the current session object</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="arcgis.auth.api.EsriSession.update_headers">
+<code class="sig-name descname">update_headers</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">values</span><span class="p">:</span> <span class="n">Dict<span class="p">[</span>str<span class="p">, </span>Any<span class="p">]</span></span></em><span class="sig-paren">)</span> &#x2192; bool<a class="headerlink" href="#arcgis.auth.api.EsriSession.update_headers" title="Permalink to this definition">¶</a></dt>
+<dd><p>Performs an update call on the headers</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="arcgis.auth.api.EsriSession.verify_cert">
+<em class="property">property </em><code class="sig-name descname">verify_cert</code><a class="headerlink" href="#arcgis.auth.api.EsriSession.verify_cert" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get/Set property that allows for the verification of SSL certificates</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>bool</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-arcgis.auth">
+<span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-arcgis.auth" title="Permalink to this headline">¶</a></h2>
+<dl class="py class">
+<dt id="arcgis.auth.ArcGISProAuth">
+<em class="property">class </em><code class="sig-prename descclassname">arcgis.auth.</code><code class="sig-name descname">ArcGISProAuth</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">legacy</span><span class="p">:</span> <span class="n">bool</span> <span class="o">=</span> <span class="default_value">False</span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.auth.ArcGISProAuth" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">requests.auth.AuthBase</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">arcgis.auth._auth._schain.SupportMultiAuth</span></code></p>
+<p>Performs the ArcGIS Pro Authentication for a given request.</p>
+<dl class="py method">
+<dt id="arcgis.auth.ArcGISProAuth.handle_40x">
+<code class="sig-name descname">handle_40x</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">r</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.auth.ArcGISProAuth.handle_40x" title="Permalink to this definition">¶</a></dt>
+<dd><p>Handles Case where token is invalid</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="arcgis.auth.ArcGISProAuth.token">
+<em class="property">property </em><code class="sig-name descname">token</code><a class="headerlink" href="#arcgis.auth.ArcGISProAuth.token" title="Permalink to this definition">¶</a></dt>
+<dd><p>obtains the login token</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt id="arcgis.auth.BaseEsriAuth">
+<em class="property">class </em><code class="sig-prename descclassname">arcgis.auth.</code><code class="sig-name descname">BaseEsriAuth</code><a class="headerlink" href="#arcgis.auth.BaseEsriAuth" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">requests.auth.AuthBase</span></code></p>
+<p>A base class that developers can inherit from to create custom
+authentication handlers.</p>
+<p>For more information, please see:
+<a class="reference external" href="https://docs.python-requests.org/en/master/user/authentication/#new-forms-of-authentication">https://docs.python-requests.org/en/master/user/authentication/#new-forms-of-authentication</a></p>
+<dl class="py method">
+<dt id="arcgis.auth.BaseEsriAuth.response_hook">
+<code class="sig-name descname">response_hook</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">response</span><span class="p">:</span> <span class="n">requests.models.Response</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span> &#x2192; requests.models.Response<a class="headerlink" href="#arcgis.auth.BaseEsriAuth.response_hook" title="Permalink to this definition">¶</a></dt>
+<dd><p>response hook logic</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>Response</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="arcgis.auth.BaseEsriAuth.token">
+<em class="property">property </em><code class="sig-name descname">token</code><a class="headerlink" href="#arcgis.auth.BaseEsriAuth.token" title="Permalink to this definition">¶</a></dt>
+<dd><p>returns a ArcGIS Token as a string</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>string</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt id="arcgis.auth.EsriAPIKeyAuth">
+<em class="property">class </em><code class="sig-prename descclassname">arcgis.auth.</code><code class="sig-name descname">EsriAPIKeyAuth</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">api_key</span><span class="p">:</span> <span class="n">str</span></em>, <em class="sig-param"><span class="n">referer</span><span class="p">:</span> <span class="n">str</span> <span class="o">=</span> <span class="default_value">None</span></em>, <em class="sig-param"><span class="n">verify_cert</span><span class="p">:</span> <span class="n">bool</span> <span class="o">=</span> <span class="default_value">True</span></em>, <em class="sig-param"><span class="n">auth</span><span class="p">:</span> <span class="n">requests.auth.AuthBase</span> <span class="o">=</span> <span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.auth.EsriAPIKeyAuth" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">requests.auth.AuthBase</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">arcgis.auth._auth._schain.SupportMultiAuth</span></code></p>
+<p>authentication for API Keys</p>
+<dl class="py method">
+<dt id="arcgis.auth.EsriAPIKeyAuth.add_api_token">
+<code class="sig-name descname">add_api_token</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">r</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.auth.EsriAPIKeyAuth.add_api_token" title="Permalink to this definition">¶</a></dt>
+<dd><p>generates a server token using Portal token</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt id="arcgis.auth.EsriAPIKeyAuth.api_key">
+<code class="sig-name descname">api_key</code><em class="property"> = None</em><a class="headerlink" href="#arcgis.auth.EsriAPIKeyAuth.api_key" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="arcgis.auth.EsriAPIKeyAuth.auth">
+<code class="sig-name descname">auth</code><em class="property"> = None</em><a class="headerlink" href="#arcgis.auth.EsriAPIKeyAuth.auth" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="arcgis.auth.EsriAPIKeyAuth.token">
+<em class="property">property </em><code class="sig-name descname">token</code><a class="headerlink" href="#arcgis.auth.EsriAPIKeyAuth.token" title="Permalink to this definition">¶</a></dt>
+<dd><p>Gets/Sets the API token</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>String</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt id="arcgis.auth.EsriBasicAuth">
+<em class="property">class </em><code class="sig-prename descclassname">arcgis.auth.</code><code class="sig-name descname">EsriBasicAuth</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">username</span><span class="p">:</span> <span class="n">str</span></em>, <em class="sig-param"><span class="n">password</span><span class="p">:</span> <span class="n">str</span></em>, <em class="sig-param"><span class="n">referer</span><span class="p">:</span> <span class="n">str</span> <span class="o">=</span> <span class="default_value">'http'</span></em>, <em class="sig-param"><span class="n">verify_cert</span><span class="p">:</span> <span class="n">bool</span> <span class="o">=</span> <span class="default_value">True</span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.auth.EsriBasicAuth" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">requests.auth.HTTPBasicAuth</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">arcgis.auth._auth._schain.SupportMultiAuth</span></code></p>
+<p>Describes a basic requests authentication.</p>
+<dl class="py attribute">
+<dt id="arcgis.auth.EsriBasicAuth.auth">
+<code class="sig-name descname">auth</code><em class="property"> = None</em><a class="headerlink" href="#arcgis.auth.EsriBasicAuth.auth" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="arcgis.auth.EsriBasicAuth.generate_portal_server_token">
+<code class="sig-name descname">generate_portal_server_token</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">r</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.auth.EsriBasicAuth.generate_portal_server_token" title="Permalink to this definition">¶</a></dt>
+<dd><p>generates a server token using Portal token</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="arcgis.auth.EsriBasicAuth.token">
+<em class="property">property </em><code class="sig-name descname">token</code><a class="headerlink" href="#arcgis.auth.EsriBasicAuth.token" title="Permalink to this definition">¶</a></dt>
+<dd><p>Gets the token.  This is always <cite>None</cite> for <cite>EsriBasicAuth</cite></p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>String</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt id="arcgis.auth.EsriBuiltInAuth">
+<em class="property">class </em><code class="sig-prename descclassname">arcgis.auth.</code><code class="sig-name descname">EsriBuiltInAuth</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">url</span><span class="p">:</span> <span class="n">str</span></em>, <em class="sig-param"><span class="n">username</span><span class="p">:</span> <span class="n">str</span></em>, <em class="sig-param"><span class="n">password</span><span class="p">:</span> <span class="n">str</span></em>, <em class="sig-param"><span class="n">expiration</span><span class="p">:</span> <span class="n">int</span> <span class="o">=</span> <span class="default_value">None</span></em>, <em class="sig-param"><span class="n">legacy</span><span class="p">:</span> <span class="n">bool</span> <span class="o">=</span> <span class="default_value">False</span></em>, <em class="sig-param"><span class="n">verify_cert</span><span class="p">:</span> <span class="n">bool</span> <span class="o">=</span> <span class="default_value">True</span></em>, <em class="sig-param"><span class="n">referer</span><span class="p">:</span> <span class="n">str</span> <span class="o">=</span> <span class="default_value">None</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.auth.EsriBuiltInAuth" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">requests.auth.AuthBase</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">arcgis.auth._auth._schain.SupportMultiAuth</span></code></p>
+<p>Performs the BUILT-IN Login Authorization for ArcGIS Online and Enterprise</p>
+<dl class="py method">
+<dt id="arcgis.auth.EsriBuiltInAuth.handle_401">
+<code class="sig-name descname">handle_401</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">r</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.auth.EsriBuiltInAuth.handle_401" title="Permalink to this definition">¶</a></dt>
+<dd><p>handles the issues in the response where token might be rejected</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="arcgis.auth.EsriBuiltInAuth.suspend">
+<code class="sig-name descname">suspend</code><span class="sig-paren">(</span><span class="sig-paren">)</span> &#x2192; bool<a class="headerlink" href="#arcgis.auth.EsriBuiltInAuth.suspend" title="Permalink to this definition">¶</a></dt>
+<dd><p>Invalidates the login and checks any licenses back in</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>Bool.  If True, the licenses is checked back in successfully,
+False, the process failed.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="arcgis.auth.EsriBuiltInAuth.token">
+<em class="property">property </em><code class="sig-name descname">token</code><a class="headerlink" href="#arcgis.auth.EsriBuiltInAuth.token" title="Permalink to this definition">¶</a></dt>
+<dd><p>obtains the login token</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt id="arcgis.auth.EsriGenTokenAuth">
+<em class="property">class </em><code class="sig-prename descclassname">arcgis.auth.</code><code class="sig-name descname">EsriGenTokenAuth</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">token_url</span><span class="p">:</span> <span class="n">str</span></em>, <em class="sig-param"><span class="n">referer</span><span class="p">:</span> <span class="n">str</span></em>, <em class="sig-param"><span class="n">username</span><span class="p">:</span> <span class="n">str</span> <span class="o">=</span> <span class="default_value">None</span></em>, <em class="sig-param"><span class="n">password</span><span class="p">:</span> <span class="n">str</span> <span class="o">=</span> <span class="default_value">None</span></em>, <em class="sig-param"><span class="n">portal_auth</span><span class="p">:</span> <span class="n">Optional<span class="p">[</span>arcgis.auth._auth._token.EsriGenTokenAuth<span class="p">]</span></span> <span class="o">=</span> <span class="default_value">None</span></em>, <em class="sig-param"><span class="n">time_out</span><span class="p">:</span> <span class="n">int</span> <span class="o">=</span> <span class="default_value">1440</span></em>, <em class="sig-param"><span class="n">verify_cert</span><span class="p">:</span> <span class="n">bool</span> <span class="o">=</span> <span class="default_value">True</span></em>, <em class="sig-param"><span class="n">legacy</span><span class="p">:</span> <span class="n">bool</span> <span class="o">=</span> <span class="default_value">False</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.auth.EsriGenTokenAuth" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">requests.auth.AuthBase</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">arcgis.auth._auth._schain.SupportMultiAuth</span></code></p>
+<p>This form of Authentication leverages the <cite>generateToken</cite> endpoint from
+the ArcGIS Product.  This is supported for ArcGIS Online, ArcGIS Enterprise
+and ArcGIS Server.</p>
+<p>This form of authentication is considered legacy and should only be used
+with unfederated server products.</p>
+<dl class="py method">
+<dt id="arcgis.auth.EsriGenTokenAuth.expiration">
+<em class="property">property </em><code class="sig-name descname">expiration</code><a class="headerlink" href="#arcgis.auth.EsriGenTokenAuth.expiration" title="Permalink to this definition">¶</a></dt>
+<dd><p>Gets the time the token will expire on</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="arcgis.auth.EsriGenTokenAuth.handle_401">
+<code class="sig-name descname">handle_401</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">r</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.auth.EsriGenTokenAuth.handle_401" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="arcgis.auth.EsriGenTokenAuth.handle_redirect">
+<code class="sig-name descname">handle_redirect</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">r</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.auth.EsriGenTokenAuth.handle_redirect" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="arcgis.auth.EsriGenTokenAuth.init_per_thread_state">
+<code class="sig-name descname">init_per_thread_state</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.auth.EsriGenTokenAuth.init_per_thread_state" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="arcgis.auth.EsriGenTokenAuth.referer">
+<em class="property">property </em><code class="sig-name descname">referer</code><a class="headerlink" href="#arcgis.auth.EsriGenTokenAuth.referer" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="arcgis.auth.EsriGenTokenAuth.time_out">
+<em class="property">property </em><code class="sig-name descname">time_out</code><a class="headerlink" href="#arcgis.auth.EsriGenTokenAuth.time_out" title="Permalink to this definition">¶</a></dt>
+<dd><p>returns the time out time in minutes</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="arcgis.auth.EsriGenTokenAuth.token">
+<code class="sig-name descname">token</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">server_url</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span> &#x2192; str<a class="headerlink" href="#arcgis.auth.EsriGenTokenAuth.token" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt id="arcgis.auth.EsriKerberosAuth">
+<em class="property">class </em><code class="sig-prename descclassname">arcgis.auth.</code><code class="sig-name descname">EsriKerberosAuth</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">referer</span><span class="p">:</span> <span class="n">str</span> <span class="o">=</span> <span class="default_value">None</span></em>, <em class="sig-param"><span class="n">verify_cert</span><span class="p">:</span> <span class="n">bool</span> <span class="o">=</span> <span class="default_value">True</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.auth.EsriKerberosAuth" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">requests.auth.AuthBase</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">arcgis.auth._auth._schain.SupportMultiAuth</span></code></p>
+<dl class="py method">
+<dt id="arcgis.auth.EsriKerberosAuth.generate_portal_server_token">
+<code class="sig-name descname">generate_portal_server_token</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">r</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.auth.EsriKerberosAuth.generate_portal_server_token" title="Permalink to this definition">¶</a></dt>
+<dd><p>generates a server token using Portal token</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="arcgis.auth.EsriKerberosAuth.token">
+<em class="property">property </em><code class="sig-name descname">token</code><a class="headerlink" href="#arcgis.auth.EsriKerberosAuth.token" title="Permalink to this definition">¶</a></dt>
+<dd><p>Gets the token.  This is always <cite>None</cite> for <cite>KerberosAuth</cite></p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>String</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt id="arcgis.auth.EsriNotebookAuth">
+<em class="property">class </em><code class="sig-prename descclassname">arcgis.auth.</code><code class="sig-name descname">EsriNotebookAuth</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">token</span><span class="p">:</span> <span class="n">str</span></em>, <em class="sig-param"><span class="n">referer</span><span class="p">:</span> <span class="n">str</span> <span class="o">=</span> <span class="default_value">None</span></em>, <em class="sig-param"><span class="n">auth</span><span class="p">:</span> <span class="n">requests.auth.AuthBase</span> <span class="o">=</span> <span class="default_value">None</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.auth.EsriNotebookAuth" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">requests.auth.AuthBase</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">arcgis.auth._auth._schain.SupportMultiAuth</span></code></p>
+<p>authentication for notebook servers Keys</p>
+<dl class="py method">
+<dt id="arcgis.auth.EsriNotebookAuth.add_token">
+<code class="sig-name descname">add_token</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">r</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.auth.EsriNotebookAuth.add_token" title="Permalink to this definition">¶</a></dt>
+<dd><p>generates a server token using Portal token</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt id="arcgis.auth.EsriNotebookAuth.auth">
+<code class="sig-name descname">auth</code><em class="property"> = None</em><a class="headerlink" href="#arcgis.auth.EsriNotebookAuth.auth" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="arcgis.auth.EsriNotebookAuth.token">
+<em class="property">property </em><code class="sig-name descname">token</code><a class="headerlink" href="#arcgis.auth.EsriNotebookAuth.token" title="Permalink to this definition">¶</a></dt>
+<dd><p>Gets/Sets the API token</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>String</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt id="arcgis.auth.EsriOAuth2Auth">
+<em class="property">class </em><code class="sig-prename descclassname">arcgis.auth.</code><code class="sig-name descname">EsriOAuth2Auth</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">base_url</span><span class="p">:</span> <span class="n">str</span></em>, <em class="sig-param"><span class="n">client_id</span><span class="p">:</span> <span class="n">str</span></em>, <em class="sig-param"><span class="n">client_secret</span><span class="p">:</span> <span class="n">str</span> <span class="o">=</span> <span class="default_value">None</span></em>, <em class="sig-param"><span class="n">username</span><span class="p">:</span> <span class="n">str</span> <span class="o">=</span> <span class="default_value">None</span></em>, <em class="sig-param"><span class="n">password</span><span class="p">:</span> <span class="n">str</span> <span class="o">=</span> <span class="default_value">None</span></em>, <em class="sig-param"><span class="n">referer</span><span class="p">:</span> <span class="n">str</span> <span class="o">=</span> <span class="default_value">'http'</span></em>, <em class="sig-param"><span class="n">expiration</span><span class="p">:</span> <span class="n">int</span> <span class="o">=</span> <span class="default_value">1440</span></em>, <em class="sig-param"><span class="n">session</span><span class="p">:</span> <span class="n">Session</span> <span class="o">=</span> <span class="default_value">None</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.auth.EsriOAuth2Auth" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">requests.auth.AuthBase</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">arcgis.auth._auth._schain.SupportMultiAuth</span></code></p>
+<p>Performs the OAuth Workflow for logging in to Enterprise</p>
+<dl class="py method">
+<dt id="arcgis.auth.EsriOAuth2Auth.handle_40x">
+<code class="sig-name descname">handle_40x</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">r</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.auth.EsriOAuth2Auth.handle_40x" title="Permalink to this definition">¶</a></dt>
+<dd><p>Handles Case where token is invalid</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="arcgis.auth.EsriOAuth2Auth.token">
+<em class="property">property </em><code class="sig-name descname">token</code><a class="headerlink" href="#arcgis.auth.EsriOAuth2Auth.token" title="Permalink to this definition">¶</a></dt>
+<dd><p>Gets the Oauth token</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>String</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt id="arcgis.auth.EsriPKIAuth">
+<em class="property">class </em><code class="sig-prename descclassname">arcgis.auth.</code><code class="sig-name descname">EsriPKIAuth</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">cert</span><span class="p">:</span> <span class="n">Tuple<span class="p">[</span>str<span class="p">]</span></span></em>, <em class="sig-param"><span class="n">referer</span><span class="p">:</span> <span class="n">str</span> <span class="o">=</span> <span class="default_value">None</span></em>, <em class="sig-param"><span class="n">verify_cert</span><span class="p">:</span> <span class="n">bool</span> <span class="o">=</span> <span class="default_value">True</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.auth.EsriPKIAuth" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">requests.auth.AuthBase</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">arcgis.auth._auth._schain.SupportMultiAuth</span></code></p>
+<p>Handles PKI authentication when tokens are needed</p>
+<dl class="py method">
+<dt id="arcgis.auth.EsriPKIAuth.generate_portal_server_token">
+<code class="sig-name descname">generate_portal_server_token</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">r</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.auth.EsriPKIAuth.generate_portal_server_token" title="Permalink to this definition">¶</a></dt>
+<dd><p>generates a server token using Portal token</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="arcgis.auth.EsriPKIAuth.token">
+<em class="property">property </em><code class="sig-name descname">token</code><a class="headerlink" href="#arcgis.auth.EsriPKIAuth.token" title="Permalink to this definition">¶</a></dt>
+<dd><p>returns the authentication token</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt id="arcgis.auth.EsriSession">
+<em class="property">class </em><code class="sig-prename descclassname">arcgis.auth.</code><code class="sig-name descname">EsriSession</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">auth</span><span class="p">:</span> <span class="n">AuthBase</span> <span class="o">=</span> <span class="default_value">None</span></em>, <em class="sig-param"><span class="n">cert</span><span class="p">:</span> <span class="n">Tuple<span class="p">[</span>str<span class="p">]</span></span> <span class="o">=</span> <span class="default_value">None</span></em>, <em class="sig-param"><span class="n">verify_cert</span><span class="p">:</span> <span class="n">bool</span> <span class="o">=</span> <span class="default_value">True</span></em>, <em class="sig-param"><span class="n">allow_redirects</span><span class="p">:</span> <span class="n">bool</span> <span class="o">=</span> <span class="default_value">True</span></em>, <em class="sig-param"><span class="n">headers</span><span class="p">:</span> <span class="n">Dict<span class="p">[</span>str<span class="p">, </span>Any<span class="p">]</span></span> <span class="o">=</span> <span class="default_value">None</span></em>, <em class="sig-param"><span class="n">referer</span><span class="o">=</span><span class="default_value">'http'</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.auth.EsriSession" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>The <cite>EsriSession</cite> class is designed to simplify access to the Esri WebGIS
+environments without the additional components of the <cite>arcgis</cite> or <cite>arcpy</cite>
+modules.  It is designed to allow users to connect and manage all HTTP calls
+themselves with no hand holding.</p>
+<p>Security is handled through the <cite>requests</cite> authentication model. Leveraging
+authentication handlers and primarily connecting to 10.8.1+ enterprise components.</p>
+<p>The supported Authentication Schemes are:</p>
+<blockquote>
+<div><ol class="arabic simple">
+<li><p>Username/Password</p></li>
+<li><p>Oauth 2</p></li>
+<li><p>IWA/NTLM</p></li>
+<li><p>Basic</p></li>
+<li><p>Digest</p></li>
+<li><p>PKI</p></li>
+<li><p>API Keys</p></li>
+<li><p>User Provided Tokens</p></li>
+<li><p>Kerberos</p></li>
+</ol>
+</div></blockquote>
+<p>Anyone can extend the authentication handlers by creating a class and inheriting
+from <cite>requests.auth.AuthBase</cite>.</p>
+<p>The <cite>EsriSession</cite> authentication supports authentication chaining.  Meaning
+users can stack authentication methods.</p>
+<blockquote>
+<div><p><cite>auth1 + auth2 + auth3</cite></p>
+</div></blockquote>
+<p>It is recommended that you do not stack unneeded authenicators because they
+can caused unintended failures.</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 20%" />
+<col style="width: 80%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><strong>Argument</strong></p></td>
+<td><p><strong>Description</strong></p></td>
+</tr>
+<tr class="row-even"><td><p>auth</p></td>
+<td><p>Optional AuthBase. This is a security handler that performs some sort
+of security check.</p></td>
+</tr>
+<tr class="row-odd"><td><p>cert</p></td>
+<td><p>Optional Tuple. The client side certificate as a tuple or string. It
+should be noted that <cite>EsriSession</cite> does not support encrypted private
+keys.</p></td>
+</tr>
+<tr class="row-even"><td><p>verify_cert</p></td>
+<td><p>Optional Bool. When <cite>False</cite> all SSL certificate errors are ignored.
+The default is <cite>True</cite>.</p></td>
+</tr>
+<tr class="row-odd"><td><p>allow_redirects</p></td>
+<td><p>Optional Bool. When <cite>False</cite> if the URL redirects a user, an error
+will be raised.  The default is <cite>True</cite></p></td>
+</tr>
+<tr class="row-even"><td><p>headers</p></td>
+<td><p>Optional Dict. An additional set of key/value(s) to append to any
+request’s header.</p></td>
+</tr>
+<tr class="row-odd"><td><p>referer</p></td>
+<td><p>Optional Str. The <cite>referer</cite> header value.  The default is <cite>http</cite>. This
+is mainly used with <cite>token</cite> security.</p></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Optional Arguments</strong></p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 14%" />
+<col style="width: 86%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><strong>Argument</strong></p></td>
+<td><p><strong>Description</strong></p></td>
+</tr>
+<tr class="row-even"><td><p>trust_env</p></td>
+<td><p>Optional Bool. The default is <cite>True</cite>. If <cite>False</cite> proxies will cause
+an error to be raised if set by <strong>.netrc</strong> files.</p></td>
+</tr>
+<tr class="row-odd"><td><p>stream</p></td>
+<td><p>Optional Bool.  To enable handling streaming responses, set stream to
+True and iterate over the response with <cite>iter_lines</cite>. The default is
+<cite>False</cite>.</p></td>
+</tr>
+<tr class="row-even"><td><p>check_hostname</p></td>
+<td><p>Optional Bool. When connecting to a side via IP Address with an SSL
+certificate, the hostname will not match.  This allows a user to
+specify the hostname in the headers parameters and ignore hostname
+errors.</p></td>
+</tr>
+<tr class="row-odd"><td><p>retries</p></td>
+<td><p>Optional Int. The max number of tries to retry a service for 50x errors.</p></td>
+</tr>
+<tr class="row-even"><td><p>backoff_factor</p></td>
+<td><p>Optional float. The amount of time in seconds to wait between retries.</p></td>
+</tr>
+<tr class="row-odd"><td><p>status_to_retry</p></td>
+<td><p>Optional Tuple. The status codes to run retries on.  The default is
+(413, 429, 503, 500, 502, 504).</p></td>
+</tr>
+<tr class="row-even"><td><p>method_whitelist</p></td>
+<td><p>Optional List.  When <cite>retries</cite> is specified, the user can specifiy what methods are retried.
+The default is <cite>‘POST’, ‘DELETE’, ‘GET’, ‘HEAD’, ‘OPTIONS’, ‘PUT’, ‘TRACE’</cite></p></td>
+</tr>
+<tr class="row-odd"><td><p>proxies</p></td>
+<td><p>Optional Dict. A key/value mapping where the keys are the transfer protocol and the value is the &lt;url&gt;:&lt;port&gt;.</p>
+<p><strong>example</strong></p>
+<p><code class="docutils literal notranslate"><span class="pre">`python</span>
+<span class="pre">proxies</span> <span class="pre">=</span> <span class="pre">{&quot;http&quot;</span> <span class="pre">:</span> <span class="pre">127.0.0.1:8080,</span> <span class="pre">&quot;https&quot;</span> <span class="pre">:</span> <span class="pre">127.0.0.1:8081}</span>
+<span class="pre">session</span> <span class="pre">=</span> <span class="pre">EsriSession(proxies=proxies)</span>
+<span class="pre">`</span></code></p>
+</td>
+</tr>
+</tbody>
+</table>
+<dl class="py method">
+<dt id="arcgis.auth.EsriSession.adapters">
+<em class="property">property </em><code class="sig-name descname">adapters</code><a class="headerlink" href="#arcgis.auth.EsriSession.adapters" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns an dictionary of mounted adapters.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>dict</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt id="arcgis.auth.EsriSession.allow_redirects">
+<code class="sig-name descname">allow_redirects</code><em class="property"> = None</em><a class="headerlink" href="#arcgis.auth.EsriSession.allow_redirects" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="arcgis.auth.EsriSession.auth">
+<em class="property">property </em><code class="sig-name descname">auth</code><a class="headerlink" href="#arcgis.auth.EsriSession.auth" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get/Set the Authentication Handler for the Session</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="arcgis.auth.EsriSession.cert">
+<em class="property">property </em><code class="sig-name descname">cert</code><a class="headerlink" href="#arcgis.auth.EsriSession.cert" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get/Set the users certificate as a (private, public) keys.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>Tuple[str]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="arcgis.auth.EsriSession.close">
+<code class="sig-name descname">close</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.auth.EsriSession.close" title="Permalink to this definition">¶</a></dt>
+<dd><p>Closes all adapters and as such the session</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="arcgis.auth.EsriSession.delete">
+<code class="sig-name descname">delete</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">url</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span> &#x2192; requests.Response<a class="headerlink" href="#arcgis.auth.EsriSession.delete" title="Permalink to this definition">¶</a></dt>
+<dd><p>Sends a DELETE request. Returns <code class="xref py py-class docutils literal notranslate"><span class="pre">Response</span></code> object.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>url</strong> – URL for the new <code class="xref py py-class docutils literal notranslate"><span class="pre">Request</span></code> object.</p></li>
+<li><p><strong>**kwargs</strong> – Optional arguments that <code class="docutils literal notranslate"><span class="pre">request</span></code> takes.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>requests.Response</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="arcgis.auth.EsriSession.get">
+<code class="sig-name descname">get</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">url</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span> &#x2192; requests.Response<a class="headerlink" href="#arcgis.auth.EsriSession.get" title="Permalink to this definition">¶</a></dt>
+<dd><p>Sends a GET request. Returns <code class="xref py py-class docutils literal notranslate"><span class="pre">Response</span></code> object.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>url</strong> – URL for the new <code class="xref py py-class docutils literal notranslate"><span class="pre">Request</span></code> object.</p></li>
+<li><p><strong>**kwargs</strong> – Optional arguments that <code class="docutils literal notranslate"><span class="pre">request</span></code> takes.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>requests.Response</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="arcgis.auth.EsriSession.head">
+<code class="sig-name descname">head</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">url</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span> &#x2192; requests.Response<a class="headerlink" href="#arcgis.auth.EsriSession.head" title="Permalink to this definition">¶</a></dt>
+<dd><p>Sends a HEAD request. Returns <code class="xref py py-class docutils literal notranslate"><span class="pre">Response</span></code> object.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>url</strong> – URL for the new <code class="xref py py-class docutils literal notranslate"><span class="pre">Request</span></code> object.</p></li>
+<li><p><strong>**kwargs</strong> – Optional arguments that <code class="docutils literal notranslate"><span class="pre">request</span></code> takes.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>requests.Response</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="arcgis.auth.EsriSession.headers">
+<em class="property">property </em><code class="sig-name descname">headers</code><a class="headerlink" href="#arcgis.auth.EsriSession.headers" title="Permalink to this definition">¶</a></dt>
+<dd><p>Gets/Sets the headers from the current session object</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="arcgis.auth.EsriSession.mount">
+<code class="sig-name descname">mount</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">prefix</span><span class="p">:</span> <span class="n">str</span></em>, <em class="sig-param"><span class="n">adapter</span><span class="p">:</span> <span class="n">HTTPAdatper</span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.auth.EsriSession.mount" title="Permalink to this definition">¶</a></dt>
+<dd><p>Registers a connection adapter to a prefix.</p>
+<p>Adapters are sorted in descending order by prefix length.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="arcgis.auth.EsriSession.options">
+<code class="sig-name descname">options</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">url</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span> &#x2192; requests.Response<a class="headerlink" href="#arcgis.auth.EsriSession.options" title="Permalink to this definition">¶</a></dt>
+<dd><p>Sends a OPTIONS request. Returns <code class="xref py py-class docutils literal notranslate"><span class="pre">Response</span></code> object.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>url</strong> – URL for the new <code class="xref py py-class docutils literal notranslate"><span class="pre">Request</span></code> object.</p></li>
+<li><p><strong>**kwargs</strong> – Optional arguments that <code class="docutils literal notranslate"><span class="pre">request</span></code> takes.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>requests.Response</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="arcgis.auth.EsriSession.patch">
+<code class="sig-name descname">patch</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">url</span></em>, <em class="sig-param"><span class="n">data</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span> &#x2192; requests.Response<a class="headerlink" href="#arcgis.auth.EsriSession.patch" title="Permalink to this definition">¶</a></dt>
+<dd><p>Sends a PATCH request. Returns <code class="xref py py-class docutils literal notranslate"><span class="pre">Response</span></code> object.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>url</strong> – URL for the new <code class="xref py py-class docutils literal notranslate"><span class="pre">Request</span></code> object.</p></li>
+<li><p><strong>data</strong> – (optional) Dictionary, list of tuples, bytes, or file-like
+object to send in the body of the <code class="xref py py-class docutils literal notranslate"><span class="pre">Request</span></code>.</p></li>
+<li><p><strong>**kwargs</strong> – Optional arguments that <code class="docutils literal notranslate"><span class="pre">request</span></code> takes.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>requests.Response</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="arcgis.auth.EsriSession.post">
+<code class="sig-name descname">post</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">url</span></em>, <em class="sig-param"><span class="n">data</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">json</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span> &#x2192; requests.Response<a class="headerlink" href="#arcgis.auth.EsriSession.post" title="Permalink to this definition">¶</a></dt>
+<dd><p>Sends a POST request. Returns <code class="xref py py-class docutils literal notranslate"><span class="pre">Response</span></code> object.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>url</strong> – URL for the new <code class="xref py py-class docutils literal notranslate"><span class="pre">Request</span></code> object.</p></li>
+<li><p><strong>data</strong> – (optional) Dictionary, list of tuples, bytes, or file-like
+object to send in the body of the <code class="xref py py-class docutils literal notranslate"><span class="pre">Request</span></code>.</p></li>
+<li><p><strong>json</strong> – (optional) json to send in the body of the <code class="xref py py-class docutils literal notranslate"><span class="pre">Request</span></code>.</p></li>
+<li><p><strong>**kwargs</strong> – Optional arguments that <code class="docutils literal notranslate"><span class="pre">request</span></code> takes.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>requests.Response</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="arcgis.auth.EsriSession.proxies">
+<em class="property">property </em><code class="sig-name descname">proxies</code><a class="headerlink" href="#arcgis.auth.EsriSession.proxies" title="Permalink to this definition">¶</a></dt>
+<dd><p>Dictionary mapping protocol or protocol and host to the URL of the proxy.
+(e.g. {‘http’: ‘foo.bar:3128’, ‘http://host.name’: ‘foo.bar:4012’}) to
+be used on each <code class="xref py py-class docutils literal notranslate"><span class="pre">Request</span></code>.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>dict</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="arcgis.auth.EsriSession.put">
+<code class="sig-name descname">put</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">url</span></em>, <em class="sig-param"><span class="n">data</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span> &#x2192; requests.Response<a class="headerlink" href="#arcgis.auth.EsriSession.put" title="Permalink to this definition">¶</a></dt>
+<dd><p>Sends a PUT request. Returns <code class="xref py py-class docutils literal notranslate"><span class="pre">Response</span></code> object.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>url</strong> – URL for the new <code class="xref py py-class docutils literal notranslate"><span class="pre">Request</span></code> object.</p></li>
+<li><p><strong>data</strong> – (optional) Dictionary, list of tuples, bytes, or file-like
+object to send in the body of the <code class="xref py py-class docutils literal notranslate"><span class="pre">Request</span></code>.</p></li>
+<li><p><strong>**kwargs</strong> – Optional arguments that <code class="docutils literal notranslate"><span class="pre">request</span></code> takes.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>requests.Response</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="arcgis.auth.EsriSession.referer">
+<em class="property">property </em><code class="sig-name descname">referer</code><a class="headerlink" href="#arcgis.auth.EsriSession.referer" title="Permalink to this definition">¶</a></dt>
+<dd><p>Gets/Sets the referer</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="arcgis.auth.EsriSession.stream">
+<em class="property">property </em><code class="sig-name descname">stream</code><a class="headerlink" href="#arcgis.auth.EsriSession.stream" title="Permalink to this definition">¶</a></dt>
+<dd><p>Gets/Sets the stream property for the current session object</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="arcgis.auth.EsriSession.update_headers">
+<code class="sig-name descname">update_headers</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">values</span><span class="p">:</span> <span class="n">Dict<span class="p">[</span>str<span class="p">, </span>Any<span class="p">]</span></span></em><span class="sig-paren">)</span> &#x2192; bool<a class="headerlink" href="#arcgis.auth.EsriSession.update_headers" title="Permalink to this definition">¶</a></dt>
+<dd><p>Performs an update call on the headers</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="arcgis.auth.EsriSession.verify_cert">
+<em class="property">property </em><code class="sig-name descname">verify_cert</code><a class="headerlink" href="#arcgis.auth.EsriSession.verify_cert" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get/Set property that allows for the verification of SSL certificates</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>bool</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt id="arcgis.auth.EsriUserTokenAuth">
+<em class="property">class </em><code class="sig-prename descclassname">arcgis.auth.</code><code class="sig-name descname">EsriUserTokenAuth</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">token</span><span class="p">:</span> <span class="n">str</span></em>, <em class="sig-param"><span class="n">referer</span><span class="p">:</span> <span class="n">str</span> <span class="o">=</span> <span class="default_value">None</span></em>, <em class="sig-param"><span class="n">verify_cert</span><span class="p">:</span> <span class="n">bool</span> <span class="o">=</span> <span class="default_value">True</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.auth.EsriUserTokenAuth" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">requests.auth.AuthBase</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">arcgis.auth._auth._schain.SupportMultiAuth</span></code></p>
+<p>Authentication Using User Created Tokens</p>
+<dl class="py attribute">
+<dt id="arcgis.auth.EsriUserTokenAuth.auth">
+<code class="sig-name descname">auth</code><em class="property"> = None</em><a class="headerlink" href="#arcgis.auth.EsriUserTokenAuth.auth" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="arcgis.auth.EsriUserTokenAuth.handle_40x">
+<code class="sig-name descname">handle_40x</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">r</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.auth.EsriUserTokenAuth.handle_40x" title="Permalink to this definition">¶</a></dt>
+<dd><p>Handles Case where token is invalid</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt id="arcgis.auth.EsriUserTokenAuth.token">
+<code class="sig-name descname">token</code><em class="property"> = None</em><a class="headerlink" href="#arcgis.auth.EsriUserTokenAuth.token" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt id="arcgis.auth.EsriWindowsAuth">
+<em class="property">class </em><code class="sig-prename descclassname">arcgis.auth.</code><code class="sig-name descname">EsriWindowsAuth</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">username</span><span class="p">:</span> <span class="n">str</span> <span class="o">=</span> <span class="default_value">None</span></em>, <em class="sig-param"><span class="n">password</span><span class="p">:</span> <span class="n">str</span> <span class="o">=</span> <span class="default_value">None</span></em>, <em class="sig-param"><span class="n">referer</span><span class="p">:</span> <span class="n">str</span> <span class="o">=</span> <span class="default_value">None</span></em>, <em class="sig-param"><span class="n">verify_cert</span><span class="p">:</span> <span class="n">bool</span> <span class="o">=</span> <span class="default_value">True</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.auth.EsriWindowsAuth" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">requests.auth.AuthBase</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">arcgis.auth._auth._schain.SupportMultiAuth</span></code></p>
+<dl class="py method">
+<dt id="arcgis.auth.EsriWindowsAuth.generate_portal_server_token">
+<code class="sig-name descname">generate_portal_server_token</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">r</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.auth.EsriWindowsAuth.generate_portal_server_token" title="Permalink to this definition">¶</a></dt>
+<dd><p>generates a server token using Portal token</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="arcgis.auth.EsriWindowsAuth.token">
+<em class="property">property </em><code class="sig-name descname">token</code><a class="headerlink" href="#arcgis.auth.EsriWindowsAuth.token" title="Permalink to this definition">¶</a></dt>
+<dd><p>Gets the token.  This is always <cite>None</cite> for <cite>EsriWindowsAuth</cite></p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>String</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+</section>
+
+
+
+           </div>
+           
+          </div>
+          <footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+        <a href="arcgis.auth.tools.html" class="btn btn-neutral float-right" title="arcgis.auth.tools package" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="arcgis.learn.text.html" class="btn btn-neutral float-left" title="EntityRecognizer" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &#169; Copyright 2016-2022, Esri.
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+    Options v: 2.0.0
+
+  <div class="rst-versions" data-toggle="rst-versions" role="note" aria-label="versions">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      <span class="fa fa-book"> Pick an earlier version</span>
+      v: 2.0.0
+      <span class="fa fa-caret-down"></span>
+    </span>
+    <div class="rst-other-versions">
+      
+      
+      <dl>
+        <dt>Versions</dt>
+        
+          
+          <dd><a href="1.9.1/">1.9.1</a></dd>
+          
+        
+          
+          <dd><a href="1.9.0/">1.9.0</a></dd>
+          
+        
+          
+          <dd><a href="1.8.5/">1.8.5</a></dd>
+          
+        
+          
+          <dd><a href="1.8.4/">1.8.4</a></dd>
+          
+        
+          
+          <dd><a href="1.8.3/">1.8.3</a></dd>
+          
+        
+          
+          <dd><a href="1.8.2/">1.8.2</a></dd>
+          
+        
+          
+          <dd><a href="1.8.1/">1.8.1</a></dd>
+          
+        
+          
+          <dd><a href="1.8.0/">1.8.0</a></dd>
+          
+        
+          
+          <dd><a href="1.7.1/">1.7.1</a></dd>
+          
+        
+          
+          <dd><a href="1.7.0/">1.7.0</a></dd>
+          
+        
+          
+          <dd><a href="1.6.2/">1.6.2</a></dd>
+          
+        
+          
+          <dd><a href="1.6.1/">1.6.1</a></dd>
+          
+        
+          
+          <dd><a href="1.6.0/">1.6.0</a></dd>
+          
+        
+          
+          <dd><a href="1.5.2/">1.5.2</a></dd>
+          
+        
+          
+          <dd><a href="1.5.1/">1.5.1</a></dd>
+          
+        
+          
+          <dd><a href="1.5.0/">1.5.0</a></dd>
+          
+        
+          
+          <dd><a href="1.4.2/">1.4.2</a></dd>
+          
+        
+          
+          <dd><a href="1.4.1/">1.4.1</a></dd>
+          
+        
+          
+          <dd><a href="1.4.0/">1.4.0</a></dd>
+          
+        
+          
+          <dd><a href="1.3.0/">1.3.0</a></dd>
+          
+        
+          
+          <dd><a href="1.2.5/">1.2.5</a></dd>
+          
+        
+          
+          <dd><a href="1.2.4/">1.2.4</a></dd>
+          
+        
+          
+          <dd><a href="1.2.3/">1.2.3</a></dd>
+          
+        
+          
+          <dd><a href="1.2.2/">1.2.2</a></dd>
+          
+        
+          
+          <dd><a href="1.2.1/">1.2.1</a></dd>
+          
+        
+          
+          <dd><a href="1.2.0/">1.2.0</a></dd>
+          
+        
+          
+          <dd><a href="1.1.0/">1.1.0</a></dd>
+          
+        
+          
+          <dd><a href="1.0.1/">1.0.1</a></dd>
+          
+        
+          
+          <dd><a href="1.0.0/">1.0.0</a></dd>
+          
+        
+          
+          <dd><a href="0.3.0/">0.3.0</a></dd>
+          
+        
+          
+          <dd><a href="0.2.0/">0.2.0</a></dd>
+          
+        
+          
+          <dd><a href="0.1.0/">0.1.0</a></dd>
+          
+        
+      </dl>
+      
+      
+      
+    </div>
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

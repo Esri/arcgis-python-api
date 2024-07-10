@@ -1,0 +1,528 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <title>arcgis.raster.utils module &mdash; arcgis 1.9 documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="_static/theme_overrides.css" type="text/css" />
+
+  
+  
+    <link rel="shortcut icon" href="_static/favicon.ico"/>
+  
+
+  
+  
+
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/doctools.js"></script>
+        <script src="_static/language_data.js"></script>
+        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="arcgis.network module" href="arcgis.network.toc.html" />
+    <link rel="prev" title="arcgis.raster.functions.RFT" href="arcgis.raster.functions.RFT.html" />
+<!-- This code block is inserted close near the <head> tag. See http://bit.ly/2BHUQzB -->
+<!-- The point of this code block is to send us google analytics on website views -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-NJGGV5');</script>
+ 
+
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="index.html" class="icon icon-home"> arcgis
+          
+
+          
+            
+            <img src="_static/python_api_logo.png" class="logo" alt="Logo"/>
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1.9
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">arcgis</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="arcgis.gis.toc.html">arcgis.gis module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="arcgis.env.html">arcgis.env module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="arcgis.features.toc.html">arcgis.features module</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="arcgis.raster.toc.html">arcgis.raster module</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="arcgis.raster.toc.html#imagerylayer">ImageryLayer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.raster.toc.html#imagerylayercachemanager">ImageryLayerCacheManager</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.raster.toc.html#imagerytilemanager">ImageryTileManager</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.raster.toc.html#raster">Raster</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.raster.toc.html#rastercatalogitem">RasterCatalogItem</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.raster.toc.html#rastermanager">RasterManager</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.raster.toc.html#rastercollection">RasterCollection</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.raster.toc.html#rasterinfo">RasterInfo</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="arcgis.raster.toc.html#submodules">Submodules</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="arcgis.raster.analytics.html">arcgis.raster.analytics module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="arcgis.raster.functions.html">arcgis.raster.functions module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="arcgis.raster.functions.gbl.html">arcgis.raster.functions.gbl module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="arcgis.raster.orthomapping.html">arcgis.raster.orthomapping module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="arcgis.raster.functions.RFT.html">arcgis.raster.functions.RFT</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">arcgis.raster.utils module</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#generate-direct-access-url">generate_direct_access_url</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#upload-imagery-to-agol-userstore">upload_imagery_to_agol_userstore</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="arcgis.network.toc.html">arcgis.network module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="arcgis.geoanalytics.toc.html">arcgis.geoanalytics module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="arcgis.geocoding.html">arcgis.geocoding module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="arcgis.geoenrichment.html">arcgis.geoenrichment module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="arcgis.geometry.html">arcgis.geometry module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="arcgis.geoprocessing.html">arcgis.geoprocessing module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="arcgis.mapping.toc.html">arcgis.mapping module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="arcgis.realtime.html">arcgis.realtime module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="arcgis.schematics.html">arcgis.schematics module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="arcgis.widgets.html">arcgis.widgets module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="arcgis.apps.html">arcgis.apps module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="arcgis.learn.toc.html">arcgis.learn module</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">arcgis</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="arcgis.raster.toc.html">arcgis.raster module</a> &raquo;</li>
+        
+      <li>arcgis.raster.utils module</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+<!-- This code block is inserted close near the <body> tag. See http://bit.ly/2BHUQzB -->
+<!-- The point of this code block is to send us google analytics on website views -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NJGGV5"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+
+  <div class="section" id="module-arcgis.raster.utils">
+<span id="arcgis-raster-utils-module"></span><h1>arcgis.raster.utils module<a class="headerlink" href="#module-arcgis.raster.utils" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="generate-direct-access-url">
+<h2>generate_direct_access_url<a class="headerlink" href="#generate-direct-access-url" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt id="arcgis.raster.utils.generate_direct_access_url">
+<code class="sig-prename descclassname">arcgis.raster.utils.</code><code class="sig-name descname">generate_direct_access_url</code><span class="sig-paren">(</span><em class="sig-param">expiration=None</em>, <em class="sig-param">*</em>, <em class="sig-param">gis=None</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.raster.utils.generate_direct_access_url" title="Permalink to this definition">¶</a></dt>
+<dd><p>Function to get the direct access url for user’s rasterStore on ArcGIS Online.</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 33%" />
+<col style="width: 67%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><strong>Argument</strong></p></td>
+<td><p><strong>Description</strong></p></td>
+</tr>
+<tr class="row-even"><td><p>expiration</p></td>
+<td><p>Optional integer. Direct access URL expiration time in minutes.
+(The default is 1440 ie. 24 hours)</p></td>
+</tr>
+<tr class="row-odd"><td><p>gis</p></td>
+<td><p>Keyword only parameter. Optional GIS. The GIS on which this function runs.
+If not specified, the active GIS is used.</p></td>
+</tr>
+</tbody>
+</table>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>String. Direct Access URL</p>
+</dd>
+</dl>
+</dd></dl>
+
+</div>
+<div class="section" id="upload-imagery-to-agol-userstore">
+<h2>upload_imagery_to_agol_userstore<a class="headerlink" href="#upload-imagery-to-agol-userstore" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt id="arcgis.raster.utils.upload_imagery_to_agol_userstore">
+<code class="sig-prename descclassname">arcgis.raster.utils.</code><code class="sig-name descname">upload_imagery_to_agol_userstore</code><span class="sig-paren">(</span><em class="sig-param">files</em>, <em class="sig-param">direct_access_url=None</em>, <em class="sig-param">auto_renew=True</em>, <em class="sig-param">upload_properties=None</em>, <em class="sig-param">*</em>, <em class="sig-param">gis=None</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.raster.utils.upload_imagery_to_agol_userstore" title="Permalink to this definition">¶</a></dt>
+<dd><p>Uploads file/files to the user’s rasterstore on ArcGIS Online and returns the list of urls.</p>
+<p>The list of urls can then be used with <a class="reference internal" href="arcgis.raster.analytics.html#arcgis.raster.analytics.copy_raster" title="arcgis.raster.analytics.copy_raster"><code class="xref py py-meth docutils literal notranslate"><span class="pre">arcgis.raster.analytics.copy_raster()</span></code></a> or <a class="reference internal" href="arcgis.raster.analytics.html#arcgis.raster.analytics.create_image_collection" title="arcgis.raster.analytics.create_image_collection"><code class="xref py py-meth docutils literal notranslate"><span class="pre">arcgis.raster.analytics.create_image_collection()</span></code></a>
+method to create imagery layers on ArcGIS Online.</p>
+<p>For this functionality to work, Azure library packages for Python (Azure SDK for Python - azure-storage-blob: 12.1&lt;= version &lt;=12.8)
+needs to be pre-installed. Refer <a class="reference external" href="https://docs.microsoft.com/en-us/azure/developer/python/azure-sdk-install">https://docs.microsoft.com/en-us/azure/developer/python/azure-sdk-install</a></p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 5%" />
+<col style="width: 95%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><strong>Argument</strong></p></td>
+<td><p><strong>Description</strong></p></td>
+</tr>
+<tr class="row-even"><td><p>files</p></td>
+<td><p>Required. It can be a folder, list of files or single file that needs to be uploaded.</p></td>
+</tr>
+<tr class="row-odd"><td><p>direct_access_url</p></td>
+<td><p>Optional string. The direct access url generated using generate_direct_access_url function.
+If not specified, the function would generate the direct access url internally which is valid for 1440 minutes.</p></td>
+</tr>
+<tr class="row-even"><td><p>auto_renew</p></td>
+<td><p>Optional boolean. If set to True, function would continue uploading
+until the entire data is uploaded by auto renewing the direct access url.
+(The default is True)</p></td>
+</tr>
+<tr class="row-odd"><td><p>upload_properties</p></td>
+<td><div class="line-block">
+<div class="line">Optional dictionary. <code class="docutils literal notranslate"><span class="pre">upload_properties</span></code> can be used to control specific                                              upload parameters.</div>
+</div>
+<p>Available options:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>“maxUploadConcurrency”: Optional integer. Maximum number of parallel connections                                                     to use for large uploads (when individual file/blob size exceeds 64MB).                                                     This is the <strong>max_concurrency</strong> parameter of the <a class="reference external" href="https://docs.microsoft.com/en-us/python/api/azure-storage-blob/azure.storage.blob.blobclient?view=azure-python#upload-blob-data--blob-type--blobtype-blockblob---blockblob----length-none--metadata-none----kwargs-">BlobClient.upload_blob()</a> method.                                                     (The default is 6)</p></li>
+<li><p>“maxWorkerThreads”: Optional integer. Maximum number of threads to execute asynchronously                                                     when uploading multiple files. This is the <strong>max_workers</strong> parameter of the <a class="reference external" href="https://docs.python.org/3/library/concurrent.futures.html#concurrent.futures.ThreadPoolExecutor">ThreadPoolExecutor()</a> class.                                                     (The default is None)</p></li>
+<li><p>“displayProgress”: Optional boolean. If set to True, a progress bar will be                                                     displayed for tracking the progress of the uploads to user’s rasterstore.                                                     (The default is False)</p></li>
+</ul>
+<dl class="simple">
+<dt>Example:</dt><dd><p>{“maxUploadConcurrency”:8, “maxWorkerThreads”:20, “displayProgress”:True}</p>
+</dd>
+</dl>
+</div></blockquote>
+</td>
+</tr>
+<tr class="row-even"><td><p>gis</p></td>
+<td><p>Keyword only parameter. Optional GIS. The GIS on which this function runs.
+If not specified, the active GIS is used.</p></td>
+</tr>
+</tbody>
+</table>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>List of file paths.</p>
+</dd>
+</dl>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Usage Example: Generates an expirable direct access url and uploads files to the user&#39;s raster store.</span>
+
+<span class="n">sas_url</span> <span class="o">=</span> <span class="n">generate_direct_access_url</span><span class="p">(</span><span class="n">expiration</span><span class="o">=</span><span class="mi">180</span><span class="p">,</span> <span class="n">gis</span><span class="o">=</span><span class="n">gis</span><span class="p">)</span>
+
+<span class="n">uploaded_imagery</span> <span class="o">=</span> <span class="n">upload_imagery_to_agol_userstore</span><span class="p">(</span><span class="n">files</span><span class="o">=</span><span class="sa">r</span><span class="s2">&quot;/path/to/data&quot;</span><span class="p">,</span> 
+                                                    <span class="n">direct_access_url</span><span class="o">=</span><span class="n">sas_url</span><span class="p">,</span>
+                                                    <span class="n">upload_properties</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;displayProgress&quot;</span><span class="p">:</span><span class="kc">True</span><span class="p">},</span>
+                                                    <span class="n">gis</span><span class="o">=</span><span class="n">gis</span>
+                                                    <span class="p">)</span>
+
+<span class="c1"># Following snippet executes the copy_raster() function on the uploaded imagery to create imagery layer item on ArcGIS Online.</span>
+
+<span class="n">copy_raster_op</span> <span class="o">=</span> <span class="n">copy_raster</span><span class="p">(</span><span class="n">input_raster</span><span class="o">=</span><span class="n">uploaded_imagery</span><span class="p">,</span>
+                             <span class="n">raster_type_name</span><span class="o">=</span><span class="s2">&quot;Raster Dataset&quot;</span><span class="p">,</span>
+                             <span class="n">output_name</span><span class="o">=</span><span class="s2">&quot;output_layer&quot;</span><span class="p">,</span>
+                             <span class="n">gis</span><span class="o">=</span><span class="n">gis</span><span class="p">)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+</div>
+</div>
+
+
+
+           </div>
+           
+          </div>
+          <footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+        <a href="arcgis.network.toc.html" class="btn btn-neutral float-right" title="arcgis.network module" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="arcgis.raster.functions.RFT.html" class="btn btn-neutral float-left" title="arcgis.raster.functions.RFT" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &#169; Copyright 2016-2021, Esri.
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+    Options v: 1.9
+
+  <div class="rst-versions" data-toggle="rst-versions" role="note" aria-label="versions">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      <span class="fa fa-book"> Pick an earlier version</span>
+      v: 1.9
+      <span class="fa fa-caret-down"></span>
+    </span>
+    <div class="rst-other-versions">
+      
+      
+      <dl>
+        <dt>Versions</dt>
+        
+          
+          <dd><a href="1.8.5/">1.8.5</a></dd>
+          
+        
+          
+          <dd><a href="1.8.4/">1.8.4</a></dd>
+          
+        
+          
+          <dd><a href="1.8.3/">1.8.3</a></dd>
+          
+        
+          
+          <dd><a href="1.8.2/">1.8.2</a></dd>
+          
+        
+          
+          <dd><a href="1.8.1/">1.8.1</a></dd>
+          
+        
+          
+          <dd><a href="1.8.0/">1.8.0</a></dd>
+          
+        
+          
+          <dd><a href="1.7.1/">1.7.1</a></dd>
+          
+        
+          
+          <dd><a href="1.7.0/">1.7.0</a></dd>
+          
+        
+          
+          <dd><a href="1.6.2/">1.6.2</a></dd>
+          
+        
+          
+          <dd><a href="1.6.1/">1.6.1</a></dd>
+          
+        
+          
+          <dd><a href="1.6.0/">1.6.0</a></dd>
+          
+        
+          
+          <dd><a href="1.5.2/">1.5.2</a></dd>
+          
+        
+          
+          <dd><a href="1.5.1/">1.5.1</a></dd>
+          
+        
+          
+          <dd><a href="1.5.0/">1.5.0</a></dd>
+          
+        
+          
+          <dd><a href="1.4.2/">1.4.2</a></dd>
+          
+        
+          
+          <dd><a href="1.4.1/">1.4.1</a></dd>
+          
+        
+          
+          <dd><a href="1.4.0/">1.4.0</a></dd>
+          
+        
+          
+          <dd><a href="1.3.0/">1.3.0</a></dd>
+          
+        
+          
+          <dd><a href="1.2.5/">1.2.5</a></dd>
+          
+        
+          
+          <dd><a href="1.2.4/">1.2.4</a></dd>
+          
+        
+          
+          <dd><a href="1.2.3/">1.2.3</a></dd>
+          
+        
+          
+          <dd><a href="1.2.2/">1.2.2</a></dd>
+          
+        
+          
+          <dd><a href="1.2.1/">1.2.1</a></dd>
+          
+        
+          
+          <dd><a href="1.2.0/">1.2.0</a></dd>
+          
+        
+          
+          <dd><a href="1.1.0/">1.1.0</a></dd>
+          
+        
+          
+          <dd><a href="1.0.1/">1.0.1</a></dd>
+          
+        
+          
+          <dd><a href="1.0.0/">1.0.0</a></dd>
+          
+        
+          
+          <dd><a href="0.3.0/">0.3.0</a></dd>
+          
+        
+          
+          <dd><a href="0.2.0/">0.2.0</a></dd>
+          
+        
+          
+          <dd><a href="0.1.0/">0.1.0</a></dd>
+          
+        
+      </dl>
+      
+      
+      
+    </div>
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

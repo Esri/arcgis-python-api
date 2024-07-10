@@ -1,0 +1,109 @@
+arcgis.apps.dashboard module
+=======================
+
+.. automodule:: arcgis.apps.dashboard
+
+The :class:`~arcgis.apps.dashboard.Dashboard` is the main entry point into the Dashboard module.
+
+
+Dashboard
+--------------------------
+.. autoclass:: arcgis.apps.dashboard.Dashboard
+    :members:
+    :undoc-members:
+
+Details
+--------------------------
+.. autoclass:: arcgis.apps.dashboard.Details
+    :members:
+    :undoc-members:
+
+EmbeddedContent
+--------------------------
+.. autoclass:: arcgis.apps.dashboard.EmbeddedContent
+    :members:
+    :undoc-members:
+
+Gauge
+--------------------------
+.. autoclass:: arcgis.apps.dashboard.Gauge
+    :members:
+    :undoc-members:
+
+Header
+--------------------------
+.. autoclass:: arcgis.apps.dashboard.Header
+    :members:
+    :undoc-members:
+
+Indicator
+--------------------------
+.. autoclass:: arcgis.apps.dashboard.Indicator
+    :members:
+    :undoc-members:
+
+List
+--------------------------
+.. autoclass:: arcgis.apps.dashboard.List
+    :members:
+    :undoc-members:
+
+MapLegend
+--------------------------
+.. autoclass:: arcgis.apps.dashboard.MapLegend
+    :members:
+    :undoc-members:
+
+PieChart
+--------------------------
+.. autoclass:: arcgis.apps.dashboard.PieChart
+    :members:
+    :undoc-members:
+
+RichText
+--------------------------
+.. autoclass:: arcgis.apps.dashboard.RichText
+    :members:
+    :undoc-members:
+
+SerialChart
+--------------------------
+.. autoclass:: arcgis.apps.dashboard.SerialChart
+    :members:
+    :undoc-members:
+
+SidePanel
+--------------------------
+.. autoclass:: arcgis.apps.dashboard.SidePanel
+    :members:
+    :undoc-members:
+
+DatePicker
+--------------------------
+.. autoclass:: arcgis.apps.dashboard.DatePicker
+    :members:
+    :undoc-members:
+
+CategorySelector
+--------------------------
+.. autoclass:: arcgis.apps.dashboard.CategorySelector
+    :members:
+    :undoc-members:
+
+NumberSelector
+--------------------------
+.. autoclass:: arcgis.apps.dashboard.NumberSelector
+    :members:
+    :undoc-members:
+
+add_row
+--------------------------
+.. autoclass:: arcgis.apps.dashboard.add_row
+    :members:
+    :undoc-members:
+
+add_column
+--------------------------
+.. autoclass:: arcgis.apps.dashboard.add_column
+    :members:
+    :undoc-members:

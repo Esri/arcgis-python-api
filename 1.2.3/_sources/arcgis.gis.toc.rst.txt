@@ -1,0 +1,104 @@
+arcgis.gis module
+=================
+
+.. automodule:: arcgis.gis
+
+GIS
+--------------
+.. autoclass:: arcgis.gis.GIS
+    :members:
+    :undoc-members:
+
+Item
+---------------
+.. autoclass:: arcgis.gis.Item
+    :members:
+    :undoc-members:
+    :show-inheritance:
+
+User
+--------------
+.. autoclass:: arcgis.gis.User
+    :members:
+    :undoc-members:
+    :show-inheritance:
+
+
+Group
+----------------
+.. autoclass:: arcgis.gis.Group
+    :members:
+    :undoc-members:
+    :show-inheritance:
+
+Datastore
+--------------------
+.. autoclass:: arcgis.gis.Datastore
+    :members:
+    :undoc-members:
+    :show-inheritance:
+
+Role
+--------------
+.. autoclass:: arcgis.gis.Role
+    :members:
+    :undoc-members:
+    :show-inheritance:
+
+Layer
+--------------
+.. autoclass:: arcgis.gis.Layer
+    :members:
+    :undoc-members:
+    :show-inheritance:
+    
+ContentManager
+-------------------------
+.. autoclass:: arcgis.gis.ContentManager
+    :members:
+    :undoc-members:
+    
+UserManager
+----------------------
+.. autoclass:: arcgis.gis.UserManager
+    :members:
+    :undoc-members:
+    :show-inheritance:
+
+GroupManager
+-----------------------
+.. autoclass:: arcgis.gis.GroupManager
+    :members:
+    :undoc-members:
+    :show-inheritance:
+    
+DatastoreManager
+---------------------------
+.. autoclass:: arcgis.gis.DatastoreManager
+    :members:
+    :undoc-members:
+    :show-inheritance:
+    
+RoleManager
+---------------------------
+.. autoclass:: arcgis.gis.RoleManager
+    :members:
+    :undoc-members:
+    :show-inheritance:
+
+ResourceManager
+---------------------------
+.. autoclass:: arcgis.gis.ResourceManager
+    :members:
+    :undoc-members:
+    :show-inheritance:
+
+
+Submodules
+--------------
+.. toctree::
+   :maxdepth: 3
+
+   arcgis.gis.admin
+   arcgis.gis.server
+   

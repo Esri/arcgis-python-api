@@ -1,0 +1,22 @@
+arcgis.features.manage_data module
+==================================
+
+.. automodule:: arcgis.features.manage_data
+
+
+dissolve_boundaries
+--------------
+.. automethod:: arcgis.features.manage_data.dissolve_boundaries
+
+extract_data
+--------------
+.. automethod:: arcgis.features.manage_data.extract_data
+
+merge_layers
+--------------
+.. automethod:: arcgis.features.manage_data.merge_layers
+
+overlay_layers
+--------------
+.. automethod:: arcgis.features.manage_data.overlay_layers
+

@@ -1,0 +1,1301 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>arcgis.raster.orthomapping module &mdash; arcgis 1.6.0 documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="_static/theme_overrides.css" type="text/css" />
+
+  
+  
+    <link rel="shortcut icon" href="_static/favicon.ico"/>
+  
+  
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/doctools.js"></script>
+        <script src="_static/language_data.js"></script>
+        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="arcgis.network module" href="arcgis.network.toc.html" />
+    <link rel="prev" title="arcgis.raster.functions.gbl module" href="arcgis.raster.functions.gbl.html" />
+<!-- This code block is inserted close near the <head> tag. See http://bit.ly/2BHUQzB -->
+<!-- The point of this code block is to send us google analytics on website views -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-NJGGV5');</script>
+ 
+
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="index.html" class="icon icon-home" alt="Documentation Home"> arcgis
+          
+
+          
+            
+            <img src="_static/python_api_logo.png" class="logo" alt="Logo"/>
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1.6.0
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">arcgis</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="arcgis.gis.toc.html">arcgis.gis module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="arcgis.env.html">arcgis.env module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="arcgis.features.toc.html">arcgis.features module</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="arcgis.raster.toc.html">arcgis.raster module</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="arcgis.raster.toc.html#imagerylayer">ImageryLayer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.raster.toc.html#rastercatalogitem">RasterCatalogItem</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.raster.toc.html#rastermanager">RasterManager</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.raster.toc.html#imagerytilemanager">ImageryTileManager</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="arcgis.raster.toc.html#submodules">Submodules</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="arcgis.raster.analytics.html">arcgis.raster.analytics module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="arcgis.raster.functions.html">arcgis.raster.functions module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="arcgis.raster.functions.gbl.html">arcgis.raster.functions.gbl module</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">arcgis.raster.orthomapping module</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#is-supported">is_supported</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#compute-sensor-model">compute_sensor_model</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#alter-processing-states">alter_processing_states</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#get-processing-states">get_processing_states</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#match-control-points">match_control_points</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#color-correction">color_correction</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#compute-control-points">compute_control_points</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#compute-seamlines">compute_seamlines</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#edit-control-points">edit_control_points</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#generate-dem">generate_dem</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#generate-orthomosaic">generate_orthomosaic</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#generate-report">generate_report</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#query-camera-info">query_camera_info</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#query-control-points">query_control_points</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#reset-image-collection">reset_image_collection</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#compute-spatial-reference-factory-code">compute_spatial_reference_factory_code</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="arcgis.network.toc.html">arcgis.network module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="arcgis.geoanalytics.toc.html">arcgis.geoanalytics module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="arcgis.geocoding.html">arcgis.geocoding module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="arcgis.geoenrichment.html">arcgis.geoenrichment module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="arcgis.geometry.html">arcgis.geometry module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="arcgis.geoprocessing.html">arcgis.geoprocessing module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="arcgis.mapping.html">arcgis.mapping module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="arcgis.realtime.html">arcgis.realtime module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="arcgis.schematics.html">arcgis.schematics module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="arcgis.widgets.html">arcgis.widgets module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="arcgis.apps.html">arcgis.apps module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="arcgis.learn.html">arcgis.learn module</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">arcgis</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="arcgis.raster.toc.html">arcgis.raster module</a> &raquo;</li>
+        
+      <li>arcgis.raster.orthomapping module</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+<!-- This code block is inserted close near the <body> tag. See http://bit.ly/2BHUQzB -->
+<!-- The point of this code block is to send us google analytics on website views -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NJGGV5"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+
+  <div class="section" id="arcgis-raster-orthomapping-module">
+<h1>arcgis.raster.orthomapping module<a class="headerlink" href="#arcgis-raster-orthomapping-module" title="Permalink to this headline">¶</a></h1>
+<span class="target" id="module-arcgis.raster.orthomapping"></span><p>The orthomapping python API allows automating orthomapping tasks in the server environment.</p>
+<p>For more information about orthomapping workflows in ArcGIS, please visit the help documentation at 
+<a class="reference external" href="http://desktop.arcgis.com/en/arcmap/10.4/manage-data/raster-and-images/block-adjustment-for-mosaic-datasets.htm">http://desktop.arcgis.com/en/arcmap/10.4/manage-data/raster-and-images/block-adjustment-for-mosaic-datasets.htm</a>.</p>
+<div class="section" id="is-supported">
+<h2>is_supported<a class="headerlink" href="#is-supported" title="Permalink to this headline">¶</a></h2>
+<dl class="method">
+<dt id="arcgis.raster.orthomapping.is_supported">
+<code class="sig-prename descclassname">orthomapping.</code><code class="sig-name descname">is_supported</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.raster.orthomapping.is_supported" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns True if the GIS supports orthomapping. If a gis isn’t specified,
+checks if arcgis.env.active_gis supports raster analytics</p>
+</dd></dl>
+
+</div>
+<div class="section" id="compute-sensor-model">
+<h2>compute_sensor_model<a class="headerlink" href="#compute-sensor-model" title="Permalink to this headline">¶</a></h2>
+<dl class="method">
+<dt id="arcgis.raster.orthomapping.compute_sensor_model">
+<code class="sig-prename descclassname">orthomapping.</code><code class="sig-name descname">compute_sensor_model</code><span class="sig-paren">(</span><em class="sig-param">mode='QUICK'</em>, <em class="sig-param">location_accuracy='High'</em>, <em class="sig-param">context=None</em>, <em class="sig-param">*</em>, <em class="sig-param">gis=None</em>, <em class="sig-param">**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.raster.orthomapping.compute_sensor_model" title="Permalink to this definition">¶</a></dt>
+<dd><p>compute_sensor_model computes the bundle block adjustment for the image collection 
+and applies the frame xform to the images. It will also generate the control point 
+table, solution table, solution points table and flight path table. 
+These tables will not be published as Portal items.</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 16%" />
+<col style="width: 84%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><strong>Argument</strong></p></td>
+<td><p><strong>Description</strong></p></td>
+</tr>
+<tr class="row-even"><td><p>image_collection</p></td>
+<td><p>Required, the input image collection on which to compute
+the sensor model.
+The image_collection can be a portal Item or an image service URL or a URI</p>
+<p>The image_collection must exist.</p>
+</td>
+</tr>
+<tr class="row-odd"><td><p>mode</p></td>
+<td><p>Optional string.  the mode to be used for bundle block adjustment
+Only the following modes are supported:</p>
+<ul class="simple">
+<li><p>‘Quick’ : Computes tie points and adjustment at 8x of the source imagery resolution</p></li>
+<li><p>‘Full’  : adjust the images in Quick mode then at 1x of the source imagery resolution</p></li>
+<li><p>‘Refine’ : adjust the image at 1x of the source imagery resolution</p></li>
+</ul>
+<p>By default, ‘Quick’ mode is applied to compute the sensor model.</p>
+</td>
+</tr>
+<tr class="row-even"><td><p>location_acuracy</p></td>
+<td><p>Optional string. this option allows users to specify the GPS location accuracy level of the
+source image. It determines how far the underline tool will search for neighboring
+matching images, then calculate tie points and compute adjustments.</p>
+<p>Possible values for location_accuracy are:</p>
+<ul class="simple">
+<li><p>‘High’    : GPS accuracy is 0 to 10 meters, and the tool uses a maximum of 4 by 3 images</p></li>
+<li><p>‘Medium’  : GPS accuracy of 10 to 20 meters, and the tool uses a maximum of 4 by 6 images</p></li>
+<li><p>‘Low’     : GPS accuracy of 20 to 50 meters, and the tool uses a maximum of 4 by 12 images</p></li>
+<li><p>‘Verylow’ : GPS accuracy is more than 50 meters, and the tool uses a maximum of 4 by 20 images</p></li>
+</ul>
+<p>The default location_accuracy is ‘High’</p>
+</td>
+</tr>
+<tr class="row-odd"><td><p>context</p></td>
+<td><p>Optional dictionary. The context parameter is used to configure additional client settings
+for block adjustment. The supported configurable parameters are for compute mosaic dataset
+candidates after the adjustment.</p>
+<p>Example:
+{
+“computeCandidate”: False,
+“maxoverlap”: 0.6,
+“maxloss”: 0.05,
+}</p>
+</td>
+</tr>
+<tr class="row-even"><td><p>gis</p></td>
+<td><p>Optional GIS. The GIS on which this tool runs. If not specified, the active GIS is used.</p></td>
+</tr>
+</tbody>
+</table>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>The imagery layer url</p>
+</dd>
+</dl>
+</dd></dl>
+
+</div>
+<div class="section" id="alter-processing-states">
+<h2>alter_processing_states<a class="headerlink" href="#alter-processing-states" title="Permalink to this headline">¶</a></h2>
+<dl class="method">
+<dt id="arcgis.raster.orthomapping.alter_processing_states">
+<code class="sig-prename descclassname">orthomapping.</code><code class="sig-name descname">alter_processing_states</code><span class="sig-paren">(</span><em class="sig-param">new_states</em>, <em class="sig-param">*</em>, <em class="sig-param">gis=None</em>, <em class="sig-param">**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.raster.orthomapping.alter_processing_states" title="Permalink to this definition">¶</a></dt>
+<dd><p>Alter the processing states of the image collection.
+The states are stored as key property “Orthomapping”. 
+The content of the state is a dictionary including 
+several properties which can be set based on the process 
+done on the image collection.</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 17%" />
+<col style="width: 83%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><strong>Argument</strong></p></td>
+<td><p><strong>Description</strong></p></td>
+</tr>
+<tr class="row-even"><td><p>image_collection</p></td>
+<td><p>Required, This is the image collection that will be adjusted.</p>
+<p>The image_collection can be a portal Item or an image service URL or URI</p>
+<p>The image_collection must exist.</p>
+</td>
+</tr>
+<tr class="row-odd"><td><p>new_states</p></td>
+<td><p>Required dictionary. The state to set on the image_collection</p>
+<p>This a dictionary of states that should be set on the image collection
+The new states that can be set on the image collection are:
+blockadjustment, dem, gcp, seamlines, colorcorrection, adjust_index, imagetype</p>
+<p>Example:
+{“blockadjustment”: “raw”,</p>
+<blockquote>
+<div><p>“dem”: “Dense_Natual_Neighbor”,
+“seamlines”:”VORONOI”,
+“colorcorrection”:”SingleColor”,
+“imagetype”: “UAV/UAS”,
+“adjust_index”: 0}</p>
+</div></blockquote>
+</td>
+</tr>
+<tr class="row-even"><td><p>gis</p></td>
+<td><p>Optional GIS. The GIS on which this tool runs. If not specified, the active GIS is used.</p></td>
+</tr>
+</tbody>
+</table>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>The result will be the newly set states dictionary</p>
+</dd>
+</dl>
+</dd></dl>
+
+</div>
+<div class="section" id="get-processing-states">
+<h2>get_processing_states<a class="headerlink" href="#get-processing-states" title="Permalink to this headline">¶</a></h2>
+<dl class="method">
+<dt id="arcgis.raster.orthomapping.get_processing_states">
+<code class="sig-prename descclassname">orthomapping.</code><code class="sig-name descname">get_processing_states</code><span class="sig-paren">(</span><em class="sig-param">*</em>, <em class="sig-param">gis=None</em>, <em class="sig-param">**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.raster.orthomapping.get_processing_states" title="Permalink to this definition">¶</a></dt>
+<dd><p>Retrieve the processing states of the image collection</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 17%" />
+<col style="width: 83%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><strong>Argument</strong></p></td>
+<td><p><strong>Description</strong></p></td>
+</tr>
+<tr class="row-even"><td><p>image_collection</p></td>
+<td><p>Required, This is the image collection that will be adjusted.</p>
+<p>The image_collection can be a portal Item or an image service URL or URI</p>
+<p>The image_collection must exist.</p>
+</td>
+</tr>
+<tr class="row-odd"><td><p>gis</p></td>
+<td><p>Optional GIS. The GIS on which this tool runs. If not specified, the active GIS is used.</p></td>
+</tr>
+</tbody>
+</table>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>The result will be the newly set states dictionary</p>
+</dd>
+</dl>
+</dd></dl>
+
+</div>
+<div class="section" id="match-control-points">
+<h2>match_control_points<a class="headerlink" href="#match-control-points" title="Permalink to this headline">¶</a></h2>
+<dl class="method">
+<dt id="arcgis.raster.orthomapping.match_control_points">
+<code class="sig-prename descclassname">orthomapping.</code><code class="sig-name descname">match_control_points</code><span class="sig-paren">(</span><em class="sig-param">control_points</em>, <em class="sig-param">similarity=None</em>, <em class="sig-param">context=None</em>, <em class="sig-param">*</em>, <em class="sig-param">gis=None</em>, <em class="sig-param">**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.raster.orthomapping.match_control_points" title="Permalink to this definition">¶</a></dt>
+<dd><p>The match_control_points is a function that takes a collection of ground control points
+as input (control points to be specified as a list of dictionary objects), and each of the 
+ground control points needs at least one matching tie point in the control point sets. 
+The function will compute the remaining matching tie points for all control point sets.</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 15%" />
+<col style="width: 85%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><strong>Argument</strong></p></td>
+<td><p><strong>Description</strong></p></td>
+</tr>
+<tr class="row-even"><td><p>image_collection</p></td>
+<td><p>Required, the input image collection that will be adjusted.</p>
+<p>The image_collection can be a portal Item or an image service URL or a URI</p>
+<p>The image_collection must exist.</p>
+</td>
+</tr>
+<tr class="row-odd"><td><p>control_points</p></td>
+<td><p>Required, a list of control point sets objects.</p>
+<p>The schema of control points follows the schema
+of the mosaic dataset control point table.</p>
+<p>The control point object should contain the point geometry, pointID, type, status and the
+imagePoints. (the imagePoints attribute inside the control points object lists the imageIDs)</p>
+<p>– pointID (int) - The ID of the point within the control point table.</p>
+<dl class="simple">
+<dt>– type (int)    - The type of the control point as determined by its numeric value</dt><dd><p>1: Tie Point
+2: Ground Control Point.
+3: Check Point</p>
+</dd>
+<dt>– status (int)  - The status of the point. A value of 0 indicates that the point will</dt><dd><p>not be used in computation. A non-zero value indicates otherwise.</p>
+</dd>
+</dl>
+<p>– imageID (int) - Image identification using the ObjectID from the mosaic dataset footprint table.</p>
+<p>Example:
+[{
+“status”: 1,
+“type”: 2,
+“x”: -117.0926538,
+“y”: 34.00704253,
+“z”: 634.2175,
+“spatialReference”: {</p>
+<blockquote>
+<div><p>“wkid”: 4326</p>
+</div></blockquote>
+<p>}, // default WGS84
+“imagePointSpatialReference”: {}, // default ICS
+“pointId”: 1,
+“xyAccuracy”: “0.008602325”,
+“zAccuracy”: “0.015”,
+“imagePoints”: [{</p>
+<blockquote>
+<div><p>“imageID”: 1,
+“x”: 2986.5435987557084,
+“y”: -2042.5193648409431,
+“u”: 3057.4580682832734,
+“v”: -1909.1506872159698</p>
+</div></blockquote>
+<p>},
+{</p>
+<blockquote>
+<div><p>“imageID”: 2,
+“x”: 1838.2814361401108,
+“y”: -2594.5280063817972,
+“u”: 3059.4079724863363,
+“v”: -2961.292545463305</p>
+</div></blockquote>
+<p>},
+{</p>
+<blockquote>
+<div><p>“imageID”: 12,
+“x”: 5332.855578204663,
+“y”: -2533.2805429751907,
+“u”: 614.2338676573158,
+“v”: -165.10836768947297</p>
+</div></blockquote>
+<p>},
+{</p>
+<blockquote>
+<div><p>“imageID”: 13,
+“x”: 4932.0895715254455,
+“y”: -1833.8401744114287,
+“u”: 616.9396928182223,
+“v”: -1243.1445126959693</p>
+</div></blockquote>
+<p>}]
+},
+…
+…
+]</p>
+</td>
+</tr>
+<tr class="row-even"><td><p>similarity</p></td>
+<td><p>Optional string. Choose the tolerance level for your control point matching.</p>
+<p>Low- The similarity tolerance for finding control points will be low.
+This option will produce the most control points,
+but some may have a higher level of error.</p>
+<p>Medium - The similarity tolerance for finding control points will be medium.</p>
+<p>High - The similarity tolerance for finding control points will be high.
+This option will produce the least number of control points,
+but each matching pair will have a lower level of error. This is the default.</p>
+</td>
+</tr>
+<tr class="row-odd"><td><p>context</p></td>
+<td><p>Optional dictionary.Additional settings such as the input control points
+spatial reference can be specified here.</p>
+<p>For example:
+{“groundControlPointsSpatialReference”: {“wkid”: 3459}, “imagePointSpatialReference”: {“wkid”: 3459}}</p>
+<p>Note: The ground control points spatial reference and image point spatial reference
+spatial reference set in the context parameter is to decide the returned point set’s
+ground control points spatial reference and image point spatial reference.
+If these two parameters are not set here, the tool will use the spatial reference
+defined in the input point set. And if no spatial reference is defined in the point set,
+then the default ground control points coordinates are in lon/lat and image points
+coordinates are in image coordinate system.</p>
+</td>
+</tr>
+<tr class="row-even"><td><p>gis</p></td>
+<td><p>Optional GIS. The GIS on which this tool runs. If not specified, the active GIS is used.</p></td>
+</tr>
+</tbody>
+</table>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>A dictionary object</p>
+</dd>
+</dl>
+</dd></dl>
+
+</div>
+<div class="section" id="color-correction">
+<h2>color_correction<a class="headerlink" href="#color-correction" title="Permalink to this headline">¶</a></h2>
+<dl class="method">
+<dt id="arcgis.raster.orthomapping.color_correction">
+<code class="sig-prename descclassname">orthomapping.</code><code class="sig-name descname">color_correction</code><span class="sig-paren">(</span><em class="sig-param">color_correction_method</em>, <em class="sig-param">dodging_surface_type</em>, <em class="sig-param">target_image=None</em>, <em class="sig-param">context=None</em>, <em class="sig-param">*</em>, <em class="sig-param">gis=None</em>, <em class="sig-param">**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.raster.orthomapping.color_correction" title="Permalink to this definition">¶</a></dt>
+<dd><p>Color balance the image collection. 
+Refer to the “Color Balance Mosaic Dataset” GP tool for 
+documentation on color balancing mosaic datasets.
+<a class="reference external" href="http://pro.arcgis.com/en/pro-app/tool-reference/data-management/color-balance-mosaic-dataset.htm">http://pro.arcgis.com/en/pro-app/tool-reference/data-management/color-balance-mosaic-dataset.htm</a></p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 29%" />
+<col style="width: 71%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><strong>Argument</strong></p></td>
+<td><p><strong>Description</strong></p></td>
+</tr>
+<tr class="row-even"><td><p>image_collection</p></td>
+<td><p>Required. This is the image collection that will be adjusted.</p>
+<p>The image_collection can be a portal Item or an image service URL or a URI</p>
+<p>The image_collection must exist.</p>
+</td>
+</tr>
+<tr class="row-odd"><td><p>color_correction_method</p></td>
+<td><p>Required string. This is the method that will be used for color
+correction computation. The available options are:</p>
+<p>Dodging-Change each pixel’s value toward a target color.
+With this technique, you must also choose
+the type of target color surface, which
+affects the target color. Dodging tends
+to give the best result in most cases.</p>
+<p>Histogram-Change each pixel’s value according
+to its relationship with a target histogram.
+The target histogram can be derived from
+all of the rasters, or you can specify a
+raster. This technique works well when
+all of the rasters have a similar histogram.</p>
+<p>Standard_Deviation-Change each of the pixel’s
+values according to its relationship with the
+histogram of the target raster, within one
+standard deviation. The standard deviation can be
+calculated from all of the rasters in the mosaic
+dataset, or you can specify a target raster.
+This technique works best when all of the
+rasters have normal distributions.</p>
+</td>
+</tr>
+<tr class="row-even"><td><p>dodging_surface_type</p></td>
+<td><p>Required string.When using the Dodging balance method,
+each pixel needs a target color, which is determined by
+the surface type.</p>
+<p>Single_Color-Use when there are only a small
+number of raster datasets and a few different
+types of ground objects. If there are too many
+raster datasets or too many types of ground
+surfaces, the output color may become blurred.
+All the pixels are altered toward a single
+color point-the average of all pixels.</p>
+<p>Color_Grid- Use when you have a large number
+of raster datasets, or areas with a large
+number of diverse ground objects. Pixels
+are altered toward multiple target colors,
+which are distributed across the mosaic dataset.</p>
+<p>First_Order- This technique tends to create a
+smoother color change and uses less storage in
+the auxiliary table, but it may take longer to
+process compared to the color grid surface.
+All pixels are altered toward many points obtained
+from the two-dimensional polynomial slanted plane.</p>
+<p>Second_Order-This technique tends to create a
+smoother color change and uses less storage in
+the auxiliary table, but it may take longer to
+process compared to the color grid surface.
+All input pixels are altered toward a set of
+multiple points obtained from the two-dimensional
+polynomial parabolic surface.</p>
+<p>Third_Order-This technique tends to create a
+smoother color change and uses less storage in
+the auxiliary table, but it may take longer to
+process compared to the color grid surface.
+All input pixels are altered toward multiple
+points obtained from the cubic surface.</p>
+</td>
+</tr>
+<tr class="row-odd"><td><p>target_image</p></td>
+<td><p>Optional. The image service you want to use to color balance
+the images in the image collection.
+It can be a portal Item or an image service URL or a URI</p></td>
+</tr>
+<tr class="row-even"><td><p>context</p></td>
+<td><p>Optional dictionary. It contains additional settings that allows
+users to customize the statistics computation settings.</p>
+<p>Example:
+{“skipRows”: 10, “skipCols”: 10, “reCalculateStats”: “OVERWRITE”}</p>
+</td>
+</tr>
+<tr class="row-odd"><td><p>gis</p></td>
+<td><p>Optional GIS. the GIS on which this tool runs. If not specified, the active GIS is used.</p></td>
+</tr>
+</tbody>
+</table>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>The imagery layer url</p>
+</dd>
+</dl>
+</dd></dl>
+
+</div>
+<div class="section" id="compute-control-points">
+<h2>compute_control_points<a class="headerlink" href="#compute-control-points" title="Permalink to this headline">¶</a></h2>
+<dl class="method">
+<dt id="arcgis.raster.orthomapping.compute_control_points">
+<code class="sig-prename descclassname">orthomapping.</code><code class="sig-name descname">compute_control_points</code><span class="sig-paren">(</span><em class="sig-param">reference_image=None</em>, <em class="sig-param">image_location_accuracy='High'</em>, <em class="sig-param">context=None</em>, <em class="sig-param">*</em>, <em class="sig-param">gis=None</em>, <em class="sig-param">**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.raster.orthomapping.compute_control_points" title="Permalink to this definition">¶</a></dt>
+<dd><p>This service tool is used for computing matching control points between images
+within an image collection and/or matching control points between the image 
+collection images and the reference image.
+<a class="reference external" href="http://pro.arcgis.com/en/pro-app/tool-reference/data-management/compute-control-points.htm">http://pro.arcgis.com/en/pro-app/tool-reference/data-management/compute-control-points.htm</a></p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 29%" />
+<col style="width: 71%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><strong>Argument</strong></p></td>
+<td><p><strong>Description</strong></p></td>
+</tr>
+<tr class="row-even"><td><p>image_collection</p></td>
+<td><p>Required. This is the image collection that will be adjusted.</p>
+<p>The image_collection can be a portal Item or an image service URL or a URI</p>
+<p>The image_collection must exist.</p>
+</td>
+</tr>
+<tr class="row-odd"><td><p>reference_image</p></td>
+<td><p>This is the reference image service that can be used to generate ground control
+points set with the image service.
+It can be a portal Item or an image service URL or a URI</p></td>
+</tr>
+<tr class="row-even"><td><p>image_location_accuracy</p></td>
+<td><p>Optional string. This option allows users to specify the location accuracy of the
+imagery.
+VERYLOW, LOW, MEDIUM, HIGH</p>
+<dl class="simple">
+<dt>LOW-Images have a large shift and a large rotation (&gt; 5 degrees).</dt><dd><p>The SIFT algorithm will be used in the point matching computation.</p>
+</dd>
+<dt>MEDIUM-Images have a medium shift and a small rotation (&lt;5 degrees).</dt><dd><p>The Harris algorithm will be used in the point matching computation.</p>
+</dd>
+<dt>HIGH-Images have a small shift and a small rotation.</dt><dd><p>The Harris algorithm will be used in the point matching computation.</p>
+</dd>
+</dl>
+<p>Default is HIGH</p>
+</td>
+</tr>
+<tr class="row-odd"><td><p>context</p></td>
+<td><p>Optional dictionary. Context contains additional environment settings that affect
+output control points generation.
+{
+“pointSimilarity”:”MEDIUM”,
+“pointDensity”: “MEDIUM”,
+“pointDistribution”: “RANDOM”
+}</p></td>
+</tr>
+<tr class="row-even"><td><p>gis</p></td>
+<td><p>Optional GIS. the GIS on which this tool runs. If not specified, the active GIS is used.</p></td>
+</tr>
+</tbody>
+</table>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>The imagery layer url</p>
+</dd>
+</dl>
+</dd></dl>
+
+</div>
+<div class="section" id="compute-seamlines">
+<h2>compute_seamlines<a class="headerlink" href="#compute-seamlines" title="Permalink to this headline">¶</a></h2>
+<dl class="method">
+<dt id="arcgis.raster.orthomapping.compute_seamlines">
+<code class="sig-prename descclassname">orthomapping.</code><code class="sig-name descname">compute_seamlines</code><span class="sig-paren">(</span><em class="sig-param">seamlines_method</em>, <em class="sig-param">context=None</em>, <em class="sig-param">*</em>, <em class="sig-param">gis=None</em>, <em class="sig-param">**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.raster.orthomapping.compute_seamlines" title="Permalink to this definition">¶</a></dt>
+<dd><p>Compute seamlines on the image collection. This service tool is used to compute
+seamlines for the image collection, usually after the image collection has been
+block adjusted. Seamlines are helpful for generating the seamless mosaicked 
+display of overlapped images in image collection. The seamlines are computed
+only for candidates that will eventually be used for generating the result
+ortho-mosaicked image.  
+<a class="reference external" href="http://pro.arcgis.com/en/pro-app/tool-reference/data-management/build-seamlines.htm">http://pro.arcgis.com/en/pro-app/tool-reference/data-management/build-seamlines.htm</a></p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 16%" />
+<col style="width: 84%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><strong>Argument</strong></p></td>
+<td><p><strong>Description</strong></p></td>
+</tr>
+<tr class="row-even"><td><p>image_collection</p></td>
+<td><p>Required, the input image collection that will be adjusted.
+The image_collection can be a portal Item or an image service URL or a URI
+The image_collection must exist.</p></td>
+</tr>
+<tr class="row-odd"><td><p>seamlines_method</p></td>
+<td><p>Required string. These are supported methods for generated seamlines for the image collection.</p>
+<blockquote>
+<div><p>VORONOI-Generate seamlines using the area Voronoi diagram.</p>
+<p>DISPARITY-Generate seamlines based on the disparity images of stereo pairs.</p>
+<p>GEOMETRY - Generate seamlines for overlapping areas based on the intersection
+of footprints. Areas with no overlapping imagery will merge the footprints.</p>
+<p>RADIOMETRY - Generate seamlines based on the spectral patterns of features
+within the imagery.</p>
+<p>EDGE_DETECTION - Generate seamlines over intersecting areas based on the
+edges of features in the area.</p>
+<p>This method can avoid seamlines cutting through buildings.</p>
+</div></blockquote>
+</td>
+</tr>
+<tr class="row-even"><td><p>context</p></td>
+<td><p>Optional dictionary. Context contains additional settings that allows users to customize
+the seamlines generation.
+Example:
+{“minRegionSize”: 100,
+“pixelSize”: “”,
+“blendType”: “Both”,
+“blendWidth”: null,
+“blendUnit”: “Pixels”,
+“requestSizeType”: “Pixels”,
+“requestSize”: 1000,
+“minThinnessRatio”: 0.05,
+“maxSilverSize”: 20
+}</p>
+<p>Allowed keys are:
+“minRegionSize”, “pixelSize”, “blendType”, “blendWidth”,
+“blendUnit”, “requestSizeType”, “requestSize”,
+“minThinnessRatio”, “maxSilverSize”</p>
+</td>
+</tr>
+<tr class="row-odd"><td><p>gis</p></td>
+<td><p>Optional GIS. The GIS on which this tool runs. If not specified, the active GIS is used.</p></td>
+</tr>
+</tbody>
+</table>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>The Imagery layer url</p>
+</dd>
+</dl>
+</dd></dl>
+
+</div>
+<div class="section" id="edit-control-points">
+<h2>edit_control_points<a class="headerlink" href="#edit-control-points" title="Permalink to this headline">¶</a></h2>
+<dl class="method">
+<dt id="arcgis.raster.orthomapping.edit_control_points">
+<code class="sig-prename descclassname">orthomapping.</code><code class="sig-name descname">edit_control_points</code><span class="sig-paren">(</span><em class="sig-param">control_points</em>, <em class="sig-param">*</em>, <em class="sig-param">gis=None</em>, <em class="sig-param">**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.raster.orthomapping.edit_control_points" title="Permalink to this definition">¶</a></dt>
+<dd><p>This service can be used to append additional ground control point sets to
+the image collection’s control points. It is recommended that a ground control point (GCP) set 
+should contain one ground control point and multiple tie points. 
+The service tool can also be used to edit tie point sets. 
+The input control points dictionary will always replace the points in the tie points
+table if the point IDs already exist.</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 15%" />
+<col style="width: 85%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><strong>Argument</strong></p></td>
+<td><p><strong>Description</strong></p></td>
+</tr>
+<tr class="row-even"><td><p>image_collection</p></td>
+<td><p>Required.
+The image_collection can be a portal Item or an image service URL or a URI
+The image_collection must exist.</p></td>
+</tr>
+<tr class="row-odd"><td><p>control_points</p></td>
+<td><p>Required, a list of control point sets objects.</p>
+<p>The schema of control points follows the schema
+of the mosaic dataset control point table.</p>
+<p>The control point object should contain the point geometry, pointID, type, status and the
+imagePoints. (the imagePoints attribute inside the control points object lists the imageIDs)</p>
+<p>– pointID (int) - The ID of the point within the control point table.</p>
+<dl class="simple">
+<dt>– type (int)    - The type of the control point as determined by its numeric value</dt><dd><p>1: Tie Point
+2: Ground Control Point.
+3: Check Point</p>
+</dd>
+<dt>– status (int)  - The status of the point. A value of 0 indicates that the point will</dt><dd><p>not be used in computation. A non-zero value indicates otherwise.</p>
+</dd>
+</dl>
+<p>– imageID (int) - Image identification using the ObjectID from the mosaic dataset footprint table.</p>
+<p>Example:
+[{
+“status”: 1,
+“type”: 2,
+“x”: -117.0926538,
+“y”: 34.00704253,
+“z”: 634.2175,
+“spatialReference”: {</p>
+<blockquote>
+<div><p>“wkid”: 4326</p>
+</div></blockquote>
+<p>}, // default WGS84
+“imagePointSpatialReference”: {}, // default ICS
+“pointId”: 1,
+“xyAccuracy”: “0.008602325”,
+“zAccuracy”: “0.015”,
+“imagePoints”: [{</p>
+<blockquote>
+<div><p>“imageID”: 1,
+“x”: 2986.5435987557084,
+“y”: -2042.5193648409431,
+“u”: 3057.4580682832734,
+“v”: -1909.1506872159698</p>
+</div></blockquote>
+<p>},
+{</p>
+<blockquote>
+<div><p>“imageID”: 2,
+“x”: 1838.2814361401108,
+“y”: -2594.5280063817972,
+“u”: 3059.4079724863363,
+“v”: -2961.292545463305</p>
+</div></blockquote>
+<p>},
+{</p>
+<blockquote>
+<div><p>“imageID”: 12,
+“x”: 5332.855578204663,
+“y”: -2533.2805429751907,
+“u”: 614.2338676573158,
+“v”: -165.10836768947297</p>
+</div></blockquote>
+<p>},
+{</p>
+<blockquote>
+<div><p>“imageID”: 13,
+“x”: 4932.0895715254455,
+“y”: -1833.8401744114287,
+“u”: 616.9396928182223,
+“v”: -1243.1445126959693</p>
+</div></blockquote>
+<p>}]
+},
+…
+…
+]</p>
+</td>
+</tr>
+<tr class="row-even"><td><p>gis</p></td>
+<td><p>Optional GIS. The GIS on which this tool runs. If not specified, the active GIS is used.</p></td>
+</tr>
+</tbody>
+</table>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>The Imagery layer url</p>
+</dd>
+</dl>
+</dd></dl>
+
+</div>
+<div class="section" id="generate-dem">
+<h2>generate_dem<a class="headerlink" href="#generate-dem" title="Permalink to this headline">¶</a></h2>
+<dl class="method">
+<dt id="arcgis.raster.orthomapping.generate_dem">
+<code class="sig-prename descclassname">orthomapping.</code><code class="sig-name descname">generate_dem</code><span class="sig-paren">(</span><em class="sig-param">out_dem</em>, <em class="sig-param">cell_size</em>, <em class="sig-param">surface_type</em>, <em class="sig-param">matching_method=None</em>, <em class="sig-param">context=None</em>, <em class="sig-param">*</em>, <em class="sig-param">gis=None</em>, <em class="sig-param">**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.raster.orthomapping.generate_dem" title="Permalink to this definition">¶</a></dt>
+<dd><p>Generate a DEM from the image collection. Refer to “Interpolate From Point Cloud”
+GP tool for more documentation
+<a class="reference external" href="http://pro.arcgis.com/en/pro-app/tool-reference/data-management/interpolate-from-point-cloud.htm">http://pro.arcgis.com/en/pro-app/tool-reference/data-management/interpolate-from-point-cloud.htm</a></p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 12%" />
+<col style="width: 88%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><strong>Argument</strong></p></td>
+<td><p><strong>Description</strong></p></td>
+</tr>
+<tr class="row-even"><td><p>image_collection</p></td>
+<td><p>Required. The input image collection that will be used
+to generate the DEM from.
+The image_collection can be a portal Item or an image service URL or a URI
+The image_collection must exist.</p></td>
+</tr>
+<tr class="row-odd"><td><p>out_dem</p></td>
+<td><p>This is the output digital elevation model image url or name.
+Like Raster Analysis services, the service can be an existing multi-tenant service URL
+or this service tool can create it.
+It can be a url, uri, portal item, string representing the name of output image service</p></td>
+</tr>
+<tr class="row-even"><td><p>cell_size</p></td>
+<td><p>Required, The cell size of the output raster dataset. This is a single numeric input.
+Rectangular cell size such as {“x”: 10, “y”: 10} is not supported.
+The cell size unit will be the unit used by the image collection’s spatial reference.</p></td>
+</tr>
+<tr class="row-odd"><td><p>surface_type</p></td>
+<td><p>Required string. Create a digital terrain model or a digital surface model. Refer
+to “surface_type” parameter of the GP tool.
+The available choices are:</p>
+<p>DTM - Digital Terrain Model, the elevation is only the elevation of the bare earth, not including structures above the surface.</p>
+<p>DSM - Digital Surface Model, the elevation includes the structures above the surface, for example, buildings, trees, bridges.</p>
+</td>
+</tr>
+<tr class="row-even"><td><p>matching_method</p></td>
+<td><p>Optional string. The method used to generate 3D points.</p>
+<p>ETM-A feature-based stereo matching that uses the Harris operator to
+detect feature points. It is recommended for DTM generation.</p>
+<p>SGM- Produces more points and more detail than the ETM method. It is
+suitable for generating a DSM for urban areas. This is more
+computationally intensive than the ETM method1.</p>
+<p>MVM (Multi-view image matching (MVM) - is based on the SGM matching method followed by a fusion step in which
+the redundant depth estimations across single stereo model are merged.
+It produces dense 3D points and is computationally efficient</p>
+<p>References:
+Heiko Hirschmuller et al., “Memory Efficient Semi-Global Matching,”
+ISPRS Annals of the Photogrammetry, Remote Sensing and Spatial
+Information Sciences, Volume 1-3, (2012): 371-376.</p>
+<p>Refer to the documentation
+of “matching_method” parameter of the “Generate Point Cloud”
+GP tool &#64; <a class="reference external" href="http://pro.arcgis.com/en/pro-app/tool-reference/data-management/generate-point-cloud.htm">http://pro.arcgis.com/en/pro-app/tool-reference/data-management/generate-point-cloud.htm</a></p>
+</td>
+</tr>
+<tr class="row-odd"><td><p>context</p></td>
+<td><p>Optional dictionary. Additional allowed point cloud generation parameter and DEM
+interpolation parameter can be assigned here.
+For example:
+Point cloud generation parameters -
+{“maxObjectSize”: 50,
+“groundSpacing”: None,
+“minAngle”: 10,
+“maxAngle”: 70,
+“minOverlap”: 0.6,
+“maxOmegaPhiDif”: 8,
+“maxGSDDif”: 2,
+“numImagePairs”: 2,
+“adjQualityThreshold”: 0.2,
+“regenPointCloud”: False
+}</p>
+<p>DEM interpolation parameters -
+{“method”: “TRIANGULATION”,
+“smoothingMethod”: “GAUSS5x5”,
+“applyToOrtho”: True,
+“fillDEM”: “<a class="reference external" href="https://">https://</a>….”
+}</p>
+<p>Note:
+The “applyToOrtho” flag can apply the generated DEM back into the
+mosaic dataset’s geometric function to achieve more accurate
+orthorectification result.
+The “fillDEM” flag allows the user to specify an elevation service URL as
+background elevation to fill the area when elevation model pixels cannot be
+interpolated from the point cloud.</p>
+</td>
+</tr>
+<tr class="row-even"><td><p>gis</p></td>
+<td><p>Optional GIS. The GIS on which this tool runs. If not specified, the active GIS is used.</p></td>
+</tr>
+</tbody>
+</table>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>The DEM layer item</p>
+</dd>
+</dl>
+</dd></dl>
+
+</div>
+<div class="section" id="generate-orthomosaic">
+<h2>generate_orthomosaic<a class="headerlink" href="#generate-orthomosaic" title="Permalink to this headline">¶</a></h2>
+<dl class="method">
+<dt id="arcgis.raster.orthomapping.generate_orthomosaic">
+<code class="sig-prename descclassname">orthomapping.</code><code class="sig-name descname">generate_orthomosaic</code><span class="sig-paren">(</span><em class="sig-param">out_ortho</em>, <em class="sig-param">regen_seamlines=True</em>, <em class="sig-param">recompute_color_correction=True</em>, <em class="sig-param">context=None</em>, <em class="sig-param">*</em>, <em class="sig-param">gis=None</em>, <em class="sig-param">**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.raster.orthomapping.generate_orthomosaic" title="Permalink to this definition">¶</a></dt>
+<dd><p>Function can be used for generating single ortho-rectified mosaicked image from image collection after 
+the block adjustment.</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 28%" />
+<col style="width: 72%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><strong>Argument</strong></p></td>
+<td><p><strong>Description</strong></p></td>
+</tr>
+<tr class="row-even"><td><p>image_collection</p></td>
+<td><p>Required. The input image collection that will be used
+to generate the ortho-mosaic from.
+The image_collection can be a portal Item or an image service URL or a URI
+The image_collection must exist.</p></td>
+</tr>
+<tr class="row-odd"><td><p>out_ortho</p></td>
+<td><p>Required. This is the output ortho-mosaicked image converted from the image
+collection after the block adjustment.
+It can be a url, uri, portal item, string representing the name of output image
+service</p></td>
+</tr>
+<tr class="row-even"><td><p>regen_seamlines</p></td>
+<td><p>Optional, boolean.</p>
+<p>Choose whether to apply seamlines before the orthomosaic image generation or not.
+The seamlines will always be regenerated if this parameter is set to True.
+The user can set the seamline options through the context parameter.
+If the seamline generation options are not set, the default will be used.</p>
+<blockquote>
+<div><p>Default value is True</p>
+</div></blockquote>
+</td>
+</tr>
+<tr class="row-odd"><td><p>recompute_color_correction</p></td>
+<td><p>Optional, boolean.
+Choose whether to apply color correction settings to the output ortho-image or not.
+Color correction will always be recomputed if this option is set to True.
+The user can configure the compute color correction settings through the context parameter.
+If there is no color collection setting, the default will be used.</p>
+<p>Default value is True</p>
+</td>
+</tr>
+<tr class="row-even"><td><p>context</p></td>
+<td><p>Optional dictionary. Context contains additional environment settings that affect output
+image. The supported environment settings for this tool are:</p>
+<ol class="arabic simple">
+<li><p>Output Spatial Reference (outSR)-the output features will
+be projected into the output spatial reference.</p></li>
+<li><p>Extent (extent) - extent that would clip or expand the output image</p></li>
+</ol>
+</td>
+</tr>
+<tr class="row-odd"><td><p>gis</p></td>
+<td><p>Optional GIS. The GIS on which this tool runs. If not specified, the active GIS is used.</p></td>
+</tr>
+</tbody>
+</table>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>The Orthomosaicked Imagery layer item</p>
+</dd>
+</dl>
+</dd></dl>
+
+</div>
+<div class="section" id="generate-report">
+<h2>generate_report<a class="headerlink" href="#generate-report" title="Permalink to this headline">¶</a></h2>
+<dl class="method">
+<dt id="arcgis.raster.orthomapping.generate_report">
+<code class="sig-prename descclassname">orthomapping.</code><code class="sig-name descname">generate_report</code><span class="sig-paren">(</span><em class="sig-param">report_format='PDF'</em>, <em class="sig-param">*</em>, <em class="sig-param">gis=None</em>, <em class="sig-param">**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.raster.orthomapping.generate_report" title="Permalink to this definition">¶</a></dt>
+<dd><p>This function is used to generate orthomapping report with image collection 
+that has been block adjusted. The report would contain information about 
+the quality of the adjusted images, the distribution of the control points, etc.
+The output of this service tool is a downloadable html page.</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 18%" />
+<col style="width: 82%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><strong>Argument</strong></p></td>
+<td><p><strong>Description</strong></p></td>
+</tr>
+<tr class="row-even"><td><p>image_collection</p></td>
+<td><p>Required. the input image collection that should be
+used to generate a report from.
+The image_collection can be a portal Item or an image service URL or a URI
+The image_collection must exist.</p></td>
+</tr>
+<tr class="row-odd"><td><p>report_format</p></td>
+<td><p>Type of the format to be generated. Possible PDF, HTML. Default - PDF</p></td>
+</tr>
+<tr class="row-even"><td><p>gis</p></td>
+<td><p>Optional GIS. The GIS on which this tool runs. If not specified, the active GIS is used.</p></td>
+</tr>
+</tbody>
+</table>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>The URL of a single html webpage that is a formatted orthomapping report</p>
+</dd>
+</dl>
+</dd></dl>
+
+</div>
+<div class="section" id="query-camera-info">
+<h2>query_camera_info<a class="headerlink" href="#query-camera-info" title="Permalink to this headline">¶</a></h2>
+<dl class="method">
+<dt id="arcgis.raster.orthomapping.query_camera_info">
+<code class="sig-prename descclassname">orthomapping.</code><code class="sig-name descname">query_camera_info</code><span class="sig-paren">(</span><em class="sig-param">*</em>, <em class="sig-param">gis=None</em>, <em class="sig-param">**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.raster.orthomapping.query_camera_info" title="Permalink to this definition">¶</a></dt>
+<dd><p>This service tool is used to query specific or the entire digital camera 
+database. The digital camera database contains the specs
+of digital camera sensors that were used to capture drone images.</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 17%" />
+<col style="width: 83%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><strong>Argument</strong></p></td>
+<td><p><strong>Description</strong></p></td>
+</tr>
+<tr class="row-even"><td><p>camera_query</p></td>
+<td><p>Required String. This is a SQL query statement that can
+be used to filter a portion of the digital camera
+database.</p></td>
+</tr>
+<tr class="row-odd"><td><p>gis</p></td>
+<td><p>Optional GIS. The GIS on which this tool runs. If not specified, the active GIS is used.</p></td>
+</tr>
+</tbody>
+</table>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>Data Frame representing the camera database</p>
+</dd>
+</dl>
+</dd></dl>
+
+</div>
+<div class="section" id="query-control-points">
+<h2>query_control_points<a class="headerlink" href="#query-control-points" title="Permalink to this headline">¶</a></h2>
+<dl class="method">
+<dt id="arcgis.raster.orthomapping.query_control_points">
+<code class="sig-prename descclassname">orthomapping.</code><code class="sig-name descname">query_control_points</code><span class="sig-paren">(</span><em class="sig-param">query</em>, <em class="sig-param">*</em>, <em class="sig-param">gis=None</em>, <em class="sig-param">**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.raster.orthomapping.query_control_points" title="Permalink to this definition">¶</a></dt>
+<dd><p>Query for control points in an image collection. It allows users to query 
+among certain control point sets that has ground control points inside.</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 17%" />
+<col style="width: 83%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><strong>Argument</strong></p></td>
+<td><p><strong>Description</strong></p></td>
+</tr>
+<tr class="row-even"><td><p>image_collection</p></td>
+<td><p>Required, the input image collection on which to query
+the the control points.</p>
+<p>The image_collection can be a portal Item or an image service URL or a URI.</p>
+<p>The image_collection must exist.</p>
+</td>
+</tr>
+<tr class="row-odd"><td><p>query</p></td>
+<td><p>Required string. a SQL statement used for querying the point;</p>
+<p>e.g. “pointID &gt; 100”</p>
+</td>
+</tr>
+<tr class="row-even"><td><p>gis</p></td>
+<td><p>Optional GIS. The GIS on which this tool runs. If not specified, the active GIS is used.</p></td>
+</tr>
+</tbody>
+</table>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>A dictionary object</p>
+</dd>
+</dl>
+</dd></dl>
+
+</div>
+<div class="section" id="reset-image-collection">
+<h2>reset_image_collection<a class="headerlink" href="#reset-image-collection" title="Permalink to this headline">¶</a></h2>
+<dl class="method">
+<dt id="arcgis.raster.orthomapping.reset_image_collection">
+<code class="sig-prename descclassname">orthomapping.</code><code class="sig-name descname">reset_image_collection</code><span class="sig-paren">(</span><em class="sig-param">*</em>, <em class="sig-param">gis=None</em>, <em class="sig-param">**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.raster.orthomapping.reset_image_collection" title="Permalink to this definition">¶</a></dt>
+<dd><p>Reset the image collection. It is used to reset the image collection to its 
+original state. The image collection could be adjusted during the orthomapping 
+workflow and if the user is not satisfied with the result, they will be able 
+to clear any existing adjustment settings and revert the images back to 
+un-adjusted state</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 17%" />
+<col style="width: 83%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><strong>Argument</strong></p></td>
+<td><p><strong>Description</strong></p></td>
+</tr>
+<tr class="row-even"><td><p>image_collection</p></td>
+<td><p>Required, the input image collection to reset
+The image_collection can be a portal Item or an image service URL or a URI.</p>
+<p>The image_collection must exist.</p>
+</td>
+</tr>
+<tr class="row-odd"><td><p>gis</p></td>
+<td><p>Optional GIS. The GIS on which this tool runs. If not specified, the active GIS is used.</p></td>
+</tr>
+</tbody>
+</table>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>A boolean indicating whether the reset was successful or not</p>
+</dd>
+</dl>
+</dd></dl>
+
+</div>
+<div class="section" id="compute-spatial-reference-factory-code">
+<h2>compute_spatial_reference_factory_code<a class="headerlink" href="#compute-spatial-reference-factory-code" title="Permalink to this headline">¶</a></h2>
+<dl class="method">
+<dt id="arcgis.raster.orthomapping.compute_spatial_reference_factory_code">
+<code class="sig-prename descclassname">orthomapping.</code><code class="sig-name descname">compute_spatial_reference_factory_code</code><span class="sig-paren">(</span><em class="sig-param">longitude</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.raster.orthomapping.compute_spatial_reference_factory_code" title="Permalink to this definition">¶</a></dt>
+<dd><p>Computes spatial reference factory code. This value may be used as out_sr value in create image collection function</p>
+<p>latitude : latitude value in decimal degress that will be used to compute UTM zone
+longitude : longitude value in decimal degress that will be used to compute UTM zone</p>
+<p>factory_code : spatial reference factory code</p>
+</dd></dl>
+
+</div>
+</div>
+
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="arcgis.network.toc.html" class="btn btn-neutral float-right" title="arcgis.network module" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="arcgis.raster.functions.gbl.html" class="btn btn-neutral float-left" title="arcgis.raster.functions.gbl module" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        
+        &copy; Copyright 2016-2019, Esri
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

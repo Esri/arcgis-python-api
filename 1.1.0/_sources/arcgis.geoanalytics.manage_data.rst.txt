@@ -1,0 +1,9 @@
+arcgis.geoanalytics.manage_data module
+==================================
+
+.. automodule:: arcgis.geoanalytics.manage_data
+
+
+copy_to_data_store
+--------------
+.. automethod:: arcgis.geoanalytics.manage_data.copy_to_data_store

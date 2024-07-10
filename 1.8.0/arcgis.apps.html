@@ -1,0 +1,567 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>arcgis.apps module &mdash; arcgis 1.8.0 documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="_static/theme_overrides.css" type="text/css" />
+
+  
+  
+    <link rel="shortcut icon" href="_static/favicon.ico"/>
+  
+  
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/doctools.js"></script>
+        <script src="_static/language_data.js"></script>
+        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="arcgis.apps.hub module" href="arcgis.apps.hub.html" />
+    <link rel="prev" title="arcgis.widgets module" href="arcgis.widgets.html" />
+<!-- This code block is inserted close near the <head> tag. See http://bit.ly/2BHUQzB -->
+<!-- The point of this code block is to send us google analytics on website views -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-NJGGV5');</script>
+ 
+
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="index.html" class="icon icon-home" alt="Documentation Home"> arcgis
+          
+
+          
+            
+            <img src="_static/python_api_logo.png" class="logo" alt="Logo"/>
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1.8.0
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">arcgis</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="arcgis.gis.toc.html">arcgis.gis module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="arcgis.env.html">arcgis.env module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="arcgis.features.toc.html">arcgis.features module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="arcgis.raster.toc.html">arcgis.raster module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="arcgis.network.toc.html">arcgis.network module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="arcgis.geoanalytics.toc.html">arcgis.geoanalytics module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="arcgis.geocoding.html">arcgis.geocoding module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="arcgis.geoenrichment.html">arcgis.geoenrichment module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="arcgis.geometry.html">arcgis.geometry module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="arcgis.geoprocessing.html">arcgis.geoprocessing module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="arcgis.mapping.html">arcgis.mapping module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="arcgis.realtime.html">arcgis.realtime module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="arcgis.schematics.html">arcgis.schematics module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="arcgis.widgets.html">arcgis.widgets module</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">arcgis.apps module</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#build-collector-url">build_collector_url</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#build-explorer-url">build_explorer_url</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#build-navigator-url">build_navigator_url</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#build-survey123-url">build_survey123_url</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#build-tracker-url">build_tracker_url</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#submodules">Submodules</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="arcgis.apps.hub.html">arcgis.apps.hub module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="arcgis.apps.workforce.html">arcgis.apps.workforce module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="arcgis.apps.storymap.html">arcgis.apps.storymap module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="arcgis.apps.survey123.html">arcgis.apps.survey123 module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="arcgis.apps.tracker.html">arcgis.apps.tracker module</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="arcgis.learn.html">arcgis.learn module</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">arcgis</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
+        
+      <li>arcgis.apps module</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+<!-- This code block is inserted close near the <body> tag. See http://bit.ly/2BHUQzB -->
+<!-- The point of this code block is to send us google analytics on website views -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NJGGV5"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+
+  <div class="section" id="module-arcgis.apps">
+<span id="arcgis-apps-module"></span><h1>arcgis.apps module<a class="headerlink" href="#module-arcgis.apps" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="build-collector-url">
+<h2>build_collector_url<a class="headerlink" href="#build-collector-url" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt id="arcgis.apps.build_collector_url">
+<code class="sig-prename descclassname">arcgis.apps.</code><code class="sig-name descname">build_collector_url</code><span class="sig-paren">(</span><em class="sig-param">webmap=None</em>, <em class="sig-param">center=None</em>, <em class="sig-param">feature_layer=None</em>, <em class="sig-param">fields=None</em>, <em class="sig-param">search=None</em>, <em class="sig-param">portal=None</em>, <em class="sig-param">action=None</em>, <em class="sig-param">geometry=None</em>, <em class="sig-param">callback=None</em>, <em class="sig-param">callback_prompt=None</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.apps.build_collector_url" title="Permalink to this definition">¶</a></dt>
+<dd><p>Creates a url that can be used to open Collector for ArcGIS</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 17%" />
+<col style="width: 83%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><strong>Argument</strong></p></td>
+<td><p><strong>Description</strong></p></td>
+</tr>
+<tr class="row-even"><td><p>webmap</p></td>
+<td><p>Optional <code class="xref py py-class docutils literal notranslate"><span class="pre">String</span></code>, <a class="reference internal" href="arcgis.mapping.html#arcgis.mapping.WebMap" title="arcgis.mapping.WebMap"><code class="xref py py-class docutils literal notranslate"><span class="pre">WebMap</span></code></a>, <a class="reference internal" href="arcgis.gis.toc.html#arcgis.gis.Item" title="arcgis.gis.Item"><code class="xref py py-class docutils literal notranslate"><span class="pre">Item</span></code></a>.
+The item id, webmap, or item representing the map to open in Collector.</p></td>
+</tr>
+<tr class="row-odd"><td><p>center</p></td>
+<td><p>Optional <code class="xref py py-class docutils literal notranslate"><span class="pre">String</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">list</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">tuple</span></code>.
+The “lat,long” in WGS84 of where to center the map</p></td>
+</tr>
+<tr class="row-even"><td><p>feature_layer</p></td>
+<td><p>Optional <code class="xref py py-class docutils literal notranslate"><span class="pre">String</span></code> or <a class="reference internal" href="arcgis.features.toc.html#arcgis.features.FeatureLayer" title="arcgis.features.FeatureLayer"><code class="xref py py-class docutils literal notranslate"><span class="pre">FeatureLayer</span></code></a>.
+The feature layer url as string or the feature layer representing the layer to open
+for collection.</p></td>
+</tr>
+<tr class="row-odd"><td><p>fields</p></td>
+<td><p>Optional <code class="xref py py-class docutils literal notranslate"><span class="pre">Dict</span></code>. The feature attributes dictionary {“field”:”value”}</p></td>
+</tr>
+<tr class="row-even"><td><p>search</p></td>
+<td><p>Optional <code class="xref py py-class docutils literal notranslate"><span class="pre">String</span></code> An address, place, coordinate, or feature to search for
+Requires webmap and action=search to be set.
+Value must be URL encoded</p></td>
+</tr>
+<tr class="row-odd"><td><p>portal</p></td>
+<td><p>Optional <code class="xref py py-class docutils literal notranslate"><span class="pre">String</span></code>, <a class="reference internal" href="arcgis.gis.toc.html#arcgis.gis.GIS" title="arcgis.gis.GIS"><code class="xref py py-class docutils literal notranslate"><span class="pre">GIS</span></code></a>.
+The URL of the portal the mobile worker must be connected to.</p></td>
+</tr>
+<tr class="row-even"><td><p>action</p></td>
+<td><p>Optional <code class="xref py py-class docutils literal notranslate"><span class="pre">String</span></code> What the app should do, if anything, once open
+and the user is signed in.
+The following values are supported: addFeature, center, open, search.</p></td>
+</tr>
+<tr class="row-odd"><td><p>geometry</p></td>
+<td><p>Optional <code class="xref py py-class docutils literal notranslate"><span class="pre">String</span></code>. Defines the location for the newly collectoed
+or edited feature
+Requires webmap, action=addFeature, and feature_layer.
+Value is a coordinate containing x, y (z if available)</p></td>
+</tr>
+<tr class="row-even"><td><p>callback</p></td>
+<td><p>Optional <code class="xref py py-class docutils literal notranslate"><span class="pre">String</span></code>. The URL to call when capturing the asset or
+observation is complete.
+Requires webmap, action=addFeature, and feature_layer to be set.
+Optionally, before calling the URL provide a prompt for the user,
+specified with the callback_prompt parameter.</p></td>
+</tr>
+<tr class="row-odd"><td><p>callback_prompt</p></td>
+<td><p>Optional <code class="xref py py-class docutils literal notranslate"><span class="pre">String</span></code>. Prompt the mobile worker before executing the callback,
+and display this value in the prompt as where the mobile worker will be taken.
+Requires webmap, action=addFeature, feature_layer, and callback to be specified.
+Value must be URL encoded</p></td>
+</tr>
+</tbody>
+</table>
+<p>Additional info can be found here: <a class="reference external" href="https://github.com/Esri/collector-integration">https://github.com/Esri/collector-integration</a>
+:return: <code class="xref py py-class docutils literal notranslate"><span class="pre">String</span></code></p>
+</dd></dl>
+
+</div>
+<div class="section" id="build-explorer-url">
+<h2>build_explorer_url<a class="headerlink" href="#build-explorer-url" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt id="arcgis.apps.build_explorer_url">
+<code class="sig-prename descclassname">arcgis.apps.</code><code class="sig-name descname">build_explorer_url</code><span class="sig-paren">(</span><em class="sig-param">webmap=None</em>, <em class="sig-param">search=None</em>, <em class="sig-param">bookmark=None</em>, <em class="sig-param">center=None</em>, <em class="sig-param">scale=None</em>, <em class="sig-param">wkid=None</em>, <em class="sig-param">rotation=None</em>, <em class="sig-param">markup=None</em>, <em class="sig-param">url_type='Web'</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.apps.build_explorer_url" title="Permalink to this definition">¶</a></dt>
+<dd><p>Creates a url that can be used to open Explorer for ArcGIS</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 17%" />
+<col style="width: 83%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><strong>Argument</strong></p></td>
+<td><p><strong>Description</strong></p></td>
+</tr>
+<tr class="row-even"><td><p>webmap</p></td>
+<td><p>Optional <code class="xref py py-class docutils literal notranslate"><span class="pre">String</span></code>, <a class="reference internal" href="arcgis.mapping.html#arcgis.mapping.WebMap" title="arcgis.mapping.WebMap"><code class="xref py py-class docutils literal notranslate"><span class="pre">WebMap</span></code></a>, <a class="reference internal" href="arcgis.gis.toc.html#arcgis.gis.Item" title="arcgis.gis.Item"><code class="xref py py-class docutils literal notranslate"><span class="pre">Item</span></code></a>.
+The item id, webmap, or item representing the map to open in Explorer.
+Item can be of type Web Map or Mobile Map Package.</p></td>
+</tr>
+<tr class="row-odd"><td><p>search</p></td>
+<td><p>Optional <code class="xref py py-class docutils literal notranslate"><span class="pre">String</span></code>. The location to search for.</p></td>
+</tr>
+<tr class="row-even"><td><p>bookmark</p></td>
+<td><p>Optional <code class="xref py py-class docutils literal notranslate"><span class="pre">String</span></code>. The name of the bookmark in the map to open.</p></td>
+</tr>
+<tr class="row-odd"><td><p>center</p></td>
+<td><p>Optional <code class="xref py py-class docutils literal notranslate"><span class="pre">String</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">list</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">tuple</span></code>.
+The “lat,long” in WGS84 of where to center the map</p></td>
+</tr>
+<tr class="row-even"><td><p>scale</p></td>
+<td><p>Optional <code class="xref py py-class docutils literal notranslate"><span class="pre">Int</span></code>. The scale at which to open the map.</p></td>
+</tr>
+<tr class="row-odd"><td><p>rotation</p></td>
+<td><p>Optional <code class="xref py py-class docutils literal notranslate"><span class="pre">Int</span></code>. The rotation, in degrees, at which to open the map.</p></td>
+</tr>
+<tr class="row-even"><td><p>markup</p></td>
+<td><p>Optional <code class="xref py py-class docutils literal notranslate"><span class="pre">Boolean</span></code>. Determines if the app should open in markup mode.</p></td>
+</tr>
+<tr class="row-odd"><td><p>url_type</p></td>
+<td><p>Optional <code class="xref py py-class docutils literal notranslate"><span class="pre">String</span></code>. The type of url to be returned (e.g. ‘Web’ or ‘App’)</p></td>
+</tr>
+</tbody>
+</table>
+<p>Additional info can be found here: <a class="reference external" href="https://github.com/Esri/explorer-integration">https://github.com/Esri/explorer-integration</a></p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p><code class="xref py py-class docutils literal notranslate"><span class="pre">String</span></code></p>
+</dd>
+</dl>
+</dd></dl>
+
+</div>
+<div class="section" id="build-navigator-url">
+<h2>build_navigator_url<a class="headerlink" href="#build-navigator-url" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt id="arcgis.apps.build_navigator_url">
+<code class="sig-prename descclassname">arcgis.apps.</code><code class="sig-name descname">build_navigator_url</code><span class="sig-paren">(</span><em class="sig-param">start=None</em>, <em class="sig-param">stops=None</em>, <em class="sig-param">optimize=None</em>, <em class="sig-param">navigate=None</em>, <em class="sig-param">travel_mode=None</em>, <em class="sig-param">callback=None</em>, <em class="sig-param">callback_prompt=None</em>, <em class="sig-param">url_type='Web'</em>, <em class="sig-param">webmap=None</em>, <em class="sig-param">route_item=None</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.apps.build_navigator_url" title="Permalink to this definition">¶</a></dt>
+<dd><p>Creates a url that can be used to open Navigator for ArcGIS</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 19%" />
+<col style="width: 81%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><strong>Argument</strong></p></td>
+<td><p><strong>Description</strong></p></td>
+</tr>
+<tr class="row-even"><td><p>start</p></td>
+<td><p>Optional <code class="xref py py-class docutils literal notranslate"><span class="pre">String</span></code> or <code class="xref py py-class docutils literal notranslate"><span class="pre">Tuple</span></code>. The starting location.
+Can be a single string such as ‘45,-77’ or a tuple containing the
+location and the name (‘45,-77’,’Home’)</p></td>
+</tr>
+<tr class="row-odd"><td><p>stops</p></td>
+<td><p>Optional <code class="xref py py-class docutils literal notranslate"><span class="pre">List</span></code>. The list of locations. A location can be either
+a single string or a tuple containing the location and the
+name (‘45,-77’, ‘Home’).</p></td>
+</tr>
+<tr class="row-even"><td><p>optimize</p></td>
+<td><p>Optional <code class="xref py py-class docutils literal notranslate"><span class="pre">Boolean</span></code>. Determines if the route should be optimized.</p></td>
+</tr>
+<tr class="row-odd"><td><p>navigate</p></td>
+<td><p>Optional <code class="xref py py-class docutils literal notranslate"><span class="pre">Boolean</span></code>. Determines if navigation should begin immediately.</p></td>
+</tr>
+<tr class="row-even"><td><p>travel_mode</p></td>
+<td><p>Optional <code class="xref py py-class docutils literal notranslate"><span class="pre">String</span></code>. The travel mode to use (e.g. ‘Walking Time’)</p></td>
+</tr>
+<tr class="row-odd"><td><p>callback</p></td>
+<td><p>Optional <code class="xref py py-class docutils literal notranslate"><span class="pre">String</span></code>. The url to open when the route completes.</p></td>
+</tr>
+<tr class="row-even"><td><p>callback_prompt</p></td>
+<td><p>Optional <code class="xref py py-class docutils literal notranslate"><span class="pre">String</span></code>. The text to show when the route finishes and the
+callback is about to be invoked.</p></td>
+</tr>
+<tr class="row-odd"><td><p>url_type</p></td>
+<td><p>Optional <code class="xref py py-class docutils literal notranslate"><span class="pre">String</span></code>. The type of url to be returned (e.g. ‘Web’ or ‘App’)</p></td>
+</tr>
+<tr class="row-even"><td><p>webmap</p></td>
+<td><p>Optional <code class="xref py py-class docutils literal notranslate"><span class="pre">String</span></code>, <a class="reference internal" href="arcgis.gis.toc.html#arcgis.gis.Item" title="arcgis.gis.Item"><code class="xref py py-class docutils literal notranslate"><span class="pre">Item</span></code></a>.
+The item id or item representing the map to open in Navigator.
+Item can be of type Mobile Map Package.</p></td>
+</tr>
+<tr class="row-odd"><td><p>route_item</p></td>
+<td><p>Optional <code class="xref py py-class docutils literal notranslate"><span class="pre">String</span></code>, <a class="reference internal" href="arcgis.gis.toc.html#arcgis.gis.Item" title="arcgis.gis.Item"><code class="xref py py-class docutils literal notranslate"><span class="pre">Item</span></code></a>.
+The item id or item representing the route layer to open.</p></td>
+</tr>
+</tbody>
+</table>
+<p>Additional info can be found here: <a class="reference external" href="https://github.com/Esri/navigator-integration">https://github.com/Esri/navigator-integration</a></p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p><code class="xref py py-class docutils literal notranslate"><span class="pre">String</span></code></p>
+</dd>
+</dl>
+</dd></dl>
+
+</div>
+<div class="section" id="build-survey123-url">
+<h2>build_survey123_url<a class="headerlink" href="#build-survey123-url" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt id="arcgis.apps.build_survey123_url">
+<code class="sig-prename descclassname">arcgis.apps.</code><code class="sig-name descname">build_survey123_url</code><span class="sig-paren">(</span><em class="sig-param">survey=None</em>, <em class="sig-param">center=None</em>, <em class="sig-param">fields=None</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.apps.build_survey123_url" title="Permalink to this definition">¶</a></dt>
+<dd><p>Creates a url that can be used to open Survey123 for ArcGIS</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 19%" />
+<col style="width: 81%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><strong>Argument</strong></p></td>
+<td><p><strong>Description</strong></p></td>
+</tr>
+<tr class="row-even"><td><p>survey</p></td>
+<td><p>Optional <code class="xref py py-class docutils literal notranslate"><span class="pre">String</span></code> or <a class="reference internal" href="arcgis.gis.toc.html#arcgis.gis.Item" title="arcgis.gis.Item"><code class="xref py py-class docutils literal notranslate"><span class="pre">Item</span></code></a>. The item id or
+item representing the survey to open.</p></td>
+</tr>
+<tr class="row-odd"><td><p>center</p></td>
+<td><p>Optional <code class="xref py py-class docutils literal notranslate"><span class="pre">String</span></code>. The “lat,long” in WGS84 of where to center the map</p></td>
+</tr>
+<tr class="row-even"><td><p>fields</p></td>
+<td><p>Optional <code class="xref py py-class docutils literal notranslate"><span class="pre">Dict</span></code>. The feature attributes dictionary {“field”:”value”}</p></td>
+</tr>
+</tbody>
+</table>
+<p>Additional info can be found here: <a class="reference external" href="https://doc.arcgis.com/en/survey123/reference/integratewithotherapps.htm">https://doc.arcgis.com/en/survey123/reference/integratewithotherapps.htm</a></p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p><code class="xref py py-class docutils literal notranslate"><span class="pre">String</span></code></p>
+</dd>
+</dl>
+</dd></dl>
+
+</div>
+<div class="section" id="build-tracker-url">
+<h2>build_tracker_url<a class="headerlink" href="#build-tracker-url" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt id="arcgis.apps.build_tracker_url">
+<code class="sig-prename descclassname">arcgis.apps.</code><code class="sig-name descname">build_tracker_url</code><span class="sig-paren">(</span><em class="sig-param">portal_url=None</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.apps.build_tracker_url" title="Permalink to this definition">¶</a></dt>
+<dd><p>Creates a url that can be used to open Tracker for ArcGIS</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 21%" />
+<col style="width: 79%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><strong>Argument</strong></p></td>
+<td><p><strong>Description</strong></p></td>
+</tr>
+<tr class="row-even"><td><p>portal_url</p></td>
+<td><p>Optional <code class="xref py py-class docutils literal notranslate"><span class="pre">String</span></code> The portal that should be used when tracker
+is launched via the url scheme.</p></td>
+</tr>
+</tbody>
+</table>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p><code class="xref py py-class docutils literal notranslate"><span class="pre">String</span></code></p>
+</dd>
+</dl>
+</dd></dl>
+
+</div>
+<div class="section" id="submodules">
+<h2>Submodules<a class="headerlink" href="#submodules" title="Permalink to this headline">¶</a></h2>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="arcgis.apps.hub.html">arcgis.apps.hub module</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.apps.hub.html#hub">Hub</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.apps.hub.html#initiative">Initiative</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.apps.hub.html#indicator">Indicator</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.apps.hub.html#event">Event</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.apps.hub.html#initiativemanager">InitiativeManager</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.apps.hub.html#indicatormanager">IndicatorManager</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.apps.hub.html#eventmanager">EventManager</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="arcgis.apps.workforce.html">arcgis.apps.workforce module</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.apps.workforce.html#assignment">Assignment</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.apps.workforce.html#assignmenttype">AssignmentType</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.apps.workforce.html#attachment">Attachment</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.apps.workforce.html#dispatcher">Dispatcher</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.apps.workforce.html#project">Project</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.apps.workforce.html#track">Track</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.apps.workforce.html#worker">Worker</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.apps.workforce.html#submodules">Submodules</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="arcgis.apps.workforce.managers.html">arcgis.apps.workforce.managers module</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="arcgis.apps.storymap.html">arcgis.apps.storymap module</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.apps.storymap.html#journalstorymap">JournalStoryMap</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="arcgis.apps.survey123.html">arcgis.apps.survey123 module</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.apps.survey123.html#surveymanager">SurveyManager</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.apps.survey123.html#survey">Survey</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="arcgis.apps.tracker.html">arcgis.apps.tracker module</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.apps.tracker.html#locationtrackingmanager">LocationTrackingManager</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.apps.tracker.html#trackview">TrackView</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.apps.tracker.html#trackviewermanager">TrackViewerManager</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.apps.tracker.html#mobileusermanager">MobileUserManager</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+</div>
+
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="arcgis.apps.hub.html" class="btn btn-neutral float-right" title="arcgis.apps.hub module" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="arcgis.widgets.html" class="btn btn-neutral float-left" title="arcgis.widgets module" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        
+        &copy; Copyright 2016-2019, Esri
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

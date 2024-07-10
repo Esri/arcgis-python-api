@@ -1,0 +1,11 @@
+arcgis.apps module
+==================
+
+.. automodule:: arcgis.apps
+
+Submodules
+----------
+.. toctree::
+   :maxdepth: 3
+
+   arcgis.apps.workforce

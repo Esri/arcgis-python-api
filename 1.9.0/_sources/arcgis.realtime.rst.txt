@@ -1,0 +1,55 @@
+arcgis.realtime module
+=====================================
+
+.. automodule:: arcgis.realtime
+
+StreamLayer
+-------------------------
+.. autoclass:: arcgis.realtime.StreamLayer
+    :members:
+    :undoc-members:
+
+Velocity
+-------------------------
+.. autoclass:: arcgis.realtime.Velocity
+    :members:
+    :undoc-members:
+
+FeedsManager
+-------------------------
+.. autoclass:: arcgis.realtime.velocity.FeedsManager
+    :members:
+    :undoc-members:
+
+RealTimeAnalyticsManager
+-------------------------
+.. autoclass:: arcgis.realtime.velocity.RealTimeAnalyticsManager
+    :members:
+    :undoc-members:
+
+BigDataAnalyticsManager
+-------------------------
+.. autoclass:: arcgis.realtime.velocity.BigDataAnalyticsManager
+    :members:
+    :undoc-members:
+
+Feed
+-------------------------
+.. autoclass:: arcgis.realtime.velocity.Feed
+    :members:
+    :undoc-members:
+    :exclude-members:
+
+RealTimeAnalytics
+-------------------------
+.. autoclass:: arcgis.realtime.velocity.RealTimeAnalytics
+    :members:
+    :undoc-members:
+    :exclude-members:
+
+BigDataAnalytics
+-------------------------
+.. autoclass:: arcgis.realtime.velocity.BigDataAnalytics
+    :members:
+    :undoc-members:
+    :exclude-members:

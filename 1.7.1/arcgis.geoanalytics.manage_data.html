@@ -1,0 +1,1103 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>arcgis.geoanalytics.manage_data module &mdash; arcgis 1.7.1 documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="_static/theme_overrides.css" type="text/css" />
+
+  
+  
+    <link rel="shortcut icon" href="_static/favicon.ico"/>
+  
+  
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/doctools.js"></script>
+        <script src="_static/language_data.js"></script>
+        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="arcgis.geoanalytics.summarize_data module" href="arcgis.geoanalytics.summarize_data.html" />
+    <link rel="prev" title="arcgis.geoanalytics.find_locations module" href="arcgis.geoanalytics.find_locations.html" />
+<!-- This code block is inserted close near the <head> tag. See http://bit.ly/2BHUQzB -->
+<!-- The point of this code block is to send us google analytics on website views -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-NJGGV5');</script>
+ 
+
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="index.html" class="icon icon-home" alt="Documentation Home"> arcgis
+          
+
+          
+            
+            <img src="_static/python_api_logo.png" class="logo" alt="Logo"/>
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1.7.1
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">arcgis</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="arcgis.gis.toc.html">arcgis.gis module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="arcgis.env.html">arcgis.env module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="arcgis.features.toc.html">arcgis.features module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="arcgis.raster.toc.html">arcgis.raster module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="arcgis.network.toc.html">arcgis.network module</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="arcgis.geoanalytics.toc.html">arcgis.geoanalytics module</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="arcgis.geoanalytics.toc.html#define-output-datastore">define_output_datastore</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.geoanalytics.toc.html#get-datastores">get_datastores</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.geoanalytics.toc.html#is-supported">is_supported</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="arcgis.geoanalytics.toc.html#submodules">Submodules</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="arcgis.geoanalytics.analyze_patterns.html">arcgis.geoanalytics.analyze_patterns module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="arcgis.geoanalytics.data_enrichment.html">arcgis.geoanalytics.data_enrichment module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="arcgis.geoanalytics.find_locations.html">arcgis.geoanalytics.find_locations module</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">arcgis.geoanalytics.manage_data module</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#append-data">append_data</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#calculate-fields">calculate_fields</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#clip-layer">clip_layer</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#copy-to-data-store">copy_to_data_store</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#dissolve-boundaries">dissolve_boundaries</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#merge-layers">merge_layers</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#overlay-data">overlay_data</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#run-python-script">run_python_script</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="arcgis.geoanalytics.summarize_data.html">arcgis.geoanalytics.summarize_data module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="arcgis.geoanalytics.use_proximity.html">arcgis.geoanalytics.use_proximity module</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="arcgis.geocoding.html">arcgis.geocoding module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="arcgis.geoenrichment.html">arcgis.geoenrichment module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="arcgis.geometry.html">arcgis.geometry module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="arcgis.geoprocessing.html">arcgis.geoprocessing module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="arcgis.mapping.html">arcgis.mapping module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="arcgis.realtime.html">arcgis.realtime module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="arcgis.schematics.html">arcgis.schematics module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="arcgis.widgets.html">arcgis.widgets module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="arcgis.apps.html">arcgis.apps module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="arcgis.learn.html">arcgis.learn module</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">arcgis</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="arcgis.geoanalytics.toc.html">arcgis.geoanalytics module</a> &raquo;</li>
+        
+      <li>arcgis.geoanalytics.manage_data module</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+<!-- This code block is inserted close near the <body> tag. See http://bit.ly/2BHUQzB -->
+<!-- The point of this code block is to send us google analytics on website views -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NJGGV5"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+
+  <div class="section" id="arcgis-geoanalytics-manage-data-module">
+<h1>arcgis.geoanalytics.manage_data module<a class="headerlink" href="#arcgis-geoanalytics-manage-data-module" title="Permalink to this headline">¶</a></h1>
+<span class="target" id="module-arcgis.geoanalytics.manage_data"></span><p>These tools are used for the day-to-day management of geographic and tabular data.</p>
+<p>copy_to_data_store copies data to your ArcGIS Data Store and creates a layer in your web GIS.</p>
+<div class="section" id="append-data">
+<h2>append_data<a class="headerlink" href="#append-data" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt id="arcgis.geoanalytics.manage_data.append_data">
+<code class="sig-prename descclassname">arcgis.geoanalytics.manage_data.</code><code class="sig-name descname">append_data</code><span class="sig-paren">(</span><em class="sig-param">input_layer</em>, <em class="sig-param">append_layer</em>, <em class="sig-param">field_mapping=None</em>, <em class="sig-param">gis=None</em>, <em class="sig-param">future=False</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.geoanalytics.manage_data.append_data" title="Permalink to this definition">¶</a></dt>
+<dd><p>Only available at ArcGIS Enterprise 10.6.1 and later.</p>
+<p>The Append Data task appends tabular, point, line, or polygon data to an existing layer.
+The input layer must be a hosted feature layer. The tool will add the appended data as
+rows to the input layer. No new output layer is created.</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 10%" />
+<col style="width: 90%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><strong>Argument</strong></p></td>
+<td><p><strong>Description</strong></p></td>
+</tr>
+<tr class="row-even"><td><p>input_layer</p></td>
+<td><p>required FeatureLayer , The table, point, line or polygon features.</p></td>
+</tr>
+<tr class="row-odd"><td><p>append_layer</p></td>
+<td><p>required FeatureLayer. The table, point, line, or polygon features
+to be appended to the input_layer. To append geometry, the
+append_layer must have the same geometry type as the
+input_layer. If the geometry types are not the same, the
+append_layer geometry will be removed and all other matching
+fields will be appended. The geometry of the input_layer will
+always be maintained.</p></td>
+</tr>
+<tr class="row-even"><td><p>field_mapping</p></td>
+<td><p>Defines how the fields in append_layer are appended to the
+input_layer.</p>
+<p>The following are set by default:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>All append_layer fields that match input_layer schema will be appended.</p></li>
+<li><p>Fields that exist in the input_layer and not in the append_layer will be appended with null values.</p></li>
+<li><p>Fields that exist in the append_layer and not in the input_layer will not be appended.</p></li>
+</ul>
+</div></blockquote>
+<p>Optionally choose how input_layer fields will be appended from the following:</p>
+<ul class="simple">
+<li><p>AppendField - Matches the input_layer field with an append_layer field of a different name. Field types must match.</p></li>
+<li><p>Expression - Calculates values for the resulting field. Values are calculated using Arcade expressions. To assign null values, use ‘null’.</p></li>
+</ul>
+</td>
+</tr>
+<tr class="row-odd"><td><p>gis</p></td>
+<td><p>optional GIS, the GIS on which this tool runs. If not
+specified, the active GIS is used.</p></td>
+</tr>
+<tr class="row-even"><td><p>future</p></td>
+<td><p>optional Boolean. If True, a GPJob is returned instead of
+results. The GPJob can be queried on the status of the execution.</p></td>
+</tr>
+</tbody>
+</table>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>boolean</p>
+</dd>
+</dl>
+</dd></dl>
+
+</div>
+<div class="section" id="calculate-fields">
+<h2>calculate_fields<a class="headerlink" href="#calculate-fields" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt id="arcgis.geoanalytics.manage_data.calculate_fields">
+<code class="sig-prename descclassname">arcgis.geoanalytics.manage_data.</code><code class="sig-name descname">calculate_fields</code><span class="sig-paren">(</span><em class="sig-param">input_layer</em>, <em class="sig-param">field_name</em>, <em class="sig-param">data_type</em>, <em class="sig-param">expression</em>, <em class="sig-param">track_aware=False</em>, <em class="sig-param">track_fields=None</em>, <em class="sig-param">time_boundary_split=None</em>, <em class="sig-param">time_split_unit=None</em>, <em class="sig-param">time_reference=None</em>, <em class="sig-param">output_name=None</em>, <em class="sig-param">gis=None</em>, <em class="sig-param">context=None</em>, <em class="sig-param">future=False</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.geoanalytics.manage_data.calculate_fields" title="Permalink to this definition">¶</a></dt>
+<dd><img alt="_images/calculate_field.png" src="_images/calculate_field.png" />
+<p>The <code class="docutils literal notranslate"><span class="pre">calculate_fields</span></code> task works with a layer to create and populate a
+new field. The output is a new feature layer, that is the same as the
+input features, with the additional field added.</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 18%" />
+<col style="width: 82%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><strong>Argument</strong></p></td>
+<td><p><strong>Description</strong></p></td>
+</tr>
+<tr class="row-even"><td><p>input_layer</p></td>
+<td><p>Required layer. The input features that will have a field added and calculated.
+See <a class="reference internal" href="arcgis.geoanalytics.toc.html#featureinput"><span class="std std-ref">Feature Input</span></a>.</p></td>
+</tr>
+<tr class="row-odd"><td><p>field_name</p></td>
+<td><p>Required string. A string representing the name of the new
+field. If the name already exists in the dataset, then a
+numeric value will be appended to the field name.</p></td>
+</tr>
+<tr class="row-even"><td><p>data_type</p></td>
+<td><p>Required string. The type for the new field.</p>
+<p>Choice list: [‘Date’, ‘Double’, ‘Integer’, ‘String’<a href="#id1"><span class="problematic" id="id2">`</span></a>].</p>
+</td>
+</tr>
+<tr class="row-odd"><td><p>expression</p></td>
+<td><p>Required string. An Arcade expression used to calculate the new
+field values. You can use any of the Date, Logical,
+Mathematical or Text function available with Arcade.</p></td>
+</tr>
+<tr class="row-even"><td><p>track_aware</p></td>
+<td><p>Optional boolean. Boolean value denoting if the expression is
+track aware.</p>
+<p>The default value is ‘False’.</p>
+</td>
+</tr>
+<tr class="row-odd"><td><p>track_fields (Required if trackAware is True)</p></td>
+<td><p>Optional string. The fields used to identify distinct tracks.
+There can be multiple track_fields. track_fields are only
+required when <code class="docutils literal notranslate"><span class="pre">track_aware</span></code> is True.</p></td>
+</tr>
+<tr class="row-even"><td><p>time_boundary_split</p></td>
+<td><p>Optional integer. A time boundary allows your to analyze values within a defined time span.
+For example, if you use a time boundary of 1 day, starting on January 1st, 1980 tracks will
+be analyzed 1 day at a time. The time boundary parameter was introduced in ArcGIS Enterprise 10.7.</p>
+<p>The time boundary parameters are only applicable if the analysis is <code class="docutils literal notranslate"><span class="pre">track_aware</span></code>.
+The <code class="docutils literal notranslate"><span class="pre">time_boundary_split</span></code> parameter defines the scale of the time boundary.
+In the case above, this would be 1. See the portal documentation for this tool to learn more.</p>
+</td>
+</tr>
+<tr class="row-odd"><td><p>time_split_unit</p></td>
+<td><p>Optional string.  The unit to detect an incident is <cite>time_boundary_split</cite> is used.</p>
+<p>Choice list: [‘Years’, ‘Months’, ‘Weeks’, ‘Days’, ‘Hours’, ‘Minutes’, ‘Seconds’, ‘Milliseconds’].</p>
+</td>
+</tr>
+<tr class="row-even"><td><p>time_reference</p></td>
+<td><p>Optional datetime.datetime. The starting date/time where analysis will
+begin from.</p></td>
+</tr>
+<tr class="row-odd"><td><p>output_name</p></td>
+<td><p>Optional string, The task will create a feature service of the
+results. You define the name of the service.</p></td>
+</tr>
+<tr class="row-even"><td><p>gis</p></td>
+<td><p>Optional GIS, the GIS on which this tool runs. If not
+specified, the active GIS is used.</p></td>
+</tr>
+<tr class="row-odd"><td><p>context</p></td>
+<td><p>Optional dict. The context parameter contains additional settings that affect task execution. For this task, there are four settings:</p>
+<ol class="arabic simple">
+<li><p>Extent (<code class="docutils literal notranslate"><span class="pre">extent</span></code>) - A bounding box that defines the analysis area. Only those features that intersect the bounding box will be analyzed.</p></li>
+<li><p>Processing spatial reference (<code class="docutils literal notranslate"><span class="pre">processSR</span></code>) - The features will be projected into this coordinate system for analysis.</p></li>
+<li><p>Output spatial reference (<code class="docutils literal notranslate"><span class="pre">outSR</span></code>) - The features will be projected into this coordinate system after the analysis to be saved. The output spatial reference for the spatiotemporal big data store is always WGS84.</p></li>
+<li><p>Data store (<code class="docutils literal notranslate"><span class="pre">dataStore</span></code>) - Results will be saved to the specified data store. The default is the spatiotemporal big data store.</p></li>
+</ol>
+</td>
+</tr>
+</tbody>
+</table>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>feature layer collection</p>
+</dd>
+</dl>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Usage Example: To find maximum of the two attributes of an input layer.</span>
+
+<span class="n">result</span> <span class="o">=</span> <span class="n">calculate_fields</span><span class="p">(</span><span class="n">input_layer</span><span class="o">=</span><span class="n">lyr</span><span class="p">,</span>
+                          <span class="n">field_name</span><span class="o">=</span><span class="s2">&quot;avg&quot;</span><span class="p">,</span>
+                          <span class="n">data_type</span><span class="o">=</span><span class="s2">&quot;Double&quot;</span><span class="p">,</span>
+                          <span class="n">expression</span><span class="o">=</span><span class="s1">&#39;max($feature[&quot;InputValue&quot;],$feature[&quot;Value2&quot;])&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+</div>
+<div class="section" id="clip-layer">
+<h2>clip_layer<a class="headerlink" href="#clip-layer" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt id="arcgis.geoanalytics.manage_data.clip_layer">
+<code class="sig-prename descclassname">arcgis.geoanalytics.manage_data.</code><code class="sig-name descname">clip_layer</code><span class="sig-paren">(</span><em class="sig-param">input_layer</em>, <em class="sig-param">clip_layer</em>, <em class="sig-param">output_name=None</em>, <em class="sig-param">gis=None</em>, <em class="sig-param">context=None</em>, <em class="sig-param">future=False</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.geoanalytics.manage_data.clip_layer" title="Permalink to this definition">¶</a></dt>
+<dd><img alt="_images/clip_layer.png" src="_images/clip_layer.png" />
+<p><code class="docutils literal notranslate"><span class="pre">clip_layer</span></code> features from one layer to the extent of a boundary layer. Use this tool to cut out a piece
+of one feature class using one or more of the features in another feature class as a cookie
+cutter. This is particularly useful for creating a new feature layers - also referred to as study
+area or area of interest (AOI) - that contains a geographic subset of the features in another,
+larger feature class.</p>
+<p>Only available at <strong>ArcGIS Enterprise 10.7</strong> and later.</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 16%" />
+<col style="width: 84%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><strong>Argument</strong></p></td>
+<td><p><strong>Description</strong></p></td>
+</tr>
+<tr class="row-even"><td><p>input_layer</p></td>
+<td><p>Required feature layer. The point, line, or polygon features
+that will be clipped to the areas of <code class="docutils literal notranslate"><span class="pre">clip_layer</span></code> features.
+See <a class="reference internal" href="arcgis.geoanalytics.toc.html#featureinput"><span class="std std-ref">Feature Input</span></a>.</p></td>
+</tr>
+<tr class="row-odd"><td><p>clip_layer</p></td>
+<td><p>Required feature layer. The polygon features that define the
+areas to which <code class="docutils literal notranslate"><span class="pre">input_layer</span></code> features will be clipped.
+See <a class="reference internal" href="arcgis.geoanalytics.toc.html#featureinput"><span class="std std-ref">Feature Input</span></a>.</p></td>
+</tr>
+<tr class="row-even"><td><p>output_name</p></td>
+<td><p>Optional string. The task will create a feature service of
+the results. You define the name of the service.</p></td>
+</tr>
+<tr class="row-odd"><td><p>context</p></td>
+<td><p>Optional strin. The context parameter contains additional
+settings that affect task execution. For this task, there are four settings:</p>
+<ol class="arabic simple">
+<li><p>Extent (<code class="docutils literal notranslate"><span class="pre">extent</span></code>) - A bounding box that defines the analysis area.
+Only those features that intersect the bounding box will be analyzed.</p></li>
+<li><p>Processing spatial reference (<code class="docutils literal notranslate"><span class="pre">processSR</span></code>) - The features will be
+projected into this coordinate system for analysis.</p></li>
+<li><p>Output spatial reference (<code class="docutils literal notranslate"><span class="pre">outSR</span></code>) - The features will be projected
+into this coordinate system after the analysis to be saved.
+The output spatial reference for the spatiotemporal big data store is always WGS84.</p></li>
+<li><p>Data store (<code class="docutils literal notranslate"><span class="pre">dataStore</span></code>) - Results will be saved to the specified data store.
+The default is the spatiotemporal big data store.</p></li>
+</ol>
+</td>
+</tr>
+<tr class="row-even"><td><p>gis</p></td>
+<td><p>optional GIS. The GIS object where the analysis will take place.</p></td>
+</tr>
+<tr class="row-odd"><td><p>future</p></td>
+<td><p>Optional boolean. If True, a GPJob is returned instead of
+results. The GPJob can be queried on the status of the execution.</p></td>
+</tr>
+</tbody>
+</table>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>feature layer collection</p>
+</dd>
+</dl>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Usage Example: To clip the buffered area in the shape of Capitol Hill boundary.</span>
+
+<span class="n">clipped</span> <span class="o">=</span> <span class="n">clip_layer</span><span class="p">(</span><span class="n">input_layer</span><span class="o">=</span><span class="n">buffer</span><span class="p">,</span> 
+                     <span class="n">clip_layer</span><span class="o">=</span><span class="n">boundary</span><span class="p">,</span>
+                     <span class="n">output_name</span><span class="o">=</span><span class="s2">&quot;clipped_buffer&quot;</span><span class="p">,</span>
+                     <span class="n">context</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;extent&quot;</span><span class="p">:{</span><span class="s1">&#39;xmin&#39;</span><span class="p">:</span> <span class="o">-</span><span class="mf">77.50941999999998</span><span class="p">,</span><span class="s1">&#39;ymin&#39;</span><span class="p">:</span> <span class="mf">38.389560000000074</span><span class="p">,</span><span class="s1">&#39;xmax&#39;</span><span class="p">:</span> <span class="o">-</span><span class="mf">76.50941999999998</span><span class="p">,</span><span class="s1">&#39;ymax&#39;</span><span class="p">:</span> <span class="mf">39.389560000000074</span><span class="p">,</span><span class="s2">&quot;spatialReference&quot;</span><span class="p">:{</span><span class="s2">&quot;wkid&quot;</span><span class="p">:</span><span class="mi">102100</span><span class="p">,</span><span class="s2">&quot;latestWkid&quot;</span><span class="p">:</span><span class="mi">3857</span><span class="p">}}})</span>
+</pre></div>
+</div>
+</dd></dl>
+
+</div>
+<div class="section" id="copy-to-data-store">
+<h2>copy_to_data_store<a class="headerlink" href="#copy-to-data-store" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt id="arcgis.geoanalytics.manage_data.copy_to_data_store">
+<code class="sig-prename descclassname">arcgis.geoanalytics.manage_data.</code><code class="sig-name descname">copy_to_data_store</code><span class="sig-paren">(</span><em class="sig-param">input_layer</em>, <em class="sig-param">output_name: str = None</em>, <em class="sig-param">gis=None</em>, <em class="sig-param">context=None</em>, <em class="sig-param">future=False</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.geoanalytics.manage_data.copy_to_data_store" title="Permalink to this definition">¶</a></dt>
+<dd><img alt="_images/copy_to_data_store.png" src="_images/copy_to_data_store.png" />
+<p>The <code class="docutils literal notranslate"><span class="pre">copy_to_data_store</span></code> task takes an input layer and copies it to a data store. 
+Data is copied to ArcGIS Data Store, configured as either a relational or 
+spatiotemporal big data store.</p>
+<p>For example</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>Copy a collection of .csv files in a big data file share to the spatiotemporal data store for visualization.</p></li>
+<li><p>Copy the features in the current map extent that are stored in the spatiotemporal data store to the relational data store.</p></li>
+</ul>
+</div></blockquote>
+<p>This tool will take an input layer and copy it to a data store. Data will be copied to the ArcGIS Data Store 
+and will be stored in your relational or spatiotemporal data store.</p>
+<p>For example, you could copy features that are stored in a big data file share to a relational data store 
+and specify that only features within the current map extent will be copied. This would create a hosted 
+feature service with only those features that were within the specified map extent.</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 11%" />
+<col style="width: 89%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><strong>Argument</strong></p></td>
+<td><p><strong>Description</strong></p></td>
+</tr>
+<tr class="row-even"><td><p>input_layer</p></td>
+<td><p>Required layer. The table, point, line, or polygon features that will be copied. See <a class="reference internal" href="arcgis.geoanalytics.toc.html#featureinput"><span class="std std-ref">Feature Input</span></a>.</p></td>
+</tr>
+<tr class="row-odd"><td><p>output_name</p></td>
+<td><p>Optional string. The task will create a feature service of the results. You define the name of the service.</p></td>
+</tr>
+<tr class="row-even"><td><p>gis</p></td>
+<td><p>Optional GIS. The GIS on which this tool runs. If not specified, the active GIS is used.</p></td>
+</tr>
+<tr class="row-odd"><td><p>context</p></td>
+<td><p>Optional string. The context parameter contains additional settings that affect task execution. For this task, there are five settings:</p>
+<ol class="arabic simple">
+<li><p>Extent (<code class="docutils literal notranslate"><span class="pre">extent</span></code>) - A bounding box that defines the analysis area. Only those features that intersect the bounding box will be analyzed.</p></li>
+<li><p>Processing spatial reference (<code class="docutils literal notranslate"><span class="pre">processSR</span></code>) - The features will be projected into this coordinate system for analysis.</p></li>
+<li><p>Output spatial reference (<code class="docutils literal notranslate"><span class="pre">outSR</span></code>) - The features will be projected into this coordinate system after the analysis to be saved. The output spatial reference for the spatiotemporal big data store is always WGS84.</p></li>
+<li><p>Data store (<code class="docutils literal notranslate"><span class="pre">dataStore</span></code>) - Results will be saved to the specified data store. The default is the spatiotemporal big data store.</p></li>
+<li><p>Default aggregation styles (<code class="docutils literal notranslate"><span class="pre">defaultAggregationStyles</span></code>) - If set to ‘True’, results will have square, hexagon, and triangle aggregation styles enabled on results map services.</p></li>
+</ol>
+</td>
+</tr>
+<tr class="row-even"><td><p>future</p></td>
+<td><p>Optional boolean. If ‘True’, the result comes back as a GPJob.</p>
+<p>The default value is ‘False’.</p>
+</td>
+</tr>
+</tbody>
+</table>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>result_layer : Output Features as feature layer item.</p>
+</dd>
+</dl>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Usage Example: To copy input layer to a data store. </span>
+<span class="n">copy_result</span> <span class="o">=</span> <span class="n">copy_to_data_store</span><span class="p">(</span><span class="n">input_layer</span><span class="o">=</span><span class="n">earthquakes</span><span class="p">,</span>
+                                 <span class="n">output_name</span><span class="o">=</span><span class="s2">&quot;copy earthquakes data&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+</div>
+<div class="section" id="dissolve-boundaries">
+<h2>dissolve_boundaries<a class="headerlink" href="#dissolve-boundaries" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt id="arcgis.geoanalytics.manage_data.dissolve_boundaries">
+<code class="sig-prename descclassname">arcgis.geoanalytics.manage_data.</code><code class="sig-name descname">dissolve_boundaries</code><span class="sig-paren">(</span><em class="sig-param">input_layer</em>, <em class="sig-param">dissolve_fields=None</em>, <em class="sig-param">summary_fields=None</em>, <em class="sig-param">multipart=False</em>, <em class="sig-param">output_name=None</em>, <em class="sig-param">gis=None</em>, <em class="sig-param">context=None</em>, <em class="sig-param">future=False</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.geoanalytics.manage_data.dissolve_boundaries" title="Permalink to this definition">¶</a></dt>
+<dd><img alt="_images/dissolve_boundaries.png" src="_images/dissolve_boundaries.png" />
+<p>The <code class="docutils literal notranslate"><span class="pre">dissolve_boundaries</span></code> task finds polygons that intersect or have the same field values 
+and merges them together to form a single polygon.</p>
+<p>Example:</p>
+<blockquote>
+<div><p>A city council wants to control liquor sales by refusing new licenses to stores within 
+1,000 feet of schools, libraries, and parks. After creating a 1,000-foot buffer around 
+the schools, libraries, and parks, the buffered layers can be joined together and the 
+boundaries can be dissolved to create a single layer of restricted areas.</p>
+</div></blockquote>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Only available at ArcGIS Enterprise 10.7 and later.</p>
+</div>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 7%" />
+<col style="width: 93%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><strong>Argument</strong></p></td>
+<td><p><strong>Description</strong></p></td>
+</tr>
+<tr class="row-even"><td><p>input_layer</p></td>
+<td><p>Required layer. The layer containing polygon features that will be dissolved. See <a class="reference internal" href="arcgis.geoanalytics.toc.html#featureinput"><span class="std std-ref">Feature Input</span></a>.</p></td>
+</tr>
+<tr class="row-odd"><td><p>dissolve_fields</p></td>
+<td><p>Optional string. A comma seperated list of strings for each
+field that you want to dissolve on.One or more fields in the <code class="docutils literal notranslate"><span class="pre">input_layer</span></code> that determine how polygons are merged based on field value.</p>
+<p>If you don’t specify fields, polygons that intersect will be dissolved into one polygon by default.</p>
+<p>If you do specify fields, polygons that share the same value for each of the specified fields will be dissolved into one polygon.</p>
+</td>
+</tr>
+<tr class="row-even"><td><p>summary_fields</p></td>
+<td><p>Optional list of dicts. A list of field names and statistical summary types you want to calculate.
+Note that the count is always returned. By default, all statistics are returned.</p>
+<p>Syntax: [{“statisticType” : “&lt;stat&gt;”, “onStatisticField” : “&lt;field name&gt;”}]</p>
+<p>fieldName is the name of the fields in the input point layer.</p>
+<p>statisticType is one of the following for numeric fields:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">Count</span></code> - Totals the number of values of all the points in each polygon.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Sum</span></code> - Adds the total value of all the points in each polygon.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Mean</span></code> - Calculates the average of all the points in each polygon.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Min</span></code> - Finds the smallest value of all the points in each polygon.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Max</span></code> - Finds the largest value of all the points in each polygon.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Range</span></code> - Finds the difference between the Min and Max values.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Stddev</span></code> - Finds the standard deviation of all the points in each polygon.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Var</span></code> - Finds the variance of all the points in each polygon.</p></li>
+</ul>
+<p>statisticType is one of the following for string fields:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">Count</span></code> - Totals the number of strings for all the points in each polygon.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Any</span></code> - Returns a sample string of a point in each polygon.</p></li>
+</ul>
+</div></blockquote>
+<p>Example: summary_fields = [{“statisticType” : “Sum”, “onStatisticField” : “quadrat_area_km2”}, {“statisticType” : “Mean”, “onStatisticField” : “soil_depth_cm”}, {“statisticType” : “Any”, “onStatisticField” : “quadrat_desc”}]</p>
+</td>
+</tr>
+<tr class="row-odd"><td><p>multipart</p></td>
+<td><p>Optional boolean. If ‘True’, the output service can contain
+multipart features. If ‘False’, the output service
+will only contain single-part features, and individual features
+will be created for each part.</p>
+<p>The default value is ‘False’.</p>
+</td>
+</tr>
+<tr class="row-even"><td><p>output_name</p></td>
+<td><p>optional string. The task will create a feature service of the results. You define the name of the service.</p></td>
+</tr>
+<tr class="row-odd"><td><p>gis</p></td>
+<td><p>optional GIS. The GIS object where the analysis will take place.</p></td>
+</tr>
+<tr class="row-even"><td><p>context</p></td>
+<td><p>Optional dict. The context parameter contains additional settings that affect task execution. For this task, there are five settings:</p>
+<ol class="arabic simple">
+<li><p>Extent (<code class="docutils literal notranslate"><span class="pre">extent</span></code>) - A bounding box that defines the analysis area. Only those features that intersect the bounding box will be analyzed.</p></li>
+<li><p>Processing spatial reference (<code class="docutils literal notranslate"><span class="pre">processSR</span></code>) - The features will be projected into this coordinate system for analysis.</p></li>
+<li><p>Output spatial reference (<code class="docutils literal notranslate"><span class="pre">outSR</span></code>) - The features will be projected into this coordinate system after the analysis to be saved. The output spatial reference for the spatiotemporal big data store is always WGS84.</p></li>
+<li><p>Data store (<code class="docutils literal notranslate"><span class="pre">dataStore</span></code>) - Results will be saved to the specified data store. The default is the spatiotemporal big data store.</p></li>
+<li><p>Default aggregation styles (<code class="docutils literal notranslate"><span class="pre">defaultAggregationStyles</span></code>) - If set to true, results will have square, hexagon, and triangle aggregation styles enabled on results map services.</p></li>
+</ol>
+</td>
+</tr>
+<tr class="row-odd"><td><p>future</p></td>
+<td><p>optional boolean. If True, a GPJob is returned instead of
+results. The GPJob can be queried on the status of the execution.</p></td>
+</tr>
+</tbody>
+</table>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>result_layer : Output Features as feature layer collection item.</p>
+</dd>
+</dl>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Usage Example: This example dissolves boundaries of soil areas in Nebraska if they have </span>
+<span class="c1"># the same solubility. For dissolved features, it calculates the sum of the quadrat area, </span>
+<span class="c1"># the mean soil depth, and an example of the quadrat description.</span>
+
+<span class="n">arcgis</span><span class="o">.</span><span class="n">env</span><span class="o">.</span><span class="n">out_spatial_reference</span> <span class="o">=</span> <span class="mi">3310</span>
+<span class="n">arcgis</span><span class="o">.</span><span class="n">env</span><span class="o">.</span><span class="n">output_datastore</span><span class="o">=</span> <span class="s2">&quot;relational&quot;</span>
+<span class="n">arcgis</span><span class="o">.</span><span class="n">env</span><span class="o">.</span><span class="n">defaultAggregations</span><span class="o">=</span> <span class="kc">True</span>
+
+<span class="n">summary_fields</span> <span class="o">=</span> <span class="p">[{</span><span class="s2">&quot;statisticType&quot;</span> <span class="p">:</span> <span class="s2">&quot;Sum&quot;</span><span class="p">,</span> <span class="s2">&quot;onStatisticField&quot;</span> <span class="p">:</span> <span class="s2">&quot;quadrat_area_km2&quot;</span><span class="p">},</span>
+                <span class="p">{</span><span class="s2">&quot;statisticType&quot;</span> <span class="p">:</span> <span class="s2">&quot;Mean&quot;</span><span class="p">,</span> <span class="s2">&quot;onStatisticField&quot;</span> <span class="p">:</span> <span class="s2">&quot;soil_depth_cm&quot;</span><span class="p">},</span>
+                <span class="p">{</span><span class="s2">&quot;statisticType&quot;</span> <span class="p">:</span> <span class="s2">&quot;Any&quot;</span><span class="p">,</span> <span class="s2">&quot;onStatisticField&quot;</span> <span class="p">:</span> <span class="s2">&quot;quadrat_desc&quot;</span><span class="p">}]</span>
+
+<span class="n">dissolve_result</span> <span class="o">=</span> <span class="n">dissolve_boundaries</span><span class="p">(</span><span class="n">input_layer</span><span class="o">=</span><span class="n">study_area_lyr</span><span class="p">,</span>
+                                      <span class="n">dissolve_fields</span><span class="o">=</span><span class="s2">&quot;soil_suitability&quot;</span><span class="p">,</span>
+                                      <span class="n">summary_fields</span><span class="o">=</span><span class="n">summary_fields</span><span class="p">,</span>
+                                      <span class="n">multipart</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+                                      <span class="n">output_name</span><span class="o">=</span><span class="s2">&quot;Soil_Suitability_dissolved&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+</div>
+<div class="section" id="merge-layers">
+<h2>merge_layers<a class="headerlink" href="#merge-layers" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt id="arcgis.geoanalytics.manage_data.merge_layers">
+<code class="sig-prename descclassname">arcgis.geoanalytics.manage_data.</code><code class="sig-name descname">merge_layers</code><span class="sig-paren">(</span><em class="sig-param">input_layer</em>, <em class="sig-param">merge_layer</em>, <em class="sig-param">merge_attributes=None</em>, <em class="sig-param">output_name=None</em>, <em class="sig-param">gis=None</em>, <em class="sig-param">context=None</em>, <em class="sig-param">future=False</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.geoanalytics.manage_data.merge_layers" title="Permalink to this definition">¶</a></dt>
+<dd><img alt="_images/merge_layers.png" src="_images/merge_layers.png" />
+<p>The <code class="docutils literal notranslate"><span class="pre">merge_layers</span></code> task combines two feature layers to create a single output layer. The tool
+requires that both layers have the same geometry type (tabular, point, line, or polygon). If
+time is enabled on one layer, the other must also be time enabled and have the same time type
+(instant or interval). The result will always contain all fields from the input layer. All
+fields from the merge layer will be included by default, or you can specify custom merge rules
+to define the resulting schema. For example:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>I have three layers for England, Wales, and Scotland and I want a single layer of Great
+Britain. I can use Merge Layers to combine the areas and maintain all fields from each area.</p></li>
+<li><p>I have two layers containing parcel information for contiguous townships. I want to join them
+together into a single layer, keeping only the fields that have the same name and type in the
+two layers.</p></li>
+</ul>
+</div></blockquote>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Only available at <strong>ArcGIS Enterprise 10.7</strong> and later.</p>
+</div>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 7%" />
+<col style="width: 93%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><strong>Argument</strong></p></td>
+<td><p><strong>Description</strong></p></td>
+</tr>
+<tr class="row-even"><td><p>input_layer</p></td>
+<td><p>Required layer. The table, point, line, or polygon features to
+merge with the <code class="docutils literal notranslate"><span class="pre">merge_layer</span></code> parameter. All fields in <code class="docutils literal notranslate"><span class="pre">input_layer</span></code>
+will be included in the result layer.  See <a class="reference internal" href="arcgis.geoanalytics.toc.html#featureinput"><span class="std std-ref">Feature Input</span></a>.</p></td>
+</tr>
+<tr class="row-odd"><td><p>merge_layer</p></td>
+<td><p>Required layer. The point, line, or polygon features to
+merge with the <code class="docutils literal notranslate"><span class="pre">input_layer</span></code>. The <code class="docutils literal notranslate"><span class="pre">merge_layer</span></code> must contain the
+same geometry type (tabular, point, line, or polygon) and the
+same time type (none, instant, or interval) as the <code class="docutils literal notranslate"><span class="pre">input_layer</span></code>.
+All fields in the <code class="docutils literal notranslate"><span class="pre">merge_layer</span></code> will be included in the result
+layer by default or you can define <code class="docutils literal notranslate"><span class="pre">merge_attributes</span></code> to
+customize the resulting schema.  See <a class="reference internal" href="arcgis.geoanalytics.toc.html#featureinput"><span class="std std-ref">Feature Input</span></a>.</p></td>
+</tr>
+<tr class="row-even"><td><p>merge_attributes</p></td>
+<td><p>Optional list of dicts. Defines how the fields in <code class="docutils literal notranslate"><span class="pre">merge_layer</span></code> will be
+modified. By default, all fields from both inputs will be
+included in the output layer.</p>
+<p>If a field exists in one layer but not the other, the output
+layer will still contain the field. The output field will
+contain null values for the input features that did not have the
+field. For example, if the <code class="docutils literal notranslate"><span class="pre">input_layer</span></code> contains a field named
+TYPE but the <code class="docutils literal notranslate"><span class="pre">merge_layer</span></code> does not contain TYPE, the output will
+contain TYPE, but its values will be null for all the features
+copied from the <code class="docutils literal notranslate"><span class="pre">merge_layer</span></code>.</p>
+<p>You can control how fields in the <code class="docutils literal notranslate"><span class="pre">merge_layer</span></code> are written to the
+output layer using the following merge types that operate on a
+specified <code class="docutils literal notranslate"><span class="pre">merge_layer</span></code> field:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">Remove</span></code> - The field in the <code class="docutils literal notranslate"><span class="pre">merge_layer</span></code> will be removed from the output layer.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Rename</span></code> - The field in the <code class="docutils literal notranslate"><span class="pre">merge_layer</span></code> will be renamed in the output layer.
+You cannot rename a field in the <code class="docutils literal notranslate"><span class="pre">merge_layer</span></code> to a field in the <code class="docutils literal notranslate"><span class="pre">input_layer</span></code>.
+If you want to make field names equivalent, use Match.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Match</span></code> - A field in the merge_layer is made equivalent to a field in the <code class="docutils literal notranslate"><span class="pre">input_layer</span></code>
+specified by <code class="docutils literal notranslate"><span class="pre">merge_layer</span></code>. For example, the input_layer has a field named CODE
+and the merge_layer has a field named STATUS. You can match STATUS to CODE, and
+the output will contain the CODE field with values of the STATUS field used for
+features copied from the merge_layer. Type casting is supported (for example,
+double to integer, integer to string) except for string to numeric.</p></li>
+</ul>
+</div></blockquote>
+<p>Example: [{“mergeLayerField”: “Mean_Sales”,”mergeType”: “Match”,”mergeValue”: “Average_Sales”},{“mergeLayerField”: “Bonus”,”mergeType”: “Remove”,},{“mergeLayerField”: “Field4”,”mergeType”: “Rename”,”mergeValue”: “Errors”}]</p>
+</td>
+</tr>
+<tr class="row-odd"><td><p>output_name</p></td>
+<td><p>Optional string. The task will create a feature service of the results. You define the name of the service.</p></td>
+</tr>
+<tr class="row-even"><td><p>gis</p></td>
+<td><p>Optional GIS. The GIS object where the analysis will take place.</p></td>
+</tr>
+<tr class="row-odd"><td><p>context</p></td>
+<td><p>Optional dict. The context parameter contains additional settings that affect task execution. For this task, there are five settings:</p>
+<ol class="arabic simple">
+<li><p>Extent (<code class="docutils literal notranslate"><span class="pre">extent</span></code>) - A bounding box that defines the analysis area. Only those features that intersect the bounding box will be analyzed.</p></li>
+<li><p>Processing spatial reference (<code class="docutils literal notranslate"><span class="pre">processSR</span></code>) - The features will be projected into this coordinate system for analysis.</p></li>
+<li><p>Output spatial reference (<code class="docutils literal notranslate"><span class="pre">outSR</span></code>) - The features will be projected into this coordinate system after the analysis to be saved. The output spatial reference for the spatiotemporal big data store is always WGS84.</p></li>
+<li><p>Data store (<code class="docutils literal notranslate"><span class="pre">dataStore</span></code>) - Results will be saved to the specified data store. The default is the spatiotemporal big data store.</p></li>
+<li><p>Default aggregation styles (<code class="docutils literal notranslate"><span class="pre">defaultAggregationStyles</span></code>) - If set to ‘True’, results will have square, hexagon, and triangle aggregation styles enabled on results map services.</p></li>
+</ol>
+</td>
+</tr>
+<tr class="row-even"><td><p>future</p></td>
+<td><p>Optional boolean. If ‘True’, a GPJob is returned instead of
+results. The GPJob can be queried on the status of the execution.</p>
+<p>The default value is ‘False’.</p>
+</td>
+</tr>
+</tbody>
+</table>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>result_layer : Output Features as feature layer item.</p>
+</dd>
+</dl>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Usage Example: To merge census blocks from two states into one output layer.</span>
+
+<span class="n">merge_result</span> <span class="o">=</span> <span class="n">merge_layers</span><span class="p">(</span><span class="n">input_layer</span><span class="o">=</span><span class="n">il_block</span><span class="p">,</span>
+                           <span class="n">merge_layer</span><span class="o">=</span><span class="n">wi_block</span><span class="p">,</span>
+                           <span class="n">merge_attributes</span><span class="o">=</span><span class="p">[{</span><span class="s2">&quot;mergeLayerField&quot;</span> <span class="p">:</span> <span class="s2">&quot;State_Code&quot;</span><span class="p">,</span> <span class="s2">&quot;mergeType&quot;</span> <span class="p">:</span> <span class="s2">&quot;Match&quot;</span><span class="p">,</span> <span class="s2">&quot;mergeValue&quot;</span> <span class="p">:</span> <span class="s2">&quot;statecode&quot;</span><span class="p">}],</span>
+                           <span class="n">output_name</span><span class="o">=</span><span class="s2">&quot;IL_WI_Census_Blocks&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+</div>
+<div class="section" id="overlay-data">
+<h2>overlay_data<a class="headerlink" href="#overlay-data" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt id="arcgis.geoanalytics.manage_data.overlay_data">
+<code class="sig-prename descclassname">arcgis.geoanalytics.manage_data.</code><code class="sig-name descname">overlay_data</code><span class="sig-paren">(</span><em class="sig-param">input_layer</em>, <em class="sig-param">overlay_layer</em>, <em class="sig-param">overlay_type='intersect'</em>, <em class="sig-param">output_name=None</em>, <em class="sig-param">gis=None</em>, <em class="sig-param">include_overlaps=True</em>, <em class="sig-param">context=None</em>, <em class="sig-param">future=False</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.geoanalytics.manage_data.overlay_data" title="Permalink to this definition">¶</a></dt>
+<dd><img alt="_images/overlay_layers.png" src="_images/overlay_layers.png" />
+<p>The <code class="docutils literal notranslate"><span class="pre">overlay_data</span></code> task combines two or more layers into one single layer. 
+You can think of overlay as peering through a stack of maps and creating a single 
+map containing all the information found in the stack. Overlay is used to answer 
+one of the most basic questions of geography: What is on top of what? 
+The following are examples:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>What parcels are within the 100-year floodplain? (“Within” is another way of saying “on top of.”)</p></li>
+<li><p>What land use is within what soil type?</p></li>
+<li><p>What mines are within abandoned military bases?</p></li>
+</ul>
+</div></blockquote>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Only available at ArcGIS Enterprise 10.6.1 and later.</p>
+</div>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 91%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><strong>Argument</strong></p></td>
+<td><p><strong>Description</strong></p></td>
+</tr>
+<tr class="row-even"><td><p>input_layer</p></td>
+<td><p>Required layer. The point, line, or polygon features that will be overlaid with the <code class="docutils literal notranslate"><span class="pre">overlay_layer</span></code> features. See <a class="reference internal" href="arcgis.geoanalytics.toc.html#featureinput"><span class="std std-ref">Feature Input</span></a>.</p></td>
+</tr>
+<tr class="row-odd"><td><p>overlay_layer</p></td>
+<td><p>Required layer. The features that will be overlaid with the <code class="docutils literal notranslate"><span class="pre">input_layer</span></code> features.</p></td>
+</tr>
+<tr class="row-even"><td><p>overlay_type</p></td>
+<td><p>optional string. The type of overlay to be performed.</p>
+<p>Choice list: [‘intersect’, ‘erase’, ‘union’, ‘identity’, ‘symmetricaldifference’]</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 30%" />
+<col style="width: 70%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><img alt="Intersect" src="_images/Intersect.png" /> <code class="docutils literal notranslate"><span class="pre">intersect</span></code></p></td>
+<td><p>Computes a geometric intersection of the input layers.
+Features or portions of features that overlap in both the <code class="docutils literal notranslate"><span class="pre">input_layer</span></code>
+and <code class="docutils literal notranslate"><span class="pre">overlay_layer</span></code> layers will be written to the output layer.</p>
+<ul class="simple">
+<li><p>Point — Point, Line, Polygon</p></li>
+<li><p>Line — Point, Line, Polygon</p></li>
+<li><p>Polygon— Point, Line, Polygon</p></li>
+</ul>
+</td>
+</tr>
+<tr class="row-even"><td><p><img alt="Erase" src="_images/Erase.png" /> <code class="docutils literal notranslate"><span class="pre">erase</span></code></p></td>
+<td><p>Only those features or portions of features in the <code class="docutils literal notranslate"><span class="pre">overlay_layer</span></code>
+that are not within the features in the <code class="docutils literal notranslate"><span class="pre">input_layer</span></code> layer are
+written to the output.</p>
+<ul class="simple">
+<li><p>Point — Point</p></li>
+<li><p>Line — Line</p></li>
+<li><p>Polygon — Polygon</p></li>
+</ul>
+</td>
+</tr>
+<tr class="row-odd"><td><p><img alt="Union" src="_images/Union.png" /> <code class="docutils literal notranslate"><span class="pre">union</span></code></p></td>
+<td><p>Computes a geometric union of the <code class="docutils literal notranslate"><span class="pre">input_layer</span></code> and <code class="docutils literal notranslate"><span class="pre">overlay_layer</span></code>.
+All features and their attributes will be written to the layer.</p>
+<ul class="simple">
+<li><p>Polygon — Polygon</p></li>
+</ul>
+</td>
+</tr>
+<tr class="row-even"><td><p><img alt="identity" src="_images/identity.png" /> <code class="docutils literal notranslate"><span class="pre">identity</span></code></p></td>
+<td><p>Computes a geometric intersection of the input features and
+identity features. Features or portions of features that overlap in both
+<code class="docutils literal notranslate"><span class="pre">input_layer</span></code> and <code class="docutils literal notranslate"><span class="pre">overlay_layer</span></code> will be written to the output layer.</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>Point — Point, Polygon</p></li>
+<li><p>Line — Line, Polygon</p></li>
+<li><p>Polygon— Polygon</p></li>
+</ul>
+</div></blockquote>
+</td>
+</tr>
+<tr class="row-odd"><td><p><img alt="symm" src="_images/Symmetric_Difference.png" /> <code class="docutils literal notranslate"><span class="pre">symmetricaldifference</span></code></p></td>
+<td><p>Features or portions of features in the <code class="docutils literal notranslate"><span class="pre">input_layer</span></code>
+and <code class="docutils literal notranslate"><span class="pre">overlay_layer</span></code> that do not overlap will be written to the output layer.</p>
+<ul class="simple">
+<li><p>Point — Point</p></li>
+<li><p>Line — Line</p></li>
+<li><p>Polygon— Polygon</p></li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+<tr class="row-even"><td><p>include_overlaps</p></td>
+<td><p>Optional boolean. Determines whether input features in the same dataset contain any overlapping features.
+This option should only be modified if you’re not interested in self-intersection between
+features for the input layer and self-intersection between features for the overlay layer.
+Setting this value to false will improve performance. This parameter is only used when
+<code class="docutils literal notranslate"><span class="pre">include_overlaps</span></code> is Intersect with 10.6 and 10.6.1.</p>
+<p>The default value is ‘True’.</p>
+</td>
+</tr>
+<tr class="row-odd"><td><p>output_name</p></td>
+<td><p>Optional string. The task will create a feature service of the results. You define the name of the service.</p></td>
+</tr>
+<tr class="row-even"><td><p>gis</p></td>
+<td><p>Optional GIS. The GIS object where the analysis will take place.</p></td>
+</tr>
+<tr class="row-odd"><td><p>context</p></td>
+<td><p>Optional dict. The context parameter contains additional settings that affect task execution. For this task, there are four settings:</p>
+<ol class="arabic simple">
+<li><p>Extent (<code class="docutils literal notranslate"><span class="pre">extent</span></code>) - A bounding box that defines the analysis area. Only those features that intersect the bounding box will be analyzed.</p></li>
+<li><p>Processing spatial reference (<code class="docutils literal notranslate"><span class="pre">processSR</span></code>) - The features will be projected into this coordinate system for analysis.</p></li>
+<li><p>Output spatial reference (<code class="docutils literal notranslate"><span class="pre">outSR</span></code>) - The features will be projected into this coordinate system after the analysis to be saved. The output spatial reference for the spatiotemporal big data store is always WGS84.</p></li>
+<li><p>Data store (<code class="docutils literal notranslate"><span class="pre">dataStore</span></code>) - Results will be saved to the specified data store. The default is the spatiotemporal big data store.</p></li>
+</ol>
+</td>
+</tr>
+<tr class="row-even"><td><p>future</p></td>
+<td><p>Optional boolean. If ‘True’, a GPJob is returned instead of
+results. The GPJob can be queried on the status of the execution.</p>
+<p>The default value is ‘False’.</p>
+</td>
+</tr>
+</tbody>
+</table>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>result_layer : Output Features as feature layer item.</p>
+</dd>
+</dl>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Usage Example: To find the intersecting areas between watersheds and grazing land in Missouri.</span>
+
+<span class="n">overlay_result</span> <span class="o">=</span> <span class="n">manage_data</span><span class="o">.</span><span class="n">overlay_data</span><span class="p">(</span><span class="n">input_layer</span><span class="o">=</span><span class="n">grazing_land</span><span class="p">,</span> 
+                              <span class="n">overlay_layer</span><span class="o">=</span><span class="n">watersheds_layer</span><span class="p">,</span> 
+                              <span class="n">overlay_type</span><span class="o">=</span><span class="s2">&quot;Intersect&quot;</span><span class="p">,</span> 
+                              <span class="n">output_name</span><span class="o">=</span><span class="s2">&quot;Watershed_intersections&quot;</span><span class="p">)</span>   
+</pre></div>
+</div>
+</dd></dl>
+
+</div>
+<div class="section" id="run-python-script">
+<h2>run_python_script<a class="headerlink" href="#run-python-script" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt id="arcgis.geoanalytics.manage_data.run_python_script">
+<code class="sig-prename descclassname">arcgis.geoanalytics.manage_data.</code><code class="sig-name descname">run_python_script</code><span class="sig-paren">(</span><em class="sig-param">code</em>, <em class="sig-param">layers=None</em>, <em class="sig-param">gis=None</em>, <em class="sig-param">context=None</em>, <em class="sig-param">future=False</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.geoanalytics.manage_data.run_python_script" title="Permalink to this definition">¶</a></dt>
+<dd><p>The <code class="docutils literal notranslate"><span class="pre">run_python_script</span></code> method executes a Python script on your ArcGIS
+GeoAnalytics Server site. In the script, you can create an analysis
+pipeline by chaining together multiple GeoAnalytics Tools without
+writing intermediate results to a data store. You can also use other
+Python functionality in the script that can be distributed across your
+GeoAnalytics Server.</p>
+<p>For example, suppose that each week you receive a new dataset of
+vehicle locations containing billions of point features. Each time you
+receive a new dataset, you must perform the same workflow involving
+multiple GeoAnalytics Tools to create an information product that you
+share within your organization. This workflow creates several large
+intermediate layers that take up lots of space in your data store. By
+scripting this workflow in Python and executing the code in the Run
+Python Script task, you can avoid creating these unnecessary
+intermediate layers, while simplifying the steps to create the
+information product.</p>
+<p>When you use <code class="docutils literal notranslate"><span class="pre">run_python_script</span></code>, the Python code is executed on your
+GeoAnalytics Server. The script runs with the Python 3.6 environment
+that is installed with GeoAnalytics Server, and all console output is
+returned as job messages. Some Python modules can be used in your
+script to execute code across multiple cores of one or more machines
+in your GeoAnalytics Server using Spark 2.2.0(the compute platform that
+distributes analysis for GeoAnalytics Tools).</p>
+<p>A geoanalytics module is available and allows you to run GeoAnalytics
+Tools in the script. This package is imported automatically when you
+use Run Python Script.</p>
+<p>To interact directly with Spark in the Run Python Script task, use the
+pyspark module, which is imported automatically when you run the task.
+The pyspark module is the Python API for Spark and provides a
+collection of distributed analysis tools for data management,
+clustering, regression, and more that can be called in Run Python
+Script and run across your GeoAnalytics Server.</p>
+<p>When using the geoanalytics and pyspark packages, most functions return
+analysis results in memory as Spark DataFrames. Spark data frames can be
+written to a data store or used in the script. This allows for the
+chaining together of multiple geoanalytics and pyspark tools, while only
+writing out the final result to a data store, eliminating the need to
+create any intermediate result layers.</p>
+<p>For advanced users, an instance of SparkContext is instantiated
+automatically as sc and can be used in the script to interact with Spark.
+This allows for the execution of custom distributed analysis across your
+GeoAnalytics Server.</p>
+<p>It is recommended that you use an integrated development environment
+(IDE) to write your Python script, and copy the script text into the Run
+Python Script tool. This makes it easier to identify syntax errors and
+typos prior to running your script. It is also recommended that you run
+your script using a small subset of the input data first to verify that
+there are no logic errors or exceptions. You can use the Describe
+Dataset task to create a sample layer for this purpose.</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 7%" />
+<col style="width: 93%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p>code</p></td>
+<td><p>Required string. The Python script that will run on your GeoAnalytics Server. This must be the full script as a string.</p>
+<p>The layers provided in inputLayers can be accessed in the script using the layers object. To learn more,
+see <a class="reference external" href="https://developers.arcgis.com/rest/services-reference/using-webgis-layers-in-pyspark.htm">Reading and writing layers in pyspark</a>.</p>
+<p>GeoAnalytics Tools can be accessed with the geoanalytics object, which is instantiated in the script environment automatically.
+To learn more, see <a class="reference external" href="https://developers.arcgis.com/rest/services-reference/using-geoanalytics-tools-in-pyspark.htm">Using GeoAnalytics Tools in Run Python Script</a>.</p>
+<p>For a collection of example scripts, see <a class="reference external" href="https://developers.arcgis.com/rest/services-reference/run-python-script-examples.htm">Examples: Scripting custom analysis with the Run Python Script task</a>.</p>
+</td>
+</tr>
+<tr class="row-even"><td><p>layers</p></td>
+<td><p>Optional list. A list of Feature layers to operate on. See <a class="reference internal" href="arcgis.geoanalytics.toc.html#featureinput"><span class="std std-ref">Feature Input</span></a>.</p></td>
+</tr>
+<tr class="row-odd"><td><p>gis</p></td>
+<td><p>optional GIS. The GIS object where the analysis will take place.</p></td>
+</tr>
+<tr class="row-even"><td><p>context</p></td>
+<td><p>Optional dict. This parameter is not used by the <code class="docutils literal notranslate"><span class="pre">run_python_script</span></code> tool.</p>
+<p>To control the output data store, use the “dataStore” option when writing DataFrames.</p>
+<p>To set the processing or output spatial reference, use the project tool in the geoanalytics package.</p>
+<p>To filter a layer when converting it to a DataFrame, use the “where” or “fields” option when loading the layer’s URL.</p>
+<p>To limit the extent of a layer when converting it to a DataFrame, use the “extent” option when loading the layer’s URL.</p>
+</td>
+</tr>
+<tr class="row-odd"><td><p>future</p></td>
+<td><p>Optional boolean. If ‘True’, a GPJob is returned instead of
+results. The GPJob can be queried on the status of the execution.</p></td>
+</tr>
+</tbody>
+</table>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>list of dictionary of messages from the code provided.</p>
+</dd>
+</dl>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Usage Example: Execute calculate_density tool using run_python_script.</span>
+
+<span class="n">code</span> <span class="o">=</span> <span class="s1">&#39;&#39;&#39;</span>
+<span class="s1">import time </span>
+<span class="s1">r = geoanalytics.calculate_density(input_layer=layers[0],</span>
+<span class="s1">                fields=&#39;Damage&#39;,</span>
+<span class="s1">                weight=&#39;Uniform&#39;,</span>
+<span class="s1">                bin_type=&#39;Square&#39;,</span>
+<span class="s1">                bin_size=1,</span>
+<span class="s1">                bin_size_unit=&#39;Meters&#39;,</span>
+<span class="s1">                radius=2,</span>
+<span class="s1">                radius_unit=&#39;Yards&#39;)        </span>
+<span class="s1">                </span>
+<span class="s1">r.write.format(&#39;webgis&#39;).save(&#39;RunPythonScriptTest_</span><span class="si">{0}</span><span class="s1">&#39;.format(time.time()))              </span>
+<span class="s1">&#39;&#39;&#39;</span>
+<span class="n">run_python_script</span><span class="p">(</span><span class="n">code</span><span class="o">=</span><span class="n">code</span><span class="p">,</span> <span class="n">layers</span><span class="o">=</span><span class="p">[</span><span class="n">lyr</span><span class="p">])</span>
+</pre></div>
+</div>
+</dd></dl>
+
+</div>
+</div>
+
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="arcgis.geoanalytics.summarize_data.html" class="btn btn-neutral float-right" title="arcgis.geoanalytics.summarize_data module" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="arcgis.geoanalytics.find_locations.html" class="btn btn-neutral float-left" title="arcgis.geoanalytics.find_locations module" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        
+        &copy; Copyright 2016-2019, Esri
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

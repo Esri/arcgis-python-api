@@ -1,0 +1,1389 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <title>arcgis.gis.mission module &mdash; arcgis 1.8.5 documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="_static/theme_overrides.css" type="text/css" />
+
+  
+  
+    <link rel="shortcut icon" href="_static/favicon.ico"/>
+  
+
+  
+  
+
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/doctools.js"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="arcgis.gis.nb module" href="arcgis.gis.nb.html" />
+    <link rel="prev" title="arcgis.gis.server module" href="arcgis.gis.server.html" />
+<!-- This code block is inserted close near the <head> tag. See http://bit.ly/2BHUQzB -->
+<!-- The point of this code block is to send us google analytics on website views -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-NJGGV5');</script>
+ 
+
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="index.html" class="icon icon-home"> arcgis
+          
+
+          
+            
+            <img src="_static/python_api_logo.png" class="logo" alt="Logo"/>
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1.8.5
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">arcgis</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="arcgis.gis.toc.html">arcgis.gis module</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="arcgis.gis.toc.html#gis">GIS</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.gis.toc.html#item">Item</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.gis.toc.html#user">User</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.gis.toc.html#group">Group</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.gis.toc.html#datastore">Datastore</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.gis.toc.html#role">Role</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.gis.toc.html#layer">Layer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.gis.toc.html#groupapplication">GroupApplication</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.gis.toc.html#categoryschemamanager">CategorySchemaManager</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.gis.toc.html#contentmanager">ContentManager</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.gis.toc.html#usermanager">UserManager</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.gis.toc.html#groupmanager">GroupManager</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.gis.toc.html#groupmigrationmanager">GroupMigrationManager</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.gis.toc.html#datastoremanager">DatastoreManager</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.gis.toc.html#rolemanager">RoleManager</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.gis.toc.html#resourcemanager">ResourceManager</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.gis.toc.html#apikeymanager">APIKeyManager</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.gis.toc.html#apikey">APIKey</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.gis.toc.html#profilemanager">ProfileManager</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.gis.toc.html#invitationmanager">InvitationManager</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.gis.toc.html#certificatemanager">CertificateManager</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.gis.toc.html#portaldatastore">PortalDataStore</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="arcgis.gis.toc.html#submodules">Submodules</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="arcgis.gis.admin.html">arcgis.gis.admin module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="arcgis.gis.server.html">arcgis.gis.server module</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">arcgis.gis.mission module</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#missionserver">MissionServer</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#directorymanager">DirectoryManager</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#logmanager">LogManager</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#machine">Machine</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#machinemanager">MachineManager</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#securitymanager">SecurityManager</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#sitemanager">SiteManager</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#systemmanager">SystemManager</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#webadaptor">WebAdaptor</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#webadaptormanager">WebAdaptorManager</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="arcgis.gis.nb.html">arcgis.gis.nb module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="arcgis.gis.workflowmanager.html">arcgis.gis.workflowmanager module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="arcgis.gis.tasks.html">arcgis.gis.tasks module</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="arcgis.env.html">arcgis.env module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="arcgis.features.toc.html">arcgis.features module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="arcgis.raster.toc.html">arcgis.raster module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="arcgis.network.toc.html">arcgis.network module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="arcgis.geoanalytics.toc.html">arcgis.geoanalytics module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="arcgis.geocoding.html">arcgis.geocoding module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="arcgis.geoenrichment.html">arcgis.geoenrichment module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="arcgis.geometry.html">arcgis.geometry module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="arcgis.geoprocessing.html">arcgis.geoprocessing module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="arcgis.mapping.toc.html">arcgis.mapping module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="arcgis.realtime.html">arcgis.realtime module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="arcgis.schematics.html">arcgis.schematics module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="arcgis.widgets.html">arcgis.widgets module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="arcgis.apps.html">arcgis.apps module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="arcgis.learn.toc.html">arcgis.learn module</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">arcgis</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="arcgis.gis.toc.html">arcgis.gis module</a> &raquo;</li>
+        
+      <li>arcgis.gis.mission module</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+<!-- This code block is inserted close near the <body> tag. See http://bit.ly/2BHUQzB -->
+<!-- The point of this code block is to send us google analytics on website views -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NJGGV5"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+
+  <div class="section" id="module-arcgis.gis.mission">
+<span id="arcgis-gis-mission-module"></span><h1>arcgis.gis.mission module<a class="headerlink" href="#module-arcgis.gis.mission" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="missionserver">
+<h2>MissionServer<a class="headerlink" href="#missionserver" title="Permalink to this headline">¶</a></h2>
+<dl class="py class">
+<dt id="arcgis.gis.mission.MissionServer">
+<em class="property"><span class="pre">class</span> </em><code class="sig-prename descclassname"><span class="pre">arcgis.gis.mission.</span></code><code class="sig-name descname"><span class="pre">MissionServer</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">url</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">gis</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.gis.mission.MissionServer" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">arcgis.gis.mission._base.BaseMissionServer</span></code></p>
+<p>A Mission Server Instance.</p>
+<dl class="py method">
+<dt id="arcgis.gis.mission.MissionServer.info">
+<em class="property"><span class="pre">property</span> </em><code class="sig-name descname"><span class="pre">info</span></code><a class="headerlink" href="#arcgis.gis.mission.MissionServer.info" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns information about the server site itself</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>PropertyMap</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="arcgis.gis.mission.MissionServer.logs">
+<em class="property"><span class="pre">property</span> </em><code class="sig-name descname"><span class="pre">logs</span></code><a class="headerlink" href="#arcgis.gis.mission.MissionServer.logs" title="Permalink to this definition">¶</a></dt>
+<dd><p>Provides access to the Mission server’s logging system</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>LogManager</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="arcgis.gis.mission.MissionServer.machine">
+<em class="property"><span class="pre">property</span> </em><code class="sig-name descname"><span class="pre">machine</span></code><a class="headerlink" href="#arcgis.gis.mission.MissionServer.machine" title="Permalink to this definition">¶</a></dt>
+<dd><p>Provides access to managing the registered machines with ArcGIS
+Mission Server</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>MachineManager</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="arcgis.gis.mission.MissionServer.security">
+<em class="property"><span class="pre">property</span> </em><code class="sig-name descname"><span class="pre">security</span></code><a class="headerlink" href="#arcgis.gis.mission.MissionServer.security" title="Permalink to this definition">¶</a></dt>
+<dd><p>Provides access to managing the ArcGIS Mission Server’s security
+settings.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>SecurityManager</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="arcgis.gis.mission.MissionServer.system">
+<em class="property"><span class="pre">property</span> </em><code class="sig-name descname"><span class="pre">system</span></code><a class="headerlink" href="#arcgis.gis.mission.MissionServer.system" title="Permalink to this definition">¶</a></dt>
+<dd><p>returns access to the system properties of the ArcGIS Mission Server</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>SystemManager</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="directorymanager">
+<h2>DirectoryManager<a class="headerlink" href="#directorymanager" title="Permalink to this headline">¶</a></h2>
+<dl class="py class">
+<dt id="arcgis.gis.mission._system.DirectoryManager">
+<em class="property"><span class="pre">class</span> </em><code class="sig-prename descclassname"><span class="pre">arcgis.gis.mission._system.</span></code><code class="sig-name descname"><span class="pre">DirectoryManager</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">url</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">gis</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.gis.mission._system.DirectoryManager" title="Permalink to this definition">¶</a></dt>
+<dd><p>A manages and maintains a collection of all server directories.</p>
+<dl class="py method">
+<dt id="arcgis.gis.mission._system.DirectoryManager.list">
+<code class="sig-name descname"><span class="pre">list</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.gis.mission._system.DirectoryManager.list" title="Permalink to this definition">¶</a></dt>
+<dd><p>returns the current registered directories</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>List</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="arcgis.gis.mission._system.DirectoryManager.properties">
+<em class="property"><span class="pre">property</span> </em><code class="sig-name descname"><span class="pre">properties</span></code><a class="headerlink" href="#arcgis.gis.mission._system.DirectoryManager.properties" title="Permalink to this definition">¶</a></dt>
+<dd><p>returns the properties of the resource</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="arcgis.gis.mission._system.DirectoryManager.register">
+<code class="sig-name descname"><span class="pre">register</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">path</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">directory_type</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.gis.mission._system.DirectoryManager.register" title="Permalink to this definition">¶</a></dt>
+<dd><p>This operation registers a new data directory from your local
+machine with the ArcGIS Mission Server site. Registering a local
+folder as a data directory allows your mission authors to work with
+files in the folder.</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 21%" />
+<col style="width: 79%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><strong>Parameter</strong></p></td>
+<td><p><strong>Description</strong></p></td>
+</tr>
+<tr class="row-even"><td><p>name</p></td>
+<td><p>The name of the directory.</p></td>
+</tr>
+<tr class="row-odd"><td><p>path</p></td>
+<td><p>The full path to the directory on your machine.</p></td>
+</tr>
+<tr class="row-even"><td><p>directory_type</p></td>
+<td><p>The type of directory. Values: DATA | WORKSPACE | OUTPUT</p></td>
+</tr>
+</tbody>
+</table>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>boolean</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="arcgis.gis.mission._system.DirectoryManager.unregister">
+<code class="sig-name descname"><span class="pre">unregister</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">directory_id</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.gis.mission._system.DirectoryManager.unregister" title="Permalink to this definition">¶</a></dt>
+<dd><p>This operation unregisters an existing directory from the ArcGIS
+Mission Server site.</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 21%" />
+<col style="width: 79%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><strong>Parameter</strong></p></td>
+<td><p><strong>Description</strong></p></td>
+</tr>
+<tr class="row-even"><td><p>directory_id</p></td>
+<td><p>Required String.  The directory ID to remove.</p></td>
+</tr>
+</tbody>
+</table>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>boolean</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="logmanager">
+<h2>LogManager<a class="headerlink" href="#logmanager" title="Permalink to this headline">¶</a></h2>
+<dl class="py class">
+<dt id="arcgis.gis.mission._logs.LogManager">
+<em class="property"><span class="pre">class</span> </em><code class="sig-prename descclassname"><span class="pre">arcgis.gis.mission._logs.</span></code><code class="sig-name descname"><span class="pre">LogManager</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">url</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">gis</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.gis.mission._logs.LogManager" title="Permalink to this definition">¶</a></dt>
+<dd><p>Logs are the records written by the various components of Mission Server.
+You can query the logs and change various log settings.</p>
+<dl class="py method">
+<dt id="arcgis.gis.mission._logs.LogManager.clean">
+<code class="sig-name descname"><span class="pre">clean</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.gis.mission._logs.LogManager.clean" title="Permalink to this definition">¶</a></dt>
+<dd><p>Deletes all the log files on all server machines in the site. This is an irreversible
+operation.</p>
+<p>This operation forces the server to clean the logs, which has the effect of freeing
+up disk space. However, it is not required that you invoke this operation because
+the server periodically purges old logs.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>boolean</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="arcgis.gis.mission._logs.LogManager.properties">
+<em class="property"><span class="pre">property</span> </em><code class="sig-name descname"><span class="pre">properties</span></code><a class="headerlink" href="#arcgis.gis.mission._logs.LogManager.properties" title="Permalink to this definition">¶</a></dt>
+<dd><p>returns the properties of the resource</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="arcgis.gis.mission._logs.LogManager.query">
+<code class="sig-name descname"><span class="pre">query</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">start_time</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">end_time</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">since_server_start</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">level</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'WARNING'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">services</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'*'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">machines</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'*'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">server</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'*'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">codes</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">process_IDs</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">export</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">export_type</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'CSV'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">out_path</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.gis.mission._logs.LogManager.query" title="Permalink to this definition">¶</a></dt>
+<dd><p>The query operation on the logs resource provides a way to
+aggregate, filter, and page through logs across the entire site.</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 14%" />
+<col style="width: 86%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><strong>Argument</strong></p></td>
+<td><p><strong>Description</strong></p></td>
+</tr>
+<tr class="row-even"><td><p>start_time</p></td>
+<td><p>Optional string/datetime.dateime. The most recent time to query.  Default is now.
+Time can be specified in milliseconds since UNIX epoch, or as an
+ArcGIS Server timestamp. For example { “startTime”: “2011-08-01T15:17:20,123”, … },
+{ “startTime”: 1312237040123, … }, respectively.</p></td>
+</tr>
+<tr class="row-odd"><td><p>end_time</p></td>
+<td><p>Optional string/datetime.dateime. The oldest time to include in the result set. You
+can use this to limit the query to the last n minutes or hours as
+needed. Default is the beginning of all logging.</p></td>
+</tr>
+<tr class="row-even"><td><p>since_server_start</p></td>
+<td><p>Optional Boolean. Gets only the records written since the server
+started (True).  The default is False.</p></td>
+</tr>
+<tr class="row-odd"><td><p>level</p></td>
+<td><p>Optional string. Gets only the records with a log level at or more
+severe than the level declared here. Can be one of (in severity
+order): DEBUG, VERBOSE, FINE, INFO, WARNING, SEVERE. The
+default is WARNING.</p></td>
+</tr>
+<tr class="row-even"><td><p>services</p></td>
+<td><p>Optional string. Query records related to a specific service.
+The default is all.</p></td>
+</tr>
+<tr class="row-odd"><td><p>machines</p></td>
+<td><p>Optional string. Query records related to a specific machine.
+The default is all.</p></td>
+</tr>
+<tr class="row-even"><td><p>server</p></td>
+<td><p>Optional string. Query records related to a specific server.
+The default is all.</p></td>
+</tr>
+<tr class="row-odd"><td><p>codes</p></td>
+<td><p>Optional string. Gets only the records with the specified code.
+The default is all.  See <a class="reference external" href="http://server.arcgis.com/en/server/latest/administer/windows/log-codes-overview.htm">http://server.arcgis.com/en/server/latest/administer/windows/log-codes-overview.htm</a></p></td>
+</tr>
+<tr class="row-even"><td><p>process_IDs</p></td>
+<td><p>Optional string. Query by the machine process ID that logged the event.</p></td>
+</tr>
+<tr class="row-odd"><td><p>export</p></td>
+<td><p>Optional string. Boolean indicating whether to export the query
+results.  The default is False (don’t export).</p></td>
+</tr>
+<tr class="row-even"><td><p>export_type</p></td>
+<td><p>Optional string. The export file type. CSV or TAB are the choices,
+CSV is the default.</p></td>
+</tr>
+<tr class="row-odd"><td><p>out_path</p></td>
+<td><p>Optional string. The path to download the log file to.</p></td>
+</tr>
+</tbody>
+</table>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>A JSON of the log items that match the query. If export option is set to True, the
+output log file path is returned.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="arcgis.gis.mission._logs.LogManager.settings">
+<em class="property"><span class="pre">property</span> </em><code class="sig-name descname"><span class="pre">settings</span></code><a class="headerlink" href="#arcgis.gis.mission._logs.LogManager.settings" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get/set the current log settings.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>PropertyMap</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="machine">
+<h2>Machine<a class="headerlink" href="#machine" title="Permalink to this headline">¶</a></h2>
+<dl class="py class">
+<dt id="arcgis.gis.mission._machines.Machine">
+<em class="property"><span class="pre">class</span> </em><code class="sig-prename descclassname"><span class="pre">arcgis.gis.mission._machines.</span></code><code class="sig-name descname"><span class="pre">Machine</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">url</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">gis</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.gis.mission._machines.Machine" title="Permalink to this definition">¶</a></dt>
+<dd><p>This resource provides information about the machine in your ArcGIS
+Mission Server site.  You can update some of these properties
+using the Edit Machine operation.</p>
+<dl class="py method">
+<dt id="arcgis.gis.mission._machines.Machine.create_self_signed_cert">
+<code class="sig-name descname"><span class="pre">create_self_signed_cert</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">alias</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">keysize</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">common_name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">org_unit</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">organization</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">city</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">state</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">country</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">keyalg</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'RSA'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">sigalg</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'SHA1withRSA'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">validity</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">90</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">san</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.gis.mission._machines.Machine.create_self_signed_cert" title="Permalink to this definition">¶</a></dt>
+<dd><p>Use this operation to create a self-signed certificate or as a
+starting point for getting a production-ready CA-signed certificate.
+ArcGIS Mission Server will generate a certificate for you and store
+it in its keystore. The certificate generated should only be used in
+development and staging environments.</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 20%" />
+<col style="width: 80%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><strong>Argument</strong></p></td>
+<td><p><strong>Description</strong></p></td>
+</tr>
+<tr class="row-even"><td><p>alias</p></td>
+<td><p>Required String. A unique name that easily identifies the certificate.</p></td>
+</tr>
+<tr class="row-odd"><td><p>keyalg</p></td>
+<td><p>Optional String. The algorithm used to generate the key pairs. The
+default is RSA.</p></td>
+</tr>
+<tr class="row-even"><td><p>keysize</p></td>
+<td><p>Required String. Specifies the size in bits to use when generating
+the cryptographic keys used to create the certificate. The larger
+the key size, the harder it is to break the encryption; however, the
+time to decrypt encrypted data increases with key size. For DSA, the
+key size can be between 512 and 1,024. For RSA, the recommended key
+size is 2,048 or greater.</p></td>
+</tr>
+<tr class="row-odd"><td><p>sigalg</p></td>
+<td><p>Optional String. Use the default (SHA1withRSA). If your organization
+has specific security restrictions, then one of the following
+algorithms can be used for DSA: SHA256withRSA, SHA384withRSA,
+SHA512withRSA, SHA1withDSA.</p></td>
+</tr>
+<tr class="row-even"><td><p>common_name</p></td>
+<td><p>Required String. Use the domain name of your server name as the
+common name. If your server will be accessed on the Internet through
+the URL <a class="reference external" href="https://www.Missionserver.com:11443/arcgis/">https://www.Missionserver.com:11443/arcgis/</a>, use
+www.Missionserver.com as the common name.If your server will only
+be accessible on your local area network (LAN) through the URL
+<a class="reference external" href="https://Missionserver.domain.com:11443/arcgis/">https://Missionserver.domain.com:11443/arcgis/</a>, use Missionserver
+as the common name.</p></td>
+</tr>
+<tr class="row-odd"><td><p>org_unit</p></td>
+<td><p>Required String. The name of your organizational unit, for example,
+GIS Department.</p></td>
+</tr>
+<tr class="row-even"><td><p>organization</p></td>
+<td><p>Required String. The name of your organization, for example, Esri.</p></td>
+</tr>
+<tr class="row-odd"><td><p>city</p></td>
+<td><p>Required String. The name of the city or locality, for example,
+Redlands.</p></td>
+</tr>
+<tr class="row-even"><td><p>state</p></td>
+<td><p>Required String. The full name of your state or province, for
+example, California.</p></td>
+</tr>
+<tr class="row-odd"><td><p>country</p></td>
+<td><p>Required String. The abbreviated code for your country, for
+example, US.</p></td>
+</tr>
+<tr class="row-even"><td><p>validity</p></td>
+<td><p>Required Integer. The total time in days during which this
+certificate will be valid, for example, 365. The default is 90.</p></td>
+</tr>
+<tr class="row-odd"><td><p>san</p></td>
+<td><p>Optional String. The subject alternative name (SAN) is an optional
+parameter that defines alternatives to the common name (CN)
+specified in the SSL certificate. There cannot be any spaces in the
+SAN parameter value. If no SAN is defined, a website can only be
+accessed (without SSL certificate errors) by using the common name
+in the URL. If a SAN is defined and a DNS name is present, the
+website can only be accessed by what is listed in the SAN. Multiple
+DNS names can be specified if desired. For example, the URLs
+<a class="reference external" href="https://www.esri.com">https://www.esri.com</a>, <a class="reference external" href="https://esri">https://esri</a>, and <a class="reference external" href="https://10.60.1.16">https://10.60.1.16</a> can be
+used to access the same site if the SSL certificate is created
+using the following SAN parameter
+value: <a class="reference external" href="DNS:www.esri.com,DNS:esri,IP:10.60.1.16">DNS:www.esri.com,DNS:esri,IP:10.60.1.16</a></p></td>
+</tr>
+</tbody>
+</table>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>Bool</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="arcgis.gis.mission._machines.Machine.delete_certificate">
+<code class="sig-name descname"><span class="pre">delete_certificate</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">certificate</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.gis.mission._machines.Machine.delete_certificate" title="Permalink to this definition">¶</a></dt>
+<dd><p>Deletes a SSL certificate using the certificate alias.</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 21%" />
+<col style="width: 79%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><strong>Argument</strong></p></td>
+<td><p><strong>Description</strong></p></td>
+</tr>
+<tr class="row-even"><td><p>certificate</p></td>
+<td><p>Required string. The name of the certificate to delete</p></td>
+</tr>
+</tbody>
+</table>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>boolean</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="arcgis.gis.mission._machines.Machine.export_certificate">
+<code class="sig-name descname"><span class="pre">export_certificate</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">certificate</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.gis.mission._machines.Machine.export_certificate" title="Permalink to this definition">¶</a></dt>
+<dd><p>Downloads an SSL certificate. The file returned by the
+server is an X.509 certificate. The downloaded certificate can then
+be imported into a client that is making HTTP requests.</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 21%" />
+<col style="width: 79%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><strong>Argument</strong></p></td>
+<td><p><strong>Description</strong></p></td>
+</tr>
+<tr class="row-even"><td><p>certificate</p></td>
+<td><p>Required string. The name of the certificate in the key store.</p></td>
+</tr>
+</tbody>
+</table>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>The SSL certificate object.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="arcgis.gis.mission._machines.Machine.generate_CSR">
+<code class="sig-name descname"><span class="pre">generate_CSR</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">certificate</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.gis.mission._machines.Machine.generate_CSR" title="Permalink to this definition">¶</a></dt>
+<dd><p>Generates a certificate signing request (CSR) for a
+self-signed certificate. A CSR is required by a CA to create a
+digitally signed version of your certificate.  Supply the certificate
+object that was created with method ssl_certificate.</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 21%" />
+<col style="width: 79%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><strong>Argument</strong></p></td>
+<td><p><strong>Description</strong></p></td>
+</tr>
+<tr class="row-even"><td><p>certificate</p></td>
+<td><p>Required string. The name of the certificate in the key store.</p></td>
+</tr>
+</tbody>
+</table>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>The CSR.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="arcgis.gis.mission._machines.Machine.hardware">
+<em class="property"><span class="pre">property</span> </em><code class="sig-name descname"><span class="pre">hardware</span></code><a class="headerlink" href="#arcgis.gis.mission._machines.Machine.hardware" title="Permalink to this definition">¶</a></dt>
+<dd><p>This resource displays hardware information for the machine in your
+ArcGIS Mission Server site. It updates the information when it
+detects any change to the configuration of your machine, as well
+as each time the machine is restarted.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>dict</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="arcgis.gis.mission._machines.Machine.import_CA_signed_certificate">
+<code class="sig-name descname"><span class="pre">import_CA_signed_certificate</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">certificate</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ca_signed_certificate</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.gis.mission._machines.Machine.import_CA_signed_certificate" title="Permalink to this definition">¶</a></dt>
+<dd><p>Imports a certificate authority (CA)-signed SSL certificate into the key store.</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 24%" />
+<col style="width: 76%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><strong>Argument</strong></p></td>
+<td><p><strong>Description</strong></p></td>
+</tr>
+<tr class="row-even"><td><p>certificate</p></td>
+<td><p>Required string. The name of the certificate in the key store.</p></td>
+</tr>
+<tr class="row-odd"><td><p>ca_signed_certificate</p></td>
+<td><p>Required string. The multi-part POST parameter containing the
+signed certificate file.</p></td>
+</tr>
+</tbody>
+</table>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>A boolean indicating success (True) or failure (False).</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="arcgis.gis.mission._machines.Machine.import_existing_server_certificate">
+<code class="sig-name descname"><span class="pre">import_existing_server_certificate</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">alias</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">cert_password</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">cert_file</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.gis.mission._machines.Machine.import_existing_server_certificate" title="Permalink to this definition">¶</a></dt>
+<dd><p>Imports an existing server certificate, stored in
+the PKCS #12 format, into the keystore.
+If the certificate is a CA-signed certificate, you must first
+import the CA root or intermediate certificate using the
+importRootCertificate operation.</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 19%" />
+<col style="width: 81%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><strong>Argument</strong></p></td>
+<td><p><strong>Description</strong></p></td>
+</tr>
+<tr class="row-even"><td><p>alias</p></td>
+<td><p>Required string. A unique name for the certificate that easily
+identifies it.</p></td>
+</tr>
+<tr class="row-odd"><td><p>cert_password</p></td>
+<td><p>Required string. The password to unlock the file containing the certificate.</p></td>
+</tr>
+<tr class="row-even"><td><p>cert_file</p></td>
+<td><p>Required string. The multi-part POST parameter containing the certificate file.</p></td>
+</tr>
+</tbody>
+</table>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>A boolean indicating success (True) or failure (False).</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="arcgis.gis.mission._machines.Machine.import_root_certificate">
+<code class="sig-name descname"><span class="pre">import_root_certificate</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">alias</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">root_CA_certificate</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.gis.mission._machines.Machine.import_root_certificate" title="Permalink to this definition">¶</a></dt>
+<dd><p>Imports a certificate authority’s (CA) root and intermediate
+certificates into the keystore.</p>
+<p>To create a production quality CA-signed certificate, you need to
+add the CA’s certificates into the keystore that enables the SSL
+mechanism to trust the CA (and the certificates it is signed).
+While most of the popular CA’s certificates are already available
+in the keystore, you can use this operation if you have a custom
+CA or specific intermediate certificates.</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 19%" />
+<col style="width: 81%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><strong>Argument</strong></p></td>
+<td><p><strong>Description</strong></p></td>
+</tr>
+<tr class="row-even"><td><p>alias</p></td>
+<td><p>Required string. The name of the certificate.</p></td>
+</tr>
+<tr class="row-odd"><td><p>root_CA_certificate</p></td>
+<td><p>Required string. The multi-part POST parameter containing the certificate file.</p></td>
+</tr>
+</tbody>
+</table>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>A boolean indicating success (True) or failure (False).</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="arcgis.gis.mission._machines.Machine.properties">
+<em class="property"><span class="pre">property</span> </em><code class="sig-name descname"><span class="pre">properties</span></code><a class="headerlink" href="#arcgis.gis.mission._machines.Machine.properties" title="Permalink to this definition">¶</a></dt>
+<dd><p>returns the properties of the resource</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="arcgis.gis.mission._machines.Machine.ssl_certificate">
+<code class="sig-name descname"><span class="pre">ssl_certificate</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">certificate</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.gis.mission._machines.Machine.ssl_certificate" title="Permalink to this definition">¶</a></dt>
+<dd><p>Provides the self-signed certificate object.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Even though a self-signed certificate can be used to enable SSL, it
+is recommended that you use a self-signed certificate only on staging
+or development servers.</p>
+</div>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 21%" />
+<col style="width: 79%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><strong>Argument</strong></p></td>
+<td><p><strong>Description</strong></p></td>
+</tr>
+<tr class="row-even"><td><p>certificate</p></td>
+<td><p>Required string. The name of the certificate in the key store to
+grab information from.</p></td>
+</tr>
+</tbody>
+</table>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>The certificate object.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="arcgis.gis.mission._machines.Machine.ssl_certificates">
+<em class="property"><span class="pre">property</span> </em><code class="sig-name descname"><span class="pre">ssl_certificates</span></code><a class="headerlink" href="#arcgis.gis.mission._machines.Machine.ssl_certificates" title="Permalink to this definition">¶</a></dt>
+<dd><p>Gets the list of all the certificates (self-signed and CA-signed)
+created for the server machine. The server securely stores these
+certificates inside a key store within the configuration store.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="arcgis.gis.mission._machines.Machine.unregister">
+<code class="sig-name descname"><span class="pre">unregister</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.gis.mission._machines.Machine.unregister" title="Permalink to this definition">¶</a></dt>
+<dd><p>Removes this machine from the site.  This server machine will no
+longer participate in the site or run any of the GIS services.  All
+resources that were acquired by the server machine (memory, files,
+and so forth) will be released.</p>
+<p>Typically, you should only invoke this operation if the machine
+is going to be shut down for extended periods of time, or if it
+is being upgraded.</p>
+<p>Once a machine has been unregistered, you can create a new site
+or join an existing site.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>A boolean indicating success (True) or failure (False).</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="machinemanager">
+<h2>MachineManager<a class="headerlink" href="#machinemanager" title="Permalink to this headline">¶</a></h2>
+<dl class="py class">
+<dt id="arcgis.gis.mission._machines.MachineManager">
+<em class="property"><span class="pre">class</span> </em><code class="sig-prename descclassname"><span class="pre">arcgis.gis.mission._machines.</span></code><code class="sig-name descname"><span class="pre">MachineManager</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">url</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">gis</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.gis.mission._machines.MachineManager" title="Permalink to this definition">¶</a></dt>
+<dd><p>This resource provides the name and URL of the ArcGIS Mission
+Server machine in the site.</p>
+<dl class="py method">
+<dt id="arcgis.gis.mission._machines.MachineManager.list">
+<code class="sig-name descname"><span class="pre">list</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.gis.mission._machines.MachineManager.list" title="Permalink to this definition">¶</a></dt>
+<dd><p>returns all machine instances</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="arcgis.gis.mission._machines.MachineManager.properties">
+<em class="property"><span class="pre">property</span> </em><code class="sig-name descname"><span class="pre">properties</span></code><a class="headerlink" href="#arcgis.gis.mission._machines.MachineManager.properties" title="Permalink to this definition">¶</a></dt>
+<dd><p>returns the properties of the resource</p>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="securitymanager">
+<h2>SecurityManager<a class="headerlink" href="#securitymanager" title="Permalink to this headline">¶</a></h2>
+<dl class="py class">
+<dt id="arcgis.gis.mission._security.SecurityManager">
+<em class="property"><span class="pre">class</span> </em><code class="sig-prename descclassname"><span class="pre">arcgis.gis.mission._security.</span></code><code class="sig-name descname"><span class="pre">SecurityManager</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">url</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">gis</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.gis.mission._security.SecurityManager" title="Permalink to this definition">¶</a></dt>
+<dd><p>This resource is a container for all resources and operations
+pertaining to security in your ArcGIS Mission Server site.</p>
+<dl class="py method">
+<dt id="arcgis.gis.mission._security.SecurityManager.configuration">
+<em class="property"><span class="pre">property</span> </em><code class="sig-name descname"><span class="pre">configuration</span></code><a class="headerlink" href="#arcgis.gis.mission._security.SecurityManager.configuration" title="Permalink to this definition">¶</a></dt>
+<dd><p>This resource returns the currently active security configuration
+of your ArcGIS Mission Server site. A security configuration
+involves the following pieces of information, and can be modified
+using the setter.</p>
+<p><strong>Configuration Properties</strong></p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 4%" />
+<col style="width: 96%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><strong>Key</strong></p></td>
+<td><p><strong>Description</strong></p></td>
+</tr>
+<tr class="row-even"><td><p>allowedAdminAccessIPs</p></td>
+<td><p>(Allowed Administration Access IPs). A comma separated list of client machine IP addresses that are allowed access to ArcGIS Server. This can be used as an additional security measure to prevent unauthorized access to the site.</p></td>
+</tr>
+<tr class="row-odd"><td><p>allowDirectAccess</p></td>
+<td><p>(Allow direct administrator access). A boolean that indicates if a user with administrator privileges can access the server through port 6080. If true, all users with administrative access are allowed to access the Administrator Directory and ArcGIS Server Manager through port 6080. If false, users in the identity store are blocked from accessing the server through port 6080. This forces users to access the site through ArcGIS Web Adaptor. The default value is true.</p>
+<p>Before disabling administrative access on port 6080, ArcGIS Server must be configured to use web tier authentication (WEB_ADAPTOR) and at least one user in the identity store must have administrator privileges to the site. The primary site administrator account will still be able to administer the site through port 6080.</p>
+<p>To fully disable access on port 6080, you can optionally disabled the primary site administrator account. If ArcGIS Server Manager becomes unavailable or the web server is unable to authenticate users that have administrator privileges, you will be unable to administer your site. To recover from this site, re-enable the primary site administrator account and connect to the site through port 6080 with this account.</p>
+</td>
+</tr>
+<tr class="row-even"><td><p>authenticationMode</p></td>
+<td><p>(Authentication Mode). Specifies the authentication mode used by ArcGIS Server. When ArcGIS Server is federated with Portal for ArcGIS, this property can be included and set to ARCGIS_PORTAL_TOKEN. The default value is ARCGIS_TOKEN.</p>
+<p>Values: ARCGIS_TOKEN | ARCGIS_PORTAL_TOKEN | WEB_ADAPTOR_AUTHENTICATION</p>
+</td>
+</tr>
+<tr class="row-odd"><td><p>authenticationTier</p></td>
+<td><p>(Authentication Tier). The tier at which requests to access GIS services will be authenticated. It is recommended that you do not modify these values using the Administrator Directory. Instead, use ArcGIS Server Manager to configure web tier authentication or use the Portal for ArcGIS website to federate ArcGIS Server with your portal.</p>
+<p>Values: WEB_ADAPTOR | GIS_SERVER | ARCGIS_PORTAL</p>
+</td>
+</tr>
+<tr class="row-even"><td><p>HSTSEnabled</p></td>
+<td><p>(HSTS Enabled). A boolean that indicates if HTTP Strict Transport Security (HSTS) is being used by the site. See Enforce strict HTTPS communication for more information. In order for this property to be enabled, the Protocol property must already be set to use HTTPS only.</p></td>
+</tr>
+<tr class="row-odd"><td><p>httpEnabled</p></td>
+<td><p>(HTTP Enabled). A boolean that indicates if the site is accessible over HTTP.</p></td>
+</tr>
+<tr class="row-even"><td><p>Protocol</p></td>
+<td><p>(Protocol). Specifies the HTTP protocol to be used for communication to and from the ArcGIS Server site. If set to HTTP, all communication to and from the site will be over HTTP, with HTTPS communication being unavailable. If HTTP_AND_HTTPS is set, users and client may use either HTTP or HTTPS to connect to the site. If HTTPS, all communication to and from the site will be over HTTPS. Any call made using HTTP will be redirected to use HTTPS instead.
+When you initially create your ArcGIS Server site, all communication in the site is sent over HTTP, which is not secure. This means that your credentials sent over an internal network or the Internet are not encrypted and can be intercepted. To prevent the interception of any communication, it’s recommended that you configure ArcGIS Server and ArcGIS Server Manager (if installed) to enforce Secure Sockets Layer (SSL). When you initially create your site, you’ll see a warning-level message in the logs recommending that you update the communication protocol of your site to use SSL.</p>
+<p>Values: HTTP | HTTP_AND_HTTPS | HTTPS</p>
+</td>
+</tr>
+<tr class="row-odd"><td><p>roleStoreConfig</p></td>
+<td><p>(Role Store). Connection information about the currently active role store.</p></td>
+</tr>
+<tr class="row-even"><td><p>securityEnabled</p></td>
+<td><p>(Security Enabled). A boolean that indicates if security is enabled for any GIS service. The default value is true.</p></td>
+</tr>
+<tr class="row-odd"><td><p>sslEnabled</p></td>
+<td><p>(SSL Enabled). A boolean that indicates if the site is accessible over HTTPS (SSL). The default value is false.</p></td>
+</tr>
+<tr class="row-even"><td><p>userStoreConfig</p></td>
+<td><p>(User Store). Connection information about the currently active user store.</p></td>
+</tr>
+<tr class="row-odd"><td><p>virtualDirsSecurityEnabled</p></td>
+<td><p>(Virtual Directories Security Enabled). A boolean that indicates if the server’s virtual directories are secured and require authentication. If true, accessing the content in the arcgisoutput, arcgisjobs, and arcgisinput directories over HTTP will require user authentication. This will negatively impact performance. The default value is false.</p></td>
+</tr>
+<tr class="row-even"><td><p>portalProperties</p></td>
+<td><p>(Portal Properties). Specified when federating ArcGIS Server with Portal for ArcGIS. See the Portal properties for more information.</p></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Portal Properties</strong></p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 23%" />
+<col style="width: 77%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><strong>Portal Keys</strong></p></td>
+<td><p><strong>Description</strong></p></td>
+</tr>
+<tr class="row-even"><td><p>portalMode</p></td>
+<td><p>Must be set as ARCGIS_PORTAL_FEDERATION.</p></td>
+</tr>
+<tr class="row-odd"><td><p>portalSecretKey</p></td>
+<td><p>The key obtained after federating ArcGIS Server with Portal for ArcGIS.</p></td>
+</tr>
+<tr class="row-even"><td><p>portalURL</p></td>
+<td><p>The URL of Portal for ArcGIS.</p></td>
+</tr>
+<tr class="row-odd"><td><p>referer</p></td>
+<td><p>The referer specified when generating the token.</p></td>
+</tr>
+<tr class="row-even"><td><p>serverId</p></td>
+<td><p>The ID of the server federated with the portal.</p></td>
+</tr>
+<tr class="row-odd"><td><p>serverURL</p></td>
+<td><p>External URL of the server federated with the portal in the following format:</p></td>
+</tr>
+<tr class="row-even"><td><p>token</p></td>
+<td><p>A token obtained from Portal for ArcGIS for use by ArcGIS Server for initial validation.</p></td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="sitemanager">
+<h2>SiteManager<a class="headerlink" href="#sitemanager" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="systemmanager">
+<h2>SystemManager<a class="headerlink" href="#systemmanager" title="Permalink to this headline">¶</a></h2>
+<dl class="py class">
+<dt id="arcgis.gis.mission._system.SystemManager">
+<em class="property"><span class="pre">class</span> </em><code class="sig-prename descclassname"><span class="pre">arcgis.gis.mission._system.</span></code><code class="sig-name descname"><span class="pre">SystemManager</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">url</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">gis</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.gis.mission._system.SystemManager" title="Permalink to this definition">¶</a></dt>
+<dd><p>The System resource is a collection of server-wide resources in your
+ArcGIS Mission Server site. Within this resource, you can access
+information and perform operations pertaining to licenses, Web
+Adaptors, containers, server properties, directories, Jobs, and the
+configuration store.</p>
+<dl class="py method">
+<dt id="arcgis.gis.mission._system.SystemManager.config_store">
+<em class="property"><span class="pre">property</span> </em><code class="sig-name descname"><span class="pre">config_store</span></code><a class="headerlink" href="#arcgis.gis.mission._system.SystemManager.config_store" title="Permalink to this definition">¶</a></dt>
+<dd><p>The configuration store maintains configurations for ArcGIS Mission
+Server. Typical configurations include all the resources such as
+machines and security rules that are required to power the site. In
+a way, the configuration store is a physical representation of a site.</p>
+<p>Every ArcGIS Mission Server machine, when it joins the site, is
+provided with a connection to the configuration store and it can
+thereafter participate in the management of the site. You can change
+the store’s properties during runtime using the edit operation.</p>
+<p>The Administrator API that runs on every server machine is capable
+of reading and writing to the store. As a result, the store must be
+accessible to every server machine within the site. The default
+implementation is built on top of a file system and stores all the
+configurations in a hierarchy of folders and files.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>dict</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="arcgis.gis.mission._system.SystemManager.directories">
+<em class="property"><span class="pre">property</span> </em><code class="sig-name descname"><span class="pre">directories</span></code><a class="headerlink" href="#arcgis.gis.mission._system.SystemManager.directories" title="Permalink to this definition">¶</a></dt>
+<dd><p>Provides access to registering directories</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="arcgis.gis.mission._system.SystemManager.licenses">
+<em class="property"><span class="pre">property</span> </em><code class="sig-name descname"><span class="pre">licenses</span></code><a class="headerlink" href="#arcgis.gis.mission._system.SystemManager.licenses" title="Permalink to this definition">¶</a></dt>
+<dd><p>Gets the license resource list.  The licenses resource lists the
+current license level of ArcGIS Mission Sever and all authorized
+extensions. Contact Esri Customer Service if you have questions
+about license levels or expiration properties.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="arcgis.gis.mission._system.SystemManager.properties">
+<em class="property"><span class="pre">property</span> </em><code class="sig-name descname"><span class="pre">properties</span></code><a class="headerlink" href="#arcgis.gis.mission._system.SystemManager.properties" title="Permalink to this definition">¶</a></dt>
+<dd><p>ArcGIS Mission Server has configuration properties that govern
+some of its intricate behavior. This resource is a container for
+these properties. The properties are available to all server
+objects and extensions through the server environment interface.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>PropertyMap</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="arcgis.gis.mission._system.SystemManager.web_adaptors">
+<em class="property"><span class="pre">property</span> </em><code class="sig-name descname"><span class="pre">web_adaptors</span></code><a class="headerlink" href="#arcgis.gis.mission._system.SystemManager.web_adaptors" title="Permalink to this definition">¶</a></dt>
+<dd><p>returns a list of web adapters</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>List</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="webadaptor">
+<h2>WebAdaptor<a class="headerlink" href="#webadaptor" title="Permalink to this headline">¶</a></h2>
+<dl class="py class">
+<dt id="arcgis.gis.mission._system.WebAdaptor">
+<em class="property"><span class="pre">class</span> </em><code class="sig-prename descclassname"><span class="pre">arcgis.gis.mission._system.</span></code><code class="sig-name descname"><span class="pre">WebAdaptor</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">url</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">gis</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.gis.mission._system.WebAdaptor" title="Permalink to this definition">¶</a></dt>
+<dd><p>This resource provides information about the ArcGIS Web Adaptor
+configured with your ArcGIS Mission Server site. ArcGIS Web Adaptor
+is a web application that runs in a front-end web server. One of the
+Web Adaptor’s primary responsibilities is to forward HTTP requests
+from end users to ArcGIS Mission Server in a round-robin fashion.
+The Web Adaptor acts a reverse proxy, providing the end users with
+an entry point into the system, hiding the server itself, and
+providing some degree of immunity from back-end failures.</p>
+<p>The front-end web server could authenticate incoming requests against
+your enterprise identity stores and provide specific authentication
+schemes like Integrated Windows Authentication (IWA), HTTP Basic or
+Digest.</p>
+<p>Most importantly, ArcGIS Web Adaptor provides your end users with a
+well-defined entry point into your system without exposing the internal
+details of your server site. ArcGIS Mission Server will trust requests
+being forwarded by ArcGIS Web Adaptor and will not challenge the user
+for any credentials. However, the authorization of the request (by
+looking up roles and permissions) is still enforced by the server site.</p>
+<p>ArcGIS Mission Server use the WebSocket protocol for communication. You can
+update the maximum size of the file sent using WebSocket by updating your
+site’s webSocketMaxHeapSize property.</p>
+<dl class="py method">
+<dt id="arcgis.gis.mission._system.WebAdaptor.unregister">
+<code class="sig-name descname"><span class="pre">unregister</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.gis.mission._system.WebAdaptor.unregister" title="Permalink to this definition">¶</a></dt>
+<dd><p>Unregisters a WebAdapter for the Mission Server
+:returns: boolean</p>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="webadaptormanager">
+<h2>WebAdaptorManager<a class="headerlink" href="#webadaptormanager" title="Permalink to this headline">¶</a></h2>
+<dl class="py class">
+<dt id="arcgis.gis.mission._system.WebAdaptorManager">
+<em class="property"><span class="pre">class</span> </em><code class="sig-prename descclassname"><span class="pre">arcgis.gis.mission._system.</span></code><code class="sig-name descname"><span class="pre">WebAdaptorManager</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">url</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">gis</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.gis.mission._system.WebAdaptorManager" title="Permalink to this definition">¶</a></dt>
+<dd><p>Manages and configures web adaptors for the ArcGIS Mission Server.</p>
+<dl class="py method">
+<dt id="arcgis.gis.mission._system.WebAdaptorManager.config">
+<em class="property"><span class="pre">property</span> </em><code class="sig-name descname"><span class="pre">config</span></code><a class="headerlink" href="#arcgis.gis.mission._system.WebAdaptorManager.config" title="Permalink to this definition">¶</a></dt>
+<dd><p>Gets the Web Adaptors configuration which is a resource of all the
+configuration parameters shared across all the Web Adaptors in the
+site. Most importantly, this resource lists the shared key that is
+used by all the Web Adaptors to encrypt key data bits for the
+incoming requests to the server.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="arcgis.gis.mission._system.WebAdaptorManager.list">
+<code class="sig-name descname"><span class="pre">list</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.gis.mission._system.WebAdaptorManager.list" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns all registered Web Adapters</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>List</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="arcgis.gis.mission._system.WebAdaptorManager.properties">
+<em class="property"><span class="pre">property</span> </em><code class="sig-name descname"><span class="pre">properties</span></code><a class="headerlink" href="#arcgis.gis.mission._system.WebAdaptorManager.properties" title="Permalink to this definition">¶</a></dt>
+<dd><p>returns the properties of the resource</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="arcgis.gis.mission._system.WebAdaptorManager.register">
+<code class="sig-name descname"><span class="pre">register</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ip</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">webadapter_url</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">http_port</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">https_port</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">description</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.gis.mission._system.WebAdaptorManager.register" title="Permalink to this definition">¶</a></dt>
+<dd><p>Registers a new web adapter.</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 21%" />
+<col style="width: 79%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><strong>Argument</strong></p></td>
+<td><p><strong>Description</strong></p></td>
+</tr>
+<tr class="row-even"><td><p>name</p></td>
+<td><p>Required String. The name of the web adapter</p></td>
+</tr>
+<tr class="row-odd"><td><p>ip</p></td>
+<td><p>Required String. The IP of the web adapter.</p></td>
+</tr>
+<tr class="row-even"><td><p>webadapter_url</p></td>
+<td><p>Required String. The URI endpoint of the web adpater.</p></td>
+</tr>
+<tr class="row-odd"><td><p>http_port</p></td>
+<td><p>Required Integer. The port number of the web adapter</p></td>
+</tr>
+<tr class="row-even"><td><p>https_port</p></td>
+<td><p>Required Integer. The secure port of the web adapter.</p></td>
+</tr>
+<tr class="row-odd"><td><p>description</p></td>
+<td><p>Optional String. The optional web adapter description.</p></td>
+</tr>
+</tbody>
+</table>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>Boolean</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+</div>
+
+
+
+           </div>
+           
+          </div>
+          <footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+        <a href="arcgis.gis.nb.html" class="btn btn-neutral float-right" title="arcgis.gis.nb module" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="arcgis.gis.server.html" class="btn btn-neutral float-left" title="arcgis.gis.server module" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &#169; Copyright 2016-2021, Esri.
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+    Options v: 1.8.5
+
+  <div class="rst-versions" data-toggle="rst-versions" role="note" aria-label="versions">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      <span class="fa fa-book"> Pick an earlier version</span>
+      v: 1.8.5
+      <span class="fa fa-caret-down"></span>
+    </span>
+    <div class="rst-other-versions">
+      
+      
+      <dl>
+        <dt>Versions</dt>
+        
+          
+          <dd><a href="1.8.4/">1.8.4</a></dd>
+          
+        
+          
+          <dd><a href="1.8.3/">1.8.3</a></dd>
+          
+        
+          
+          <dd><a href="1.8.2/">1.8.2</a></dd>
+          
+        
+          
+          <dd><a href="1.8.1/">1.8.1</a></dd>
+          
+        
+          
+          <dd><a href="1.8.0/">1.8.0</a></dd>
+          
+        
+          
+          <dd><a href="1.7.1/">1.7.1</a></dd>
+          
+        
+          
+          <dd><a href="1.7.0/">1.7.0</a></dd>
+          
+        
+          
+          <dd><a href="1.6.2/">1.6.2</a></dd>
+          
+        
+          
+          <dd><a href="1.6.1/">1.6.1</a></dd>
+          
+        
+          
+          <dd><a href="1.6.0/">1.6.0</a></dd>
+          
+        
+          
+          <dd><a href="1.5.3/">1.5.3</a></dd>
+          
+        
+          
+          <dd><a href="1.5.2/">1.5.2</a></dd>
+          
+        
+          
+          <dd><a href="1.5.1/">1.5.1</a></dd>
+          
+        
+          
+          <dd><a href="1.5.0/">1.5.0</a></dd>
+          
+        
+          
+          <dd><a href="1.4.2/">1.4.2</a></dd>
+          
+        
+          
+          <dd><a href="1.4.1/">1.4.1</a></dd>
+          
+        
+          
+          <dd><a href="1.4.0/">1.4.0</a></dd>
+          
+        
+          
+          <dd><a href="1.3.0/">1.3.0</a></dd>
+          
+        
+          
+          <dd><a href="1.2.5/">1.2.5</a></dd>
+          
+        
+          
+          <dd><a href="1.2.4/">1.2.4</a></dd>
+          
+        
+          
+          <dd><a href="1.2.3/">1.2.3</a></dd>
+          
+        
+          
+          <dd><a href="1.2.2/">1.2.2</a></dd>
+          
+        
+          
+          <dd><a href="1.2.1/">1.2.1</a></dd>
+          
+        
+          
+          <dd><a href="1.2.0/">1.2.0</a></dd>
+          
+        
+          
+          <dd><a href="1.0.1/">1.0.1</a></dd>
+          
+        
+          
+          <dd><a href="1.0.0/">1.0.0</a></dd>
+          
+        
+          
+          <dd><a href="0.3.0/">0.3.0</a></dd>
+          
+        
+          
+          <dd><a href="0.2.0/">0.2.0</a></dd>
+          
+        
+          
+          <dd><a href="0.1.0/">0.1.0</a></dd>
+          
+        
+      </dl>
+      
+      
+      
+    </div>
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

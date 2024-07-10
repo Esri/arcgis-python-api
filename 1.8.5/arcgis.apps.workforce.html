@@ -1,0 +1,2003 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <title>arcgis.apps.workforce module &mdash; arcgis 1.8.5 documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="_static/theme_overrides.css" type="text/css" />
+
+  
+  
+    <link rel="shortcut icon" href="_static/favicon.ico"/>
+  
+
+  
+  
+
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/doctools.js"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="arcgis.apps.workforce.managers module" href="arcgis.apps.workforce.managers.html" />
+    <link rel="prev" title="arcgis.apps.dashboard module" href="arcgis.apps.dashboard.html" />
+<!-- This code block is inserted close near the <head> tag. See http://bit.ly/2BHUQzB -->
+<!-- The point of this code block is to send us google analytics on website views -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-NJGGV5');</script>
+ 
+
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="index.html" class="icon icon-home"> arcgis
+          
+
+          
+            
+            <img src="_static/python_api_logo.png" class="logo" alt="Logo"/>
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1.8.5
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">arcgis</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="arcgis.gis.toc.html">arcgis.gis module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="arcgis.env.html">arcgis.env module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="arcgis.features.toc.html">arcgis.features module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="arcgis.raster.toc.html">arcgis.raster module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="arcgis.network.toc.html">arcgis.network module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="arcgis.geoanalytics.toc.html">arcgis.geoanalytics module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="arcgis.geocoding.html">arcgis.geocoding module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="arcgis.geoenrichment.html">arcgis.geoenrichment module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="arcgis.geometry.html">arcgis.geometry module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="arcgis.geoprocessing.html">arcgis.geoprocessing module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="arcgis.mapping.toc.html">arcgis.mapping module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="arcgis.realtime.html">arcgis.realtime module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="arcgis.schematics.html">arcgis.schematics module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="arcgis.widgets.html">arcgis.widgets module</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="arcgis.apps.html">arcgis.apps module</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="arcgis.apps.html#build-collector-url">build_collector_url</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.apps.html#build-explorer-url">build_explorer_url</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.apps.html#build-field-maps-url">build_field_maps_url</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.apps.html#build-navigator-url">build_navigator_url</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.apps.html#build-survey123-url">build_survey123_url</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.apps.html#build-tracker-url">build_tracker_url</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.apps.html#build-workforce-url">build_workforce_url</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="arcgis.apps.html#submodules">Submodules</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="arcgis.apps.hub.html">arcgis.apps.hub module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="arcgis.apps.dashboard.html">arcgis.apps.dashboard module</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">arcgis.apps.workforce module</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#assignment">Assignment</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#assignmenttype">AssignmentType</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#attachment">Attachment</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#dispatcher">Dispatcher</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#integration">Integration</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#project">Project</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#track">Track</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#worker">Worker</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#submodules">Submodules</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="arcgis.apps.workforce.managers.html">arcgis.apps.workforce.managers module</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="arcgis.apps.storymap.html">arcgis.apps.storymap module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="arcgis.apps.survey123.html">arcgis.apps.survey123 module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="arcgis.apps.tracker.html">arcgis.apps.tracker module</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="arcgis.learn.toc.html">arcgis.learn module</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">arcgis</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="arcgis.apps.html">arcgis.apps module</a> &raquo;</li>
+        
+      <li>arcgis.apps.workforce module</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+<!-- This code block is inserted close near the <body> tag. See http://bit.ly/2BHUQzB -->
+<!-- The point of this code block is to send us google analytics on website views -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NJGGV5"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+
+  <div class="section" id="module-arcgis.apps.workforce">
+<span id="arcgis-apps-workforce-module"></span><h1>arcgis.apps.workforce module<a class="headerlink" href="#module-arcgis.apps.workforce" title="Permalink to this headline">¶</a></h1>
+<p>Defines public exports for the workforce module.</p>
+<p>The <a class="reference internal" href="#arcgis.apps.workforce.Project" title="arcgis.apps.workforce.Project"><code class="xref py py-class docutils literal notranslate"><span class="pre">Project</span></code></a> is the main entry point into the Workforce module.
+It can be used as shown in the following code example.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Get a Project and search the assignments and workers, create new Workforce project</span>
+
+<span class="kn">import</span> <span class="nn">arcgis</span>
+<span class="n">gis</span> <span class="o">=</span> <span class="n">arcgis</span><span class="o">.</span><span class="n">gis</span><span class="o">.</span><span class="n">GIS</span><span class="p">(</span><span class="s2">&quot;https://arcgis.com&quot;</span><span class="p">,</span> <span class="s2">&quot;&lt;username&gt;&quot;</span><span class="p">,</span> <span class="s2">&quot;&lt;password&gt;&quot;</span><span class="p">)</span>
+<span class="n">item</span> <span class="o">=</span> <span class="n">gis</span><span class="o">.</span><span class="n">content</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;&lt;item-id&gt;&quot;</span><span class="p">)</span>
+<span class="n">project</span> <span class="o">=</span> <span class="n">arcgis</span><span class="o">.</span><span class="n">apps</span><span class="o">.</span><span class="n">workforce</span><span class="o">.</span><span class="n">Project</span><span class="p">(</span><span class="n">item</span><span class="p">)</span>
+<span class="n">assignments</span> <span class="o">=</span> <span class="n">project</span><span class="o">.</span><span class="n">assignments</span><span class="o">.</span><span class="n">search</span><span class="p">()</span>
+<span class="n">workers</span> <span class="o">=</span> <span class="n">project</span><span class="o">.</span><span class="n">workers</span><span class="o">.</span><span class="n">search</span><span class="p">()</span>
+<span class="n">project2</span> <span class="o">=</span> <span class="n">arcgis</span><span class="o">.</span><span class="n">apps</span><span class="o">.</span><span class="n">workforce</span><span class="o">.</span><span class="n">create_project</span><span class="p">(</span><span class="s1">&#39;new_project&#39;</span><span class="p">,</span> <span class="n">summary</span><span class="o">=</span><span class="s1">&#39;This project was created by Python&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="section" id="assignment">
+<h2>Assignment<a class="headerlink" href="#assignment" title="Permalink to this headline">¶</a></h2>
+<dl class="py class">
+<dt id="arcgis.apps.workforce.Assignment">
+<em class="property"><span class="pre">class</span> </em><code class="sig-prename descclassname"><span class="pre">arcgis.apps.workforce.</span></code><code class="sig-name descname"><span class="pre">Assignment</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">project</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">feature</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">geometry</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">assignment_type</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">assigned_date</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">assignment_read</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">completed_date</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">declined_comment</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">declined_date</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">description</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dispatcher</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">due_date</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">in_progress_date</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">location</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">notes</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">paused_date</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">priority</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'none'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">status</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">work_order_id</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">worker</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.apps.workforce.Assignment" title="Permalink to this definition">¶</a></dt>
+<dd><p>Represents an assignment</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 21%" />
+<col style="width: 79%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><strong>Argument</strong></p></td>
+<td><p><strong>Description</strong></p></td>
+</tr>
+<tr class="row-even"><td><p>project</p></td>
+<td><p>Required <a class="reference internal" href="#arcgis.apps.workforce.Project" title="arcgis.apps.workforce.Project"><code class="xref py py-class docutils literal notranslate"><span class="pre">Project</span></code></a>. The project that
+this assignment belongs to.</p></td>
+</tr>
+<tr class="row-odd"><td><p>feature</p></td>
+<td><p>Optional <a class="reference internal" href="arcgis.features.toc.html#arcgis.features.Feature" title="arcgis.features.Feature"><code class="xref py py-class docutils literal notranslate"><span class="pre">Feature</span></code></a>.
+A feature containing the assignments attributes. Mostly intended for
+internal usage. If supplied, other parameters are ignored.</p></td>
+</tr>
+<tr class="row-even"><td><p>geometry</p></td>
+<td><p>Optional <code class="xref py py-class docutils literal notranslate"><span class="pre">Dict</span></code>.
+A dictionary containing the assignment geometry</p></td>
+</tr>
+<tr class="row-odd"><td><p>assignment_type</p></td>
+<td><p>Optional <a class="reference internal" href="#arcgis.apps.workforce.AssignmentType" title="arcgis.apps.workforce.AssignmentType"><code class="xref py py-class docutils literal notranslate"><span class="pre">AssignmentType</span></code></a>.
+The assignment type that represents this assignment.</p></td>
+</tr>
+<tr class="row-even"><td><p>assigned_date</p></td>
+<td><p>Optional <code class="xref py py-class docutils literal notranslate"><span class="pre">Date</span></code>
+The date and time the assignment was assigned</p></td>
+</tr>
+<tr class="row-odd"><td><p>assignment_read</p></td>
+<td><p>Optional <code class="xref py py-class docutils literal notranslate"><span class="pre">Bool</span></code>.
+A flag indicating that the mobile worker has seen the assignment.
+Version 1 Projects Only</p></td>
+</tr>
+<tr class="row-even"><td><p>completed_date</p></td>
+<td><p>Optional <code class="xref py py-class docutils literal notranslate"><span class="pre">Date</span></code>.
+The date the assignment was completed</p></td>
+</tr>
+<tr class="row-odd"><td><p>declined_comment</p></td>
+<td><p>Optional <code class="xref py py-class docutils literal notranslate"><span class="pre">String</span></code>.
+The comment submitted by the mobile worker.</p></td>
+</tr>
+<tr class="row-even"><td><p>declined_date</p></td>
+<td><p>Optional <code class="xref py py-class docutils literal notranslate"><span class="pre">Date</span></code>.
+The date the assignment was declined.</p></td>
+</tr>
+<tr class="row-odd"><td><p>description</p></td>
+<td><p>Optional <code class="xref py py-class docutils literal notranslate"><span class="pre">Description</span></code>.
+The description associated with the assignment.</p></td>
+</tr>
+<tr class="row-even"><td><p>dispatcher</p></td>
+<td><p>Optional <a class="reference internal" href="#arcgis.apps.workforce.Dispatcher" title="arcgis.apps.workforce.Dispatcher"><code class="xref py py-class docutils literal notranslate"><span class="pre">Dispatcher</span></code></a>.
+The dispatcher that assigned/created the assignment.</p></td>
+</tr>
+<tr class="row-odd"><td><p>due_date</p></td>
+<td><p>Optional <code class="xref py py-class docutils literal notranslate"><span class="pre">Date</span></code>.
+The date the assignment is due.</p></td>
+</tr>
+<tr class="row-even"><td><p>in_progress_date</p></td>
+<td><p>Optional <code class="xref py py-class docutils literal notranslate"><span class="pre">Date</span></code>.
+The date the assignment was started.</p></td>
+</tr>
+<tr class="row-odd"><td><p>location</p></td>
+<td><p>Optional <code class="xref py py-class docutils literal notranslate"><span class="pre">String</span></code>.
+The location or address of the assignment.</p></td>
+</tr>
+<tr class="row-even"><td><p>notes</p></td>
+<td><p>Optional <code class="xref py py-class docutils literal notranslate"><span class="pre">String</span></code>.
+The notes associated with the assignment.</p></td>
+</tr>
+<tr class="row-odd"><td><p>paused_date</p></td>
+<td><p>Optional <code class="xref py py-class docutils literal notranslate"><span class="pre">Date</span></code>.
+The date and time the assignment was paused.</p></td>
+</tr>
+<tr class="row-even"><td><p>priority</p></td>
+<td><p>Optional <code class="xref py py-class docutils literal notranslate"><span class="pre">String</span></code>.
+The priority of the assignment</p>
+<p><cite>none</cite>, <cite>low</cite>, <cite>medium</cite>, <cite>high</cite>, <cite>critical</cite></p>
+</td>
+</tr>
+<tr class="row-odd"><td><p>status</p></td>
+<td><p>Optional <code class="xref py py-class docutils literal notranslate"><span class="pre">String</span></code>.
+The status of the assignment.</p>
+<p><cite>unassigned</cite>, <cite>assigned</cite>, <cite>in_progress</cite>, <cite>completed</cite>, <cite>declined</cite>,
+<cite>paused</cite>, <cite>canceled</cite></p>
+</td>
+</tr>
+<tr class="row-even"><td><p>work_order_id</p></td>
+<td><p>Optional <code class="xref py py-class docutils literal notranslate"><span class="pre">String</span></code>.
+The work order id associated with the assignment.</p></td>
+</tr>
+<tr class="row-odd"><td><p>worker</p></td>
+<td><p>Optional <a class="reference internal" href="#arcgis.apps.workforce.Worker" title="arcgis.apps.workforce.Worker"><code class="xref py py-class docutils literal notranslate"><span class="pre">Worker</span></code></a>.
+The worker assigned to the assignment</p></td>
+</tr>
+</tbody>
+</table>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Get an assignment and update it</span>
+
+<span class="kn">import</span> <span class="nn">arcgis</span>
+<span class="n">gis</span> <span class="o">=</span> <span class="n">arcgis</span><span class="o">.</span><span class="n">gis</span><span class="o">.</span><span class="n">GIS</span><span class="p">(</span><span class="s2">&quot;https://arcgis.com&quot;</span><span class="p">,</span> <span class="s2">&quot;&lt;username&gt;&quot;</span><span class="p">,</span> <span class="s2">&quot;&lt;password&gt;&quot;</span><span class="p">)</span>
+<span class="n">item</span> <span class="o">=</span> <span class="n">gis</span><span class="o">.</span><span class="n">content</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;&lt;item-id&gt;&quot;</span><span class="p">)</span>
+<span class="n">project</span> <span class="o">=</span> <span class="n">arcgis</span><span class="o">.</span><span class="n">apps</span><span class="o">.</span><span class="n">workforce</span><span class="o">.</span><span class="n">Project</span><span class="p">(</span><span class="n">item</span><span class="p">)</span>
+<span class="n">assignment</span> <span class="o">=</span> <span class="n">project</span><span class="o">.</span><span class="n">assignments</span><span class="o">.</span><span class="n">search</span><span class="p">()[</span><span class="mi">0</span><span class="p">]</span>
+<span class="n">assignment</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">priority</span><span class="o">=</span><span class="s2">&quot;high&quot;</span><span class="p">,</span><span class="n">description</span><span class="o">=</span><span class="s2">&quot;new assignment&quot;</span><span class="p">,</span><span class="n">location</span><span class="o">=</span><span class="s2">&quot;100 Commercial Street, Portland, ME&quot;</span><span class="p">)</span>
+<span class="n">assignment</span><span class="o">.</span><span class="n">delete</span><span class="p">()</span>
+</pre></div>
+</div>
+<dl class="py method">
+<dt id="arcgis.apps.workforce.Assignment.assigned_date">
+<em class="property"><span class="pre">property</span> </em><code class="sig-name descname"><span class="pre">assigned_date</span></code><a class="headerlink" href="#arcgis.apps.workforce.Assignment.assigned_date" title="Permalink to this definition">¶</a></dt>
+<dd><p>Gets/Sets the assigned <code class="xref py py-class docutils literal notranslate"><span class="pre">datetime</span></code> of the assignment</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="arcgis.apps.workforce.Assignment.assignment_read">
+<em class="property"><span class="pre">property</span> </em><code class="sig-name descname"><span class="pre">assignment_read</span></code><a class="headerlink" href="#arcgis.apps.workforce.Assignment.assignment_read" title="Permalink to this definition">¶</a></dt>
+<dd><p>Gets/Sets the assignment read field</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="arcgis.apps.workforce.Assignment.assignment_type">
+<em class="property"><span class="pre">property</span> </em><code class="sig-name descname"><span class="pre">assignment_type</span></code><a class="headerlink" href="#arcgis.apps.workforce.Assignment.assignment_type" title="Permalink to this definition">¶</a></dt>
+<dd><p>Gets/Sets the <a class="reference internal" href="#arcgis.apps.workforce.AssignmentType" title="arcgis.apps.workforce.AssignmentType"><code class="xref py py-class docutils literal notranslate"><span class="pre">AssignmentType</span></code></a></p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="arcgis.apps.workforce.Assignment.assignment_type_code">
+<em class="property"><span class="pre">property</span> </em><code class="sig-name descname"><span class="pre">assignment_type_code</span></code><a class="headerlink" href="#arcgis.apps.workforce.Assignment.assignment_type_code" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="arcgis.apps.workforce.Assignment.attachments">
+<em class="property"><span class="pre">property</span> </em><code class="sig-name descname"><span class="pre">attachments</span></code><a class="headerlink" href="#arcgis.apps.workforce.Assignment.attachments" title="Permalink to this definition">¶</a></dt>
+<dd><p>Gets the <a class="reference internal" href="arcgis.apps.workforce.managers.html#arcgis.apps.workforce.managers.AssignmentAttachmentManager" title="arcgis.apps.workforce.managers.AssignmentAttachmentManager"><code class="xref py py-class docutils literal notranslate"><span class="pre">AssignmentAttachmentManager</span></code></a> of the assignment</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="arcgis.apps.workforce.Assignment.completed_date">
+<em class="property"><span class="pre">property</span> </em><code class="sig-name descname"><span class="pre">completed_date</span></code><a class="headerlink" href="#arcgis.apps.workforce.Assignment.completed_date" title="Permalink to this definition">¶</a></dt>
+<dd><p>Gets/Sets the completed <code class="xref py py-class docutils literal notranslate"><span class="pre">datetime</span></code> of the assignment</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="arcgis.apps.workforce.Assignment.creation_date">
+<em class="property"><span class="pre">property</span> </em><code class="sig-name descname"><span class="pre">creation_date</span></code><a class="headerlink" href="#arcgis.apps.workforce.Assignment.creation_date" title="Permalink to this definition">¶</a></dt>
+<dd><p>The <code class="xref py py-class docutils literal notranslate"><span class="pre">datetime</span></code> at which the Feature was created.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="arcgis.apps.workforce.Assignment.creator">
+<em class="property"><span class="pre">property</span> </em><code class="sig-name descname"><span class="pre">creator</span></code><a class="headerlink" href="#arcgis.apps.workforce.Assignment.creator" title="Permalink to this definition">¶</a></dt>
+<dd><p>The named user that created the Feature.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="arcgis.apps.workforce.Assignment.declined_comment">
+<em class="property"><span class="pre">property</span> </em><code class="sig-name descname"><span class="pre">declined_comment</span></code><a class="headerlink" href="#arcgis.apps.workforce.Assignment.declined_comment" title="Permalink to this definition">¶</a></dt>
+<dd><p>Gets/Sets the declined comment of the assignment</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="arcgis.apps.workforce.Assignment.declined_date">
+<em class="property"><span class="pre">property</span> </em><code class="sig-name descname"><span class="pre">declined_date</span></code><a class="headerlink" href="#arcgis.apps.workforce.Assignment.declined_date" title="Permalink to this definition">¶</a></dt>
+<dd><p>Gets/Sets the declined <code class="xref py py-class docutils literal notranslate"><span class="pre">datetime</span></code> of the assignment</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="arcgis.apps.workforce.Assignment.delete">
+<code class="sig-name descname"><span class="pre">delete</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.apps.workforce.Assignment.delete" title="Permalink to this definition">¶</a></dt>
+<dd><p>Deletes the assignment from the server</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="arcgis.apps.workforce.Assignment.description">
+<em class="property"><span class="pre">property</span> </em><code class="sig-name descname"><span class="pre">description</span></code><a class="headerlink" href="#arcgis.apps.workforce.Assignment.description" title="Permalink to this definition">¶</a></dt>
+<dd><p>Gets/Sets the description for the assignment</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="arcgis.apps.workforce.Assignment.dispatcher">
+<em class="property"><span class="pre">property</span> </em><code class="sig-name descname"><span class="pre">dispatcher</span></code><a class="headerlink" href="#arcgis.apps.workforce.Assignment.dispatcher" title="Permalink to this definition">¶</a></dt>
+<dd><p>Gets/Sets the <a class="reference internal" href="#arcgis.apps.workforce.Dispatcher" title="arcgis.apps.workforce.Dispatcher"><code class="xref py py-class docutils literal notranslate"><span class="pre">Dispatcher</span></code></a> of the assignment</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="arcgis.apps.workforce.Assignment.dispatcher_id">
+<em class="property"><span class="pre">property</span> </em><code class="sig-name descname"><span class="pre">dispatcher_id</span></code><a class="headerlink" href="#arcgis.apps.workforce.Assignment.dispatcher_id" title="Permalink to this definition">¶</a></dt>
+<dd><p>Gets the dispatcher id of the assignment</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="arcgis.apps.workforce.Assignment.due_date">
+<em class="property"><span class="pre">property</span> </em><code class="sig-name descname"><span class="pre">due_date</span></code><a class="headerlink" href="#arcgis.apps.workforce.Assignment.due_date" title="Permalink to this definition">¶</a></dt>
+<dd><p>Gets/Sets the due <code class="xref py py-class docutils literal notranslate"><span class="pre">datetime</span></code> of the assignment</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="arcgis.apps.workforce.Assignment.edit_date">
+<em class="property"><span class="pre">property</span> </em><code class="sig-name descname"><span class="pre">edit_date</span></code><a class="headerlink" href="#arcgis.apps.workforce.Assignment.edit_date" title="Permalink to this definition">¶</a></dt>
+<dd><p>The <code class="xref py py-class docutils literal notranslate"><span class="pre">datetime</span></code> at which the Feature was last edited.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="arcgis.apps.workforce.Assignment.editor">
+<em class="property"><span class="pre">property</span> </em><code class="sig-name descname"><span class="pre">editor</span></code><a class="headerlink" href="#arcgis.apps.workforce.Assignment.editor" title="Permalink to this definition">¶</a></dt>
+<dd><p>The named user that last edited the Feature.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="arcgis.apps.workforce.Assignment.feature">
+<em class="property"><span class="pre">property</span> </em><code class="sig-name descname"><span class="pre">feature</span></code><a class="headerlink" href="#arcgis.apps.workforce.Assignment.feature" title="Permalink to this definition">¶</a></dt>
+<dd><p>The <a class="reference internal" href="arcgis.features.toc.html#arcgis.features.Feature" title="arcgis.features.Feature"><code class="xref py py-class docutils literal notranslate"><span class="pre">Feature</span></code></a></p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="arcgis.apps.workforce.Assignment.geometry">
+<em class="property"><span class="pre">property</span> </em><code class="sig-name descname"><span class="pre">geometry</span></code><a class="headerlink" href="#arcgis.apps.workforce.Assignment.geometry" title="Permalink to this definition">¶</a></dt>
+<dd><p>Gets/Sets the geometry for the Feature.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="arcgis.apps.workforce.Assignment.global_id">
+<em class="property"><span class="pre">property</span> </em><code class="sig-name descname"><span class="pre">global_id</span></code><a class="headerlink" href="#arcgis.apps.workforce.Assignment.global_id" title="Permalink to this definition">¶</a></dt>
+<dd><p>The global id of the feature</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="arcgis.apps.workforce.Assignment.id">
+<em class="property"><span class="pre">property</span> </em><code class="sig-name descname"><span class="pre">id</span></code><a class="headerlink" href="#arcgis.apps.workforce.Assignment.id" title="Permalink to this definition">¶</a></dt>
+<dd><p>The object (version 1) or global id (version 2) of the feature</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="arcgis.apps.workforce.Assignment.in_progress_date">
+<em class="property"><span class="pre">property</span> </em><code class="sig-name descname"><span class="pre">in_progress_date</span></code><a class="headerlink" href="#arcgis.apps.workforce.Assignment.in_progress_date" title="Permalink to this definition">¶</a></dt>
+<dd><p>Gets/Sets the in progress <code class="xref py py-class docutils literal notranslate"><span class="pre">datetime</span></code> for the assignment</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="arcgis.apps.workforce.Assignment.location">
+<em class="property"><span class="pre">property</span> </em><code class="sig-name descname"><span class="pre">location</span></code><a class="headerlink" href="#arcgis.apps.workforce.Assignment.location" title="Permalink to this definition">¶</a></dt>
+<dd><p>Gets/Sets the location of the assignment</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="arcgis.apps.workforce.Assignment.notes">
+<em class="property"><span class="pre">property</span> </em><code class="sig-name descname"><span class="pre">notes</span></code><a class="headerlink" href="#arcgis.apps.workforce.Assignment.notes" title="Permalink to this definition">¶</a></dt>
+<dd><p>Gets/Sets the notes of the assignment</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="arcgis.apps.workforce.Assignment.object_id">
+<em class="property"><span class="pre">property</span> </em><code class="sig-name descname"><span class="pre">object_id</span></code><a class="headerlink" href="#arcgis.apps.workforce.Assignment.object_id" title="Permalink to this definition">¶</a></dt>
+<dd><p>The object id of the feature</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="arcgis.apps.workforce.Assignment.paused_date">
+<em class="property"><span class="pre">property</span> </em><code class="sig-name descname"><span class="pre">paused_date</span></code><a class="headerlink" href="#arcgis.apps.workforce.Assignment.paused_date" title="Permalink to this definition">¶</a></dt>
+<dd><p>Gets/Sets the paused <code class="xref py py-class docutils literal notranslate"><span class="pre">datetime</span></code> for the assignment</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="arcgis.apps.workforce.Assignment.priority">
+<em class="property"><span class="pre">property</span> </em><code class="sig-name descname"><span class="pre">priority</span></code><a class="headerlink" href="#arcgis.apps.workforce.Assignment.priority" title="Permalink to this definition">¶</a></dt>
+<dd><p>Gets/Sets the <code class="xref py py-class docutils literal notranslate"><span class="pre">String</span></code> priority of the assignment</p>
+<p><cite>none</cite>, <cite>low</cite>, <cite>medium</cite>, <cite>high</cite>, <cite>critical</cite></p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="arcgis.apps.workforce.Assignment.status">
+<em class="property"><span class="pre">property</span> </em><code class="sig-name descname"><span class="pre">status</span></code><a class="headerlink" href="#arcgis.apps.workforce.Assignment.status" title="Permalink to this definition">¶</a></dt>
+<dd><blockquote>
+<div><p>Gets/Sets the <code class="xref py py-class docutils literal notranslate"><span class="pre">String</span></code> status of the assignment</p>
+</div></blockquote>
+<p><cite>unassigned</cite>, <cite>assigned</cite>, <cite>in_progress</cite>, <cite>completed</cite>, <cite>declined</cite>,
+<cite>paused</cite>, <cite>canceled</cite></p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="arcgis.apps.workforce.Assignment.update">
+<code class="sig-name descname"><span class="pre">update</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">geometry</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">assignment_type</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">assigned_date</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">assignment_read</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">completed_date</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">declined_comment</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">declined_date</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">description</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dispatcher</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">due_date</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">in_progress_date</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">location</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">notes</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">paused_date</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">priority</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">status</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">work_order_id</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">worker</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.apps.workforce.Assignment.update" title="Permalink to this definition">¶</a></dt>
+<dd><p>Updates the assignment on the server</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 21%" />
+<col style="width: 79%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><strong>Argument</strong></p></td>
+<td><p><strong>Description</strong></p></td>
+</tr>
+<tr class="row-even"><td><p>geometry</p></td>
+<td><p>Optional <code class="xref py py-class docutils literal notranslate"><span class="pre">Dict</span></code>.
+A dictionary containing the assignment geometry</p></td>
+</tr>
+<tr class="row-odd"><td><p>assignment_type</p></td>
+<td><p>Optional <a class="reference internal" href="#arcgis.apps.workforce.AssignmentType" title="arcgis.apps.workforce.AssignmentType"><code class="xref py py-class docutils literal notranslate"><span class="pre">AssignmentType</span></code></a>.
+The assignment type that represents this assignment.</p></td>
+</tr>
+<tr class="row-even"><td><p>assigned_date</p></td>
+<td><p>Optional <code class="xref py py-class docutils literal notranslate"><span class="pre">Date</span></code>
+The date and time the assignment was assigned</p></td>
+</tr>
+<tr class="row-odd"><td><p>assignment_read</p></td>
+<td><p>Optional <code class="xref py py-class docutils literal notranslate"><span class="pre">Bool</span></code>.
+A flag indicating that the mobile worker has seen the assignment.
+Version 1 Projects Only</p></td>
+</tr>
+<tr class="row-even"><td><p>completed_date</p></td>
+<td><p>Optional <code class="xref py py-class docutils literal notranslate"><span class="pre">Date</span></code>.
+The date the assignment was completed</p></td>
+</tr>
+<tr class="row-odd"><td><p>declined_comment</p></td>
+<td><p>Optional <code class="xref py py-class docutils literal notranslate"><span class="pre">String</span></code>.
+The comment submitted by the mobile worker.</p></td>
+</tr>
+<tr class="row-even"><td><p>declined_date</p></td>
+<td><p>Optional <code class="xref py py-class docutils literal notranslate"><span class="pre">Date</span></code>.
+The date the assignment was declined.</p></td>
+</tr>
+<tr class="row-odd"><td><p>description</p></td>
+<td><p>Optional <code class="xref py py-class docutils literal notranslate"><span class="pre">Description</span></code>.
+The description associated with the assignment.</p></td>
+</tr>
+<tr class="row-even"><td><p>dispatcher</p></td>
+<td><p>Optional <a class="reference internal" href="#arcgis.apps.workforce.Dispatcher" title="arcgis.apps.workforce.Dispatcher"><code class="xref py py-class docutils literal notranslate"><span class="pre">Dispatcher</span></code></a>.
+The dispatcher that assigned/created the assignment.</p></td>
+</tr>
+<tr class="row-odd"><td><p>due_date</p></td>
+<td><p>Optional <code class="xref py py-class docutils literal notranslate"><span class="pre">Date</span></code>.
+The date the assignment is due.</p></td>
+</tr>
+<tr class="row-even"><td><p>in_progress_date</p></td>
+<td><p>Optional <code class="xref py py-class docutils literal notranslate"><span class="pre">Date</span></code>.
+The date the assignment was started.</p></td>
+</tr>
+<tr class="row-odd"><td><p>location</p></td>
+<td><p>Optional <code class="xref py py-class docutils literal notranslate"><span class="pre">String</span></code>.
+The location or address of the assignment.</p></td>
+</tr>
+<tr class="row-even"><td><p>notes</p></td>
+<td><p>Optional <code class="xref py py-class docutils literal notranslate"><span class="pre">String</span></code>.
+The notes associated with the assignment.</p></td>
+</tr>
+<tr class="row-odd"><td><p>paused_date</p></td>
+<td><p>Optional <code class="xref py py-class docutils literal notranslate"><span class="pre">Date</span></code>.
+The date and time the assignment was paused.</p></td>
+</tr>
+<tr class="row-even"><td><p>priority</p></td>
+<td><p>Optional <code class="xref py py-class docutils literal notranslate"><span class="pre">String</span></code>.
+The priority of the assignment</p>
+<p><cite>none</cite>, <cite>low</cite>, <cite>medium</cite>, <cite>high</cite>, <cite>critical</cite></p>
+</td>
+</tr>
+<tr class="row-odd"><td><p>status</p></td>
+<td><p>Optional <code class="xref py py-class docutils literal notranslate"><span class="pre">String</span></code>.
+The status of the assignment.</p>
+<p><cite>unassigned</cite>, <cite>assigned</cite>, <cite>in_progress</cite>, <cite>completed</cite>, <cite>declined</cite>,
+<cite>paused</cite>, <cite>canceled</cite></p>
+</td>
+</tr>
+<tr class="row-even"><td><p>work_order_id</p></td>
+<td><p>Optional <code class="xref py py-class docutils literal notranslate"><span class="pre">String</span></code>.
+The work order id associated with the assignment.</p></td>
+</tr>
+<tr class="row-odd"><td><p>worker</p></td>
+<td><p>Optional <a class="reference internal" href="#arcgis.apps.workforce.Worker" title="arcgis.apps.workforce.Worker"><code class="xref py py-class docutils literal notranslate"><span class="pre">Worker</span></code></a>.
+The worker assigned to the assignment</p></td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="py method">
+<dt id="arcgis.apps.workforce.Assignment.web_app_link">
+<em class="property"><span class="pre">property</span> </em><code class="sig-name descname"><span class="pre">web_app_link</span></code><a class="headerlink" href="#arcgis.apps.workforce.Assignment.web_app_link" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns a link to the assignment in the Workforce web app</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="arcgis.apps.workforce.Assignment.work_order_id">
+<em class="property"><span class="pre">property</span> </em><code class="sig-name descname"><span class="pre">work_order_id</span></code><a class="headerlink" href="#arcgis.apps.workforce.Assignment.work_order_id" title="Permalink to this definition">¶</a></dt>
+<dd><p>Gets/Sets the work order id of the assignment</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="arcgis.apps.workforce.Assignment.worker">
+<em class="property"><span class="pre">property</span> </em><code class="sig-name descname"><span class="pre">worker</span></code><a class="headerlink" href="#arcgis.apps.workforce.Assignment.worker" title="Permalink to this definition">¶</a></dt>
+<dd><p>Gets the <a class="reference internal" href="#arcgis.apps.workforce.Worker" title="arcgis.apps.workforce.Worker"><code class="xref py py-class docutils literal notranslate"><span class="pre">Worker</span></code></a> of the assignment</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="arcgis.apps.workforce.Assignment.worker_id">
+<em class="property"><span class="pre">property</span> </em><code class="sig-name descname"><span class="pre">worker_id</span></code><a class="headerlink" href="#arcgis.apps.workforce.Assignment.worker_id" title="Permalink to this definition">¶</a></dt>
+<dd><p>Gets the worker id of the assignment</p>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="assignmenttype">
+<h2>AssignmentType<a class="headerlink" href="#assignmenttype" title="Permalink to this headline">¶</a></h2>
+<dl class="py class">
+<dt id="arcgis.apps.workforce.AssignmentType">
+<em class="property"><span class="pre">class</span> </em><code class="sig-prename descclassname"><span class="pre">arcgis.apps.workforce.</span></code><code class="sig-name descname"><span class="pre">AssignmentType</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">project</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">feature</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">coded_value</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">name</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.apps.workforce.AssignmentType" title="Permalink to this definition">¶</a></dt>
+<dd><p>Defines the acceptable values for <a class="reference internal" href="#arcgis.apps.workforce.AssignmentType" title="arcgis.apps.workforce.AssignmentType"><code class="xref py py-class docutils literal notranslate"><span class="pre">AssignmentType</span></code></a> types.</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 21%" />
+<col style="width: 79%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><strong>Argument</strong></p></td>
+<td><p><strong>Description</strong></p></td>
+</tr>
+<tr class="row-even"><td><p>project</p></td>
+<td><p>Required <a class="reference internal" href="#arcgis.apps.workforce.Project" title="arcgis.apps.workforce.Project"><code class="xref py py-class docutils literal notranslate"><span class="pre">Project</span></code></a>. The project that
+this assignment belongs to.</p></td>
+</tr>
+<tr class="row-odd"><td><p>coded_value</p></td>
+<td><p>Optional <code class="xref py py-class docutils literal notranslate"><span class="pre">dict</span></code>. The dictionary storing the code and
+name of the type. Only works for v1 projects.</p></td>
+</tr>
+<tr class="row-even"><td><p>name</p></td>
+<td><p>Optional <code class="xref py py-class docutils literal notranslate"><span class="pre">String</span></code>. The name of the assignment type.</p></td>
+</tr>
+</tbody>
+</table>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Get an assignment type, update it, delete it</span>
+
+<span class="kn">import</span> <span class="nn">arcgis</span>
+<span class="n">gis</span> <span class="o">=</span> <span class="n">arcgis</span><span class="o">.</span><span class="n">gis</span><span class="o">.</span><span class="n">GIS</span><span class="p">(</span><span class="s2">&quot;https://arcgis.com&quot;</span><span class="p">,</span> <span class="s2">&quot;&lt;username&gt;&quot;</span><span class="p">,</span> <span class="s2">&quot;&lt;password&gt;&quot;</span><span class="p">)</span>
+<span class="n">item</span> <span class="o">=</span> <span class="n">gis</span><span class="o">.</span><span class="n">content</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;&lt;item-id&gt;&quot;</span><span class="p">)</span>
+<span class="n">project</span> <span class="o">=</span> <span class="n">arcgis</span><span class="o">.</span><span class="n">apps</span><span class="o">.</span><span class="n">workforce</span><span class="o">.</span><span class="n">Project</span><span class="p">(</span><span class="n">item</span><span class="p">)</span>
+<span class="n">assignment_type</span> <span class="o">=</span> <span class="n">project</span><span class="o">.</span><span class="n">assignment_types</span><span class="o">.</span><span class="n">search</span><span class="p">()[</span><span class="mi">0</span><span class="p">]</span>
+<span class="n">assignment_type</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s2">&quot;Manhole Inspection&quot;</span><span class="p">)</span>
+<span class="n">assignment_type</span><span class="o">.</span><span class="n">delete</span><span class="p">()</span>
+</pre></div>
+</div>
+<dl class="py method">
+<dt id="arcgis.apps.workforce.AssignmentType.code">
+<em class="property"><span class="pre">property</span> </em><code class="sig-name descname"><span class="pre">code</span></code><a class="headerlink" href="#arcgis.apps.workforce.AssignmentType.code" title="Permalink to this definition">¶</a></dt>
+<dd><p>Gets the internal code that uniquely identifies the assignment type</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="arcgis.apps.workforce.AssignmentType.coded_value">
+<em class="property"><span class="pre">property</span> </em><code class="sig-name descname"><span class="pre">coded_value</span></code><a class="headerlink" href="#arcgis.apps.workforce.AssignmentType.coded_value" title="Permalink to this definition">¶</a></dt>
+<dd><p>Gets the coded value</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="arcgis.apps.workforce.AssignmentType.creation_date">
+<em class="property"><span class="pre">property</span> </em><code class="sig-name descname"><span class="pre">creation_date</span></code><a class="headerlink" href="#arcgis.apps.workforce.AssignmentType.creation_date" title="Permalink to this definition">¶</a></dt>
+<dd><p>The <code class="xref py py-class docutils literal notranslate"><span class="pre">datetime</span></code> at which the Feature was created.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="arcgis.apps.workforce.AssignmentType.creator">
+<em class="property"><span class="pre">property</span> </em><code class="sig-name descname"><span class="pre">creator</span></code><a class="headerlink" href="#arcgis.apps.workforce.AssignmentType.creator" title="Permalink to this definition">¶</a></dt>
+<dd><p>The named user that created the Feature.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="arcgis.apps.workforce.AssignmentType.delete">
+<code class="sig-name descname"><span class="pre">delete</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.apps.workforce.AssignmentType.delete" title="Permalink to this definition">¶</a></dt>
+<dd><p>Deletes the assignment type from the server</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="arcgis.apps.workforce.AssignmentType.edit_date">
+<em class="property"><span class="pre">property</span> </em><code class="sig-name descname"><span class="pre">edit_date</span></code><a class="headerlink" href="#arcgis.apps.workforce.AssignmentType.edit_date" title="Permalink to this definition">¶</a></dt>
+<dd><p>The <code class="xref py py-class docutils literal notranslate"><span class="pre">datetime</span></code> at which the Feature was last edited.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="arcgis.apps.workforce.AssignmentType.editor">
+<em class="property"><span class="pre">property</span> </em><code class="sig-name descname"><span class="pre">editor</span></code><a class="headerlink" href="#arcgis.apps.workforce.AssignmentType.editor" title="Permalink to this definition">¶</a></dt>
+<dd><p>The named user that last edited the Feature.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="arcgis.apps.workforce.AssignmentType.feature">
+<em class="property"><span class="pre">property</span> </em><code class="sig-name descname"><span class="pre">feature</span></code><a class="headerlink" href="#arcgis.apps.workforce.AssignmentType.feature" title="Permalink to this definition">¶</a></dt>
+<dd><p>The <a class="reference internal" href="arcgis.features.toc.html#arcgis.features.Feature" title="arcgis.features.Feature"><code class="xref py py-class docutils literal notranslate"><span class="pre">Feature</span></code></a></p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="arcgis.apps.workforce.AssignmentType.geometry">
+<em class="property"><span class="pre">property</span> </em><code class="sig-name descname"><span class="pre">geometry</span></code><a class="headerlink" href="#arcgis.apps.workforce.AssignmentType.geometry" title="Permalink to this definition">¶</a></dt>
+<dd><p>Gets/Sets the geometry for the Feature.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="arcgis.apps.workforce.AssignmentType.global_id">
+<em class="property"><span class="pre">property</span> </em><code class="sig-name descname"><span class="pre">global_id</span></code><a class="headerlink" href="#arcgis.apps.workforce.AssignmentType.global_id" title="Permalink to this definition">¶</a></dt>
+<dd><p>The global id of the feature</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="arcgis.apps.workforce.AssignmentType.id">
+<em class="property"><span class="pre">property</span> </em><code class="sig-name descname"><span class="pre">id</span></code><a class="headerlink" href="#arcgis.apps.workforce.AssignmentType.id" title="Permalink to this definition">¶</a></dt>
+<dd><p>Gets the id of the assignment type</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="arcgis.apps.workforce.AssignmentType.name">
+<em class="property"><span class="pre">property</span> </em><code class="sig-name descname"><span class="pre">name</span></code><a class="headerlink" href="#arcgis.apps.workforce.AssignmentType.name" title="Permalink to this definition">¶</a></dt>
+<dd><p>Gets/Sets The name of the assignment type</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="arcgis.apps.workforce.AssignmentType.object_id">
+<em class="property"><span class="pre">property</span> </em><code class="sig-name descname"><span class="pre">object_id</span></code><a class="headerlink" href="#arcgis.apps.workforce.AssignmentType.object_id" title="Permalink to this definition">¶</a></dt>
+<dd><p>The object id of the feature</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="arcgis.apps.workforce.AssignmentType.update">
+<code class="sig-name descname"><span class="pre">update</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.apps.workforce.AssignmentType.update" title="Permalink to this definition">¶</a></dt>
+<dd><p>Updates the assignment type on the server</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 21%" />
+<col style="width: 79%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><strong>Argument</strong></p></td>
+<td><p><strong>Description</strong></p></td>
+</tr>
+<tr class="row-even"><td><p>name</p></td>
+<td><p>Optional <code class="xref py py-class docutils literal notranslate"><span class="pre">String</span></code>.
+The name of the assignment type</p></td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="attachment">
+<h2>Attachment<a class="headerlink" href="#attachment" title="Permalink to this headline">¶</a></h2>
+<dl class="py class">
+<dt id="arcgis.apps.workforce.Attachment">
+<em class="property"><span class="pre">class</span> </em><code class="sig-prename descclassname"><span class="pre">arcgis.apps.workforce.</span></code><code class="sig-name descname"><span class="pre">Attachment</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">assignment</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">attachment_info</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.apps.workforce.Attachment" title="Permalink to this definition">¶</a></dt>
+<dd><p>Represents a file attachment for an Assignment</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 15%" />
+<col style="width: 85%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><strong>Argument</strong></p></td>
+<td><p><strong>Description</strong></p></td>
+</tr>
+<tr class="row-even"><td><p>assignment</p></td>
+<td><p>Required <a class="reference internal" href="#arcgis.apps.workforce.Assignment" title="arcgis.apps.workforce.Assignment"><code class="xref py py-class docutils literal notranslate"><span class="pre">Assignment</span></code></a>. The assignment object that this attachment belongs
+to</p></td>
+</tr>
+<tr class="row-odd"><td><p>attachment_info</p></td>
+<td><p>Required <code class="xref py py-class docutils literal notranslate"><span class="pre">dict</span></code>. The attachment info dictionary representing the
+attachment.</p></td>
+</tr>
+</tbody>
+</table>
+<dl class="py method">
+<dt id="arcgis.apps.workforce.Attachment.attachment_info">
+<em class="property"><span class="pre">property</span> </em><code class="sig-name descname"><span class="pre">attachment_info</span></code><a class="headerlink" href="#arcgis.apps.workforce.Attachment.attachment_info" title="Permalink to this definition">¶</a></dt>
+<dd><p>Gets the attachment info of the attachment</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="arcgis.apps.workforce.Attachment.content_type">
+<em class="property"><span class="pre">property</span> </em><code class="sig-name descname"><span class="pre">content_type</span></code><a class="headerlink" href="#arcgis.apps.workforce.Attachment.content_type" title="Permalink to this definition">¶</a></dt>
+<dd><p>Gets the attachment content type</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="arcgis.apps.workforce.Attachment.download">
+<code class="sig-name descname"><span class="pre">download</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">out_folder</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.apps.workforce.Attachment.download" title="Permalink to this definition">¶</a></dt>
+<dd><p>Downloads the attachment to the specified path.  If the path is omitted, the Attachment
+will be saved to the current working directory, using the name property as the filename.
+:param out_folder: The folder in which the attachment should be saved.  Defaults to the
+current working directory.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>The absolute path to the downloaded file.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="arcgis.apps.workforce.Attachment.global_id">
+<em class="property"><span class="pre">property</span> </em><code class="sig-name descname"><span class="pre">global_id</span></code><a class="headerlink" href="#arcgis.apps.workforce.Attachment.global_id" title="Permalink to this definition">¶</a></dt>
+<dd><p>Gets the attachment global id</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="arcgis.apps.workforce.Attachment.id">
+<em class="property"><span class="pre">property</span> </em><code class="sig-name descname"><span class="pre">id</span></code><a class="headerlink" href="#arcgis.apps.workforce.Attachment.id" title="Permalink to this definition">¶</a></dt>
+<dd><p>Gets the attachment id</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="arcgis.apps.workforce.Attachment.name">
+<em class="property"><span class="pre">property</span> </em><code class="sig-name descname"><span class="pre">name</span></code><a class="headerlink" href="#arcgis.apps.workforce.Attachment.name" title="Permalink to this definition">¶</a></dt>
+<dd><p>Gets the attachment name</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="arcgis.apps.workforce.Attachment.project">
+<em class="property"><span class="pre">property</span> </em><code class="sig-name descname"><span class="pre">project</span></code><a class="headerlink" href="#arcgis.apps.workforce.Attachment.project" title="Permalink to this definition">¶</a></dt>
+<dd><p>Gets the project that the attachment belongs to</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="arcgis.apps.workforce.Attachment.size">
+<em class="property"><span class="pre">property</span> </em><code class="sig-name descname"><span class="pre">size</span></code><a class="headerlink" href="#arcgis.apps.workforce.Attachment.size" title="Permalink to this definition">¶</a></dt>
+<dd><p>Gets the attachment size</p>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="dispatcher">
+<h2>Dispatcher<a class="headerlink" href="#dispatcher" title="Permalink to this headline">¶</a></h2>
+<dl class="py class">
+<dt id="arcgis.apps.workforce.Dispatcher">
+<em class="property"><span class="pre">class</span> </em><code class="sig-prename descclassname"><span class="pre">arcgis.apps.workforce.</span></code><code class="sig-name descname"><span class="pre">Dispatcher</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">project</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">feature</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">contact_number</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">name</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">user_id</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.apps.workforce.Dispatcher" title="Permalink to this definition">¶</a></dt>
+<dd><p>Represents a dispatcher in a project.</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 21%" />
+<col style="width: 79%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><strong>Argument</strong></p></td>
+<td><p><strong>Description</strong></p></td>
+</tr>
+<tr class="row-even"><td><p>project</p></td>
+<td><p>Required <a class="reference internal" href="#arcgis.apps.workforce.Project" title="arcgis.apps.workforce.Project"><code class="xref py py-class docutils literal notranslate"><span class="pre">Project</span></code></a>. The project that
+the dispatcher belongs to.</p></td>
+</tr>
+<tr class="row-odd"><td><p>feature</p></td>
+<td><p>Optional <a class="reference internal" href="arcgis.features.toc.html#arcgis.features.Feature" title="arcgis.features.Feature"><code class="xref py py-class docutils literal notranslate"><span class="pre">Feature</span></code></a>. The feature representing
+the dispatcher. Mostly intended for
+internal usage. If supplied, other parameters are ignored.</p></td>
+</tr>
+<tr class="row-even"><td><p>contact_number</p></td>
+<td><p>Optional <code class="xref py py-class docutils literal notranslate"><span class="pre">String</span></code>. The contact number of the dispatcher</p></td>
+</tr>
+<tr class="row-odd"><td><p>name</p></td>
+<td><p>Optional <code class="xref py py-class docutils literal notranslate"><span class="pre">String</span></code>. The name of the dispatcher</p></td>
+</tr>
+<tr class="row-even"><td><p>user_id</p></td>
+<td><p>Optional <code class="xref py py-class docutils literal notranslate"><span class="pre">String</span></code>. The user id of the dispatcher</p></td>
+</tr>
+</tbody>
+</table>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Get a dispatcher, update it, delete it</span>
+
+<span class="kn">import</span> <span class="nn">arcgis</span>
+<span class="n">gis</span> <span class="o">=</span> <span class="n">arcgis</span><span class="o">.</span><span class="n">gis</span><span class="o">.</span><span class="n">GIS</span><span class="p">(</span><span class="s2">&quot;https://arcgis.com&quot;</span><span class="p">,</span> <span class="s2">&quot;&lt;username&gt;&quot;</span><span class="p">,</span> <span class="s2">&quot;&lt;password&gt;&quot;</span><span class="p">)</span>
+<span class="n">item</span> <span class="o">=</span> <span class="n">gis</span><span class="o">.</span><span class="n">content</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;&lt;item-id&gt;&quot;</span><span class="p">)</span>
+<span class="n">project</span> <span class="o">=</span> <span class="n">arcgis</span><span class="o">.</span><span class="n">apps</span><span class="o">.</span><span class="n">workforce</span><span class="o">.</span><span class="n">Project</span><span class="p">(</span><span class="n">item</span><span class="p">)</span>
+<span class="n">dispatcher</span> <span class="o">=</span> <span class="n">project</span><span class="o">.</span><span class="n">dispatchers</span><span class="o">.</span><span class="n">search</span><span class="p">()[</span><span class="mi">0</span><span class="p">]</span>
+<span class="n">dispatcher</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s2">&quot;Dispatcher Name&quot;</span><span class="p">,</span> <span class="n">contact_number</span><span class="o">=</span><span class="s2">&quot;1234567890&quot;</span><span class="p">)</span>
+<span class="n">dispatcher</span><span class="o">.</span><span class="n">delete</span><span class="p">()</span>
+</pre></div>
+</div>
+<dl class="py method">
+<dt id="arcgis.apps.workforce.Dispatcher.contact_number">
+<em class="property"><span class="pre">property</span> </em><code class="sig-name descname"><span class="pre">contact_number</span></code><a class="headerlink" href="#arcgis.apps.workforce.Dispatcher.contact_number" title="Permalink to this definition">¶</a></dt>
+<dd><p>Gets/Sets the contact number of the dispatcher</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="arcgis.apps.workforce.Dispatcher.creation_date">
+<em class="property"><span class="pre">property</span> </em><code class="sig-name descname"><span class="pre">creation_date</span></code><a class="headerlink" href="#arcgis.apps.workforce.Dispatcher.creation_date" title="Permalink to this definition">¶</a></dt>
+<dd><p>The <code class="xref py py-class docutils literal notranslate"><span class="pre">datetime</span></code> at which the Feature was created.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="arcgis.apps.workforce.Dispatcher.creator">
+<em class="property"><span class="pre">property</span> </em><code class="sig-name descname"><span class="pre">creator</span></code><a class="headerlink" href="#arcgis.apps.workforce.Dispatcher.creator" title="Permalink to this definition">¶</a></dt>
+<dd><p>The named user that created the Feature.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="arcgis.apps.workforce.Dispatcher.delete">
+<code class="sig-name descname"><span class="pre">delete</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.apps.workforce.Dispatcher.delete" title="Permalink to this definition">¶</a></dt>
+<dd><p>Deletes the dispatcher from the server</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="arcgis.apps.workforce.Dispatcher.edit_date">
+<em class="property"><span class="pre">property</span> </em><code class="sig-name descname"><span class="pre">edit_date</span></code><a class="headerlink" href="#arcgis.apps.workforce.Dispatcher.edit_date" title="Permalink to this definition">¶</a></dt>
+<dd><p>The <code class="xref py py-class docutils literal notranslate"><span class="pre">datetime</span></code> at which the Feature was last edited.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="arcgis.apps.workforce.Dispatcher.editor">
+<em class="property"><span class="pre">property</span> </em><code class="sig-name descname"><span class="pre">editor</span></code><a class="headerlink" href="#arcgis.apps.workforce.Dispatcher.editor" title="Permalink to this definition">¶</a></dt>
+<dd><p>The named user that last edited the Feature.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="arcgis.apps.workforce.Dispatcher.feature">
+<em class="property"><span class="pre">property</span> </em><code class="sig-name descname"><span class="pre">feature</span></code><a class="headerlink" href="#arcgis.apps.workforce.Dispatcher.feature" title="Permalink to this definition">¶</a></dt>
+<dd><p>The <a class="reference internal" href="arcgis.features.toc.html#arcgis.features.Feature" title="arcgis.features.Feature"><code class="xref py py-class docutils literal notranslate"><span class="pre">Feature</span></code></a></p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="arcgis.apps.workforce.Dispatcher.geometry">
+<em class="property"><span class="pre">property</span> </em><code class="sig-name descname"><span class="pre">geometry</span></code><a class="headerlink" href="#arcgis.apps.workforce.Dispatcher.geometry" title="Permalink to this definition">¶</a></dt>
+<dd><p>Gets/Sets the geometry for the Feature.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="arcgis.apps.workforce.Dispatcher.global_id">
+<em class="property"><span class="pre">property</span> </em><code class="sig-name descname"><span class="pre">global_id</span></code><a class="headerlink" href="#arcgis.apps.workforce.Dispatcher.global_id" title="Permalink to this definition">¶</a></dt>
+<dd><p>The global id of the feature</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="arcgis.apps.workforce.Dispatcher.id">
+<em class="property"><span class="pre">property</span> </em><code class="sig-name descname"><span class="pre">id</span></code><a class="headerlink" href="#arcgis.apps.workforce.Dispatcher.id" title="Permalink to this definition">¶</a></dt>
+<dd><p>The object (version 1) or global id (version 2) of the feature</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="arcgis.apps.workforce.Dispatcher.name">
+<em class="property"><span class="pre">property</span> </em><code class="sig-name descname"><span class="pre">name</span></code><a class="headerlink" href="#arcgis.apps.workforce.Dispatcher.name" title="Permalink to this definition">¶</a></dt>
+<dd><p>Gets/Sets the name of the dispatcher</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="arcgis.apps.workforce.Dispatcher.object_id">
+<em class="property"><span class="pre">property</span> </em><code class="sig-name descname"><span class="pre">object_id</span></code><a class="headerlink" href="#arcgis.apps.workforce.Dispatcher.object_id" title="Permalink to this definition">¶</a></dt>
+<dd><p>The object id of the feature</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="arcgis.apps.workforce.Dispatcher.update">
+<code class="sig-name descname"><span class="pre">update</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">contact_number</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">name</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">user_id</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.apps.workforce.Dispatcher.update" title="Permalink to this definition">¶</a></dt>
+<dd><p>Updates the dispatcher on the server</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 21%" />
+<col style="width: 79%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><strong>Argument</strong></p></td>
+<td><p><strong>Description</strong></p></td>
+</tr>
+<tr class="row-even"><td><p>contact_number</p></td>
+<td><p>Optional <code class="xref py py-class docutils literal notranslate"><span class="pre">String</span></code>. The contact number of the dispatcher</p></td>
+</tr>
+<tr class="row-odd"><td><p>name</p></td>
+<td><p>Optional <code class="xref py py-class docutils literal notranslate"><span class="pre">String</span></code>. The name of the dispatcher</p></td>
+</tr>
+<tr class="row-even"><td><p>user_id</p></td>
+<td><p>Optional <code class="xref py py-class docutils literal notranslate"><span class="pre">String</span></code>. The user id of the dispatcher</p></td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="py method">
+<dt id="arcgis.apps.workforce.Dispatcher.user_id">
+<em class="property"><span class="pre">property</span> </em><code class="sig-name descname"><span class="pre">user_id</span></code><a class="headerlink" href="#arcgis.apps.workforce.Dispatcher.user_id" title="Permalink to this definition">¶</a></dt>
+<dd><p>Gets/Sets the user id of the dispatcher</p>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="integration">
+<h2>Integration<a class="headerlink" href="#integration" title="Permalink to this headline">¶</a></h2>
+<dl class="py class">
+<dt id="arcgis.apps.workforce.Integration">
+<em class="property"><span class="pre">class</span> </em><code class="sig-prename descclassname"><span class="pre">arcgis.apps.workforce.</span></code><code class="sig-name descname"><span class="pre">Integration</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">project</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">feature</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">integration_id</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">prompt</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">url_template</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">assignment_type</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.apps.workforce.Integration" title="Permalink to this definition">¶</a></dt>
+<dd><p>Represents an integration in a project. Version 2 Workforce projects only.</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 21%" />
+<col style="width: 79%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><strong>Argument</strong></p></td>
+<td><p><strong>Description</strong></p></td>
+</tr>
+<tr class="row-even"><td><p>project</p></td>
+<td><p>Required <a class="reference internal" href="#arcgis.apps.workforce.Project" title="arcgis.apps.workforce.Project"><code class="xref py py-class docutils literal notranslate"><span class="pre">Project</span></code></a>. The project that
+the dispatcher belongs to.</p></td>
+</tr>
+<tr class="row-odd"><td><p>feature</p></td>
+<td><p>Optional <a class="reference internal" href="arcgis.features.toc.html#arcgis.features.Feature" title="arcgis.features.Feature"><code class="xref py py-class docutils literal notranslate"><span class="pre">Feature</span></code></a>. The feature representing
+the dispatcher. Mostly intended for
+internal usage. If supplied, other parameters are ignored.</p></td>
+</tr>
+<tr class="row-even"><td><p>integration_id</p></td>
+<td><p>Optional <code class="xref py py-class docutils literal notranslate"><span class="pre">String</span></code>. The id for the integration</p></td>
+</tr>
+<tr class="row-odd"><td><p>prompt</p></td>
+<td><p>Optional <code class="xref py py-class docutils literal notranslate"><span class="pre">String</span></code>. The prompt in the mobile app for the
+integration</p></td>
+</tr>
+<tr class="row-even"><td><p>url_template</p></td>
+<td><p>Optional <code class="xref py py-class docutils literal notranslate"><span class="pre">String</span></code>. The url that the prompt links to</p></td>
+</tr>
+<tr class="row-odd"><td><p>assignment_type</p></td>
+<td><p>Optional <code class="xref py py-class docutils literal notranslate"><span class="pre">String</span></code>. The assignment type for the integration</p></td>
+</tr>
+</tbody>
+</table>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Get an integration, update it, delete it</span>
+
+<span class="kn">import</span> <span class="nn">arcgis</span>
+<span class="n">gis</span> <span class="o">=</span> <span class="n">arcgis</span><span class="o">.</span><span class="n">gis</span><span class="o">.</span><span class="n">GIS</span><span class="p">(</span><span class="s2">&quot;https://arcgis.com&quot;</span><span class="p">,</span> <span class="s2">&quot;&lt;username&gt;&quot;</span><span class="p">,</span> <span class="s2">&quot;&lt;password&gt;&quot;</span><span class="p">)</span>
+<span class="n">item</span> <span class="o">=</span> <span class="n">gis</span><span class="o">.</span><span class="n">content</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;&lt;item-id&gt;&quot;</span><span class="p">)</span>
+<span class="n">project</span> <span class="o">=</span> <span class="n">arcgis</span><span class="o">.</span><span class="n">apps</span><span class="o">.</span><span class="n">workforce</span><span class="o">.</span><span class="n">Project</span><span class="p">(</span><span class="n">item</span><span class="p">)</span>
+<span class="n">integration</span> <span class="o">=</span> <span class="n">project</span><span class="o">.</span><span class="n">integrations</span><span class="o">.</span><span class="n">search</span><span class="p">()[</span><span class="mi">0</span><span class="p">]</span>
+<span class="n">integration</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">integration_id</span><span class="o">=</span><span class="s2">&quot;arcgis-navigator&quot;</span><span class="p">,</span><span class="n">prompt</span><span class="o">=</span><span class="s2">&quot;Navigate to Assignment&quot;</span><span class="p">)</span>
+<span class="n">integration</span><span class="o">.</span><span class="n">delete</span><span class="p">()</span>
+</pre></div>
+</div>
+<dl class="py method">
+<dt id="arcgis.apps.workforce.Integration.assignment_type">
+<em class="property"><span class="pre">property</span> </em><code class="sig-name descname"><span class="pre">assignment_type</span></code><a class="headerlink" href="#arcgis.apps.workforce.Integration.assignment_type" title="Permalink to this definition">¶</a></dt>
+<dd><p>Gets/Sets the assignment type of the integration</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="arcgis.apps.workforce.Integration.creation_date">
+<em class="property"><span class="pre">property</span> </em><code class="sig-name descname"><span class="pre">creation_date</span></code><a class="headerlink" href="#arcgis.apps.workforce.Integration.creation_date" title="Permalink to this definition">¶</a></dt>
+<dd><p>The <code class="xref py py-class docutils literal notranslate"><span class="pre">datetime</span></code> at which the Feature was created.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="arcgis.apps.workforce.Integration.creator">
+<em class="property"><span class="pre">property</span> </em><code class="sig-name descname"><span class="pre">creator</span></code><a class="headerlink" href="#arcgis.apps.workforce.Integration.creator" title="Permalink to this definition">¶</a></dt>
+<dd><p>The named user that created the Feature.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="arcgis.apps.workforce.Integration.delete">
+<code class="sig-name descname"><span class="pre">delete</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.apps.workforce.Integration.delete" title="Permalink to this definition">¶</a></dt>
+<dd><p>Deletes the integration from the server</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="arcgis.apps.workforce.Integration.edit_date">
+<em class="property"><span class="pre">property</span> </em><code class="sig-name descname"><span class="pre">edit_date</span></code><a class="headerlink" href="#arcgis.apps.workforce.Integration.edit_date" title="Permalink to this definition">¶</a></dt>
+<dd><p>The <code class="xref py py-class docutils literal notranslate"><span class="pre">datetime</span></code> at which the Feature was last edited.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="arcgis.apps.workforce.Integration.editor">
+<em class="property"><span class="pre">property</span> </em><code class="sig-name descname"><span class="pre">editor</span></code><a class="headerlink" href="#arcgis.apps.workforce.Integration.editor" title="Permalink to this definition">¶</a></dt>
+<dd><p>The named user that last edited the Feature.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="arcgis.apps.workforce.Integration.feature">
+<em class="property"><span class="pre">property</span> </em><code class="sig-name descname"><span class="pre">feature</span></code><a class="headerlink" href="#arcgis.apps.workforce.Integration.feature" title="Permalink to this definition">¶</a></dt>
+<dd><p>The <a class="reference internal" href="arcgis.features.toc.html#arcgis.features.Feature" title="arcgis.features.Feature"><code class="xref py py-class docutils literal notranslate"><span class="pre">Feature</span></code></a></p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="arcgis.apps.workforce.Integration.geometry">
+<em class="property"><span class="pre">property</span> </em><code class="sig-name descname"><span class="pre">geometry</span></code><a class="headerlink" href="#arcgis.apps.workforce.Integration.geometry" title="Permalink to this definition">¶</a></dt>
+<dd><p>Gets/Sets the geometry for the Feature.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="arcgis.apps.workforce.Integration.global_id">
+<em class="property"><span class="pre">property</span> </em><code class="sig-name descname"><span class="pre">global_id</span></code><a class="headerlink" href="#arcgis.apps.workforce.Integration.global_id" title="Permalink to this definition">¶</a></dt>
+<dd><p>The global id of the feature</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="arcgis.apps.workforce.Integration.id">
+<em class="property"><span class="pre">property</span> </em><code class="sig-name descname"><span class="pre">id</span></code><a class="headerlink" href="#arcgis.apps.workforce.Integration.id" title="Permalink to this definition">¶</a></dt>
+<dd><p>The object (version 1) or global id (version 2) of the feature</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="arcgis.apps.workforce.Integration.integration_id">
+<em class="property"><span class="pre">property</span> </em><code class="sig-name descname"><span class="pre">integration_id</span></code><a class="headerlink" href="#arcgis.apps.workforce.Integration.integration_id" title="Permalink to this definition">¶</a></dt>
+<dd><p>Gets/Sets the id of the integration</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="arcgis.apps.workforce.Integration.object_id">
+<em class="property"><span class="pre">property</span> </em><code class="sig-name descname"><span class="pre">object_id</span></code><a class="headerlink" href="#arcgis.apps.workforce.Integration.object_id" title="Permalink to this definition">¶</a></dt>
+<dd><p>The object id of the feature</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="arcgis.apps.workforce.Integration.prompt">
+<em class="property"><span class="pre">property</span> </em><code class="sig-name descname"><span class="pre">prompt</span></code><a class="headerlink" href="#arcgis.apps.workforce.Integration.prompt" title="Permalink to this definition">¶</a></dt>
+<dd><p>Gets/Sets the prompt of the integration</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="arcgis.apps.workforce.Integration.update">
+<code class="sig-name descname"><span class="pre">update</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">integration_id</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">prompt</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">url_template</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">assignment_type</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.apps.workforce.Integration.update" title="Permalink to this definition">¶</a></dt>
+<dd><p>Updates the dispatcher on the server</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 21%" />
+<col style="width: 79%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><strong>Argument</strong></p></td>
+<td><p><strong>Description</strong></p></td>
+</tr>
+<tr class="row-even"><td><p>integration_id</p></td>
+<td><p>Optional <code class="xref py py-class docutils literal notranslate"><span class="pre">String</span></code>. The id for the integration</p></td>
+</tr>
+<tr class="row-odd"><td><p>prompt</p></td>
+<td><p>Optional <code class="xref py py-class docutils literal notranslate"><span class="pre">String</span></code>. The prompt in the mobile app for the
+integration</p></td>
+</tr>
+<tr class="row-even"><td><p>url_template</p></td>
+<td><p>Optional <code class="xref py py-class docutils literal notranslate"><span class="pre">String</span></code>. The url that the prompt links to</p></td>
+</tr>
+<tr class="row-odd"><td><p>assignment_type</p></td>
+<td><p>Optional <code class="xref py py-class docutils literal notranslate"><span class="pre">String</span></code>. The assignment type for the integration</p></td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="py method">
+<dt id="arcgis.apps.workforce.Integration.url_template">
+<em class="property"><span class="pre">property</span> </em><code class="sig-name descname"><span class="pre">url_template</span></code><a class="headerlink" href="#arcgis.apps.workforce.Integration.url_template" title="Permalink to this definition">¶</a></dt>
+<dd><p>Gets/Sets the url template of the integration</p>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="project">
+<h2>Project<a class="headerlink" href="#project" title="Permalink to this headline">¶</a></h2>
+<dl class="py class">
+<dt id="arcgis.apps.workforce.Project">
+<em class="property"><span class="pre">class</span> </em><code class="sig-prename descclassname"><span class="pre">arcgis.apps.workforce.</span></code><code class="sig-name descname"><span class="pre">Project</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">item</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.apps.workforce.Project" title="Permalink to this definition">¶</a></dt>
+<dd><p>A Workforce Project</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 21%" />
+<col style="width: 79%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><strong>Argument</strong></p></td>
+<td><p><strong>Description</strong></p></td>
+</tr>
+<tr class="row-even"><td><p>item</p></td>
+<td><p>Required <a class="reference internal" href="arcgis.gis.toc.html#arcgis.gis.Item" title="arcgis.gis.Item"><code class="xref py py-class docutils literal notranslate"><span class="pre">Item</span></code></a>. The item that
+the contains the project.</p>
+<p>For a version 1 Workforce project, this is an item of type
+<cite>Workforce Project</cite>. For a version 2 Workforce project, this is an
+item of type <cite>Feature Service</cite> with typeKeyword <cite>Workforce Project</cite></p>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Get a Project and search the assignments and workers.</span>
+
+<span class="kn">import</span> <span class="nn">arcgis</span>
+<span class="n">gis</span> <span class="o">=</span> <span class="n">arcgis</span><span class="o">.</span><span class="n">gis</span><span class="o">.</span><span class="n">GIS</span><span class="p">(</span><span class="s2">&quot;https://arcgis.com&quot;</span><span class="p">,</span> <span class="s2">&quot;&lt;username&gt;&quot;</span><span class="p">,</span> <span class="s2">&quot;&lt;password&gt;&quot;</span><span class="p">)</span>
+<span class="n">item</span> <span class="o">=</span> <span class="n">gis</span><span class="o">.</span><span class="n">content</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;&lt;item-id&gt;&quot;</span><span class="p">)</span>
+<span class="n">project</span> <span class="o">=</span> <span class="n">arcgis</span><span class="o">.</span><span class="n">apps</span><span class="o">.</span><span class="n">workforce</span><span class="o">.</span><span class="n">Project</span><span class="p">(</span><span class="n">item</span><span class="p">)</span>
+<span class="n">assignments</span> <span class="o">=</span> <span class="n">project</span><span class="o">.</span><span class="n">assignments</span><span class="o">.</span><span class="n">search</span><span class="p">()</span>
+<span class="n">workers</span> <span class="o">=</span> <span class="n">project</span><span class="o">.</span><span class="n">workers</span><span class="o">.</span><span class="n">search</span><span class="p">()</span>
+
+<span class="c1"># Create v1 &quot;Classic&quot; Workforce project and v2 &quot;offline-enabled&quot; project</span>
+<span class="n">v1_project</span> <span class="o">=</span> <span class="n">arcgis</span><span class="o">.</span><span class="n">apps</span><span class="o">.</span><span class="n">workforce</span><span class="o">.</span><span class="n">create_project</span><span class="p">(</span><span class="s1">&#39;v1_project&#39;</span><span class="p">,</span> <span class="n">major_version</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">v2_project</span> <span class="o">=</span> <span class="n">arcgis</span><span class="o">.</span><span class="n">apps</span><span class="o">.</span><span class="n">workforce</span><span class="o">.</span><span class="n">create_project</span><span class="p">(</span><span class="s1">&#39;v2_project&#39;</span><span class="p">,</span> <span class="n">major_version</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+</pre></div>
+</div>
+<dl class="py method">
+<dt id="arcgis.apps.workforce.Project.assignment_types">
+<em class="property"><span class="pre">property</span> </em><code class="sig-name descname"><span class="pre">assignment_types</span></code><a class="headerlink" href="#arcgis.apps.workforce.Project.assignment_types" title="Permalink to this definition">¶</a></dt>
+<dd><p>The <a class="reference internal" href="arcgis.apps.workforce.managers.html#arcgis.apps.workforce.managers.AssignmentTypeManager" title="arcgis.apps.workforce.managers.AssignmentTypeManager"><code class="xref py py-class docutils literal notranslate"><span class="pre">AssignmentTypeManager</span></code></a> for the project</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="arcgis.apps.workforce.Project.assignment_types_item">
+<em class="property"><span class="pre">property</span> </em><code class="sig-name descname"><span class="pre">assignment_types_item</span></code><a class="headerlink" href="#arcgis.apps.workforce.Project.assignment_types_item" title="Permalink to this definition">¶</a></dt>
+<dd><p>The assignment types <a class="reference internal" href="arcgis.gis.toc.html#arcgis.gis.Item" title="arcgis.gis.Item"><code class="xref py py-class docutils literal notranslate"><span class="pre">Item</span></code></a></p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="arcgis.apps.workforce.Project.assignment_types_table">
+<em class="property"><span class="pre">property</span> </em><code class="sig-name descname"><span class="pre">assignment_types_table</span></code><a class="headerlink" href="#arcgis.apps.workforce.Project.assignment_types_table" title="Permalink to this definition">¶</a></dt>
+<dd><p>The assignment types <a class="reference internal" href="arcgis.features.toc.html#arcgis.features.Table" title="arcgis.features.Table"><code class="xref py py-class docutils literal notranslate"><span class="pre">Table</span></code></a></p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="arcgis.apps.workforce.Project.assignment_types_table_url">
+<em class="property"><span class="pre">property</span> </em><code class="sig-name descname"><span class="pre">assignment_types_table_url</span></code><a class="headerlink" href="#arcgis.apps.workforce.Project.assignment_types_table_url" title="Permalink to this definition">¶</a></dt>
+<dd><p>The assignment types table url</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="arcgis.apps.workforce.Project.assignments">
+<em class="property"><span class="pre">property</span> </em><code class="sig-name descname"><span class="pre">assignments</span></code><a class="headerlink" href="#arcgis.apps.workforce.Project.assignments" title="Permalink to this definition">¶</a></dt>
+<dd><p>The <a class="reference internal" href="arcgis.apps.workforce.managers.html#arcgis.apps.workforce.managers.AssignmentManager" title="arcgis.apps.workforce.managers.AssignmentManager"><code class="xref py py-class docutils literal notranslate"><span class="pre">AssignmentManager</span></code></a> for the project</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="arcgis.apps.workforce.Project.assignments_item">
+<em class="property"><span class="pre">property</span> </em><code class="sig-name descname"><span class="pre">assignments_item</span></code><a class="headerlink" href="#arcgis.apps.workforce.Project.assignments_item" title="Permalink to this definition">¶</a></dt>
+<dd><p>The assignments <a class="reference internal" href="arcgis.gis.toc.html#arcgis.gis.Item" title="arcgis.gis.Item"><code class="xref py py-class docutils literal notranslate"><span class="pre">Item</span></code></a></p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="arcgis.apps.workforce.Project.assignments_layer">
+<em class="property"><span class="pre">property</span> </em><code class="sig-name descname"><span class="pre">assignments_layer</span></code><a class="headerlink" href="#arcgis.apps.workforce.Project.assignments_layer" title="Permalink to this definition">¶</a></dt>
+<dd><p>The assignments <a class="reference internal" href="arcgis.features.toc.html#arcgis.features.FeatureLayer" title="arcgis.features.FeatureLayer"><code class="xref py py-class docutils literal notranslate"><span class="pre">FeatureLayer</span></code></a></p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="arcgis.apps.workforce.Project.assignments_layer_url">
+<em class="property"><span class="pre">property</span> </em><code class="sig-name descname"><span class="pre">assignments_layer_url</span></code><a class="headerlink" href="#arcgis.apps.workforce.Project.assignments_layer_url" title="Permalink to this definition">¶</a></dt>
+<dd><p>The assignments feature layer url</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="arcgis.apps.workforce.Project.delete">
+<code class="sig-name descname"><span class="pre">delete</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.apps.workforce.Project.delete" title="Permalink to this definition">¶</a></dt>
+<dd><p>Deletes the project, group, folder, layers, and webmaps.
+Assumes the currently signed in user owns the project or is an admin.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="arcgis.apps.workforce.Project.dispatcher_web_map_id">
+<em class="property"><span class="pre">property</span> </em><code class="sig-name descname"><span class="pre">dispatcher_web_map_id</span></code><a class="headerlink" href="#arcgis.apps.workforce.Project.dispatcher_web_map_id" title="Permalink to this definition">¶</a></dt>
+<dd><p>The dispatcher webmap item id</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="arcgis.apps.workforce.Project.dispatcher_webmap">
+<em class="property"><span class="pre">property</span> </em><code class="sig-name descname"><span class="pre">dispatcher_webmap</span></code><a class="headerlink" href="#arcgis.apps.workforce.Project.dispatcher_webmap" title="Permalink to this definition">¶</a></dt>
+<dd><p>The dispatcher <a class="reference internal" href="arcgis.mapping.toc.html#arcgis.mapping.WebMap" title="arcgis.mapping.WebMap"><code class="xref py py-class docutils literal notranslate"><span class="pre">WebMap</span></code></a> for the project</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="arcgis.apps.workforce.Project.dispatchers">
+<em class="property"><span class="pre">property</span> </em><code class="sig-name descname"><span class="pre">dispatchers</span></code><a class="headerlink" href="#arcgis.apps.workforce.Project.dispatchers" title="Permalink to this definition">¶</a></dt>
+<dd><p>The <a class="reference internal" href="arcgis.apps.workforce.managers.html#arcgis.apps.workforce.managers.DispatcherManager" title="arcgis.apps.workforce.managers.DispatcherManager"><code class="xref py py-class docutils literal notranslate"><span class="pre">DispatcherManager</span></code></a> for the project</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="arcgis.apps.workforce.Project.dispatchers_item">
+<em class="property"><span class="pre">property</span> </em><code class="sig-name descname"><span class="pre">dispatchers_item</span></code><a class="headerlink" href="#arcgis.apps.workforce.Project.dispatchers_item" title="Permalink to this definition">¶</a></dt>
+<dd><p>The dispatchers <a class="reference internal" href="arcgis.gis.toc.html#arcgis.gis.Item" title="arcgis.gis.Item"><code class="xref py py-class docutils literal notranslate"><span class="pre">Item</span></code></a></p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="arcgis.apps.workforce.Project.dispatchers_layer">
+<em class="property"><span class="pre">property</span> </em><code class="sig-name descname"><span class="pre">dispatchers_layer</span></code><a class="headerlink" href="#arcgis.apps.workforce.Project.dispatchers_layer" title="Permalink to this definition">¶</a></dt>
+<dd><p>The dispatchers <a class="reference internal" href="arcgis.features.toc.html#arcgis.features.FeatureLayer" title="arcgis.features.FeatureLayer"><code class="xref py py-class docutils literal notranslate"><span class="pre">FeatureLayer</span></code></a></p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="arcgis.apps.workforce.Project.dispatchers_layer_url">
+<em class="property"><span class="pre">property</span> </em><code class="sig-name descname"><span class="pre">dispatchers_layer_url</span></code><a class="headerlink" href="#arcgis.apps.workforce.Project.dispatchers_layer_url" title="Permalink to this definition">¶</a></dt>
+<dd><p>The dispatchers layer url</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="arcgis.apps.workforce.Project.group">
+<em class="property"><span class="pre">property</span> </em><code class="sig-name descname"><span class="pre">group</span></code><a class="headerlink" href="#arcgis.apps.workforce.Project.group" title="Permalink to this definition">¶</a></dt>
+<dd><p>The <a class="reference internal" href="arcgis.gis.toc.html#arcgis.gis.Group" title="arcgis.gis.Group"><code class="xref py py-class docutils literal notranslate"><span class="pre">Group</span></code></a> that the project resources are part of</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="arcgis.apps.workforce.Project.group_id">
+<em class="property"><span class="pre">property</span> </em><code class="sig-name descname"><span class="pre">group_id</span></code><a class="headerlink" href="#arcgis.apps.workforce.Project.group_id" title="Permalink to this definition">¶</a></dt>
+<dd><p>The group id that all project items are part of</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="arcgis.apps.workforce.Project.id">
+<em class="property"><span class="pre">property</span> </em><code class="sig-name descname"><span class="pre">id</span></code><a class="headerlink" href="#arcgis.apps.workforce.Project.id" title="Permalink to this definition">¶</a></dt>
+<dd><p>The item id of the project</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="arcgis.apps.workforce.Project.integrations">
+<em class="property"><span class="pre">property</span> </em><code class="sig-name descname"><span class="pre">integrations</span></code><a class="headerlink" href="#arcgis.apps.workforce.Project.integrations" title="Permalink to this definition">¶</a></dt>
+<dd><p>The <a class="reference internal" href="arcgis.apps.workforce.managers.html#arcgis.apps.workforce.managers.AssignmentIntegrationManager" title="arcgis.apps.workforce.managers.AssignmentIntegrationManager"><code class="xref py py-class docutils literal notranslate"><span class="pre">AssignmentIntegrationManager</span></code></a> for the project</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="arcgis.apps.workforce.Project.integrations_table">
+<em class="property"><span class="pre">property</span> </em><code class="sig-name descname"><span class="pre">integrations_table</span></code><a class="headerlink" href="#arcgis.apps.workforce.Project.integrations_table" title="Permalink to this definition">¶</a></dt>
+<dd><p>The integrations <a class="reference internal" href="arcgis.features.toc.html#arcgis.features.Table" title="arcgis.features.Table"><code class="xref py py-class docutils literal notranslate"><span class="pre">Table</span></code></a></p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="arcgis.apps.workforce.Project.integrations_table_url">
+<em class="property"><span class="pre">property</span> </em><code class="sig-name descname"><span class="pre">integrations_table_url</span></code><a class="headerlink" href="#arcgis.apps.workforce.Project.integrations_table_url" title="Permalink to this definition">¶</a></dt>
+<dd><p>The integrations table url <a class="reference internal" href="arcgis.features.toc.html#arcgis.features.Table" title="arcgis.features.Table"><code class="xref py py-class docutils literal notranslate"><span class="pre">Table</span></code></a></p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="arcgis.apps.workforce.Project.owner">
+<em class="property"><span class="pre">property</span> </em><code class="sig-name descname"><span class="pre">owner</span></code><a class="headerlink" href="#arcgis.apps.workforce.Project.owner" title="Permalink to this definition">¶</a></dt>
+<dd><p>The owner <a class="reference internal" href="arcgis.gis.toc.html#arcgis.gis.User" title="arcgis.gis.User"><code class="xref py py-class docutils literal notranslate"><span class="pre">User</span></code></a> of the project</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="arcgis.apps.workforce.Project.owner_user_id">
+<em class="property"><span class="pre">property</span> </em><code class="sig-name descname"><span class="pre">owner_user_id</span></code><a class="headerlink" href="#arcgis.apps.workforce.Project.owner_user_id" title="Permalink to this definition">¶</a></dt>
+<dd><p>The user id of the project owner.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="arcgis.apps.workforce.Project.summary">
+<em class="property"><span class="pre">property</span> </em><code class="sig-name descname"><span class="pre">summary</span></code><a class="headerlink" href="#arcgis.apps.workforce.Project.summary" title="Permalink to this definition">¶</a></dt>
+<dd><p>The title of the project</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="arcgis.apps.workforce.Project.title">
+<em class="property"><span class="pre">property</span> </em><code class="sig-name descname"><span class="pre">title</span></code><a class="headerlink" href="#arcgis.apps.workforce.Project.title" title="Permalink to this definition">¶</a></dt>
+<dd><p>Gets the title of the project</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="arcgis.apps.workforce.Project.tracks">
+<em class="property"><span class="pre">property</span> </em><code class="sig-name descname"><span class="pre">tracks</span></code><a class="headerlink" href="#arcgis.apps.workforce.Project.tracks" title="Permalink to this definition">¶</a></dt>
+<dd><p>The <a class="reference internal" href="arcgis.apps.workforce.managers.html#arcgis.apps.workforce.managers.TrackManager" title="arcgis.apps.workforce.managers.TrackManager"><code class="xref py py-class docutils literal notranslate"><span class="pre">TrackManager</span></code></a> for the project</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="arcgis.apps.workforce.Project.tracks_item">
+<em class="property"><span class="pre">property</span> </em><code class="sig-name descname"><span class="pre">tracks_item</span></code><a class="headerlink" href="#arcgis.apps.workforce.Project.tracks_item" title="Permalink to this definition">¶</a></dt>
+<dd><p>The tracks <a class="reference internal" href="arcgis.gis.toc.html#arcgis.gis.Item" title="arcgis.gis.Item"><code class="xref py py-class docutils literal notranslate"><span class="pre">Item</span></code></a></p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="arcgis.apps.workforce.Project.tracks_layer">
+<em class="property"><span class="pre">property</span> </em><code class="sig-name descname"><span class="pre">tracks_layer</span></code><a class="headerlink" href="#arcgis.apps.workforce.Project.tracks_layer" title="Permalink to this definition">¶</a></dt>
+<dd><p>The tracks <a class="reference internal" href="arcgis.features.toc.html#arcgis.features.FeatureLayer" title="arcgis.features.FeatureLayer"><code class="xref py py-class docutils literal notranslate"><span class="pre">FeatureLayer</span></code></a></p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="arcgis.apps.workforce.Project.tracks_layer_url">
+<em class="property"><span class="pre">property</span> </em><code class="sig-name descname"><span class="pre">tracks_layer_url</span></code><a class="headerlink" href="#arcgis.apps.workforce.Project.tracks_layer_url" title="Permalink to this definition">¶</a></dt>
+<dd><p>The tracks feature layer url</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="arcgis.apps.workforce.Project.update">
+<code class="sig-name descname"><span class="pre">update</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">summary</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.apps.workforce.Project.update" title="Permalink to this definition">¶</a></dt>
+<dd><p>Updates the project on the server</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 21%" />
+<col style="width: 79%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><strong>Argument</strong></p></td>
+<td><p><strong>Description</strong></p></td>
+</tr>
+<tr class="row-even"><td><p>summary</p></td>
+<td><p>Optional <code class="xref py py-class docutils literal notranslate"><span class="pre">String</span></code>. The summary of the project.</p></td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="py method">
+<dt id="arcgis.apps.workforce.Project.version">
+<em class="property"><span class="pre">property</span> </em><code class="sig-name descname"><span class="pre">version</span></code><a class="headerlink" href="#arcgis.apps.workforce.Project.version" title="Permalink to this definition">¶</a></dt>
+<dd><p>The version of the project</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="arcgis.apps.workforce.Project.worker_web_map_id">
+<em class="property"><span class="pre">property</span> </em><code class="sig-name descname"><span class="pre">worker_web_map_id</span></code><a class="headerlink" href="#arcgis.apps.workforce.Project.worker_web_map_id" title="Permalink to this definition">¶</a></dt>
+<dd><p>The worker webmap item id</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="arcgis.apps.workforce.Project.worker_webmap">
+<em class="property"><span class="pre">property</span> </em><code class="sig-name descname"><span class="pre">worker_webmap</span></code><a class="headerlink" href="#arcgis.apps.workforce.Project.worker_webmap" title="Permalink to this definition">¶</a></dt>
+<dd><p>The worker <a class="reference internal" href="arcgis.mapping.toc.html#arcgis.mapping.WebMap" title="arcgis.mapping.WebMap"><code class="xref py py-class docutils literal notranslate"><span class="pre">WebMap</span></code></a> for the project</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="arcgis.apps.workforce.Project.workers">
+<em class="property"><span class="pre">property</span> </em><code class="sig-name descname"><span class="pre">workers</span></code><a class="headerlink" href="#arcgis.apps.workforce.Project.workers" title="Permalink to this definition">¶</a></dt>
+<dd><p>The <a class="reference internal" href="arcgis.apps.workforce.managers.html#arcgis.apps.workforce.managers.WorkerManager" title="arcgis.apps.workforce.managers.WorkerManager"><code class="xref py py-class docutils literal notranslate"><span class="pre">WorkerManager</span></code></a> for the project</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="arcgis.apps.workforce.Project.workers_item">
+<em class="property"><span class="pre">property</span> </em><code class="sig-name descname"><span class="pre">workers_item</span></code><a class="headerlink" href="#arcgis.apps.workforce.Project.workers_item" title="Permalink to this definition">¶</a></dt>
+<dd><p>The workers <a class="reference internal" href="arcgis.gis.toc.html#arcgis.gis.Item" title="arcgis.gis.Item"><code class="xref py py-class docutils literal notranslate"><span class="pre">Item</span></code></a></p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="arcgis.apps.workforce.Project.workers_layer">
+<em class="property"><span class="pre">property</span> </em><code class="sig-name descname"><span class="pre">workers_layer</span></code><a class="headerlink" href="#arcgis.apps.workforce.Project.workers_layer" title="Permalink to this definition">¶</a></dt>
+<dd><p>The workers <a class="reference internal" href="arcgis.features.toc.html#arcgis.features.FeatureLayer" title="arcgis.features.FeatureLayer"><code class="xref py py-class docutils literal notranslate"><span class="pre">FeatureLayer</span></code></a></p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="arcgis.apps.workforce.Project.workers_layer_url">
+<em class="property"><span class="pre">property</span> </em><code class="sig-name descname"><span class="pre">workers_layer_url</span></code><a class="headerlink" href="#arcgis.apps.workforce.Project.workers_layer_url" title="Permalink to this definition">¶</a></dt>
+<dd><p>The workers feature layer url</p>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="track">
+<h2>Track<a class="headerlink" href="#track" title="Permalink to this headline">¶</a></h2>
+<dl class="py class">
+<dt id="arcgis.apps.workforce.Track">
+<em class="property"><span class="pre">class</span> </em><code class="sig-prename descclassname"><span class="pre">arcgis.apps.workforce.</span></code><code class="sig-name descname"><span class="pre">Track</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">project</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">feature</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">geometry</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">accuracy</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.apps.workforce.Track" title="Permalink to this definition">¶</a></dt>
+<dd><p>Represents a track feature, which describes the historical location of a worker. V1 Projects
+only.</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 21%" />
+<col style="width: 79%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><strong>Argument</strong></p></td>
+<td><p><strong>Description</strong></p></td>
+</tr>
+<tr class="row-even"><td><p>feature</p></td>
+<td><p>Optional <a class="reference internal" href="arcgis.features.toc.html#arcgis.features.Feature" title="arcgis.features.Feature"><code class="xref py py-class docutils literal notranslate"><span class="pre">Feature</span></code></a>.
+A feature containing the assignments attributes. Mostly intended for
+internal usage. If supplied, other parameters are ignored.</p></td>
+</tr>
+<tr class="row-odd"><td><p>geometry</p></td>
+<td><p>Optional <code class="xref py py-class docutils literal notranslate"><span class="pre">Dict</span></code>.
+A dictionary containing the assignment geometry</p></td>
+</tr>
+<tr class="row-even"><td><p>accuracy</p></td>
+<td><p>Optional <code class="xref py py-class docutils literal notranslate"><span class="pre">Float</span></code>. The accuracy of the point</p></td>
+</tr>
+</tbody>
+</table>
+<dl class="py method">
+<dt id="arcgis.apps.workforce.Track.accuracy">
+<em class="property"><span class="pre">property</span> </em><code class="sig-name descname"><span class="pre">accuracy</span></code><a class="headerlink" href="#arcgis.apps.workforce.Track.accuracy" title="Permalink to this definition">¶</a></dt>
+<dd><p>The horizontal accuracy of the location measurement, in meters.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="arcgis.apps.workforce.Track.creation_date">
+<em class="property"><span class="pre">property</span> </em><code class="sig-name descname"><span class="pre">creation_date</span></code><a class="headerlink" href="#arcgis.apps.workforce.Track.creation_date" title="Permalink to this definition">¶</a></dt>
+<dd><p>The <code class="xref py py-class docutils literal notranslate"><span class="pre">datetime</span></code> at which the Feature was created.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="arcgis.apps.workforce.Track.creator">
+<em class="property"><span class="pre">property</span> </em><code class="sig-name descname"><span class="pre">creator</span></code><a class="headerlink" href="#arcgis.apps.workforce.Track.creator" title="Permalink to this definition">¶</a></dt>
+<dd><p>The named user that created the Feature.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="arcgis.apps.workforce.Track.delete">
+<code class="sig-name descname"><span class="pre">delete</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.apps.workforce.Track.delete" title="Permalink to this definition">¶</a></dt>
+<dd><p>Deletes the track point on the server</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="arcgis.apps.workforce.Track.edit_date">
+<em class="property"><span class="pre">property</span> </em><code class="sig-name descname"><span class="pre">edit_date</span></code><a class="headerlink" href="#arcgis.apps.workforce.Track.edit_date" title="Permalink to this definition">¶</a></dt>
+<dd><p>The <code class="xref py py-class docutils literal notranslate"><span class="pre">datetime</span></code> at which the Feature was last edited.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="arcgis.apps.workforce.Track.editor">
+<em class="property"><span class="pre">property</span> </em><code class="sig-name descname"><span class="pre">editor</span></code><a class="headerlink" href="#arcgis.apps.workforce.Track.editor" title="Permalink to this definition">¶</a></dt>
+<dd><p>The named user that last edited the Feature.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="arcgis.apps.workforce.Track.feature">
+<em class="property"><span class="pre">property</span> </em><code class="sig-name descname"><span class="pre">feature</span></code><a class="headerlink" href="#arcgis.apps.workforce.Track.feature" title="Permalink to this definition">¶</a></dt>
+<dd><p>The <a class="reference internal" href="arcgis.features.toc.html#arcgis.features.Feature" title="arcgis.features.Feature"><code class="xref py py-class docutils literal notranslate"><span class="pre">Feature</span></code></a></p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="arcgis.apps.workforce.Track.geometry">
+<em class="property"><span class="pre">property</span> </em><code class="sig-name descname"><span class="pre">geometry</span></code><a class="headerlink" href="#arcgis.apps.workforce.Track.geometry" title="Permalink to this definition">¶</a></dt>
+<dd><p>Gets/Sets the geometry for the Feature.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="arcgis.apps.workforce.Track.global_id">
+<em class="property"><span class="pre">property</span> </em><code class="sig-name descname"><span class="pre">global_id</span></code><a class="headerlink" href="#arcgis.apps.workforce.Track.global_id" title="Permalink to this definition">¶</a></dt>
+<dd><p>The global id of the feature</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="arcgis.apps.workforce.Track.id">
+<em class="property"><span class="pre">property</span> </em><code class="sig-name descname"><span class="pre">id</span></code><a class="headerlink" href="#arcgis.apps.workforce.Track.id" title="Permalink to this definition">¶</a></dt>
+<dd><p>The object (version 1) or global id (version 2) of the feature</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="arcgis.apps.workforce.Track.object_id">
+<em class="property"><span class="pre">property</span> </em><code class="sig-name descname"><span class="pre">object_id</span></code><a class="headerlink" href="#arcgis.apps.workforce.Track.object_id" title="Permalink to this definition">¶</a></dt>
+<dd><p>The object id of the feature</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="arcgis.apps.workforce.Track.update">
+<code class="sig-name descname"><span class="pre">update</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">geometry</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">accuracy</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.apps.workforce.Track.update" title="Permalink to this definition">¶</a></dt>
+<dd><p>Updates the track point on the server</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 21%" />
+<col style="width: 79%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><strong>Argument</strong></p></td>
+<td><p><strong>Description</strong></p></td>
+</tr>
+<tr class="row-even"><td><p>geometry</p></td>
+<td><p>Optional <code class="xref py py-class docutils literal notranslate"><span class="pre">Dict</span></code>.
+A dictionary containing the assignment geometry</p></td>
+</tr>
+<tr class="row-odd"><td><p>accuracy</p></td>
+<td><p>Optional <code class="xref py py-class docutils literal notranslate"><span class="pre">Float</span></code>. The accuracy of the point</p></td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="worker">
+<h2>Worker<a class="headerlink" href="#worker" title="Permalink to this headline">¶</a></h2>
+<dl class="py class">
+<dt id="arcgis.apps.workforce.Worker">
+<em class="property"><span class="pre">class</span> </em><code class="sig-prename descclassname"><span class="pre">arcgis.apps.workforce.</span></code><code class="sig-name descname"><span class="pre">Worker</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">project</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">feature</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">geometry</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">contact_number</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">name</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">notes</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">status</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'not_working'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">title</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">user_id</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.apps.workforce.Worker" title="Permalink to this definition">¶</a></dt>
+<dd><p>Represents a worker in a Workforce Project</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 21%" />
+<col style="width: 79%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><strong>Argument</strong></p></td>
+<td><p><strong>Description</strong></p></td>
+</tr>
+<tr class="row-even"><td><p>project</p></td>
+<td><p>Required <a class="reference internal" href="#arcgis.apps.workforce.Project" title="arcgis.apps.workforce.Project"><code class="xref py py-class docutils literal notranslate"><span class="pre">Project</span></code></a>. The project that
+the worker belongs to.</p></td>
+</tr>
+<tr class="row-odd"><td><p>feature</p></td>
+<td><p>Optional <a class="reference internal" href="arcgis.features.toc.html#arcgis.features.Feature" title="arcgis.features.Feature"><code class="xref py py-class docutils literal notranslate"><span class="pre">Feature</span></code></a>. The feature representing
+the worker. Mostly intended for
+internal usage. If supplied, other parameters are ignored.</p></td>
+</tr>
+<tr class="row-even"><td><p>geometry</p></td>
+<td><p>Optional <code class="xref py py-class docutils literal notranslate"><span class="pre">Dict</span></code>. The geometry of the worker.</p></td>
+</tr>
+<tr class="row-odd"><td><p>contact_number</p></td>
+<td><p>Optional <code class="xref py py-class docutils literal notranslate"><span class="pre">String</span></code>. The contact number of the worker.</p></td>
+</tr>
+<tr class="row-even"><td><p>name</p></td>
+<td><p>Optional <code class="xref py py-class docutils literal notranslate"><span class="pre">String</span></code>. The name of the worker.</p></td>
+</tr>
+<tr class="row-odd"><td><p>notes</p></td>
+<td><p>Optional <code class="xref py py-class docutils literal notranslate"><span class="pre">String</span></code>. The notes about the worker.</p></td>
+</tr>
+<tr class="row-even"><td><p>status</p></td>
+<td><p>Optional <code class="xref py py-class docutils literal notranslate"><span class="pre">String</span></code>. The status of the worker.</p>
+<p><cite>not_working</cite>, <cite>working</cite>, <cite>on_break</cite></p>
+</td>
+</tr>
+<tr class="row-odd"><td><p>title</p></td>
+<td><p>Optional <code class="xref py py-class docutils literal notranslate"><span class="pre">String</span></code>. The title of the worker.</p></td>
+</tr>
+<tr class="row-even"><td><p>user_id</p></td>
+<td><p>Optional <code class="xref py py-class docutils literal notranslate"><span class="pre">String</span></code>. The user id of the worker</p></td>
+</tr>
+</tbody>
+</table>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Get a worker, update it, delete it</span>
+
+<span class="kn">import</span> <span class="nn">arcgis</span>
+<span class="n">gis</span> <span class="o">=</span> <span class="n">arcgis</span><span class="o">.</span><span class="n">gis</span><span class="o">.</span><span class="n">GIS</span><span class="p">(</span><span class="s2">&quot;https://arcgis.com&quot;</span><span class="p">,</span> <span class="s2">&quot;&lt;username&gt;&quot;</span><span class="p">,</span> <span class="s2">&quot;&lt;password&gt;&quot;</span><span class="p">)</span>
+<span class="n">item</span> <span class="o">=</span> <span class="n">gis</span><span class="o">.</span><span class="n">content</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;&lt;item-id&gt;&quot;</span><span class="p">)</span>
+<span class="n">project</span> <span class="o">=</span> <span class="n">arcgis</span><span class="o">.</span><span class="n">apps</span><span class="o">.</span><span class="n">workforce</span><span class="o">.</span><span class="n">Project</span><span class="p">(</span><span class="n">item</span><span class="p">)</span>
+<span class="n">worker</span> <span class="o">=</span> <span class="n">project</span><span class="o">.</span><span class="n">workers</span><span class="o">.</span><span class="n">search</span><span class="p">()[</span><span class="mi">0</span><span class="p">]</span>
+<span class="n">worker</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">title</span><span class="o">=</span><span class="s2">&quot;Inspector&quot;</span><span class="p">,</span><span class="n">status</span><span class="o">=</span><span class="s2">&quot;not_working&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<dl class="py method">
+<dt id="arcgis.apps.workforce.Worker.contact_number">
+<em class="property"><span class="pre">property</span> </em><code class="sig-name descname"><span class="pre">contact_number</span></code><a class="headerlink" href="#arcgis.apps.workforce.Worker.contact_number" title="Permalink to this definition">¶</a></dt>
+<dd><p>Gets/Sets the contact number of the worker</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="arcgis.apps.workforce.Worker.creation_date">
+<em class="property"><span class="pre">property</span> </em><code class="sig-name descname"><span class="pre">creation_date</span></code><a class="headerlink" href="#arcgis.apps.workforce.Worker.creation_date" title="Permalink to this definition">¶</a></dt>
+<dd><p>The <code class="xref py py-class docutils literal notranslate"><span class="pre">datetime</span></code> at which the Feature was created.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="arcgis.apps.workforce.Worker.creator">
+<em class="property"><span class="pre">property</span> </em><code class="sig-name descname"><span class="pre">creator</span></code><a class="headerlink" href="#arcgis.apps.workforce.Worker.creator" title="Permalink to this definition">¶</a></dt>
+<dd><p>The named user that created the Feature.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="arcgis.apps.workforce.Worker.delete">
+<code class="sig-name descname"><span class="pre">delete</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.apps.workforce.Worker.delete" title="Permalink to this definition">¶</a></dt>
+<dd><p>Deletes the worker from the server</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="arcgis.apps.workforce.Worker.edit_date">
+<em class="property"><span class="pre">property</span> </em><code class="sig-name descname"><span class="pre">edit_date</span></code><a class="headerlink" href="#arcgis.apps.workforce.Worker.edit_date" title="Permalink to this definition">¶</a></dt>
+<dd><p>The <code class="xref py py-class docutils literal notranslate"><span class="pre">datetime</span></code> at which the Feature was last edited.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="arcgis.apps.workforce.Worker.editor">
+<em class="property"><span class="pre">property</span> </em><code class="sig-name descname"><span class="pre">editor</span></code><a class="headerlink" href="#arcgis.apps.workforce.Worker.editor" title="Permalink to this definition">¶</a></dt>
+<dd><p>The named user that last edited the Feature.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="arcgis.apps.workforce.Worker.feature">
+<em class="property"><span class="pre">property</span> </em><code class="sig-name descname"><span class="pre">feature</span></code><a class="headerlink" href="#arcgis.apps.workforce.Worker.feature" title="Permalink to this definition">¶</a></dt>
+<dd><p>The <a class="reference internal" href="arcgis.features.toc.html#arcgis.features.Feature" title="arcgis.features.Feature"><code class="xref py py-class docutils literal notranslate"><span class="pre">Feature</span></code></a></p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="arcgis.apps.workforce.Worker.geometry">
+<em class="property"><span class="pre">property</span> </em><code class="sig-name descname"><span class="pre">geometry</span></code><a class="headerlink" href="#arcgis.apps.workforce.Worker.geometry" title="Permalink to this definition">¶</a></dt>
+<dd><p>Gets/Sets the geometry for the Feature.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="arcgis.apps.workforce.Worker.global_id">
+<em class="property"><span class="pre">property</span> </em><code class="sig-name descname"><span class="pre">global_id</span></code><a class="headerlink" href="#arcgis.apps.workforce.Worker.global_id" title="Permalink to this definition">¶</a></dt>
+<dd><p>The global id of the feature</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="arcgis.apps.workforce.Worker.id">
+<em class="property"><span class="pre">property</span> </em><code class="sig-name descname"><span class="pre">id</span></code><a class="headerlink" href="#arcgis.apps.workforce.Worker.id" title="Permalink to this definition">¶</a></dt>
+<dd><p>The object (version 1) or global id (version 2) of the feature</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="arcgis.apps.workforce.Worker.name">
+<em class="property"><span class="pre">property</span> </em><code class="sig-name descname"><span class="pre">name</span></code><a class="headerlink" href="#arcgis.apps.workforce.Worker.name" title="Permalink to this definition">¶</a></dt>
+<dd><p>Gets/Sets the name of the worker</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="arcgis.apps.workforce.Worker.notes">
+<em class="property"><span class="pre">property</span> </em><code class="sig-name descname"><span class="pre">notes</span></code><a class="headerlink" href="#arcgis.apps.workforce.Worker.notes" title="Permalink to this definition">¶</a></dt>
+<dd><p>Gets/Sets the notes of the worker</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="arcgis.apps.workforce.Worker.object_id">
+<em class="property"><span class="pre">property</span> </em><code class="sig-name descname"><span class="pre">object_id</span></code><a class="headerlink" href="#arcgis.apps.workforce.Worker.object_id" title="Permalink to this definition">¶</a></dt>
+<dd><p>The object id of the feature</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="arcgis.apps.workforce.Worker.status">
+<em class="property"><span class="pre">property</span> </em><code class="sig-name descname"><span class="pre">status</span></code><a class="headerlink" href="#arcgis.apps.workforce.Worker.status" title="Permalink to this definition">¶</a></dt>
+<dd><p>Gets/Sets the <code class="xref py py-class docutils literal notranslate"><span class="pre">String</span></code> status of the worker</p>
+<p><cite>not_working</cite>, <cite>working</cite>, <cite>on_break</cite></p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="arcgis.apps.workforce.Worker.title">
+<em class="property"><span class="pre">property</span> </em><code class="sig-name descname"><span class="pre">title</span></code><a class="headerlink" href="#arcgis.apps.workforce.Worker.title" title="Permalink to this definition">¶</a></dt>
+<dd><p>Gets/Sets the title of the worker</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="arcgis.apps.workforce.Worker.update">
+<code class="sig-name descname"><span class="pre">update</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">geometry</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">contact_number</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">name</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">notes</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">status</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">title</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">user_id</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.apps.workforce.Worker.update" title="Permalink to this definition">¶</a></dt>
+<dd><p>Updates the worker on the server</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 21%" />
+<col style="width: 79%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><strong>Argument</strong></p></td>
+<td><p><strong>Description</strong></p></td>
+</tr>
+<tr class="row-even"><td><p>geometry</p></td>
+<td><p>Optional <code class="xref py py-class docutils literal notranslate"><span class="pre">Dict</span></code>. The geometry of the worker.</p></td>
+</tr>
+<tr class="row-odd"><td><p>contact_number</p></td>
+<td><p>Optional <code class="xref py py-class docutils literal notranslate"><span class="pre">String</span></code>. The contact number of the worker.</p></td>
+</tr>
+<tr class="row-even"><td><p>name</p></td>
+<td><p>Optional <code class="xref py py-class docutils literal notranslate"><span class="pre">String</span></code>. The name of the worker.</p></td>
+</tr>
+<tr class="row-odd"><td><p>notes</p></td>
+<td><p>Optional <code class="xref py py-class docutils literal notranslate"><span class="pre">String</span></code>. The notes about the worker.</p></td>
+</tr>
+<tr class="row-even"><td><p>status</p></td>
+<td><p>Optional <code class="xref py py-class docutils literal notranslate"><span class="pre">String</span></code>. The status of the worker.</p>
+<p><cite>not_working</cite>, <cite>working</cite>, <cite>on_break</cite></p>
+</td>
+</tr>
+<tr class="row-odd"><td><p>title</p></td>
+<td><p>Optional <code class="xref py py-class docutils literal notranslate"><span class="pre">String</span></code>. The title of the worker.</p></td>
+</tr>
+<tr class="row-even"><td><p>user_id</p></td>
+<td><p>Optional <code class="xref py py-class docutils literal notranslate"><span class="pre">String</span></code>. The user id of the worker</p></td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="py method">
+<dt id="arcgis.apps.workforce.Worker.user_id">
+<em class="property"><span class="pre">property</span> </em><code class="sig-name descname"><span class="pre">user_id</span></code><a class="headerlink" href="#arcgis.apps.workforce.Worker.user_id" title="Permalink to this definition">¶</a></dt>
+<dd><p>Gets/Sets the user id of the worker</p>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="submodules">
+<h2>Submodules<a class="headerlink" href="#submodules" title="Permalink to this headline">¶</a></h2>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="arcgis.apps.workforce.managers.html">arcgis.apps.workforce.managers module</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.apps.workforce.managers.html#assignmentmanager">AssignmentManager</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.apps.workforce.managers.html#assignmentattachmentmanager">AssignmentAttachmentManager</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.apps.workforce.managers.html#assignmentintegrationmanager">AssignmentIntegrationManager</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.apps.workforce.managers.html#assignmenttypemanager">AssignmentTypeManager</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.apps.workforce.managers.html#dispatchermanager">DispatcherManager</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.apps.workforce.managers.html#trackmanager">TrackManager</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.apps.workforce.managers.html#workermanager">WorkerManager</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+</div>
+
+
+
+           </div>
+           
+          </div>
+          <footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+        <a href="arcgis.apps.workforce.managers.html" class="btn btn-neutral float-right" title="arcgis.apps.workforce.managers module" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="arcgis.apps.dashboard.html" class="btn btn-neutral float-left" title="arcgis.apps.dashboard module" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &#169; Copyright 2016-2021, Esri.
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+    Options v: 1.8.5
+
+  <div class="rst-versions" data-toggle="rst-versions" role="note" aria-label="versions">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      <span class="fa fa-book"> Pick an earlier version</span>
+      v: 1.8.5
+      <span class="fa fa-caret-down"></span>
+    </span>
+    <div class="rst-other-versions">
+      
+      
+      <dl>
+        <dt>Versions</dt>
+        
+          
+          <dd><a href="1.8.4/">1.8.4</a></dd>
+          
+        
+          
+          <dd><a href="1.8.3/">1.8.3</a></dd>
+          
+        
+          
+          <dd><a href="1.8.2/">1.8.2</a></dd>
+          
+        
+          
+          <dd><a href="1.8.1/">1.8.1</a></dd>
+          
+        
+          
+          <dd><a href="1.8.0/">1.8.0</a></dd>
+          
+        
+          
+          <dd><a href="1.7.1/">1.7.1</a></dd>
+          
+        
+          
+          <dd><a href="1.7.0/">1.7.0</a></dd>
+          
+        
+          
+          <dd><a href="1.6.2/">1.6.2</a></dd>
+          
+        
+          
+          <dd><a href="1.6.1/">1.6.1</a></dd>
+          
+        
+          
+          <dd><a href="1.6.0/">1.6.0</a></dd>
+          
+        
+          
+          <dd><a href="1.5.3/">1.5.3</a></dd>
+          
+        
+          
+          <dd><a href="1.5.2/">1.5.2</a></dd>
+          
+        
+          
+          <dd><a href="1.5.1/">1.5.1</a></dd>
+          
+        
+          
+          <dd><a href="1.5.0/">1.5.0</a></dd>
+          
+        
+          
+          <dd><a href="1.4.2/">1.4.2</a></dd>
+          
+        
+          
+          <dd><a href="1.4.1/">1.4.1</a></dd>
+          
+        
+          
+          <dd><a href="1.4.0/">1.4.0</a></dd>
+          
+        
+          
+          <dd><a href="1.3.0/">1.3.0</a></dd>
+          
+        
+          
+          <dd><a href="1.2.5/">1.2.5</a></dd>
+          
+        
+          
+          <dd><a href="1.2.4/">1.2.4</a></dd>
+          
+        
+          
+          <dd><a href="1.2.3/">1.2.3</a></dd>
+          
+        
+          
+          <dd><a href="1.2.2/">1.2.2</a></dd>
+          
+        
+          
+          <dd><a href="1.2.1/">1.2.1</a></dd>
+          
+        
+          
+          <dd><a href="1.2.0/">1.2.0</a></dd>
+          
+        
+          
+          <dd><a href="1.0.1/">1.0.1</a></dd>
+          
+        
+          
+          <dd><a href="1.0.0/">1.0.0</a></dd>
+          
+        
+          
+          <dd><a href="0.3.0/">0.3.0</a></dd>
+          
+        
+          
+          <dd><a href="0.2.0/">0.2.0</a></dd>
+          
+        
+          
+          <dd><a href="0.1.0/">0.1.0</a></dd>
+          
+        
+      </dl>
+      
+      
+      
+    </div>
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

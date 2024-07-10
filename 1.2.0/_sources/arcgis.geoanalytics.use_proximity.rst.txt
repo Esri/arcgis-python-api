@@ -1,0 +1,8 @@
+arcgis.geoanalytics.use_proximity module
+====================================
+
+.. automodule:: arcgis.geoanalytics.use_proximity
+    
+create_buffers
+--------------
+.. automethod:: arcgis.geoanalytics.use_proximity.create_buffers

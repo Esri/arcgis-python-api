@@ -1,0 +1,140 @@
+arcgis\.gis\.server module
+===========================
+
+.. automodule:: arcgis.gis.server
+
+Server
+---------------
+.. autoclass:: arcgis.gis.server.Server
+    :members:
+    :undoc-members:
+    :show-inheritance:
+
+ServicesDirectory
+-----------------
+
+.. automodule:: arcgis.gis.server.catalog
+    :members:
+    :undoc-members:
+    :show-inheritance:
+
+
+Service
+--------------
+.. autoclass:: arcgis.gis.server.Service
+    :members:
+    :undoc-members:
+    :show-inheritance:
+
+Machine
+----------------
+.. autoclass:: arcgis.gis.server.Machine
+    :members:
+    :undoc-members:
+    :show-inheritance:
+
+Report
+----------------
+.. autoclass:: arcgis.gis.server.Report
+    :members:
+    :undoc-members:
+    :show-inheritance:
+
+Datastore
+----------------
+.. autoclass:: arcgis.gis.server.Datastore
+    :members:
+    :undoc-members:
+    :show-inheritance:
+
+User
+----------------
+.. autoclass:: arcgis.gis.server.User
+    :members:
+    :undoc-members:
+    :show-inheritance:
+
+Role
+----------------
+.. autoclass:: arcgis.gis.server.Role
+    :members:
+    :undoc-members:
+    :show-inheritance:
+
+ServerManager
+----------------
+.. autoclass:: arcgis.gis.server.ServerManager
+    :members:
+    :undoc-members:
+    :show-inheritance:
+
+ServiceManager
+----------------
+.. autoclass:: arcgis.gis.server.ServiceManager
+    :members:
+    :undoc-members:
+    :show-inheritance:
+
+MachineManager
+----------------
+.. autoclass:: arcgis.gis.server.MachineManager
+    :members:
+    :undoc-members:
+    :show-inheritance:
+
+LogManager
+----------------
+.. autoclass:: arcgis.gis.server.LogManager
+    :members:
+    :undoc-members:
+    :show-inheritance:
+
+ReportManager
+----------------
+.. autoclass:: arcgis.gis.server.ReportManager
+    :members:
+    :undoc-members:
+    :show-inheritance:
+
+DataStoreManager
+----------------
+.. autoclass:: arcgis.gis.server.DataStoreManager
+    :members:
+    :undoc-members:
+    :show-inheritance:
+
+UserManager
+----------------
+.. autoclass:: arcgis.gis.server.UserManager
+    :members:
+    :undoc-members:
+    :show-inheritance:
+
+RoleManager
+----------------
+.. autoclass:: arcgis.gis.server.RoleManager
+    :members:
+    :undoc-members:
+    :show-inheritance:
+
+SystemManager
+----------------
+.. autoclass:: arcgis.gis.server.SystemManager
+    :members:
+    :undoc-members:
+    :show-inheritance:
+
+SiteManager
+----------------
+.. autoclass:: arcgis.gis.server.SiteManager
+    :members:
+    :undoc-members:
+    :show-inheritance:
+
+DirectoryManager
+----------------
+.. autoclass:: arcgis.gis.server.DirectoryManager
+    :members:
+    :undoc-members:
+    :show-inheritance:
+

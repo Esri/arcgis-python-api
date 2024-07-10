@@ -1,0 +1,840 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <title>arcgis.apps.expbuilder module &mdash; arcgis 2.3.1 documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="_static/theme_overrides.css" type="text/css" />
+
+  
+  
+    <link rel="shortcut icon" href="_static/favicon.ico"/>
+  
+
+  
+  
+
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/doctools.js"></script>
+        <script src="_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="arcgis.apps.tracker module" href="arcgis.apps.tracker.html" />
+    <link rel="prev" title="arcgis.apps.survey123 module" href="arcgis.apps.survey123.html" />
+<!-- This code block is inserted close near the <head> tag. See http://bit.ly/2BHUQzB -->
+<!-- The point of this code block is to send us google analytics on website views -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-NJGGV5');</script>
+ 
+
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="index.html" class="icon icon-home"> arcgis
+          
+
+          
+            
+            <img src="_static/python_api_logo.png" class="logo" alt="Logo"/>
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                2.3.1
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">arcgis</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="arcgis.gis.toc.html">arcgis.gis module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="arcgis.env.html">arcgis.env module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="arcgis.features.toc.html">arcgis.features module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="arcgis.raster.toc.html">arcgis.raster module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="arcgis.network.toc.html">arcgis.network module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="arcgis.notebook.html">arcgis.notebook module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="arcgis.geoanalytics.toc.html">arcgis.geoanalytics module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="arcgis.geocoding.html">arcgis.geocoding module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="arcgis.geoenrichment.html">arcgis.geoenrichment module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="arcgis.geometry.html">arcgis.geometry module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="arcgis.geoprocessing.html">arcgis.geoprocessing module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="arcgis.graph.html">arcgis.graph module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="arcgis.mapping.toc.html">arcgis.mapping module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="arcgis.realtime.html">arcgis.realtime module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="arcgis.schematics.html">arcgis.schematics module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="arcgis.widgets.html">arcgis.widgets module</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="arcgis.apps.html">arcgis.apps module</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="arcgis.apps.html#build-collector-url">build_collector_url</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.apps.html#build-explorer-url">build_explorer_url</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.apps.html#build-field-maps-url">build_field_maps_url</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.apps.html#build-navigator-url">build_navigator_url</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.apps.html#build-survey123-url">build_survey123_url</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.apps.html#build-tracker-url">build_tracker_url</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.apps.html#build-workforce-url">build_workforce_url</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="arcgis.apps.html#submodules">Submodules</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="arcgis.apps.hub.html">arcgis.apps.hub module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="arcgis.apps.dashboard.html">arcgis.apps.dashboard module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="arcgis.apps.workforce.html">arcgis.apps.workforce module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="arcgis.apps.storymap.html">arcgis.apps.storymap module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="arcgis.apps.survey123.html">arcgis.apps.survey123 module</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">arcgis.apps.expbuilder module</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#webexperience">WebExperience</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="arcgis.apps.tracker.html">arcgis.apps.tracker module</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="arcgis.learn.toc.html">arcgis.learn module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="arcgis.auth.html">arcgis.auth package</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">arcgis</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="arcgis.apps.html">arcgis.apps module</a> &raquo;</li>
+        
+      <li>arcgis.apps.expbuilder module</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+<!-- This code block is inserted close near the <body> tag. See http://bit.ly/2BHUQzB -->
+<!-- The point of this code block is to send us google analytics on website views -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NJGGV5"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+
+  <div class="section" id="arcgis-apps-expbuilder-module">
+<h1>arcgis.apps.expbuilder module<a class="headerlink" href="#arcgis-apps-expbuilder-module" title="Permalink to this headline">¶</a></h1>
+<span class="target" id="module-arcgis.apps.expbuilder"></span><p>The <a class="reference internal" href="#arcgis.apps.expbuilder.expbuilder.WebExperience" title="arcgis.apps.expbuilder.expbuilder.WebExperience"><code class="xref py py-class docutils literal notranslate"><span class="pre">WebExperience</span></code></a> class allows users to work in tandem with the ArcGIS Experience Builder.</p>
+<div class="section" id="webexperience">
+<h2>WebExperience<a class="headerlink" href="#webexperience" title="Permalink to this headline">¶</a></h2>
+<dl class="py class">
+<dt id="arcgis.apps.expbuilder.expbuilder.WebExperience">
+<em class="property">class </em><code class="sig-prename descclassname">arcgis.apps.expbuilder.expbuilder.</code><code class="sig-name descname">WebExperience</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">item</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">path</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">gis</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">template</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">name</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.apps.expbuilder.expbuilder.WebExperience" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>A Web Experience is web-based application that provides viewers with an interactive
+interface to maps, data, feature layers, and other components of the creator’s design.
+Though these experiences are normally constructed via a GUI found on ArcGIS Online or
+Enterprise, this class provides users a host of supplemental options to manage experiences,
+in addition to basic creation of experiences.</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 15%" />
+<col style="width: 85%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><strong>Argument</strong></p></td>
+<td><p><strong>Description</strong></p></td>
+</tr>
+<tr class="row-even"><td><p>item</p></td>
+<td><p>Optional String or Item. The string for an item id or an item of type
+‘Web Experience’. If no item is passed, a new experience is created
+and saved to your active portal.</p></td>
+</tr>
+<tr class="row-odd"><td><p>gis</p></td>
+<td><p>Optional instance of <a class="reference internal" href="arcgis.gis.toc.html#arcgis.gis.GIS" title="arcgis.gis.GIS"><code class="xref py py-class docutils literal notranslate"><span class="pre">GIS</span></code></a>. If none provided the active gis is used.</p></td>
+</tr>
+<tr class="row-even"><td><p>template</p></td>
+<td><p>Optional string. If a new experience is being created, the template
+used to construct the layout. If necessary and none provided, template
+will default to <cite>blank fullscreen</cite>.</p></td>
+</tr>
+<tr class="row-odd"><td><p>path</p></td>
+<td><p>Optional string. Used if a WebExperience is being based on a local
+config json file, as one would with Experiences made via the desktop
+version of Experience Builder.</p></td>
+</tr>
+<tr class="row-even"><td><p>name</p></td>
+<td><p>Optional string. If a new experience is being created, the name of the
+item. Otherwise, will default to “Experience via Python” followed by a
+random number.</p></td>
+</tr>
+</tbody>
+</table>
+<dl class="py method">
+<dt id="arcgis.apps.expbuilder.expbuilder.WebExperience.clone">
+<code class="sig-name descname">clone</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">target</span></em>, <em class="sig-param"><span class="n">owner</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.apps.expbuilder.expbuilder.WebExperience.clone" title="Permalink to this definition">¶</a></dt>
+<dd><div class="deprecated">
+<p><span class="versionmodified deprecated">Deprecated since version 2.3.0.1: </span>Removed in: 3.0.0. Pass in the Web Experience item to <cite>gis.content.clone_items()</cite> instead.</p>
+</div>
+<p>Clones the experience and all of it’s data sources to a target GIS. User must
+have admin privileges on the original item’s GIS, and provide an authenticated
+instance of a target GIS. Users must also specify the name of an account on the
+target GIS to own the items. Also accepts arguments for <code class="xref py py-class docutils literal notranslate"><span class="pre">clone_items()</span></code></p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 18%" />
+<col style="width: 82%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><strong>Argument</strong></p></td>
+<td><p><strong>Description</strong></p></td>
+</tr>
+<tr class="row-even"><td><p>target</p></td>
+<td><p>Required GIS. An authenticated instance of the GIS that the user
+wishes to clone the experience to.</p></td>
+</tr>
+<tr class="row-odd"><td><p>owner</p></td>
+<td><p>Required string. The username of the account that will be the owner
+of the experience and its data source items in the target GIS.</p></td>
+</tr>
+<tr class="row-even"><td><p><a href="#id1"><span class="problematic" id="id2">**</span></a>kwargs</p></td>
+<td><p>Optional additional arguments. See <code class="docutils literal notranslate"><span class="pre">Item.clone_items()</span></code> for the full
+list.</p></td>
+</tr>
+</tbody>
+</table>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>The item corresponding to the cloned experience in the target GIS.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="arcgis.apps.expbuilder.expbuilder.WebExperience.datasources">
+<em class="property">property </em><code class="sig-name descname">datasources</code><a class="headerlink" href="#arcgis.apps.expbuilder.expbuilder.WebExperience.datasources" title="Permalink to this definition">¶</a></dt>
+<dd><p>Shows the data sources dictionary found in the experience’s draft, allowing users
+to quickly get info on all of the other items in their experience. Changing this
+dictionary will change the draft, making it convenient for remapping data
+sources.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="arcgis.apps.expbuilder.expbuilder.WebExperience.delete">
+<code class="sig-name descname">delete</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.apps.expbuilder.expbuilder.WebExperience.delete" title="Permalink to this definition">¶</a></dt>
+<dd><p>Deletes the experience and its associated item from the portal.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>A boolean indicating the success of the operation.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="arcgis.apps.expbuilder.expbuilder.WebExperience.item">
+<em class="property">property </em><code class="sig-name descname">item</code><a class="headerlink" href="#arcgis.apps.expbuilder.expbuilder.WebExperience.item" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the portal item associated with the WebExperience, if possible.
+Experiences made from local json files won’t have an <cite>item</cite> property until they
+are added to a portal using <cite>upload()</cite>.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="arcgis.apps.expbuilder.expbuilder.WebExperience.itemid">
+<em class="property">property </em><code class="sig-name descname">itemid</code><a class="headerlink" href="#arcgis.apps.expbuilder.expbuilder.WebExperience.itemid" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the item ID of the associated portal item, if possible. As with <cite>item</cite>,
+Experiences made from local json files won’t have an <cite>itemid</cite> property until they
+are added to a portal using <cite>upload()</cite>.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="arcgis.apps.expbuilder.expbuilder.WebExperience.preview">
+<code class="sig-name descname">preview</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">width</span><span class="o">=</span><span class="default_value">800</span></em>, <em class="sig-param"><span class="n">height</span><span class="o">=</span><span class="default_value">500</span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.apps.expbuilder.expbuilder.WebExperience.preview" title="Permalink to this definition">¶</a></dt>
+<dd><p>Show a preview of the current experience draft. The default is a width of 800 and height of 500.
+Note that this should be used to visualize unsaved changes to the WebExperience object; to see
+the actively published version of the object, <cite>view()</cite> should be used.</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 18%" />
+<col style="width: 82%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><strong>Argument</strong></p></td>
+<td><p><strong>Description</strong></p></td>
+</tr>
+<tr class="row-even"><td><p>width</p></td>
+<td><p>Optional integer. The desired width to show the preview.</p></td>
+</tr>
+<tr class="row-odd"><td><p>height</p></td>
+<td><p>Optional integer. The desired height to show the preview.</p></td>
+</tr>
+</tbody>
+</table>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>In some cases, a dialogue box may pop up asking for credentials when calling this
+method. If the preview isn’t rendering, check if pop-ups are disabled in your browser.</p>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>An IFrame display of the Experience if possible, else the item url is returned to be
+clicked on.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="arcgis.apps.expbuilder.expbuilder.WebExperience.reload">
+<code class="sig-name descname">reload</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.apps.expbuilder.expbuilder.WebExperience.reload" title="Permalink to this definition">¶</a></dt>
+<dd><p>Resets any changes that the user has made to the last saved state. Note that
+this only applies to changes made through a Python API object, and not the GUI.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>A boolean indicating the success of the operation.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="arcgis.apps.expbuilder.expbuilder.WebExperience.save">
+<code class="sig-name descname">save</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">title</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">tags</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">access</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">publish</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="n">duplicate</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="n">include_private</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">item_properties</span><span class="o">=</span><span class="default_value">{}</span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.apps.expbuilder.expbuilder.WebExperience.save" title="Permalink to this definition">¶</a></dt>
+<dd><p>This method will save your Web Experience to your active GIS. The experience will be saved
+with unpublished changes unless the <cite>publish</cite> parameter is set to True. Note that this is
+different from the <cite>publish()</cite> method in that this will save and publish the unsaved draft
+of the WebExperience object, as opposed to the already existing save state.</p>
+<p>The title only needs to be specified if a change is wanted, otherwise the existing title
+is used.</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 18%" />
+<col style="width: 82%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><strong>Argument</strong></p></td>
+<td><p><strong>Description</strong></p></td>
+</tr>
+<tr class="row-even"><td><p>title</p></td>
+<td><p>Optional string. The new title of the WebExperience, if desired.</p></td>
+</tr>
+<tr class="row-odd"><td><p>tags</p></td>
+<td><p>Optional string. Updated tags for the WebExperience, if desired.</p></td>
+</tr>
+<tr class="row-even"><td><p>access</p></td>
+<td><p>Optional string. The sharing setting of the WebExperience. If none
+is specified, the current access is kept. This is used when the
+<cite>publish</cite> parameter is set to True.</p>
+<p>Values: <cite>private</cite> | <cite>org</cite> | <cite>public</cite></p>
+</td>
+</tr>
+<tr class="row-odd"><td><p>publish</p></td>
+<td><p>Optional boolean. If True, the experience is saved and also
+published. Default is False, meaning the experience is saved with
+unpublished changes.</p></td>
+</tr>
+<tr class="row-even"><td><p>duplicate</p></td>
+<td><p>Optional boolean. If True, the experience is duplicated and a new
+WebExperience object is saved with any specified changes to
+title, tags, access, or publish included. Essentially functions as a
+“Save As” method. Default is False, meaning changes are saved to the
+original object.</p></td>
+</tr>
+<tr class="row-odd"><td><p>include_private</p></td>
+<td><p>Optional boolean. Only to be included when duplicate is <cite>True</cite>.
+If True, the private resources of the original item will be included
+in the new item.</p></td>
+</tr>
+<tr class="row-even"><td><p>item_properties</p></td>
+<td><p>Optional dictionary. Contains a variety of properties that can be
+set when creating a new item, much like <cite>item.update()</cite>. See below
+for a table containing possible properties.</p></td>
+</tr>
+</tbody>
+</table>
+<p><em>Key:Value Dictionary Options for Argument item_properties</em></p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 15%" />
+<col style="width: 85%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><strong>Key</strong></p></td>
+<td><p><strong>Value</strong></p></td>
+</tr>
+<tr class="row-even"><td><p>description</p></td>
+<td><p>Optional string. Description of the item.</p></td>
+</tr>
+<tr class="row-odd"><td><p>url</p></td>
+<td><p>Optional string. URL to item that are based on URLs.</p></td>
+</tr>
+<tr class="row-even"><td><p>snippet</p></td>
+<td><p>Optional string. Provide a short summary (limit to max 250 characters) of the what the item is.</p></td>
+</tr>
+<tr class="row-odd"><td><p>accessInformation</p></td>
+<td><p>Optional string. Information on the source of the content.</p></td>
+</tr>
+<tr class="row-even"><td><p>licenseInfo</p></td>
+<td><p>Optional string.  Any license information or restrictions regarding the content.</p></td>
+</tr>
+<tr class="row-odd"><td><p>culture</p></td>
+<td><p>Optional string. Locale, country and language information.</p></td>
+</tr>
+</tbody>
+</table>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>A boolean indicating the success of the operation.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="arcgis.apps.expbuilder.expbuilder.WebExperience.upload">
+<code class="sig-name descname">upload</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">gis</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">publish</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="n">title</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">item_mapping</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">auto_remap</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="n">item_properties</span><span class="o">=</span><span class="default_value">{}</span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.apps.expbuilder.expbuilder.WebExperience.upload" title="Permalink to this definition">¶</a></dt>
+<dd><p>Adds a WebExperience created locally through the Developer Edition to a specified
+portal. After doing this, the WebExperience object will obtain item and itemid
+properties. Gives users options to remap their experience’s datasources to items
+present in the portal, both manually or automatically</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 18%" />
+<col style="width: 82%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><strong>Argument</strong></p></td>
+<td><p><strong>Description</strong></p></td>
+</tr>
+<tr class="row-even"><td><p>gis</p></td>
+<td><p>Optional GIS object. The portal to add the WebExperience to. If none
+is passed in, will default to the GIS of the WebExperience object.</p></td>
+</tr>
+<tr class="row-odd"><td><p>publish</p></td>
+<td><p>Optional boolean. Publishes the experience when adding it to the
+portal. Default is <cite>False</cite>.</p></td>
+</tr>
+<tr class="row-even"><td><p>title</p></td>
+<td><p>Optional string. Allows a user to specify the title of their new
+experience in the portal.</p></td>
+</tr>
+<tr class="row-odd"><td><p>item_mapping</p></td>
+<td><p>Optional dictionary. Allows users to manually remap the datasources
+of their experience to datasources present in the portal. See
+example dictionary below.</p></td>
+</tr>
+<tr class="row-even"><td><p>auto_remap</p></td>
+<td><p>Optional boolean. Searches the portal for matching datasources and
+automatically remaps the experience to use those accordingly.
+Default is <cite>False</cite>.</p></td>
+</tr>
+<tr class="row-odd"><td><p>item_properties</p></td>
+<td><p>Optional dictionary. Contains a variety of properties that can be
+set when creating a new item, much like <cite>ContentManager.add()</cite>. See
+below for a table containing possible properties.</p></td>
+</tr>
+</tbody>
+</table>
+<p><em>Key:Value Dictionary Options for Argument item_properties</em></p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 21%" />
+<col style="width: 79%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><strong>Key</strong></p></td>
+<td><p><strong>Value</strong></p></td>
+</tr>
+<tr class="row-even"><td><p>description</p></td>
+<td><p>Optional string. Description of the item.</p></td>
+</tr>
+<tr class="row-odd"><td><p>url</p></td>
+<td><p>Optional string. URL to item that are based on URLs.</p></td>
+</tr>
+<tr class="row-even"><td><p>tags</p></td>
+<td><p>Optional string. Tags listed as comma-separated values, or a list of strings.
+Used for searches on items.</p></td>
+</tr>
+<tr class="row-odd"><td><p>snippet</p></td>
+<td><p>Optional string. Provide a short summary (limit to max 250 characters) of the what the item is.</p></td>
+</tr>
+<tr class="row-even"><td><p>accessInformation</p></td>
+<td><p>Optional string. Information on the source of the content.</p></td>
+</tr>
+<tr class="row-odd"><td><p>licenseInfo</p></td>
+<td><p>Optional string.  Any license information or restrictions regarding the content.</p></td>
+</tr>
+<tr class="row-even"><td><p>culture</p></td>
+<td><p>Optional string. Locale, country and language information.</p></td>
+</tr>
+<tr class="row-odd"><td><p>commentsEnabled</p></td>
+<td><p>Optional boolean. Default is true, controls whether comments are allowed (true)
+or not allowed (false).</p></td>
+</tr>
+<tr class="row-even"><td><p>access</p></td>
+<td><p>Optional string. Valid values are private, org, or public. Defaults to private.</p></td>
+</tr>
+<tr class="row-odd"><td><p>overwrite</p></td>
+<td><p>Optional boolean. Default is <cite>false</cite>. Controls whether item can be overwritten.</p></td>
+</tr>
+</tbody>
+</table>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>The newly added portal item, if successful. Otherwise, returns False.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="arcgis.apps.expbuilder.expbuilder.WebExperience.view">
+<code class="sig-name descname">view</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">width</span><span class="o">=</span><span class="default_value">800</span></em>, <em class="sig-param"><span class="n">height</span><span class="o">=</span><span class="default_value">500</span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.apps.expbuilder.expbuilder.WebExperience.view" title="Permalink to this definition">¶</a></dt>
+<dd><p>Shows the currently published experience, if possible. Default width is 800 and default
+height is 500. Note that this displays the actively published version of the
+WebExperience object; to visualize unsaved changes, <cite>preview()</cite> should be used.</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 18%" />
+<col style="width: 82%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><strong>Argument</strong></p></td>
+<td><p><strong>Description</strong></p></td>
+</tr>
+<tr class="row-even"><td><p>width</p></td>
+<td><p>Optional integer. The desired width to show the preview.</p></td>
+</tr>
+<tr class="row-odd"><td><p>height</p></td>
+<td><p>Optional integer. The desired height to show the preview.</p></td>
+</tr>
+</tbody>
+</table>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>In some cases, a dialogue box may pop up asking for credentials when calling this
+method. If the preview isn’t rendering, check if pop-ups are disabled in your browser.</p>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>An IFrame display of the Experience if possible, else the item url is returned to be
+clicked on. If the item is unpublished, the function returns False.</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+</div>
+
+
+
+           </div>
+           
+          </div>
+          <footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+        <a href="arcgis.apps.tracker.html" class="btn btn-neutral float-right" title="arcgis.apps.tracker module" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="arcgis.apps.survey123.html" class="btn btn-neutral float-left" title="arcgis.apps.survey123 module" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &#169; Copyright 2016-2023, Esri.
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+    Options v: 2.3.1
+
+  <div class="rst-versions" data-toggle="rst-versions" role="note" aria-label="versions">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      <span class="fa fa-book"> Pick an earlier version</span>
+      v: 2.3.1
+      <span class="fa fa-caret-down"></span>
+    </span>
+    <div class="rst-other-versions">
+      
+      
+      <dl>
+        <dt>Versions</dt>
+        
+          
+          <dd><a href="2.3.0/">2.3.0</a></dd>
+          
+        
+          
+          <dd><a href="2.2.0/">2.2.0</a></dd>
+          
+        
+          
+          <dd><a href="2.1.0/">2.1.0</a></dd>
+          
+        
+          
+          <dd><a href="2.0.1/">2.0.1</a></dd>
+          
+        
+          
+          <dd><a href="2.0.0/">2.0.0</a></dd>
+          
+        
+          
+          <dd><a href="1.9.1/">1.9.1</a></dd>
+          
+        
+          
+          <dd><a href="1.9.0/">1.9.0</a></dd>
+          
+        
+          
+          <dd><a href="1.8.5/">1.8.5</a></dd>
+          
+        
+          
+          <dd><a href="1.8.4/">1.8.4</a></dd>
+          
+        
+          
+          <dd><a href="1.8.3/">1.8.3</a></dd>
+          
+        
+          
+          <dd><a href="1.8.2/">1.8.2</a></dd>
+          
+        
+          
+          <dd><a href="1.8.1/">1.8.1</a></dd>
+          
+        
+          
+          <dd><a href="1.8.0/">1.8.0</a></dd>
+          
+        
+          
+          <dd><a href="1.7.1/">1.7.1</a></dd>
+          
+        
+          
+          <dd><a href="1.7.0/">1.7.0</a></dd>
+          
+        
+          
+          <dd><a href="1.6.2/">1.6.2</a></dd>
+          
+        
+          
+          <dd><a href="1.6.1/">1.6.1</a></dd>
+          
+        
+          
+          <dd><a href="1.6.0/">1.6.0</a></dd>
+          
+        
+          
+          <dd><a href="1.5.2/">1.5.2</a></dd>
+          
+        
+          
+          <dd><a href="1.5.1/">1.5.1</a></dd>
+          
+        
+          
+          <dd><a href="1.5.0/">1.5.0</a></dd>
+          
+        
+          
+          <dd><a href="1.4.2/">1.4.2</a></dd>
+          
+        
+          
+          <dd><a href="1.4.1/">1.4.1</a></dd>
+          
+        
+          
+          <dd><a href="1.4.0/">1.4.0</a></dd>
+          
+        
+          
+          <dd><a href="1.3.0/">1.3.0</a></dd>
+          
+        
+          
+          <dd><a href="1.2.5/">1.2.5</a></dd>
+          
+        
+          
+          <dd><a href="1.2.4/">1.2.4</a></dd>
+          
+        
+          
+          <dd><a href="1.2.3/">1.2.3</a></dd>
+          
+        
+          
+          <dd><a href="1.2.2/">1.2.2</a></dd>
+          
+        
+          
+          <dd><a href="1.2.1/">1.2.1</a></dd>
+          
+        
+          
+          <dd><a href="1.2.0/">1.2.0</a></dd>
+          
+        
+          
+          <dd><a href="1.1.0/">1.1.0</a></dd>
+          
+        
+          
+          <dd><a href="1.0.1/">1.0.1</a></dd>
+          
+        
+          
+          <dd><a href="1.0.0/">1.0.0</a></dd>
+          
+        
+          
+          <dd><a href="0.3.0/">0.3.0</a></dd>
+          
+        
+          
+          <dd><a href="0.2.0/">0.2.0</a></dd>
+          
+        
+          
+          <dd><a href="0.1.0/">0.1.0</a></dd>
+          
+        
+      </dl>
+      
+      
+      
+    </div>
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

@@ -1,0 +1,105 @@
+arcgis.features.analysis module
+=======================================
+
+.. automodule:: arcgis.features.analysis
+
+aggregate_points
+--------------
+.. automethod:: arcgis.features.analysis.aggregate_points
+
+ 
+calculate_density
+--------------
+.. automethod:: arcgis.features.analysis.calculate_density
+
+connect_origins_to_destinations
+--------------
+.. automethod:: arcgis.features.analysis.connect_origins_to_destinations
+
+create_buffers
+--------------
+.. automethod:: arcgis.features.analysis.create_buffers
+
+create_drive_time_areas
+--------------
+.. automethod:: arcgis.features.analysis.create_drive_time_areas
+
+create_route_layers
+--------------
+.. automethod:: arcgis.features.analysis.create_route_layers
+
+create_viewshed
+--------------
+.. automethod:: arcgis.features.analysis.create_viewshed
+
+create_watersheds
+--------------
+.. automethod:: arcgis.features.analysis.create_watersheds
+
+derive_new_locations
+--------------
+.. automethod:: arcgis.features.analysis.derive_new_locations
+
+dissolve_boundaries
+--------------
+.. automethod:: arcgis.features.analysis.dissolve_boundaries
+
+enrich_layer
+--------------
+.. automethod:: arcgis.features.analysis.enrich_layer
+
+extract_data
+--------------
+.. automethod:: arcgis.features.analysis.extract_data
+
+find_existing_locations
+--------------
+.. automethod:: arcgis.features.analysis.find_existing_locations
+
+find_hot_spots
+--------------
+.. automethod:: arcgis.features.analysis.find_hot_spots
+
+find_nearest
+--------------
+.. automethod:: arcgis.features.analysis.find_nearest
+
+find_point_clusters
+--------------
+.. automethod:: arcgis.features.analysis.find_point_clusters
+
+find_similar_locations
+--------------
+.. automethod:: arcgis.features.analysis.find_similar_locations
+
+interpolate_points
+--------------
+.. automethod:: arcgis.features.analysis.interpolate_points
+
+join_features
+--------------
+.. automethod:: arcgis.features.analysis.join_features
+
+merge_layers
+--------------
+.. automethod:: arcgis.features.analysis.merge_layers
+
+overlay_layers
+--------------
+.. automethod:: arcgis.features.analysis.overlay_layers
+
+plan_routes
+--------------
+.. automethod:: arcgis.features.analysis.plan_routes
+
+summarize_nearby
+--------------
+.. automethod:: arcgis.features.analysis.summarize_nearby
+
+summarize_within
+--------------
+.. automethod:: arcgis.features.analysis.summarize_within
+
+trace_downstream
+--------------
+.. automethod:: arcgis.features.analysis.trace_downstream

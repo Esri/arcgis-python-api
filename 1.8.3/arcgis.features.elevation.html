@@ -1,0 +1,617 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>arcgis.features.elevation module &mdash; arcgis 1.8.3 documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="_static/theme_overrides.css" type="text/css" />
+
+  
+  
+    <link rel="shortcut icon" href="_static/favicon.ico"/>
+  
+  
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/doctools.js"></script>
+        <script src="_static/language_data.js"></script>
+        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="arcgis.features.enrich_data module" href="arcgis.features.enrich_data.html" />
+    <link rel="prev" title="arcgis.features.analyze_patterns module" href="arcgis.features.analyze_patterns.html" />
+<!-- This code block is inserted close near the <head> tag. See http://bit.ly/2BHUQzB -->
+<!-- The point of this code block is to send us google analytics on website views -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-NJGGV5');</script>
+ 
+
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="index.html" class="icon icon-home" alt="Documentation Home"> arcgis
+          
+
+          
+            
+            <img src="_static/python_api_logo.png" class="logo" alt="Logo"/>
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1.8.3
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">arcgis</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="arcgis.gis.toc.html">arcgis.gis module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="arcgis.env.html">arcgis.env module</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="arcgis.features.toc.html">arcgis.features module</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="arcgis.features.toc.html#feature">Feature</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.features.toc.html#featurelayer">FeatureLayer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.features.toc.html#table">Table</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.features.toc.html#featurelayercollection">FeatureLayerCollection</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.features.toc.html#featureset">FeatureSet</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.features.toc.html#featurecollection">FeatureCollection</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.features.toc.html#geoaccessor">GeoAccessor</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.features.toc.html#geoseriesaccessor">GeoSeriesAccessor</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.features.toc.html#spatialdataframe">SpatialDataFrame</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="arcgis.features.toc.html#submodules">Submodules</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="arcgis.features.analysis.html">arcgis.features.analysis module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="arcgis.features.analyze_patterns.html">arcgis.features.analyze_patterns module</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">arcgis.features.elevation module</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#profile">profile</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#viewshed">viewshed</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#summarize-elevation">summarize_elevation</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="arcgis.features.enrich_data.html">arcgis.features.enrich_data module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="arcgis.features.find_locations.html">arcgis.features.find_locations module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="arcgis.features.hydrology.html">arcgis.features.hydrology module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="arcgis.features.manage_data.html">arcgis.features.manage_data module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="arcgis.features.managers.html">arcgis.features.managers module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="arcgis.features.summarize_data.html">arcgis.features.summarize_data module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="arcgis.features.use_proximity.html">arcgis.features.use_proximity module</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="arcgis.raster.toc.html">arcgis.raster module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="arcgis.network.toc.html">arcgis.network module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="arcgis.geoanalytics.toc.html">arcgis.geoanalytics module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="arcgis.geocoding.html">arcgis.geocoding module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="arcgis.geoenrichment.html">arcgis.geoenrichment module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="arcgis.geometry.html">arcgis.geometry module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="arcgis.geoprocessing.html">arcgis.geoprocessing module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="arcgis.mapping.toc.html">arcgis.mapping module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="arcgis.realtime.html">arcgis.realtime module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="arcgis.schematics.html">arcgis.schematics module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="arcgis.widgets.html">arcgis.widgets module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="arcgis.apps.html">arcgis.apps module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="arcgis.learn.toc.html">arcgis.learn module</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">arcgis</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="arcgis.features.toc.html">arcgis.features module</a> &raquo;</li>
+        
+      <li>arcgis.features.elevation module</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+<!-- This code block is inserted close near the <body> tag. See http://bit.ly/2BHUQzB -->
+<!-- The point of this code block is to send us google analytics on website views -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NJGGV5"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+
+  <div class="section" id="module-arcgis.features.elevation">
+<span id="arcgis-features-elevation-module"></span><h1>arcgis.features.elevation module<a class="headerlink" href="#module-arcgis.features.elevation" title="Permalink to this headline">¶</a></h1>
+<p>These functions help you use elevation analysis</p>
+<div class="section" id="profile">
+<h2>profile<a class="headerlink" href="#profile" title="Permalink to this headline">¶</a></h2>
+<dl class="py function">
+<dt id="arcgis.features.elevation.profile">
+<code class="sig-prename descclassname">arcgis.features.elevation.</code><code class="sig-name descname">profile</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">input_line_features</span><span class="p">:</span> <span class="n">arcgis.features.feature.FeatureSet</span> <span class="o">=</span> <span class="default_value">{'displayFieldName': '', 'exceededTransferLimit': False, 'features': [], 'fields': [{'name': 'OID', 'type': 'esriFieldTypeOID', 'alias': 'OID'}, {'name': 'Shape_Length', 'type': 'esriFieldTypeDouble', 'alias': 'Shape_Length'}], 'geometryType': 'esriGeometryPolyline', 'spatialReference': {'latestWkid': 3857, 'wkid': 102100}}</span></em>, <em class="sig-param"><span class="n">profile_id_field</span><span class="p">:</span> <span class="n">str</span> <span class="o">=</span> <span class="default_value">None</span></em>, <em class="sig-param"><span class="n">dem_resolution</span><span class="p">:</span> <span class="n">str</span> <span class="o">=</span> <span class="default_value">None</span></em>, <em class="sig-param"><span class="n">maximum_sample_distance</span><span class="p">:</span> <span class="n">float</span> <span class="o">=</span> <span class="default_value">None</span></em>, <em class="sig-param"><span class="n">maximum_sample_distance_units</span><span class="p">:</span> <span class="n">str</span> <span class="o">=</span> <span class="default_value">'Meters'</span></em>, <em class="sig-param"><span class="n">gis</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">future</span><span class="o">=</span><span class="default_value">False</span></em><span class="sig-paren">)</span> &#x2192; arcgis.features.feature.FeatureSet<a class="headerlink" href="#arcgis.features.elevation.profile" title="Permalink to this definition">¶</a></dt>
+<dd><img alt="_images/elevation_profile.png" src="_images/elevation_profile.png" />
+<p>The profile method is used to create profiles along input lines from which a profile graph can be created.</p>
+<p>In asynchronous mode, the maximum number of input line features that can be accepted by the task for each request is 1000.</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 13%" />
+<col style="width: 88%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><strong>Argument</strong></p></td>
+<td><p><strong>Description</strong></p></td>
+</tr>
+<tr class="row-even"><td><p>input_line_features</p></td>
+<td><p>Required featureset. The line features that will be profiled over the surface.</p></td>
+</tr>
+<tr class="row-odd"><td><p>profile_id_field</p></td>
+<td><p>Optional string. A unique identifier to tie profiles to their corresponding input line features.</p></td>
+</tr>
+<tr class="row-even"><td><p>dem_resolution</p></td>
+<td><p>Optional string. The approximate spatial resolution (cell size) of the source elevation data used for the calculation.
+The resolution values are an approximation of the spatial resolution of the digital elevation model. While many elevation sources are distributed in units of arc seconds, the keyword is an approximation of those resolutions in meters for easier understanding.</p></td>
+</tr>
+<tr class="row-odd"><td><p>maximum_sample_distance</p></td>
+<td><p>Optional float. The maximum sampling distance along the line to sample elevation values.</p></td>
+</tr>
+<tr class="row-even"><td><p>maximum_sample_distance_units</p></td>
+<td><p>Optional string. The units for the MaximumSampleDistance.</p>
+<p>Choice list:[‘Meters’, ‘Kilometers’, ‘Feet’, ‘Yards’, ‘Miles’]</p>
+</td>
+</tr>
+<tr class="row-odd"><td><p>future</p></td>
+<td><p>Optional boolean. If True, the result will be a <cite>GPJob</cite> and results will be returned asynchronously.</p></td>
+</tr>
+</tbody>
+</table>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>Output Profile as a FeatureSet</p>
+</dd>
+</dl>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">USAGE</span> <span class="n">EXAMPLE</span><span class="p">:</span> <span class="n">To</span> <span class="n">create</span> <span class="n">profile</span> <span class="n">of</span> <span class="n">mountains</span> <span class="n">feature</span><span class="o">.</span>
+<span class="n">elevation</span> <span class="o">=</span> <span class="n">profile</span><span class="p">(</span><span class="n">input_line_features</span><span class="o">=</span><span class="n">mountain_fs</span><span class="p">,</span>
+                    <span class="n">dem_resolution</span><span class="o">=</span><span class="s1">&#39;FINEST&#39;</span><span class="p">,</span>
+                    <span class="n">maximum_sample_distance</span><span class="o">=</span><span class="mi">500</span><span class="p">,</span>
+                    <span class="n">maximum_sample_distance_units</span><span class="o">=</span><span class="s1">&#39;Meters&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+</div>
+<div class="section" id="viewshed">
+<h2>viewshed<a class="headerlink" href="#viewshed" title="Permalink to this headline">¶</a></h2>
+<dl class="py function">
+<dt id="arcgis.features.elevation.viewshed">
+<code class="sig-prename descclassname">arcgis.features.elevation.</code><code class="sig-name descname">viewshed</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">input_points</span><span class="p">:</span> <span class="n">arcgis.features.feature.FeatureSet</span> <span class="o">=</span> <span class="default_value">{'displayFieldName': '', 'exceededTransferLimit': False, 'features': [], 'fields': [{'name': 'OID', 'type': 'esriFieldTypeOID', 'alias': 'OID'}, {'name': 'offseta', 'type': 'esriFieldTypeDouble', 'alias': 'offseta'}, {'name': 'offsetb', 'type': 'esriFieldTypeDouble', 'alias': 'offsetb'}], 'geometryType': 'esriGeometryPoint', 'spatialReference': {'latestWkid': 3857, 'wkid': 102100}}</span></em>, <em class="sig-param"><span class="n">maximum_distance</span><span class="p">:</span> <span class="n">float</span> <span class="o">=</span> <span class="default_value">None</span></em>, <em class="sig-param"><span class="n">maximum_distance_units</span><span class="p">:</span> <span class="n">str</span> <span class="o">=</span> <span class="default_value">'Meters'</span></em>, <em class="sig-param"><span class="n">dem_resolution</span><span class="p">:</span> <span class="n">str</span> <span class="o">=</span> <span class="default_value">None</span></em>, <em class="sig-param"><span class="n">observer_height</span><span class="p">:</span> <span class="n">float</span> <span class="o">=</span> <span class="default_value">None</span></em>, <em class="sig-param"><span class="n">observer_height_units</span><span class="p">:</span> <span class="n">str</span> <span class="o">=</span> <span class="default_value">'Meters'</span></em>, <em class="sig-param"><span class="n">surface_offset</span><span class="p">:</span> <span class="n">float</span> <span class="o">=</span> <span class="default_value">None</span></em>, <em class="sig-param"><span class="n">surface_offset_units</span><span class="p">:</span> <span class="n">str</span> <span class="o">=</span> <span class="default_value">'Meters'</span></em>, <em class="sig-param"><span class="n">generalize_viewshed_polygons</span><span class="p">:</span> <span class="n">bool</span> <span class="o">=</span> <span class="default_value">True</span></em>, <em class="sig-param"><span class="n">gis</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">future</span><span class="o">=</span><span class="default_value">False</span></em><span class="sig-paren">)</span> &#x2192; arcgis.features.feature.FeatureSet<a class="headerlink" href="#arcgis.features.elevation.viewshed" title="Permalink to this definition">¶</a></dt>
+<dd><img alt="_images/elevation_viewshed.png" src="_images/elevation_viewshed.png" />
+<p>The <code class="docutils literal notranslate"><span class="pre">viewshed</span></code> method is used to identify visible areas based on observer locations you provide as well as ArcGIS Online Elevation data.</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 16%" />
+<col style="width: 84%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><strong>Parameter</strong></p></td>
+<td><p><strong>Description</strong></p></td>
+</tr>
+<tr class="row-even"><td><p>input_points</p></td>
+<td><p>Required FeatureSet. The point features to use as the observer locations. See <a class="reference internal" href="arcgis.features.analysis.html#featureinput"><span class="std std-ref">Feature Input</span></a>.</p></td>
+</tr>
+<tr class="row-odd"><td><p>maximum_distance</p></td>
+<td><p>Optional float. This is a cutoff distance where the computation of visible areas stops.
+Beyond this distance, it is unknown whether the analysis points and the other objects can see each other.</p>
+<p>It is useful for modeling current weather conditions or a given time of day, such as dusk. Large values increase computation time.</p>
+<p>Unless specified, a default maximum distance will be computed based on the resolution and extent of the source DEM.
+The allowed maximum value is 50 kilometers.</p>
+<p>Use <code class="docutils literal notranslate"><span class="pre">maximum_distance_units</span></code> to set the units for <code class="docutils literal notranslate"><span class="pre">maximum_distance</span></code>.</p>
+</td>
+</tr>
+<tr class="row-even"><td><p>maximum_distance_units</p></td>
+<td><p>Optional string. The units for the <code class="docutils literal notranslate"><span class="pre">maximum_distance</span></code> parameter.</p>
+<p>Choice list:[‘Meters’, ‘Kilometers’, ‘Feet’, ‘Yards’, ‘Miles’].</p>
+<p>The default is ‘Meters’.</p>
+</td>
+</tr>
+<tr class="row-odd"><td><p>dem_resolution</p></td>
+<td><p>Optional string. The approximate spatial resolution (cell size) of the source elevation data used for the calculation.
+The resolution values are an approximation of the spatial resolution of the digital elevation model.
+While many elevation sources are distributed in units of arc seconds, the keyword is an approximation of those resolutions in meters for easier understanding.</p>
+<p>Choice list:[‘ ‘, ‘FINEST’, ‘10m’, ‘30m’, ‘90m’].</p>
+<p>The default is 90m.</p>
+</td>
+</tr>
+<tr class="row-even"><td><p>observer_height</p></td>
+<td><p>Optional float. This is the height above the ground of the observer locations.</p>
+<p>The default is 1.75 meters, which is approximately the average height of a person.
+If you are looking from an elevated location, such as an observation tower or a tall building, use that height instead.</p>
+<p>Use <code class="docutils literal notranslate"><span class="pre">observer_height_units</span></code> to set the units for <code class="docutils literal notranslate"><span class="pre">observer_height</span></code>.</p>
+</td>
+</tr>
+<tr class="row-odd"><td><p>observer_height_units</p></td>
+<td><p>Optional string. The units for the <code class="docutils literal notranslate"><span class="pre">observer_height</span></code> parameter.</p>
+<p>Choice list:[‘Meters’, ‘Kilometers’, ‘Feet’, ‘Yards’, ‘Miles’]</p>
+</td>
+</tr>
+<tr class="row-even"><td><p>surface_offset</p></td>
+<td><p>Optional float. The height above the surface of the object you are trying to see.</p>
+<p>The default value is 0.0. If you are trying to see buildings or wind turbines, use their height here.</p>
+</td>
+</tr>
+<tr class="row-odd"><td><p>surface_offset_units</p></td>
+<td><p>Optional string. The units for the <code class="docutils literal notranslate"><span class="pre">surface_offset</span></code> parameter.</p>
+<p>Choice list:[‘Meters’, ‘Kilometers’, ‘Feet’, ‘Yards’, ‘Miles’]</p>
+</td>
+</tr>
+<tr class="row-even"><td><p>generalize_viewshed_polygons</p></td>
+<td><p>Optional boolean. Determines whether or not the viewshed polygons are to be generalized.</p>
+<p>The viewshed calculation is based on a raster elevation model that creates a result with
+stair-stepped edges. To create a more pleasing appearance and improve performance, the
+default behavior is to generalize the polygons. The generalization process smooths the
+boundary of the visible areas and may remove some single-cell visible areas.</p>
+</td>
+</tr>
+<tr class="row-odd"><td><p>future</p></td>
+<td><p>Optional boolean. If True, the result will be a <cite>GPJob</cite> and results will be returned asynchronously.</p></td>
+</tr>
+</tbody>
+</table>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>output_viewshed - Output Viewshed as a FeatureSet (polygons of visible areas for a given set of input observation points.)</p>
+</dd>
+</dl>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># USAGE EXAMPLE: To identify visible areas from esri headquarter office.</span>
+<span class="n">visible_windfarms</span> <span class="o">=</span> <span class="n">viewshed</span><span class="p">(</span><span class="n">input_points</span><span class="o">=</span><span class="n">hq_fs</span><span class="p">,</span>
+                             <span class="n">maximum_distance</span><span class="o">=</span><span class="mi">200</span><span class="p">,</span>
+                             <span class="n">maximum_distance_units</span><span class="o">=</span><span class="s1">&#39;Meters&#39;</span><span class="p">,</span>
+                             <span class="n">observer_height</span><span class="o">=</span><span class="mi">6</span><span class="p">,</span>
+                             <span class="n">observer_height_units</span><span class="o">=</span><span class="s1">&#39;Feet&#39;</span><span class="p">,</span>
+                             <span class="n">surface_offset</span><span class="o">=</span><span class="mi">100</span><span class="p">,</span>
+                             <span class="n">surface_offset_units</span><span class="o">=</span><span class="s1">&#39;Meters&#39;</span><span class="p">,</span>
+                             <span class="n">generalize_viewshed_polygons</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+</div>
+<div class="section" id="summarize-elevation">
+<h2>summarize_elevation<a class="headerlink" href="#summarize-elevation" title="Permalink to this headline">¶</a></h2>
+<dl class="py function">
+<dt id="arcgis.features.elevation.summarize_elevation">
+<code class="sig-prename descclassname">arcgis.features.elevation.</code><code class="sig-name descname">summarize_elevation</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">input_features</span><span class="p">:</span> <span class="n">arcgis.features.feature.FeatureSet</span> <span class="o">=</span> <span class="default_value">{}</span></em>, <em class="sig-param"><span class="n">feature_id_field</span><span class="p">:</span> <span class="n">str</span> <span class="o">=</span> <span class="default_value">None</span></em>, <em class="sig-param"><span class="n">dem_resolution</span><span class="p">:</span> <span class="n">str</span> <span class="o">=</span> <span class="default_value">None</span></em>, <em class="sig-param"><span class="n">include_slope_aspect</span><span class="p">:</span> <span class="n">bool</span> <span class="o">=</span> <span class="default_value">False</span></em>, <em class="sig-param"><span class="n">gis</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">future</span><span class="o">=</span><span class="default_value">False</span></em><span class="sig-paren">)</span> &#x2192; arcgis.features.feature.FeatureSet<a class="headerlink" href="#arcgis.features.elevation.summarize_elevation" title="Permalink to this definition">¶</a></dt>
+<dd><img alt="_images/summarize_elevation.png" src="_images/summarize_elevation.png" />
+<p>The <code class="docutils literal notranslate"><span class="pre">summarize_elevation</span></code> method calculates summary statistics for features you provide based
+on ArcGIS Online Elevation data. It accepts point, line, or polygon input and returns statistics
+for the elevation, slope, and aspect of the features.</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 13%" />
+<col style="width: 87%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><strong>Parameter</strong></p></td>
+<td><p><strong>Description</strong></p></td>
+</tr>
+<tr class="row-even"><td><p>input_features</p></td>
+<td><p>Reqauired FeatureSet. Input features to summarize the elevation for. The features can be point, line, or area. See <a class="reference internal" href="arcgis.features.analysis.html#featureinput"><span class="std std-ref">Feature Input</span></a>.</p></td>
+</tr>
+<tr class="row-odd"><td><p>feature_id_field</p></td>
+<td><p>Optional string. The unique ID field to use for the input features.</p></td>
+</tr>
+<tr class="row-even"><td><p>dem_resolution</p></td>
+<td><p>Optional string. The approximate spatial resolution (cell size) of the source elevation data used for the calculation.</p>
+<p>Choice list:[‘ ‘, ‘FINEST’, ‘10m’, ‘30m’, ‘90m’]</p>
+<p>The default value is None.</p>
+</td>
+</tr>
+<tr class="row-odd"><td><p>include_slope_aspect</p></td>
+<td><p>Optional boolean. Determines if slope and aspect for the input feature(s) will be included in the output. The slope and aspect values in the output are in degrees.</p>
+<p>The default value is False.</p>
+</td>
+</tr>
+<tr class="row-even"><td><p>future</p></td>
+<td><p>Optional boolean. If True, the result will be a <cite>GPJob</cite> and results will be returned asynchronously.</p></td>
+</tr>
+</tbody>
+</table>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>result_layer : Output Summary as a FeatureSet</p>
+</dd>
+</dl>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># USAGE EXAMPLE: To calculate summary statistics for mountain polyline features.</span>
+<span class="n">summarize</span> <span class="o">=</span> <span class="n">summarize_elevation</span><span class="p">(</span><span class="n">input_features</span><span class="o">=</span><span class="n">mountain_fs</span><span class="p">,</span>
+                   <span class="n">dem_resolution</span><span class="o">=</span><span class="s1">&#39;FINEST&#39;</span><span class="p">,</span>
+                   <span class="n">include_slope_aspect</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+</div>
+</div>
+
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="arcgis.features.enrich_data.html" class="btn btn-neutral float-right" title="arcgis.features.enrich_data module" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="arcgis.features.analyze_patterns.html" class="btn btn-neutral float-left" title="arcgis.features.analyze_patterns module" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        
+        &copy; Copyright 2016-2021, Esri
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+    Options v: 1.8.3
+
+  <div class="rst-versions" data-toggle="rst-versions" role="note" aria-label="versions">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      <span class="fa fa-book"> Pick an earlier version</span>
+      v: 1.8.3
+      <span class="fa fa-caret-down"></span>
+    </span>
+    <div class="rst-other-versions">
+      
+      
+      <dl>
+        <dt>Versions</dt>
+        
+          
+          <dd><a href="1.8.2/">1.8.2</a></dd>
+          
+        
+          
+          <dd><a href="1.8.1/">1.8.1</a></dd>
+          
+        
+          
+          <dd><a href="1.8.0/">1.8.0</a></dd>
+          
+        
+          
+          <dd><a href="1.7.1/">1.7.1</a></dd>
+          
+        
+          
+          <dd><a href="1.7.0/">1.7.0</a></dd>
+          
+        
+          
+          <dd><a href="1.6.2/">1.6.2</a></dd>
+          
+        
+          
+          <dd><a href="1.6.1/">1.6.1</a></dd>
+          
+        
+          
+          <dd><a href="1.6.0/">1.6.0</a></dd>
+          
+        
+          
+          <dd><a href="1.5.3/">1.5.3</a></dd>
+          
+        
+          
+          <dd><a href="1.5.2/">1.5.2</a></dd>
+          
+        
+          
+          <dd><a href="1.5.1/">1.5.1</a></dd>
+          
+        
+          
+          <dd><a href="1.5.0/">1.5.0</a></dd>
+          
+        
+          
+          <dd><a href="1.4.2/">1.4.2</a></dd>
+          
+        
+          
+          <dd><a href="1.4.1/">1.4.1</a></dd>
+          
+        
+          
+          <dd><a href="1.4.0/">1.4.0</a></dd>
+          
+        
+          
+          <dd><a href="1.3.0/">1.3.0</a></dd>
+          
+        
+          
+          <dd><a href="1.2.5/">1.2.5</a></dd>
+          
+        
+          
+          <dd><a href="1.2.4/">1.2.4</a></dd>
+          
+        
+          
+          <dd><a href="1.2.3/">1.2.3</a></dd>
+          
+        
+          
+          <dd><a href="1.2.2/">1.2.2</a></dd>
+          
+        
+          
+          <dd><a href="1.2.1/">1.2.1</a></dd>
+          
+        
+          
+          <dd><a href="1.2.0/">1.2.0</a></dd>
+          
+        
+          
+          <dd><a href="1.0.1/">1.0.1</a></dd>
+          
+        
+          
+          <dd><a href="1.0.0/">1.0.0</a></dd>
+          
+        
+          
+          <dd><a href="0.3.0/">0.3.0</a></dd>
+          
+        
+          
+          <dd><a href="0.2.0/">0.2.0</a></dd>
+          
+        
+          
+          <dd><a href="0.1.0/">0.1.0</a></dd>
+          
+        
+      </dl>
+      
+      
+      
+    </div>
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

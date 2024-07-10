@@ -1,0 +1,834 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <title>arcgis.apps.tracker module &mdash; arcgis 1.9 documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="_static/theme_overrides.css" type="text/css" />
+
+  
+  
+    <link rel="shortcut icon" href="_static/favicon.ico"/>
+  
+
+  
+  
+
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/doctools.js"></script>
+        <script src="_static/language_data.js"></script>
+        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="arcgis.learn module" href="arcgis.learn.toc.html" />
+    <link rel="prev" title="arcgis.apps.survey123 module" href="arcgis.apps.survey123.html" />
+<!-- This code block is inserted close near the <head> tag. See http://bit.ly/2BHUQzB -->
+<!-- The point of this code block is to send us google analytics on website views -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-NJGGV5');</script>
+ 
+
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="index.html" class="icon icon-home"> arcgis
+          
+
+          
+            
+            <img src="_static/python_api_logo.png" class="logo" alt="Logo"/>
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1.9
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">arcgis</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="arcgis.gis.toc.html">arcgis.gis module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="arcgis.env.html">arcgis.env module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="arcgis.features.toc.html">arcgis.features module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="arcgis.raster.toc.html">arcgis.raster module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="arcgis.network.toc.html">arcgis.network module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="arcgis.geoanalytics.toc.html">arcgis.geoanalytics module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="arcgis.geocoding.html">arcgis.geocoding module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="arcgis.geoenrichment.html">arcgis.geoenrichment module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="arcgis.geometry.html">arcgis.geometry module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="arcgis.geoprocessing.html">arcgis.geoprocessing module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="arcgis.mapping.toc.html">arcgis.mapping module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="arcgis.realtime.html">arcgis.realtime module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="arcgis.schematics.html">arcgis.schematics module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="arcgis.widgets.html">arcgis.widgets module</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="arcgis.apps.html">arcgis.apps module</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="arcgis.apps.html#build-collector-url">build_collector_url</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.apps.html#build-explorer-url">build_explorer_url</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.apps.html#build-field-maps-url">build_field_maps_url</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.apps.html#build-navigator-url">build_navigator_url</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.apps.html#build-survey123-url">build_survey123_url</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.apps.html#build-tracker-url">build_tracker_url</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.apps.html#build-workforce-url">build_workforce_url</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="arcgis.apps.html#submodules">Submodules</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="arcgis.apps.hub.html">arcgis.apps.hub module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="arcgis.apps.dashboard.html">arcgis.apps.dashboard module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="arcgis.apps.workforce.html">arcgis.apps.workforce module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="arcgis.apps.storymap.html">arcgis.apps.storymap module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="arcgis.apps.survey123.html">arcgis.apps.survey123 module</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">arcgis.apps.tracker module</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#locationtrackingmanager">LocationTrackingManager</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#trackview">TrackView</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#trackviewermanager">TrackViewerManager</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#mobileusermanager">MobileUserManager</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="arcgis.learn.toc.html">arcgis.learn module</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">arcgis</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="arcgis.apps.html">arcgis.apps module</a> &raquo;</li>
+        
+      <li>arcgis.apps.tracker module</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+<!-- This code block is inserted close near the <body> tag. See http://bit.ly/2BHUQzB -->
+<!-- The point of this code block is to send us google analytics on website views -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NJGGV5"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+
+  <div class="section" id="module-arcgis.apps.tracker">
+<span id="arcgis-apps-tracker-module"></span><h1>arcgis.apps.tracker module<a class="headerlink" href="#module-arcgis.apps.tracker" title="Permalink to this headline">¶</a></h1>
+<p>The <a class="reference internal" href="#arcgis.apps.tracker.LocationTrackingManager" title="arcgis.apps.tracker.LocationTrackingManager"><code class="xref py py-class docutils literal notranslate"><span class="pre">LocationTrackingManager</span></code></a> is the main entry point into the Tracker module.
+It can be used as shown in the following code example.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Access the location tracking manager and check the status</span>
+
+<span class="kn">import</span> <span class="nn">arcgis</span>
+<span class="n">gis</span> <span class="o">=</span> <span class="n">arcgis</span><span class="o">.</span><span class="n">gis</span><span class="o">.</span><span class="n">GIS</span><span class="p">(</span><span class="s2">&quot;https://arcgis.com&quot;</span><span class="p">,</span> <span class="s2">&quot;&lt;username&gt;&quot;</span><span class="p">,</span> <span class="s2">&quot;&lt;password&gt;&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">gis</span><span class="o">.</span><span class="n">admin</span><span class="o">.</span><span class="n">location_tracking</span><span class="o">.</span><span class="n">status</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="section" id="locationtrackingmanager">
+<h2>LocationTrackingManager<a class="headerlink" href="#locationtrackingmanager" title="Permalink to this headline">¶</a></h2>
+<dl class="class">
+<dt id="arcgis.apps.tracker.LocationTrackingManager">
+<em class="property">class </em><code class="sig-prename descclassname">arcgis.apps.tracker.</code><code class="sig-name descname">LocationTrackingManager</code><span class="sig-paren">(</span><em class="sig-param">gis</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.apps.tracker.LocationTrackingManager" title="Permalink to this definition">¶</a></dt>
+<dd><p>This manages Location Tracking for an organization.
+It can be accessed from the gis as <code class="xref py py-attr docutils literal notranslate"><span class="pre">location_tracking</span></code></p>
+<p>Additional information can be found here: <a class="reference external" href="https://doc.arcgis.com/en/tracker/help/configure-location-tracking.htm">https://doc.arcgis.com/en/tracker/help/configure-location-tracking.htm</a></p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 21%" />
+<col style="width: 79%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><strong>Argument</strong></p></td>
+<td><p><strong>Description</strong></p></td>
+</tr>
+<tr class="row-even"><td><p>gis</p></td>
+<td><p>Required <a class="reference internal" href="arcgis.gis.toc.html#arcgis.gis.GIS" title="arcgis.gis.GIS"><code class="xref py py-class docutils literal notranslate"><span class="pre">GIS</span></code></a>. The GIS to configure location
+tracking for.</p></td>
+</tr>
+</tbody>
+</table>
+<dl class="method">
+<dt id="arcgis.apps.tracker.LocationTrackingManager.create_track_view">
+<code class="sig-name descname">create_track_view</code><span class="sig-paren">(</span><em class="sig-param">title</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.apps.tracker.LocationTrackingManager.create_track_view" title="Permalink to this definition">¶</a></dt>
+<dd><p>This creates a <a class="reference internal" href="#arcgis.apps.tracker.TrackView" title="arcgis.apps.tracker.TrackView"><code class="xref py py-class docutils literal notranslate"><span class="pre">TrackView</span></code></a>.</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 21%" />
+<col style="width: 79%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><strong>Argument</strong></p></td>
+<td><p><strong>Description</strong></p></td>
+</tr>
+<tr class="row-even"><td><p>title</p></td>
+<td><p>Required <code class="xref py py-class docutils literal notranslate"><span class="pre">String</span></code> The title of the Track View to create.</p></td>
+</tr>
+</tbody>
+</table>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p><a class="reference internal" href="#arcgis.apps.tracker.TrackView" title="arcgis.apps.tracker.TrackView"><code class="xref py py-class docutils literal notranslate"><span class="pre">TrackView</span></code></a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="arcgis.apps.tracker.LocationTrackingManager.disable">
+<code class="sig-name descname">disable</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.apps.tracker.LocationTrackingManager.disable" title="Permalink to this definition">¶</a></dt>
+<dd><p>Disables location tracking for the organization.</p>
+<p>THIS WILL DELETE ALL LOCATION TRACKING VIEWS, SERVICES, AND DATA.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>True if successful, False otherwise</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="arcgis.apps.tracker.LocationTrackingManager.enable">
+<code class="sig-name descname">enable</code><span class="sig-paren">(</span><em class="sig-param">tracks_layer_shards=6</em>, <em class="sig-param">lkl_layer_shards=3</em>, <em class="sig-param">tracks_layer_rolling_index_strategy='Monthly'</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.apps.tracker.LocationTrackingManager.enable" title="Permalink to this definition">¶</a></dt>
+<dd><p>Enables location tracking for the organization.</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 36%" />
+<col style="width: 64%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><strong>Argument</strong></p></td>
+<td><p><strong>Description</strong></p></td>
+</tr>
+<tr class="row-even"><td><p>tracks_layer_shards</p></td>
+<td><p>The number of shards to use for the tracks layer. This only
+applies for ArcGIS Enterprise.</p></td>
+</tr>
+<tr class="row-odd"><td><p>lkl_layer_shards</p></td>
+<td><p>The number of shards to use for the last known location layer.
+This only applies for ArcGIS Enterprise.</p></td>
+</tr>
+<tr class="row-even"><td><p>tracks_layer_rolling_index_strategy</p></td>
+<td><p>The rolling index strategy for the tracks layer
+[“Daily”, “Weekly”, “Monthly”, “Yearly”, “Decade”, “Century”]
+This only applies for ArcGIS Enterprise.</p></td>
+</tr>
+</tbody>
+</table>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>True if successful, False otherwise</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="arcgis.apps.tracker.LocationTrackingManager.item">
+<em class="property">property </em><code class="sig-name descname">item</code><a class="headerlink" href="#arcgis.apps.tracker.LocationTrackingManager.item" title="Permalink to this definition">¶</a></dt>
+<dd><p>The Location Tracking <a class="reference internal" href="arcgis.gis.toc.html#arcgis.gis.Item" title="arcgis.gis.Item"><code class="xref py py-class docutils literal notranslate"><span class="pre">Item</span></code></a></p>
+</dd></dl>
+
+<dl class="method">
+<dt id="arcgis.apps.tracker.LocationTrackingManager.last_known_locations_layer">
+<em class="property">property </em><code class="sig-name descname">last_known_locations_layer</code><a class="headerlink" href="#arcgis.apps.tracker.LocationTrackingManager.last_known_locations_layer" title="Permalink to this definition">¶</a></dt>
+<dd><p>The last known locations <a class="reference internal" href="arcgis.features.toc.html#arcgis.features.FeatureLayer" title="arcgis.features.FeatureLayer"><code class="xref py py-class docutils literal notranslate"><span class="pre">FeatureLayer</span></code></a></p>
+</dd></dl>
+
+<dl class="method">
+<dt id="arcgis.apps.tracker.LocationTrackingManager.pause">
+<code class="sig-name descname">pause</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.apps.tracker.LocationTrackingManager.pause" title="Permalink to this definition">¶</a></dt>
+<dd><p>Pauses location tracking for the organization.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>True if successful, False otherwise</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="arcgis.apps.tracker.LocationTrackingManager.resume">
+<code class="sig-name descname">resume</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.apps.tracker.LocationTrackingManager.resume" title="Permalink to this definition">¶</a></dt>
+<dd><p>Resumes location tracking for the organization after it was paused.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>True if successful, False otherwise</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="arcgis.apps.tracker.LocationTrackingManager.retention_period">
+<em class="property">property </em><code class="sig-name descname">retention_period</code><a class="headerlink" href="#arcgis.apps.tracker.LocationTrackingManager.retention_period" title="Permalink to this definition">¶</a></dt>
+<dd><p>The retention period of the Location Tracking Tracks Layer.
+This is a positive integer whose units are defined by <code class="xref py py-attr docutils literal notranslate"><span class="pre">retention_period_units</span></code></p>
+</dd></dl>
+
+<dl class="method">
+<dt id="arcgis.apps.tracker.LocationTrackingManager.retention_period_enabled">
+<em class="property">property </em><code class="sig-name descname">retention_period_enabled</code><a class="headerlink" href="#arcgis.apps.tracker.LocationTrackingManager.retention_period_enabled" title="Permalink to this definition">¶</a></dt>
+<dd><p>A boolean indicating if the retention period is enabled</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="arcgis.apps.tracker.LocationTrackingManager.retention_period_units">
+<em class="property">property </em><code class="sig-name descname">retention_period_units</code><a class="headerlink" href="#arcgis.apps.tracker.LocationTrackingManager.retention_period_units" title="Permalink to this definition">¶</a></dt>
+<dd><p>The retention period units (“HOURS”, “DAYS”, “MONTHS”, “YEARS”) of the Location Tracking Tracks Layer</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="arcgis.apps.tracker.LocationTrackingManager.status">
+<em class="property">property </em><code class="sig-name descname">status</code><a class="headerlink" href="#arcgis.apps.tracker.LocationTrackingManager.status" title="Permalink to this definition">¶</a></dt>
+<dd><p>The status of location tracking (“disabled”, “paused”, “enabled”)</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="arcgis.apps.tracker.LocationTrackingManager.track_lines_layer">
+<em class="property">property </em><code class="sig-name descname">track_lines_layer</code><a class="headerlink" href="#arcgis.apps.tracker.LocationTrackingManager.track_lines_layer" title="Permalink to this definition">¶</a></dt>
+<dd><p>The track lines <a class="reference internal" href="arcgis.features.toc.html#arcgis.features.FeatureLayer" title="arcgis.features.FeatureLayer"><code class="xref py py-class docutils literal notranslate"><span class="pre">FeatureLayer</span></code></a></p>
+</dd></dl>
+
+<dl class="method">
+<dt id="arcgis.apps.tracker.LocationTrackingManager.tracks_layer">
+<em class="property">property </em><code class="sig-name descname">tracks_layer</code><a class="headerlink" href="#arcgis.apps.tracker.LocationTrackingManager.tracks_layer" title="Permalink to this definition">¶</a></dt>
+<dd><p>The tracks <a class="reference internal" href="arcgis.features.toc.html#arcgis.features.FeatureLayer" title="arcgis.features.FeatureLayer"><code class="xref py py-class docutils literal notranslate"><span class="pre">FeatureLayer</span></code></a></p>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="trackview">
+<h2>TrackView<a class="headerlink" href="#trackview" title="Permalink to this headline">¶</a></h2>
+<dl class="class">
+<dt id="arcgis.apps.tracker.TrackView">
+<em class="property">class </em><code class="sig-prename descclassname">arcgis.apps.tracker.</code><code class="sig-name descname">TrackView</code><span class="sig-paren">(</span><em class="sig-param">item</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.apps.tracker.TrackView" title="Permalink to this definition">¶</a></dt>
+<dd><p>A Track View</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 21%" />
+<col style="width: 79%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><strong>Argument</strong></p></td>
+<td><p><strong>Description</strong></p></td>
+</tr>
+<tr class="row-even"><td><p>item</p></td>
+<td><p>Required <a class="reference internal" href="arcgis.gis.toc.html#arcgis.gis.Item" title="arcgis.gis.Item"><code class="xref py py-class docutils literal notranslate"><span class="pre">Item</span></code></a>. The item that represents the
+Track View.</p></td>
+</tr>
+</tbody>
+</table>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Get a Track View and list mobile users.</span>
+
+<span class="kn">import</span> <span class="nn">arcgis</span>
+<span class="n">gis</span> <span class="o">=</span> <span class="n">arcgis</span><span class="o">.</span><span class="n">gis</span><span class="o">.</span><span class="n">GIS</span><span class="p">(</span><span class="s2">&quot;https://arcgis.com&quot;</span><span class="p">,</span> <span class="s2">&quot;&lt;username&gt;&quot;</span><span class="p">,</span> <span class="s2">&quot;&lt;password&gt;&quot;</span><span class="p">)</span>
+<span class="n">item</span> <span class="o">=</span> <span class="n">gis</span><span class="o">.</span><span class="n">content</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;&lt;item-id&gt;&quot;</span><span class="p">)</span>
+<span class="n">track_view</span> <span class="o">=</span> <span class="n">arcgis</span><span class="o">.</span><span class="n">apps</span><span class="o">.</span><span class="n">tracker</span><span class="o">.</span><span class="n">TrackView</span><span class="p">(</span><span class="n">item</span><span class="p">)</span>
+<span class="n">mobile_users</span> <span class="o">=</span> <span class="n">track_view</span><span class="o">.</span><span class="n">mobile_users</span><span class="o">.</span><span class="n">list</span><span class="p">()</span>
+</pre></div>
+</div>
+<dl class="method">
+<dt id="arcgis.apps.tracker.TrackView.delete">
+<code class="sig-name descname">delete</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.apps.tracker.TrackView.delete" title="Permalink to this definition">¶</a></dt>
+<dd><p>Deletes the Track View, including the group and view service.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="arcgis.apps.tracker.TrackView.group">
+<em class="property">property </em><code class="sig-name descname">group</code><a class="headerlink" href="#arcgis.apps.tracker.TrackView.group" title="Permalink to this definition">¶</a></dt>
+<dd><p>The group that contains the Track Viewers and Layers</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="arcgis.apps.tracker.TrackView.item">
+<em class="property">property </em><code class="sig-name descname">item</code><a class="headerlink" href="#arcgis.apps.tracker.TrackView.item" title="Permalink to this definition">¶</a></dt>
+<dd><p>The Track View <a class="reference internal" href="arcgis.gis.toc.html#arcgis.gis.Item" title="arcgis.gis.Item"><code class="xref py py-class docutils literal notranslate"><span class="pre">Item</span></code></a></p>
+</dd></dl>
+
+<dl class="method">
+<dt id="arcgis.apps.tracker.TrackView.last_known_locations_layer">
+<em class="property">property </em><code class="sig-name descname">last_known_locations_layer</code><a class="headerlink" href="#arcgis.apps.tracker.TrackView.last_known_locations_layer" title="Permalink to this definition">¶</a></dt>
+<dd><p>The last known locations <a class="reference internal" href="arcgis.features.toc.html#arcgis.features.FeatureLayer" title="arcgis.features.FeatureLayer"><code class="xref py py-class docutils literal notranslate"><span class="pre">FeatureLayer</span></code></a></p>
+</dd></dl>
+
+<dl class="method">
+<dt id="arcgis.apps.tracker.TrackView.mobile_users">
+<em class="property">property </em><code class="sig-name descname">mobile_users</code><a class="headerlink" href="#arcgis.apps.tracker.TrackView.mobile_users" title="Permalink to this definition">¶</a></dt>
+<dd><p>The <a class="reference internal" href="#arcgis.apps.tracker.MobileUserManager" title="arcgis.apps.tracker.MobileUserManager"><code class="xref py py-class docutils literal notranslate"><span class="pre">MobileUserManager</span></code></a> for the Track View</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="arcgis.apps.tracker.TrackView.track_lines_layer">
+<em class="property">property </em><code class="sig-name descname">track_lines_layer</code><a class="headerlink" href="#arcgis.apps.tracker.TrackView.track_lines_layer" title="Permalink to this definition">¶</a></dt>
+<dd><p>The track lines <a class="reference internal" href="arcgis.features.toc.html#arcgis.features.FeatureLayer" title="arcgis.features.FeatureLayer"><code class="xref py py-class docutils literal notranslate"><span class="pre">FeatureLayer</span></code></a></p>
+</dd></dl>
+
+<dl class="method">
+<dt id="arcgis.apps.tracker.TrackView.tracks_layer">
+<em class="property">property </em><code class="sig-name descname">tracks_layer</code><a class="headerlink" href="#arcgis.apps.tracker.TrackView.tracks_layer" title="Permalink to this definition">¶</a></dt>
+<dd><p>The tracks <a class="reference internal" href="arcgis.features.toc.html#arcgis.features.FeatureLayer" title="arcgis.features.FeatureLayer"><code class="xref py py-class docutils literal notranslate"><span class="pre">FeatureLayer</span></code></a></p>
+</dd></dl>
+
+<dl class="method">
+<dt id="arcgis.apps.tracker.TrackView.viewers">
+<em class="property">property </em><code class="sig-name descname">viewers</code><a class="headerlink" href="#arcgis.apps.tracker.TrackView.viewers" title="Permalink to this definition">¶</a></dt>
+<dd><p>The <a class="reference internal" href="#arcgis.apps.tracker.TrackViewerManager" title="arcgis.apps.tracker.TrackViewerManager"><code class="xref py py-class docutils literal notranslate"><span class="pre">TrackViewerManager</span></code></a> for the Track View</p>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="trackviewermanager">
+<h2>TrackViewerManager<a class="headerlink" href="#trackviewermanager" title="Permalink to this headline">¶</a></h2>
+<dl class="class">
+<dt id="arcgis.apps.tracker.TrackViewerManager">
+<em class="property">class </em><code class="sig-prename descclassname">arcgis.apps.tracker.</code><code class="sig-name descname">TrackViewerManager</code><span class="sig-paren">(</span><em class="sig-param">track_view</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.apps.tracker.TrackViewerManager" title="Permalink to this definition">¶</a></dt>
+<dd><p>A class that manages the Track Viewers in the Track View.</p>
+<p>It can be accessed from the TrackView as <a class="reference internal" href="#arcgis.apps.tracker.TrackView.viewers" title="arcgis.apps.tracker.TrackView.viewers"><code class="xref py py-attr docutils literal notranslate"><span class="pre">viewers</span></code></a></p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 21%" />
+<col style="width: 79%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><strong>Argument</strong></p></td>
+<td><p><strong>Description</strong></p></td>
+</tr>
+<tr class="row-even"><td><p>track_view</p></td>
+<td><p>Required <a class="reference internal" href="#arcgis.apps.tracker.TrackView" title="arcgis.apps.tracker.TrackView"><code class="xref py py-class docutils literal notranslate"><span class="pre">TrackView</span></code></a>. The Track View to
+configure Track Viewers for.</p></td>
+</tr>
+</tbody>
+</table>
+<dl class="method">
+<dt id="arcgis.apps.tracker.TrackViewerManager.add">
+<code class="sig-name descname">add</code><span class="sig-paren">(</span><em class="sig-param">viewers</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.apps.tracker.TrackViewerManager.add" title="Permalink to this definition">¶</a></dt>
+<dd><p>Adds the specified usernames as Track Viewers</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 20%" />
+<col style="width: 80%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><strong>Argument</strong></p></td>
+<td><p><strong>Description</strong></p></td>
+</tr>
+<tr class="row-even"><td><p>viewers</p></td>
+<td><p>Required <code class="xref py py-class docutils literal notranslate"><span class="pre">List</span></code> of <code class="xref py py-class docutils literal notranslate"><span class="pre">String</span></code> or <a class="reference internal" href="arcgis.gis.toc.html#arcgis.gis.User" title="arcgis.gis.User"><code class="xref py py-class docutils literal notranslate"><span class="pre">arcgis.gis.User</span></code></a>.
+The list of usernames/users to add as Track Viewers.</p></td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="arcgis.apps.tracker.TrackViewerManager.delete">
+<code class="sig-name descname">delete</code><span class="sig-paren">(</span><em class="sig-param">viewers</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.apps.tracker.TrackViewerManager.delete" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils align-default">
+<colgroup>
+<col style="width: 20%" />
+<col style="width: 80%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><strong>Argument</strong></p></td>
+<td><p><strong>Description</strong></p></td>
+</tr>
+<tr class="row-even"><td><p>viewers</p></td>
+<td><p>Required <code class="xref py py-class docutils literal notranslate"><span class="pre">List</span></code> of <code class="xref py py-class docutils literal notranslate"><span class="pre">String</span></code> or <a class="reference internal" href="arcgis.gis.toc.html#arcgis.gis.User" title="arcgis.gis.User"><code class="xref py py-class docutils literal notranslate"><span class="pre">arcgis.gis.User</span></code></a>.
+The list of usernames/users to remove as Track Viewers.</p></td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="arcgis.apps.tracker.TrackViewerManager.list">
+<code class="sig-name descname">list</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.apps.tracker.TrackViewerManager.list" title="Permalink to this definition">¶</a></dt>
+<dd><p>Lists all of the Track Viewers</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p><code class="xref py py-class docutils literal notranslate"><span class="pre">List</span></code> of <code class="xref py py-class docutils literal notranslate"><span class="pre">String</span></code> representing usernames</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="mobileusermanager">
+<h2>MobileUserManager<a class="headerlink" href="#mobileusermanager" title="Permalink to this headline">¶</a></h2>
+<dl class="class">
+<dt id="arcgis.apps.tracker.MobileUserManager">
+<em class="property">class </em><code class="sig-prename descclassname">arcgis.apps.tracker.</code><code class="sig-name descname">MobileUserManager</code><span class="sig-paren">(</span><em class="sig-param">track_view</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.apps.tracker.MobileUserManager" title="Permalink to this definition">¶</a></dt>
+<dd><p>A class that manages the Mobile Users in the Track View.</p>
+<p>It can be accessed from the TrackView as <a class="reference internal" href="#arcgis.apps.tracker.TrackView.mobile_users" title="arcgis.apps.tracker.TrackView.mobile_users"><code class="xref py py-attr docutils literal notranslate"><span class="pre">mobile_users</span></code></a></p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 21%" />
+<col style="width: 79%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><strong>Argument</strong></p></td>
+<td><p><strong>Description</strong></p></td>
+</tr>
+<tr class="row-even"><td><p>track_view</p></td>
+<td><p>Required <a class="reference internal" href="#arcgis.apps.tracker.TrackView" title="arcgis.apps.tracker.TrackView"><code class="xref py py-class docutils literal notranslate"><span class="pre">TrackView</span></code></a>. The Track View to
+configure Mobile Users for.</p></td>
+</tr>
+</tbody>
+</table>
+<dl class="method">
+<dt id="arcgis.apps.tracker.MobileUserManager.add">
+<code class="sig-name descname">add</code><span class="sig-paren">(</span><em class="sig-param">users</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.apps.tracker.MobileUserManager.add" title="Permalink to this definition">¶</a></dt>
+<dd><p>Adds the specified usernames as Mobile Users</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 20%" />
+<col style="width: 80%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><strong>Argument</strong></p></td>
+<td><p><strong>Description</strong></p></td>
+</tr>
+<tr class="row-even"><td><p>users</p></td>
+<td><p>Required <code class="xref py py-class docutils literal notranslate"><span class="pre">List</span></code> of <code class="xref py py-class docutils literal notranslate"><span class="pre">String</span></code> or <a class="reference internal" href="arcgis.gis.toc.html#arcgis.gis.User" title="arcgis.gis.User"><code class="xref py py-class docutils literal notranslate"><span class="pre">arcgis.gis.User</span></code></a>.
+The list of usernames/users to add as Mobile Users</p></td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="arcgis.apps.tracker.MobileUserManager.delete">
+<code class="sig-name descname">delete</code><span class="sig-paren">(</span><em class="sig-param">users</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.apps.tracker.MobileUserManager.delete" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils align-default">
+<colgroup>
+<col style="width: 20%" />
+<col style="width: 80%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><strong>Argument</strong></p></td>
+<td><p><strong>Description</strong></p></td>
+</tr>
+<tr class="row-even"><td><p>users</p></td>
+<td><p>Required <code class="xref py py-class docutils literal notranslate"><span class="pre">List</span></code> of <code class="xref py py-class docutils literal notranslate"><span class="pre">String</span></code> or <a class="reference internal" href="arcgis.gis.toc.html#arcgis.gis.User" title="arcgis.gis.User"><code class="xref py py-class docutils literal notranslate"><span class="pre">arcgis.gis.User</span></code></a>.
+The list of usernames/users to remove as Mobile Users.</p></td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="arcgis.apps.tracker.MobileUserManager.list">
+<code class="sig-name descname">list</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.apps.tracker.MobileUserManager.list" title="Permalink to this definition">¶</a></dt>
+<dd><p>Lists all of the Track Viewers</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p><code class="xref py py-class docutils literal notranslate"><span class="pre">List</span></code> of <code class="xref py py-class docutils literal notranslate"><span class="pre">String</span></code> representing usernames</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="arcgis.apps.tracker.MobileUserManager.view_definition_query">
+<em class="property">property </em><code class="sig-name descname">view_definition_query</code><a class="headerlink" href="#arcgis.apps.tracker.MobileUserManager.view_definition_query" title="Permalink to this definition">¶</a></dt>
+<dd><p>The View Definition Query of the tracks layer</p>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+</div>
+
+
+
+           </div>
+           
+          </div>
+          <footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+        <a href="arcgis.learn.toc.html" class="btn btn-neutral float-right" title="arcgis.learn module" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="arcgis.apps.survey123.html" class="btn btn-neutral float-left" title="arcgis.apps.survey123 module" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &#169; Copyright 2016-2021, Esri.
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+    Options v: 1.9
+
+  <div class="rst-versions" data-toggle="rst-versions" role="note" aria-label="versions">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      <span class="fa fa-book"> Pick an earlier version</span>
+      v: 1.9
+      <span class="fa fa-caret-down"></span>
+    </span>
+    <div class="rst-other-versions">
+      
+      
+      <dl>
+        <dt>Versions</dt>
+        
+          
+          <dd><a href="1.8.5/">1.8.5</a></dd>
+          
+        
+          
+          <dd><a href="1.8.4/">1.8.4</a></dd>
+          
+        
+          
+          <dd><a href="1.8.3/">1.8.3</a></dd>
+          
+        
+          
+          <dd><a href="1.8.2/">1.8.2</a></dd>
+          
+        
+          
+          <dd><a href="1.8.1/">1.8.1</a></dd>
+          
+        
+          
+          <dd><a href="1.8.0/">1.8.0</a></dd>
+          
+        
+          
+          <dd><a href="1.7.1/">1.7.1</a></dd>
+          
+        
+          
+          <dd><a href="1.7.0/">1.7.0</a></dd>
+          
+        
+          
+          <dd><a href="1.6.2/">1.6.2</a></dd>
+          
+        
+          
+          <dd><a href="1.6.1/">1.6.1</a></dd>
+          
+        
+          
+          <dd><a href="1.6.0/">1.6.0</a></dd>
+          
+        
+          
+          <dd><a href="1.5.2/">1.5.2</a></dd>
+          
+        
+          
+          <dd><a href="1.5.1/">1.5.1</a></dd>
+          
+        
+          
+          <dd><a href="1.5.0/">1.5.0</a></dd>
+          
+        
+          
+          <dd><a href="1.4.2/">1.4.2</a></dd>
+          
+        
+          
+          <dd><a href="1.4.1/">1.4.1</a></dd>
+          
+        
+          
+          <dd><a href="1.4.0/">1.4.0</a></dd>
+          
+        
+          
+          <dd><a href="1.3.0/">1.3.0</a></dd>
+          
+        
+          
+          <dd><a href="1.2.5/">1.2.5</a></dd>
+          
+        
+          
+          <dd><a href="1.2.4/">1.2.4</a></dd>
+          
+        
+          
+          <dd><a href="1.2.3/">1.2.3</a></dd>
+          
+        
+          
+          <dd><a href="1.2.2/">1.2.2</a></dd>
+          
+        
+          
+          <dd><a href="1.2.1/">1.2.1</a></dd>
+          
+        
+          
+          <dd><a href="1.2.0/">1.2.0</a></dd>
+          
+        
+          
+          <dd><a href="1.1.0/">1.1.0</a></dd>
+          
+        
+          
+          <dd><a href="1.0.1/">1.0.1</a></dd>
+          
+        
+          
+          <dd><a href="1.0.0/">1.0.0</a></dd>
+          
+        
+          
+          <dd><a href="0.3.0/">0.3.0</a></dd>
+          
+        
+          
+          <dd><a href="0.2.0/">0.2.0</a></dd>
+          
+        
+          
+          <dd><a href="0.1.0/">0.1.0</a></dd>
+          
+        
+      </dl>
+      
+      
+      
+    </div>
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

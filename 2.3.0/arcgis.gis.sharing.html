@@ -1,0 +1,1160 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <title>arcgis.gis.sharing module &mdash; arcgis 2.3.0 documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="_static/theme_overrides.css" type="text/css" />
+
+  
+  
+    <link rel="shortcut icon" href="_static/favicon.ico"/>
+  
+
+  
+  
+
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/doctools.js"></script>
+        <script src="_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="arcgis.env module" href="arcgis.env.html" />
+    <link rel="prev" title="arcgis.gis.tasks module" href="arcgis.gis.tasks.html" />
+<!-- This code block is inserted close near the <head> tag. See http://bit.ly/2BHUQzB -->
+<!-- The point of this code block is to send us google analytics on website views -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-NJGGV5');</script>
+ 
+
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="index.html" class="icon icon-home"> arcgis
+          
+
+          
+            
+            <img src="_static/python_api_logo.png" class="logo" alt="Logo"/>
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                2.3.0
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">arcgis</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="arcgis.gis.toc.html">arcgis.gis module</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="arcgis.gis.toc.html#gis">GIS</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.gis.toc.html#item">Item</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.gis.toc.html#sharingmanager">SharingManager</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.gis.toc.html#sharinggroupmanager">SharingGroupManager</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.gis.toc.html#itemdependency">ItemDependency</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.gis.toc.html#user">User</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.gis.toc.html#group">Group</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.gis.toc.html#datastore">Datastore</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.gis.toc.html#role">Role</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.gis.toc.html#layer">Layer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.gis.toc.html#groupapplication">GroupApplication</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.gis.toc.html#categoryschemamanager">CategorySchemaManager</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.gis.toc.html#contentmanager">ContentManager</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.gis.toc.html#folders">Folders</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.gis.toc.html#folder">Folder</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.gis.toc.html#usermanager">UserManager</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.gis.toc.html#groupmanager">GroupManager</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.gis.toc.html#groupmigrationmanager">GroupMigrationManager</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.gis.toc.html#datastoremanager">DatastoreManager</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.gis.toc.html#rolemanager">RoleManager</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.gis.toc.html#resourcemanager">ResourceManager</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.gis.toc.html#recyclebin">RecycleBin</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.gis.toc.html#recycleitem">RecycleItem</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.gis.toc.html#apikeymanager">APIKeyManager</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.gis.toc.html#apikey">APIKey</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.gis.toc.html#profilemanager">ProfileManager</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.gis.toc.html#invitationmanager">InvitationManager</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.gis.toc.html#certificatemanager">CertificateManager</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.gis.toc.html#portaldatastore">PortalDataStore</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.gis.toc.html#statusjob">StatusJob</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.gis.toc.html#marketplacemanager">MarketPlaceManager</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.gis.toc.html#viewmanager">ViewManager</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.gis.toc.html#enumerations">Enumerations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.gis.toc.html#dataclasses">Dataclasses</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="arcgis.gis.toc.html#submodules">Submodules</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="arcgis.gis.admin.html">arcgis.gis.admin module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="arcgis.gis.server.html">arcgis.gis.server module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="arcgis.gis.agonb.html">arcgis.gis.agonb module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="arcgis.gis.agoserver.html">arcgis.gis.agoserver module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="arcgis.gis.mission.html">arcgis.gis.mission module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="arcgis.gis.nb.html">arcgis.gis.nb module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="arcgis.gis.workflowmanager.html">arcgis.gis.workflowmanager module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="arcgis.gis.tasks.html">arcgis.gis.tasks module</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">arcgis.gis.sharing module</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#userinvitationmanager">UserInvitationManager</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#invitation">Invitation</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#dependencymanager">DependencyManager</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#marketplacemanager">MarketPlaceManager</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="arcgis.env.html">arcgis.env module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="arcgis.features.toc.html">arcgis.features module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="arcgis.raster.toc.html">arcgis.raster module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="arcgis.network.toc.html">arcgis.network module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="arcgis.notebook.html">arcgis.notebook module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="arcgis.geoanalytics.toc.html">arcgis.geoanalytics module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="arcgis.geocoding.html">arcgis.geocoding module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="arcgis.geoenrichment.html">arcgis.geoenrichment module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="arcgis.geometry.html">arcgis.geometry module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="arcgis.geoprocessing.html">arcgis.geoprocessing module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="arcgis.graph.html">arcgis.graph module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="arcgis.mapping.toc.html">arcgis.mapping module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="arcgis.realtime.html">arcgis.realtime module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="arcgis.schematics.html">arcgis.schematics module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="arcgis.widgets.html">arcgis.widgets module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="arcgis.apps.html">arcgis.apps module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="arcgis.learn.toc.html">arcgis.learn module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="arcgis.auth.html">arcgis.auth package</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">arcgis</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="arcgis.gis.toc.html">arcgis.gis module</a> &raquo;</li>
+        
+      <li>arcgis.gis.sharing module</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+<!-- This code block is inserted close near the <body> tag. See http://bit.ly/2BHUQzB -->
+<!-- The point of this code block is to send us google analytics on website views -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NJGGV5"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+
+  <div class="section" id="arcgis-gis-sharing-module">
+<h1>arcgis.gis.sharing module<a class="headerlink" href="#arcgis-gis-sharing-module" title="Permalink to this headline">¶</a></h1>
+<span class="target" id="module-arcgis.gis.sharing"></span><div class="section" id="userinvitationmanager">
+<h2>UserInvitationManager<a class="headerlink" href="#userinvitationmanager" title="Permalink to this headline">¶</a></h2>
+<dl class="py class">
+<dt id="arcgis.gis.sharing.UserInvitationManager">
+<em class="property">class </em><code class="sig-prename descclassname">arcgis.gis.sharing.</code><code class="sig-name descname">UserInvitationManager</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">user</span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.gis.sharing.UserInvitationManager" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>Provides access to the user’s invitations</p>
+<dl class="py method">
+<dt id="arcgis.gis.sharing.UserInvitationManager.list">
+<em class="property">property </em><code class="sig-name descname">list</code><a class="headerlink" href="#arcgis.gis.sharing.UserInvitationManager.list" title="Permalink to this definition">¶</a></dt>
+<dd><p>returns a list of all invitations</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>List of <a class="reference internal" href="#arcgis.gis.sharing._users.Invitation" title="arcgis.gis.sharing._users.Invitation"><code class="xref py py-class docutils literal notranslate"><span class="pre">Invitation</span></code></a> objects</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="invitation">
+<h2>Invitation<a class="headerlink" href="#invitation" title="Permalink to this headline">¶</a></h2>
+<dl class="py class">
+<dt id="arcgis.gis.sharing._users.Invitation">
+<em class="property">class </em><code class="sig-prename descclassname">arcgis.gis.sharing._users.</code><code class="sig-name descname">Invitation</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">url</span></em>, <em class="sig-param"><span class="n">gis</span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.gis.sharing._users.Invitation" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>Represents a user’s invitation</p>
+<dl class="py method">
+<dt id="arcgis.gis.sharing._users.Invitation.accept">
+<code class="sig-name descname">accept</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.gis.sharing._users.Invitation.accept" title="Permalink to this definition">¶</a></dt>
+<dd><p>When a group owner or an administrator invites a user to their
+group, it results in a user invitation. The invited user can
+accept the invitation using the <cite>accept</cite> operation. This
+operation adds the invited user to the group, and the invitation is
+deleted. This operation also creates a notification for the user
+indicating that the user’s invitation was accepted.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>Dict[str:str]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="arcgis.gis.sharing._users.Invitation.decline">
+<code class="sig-name descname">decline</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.gis.sharing._users.Invitation.decline" title="Permalink to this definition">¶</a></dt>
+<dd><p>When a group administrator invites a user to their group, it
+results in a group invitation. The invited user can decline the
+invitation using the <cite>decline</cite> operation. The operation deletes the
+invitation and creates a notification for the user indicating that
+they declined the invitation. The invited user is not added to the
+group.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>Dict[str:str]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="arcgis.gis.sharing._users.Invitation.properties">
+<em class="property">property </em><code class="sig-name descname">properties</code><a class="headerlink" href="#arcgis.gis.sharing._users.Invitation.properties" title="Permalink to this definition">¶</a></dt>
+<dd><p>returns the details of the invitation</p>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="dependencymanager">
+<h2>DependencyManager<a class="headerlink" href="#dependencymanager" title="Permalink to this headline">¶</a></h2>
+<dl class="py class">
+<dt id="arcgis.gis.sharing.DependencyManager">
+<em class="property">class </em><code class="sig-prename descclassname">arcgis.gis.sharing.</code><code class="sig-name descname">DependencyManager</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">gis</span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.gis.sharing.DependencyManager" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>Provides the ability for the manager to rebuild <a class="reference internal" href="arcgis.gis.toc.html#arcgis.gis.Item" title="arcgis.gis.Item"><code class="xref py py-class docutils literal notranslate"><span class="pre">Item</span></code></a> dependencies</p>
+<dl class="py method">
+<dt id="arcgis.gis.sharing.DependencyManager.rebuild">
+<code class="sig-name descname">rebuild</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.gis.sharing.DependencyManager.rebuild" title="Permalink to this definition">¶</a></dt>
+<dd><p>Rebuilds all the Item Dependencies on the Enterprise</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>Dict[str, Any]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="arcgis.gis.sharing.DependencyManager.status">
+<code class="sig-name descname">status</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.gis.sharing.DependencyManager.status" title="Permalink to this definition">¶</a></dt>
+<dd><p>Checks to see if the dependency graph database is rebuilding</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>Dict[str,str]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="arcgis.gis.sharing.DependencyManager.terminate">
+<code class="sig-name descname">terminate</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.gis.sharing.DependencyManager.terminate" title="Permalink to this definition">¶</a></dt>
+<dd><p>Ends the rebuild of the dependency database.</p>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="marketplacemanager">
+<h2>MarketPlaceManager<a class="headerlink" href="#marketplacemanager" title="Permalink to this headline">¶</a></h2>
+<dl class="py class">
+<dt id="arcgis.gis.sharing.MarketPlaceManager">
+<em class="property">class </em><code class="sig-prename descclassname">arcgis.gis.sharing.</code><code class="sig-name descname">MarketPlaceManager</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">gis</span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.gis.sharing.MarketPlaceManager" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>Provides the ability for the manager to list and unlist marketplace items</p>
+<dl class="py method">
+<dt id="arcgis.gis.sharing.MarketPlaceManager.comments">
+<code class="sig-name descname">comments</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">itemid</span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.gis.sharing.MarketPlaceManager.comments" title="Permalink to this definition">¶</a></dt>
+<dd><p>Lists all comments for the item</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="arcgis.gis.sharing.MarketPlaceManager.customer_list">
+<code class="sig-name descname">customer_list</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">itemid</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">orgname</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">status</span><span class="o">=</span><span class="default_value">'all'</span></em>, <em class="sig-param"><span class="n">type</span><span class="o">=</span><span class="default_value">'PURCHASE'</span></em>, <em class="sig-param"><span class="n">modified</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">sort_fields</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">sort_order</span><span class="o">=</span><span class="default_value">'asc'</span></em>, <em class="sig-param"><span class="n">include_listing</span><span class="o">=</span><span class="default_value">True</span></em>, <em class="sig-param"><span class="n">num</span><span class="o">=</span><span class="default_value">10</span></em>, <em class="sig-param"><span class="n">start</span><span class="o">=</span><span class="default_value">1</span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.gis.sharing.MarketPlaceManager.customer_list" title="Permalink to this definition">¶</a></dt>
+<dd><p>The customers_list resource returns a list of purchases, trials, and
+interests expressed by customers for items listed by this organization
+in the marketplace. This operation allows filtering and sorting of provisions.</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 17%" />
+<col style="width: 83%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><strong>Parameter</strong></p></td>
+<td><p><strong>Description</strong></p></td>
+</tr>
+<tr class="row-even"><td><p>itemid</p></td>
+<td><p>Optional String. The item id of the provision to be returned.</p></td>
+</tr>
+<tr class="row-odd"><td><p>orgname</p></td>
+<td><p>Optional String. Purchaser organization name of the provisions to be returned.</p></td>
+</tr>
+<tr class="row-even"><td><p>status</p></td>
+<td><p>Optional String. Status of the listings to be returned. The default value is active.</p>
+<dl class="simple">
+<dt>Accepted values are:</dt><dd><ul class="simple">
+<li><p>active: Only listings that are currently active will be returned</p></li>
+<li><p>expired: Only listings that have already expired will be returned</p></li>
+<li><p>all: Both active and expired listings will be returned</p></li>
+</ul>
+</dd>
+</dl>
+</td>
+</tr>
+<tr class="row-odd"><td><p>type</p></td>
+<td><dl class="simple">
+<dt>Optional String. Access type of the provisions to be returned:</dt><dd><ul class="simple">
+<li><p>REQUEST: Only provisions that have been requested will be returned.</p></li>
+<li><p>TRIAL: Only trial provisions will be returned.</p></li>
+<li><p>PURCHASE: Only subscription provisions will be returned.</p></li>
+<li><p>REQUESTANDTRIAL: Both provisions that have been requested and trial provisions will be returned.</p></li>
+<li><p>REQUESTANDPURCHASE: Both provisions that have been requested and subscriptions will be returned.</p></li>
+<li><p>TRIALANDPURCHASE: Both trial provisions and subscriptions will be returned.</p></li>
+</ul>
+</dd>
+</dl>
+<p>Values: “REQUEST” | “TRIAL” | “PURCHASE” | “REQUESTANDTRIAL” | “REQUESTANDPURCHASE” | “TRIALANDPURCHASE”</p>
+</td>
+</tr>
+<tr class="row-even"><td><p>modified</p></td>
+<td><p>Optional String. The last modified date of the provisions to be returned. The date
+specified should be in milliseconds from epoch.</p></td>
+</tr>
+<tr class="row-odd"><td><p>sort_field</p></td>
+<td><p>Optional String. The fields to sort provisions by. The allowed sort field names are
+orgname, created, endDate, and modified.</p></td>
+</tr>
+<tr class="row-even"><td><p>sort_order</p></td>
+<td><p>Optional String. Describe whether the order returns in ascending (asc) or
+descending (desc) order. The default is asc.</p></td>
+</tr>
+<tr class="row-odd"><td><p>include_listing</p></td>
+<td><p>Optional Boolean. If True, listing objects are included in the provision response.
+The default is True.</p></td>
+</tr>
+<tr class="row-even"><td><p>num</p></td>
+<td><p>Optional Integer. The maximum number of provisions to be included in the result
+set response. The default value is 10, and the maximum allowed value is 100.
+The start parameter, along with the num parameter, can be used to paginate the
+query results. Note that the actual number of returned results may be less than num.
+This happens when the number of results remaining after start is less than num.</p></td>
+</tr>
+<tr class="row-odd"><td><p>start</p></td>
+<td><p>Optional Integer. The number of the first entry in the result set response. The
+index number is 1-based. The default value of start is 1. (i.e. the first search result).
+The start parameter, along with the num parameter, can be used to paginate the
+query results.</p></td>
+</tr>
+</tbody>
+</table>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>A dictionary.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="arcgis.gis.sharing.MarketPlaceManager.delete_provision">
+<code class="sig-name descname">delete_provision</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">itemid</span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.gis.sharing.MarketPlaceManager.delete_provision" title="Permalink to this definition">¶</a></dt>
+<dd><p>This operation deletes all provisions to this item for
+the specified purchaser.</p>
+<p>This operation cannot be invoked if the item has not been provisioned
+to the specified purchaser.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Only vendor org admins can invoke this operation.</p>
+</div>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 34%" />
+<col style="width: 66%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><strong>Parameter</strong></p></td>
+<td><p><strong>Description</strong></p></td>
+</tr>
+<tr class="row-even"><td><p>itemid</p></td>
+<td><p>Required String. The item id.</p></td>
+</tr>
+</tbody>
+</table>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p><p>A dictionary with syntax:</p>
+<blockquote>
+<div><div class="line-block">
+<div class="line">{</div>
+<div class="line">“success”: &lt;true | false&gt;,</div>
+<div class="line">”itemId”: “&lt;itemId&gt;”,</div>
+<div class="line">”purchaserOrgId”: “&lt;purchaserOrgId&gt;”</div>
+<div class="line">}</div>
+</div>
+</div></blockquote>
+</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="arcgis.gis.sharing.MarketPlaceManager.express_interest">
+<code class="sig-name descname">express_interest</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">itemid</span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.gis.sharing.MarketPlaceManager.express_interest" title="Permalink to this definition">¶</a></dt>
+<dd><p>A purchaser can express interest in a marketplace listing by
+invoking this operation.</p>
+<p>This operation cannot be invoked if the item has already been
+purchased or if the purchaser has previously expressed interest.</p>
+<p>Only administrators and members with request purchase information
+privilege of purchasing orgs can invoke this operation.</p>
+<p>Note that interests cannot be expressed for free listings, because
+they can be directly purchased by purchasing org admins or members
+with request purchase information privilege.</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 34%" />
+<col style="width: 66%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><strong>Parameter</strong></p></td>
+<td><p><strong>Description</strong></p></td>
+</tr>
+<tr class="row-even"><td><p>itemid</p></td>
+<td><p>Required String. The item id.</p></td>
+</tr>
+</tbody>
+</table>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>A dictionary of the listed item with properties.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="arcgis.gis.sharing.MarketPlaceManager.list">
+<code class="sig-name descname">list</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">itemid</span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.gis.sharing.MarketPlaceManager.list" title="Permalink to this definition">¶</a></dt>
+<dd><p>This operation lists the item in the marketplace.</p>
+<p>This operation is only available to organizations that have permissions
+to list items in the marketplace. The permissions are returned with the
+Portal Self response.</p>
+<p>The listing properties must be specified for the item before
+calling this operation. This operation will fail if listing
+properties have not already been specified.</p>
+<p>Listing an item will set its listed property to true.</p>
+<p>This operation is available to the user and to the administrator
+of the organization to which the user belongs.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>A dictionary indicating success or failure and the item id of the listed item.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="arcgis.gis.sharing.MarketPlaceManager.listing">
+<code class="sig-name descname">listing</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">itemid</span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.gis.sharing.MarketPlaceManager.listing" title="Permalink to this definition">¶</a></dt>
+<dd><p>A listing in the marketplace. The listing and its corresponding item share the same ID.</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 34%" />
+<col style="width: 66%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><strong>Parameter</strong></p></td>
+<td><p><strong>Description</strong></p></td>
+</tr>
+<tr class="row-even"><td><p>itemid</p></td>
+<td><p>Required String. The item id.</p></td>
+</tr>
+</tbody>
+</table>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>A dictionary of the listed item with properties.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="arcgis.gis.sharing.MarketPlaceManager.listings">
+<code class="sig-name descname">listings</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">query</span><span class="o">=</span><span class="default_value">'*'</span></em>, <em class="sig-param"><span class="n">my_listings</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="n">start</span><span class="o">=</span><span class="default_value">1</span></em>, <em class="sig-param"><span class="n">num</span><span class="o">=</span><span class="default_value">10</span></em>, <em class="sig-param"><span class="n">sort_field</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">sort_order</span><span class="o">=</span><span class="default_value">'asc'</span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.gis.sharing.MarketPlaceManager.listings" title="Permalink to this definition">¶</a></dt>
+<dd><p>This operation searches for marketplace listings. The searches are performed
+against a high performance index that indexes the most popular fields of a listing.</p>
+<p>By default, this search spans all public listings in the marketplace. However,
+if you’re logged in as a vendor org admin and you specify the my_listings=true parameter,
+it then searches all public and private listings in your organization.</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 24%" />
+<col style="width: 76%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><strong>Parameter</strong></p></td>
+<td><p><strong>Description</strong></p></td>
+</tr>
+<tr class="row-even"><td><p>query</p></td>
+<td><p>Optional string. The query string to use to search.</p></td>
+</tr>
+<tr class="row-odd"><td><p>my_listings</p></td>
+<td><p>Optional boolean.  If True and you’re logged in as
+a vendor org admin, it searches all public and private
+listings in your organization. Note that if my_listings=True,
+the query parameter is optional. Default is False.</p></td>
+</tr>
+<tr class="row-even"><td><p>start</p></td>
+<td><p>Optional integer. The number of the first entry in the
+result set response. The index number is 1-based.</p>
+<p>The default value of start is 1. (i.e., the first search result).</p>
+<p>The start parameter, along with the num parameter,
+can be used to paginate the search results.</p>
+</td>
+</tr>
+<tr class="row-odd"><td><p>num</p></td>
+<td><p>Optional integer. The maximum number of results to be
+included in the result set response.</p>
+<p>The default value is 10, and the maximum allowed value is 100.</p>
+<p>The start parameter, along with the num parameter,
+can be used to paginate the search results.</p>
+<p>Note that the actual number of returned results may be
+less than num. This happens when the number of results
+remaining after start is less than num.</p>
+</td>
+</tr>
+<tr class="row-even"><td><p>sort_field</p></td>
+<td><p>Optional string. The field to sort by. You can also sort
+by multiple fields (comma separated) for listings, sort
+field names are case-insensitive.</p>
+<p>Supported sort field names are:
+“title”, “created”, “listingpublisheddate”, “type”, “owner”,
+“avgrating”, “numratings”, “numcomments”, and “numviews”</p>
+</td>
+</tr>
+<tr class="row-odd"><td><p>sort_order</p></td>
+<td><p>Optional string. Describes whether the order returns
+in ascending(asc) or descending(desc) order. Default is asc.</p></td>
+</tr>
+</tbody>
+</table>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p><p>A dictionary with response syntax of:</p>
+<blockquote>
+<div><div class="line-block">
+<div class="line">{</div>
+<div class="line">“query”: “&lt;query string&gt;”,</div>
+<div class="line">”total”: &lt;total number of results&gt;,</div>
+<div class="line">”start”: &lt;results in first set&gt;,</div>
+<div class="line">”num”: &lt;number of results per page&gt;,</div>
+<div class="line">”nextStart”: &lt;result number of next page&gt;,</div>
+<div class="line">”listings”: [{&lt;listing1&gt;}, {&lt;listing2&gt;}]</div>
+<div class="line">}</div>
+</div>
+</div></blockquote>
+</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="arcgis.gis.sharing.MarketPlaceManager.provision_org_entitlements">
+<code class="sig-name descname">provision_org_entitlements</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">itemid</span></em>, <em class="sig-param"><span class="n">purchaser_org_id</span></em>, <em class="sig-param"><span class="n">purchaser_subscription_id</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">org_entitlements</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.gis.sharing.MarketPlaceManager.provision_org_entitlements" title="Permalink to this definition">¶</a></dt>
+<dd><p>For a license-by-user listing, selling organization administrator
+or members can use this operation to provision entitlements to a
+purchasing organization. It can only be made if the item has already
+been purchased, or is being tried by the purchasing org.</p>
+<p>This operation is HTTPS only for Esri apps that require a signature,
+otherwise it can be either for provider apps.</p>
+<p>It can only be invoked by org admins or members with request
+purchase information privilege.</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 14%" />
+<col style="width: 86%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><strong>Parameter</strong></p></td>
+<td><p><strong>Description</strong></p></td>
+</tr>
+<tr class="row-even"><td><p>itemid</p></td>
+<td><p>Required String. The item id.</p></td>
+</tr>
+<tr class="row-odd"><td><p>purchaser_org_id</p></td>
+<td><p>Required String. The org ID of the purchasing organization</p></td>
+</tr>
+<tr class="row-even"><td><p>purchaser_subscription_id</p></td>
+<td><p>Optional String. The subscription(SMS) ID of the purchasing organization.</p></td>
+</tr>
+<tr class="row-odd"><td><p>org_entitlements</p></td>
+<td><p>Required Dictionary. A JSON object representing the set of entitlements available to the purchasing org.</p>
+<p>Example:</p>
+<blockquote>
+<div><div class="line-block">
+<div class="line">{</div>
+<div class="line">“maxUsers”: 10,</div>
+<div class="line">“entitlements”: {</div>
+<div class="line">“standard”: {“num”: 8}, (‘standard’ is an entitlement string that uniquely identifies entitlement, listingID is used typically for provider apps)</div>
+<div class="line">“advanced”: {“num”: 2},</div>
+<div class="line">“spatialAnalyst”: {“num”: 2}</div>
+<div class="line">}</div>
+<div class="line">}</div>
+</div>
+</div></blockquote>
+</td>
+</tr>
+</tbody>
+</table>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>A dictionary of the provision item.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="arcgis.gis.sharing.MarketPlaceManager.provision_user_entitlements">
+<code class="sig-name descname">provision_user_entitlements</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">itemid</span></em>, <em class="sig-param"><span class="n">user_entitlements</span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.gis.sharing.MarketPlaceManager.provision_user_entitlements" title="Permalink to this definition">¶</a></dt>
+<dd><p>For a license-by-user listing, purchasing organization administrator
+can use this operation to provision entitlements to org
+members. It can only be made if the item has already been purchased,
+or is being tried by the purchasing org. A maximum of 25 users can
+be provisioned in one request.</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 10%" />
+<col style="width: 90%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><strong>Parameter</strong></p></td>
+<td><p><strong>Description</strong></p></td>
+</tr>
+<tr class="row-even"><td><p>itemid</p></td>
+<td><p>Required String. The item id.</p></td>
+</tr>
+<tr class="row-odd"><td><p>user_entitlements</p></td>
+<td><p>Required Dictionary. A JSON object representing the set of entitlements
+assigned to the specified set of users.</p>
+<p>Example:</p>
+<blockquote>
+<div><div class="line-block">
+<div class="line">{</div>
+<div class="line">“users”: [“username1”, “username2”],</div>
+<div class="line">“entitlements”: [“standard”, “networkAnalyst”] (“standard” is an entitlement string that uniquely identifies entitlement, listing itemId is used typically for provider apps)</div>
+<div class="line">}</div>
+</div>
+</div></blockquote>
+<p>Only members of the purchasing org can be specified in the request.</p>
+<p>Specified entitlements are assigned to all specified users. If different sets of
+entitlements are to be assigned to different users, multiple requests
+with this operation are required.</p>
+<p>When there is no entitlements specified, it will revoke access to
+the item completely for the specified users.</p>
+<p>The total number of currently provisioned users plus users specified in requests
+should be no larger than the maximum number of users allowed for the purchasing org.</p>
+</td>
+</tr>
+</tbody>
+</table>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>A boolean indicating success (True) or failure (False).</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="arcgis.gis.sharing.MarketPlaceManager.purchase">
+<code class="sig-name descname">purchase</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">itemid</span></em>, <em class="sig-param"><span class="n">purchase_org_id</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">provisioned_itemid</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">end_date</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.gis.sharing.MarketPlaceManager.purchase" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils align-default">
+<colgroup>
+<col style="width: 20%" />
+<col style="width: 80%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><strong>Parameter</strong></p></td>
+<td><p><strong>Description</strong></p></td>
+</tr>
+<tr class="row-even"><td><p>itemid</p></td>
+<td><p>Required String. The item id.</p></td>
+</tr>
+<tr class="row-odd"><td><p>purchase_org_id</p></td>
+<td><p>Required String. The org ID of the purchaser organization. This parameter is
+required only when the call is made by the vendor. It is ignored otherwise.</p></td>
+</tr>
+<tr class="row-even"><td><p>provisioned_itemid</p></td>
+<td><p>Required String. The ID of the item to be provisioned if different from the one
+listed.</p>
+<p>Note that the listed item and the provisioned item must be related by the
+<cite>Listed2Provisioned</cite> relationship otherwise it will result in an error.</p>
+<p>This parameter is allowed only when the call is made by the vendor.
+It is ignored otherwise.</p>
+</td>
+</tr>
+<tr class="row-odd"><td><p>end_date</p></td>
+<td><p>Required String. The end/expiry date of this purchase if any. If this parameter is
+not specified, it implies an unexpiring purchase. The end date specified
+should be in milliseconds from epoch.</p></td>
+</tr>
+</tbody>
+</table>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>A dictionary of the provision item.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="arcgis.gis.sharing.MarketPlaceManager.purchases">
+<code class="sig-name descname">purchases</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">status</span><span class="o">=</span><span class="default_value">'active'</span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.gis.sharing.MarketPlaceManager.purchases" title="Permalink to this definition">¶</a></dt>
+<dd><p>The purchases resource returns a list of purchases, trials, and
+interests expressed by this organization for items in the marketplace.</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 20%" />
+<col style="width: 80%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><strong>Parameter</strong></p></td>
+<td><p><strong>Description</strong></p></td>
+</tr>
+<tr class="row-even"><td><p>status</p></td>
+<td><p>Optional String. Status of the listings to be returned. The default value is active.</p>
+<dl class="simple">
+<dt>Accepted values are:</dt><dd><ul class="simple">
+<li><p>active: Only listings that are currently active will be returned</p></li>
+<li><p>expired: Only listings that have already expired will be returned</p></li>
+<li><p>all: Both active and expired listings will be returned</p></li>
+</ul>
+</dd>
+</dl>
+</td>
+</tr>
+</tbody>
+</table>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>A dictionary depicting the purchases, trials, and interests.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="arcgis.gis.sharing.MarketPlaceManager.trial">
+<code class="sig-name descname">trial</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">itemid</span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.gis.sharing.MarketPlaceManager.trial" title="Permalink to this definition">¶</a></dt>
+<dd><p>A purchaser can start a trial for a marketplace listing by invoking this operation.</p>
+<p>This operation is only supported for listings that support trials
+(whose trialSupported property is true). Once started, the trial will be valid
+for the duration of the trial specified on the listing (the trialDuration property).</p>
+<p>This operation cannot be invoked if the item has already been purchased or
+if the purchaser has started a trial previously.</p>
+<p>Only admins or members with request purchase information privilege of
+purchasing orgs can invoke this operation.</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 39%" />
+<col style="width: 61%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><strong>Parameter</strong></p></td>
+<td><p><strong>Description</strong></p></td>
+</tr>
+<tr class="row-even"><td><p>itemid</p></td>
+<td><p>Required String. The item id.</p></td>
+</tr>
+</tbody>
+</table>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>A dictionary of the provision item.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="arcgis.gis.sharing.MarketPlaceManager.unlist">
+<code class="sig-name descname">unlist</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">itemid</span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.gis.sharing.MarketPlaceManager.unlist" title="Permalink to this definition">¶</a></dt>
+<dd><p>This operation unlists a previously listed item from the marketplace.</p>
+<p>Unlisting an item will reset its listed property to false.</p>
+<p>This operation is available to the user and the administrator of
+the organization to which the user belongs.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>A dictionary indicating success or failure and the item id of the listed item.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="arcgis.gis.sharing.MarketPlaceManager.user_entitlement">
+<code class="sig-name descname">user_entitlement</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">itemid</span></em>, <em class="sig-param"><span class="n">username</span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.gis.sharing.MarketPlaceManager.user_entitlement" title="Permalink to this definition">¶</a></dt>
+<dd><p>This resource allows user, purchasing organization administrator, and
+members with the manage licenses privilege to retrieve entitlements assigned to the user.</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 41%" />
+<col style="width: 59%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><strong>Parameter</strong></p></td>
+<td><p><strong>Description</strong></p></td>
+</tr>
+<tr class="row-even"><td><p>itemid</p></td>
+<td><p>Required String.</p></td>
+</tr>
+<tr class="row-odd"><td><p>username</p></td>
+<td><p>Required String.</p></td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="py method">
+<dt id="arcgis.gis.sharing.MarketPlaceManager.user_entitlements">
+<code class="sig-name descname">user_entitlements</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">itemid</span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.gis.sharing.MarketPlaceManager.user_entitlements" title="Permalink to this definition">¶</a></dt>
+<dd><p>This operation allows purchasing organization administrators or a
+user with Manage Licenses privilege to retrieve all user entitlements
+assigned to users in their organization.</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 41%" />
+<col style="width: 59%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><strong>Parameter</strong></p></td>
+<td><p><strong>Description</strong></p></td>
+</tr>
+<tr class="row-even"><td><p>itemid</p></td>
+<td><p>Required String. The item id.</p></td>
+</tr>
+</tbody>
+</table>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>A JSON document representing the set of entitlements assigned to the specified set of users.</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+</div>
+
+
+
+           </div>
+           
+          </div>
+          <footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+        <a href="arcgis.env.html" class="btn btn-neutral float-right" title="arcgis.env module" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="arcgis.gis.tasks.html" class="btn btn-neutral float-left" title="arcgis.gis.tasks module" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &#169; Copyright 2016-2023, Esri.
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+    Options v: 2.3.0
+
+  <div class="rst-versions" data-toggle="rst-versions" role="note" aria-label="versions">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      <span class="fa fa-book"> Pick an earlier version</span>
+      v: 2.3.0
+      <span class="fa fa-caret-down"></span>
+    </span>
+    <div class="rst-other-versions">
+      
+      
+      <dl>
+        <dt>Versions</dt>
+        
+          
+          <dd><a href="2.2.0/">2.2.0</a></dd>
+          
+        
+          
+          <dd><a href="2.1.0/">2.1.0</a></dd>
+          
+        
+          
+          <dd><a href="2.0.1/">2.0.1</a></dd>
+          
+        
+          
+          <dd><a href="2.0.0/">2.0.0</a></dd>
+          
+        
+          
+          <dd><a href="1.9.1/">1.9.1</a></dd>
+          
+        
+          
+          <dd><a href="1.9.0/">1.9.0</a></dd>
+          
+        
+          
+          <dd><a href="1.8.5/">1.8.5</a></dd>
+          
+        
+          
+          <dd><a href="1.8.4/">1.8.4</a></dd>
+          
+        
+          
+          <dd><a href="1.8.3/">1.8.3</a></dd>
+          
+        
+          
+          <dd><a href="1.8.2/">1.8.2</a></dd>
+          
+        
+          
+          <dd><a href="1.8.1/">1.8.1</a></dd>
+          
+        
+          
+          <dd><a href="1.8.0/">1.8.0</a></dd>
+          
+        
+          
+          <dd><a href="1.7.1/">1.7.1</a></dd>
+          
+        
+          
+          <dd><a href="1.7.0/">1.7.0</a></dd>
+          
+        
+          
+          <dd><a href="1.6.2/">1.6.2</a></dd>
+          
+        
+          
+          <dd><a href="1.6.1/">1.6.1</a></dd>
+          
+        
+          
+          <dd><a href="1.6.0/">1.6.0</a></dd>
+          
+        
+          
+          <dd><a href="1.5.2/">1.5.2</a></dd>
+          
+        
+          
+          <dd><a href="1.5.1/">1.5.1</a></dd>
+          
+        
+          
+          <dd><a href="1.5.0/">1.5.0</a></dd>
+          
+        
+          
+          <dd><a href="1.4.2/">1.4.2</a></dd>
+          
+        
+          
+          <dd><a href="1.4.1/">1.4.1</a></dd>
+          
+        
+          
+          <dd><a href="1.4.0/">1.4.0</a></dd>
+          
+        
+          
+          <dd><a href="1.3.0/">1.3.0</a></dd>
+          
+        
+          
+          <dd><a href="1.2.5/">1.2.5</a></dd>
+          
+        
+          
+          <dd><a href="1.2.4/">1.2.4</a></dd>
+          
+        
+          
+          <dd><a href="1.2.3/">1.2.3</a></dd>
+          
+        
+          
+          <dd><a href="1.2.2/">1.2.2</a></dd>
+          
+        
+          
+          <dd><a href="1.2.1/">1.2.1</a></dd>
+          
+        
+          
+          <dd><a href="1.2.0/">1.2.0</a></dd>
+          
+        
+          
+          <dd><a href="1.1.0/">1.1.0</a></dd>
+          
+        
+          
+          <dd><a href="1.0.1/">1.0.1</a></dd>
+          
+        
+          
+          <dd><a href="1.0.0/">1.0.0</a></dd>
+          
+        
+          
+          <dd><a href="0.3.0/">0.3.0</a></dd>
+          
+        
+          
+          <dd><a href="0.2.0/">0.2.0</a></dd>
+          
+        
+          
+          <dd><a href="0.1.0/">0.1.0</a></dd>
+          
+        
+      </dl>
+      
+      
+      
+    </div>
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

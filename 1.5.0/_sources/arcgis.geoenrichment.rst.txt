@@ -1,0 +1,33 @@
+arcgis.geoenrichment module
+=======================================
+
+.. automodule:: arcgis.geoenrichment
+
+
+Country
+--------------
+.. autoclass:: arcgis.geoenrichment.Country
+    :inherited-members:
+    :members:
+    :undoc-members:
+
+get_countries
+---------------
+.. automethod:: arcgis.geoenrichment.get_countries
+
+create_report
+-----------------
+.. automethod:: arcgis.geoenrichment.create_report
+
+enrich
+--------------
+.. automethod:: arcgis.geoenrichment.enrich
+
+find_businesses
+--------------
+.. automethod:: arcgis.geoenrichment.find_businesses
+
+standard_geography_query
+---------------
+.. automethod:: arcgis.geoenrichment.standard_geography_query
+

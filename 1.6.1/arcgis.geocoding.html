@@ -1,0 +1,907 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>arcgis.geocoding module &mdash; arcgis 1.6.1 documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="_static/theme_overrides.css" type="text/css" />
+
+  
+  
+    <link rel="shortcut icon" href="_static/favicon.ico"/>
+  
+  
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/doctools.js"></script>
+        <script src="_static/language_data.js"></script>
+        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="arcgis.geoenrichment module" href="arcgis.geoenrichment.html" />
+    <link rel="prev" title="arcgis.geoanalytics.use_proximity module" href="arcgis.geoanalytics.use_proximity.html" />
+<!-- This code block is inserted close near the <head> tag. See http://bit.ly/2BHUQzB -->
+<!-- The point of this code block is to send us google analytics on website views -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-NJGGV5');</script>
+ 
+
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="index.html" class="icon icon-home" alt="Documentation Home"> arcgis
+          
+
+          
+            
+            <img src="_static/python_api_logo.png" class="logo" alt="Logo"/>
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1.6.1
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">arcgis</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="arcgis.gis.toc.html">arcgis.gis module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="arcgis.env.html">arcgis.env module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="arcgis.features.toc.html">arcgis.features module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="arcgis.raster.toc.html">arcgis.raster module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="arcgis.network.toc.html">arcgis.network module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="arcgis.geoanalytics.toc.html">arcgis.geoanalytics module</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">arcgis.geocoding module</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#geocoder">Geocoder</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#get-geocoders">get_geocoders</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#geocode">geocode</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#geocode-from-items">geocode_from_items</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#analyze-geocode-input">analyze_geocode_input</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#reverse-geocode">reverse_geocode</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#batch-geocode">batch_geocode</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#suggest">suggest</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="arcgis.geoenrichment.html">arcgis.geoenrichment module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="arcgis.geometry.html">arcgis.geometry module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="arcgis.geoprocessing.html">arcgis.geoprocessing module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="arcgis.mapping.html">arcgis.mapping module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="arcgis.realtime.html">arcgis.realtime module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="arcgis.schematics.html">arcgis.schematics module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="arcgis.widgets.html">arcgis.widgets module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="arcgis.apps.html">arcgis.apps module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="arcgis.learn.html">arcgis.learn module</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">arcgis</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
+        
+      <li>arcgis.geocoding module</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+<!-- This code block is inserted close near the <body> tag. See http://bit.ly/2BHUQzB -->
+<!-- The point of this code block is to send us google analytics on website views -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NJGGV5"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+
+  <div class="section" id="module-arcgis.geocoding">
+<span id="arcgis-geocoding-module"></span><h1>arcgis.geocoding module<a class="headerlink" href="#module-arcgis.geocoding" title="Permalink to this headline">¶</a></h1>
+<p>The arcgis.geocoding module provides types and functions for geocoding, batch geocoding and reverse geocoding.</p>
+<p>Geocoders can find point locations of addresses, business names, and so on.
+The output points can be visualized on a map, inserted as stops for a route,
+or loaded as input for spatial analysis. It is also used to generate
+batch results for a set of addresses, as well as for reverse geocoding,
+i.e. determining the address at a particular x/y location.</p>
+<div class="section" id="geocoder">
+<h2>Geocoder<a class="headerlink" href="#geocoder" title="Permalink to this headline">¶</a></h2>
+<dl class="class">
+<dt id="arcgis.geocoding.Geocoder">
+<em class="property">class </em><code class="sig-prename descclassname">arcgis.geocoding.</code><code class="sig-name descname">Geocoder</code><span class="sig-paren">(</span><em class="sig-param">location</em>, <em class="sig-param">gis=None</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.geocoding.Geocoder" title="Permalink to this definition">¶</a></dt>
+<dd><p>Geocoders can find point locations of addresses, business names, and so on.
+The output points can be visualized on a map, inserted as stops for a route,
+or loaded as input for spatial analysis. It is also used to generate
+batch results for a set of addresses, as well as for reverse geocoding,
+i.e. determining the address at a particular x/y location.</p>
+<p>A GIS includes one or more geocoders, that can be queried using <cite>get_geocoders(gis)</cite>.</p>
+<p>Geocoders shared as Items in the GIS can be obtained using <cite>Geocoder.fromitem(item)</cite>.</p>
+<p>Geocoders may also be created using the constructor by passing in their location, such as
+a url to a Geocoding Service.</p>
+<dl class="method">
+<dt id="arcgis.geocoding.Geocoder.fromitem">
+<em class="property">classmethod </em><code class="sig-name descname">fromitem</code><span class="sig-paren">(</span><em class="sig-param">item</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.geocoding.Geocoder.fromitem" title="Permalink to this definition">¶</a></dt>
+<dd><p>Creates a Geocoder from an Item in the GIS
+:param item: an Item of type ‘Geocoding Service’
+:return: Geocoder</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="arcgis.geocoding.Geocoder.properties">
+<em class="property">property </em><code class="sig-name descname">properties</code><a class="headerlink" href="#arcgis.geocoding.Geocoder.properties" title="Permalink to this definition">¶</a></dt>
+<dd><p>The properties of this object</p>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="get-geocoders">
+<h2>get_geocoders<a class="headerlink" href="#get-geocoders" title="Permalink to this headline">¶</a></h2>
+<dl class="method">
+<dt id="arcgis.geocoding.get_geocoders">
+<code class="sig-prename descclassname">geocoding.</code><code class="sig-name descname">get_geocoders</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.geocoding.get_geocoders" title="Permalink to this definition">¶</a></dt>
+<dd><p>A GIS includes one or more geocoders. The list of geocoders registered with the GIS
+can be queried using get_geocoders.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>gis</strong> – the GIS whose registered geocoders are to be queried</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>list of geocoders registered with the GIS</p>
+</dd>
+</dl>
+</dd></dl>
+
+</div>
+<div class="section" id="geocode">
+<h2>geocode<a class="headerlink" href="#geocode" title="Permalink to this headline">¶</a></h2>
+<dl class="method">
+<dt id="arcgis.geocoding.geocode">
+<code class="sig-prename descclassname">geocoding.</code><code class="sig-name descname">geocode</code><span class="sig-paren">(</span><em class="sig-param">search_extent=None</em>, <em class="sig-param">location=None</em>, <em class="sig-param">distance=None</em>, <em class="sig-param">out_sr=None</em>, <em class="sig-param">category=None</em>, <em class="sig-param">out_fields='*'</em>, <em class="sig-param">max_locations=20</em>, <em class="sig-param">magic_key=None</em>, <em class="sig-param">for_storage=False</em>, <em class="sig-param">geocoder=None</em>, <em class="sig-param">as_featureset=False</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.geocoding.geocode" title="Permalink to this definition">¶</a></dt>
+<dd><p>The geocode function geocodes one location per request.</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 22%" />
+<col style="width: 78%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><strong>Argument</strong></p></td>
+<td><p><strong>Description</strong></p></td>
+</tr>
+<tr class="row-even"><td><p>address</p></td>
+<td><p>required list of strings or dictionaries.
+Specifies the location to be geocoded. This can be
+a string containing the street address, place name,
+postal code, or POI.</p>
+<p>Alternatively, this can be a dictionary containing
+the various address fields accepted by the
+corresponding geocoder. These fields are listed in
+the addressFields property of the associated
+geocoder. For example, if the address_fields of a
+geocoder includes fields with the following names:
+Street, City, State and Zone, then the address
+argument is of the form:
+{</p>
+<blockquote>
+<div><p>Street: “1234 W Main St”,
+City: “Small Town”,
+State: “WA”,
+Zone: “99027”</p>
+</div></blockquote>
+<p>}</p>
+</td>
+</tr>
+<tr class="row-odd"><td><p>search_extent</p></td>
+<td><p>optional string, A set of bounding box coordinates
+that limit the search area to a specific region.
+This is especially useful for applications in which
+a user will search for places and addresses only
+within the current map extent.</p></td>
+</tr>
+<tr class="row-even"><td><p>location</p></td>
+<td><p>optionl [x,y], Defines an origin point location that
+is used with the distance parameter to sort
+geocoding candidates based upon their proximity to
+the location.</p></td>
+</tr>
+<tr class="row-odd"><td><p>distance</p></td>
+<td><p>optional float, Specifies the radius of an area
+around a point location which is used to boost the
+rank of geocoding candidates so that candidates
+closest to the location are returned first. The
+distance value is in meters.</p></td>
+</tr>
+<tr class="row-even"><td><p>out_sr</p></td>
+<td><p>optional dictionary, The spatial reference of the
+x/y coordinates returned by a geocode request. This
+is useful for applications using a map with a spatial
+reference different than that of the geocode service.</p></td>
+</tr>
+<tr class="row-odd"><td><p>category</p></td>
+<td><p>optional string, A place or address type which can
+be used to filter find results. The parameter
+supports input of single category values or multiple
+comma-separated values. The category parameter can be
+passed in a request with or without the text
+parameter.</p></td>
+</tr>
+<tr class="row-even"><td><p>out_fields</p></td>
+<td><p>optional string, name of all the fields to inlcude.
+The default is “*” which means all fields.</p></td>
+</tr>
+<tr class="row-odd"><td><p>max_location</p></td>
+<td><p>optional integer, The number of locations to be
+returned from the service. The default is 20.</p></td>
+</tr>
+<tr class="row-even"><td><p>magic_key</p></td>
+<td><p>The find operation retrieves results quicker when
+you pass a valid text and magickey value.</p></td>
+</tr>
+<tr class="row-odd"><td><p>for_storage</p></td>
+<td><p>Specifies whether the results of the operation will
+be persisted. The default value is false, which
+indicates the results of the operation can’t be
+stored, but they can be temporarily displayed on a
+map for instance. If you store the results, in a
+database for example, you need to set this parameter
+to true.</p></td>
+</tr>
+<tr class="row-even"><td><p>geocoder</p></td>
+<td><p>Optional, the geocoder to be used. If not specified,
+the active GIS’s first geocoder is used.</p></td>
+</tr>
+<tr class="row-odd"><td><p>as_featureset</p></td>
+<td><p>optional boolean, if True, the result set is
+returned as a FeatureSet object, else it is a
+dictionary.</p></td>
+</tr>
+</tbody>
+</table>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>dictionary</p>
+</dd>
+</dl>
+</dd></dl>
+
+</div>
+<div class="section" id="geocode-from-items">
+<h2>geocode_from_items<a class="headerlink" href="#geocode-from-items" title="Permalink to this headline">¶</a></h2>
+<dl class="method">
+<dt id="arcgis.geocoding.geocode_from_items">
+<code class="sig-prename descclassname">geocoding.</code><code class="sig-name descname">geocode_from_items</code><span class="sig-paren">(</span><em class="sig-param">output_type='Feature Layer'</em>, <em class="sig-param">geocode_service_url=None</em>, <em class="sig-param">geocode_parameters=None</em>, <em class="sig-param">country=None</em>, <em class="sig-param">output_fields=None</em>, <em class="sig-param">header_rows_to_skip=1</em>, <em class="sig-param">output_name=None</em>, <em class="sig-param">category=None</em>, <em class="sig-param">context=None</em>, <em class="sig-param">gis=None</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.geocoding.geocode_from_items" title="Permalink to this definition">¶</a></dt>
+<dd><p>The Batch Geocode geocodes a table or file of addresses and returns the geocoded results. It
+supports CSV, XLS or table input. The task geocodes the entire file regardless of size.</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 23%" />
+<col style="width: 77%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><strong>Argument</strong></p></td>
+<td><p><strong>Description</strong></p></td>
+</tr>
+<tr class="row-even"><td><p>input_data</p></td>
+<td><p>required Item, string, Layer. Data to geocode.</p></td>
+</tr>
+<tr class="row-odd"><td><p>output_type</p></td>
+<td><p>optional string.  Export item types.  Allowed values are CSV,
+XLS, or Feature Layer (default)</p></td>
+</tr>
+<tr class="row-even"><td><p>geocode_service_url</p></td>
+<td><p>optional string of Geocoder. Optional geocoder to use to
+spatially enable the dataset.</p></td>
+</tr>
+<tr class="row-odd"><td><p>geocode_parameters</p></td>
+<td><p>optional dictionary.  This includes parameters that help parse
+the input data, as well the field lengths and a field mapping.
+This value is the output from the analyze_geocode_input()
+available on your server designated to geocode. It is important
+to inspect the field mapping closely and adjust them accordingly
+before submitting your job, otherwise your geocoding results may
+not be accurate. It is recommended to use the output from
+analyze_geocode_input() and modify the field mapping instead of
+constructing this dictionary by hand.</p>
+<p><strong>Values</strong></p>
+<p><strong>field_info</strong> - A list of triples with the field names of your input
+data, the field type (usually TEXT), and the allowed length
+(usually 255).
+Example: [[‘ObjectID’, ‘TEXT’, 255], [‘Address’, ‘TEXT’, 255],</p>
+<blockquote>
+<div><p>[‘Region’, ‘TEXT’, 255], [‘Postal’, ‘TEXT’, 255]]</p>
+</div></blockquote>
+<p><strong>header_row_exists</strong> - Enter true or false.</p>
+<p><strong>column_names</strong> - Submit the column names of your data if your data
+does not have a header row.</p>
+<p><strong>field_mapping</strong> - Field mapping between each input field and
+candidate fields on the geocoding service.
+Example: [[‘ObjectID’, ‘OBJECTID’], [‘Address’, ‘Address’],</p>
+<blockquote>
+<div><p>[‘Region’, ‘Region’], [‘Postal’, ‘Postal’]]</p>
+</div></blockquote>
+</td>
+</tr>
+<tr class="row-even"><td><p>country</p></td>
+<td><p>optional string.  If all your data is in one country, this helps
+improve performance for locators that accept that variable.</p></td>
+</tr>
+<tr class="row-odd"><td><p>output_fields</p></td>
+<td><p>optional string. Enter the output fields from the geocoding
+service that you want returned in the results, separated by
+commas. To output all available outputFields, leave this
+parameter blank.
+Example: score,match_addr,x,y</p></td>
+</tr>
+<tr class="row-even"><td><p>header_rows_to_skip</p></td>
+<td><p>optional integer. Describes on which row your data begins in
+your file or table. The default is 1 (since the first row
+contains the headers). The default is 1.</p></td>
+</tr>
+<tr class="row-odd"><td><p>output_name</p></td>
+<td><p>optional string, The task will create a feature service of the
+results. You define the name of the service.</p></td>
+</tr>
+<tr class="row-even"><td><p>category</p></td>
+<td><p>optional string. Enter a category for more precise geocoding
+results, if applicable. Some geocoding services do not support
+category, and the available options depend on your geocode service.</p></td>
+</tr>
+<tr class="row-odd"><td><p>context</p></td>
+<td><p>optional dictionary. Context contains additional settings that
+affect task execution. Batch Geocode has the following two
+settings:</p>
+<ol class="arabic simple">
+<li><p>Extent (extent) - A bounding box that defines the analysis
+area. Only those points in inputLayer that intersect the
+bounding box are analyzed.</p></li>
+<li><p>Output Spatial Reference (outSR) - The output features are
+projected into the output spatial reference.</p></li>
+</ol>
+<p>Syntax:
+{
+“extent” : {extent}
+“outSR” : {spatial reference}
+}</p>
+</td>
+</tr>
+<tr class="row-even"><td><p>gis</p></td>
+<td><p>optional GIS, the GIS on which this tool runs. If not specified,
+the active GIS is used.</p></td>
+</tr>
+</tbody>
+</table>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>arcgis.gis.Item</p>
+</dd>
+</dl>
+</dd></dl>
+
+</div>
+<div class="section" id="analyze-geocode-input">
+<h2>analyze_geocode_input<a class="headerlink" href="#analyze-geocode-input" title="Permalink to this headline">¶</a></h2>
+<dl class="method">
+<dt id="arcgis.geocoding.analyze_geocode_input">
+<code class="sig-prename descclassname">geocoding.</code><code class="sig-name descname">analyze_geocode_input</code><span class="sig-paren">(</span><em class="sig-param">geocode_service_url=None</em>, <em class="sig-param">column_names=None</em>, <em class="sig-param">input_file_parameters=None</em>, <em class="sig-param">locale='en'</em>, <em class="sig-param">context=None</em>, <em class="sig-param">gis=None</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.geocoding.analyze_geocode_input" title="Permalink to this definition">¶</a></dt>
+<dd><p>The analyze_geocode_input function takes in a geocode input (either a table or file of
+addresses) and returns an output dictionary that includes a suggested field mapping. It supports CSV,
+XLS, or table input. The table can be from a big data file share or from a feature service. The
+task generates a suggested field mapping based on the input fields and the geocoding service
+candidate fields and returns it in a geocode_parameters dictionary. This geocode_parameters
+dictionary output is the an input to the Batch Geocode tool. The output geocode_parameters
+dictionary also includes field info (name, length, and type) as well as additional information
+that helps the geocode tool parse the input file or table.</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 25%" />
+<col style="width: 75%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><strong>Argument</strong></p></td>
+<td><p><strong>Description</strong></p></td>
+</tr>
+<tr class="row-even"><td><p>input_table_or_item</p></td>
+<td><p>required Item, string or dictionary.  The input to analyze for
+geocoding.</p>
+<p>For tables:</p>
+<blockquote>
+<div><p>The input table specification must include the following:</p>
+<ul class="simple">
+<li><p>A URL to an input table</p></li>
+<li><p>A service token to access the table</p></li>
+</ul>
+<p>Note that if the table is a hosted table on the same portal,
+serviceToken is not required.</p>
+<p>Example: {“url”:”&lt;table url&gt;”,”serviceToken”:”&lt;token&gt;”}</p>
+</div></blockquote>
+<p>For File Items:</p>
+<p>The input file should be a portal item. Input the itemid of
+the item in the portal. The format of the item in the portal
+can be in one of the following formats:</p>
+<ul class="simple">
+<li><p>CSV</p></li>
+<li><p>Microsoft Excel spreadsheet (XLSX)</p></li>
+</ul>
+<p>Example: {“itemid”: “&lt;itemid of file&gt;” }</p>
+</td>
+</tr>
+<tr class="row-odd"><td><p>geocode_service_url</p></td>
+<td><p>Optional string or Geocode class.  The geocode service that you
+want to geocode your addresses against.</p></td>
+</tr>
+<tr class="row-even"><td><p>column_names</p></td>
+<td><p>Optional string.  Only used when input table or Item has no
+header row.
+Example: address,city,state,zip</p></td>
+</tr>
+<tr class="row-odd"><td><p>input_file_parameters</p></td>
+<td><p>Optional dictionary. Enter information about how to parse the
+file. If you are using an input table instead of an Item as
+input, this parameter can be left blank.
+Any of the key values in the dictionary can be left blank using
+the “”.</p>
+<p>Values:</p>
+<p>fileType - Enter CSV or XLS for the file format of file Item.
+headerRowExists - Enter true if your file has a header row,</p>
+<blockquote>
+<div><p>false if it does not.</p>
+</div></blockquote>
+<p>columnDelimiter - Enter SPACE, TAB, COMMA, PIPE, or SEMICOLON.
+textQualifier - Enter either SINGLE_QUOTE or DOUBLE_QUOTE.</p>
+<dl class="simple">
+<dt>Example: {“fileType”:”xlsx”,”headerRowExists”:”true”,</dt><dd><p>“columnDelimiter”:””,”textQualifier”:””}</p>
+</dd>
+</dl>
+</td>
+</tr>
+<tr class="row-even"><td><p>locale</p></td>
+<td><p>Optional string. Enter the 2-letter (“en”) or 4-letter (“ar-il”)
+specific locale if geocodeInput is in a language other than
+English.</p></td>
+</tr>
+<tr class="row-odd"><td><p>context</p></td>
+<td><p>Optional dictionary.
+Context contains additional settings that affect task execution.
+Analyze_geocode_input() has the following two settings:
+1. Extent (extent) - A bounding box that defines the analysis</p>
+<blockquote>
+<div><p>area. Only those points in inputLayer that intersect the
+bounding box are analyzed.</p>
+</div></blockquote>
+<ol class="arabic simple" start="2">
+<li><p>Output Spatial Reference (outSR) - The output features are
+projected into the output spatial reference.</p></li>
+</ol>
+</td>
+</tr>
+<tr class="row-even"><td><p>gis</p></td>
+<td><p>Optional GIS. Connection to the site. If None is given, the
+active GIS is used.</p></td>
+</tr>
+</tbody>
+</table>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>dictionary</p>
+</dd>
+<dt class="field-even">Usage Example</dt>
+<dd class="field-even"><p></p></dd>
+</dl>
+<dl>
+<dt>&gt;&gt;&gt;res = analyze_geocode_input(geocode_service_url=Geocoder,</dt><dd><p>input_table_or_item={“itemid” : “abc123545asv”},
+input_file_parameters={“fileType”:”csv”,”headerRowExists”:”true”,</p>
+<blockquote>
+<div><p>“columnDelimiter”:””,”textQualifier”:””})</p>
+</div></blockquote>
+</dd>
+</dl>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">res</span><span class="p">)</span>
+<span class="go">{&#39;header_row_exists&#39;: True, &#39;field_info&#39;: &#39;[[&quot;Address&quot;, &quot;TEXT&quot;, 255], [&quot;City&quot;, &quot;TEXT&quot;, 255],</span>
+<span class="go">[&quot;State&quot;, &quot;TEXT&quot;, 255], [&quot;ZipCode&quot;, &quot;TEXT&quot;, 255]]&#39;, &#39;file_type&#39;: &#39;csv&#39;, &#39;field_mapping&#39;: &#39;[[&quot;Address&quot;, &quot;&quot;],</span>
+<span class="go">[&quot;City&quot;, &quot;City&quot;], [&quot;State&quot;, &quot;State&quot;], [&quot;ZipCode&quot;, &quot;&quot;]]&#39;, &#39;column_names&#39;: &#39;&#39;,</span>
+<span class="go">&#39;column_delimiter&#39;: &#39;&#39;, &#39;text_qualifier&#39;: &#39;&#39;, &#39;singleline_field&#39;: &#39;Single Line Input&#39;}</span>
+</pre></div>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Usage Example 2</dt>
+<dd class="field-odd"><p></p></dd>
+</dl>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">table_lyr</span> <span class="o">=</span> <span class="n">Table</span><span class="p">(</span><span class="n">url</span><span class="o">=</span><span class="s2">&quot;http://testsite.com/server/rest/services/Hosted/addresses/FeatureServer/0&quot;</span><span class="p">,</span> <span class="n">gis</span><span class="o">=</span><span class="n">gis</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">res</span> <span class="o">=</span> <span class="n">analyze_geocode_input</span><span class="p">()</span>
+</pre></div>
+</div>
+</dd></dl>
+
+</div>
+<div class="section" id="reverse-geocode">
+<h2>reverse_geocode<a class="headerlink" href="#reverse-geocode" title="Permalink to this headline">¶</a></h2>
+<dl class="method">
+<dt id="arcgis.geocoding.reverse_geocode">
+<code class="sig-prename descclassname">geocoding.</code><code class="sig-name descname">reverse_geocode</code><span class="sig-paren">(</span><em class="sig-param">distance=None</em>, <em class="sig-param">out_sr=None</em>, <em class="sig-param">lang_code=None</em>, <em class="sig-param">return_intersection=False</em>, <em class="sig-param">for_storage=False</em>, <em class="sig-param">geocoder=None</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.geocoding.reverse_geocode" title="Permalink to this definition">¶</a></dt>
+<dd><p>The reverse_geocode operation determines the address at a particular
+x/y location. You pass the coordinates of a point location to the
+geocoding service, and the service returns the address that is
+closest to the location.</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 27%" />
+<col style="width: 73%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><strong>Argument</strong></p></td>
+<td><p><strong>Description</strong></p></td>
+</tr>
+<tr class="row-even"><td><p>location</p></td>
+<td><p>required list/Point Geometry</p></td>
+</tr>
+<tr class="row-odd"><td><p>distance</p></td>
+<td><p>optional float, radial distance in meteres to
+search for an address.  The default is 100 meters.</p></td>
+</tr>
+<tr class="row-even"><td><p>out_sr</p></td>
+<td><p>optional integer, spatial reference of the x/y
+coordinate returned.</p></td>
+</tr>
+<tr class="row-odd"><td><p>return_intersection</p></td>
+<td><p>optional Boolean, which specifies whether the
+service should return the nearest street
+intersection or the nearest address to the input
+location</p></td>
+</tr>
+<tr class="row-even"><td><p>for_storage</p></td>
+<td><p>optional boolean, specifies whether the results of
+the operation will be persisted</p></td>
+</tr>
+<tr class="row-odd"><td><p>geocoder</p></td>
+<td><p>optional geocoder, the geocoder to be used. If not
+specified, the active GIS’s first geocoder is used.</p></td>
+</tr>
+</tbody>
+</table>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>dictionary</p>
+</dd>
+</dl>
+</dd></dl>
+
+</div>
+<div class="section" id="batch-geocode">
+<h2>batch_geocode<a class="headerlink" href="#batch-geocode" title="Permalink to this headline">¶</a></h2>
+<dl class="method">
+<dt id="arcgis.geocoding.batch_geocode">
+<code class="sig-prename descclassname">geocoding.</code><code class="sig-name descname">batch_geocode</code><span class="sig-paren">(</span><em class="sig-param">source_country=None</em>, <em class="sig-param">category=None</em>, <em class="sig-param">out_sr=None</em>, <em class="sig-param">geocoder=None</em>, <em class="sig-param">as_featureset=False</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.geocoding.batch_geocode" title="Permalink to this definition">¶</a></dt>
+<dd><p>The batch_geocode() function geocodes an entire list of addresses.
+Geocoding many addresses at once is also known as bulk geocoding.</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 19%" />
+<col style="width: 81%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><strong>Argument</strong></p></td>
+<td><p><strong>Description</strong></p></td>
+</tr>
+<tr class="row-even"><td><p>addresses</p></td>
+<td><p>required list of strings or dictionaries.
+A list of addresses to be geocoded.
+For passing in the location name as a single line of text -
+single field batch geocoding - use a string.
+For passing in the location name as multiple lines of text
+multifield batch geocoding - use the address fields described
+in the Geocoder documentation.</p>
+<blockquote>
+<div><p>The maximum number of addresses that can be geocoded in a
+single request is limited to the SuggestedBatchSize property of
+the locator.
+Syntax:</p>
+<blockquote>
+<div><p>addresses = [“380 New York St, Redlands, CA”,
+“1 World Way, Los Angeles, CA”,
+“1200 Getty Center Drive, Los Angeles, CA”,
+“5905 Wilshire Boulevard, Los Angeles, CA”,
+“100 Universal City Plaza, Universal City, CA 91608”,
+“4800 Oak Grove Dr, Pasadena, CA 91109”]</p>
+<p>OR</p>
+<dl class="simple">
+<dt>addresses= [{</dt><dd><p>“Address”: “380 New York St.”,
+“City”: “Redlands”,
+“Region”: “CA”,
+“Postal”: “92373”</p>
+</dd>
+</dl>
+</div></blockquote>
+<dl class="simple">
+<dt>},{</dt><dd><p>“Address”: “1 World Way”,
+“City”: “Los Angeles”,
+“Region”: “CA”,
+“Postal”: “90045”</p>
+</dd>
+</dl>
+<p>}]</p>
+</div></blockquote>
+</td>
+</tr>
+<tr class="row-odd"><td><p>source_country</p></td>
+<td><p>optional string, The source_country parameter is
+only supported by geocoders published using StreetMap
+Premium locators.
+Added at 10.3 and only supported by geocoders published
+with ArcGIS 10.3 for Server and later versions.</p></td>
+</tr>
+<tr class="row-even"><td><p>category</p></td>
+<td><p>The category parameter is only supported by geocode
+services published using StreetMap Premium locators.</p></td>
+</tr>
+<tr class="row-odd"><td><p>out_sr</p></td>
+<td><p>optional dictionary, The spatial reference of the
+x/y coordinates returned by a geocode request. This
+is useful for applications using a map with a spatial
+reference different than that of the geocode service.</p></td>
+</tr>
+<tr class="row-even"><td><p>as_featureset</p></td>
+<td><p>optional boolean, if True, the result set is
+returned as a FeatureSet object, else it is a
+dictionary.</p></td>
+</tr>
+<tr class="row-odd"><td><p>geocoder</p></td>
+<td><p>Optional, the geocoder to be used. If not specified,
+the active GIS’s first geocoder is used.</p></td>
+</tr>
+</tbody>
+</table>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>dictionary or FeatureSet</p>
+</dd>
+</dl>
+</dd></dl>
+
+</div>
+<div class="section" id="suggest">
+<h2>suggest<a class="headerlink" href="#suggest" title="Permalink to this headline">¶</a></h2>
+<dl class="method">
+<dt id="arcgis.geocoding.suggest">
+<code class="sig-prename descclassname">geocoding.</code><code class="sig-name descname">suggest</code><span class="sig-paren">(</span><em class="sig-param">location</em>, <em class="sig-param">distance=None</em>, <em class="sig-param">category=None</em>, <em class="sig-param">geocoder=None</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.geocoding.suggest" title="Permalink to this definition">¶</a></dt>
+<dd><p>The result of this operation is a resource representing a list of
+suggested matches for the input text. This resource provides the
+matching text as well as a unique ID value, which links a
+suggestion to a specific place or address.
+A geocoder must meet the following requirements to support
+the suggest operation:</p>
+<blockquote>
+<div><p>The address locator from which the geocoder was published
+must support suggestions. Only address locators created using
+ArcGIS 10.3 for Desktop and later can support suggestions. See
+the Create Address Locator geoprocessing tool help topic for more
+information.
+The geocoder must have the Suggest capability enabled.
+Only geocoders published using ArcGIS 10.3 for Server or
+later support the Suggest capability.</p>
+</div></blockquote>
+<p>The suggest operation allows character-by-character auto-complete
+suggestions to be generated for user input in a client application.
+This capability facilitates the interactive search user experience
+by reducing the number of characters that need to be typed before
+a suggested match is obtained. A client application can provide a
+list of suggestions that is updated with each character typed by a
+user until the address they are looking for appears in the list.</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 19%" />
+<col style="width: 81%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><strong>Argument</strong></p></td>
+<td><p><strong>Description</strong></p></td>
+</tr>
+<tr class="row-even"><td><p>text</p></td>
+<td><p>The input text provided by a user that is used by the
+suggest operation to generate a list of possible
+matches. This is a required parameter.</p></td>
+</tr>
+<tr class="row-odd"><td><p>location</p></td>
+<td><p>Defines an origin point location that is used with
+the distance parameter to sort suggested candidates
+based on their proximity to the location. The
+distance parameter specifies the radial distance from
+the location in meters. The priority of candidates
+within this radius is boosted relative to those
+outside the radius.
+This is useful in mobile applications where a user
+wants to search for places in the vicinity of their
+current GPS location. It is also useful for web
+mapping applications where a user wants to find
+places within or near the map extent.
+The location parameter can be specified without
+specifying a distance. If distance is not specified,
+it defaults to 2000 meters.</p></td>
+</tr>
+<tr class="row-even"><td><p>distance</p></td>
+<td><p>Specifies the radius around the point defined in the
+location parameter to create an area, which is used to boost
+the rank of suggested candidates so that candidates closest to
+the location are returned first. The distance value is in
+meters.
+If the distance parameter is specified, the location parameter
+must be specified as well.
+It is important to note that the location and distance
+parameters allow searches to extend beyond the specified search
+radius. They are not used to filter results, but rather to rank
+resulting candidates based on their distance from a location.</p></td>
+</tr>
+<tr class="row-odd"><td><p>category</p></td>
+<td><p>The category parameter is only supported by geocode
+services published using StreetMap Premium locators.</p></td>
+</tr>
+<tr class="row-even"><td><p>geocoder</p></td>
+<td><p>Optional, the geocoder to be used. If not specified,
+the active GIS’s first geocoder is used.</p></td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</div>
+</div>
+
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="arcgis.geoenrichment.html" class="btn btn-neutral float-right" title="arcgis.geoenrichment module" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="arcgis.geoanalytics.use_proximity.html" class="btn btn-neutral float-left" title="arcgis.geoanalytics.use_proximity module" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        
+        &copy; Copyright 2016-2019, Esri
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

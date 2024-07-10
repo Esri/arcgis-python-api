@@ -1,0 +1,512 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>arcgis.geoanalytics.find_locations module &mdash; arcgis 1.6.1 documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="_static/theme_overrides.css" type="text/css" />
+
+  
+  
+    <link rel="shortcut icon" href="_static/favicon.ico"/>
+  
+  
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/doctools.js"></script>
+        <script src="_static/language_data.js"></script>
+        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="arcgis.geoanalytics.manage_data module" href="arcgis.geoanalytics.manage_data.html" />
+    <link rel="prev" title="arcgis.geoanalytics.data_enrichment module" href="arcgis.geoanalytics.data_enrichment.html" />
+<!-- This code block is inserted close near the <head> tag. See http://bit.ly/2BHUQzB -->
+<!-- The point of this code block is to send us google analytics on website views -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-NJGGV5');</script>
+ 
+
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="index.html" class="icon icon-home" alt="Documentation Home"> arcgis
+          
+
+          
+            
+            <img src="_static/python_api_logo.png" class="logo" alt="Logo"/>
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1.6.1
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">arcgis</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="arcgis.gis.toc.html">arcgis.gis module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="arcgis.env.html">arcgis.env module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="arcgis.features.toc.html">arcgis.features module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="arcgis.raster.toc.html">arcgis.raster module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="arcgis.network.toc.html">arcgis.network module</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="arcgis.geoanalytics.toc.html">arcgis.geoanalytics module</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="arcgis.geoanalytics.toc.html#define-output-datastore">define_output_datastore</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.geoanalytics.toc.html#get-datastores">get_datastores</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.geoanalytics.toc.html#is-supported">is_supported</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="arcgis.geoanalytics.toc.html#submodules">Submodules</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="arcgis.geoanalytics.analyze_patterns.html">arcgis.geoanalytics.analyze_patterns module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="arcgis.geoanalytics.data_enrichment.html">arcgis.geoanalytics.data_enrichment module</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">arcgis.geoanalytics.find_locations module</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#detect-incidents">detect_incidents</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#find-similar-locations">find_similar_locations</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#geocode-locations">geocode_locations</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="arcgis.geoanalytics.manage_data.html">arcgis.geoanalytics.manage_data module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="arcgis.geoanalytics.summarize_data.html">arcgis.geoanalytics.summarize_data module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="arcgis.geoanalytics.use_proximity.html">arcgis.geoanalytics.use_proximity module</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="arcgis.geocoding.html">arcgis.geocoding module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="arcgis.geoenrichment.html">arcgis.geoenrichment module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="arcgis.geometry.html">arcgis.geometry module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="arcgis.geoprocessing.html">arcgis.geoprocessing module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="arcgis.mapping.html">arcgis.mapping module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="arcgis.realtime.html">arcgis.realtime module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="arcgis.schematics.html">arcgis.schematics module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="arcgis.widgets.html">arcgis.widgets module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="arcgis.apps.html">arcgis.apps module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="arcgis.learn.html">arcgis.learn module</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">arcgis</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="arcgis.geoanalytics.toc.html">arcgis.geoanalytics module</a> &raquo;</li>
+        
+      <li>arcgis.geoanalytics.find_locations module</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+<!-- This code block is inserted close near the <body> tag. See http://bit.ly/2BHUQzB -->
+<!-- The point of this code block is to send us google analytics on website views -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NJGGV5"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+
+  <div class="section" id="arcgis-geoanalytics-find-locations-module">
+<h1>arcgis.geoanalytics.find_locations module<a class="headerlink" href="#arcgis-geoanalytics-find-locations-module" title="Permalink to this headline">¶</a></h1>
+<span class="target" id="module-arcgis.geoanalytics.find_locations"></span><p>These tools are used to identify areas that meet a number of different criteria you specify.</p>
+<p>find_similar_locations finds locations most similar to one or more reference locations based on criteria you specify.</p>
+<div class="section" id="detect-incidents">
+<h2>detect_incidents<a class="headerlink" href="#detect-incidents" title="Permalink to this headline">¶</a></h2>
+<dl class="method">
+<dt id="arcgis.geoanalytics.find_locations.detect_incidents">
+<code class="sig-prename descclassname">find_locations.</code><code class="sig-name descname">detect_incidents</code><span class="sig-paren">(</span><em class="sig-param">track_fields</em>, <em class="sig-param">start_condition_expression</em>, <em class="sig-param">end_condition_expression=None</em>, <em class="sig-param">output_mode='AllFeatures'</em>, <em class="sig-param">time_boundary_split=None</em>, <em class="sig-param">time_split_unit=None</em>, <em class="sig-param">time_reference=None</em>, <em class="sig-param">output_name=None</em>, <em class="sig-param">gis=None</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.geoanalytics.find_locations.detect_incidents" title="Permalink to this definition">¶</a></dt>
+<dd><p>The Detect Incidents task works with a time-enabled layer of points,
+lines, areas, or tables that represents an instant in time. Using
+sequentially ordered features, called tracks, this tool determines
+which features are incidents of interest. Incidents are determined by
+conditions that you specify. First, the tool determines which features
+belong to a track using one or more fields. Using the time at each
+feature, the tracks are ordered sequentially and the incident condition
+is applied. Features that meet the starting incident condition are
+marked as an incident. You can optionally apply an ending incident
+condition; when the end condition is true, the feature is no longer
+an incident. The results will be returned with the original features
+with new columns representing the incident name and indicate which
+feature meets the incident condition. You can return all original
+features, only the features that are incidents, or all of the features
+within tracks where at least one incident occurred.</p>
+<p>For example, suppose you have GPS measurements of hurricanes every 10
+minutes. Each GPS measurement records the hurricane’s name, location,
+time of recording, and wind speed. Using these fields, you could create
+an incident where any measurement with a wind speed greater than 208
+km/h is an incident titled Catastrophic. By not setting an end
+condition, the incident would end if the feature no longer meets the
+start condition (wind speed slows down to less than 208).</p>
+<p>Using another example, suppose you were monitoring concentrations of a
+chemical in your local water supply using a field called
+contanimateLevel. You know that the recommended levels are less than
+0.01 mg/L, and dangerous levels are above 0.03 mg/L. To detect
+incidents, where a value above 0.03mg/L is an incident, and remains an
+incident until contamination levels are back to normal, you create an
+incident using a start condition of contanimateLevel &gt; 0.03 and an end
+condition of contanimateLevel &lt; 0.01. This will mark any sequence where
+values exceed 0.03mg/L until they return to a value less than 0.01.</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 24%" />
+<col style="width: 76%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><strong>Argument</strong></p></td>
+<td><p><strong>Description</strong></p></td>
+</tr>
+<tr class="row-even"><td><p>input_layer</p></td>
+<td><p>required FeatureSet, The table, point, line or polygon features
+containing potential incidents.</p></td>
+</tr>
+<tr class="row-odd"><td><p>track_fields</p></td>
+<td><p>required string, The fields used to identify distinct tracks.
+There can be multiple track_fields.</p></td>
+</tr>
+<tr class="row-even"><td><p>start_condition_expression</p></td>
+<td><p>The condition used to identify incidents. If there
+is no endConditionExpression specified, any feature
+that meets this condition is an incident. If there
+is an end condition, any feature that meets the
+start_condition_expression and does not meet the
+end_condition_expression is an incident.
+The expressions are Arcade expressions.</p></td>
+</tr>
+<tr class="row-odd"><td><p>end_condition_expression</p></td>
+<td><p>The condition used to identify incidents. If there is
+no endConditionExpression specified, any feature that
+meets this condition is an incident. If there is an
+end condition, any feature that meets the
+start_condition_expression and does not meet the
+end_condition_expression is an incident. This is an
+Arcade expression.</p></td>
+</tr>
+<tr class="row-even"><td><p>output_mode</p></td>
+<td><p>optional string, default value is AllFeatures.  Determines
+which features are returned. Two modes are available:</p>
+<ul class="simple">
+<li><p>AllFeatures - All of the input features are returned.</p></li>
+<li><p>Incidents - Only features that were found to be incidents
+are returned.</p></li>
+</ul>
+</td>
+</tr>
+<tr class="row-odd"><td><p>time_boundary_split</p></td>
+<td><p>Optional Int.  A time boundary to detect and incident.</p></td>
+</tr>
+<tr class="row-even"><td><p>time_split_unit</p></td>
+<td><p>Optional String.  The unit to detect an incident is <cite>time_boundary_split</cite> is used.
+Allowed values: Years, Months, Weeks, Days, Hours, Minutes, Seconds, Milliseconds</p></td>
+</tr>
+<tr class="row-odd"><td><p>time_reference</p></td>
+<td><p>Optional Datetime. The starting date/time where analysis will
+begin from.</p></td>
+</tr>
+<tr class="row-even"><td><p>output_name</p></td>
+<td><p>optional string, The task will create a feature service of the
+results. You define the name of the service.</p></td>
+</tr>
+<tr class="row-odd"><td><p>gis</p></td>
+<td><p>optional GIS, the GIS on which this tool runs. If not
+specified, the active GIS is used.</p></td>
+</tr>
+</tbody>
+</table>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>Output feature layer item</p>
+</dd>
+</dl>
+</dd></dl>
+
+</div>
+<div class="section" id="find-similar-locations">
+<h2>find_similar_locations<a class="headerlink" href="#find-similar-locations" title="Permalink to this headline">¶</a></h2>
+<dl class="method">
+<dt id="arcgis.geoanalytics.find_locations.find_similar_locations">
+<code class="sig-prename descclassname">find_locations.</code><code class="sig-name descname">find_similar_locations</code><span class="sig-paren">(</span><em class="sig-param">search_layer</em>, <em class="sig-param">analysis_fields</em>, <em class="sig-param">most_or_least_similar: str = 'MostSimilar'</em>, <em class="sig-param">match_method: str = 'AttributeValues'</em>, <em class="sig-param">number_of_results: int = 10</em>, <em class="sig-param">append_fields: str = None</em>, <em class="sig-param">output_name: str = None</em>, <em class="sig-param">gis=None</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.geoanalytics.find_locations.find_similar_locations" title="Permalink to this definition">¶</a></dt>
+<dd><blockquote>
+<div><blockquote>
+<div><p>Based on criteria you specify, find similar locations by measuring the similarity of locations in your candidate search layer to one or more reference locations.</p>
+<p>For example</p>
+<ul class="simple">
+<li><p>Find the ten most similar stores by examining the number of employees and the annual sales.</p></li>
+<li><p>Find the 100 most similar cities by examining the relationship between population, annual growth, and tax revenue.</p></li>
+</ul>
+</div></blockquote>
+<p>Parameters:</p>
+<p>input_layer: Input Layer (feature layer). Required parameter.</p>
+<p>search_layer: Search Layer (feature layer). Required parameter.</p>
+<p>analysis_fields: Analysis Fields (str). Required parameter.</p>
+<dl class="simple">
+<dt>most_or_least_similar: Most Or Least Similar (str). Required parameter.</dt><dd><p>Choice list:[‘MostSimilar’, ‘LeastSimilar’, ‘Both’]</p>
+</dd>
+<dt>match_method: Match Method (str). Required parameter.</dt><dd><p>Choice list:[‘AttributeValues’, ‘AttributeProfiles’]</p>
+</dd>
+</dl>
+<p>number_of_results: Number Of Results (int). Required parameter.</p>
+<p>append_fields: Fields To Append To Output (str). Optional parameter.</p>
+<p>output_name: Output Features Name (str). Required parameter.</p>
+<p>gis: Optional, the GIS on which this tool runs. If not specified, the active GIS is used.</p>
+</div></blockquote>
+<dl class="simple">
+<dt>Returns:</dt><dd><p>output - Output feature layer Item</p>
+</dd>
+</dl>
+</dd></dl>
+
+</div>
+<div class="section" id="geocode-locations">
+<h2>geocode_locations<a class="headerlink" href="#geocode-locations" title="Permalink to this headline">¶</a></h2>
+<dl class="method">
+<dt id="arcgis.geoanalytics.find_locations.geocode_locations">
+<code class="sig-prename descclassname">find_locations.</code><code class="sig-name descname">geocode_locations</code><span class="sig-paren">(</span><em class="sig-param">country=None</em>, <em class="sig-param">category=None</em>, <em class="sig-param">include_attributes=True</em>, <em class="sig-param">locator_parameters=None</em>, <em class="sig-param">output_name=None</em>, <em class="sig-param">geocode_service=None</em>, <em class="sig-param">geocode_parameters=None</em>, <em class="sig-param">gis=None</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.geoanalytics.find_locations.geocode_locations" title="Permalink to this definition">¶</a></dt>
+<dd><p>The Geocode Locations task geocodes a table from a big data file share. The task uses a geocode
+utility service configured with your portal.</p>
+<p>For more information on setting up a geocoding service see:
+<a class="reference external" href="http://server.arcgis.com/en/portal/latest/administer/windows/configure-portal-to-geocode-addresses.htm">http://server.arcgis.com/en/portal/latest/administer/windows/configure-portal-to-geocode-addresses.htm</a></p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 27%" />
+<col style="width: 73%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><strong>Argument</strong></p></td>
+<td><p><strong>Description</strong></p></td>
+</tr>
+<tr class="row-even"><td><p>input_layer</p></td>
+<td><p>required Layer, URL, Item of address locations to geocode.</p></td>
+</tr>
+<tr class="row-odd"><td><p>country</p></td>
+<td><p>optional string.  If all your data is in one country, this helps
+improve performance for locators that accept that variable.</p></td>
+</tr>
+<tr class="row-even"><td><p>category</p></td>
+<td><p>optional string. Enter a category for more precise geocoding
+results, if applicable. Some geocoding services do not support
+category, and the available options depend on your geocode service.</p></td>
+</tr>
+<tr class="row-odd"><td><p>include_attributes</p></td>
+<td><p>optional boolean. A boolean value to return the output fields
+from the geocoding service in the results.</p></td>
+</tr>
+<tr class="row-even"><td><p>locator_parameters</p></td>
+<td><p>optional dictionary. Additional parameters specific to your
+locator.</p></td>
+</tr>
+<tr class="row-odd"><td><p>output_name</p></td>
+<td><p>optional string, The task will create a feature service of the
+results. You define the name of the service.</p></td>
+</tr>
+<tr class="row-even"><td><p>geocode_service</p></td>
+<td><p>optional string or Geocoder.  URL endpoint of the Geocoding
+Service of GeoCoder object. If none is provided, the service
+will use the first geocoder registered with portal that has
+batch enabled.</p></td>
+</tr>
+<tr class="row-odd"><td><p>geocode_parameters</p></td>
+<td><p>optional dictionary.  This includes parameters that help parse
+the input data, as well the field lengths and a field mapping.
+This value is the output from the AnalyzeGeocodeInput tool
+available on your server designated to geocode. It is important
+to inspect the field mapping closely and adjust them accordingly
+before submitting your job, otherwise your geocoding results may
+not be accurate. It is recommended to use the output from
+AnalyzeGeocodeInput and modify the field mapping instead of
+constructing this JSON by hand.</p>
+<p><strong>Values</strong></p>
+<p><strong>field_info</strong> - A list of triples with the field names of your input
+data, the field type (usually TEXT), and the allowed length
+(usually 255).
+Example: [[‘ObjectID’, ‘TEXT’, 255], [‘Address’, ‘TEXT’, 255],</p>
+<blockquote>
+<div><p>[‘Region’, ‘TEXT’, 255], [‘Postal’, ‘TEXT’, 255]]</p>
+</div></blockquote>
+<p><strong>header_row_exists</strong> - Enter true or false.</p>
+<p><strong>column_names</strong> - Submit the column names of your data if your data
+does not have a header row.</p>
+<p><strong>field_mapping</strong> - Field mapping between each input field and
+candidate fields on the geocoding service.
+Example: [[‘ObjectID’, ‘OBJECTID’], [‘Address’, ‘Address’],</p>
+<blockquote>
+<div><p>[‘Region’, ‘Region’], [‘Postal’, ‘Postal’]]</p>
+</div></blockquote>
+</td>
+</tr>
+<tr class="row-even"><td><p>gis</p></td>
+<td><p>optional GIS, the GIS on which this tool runs. If not
+specified, the active GIS is used.</p></td>
+</tr>
+</tbody>
+</table>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>Feature Layer</p>
+</dd>
+</dl>
+</dd></dl>
+
+</div>
+</div>
+
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="arcgis.geoanalytics.manage_data.html" class="btn btn-neutral float-right" title="arcgis.geoanalytics.manage_data module" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="arcgis.geoanalytics.data_enrichment.html" class="btn btn-neutral float-left" title="arcgis.geoanalytics.data_enrichment module" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        
+        &copy; Copyright 2016-2019, Esri
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

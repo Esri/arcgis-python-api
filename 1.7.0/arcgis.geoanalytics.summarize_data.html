@@ -1,0 +1,1450 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>arcgis.geoanalytics.summarize_data module &mdash; arcgis 1.7.0 documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="_static/theme_overrides.css" type="text/css" />
+
+  
+  
+    <link rel="shortcut icon" href="_static/favicon.ico"/>
+  
+  
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/doctools.js"></script>
+        <script src="_static/language_data.js"></script>
+        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="arcgis.geoanalytics.use_proximity module" href="arcgis.geoanalytics.use_proximity.html" />
+    <link rel="prev" title="arcgis.geoanalytics.manage_data module" href="arcgis.geoanalytics.manage_data.html" />
+<!-- This code block is inserted close near the <head> tag. See http://bit.ly/2BHUQzB -->
+<!-- The point of this code block is to send us google analytics on website views -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-NJGGV5');</script>
+ 
+
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="index.html" class="icon icon-home" alt="Documentation Home"> arcgis
+          
+
+          
+            
+            <img src="_static/python_api_logo.png" class="logo" alt="Logo"/>
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1.7.0
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">arcgis</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="arcgis.gis.toc.html">arcgis.gis module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="arcgis.env.html">arcgis.env module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="arcgis.features.toc.html">arcgis.features module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="arcgis.raster.toc.html">arcgis.raster module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="arcgis.network.toc.html">arcgis.network module</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="arcgis.geoanalytics.toc.html">arcgis.geoanalytics module</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="arcgis.geoanalytics.toc.html#define-output-datastore">define_output_datastore</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.geoanalytics.toc.html#get-datastores">get_datastores</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.geoanalytics.toc.html#is-supported">is_supported</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="arcgis.geoanalytics.toc.html#submodules">Submodules</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="arcgis.geoanalytics.analyze_patterns.html">arcgis.geoanalytics.analyze_patterns module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="arcgis.geoanalytics.data_enrichment.html">arcgis.geoanalytics.data_enrichment module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="arcgis.geoanalytics.find_locations.html">arcgis.geoanalytics.find_locations module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="arcgis.geoanalytics.manage_data.html">arcgis.geoanalytics.manage_data module</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">arcgis.geoanalytics.summarize_data module</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#aggregate-points">aggregate_points</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#build-multivariable-grid">build_multivariable_grid</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#describe-dataset">describe_dataset</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#join-features">join_features</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#reconstruct-tracks">reconstruct_tracks</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#summarize-attributes">summarize_attributes</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#summarize-within">summarize_within</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="arcgis.geoanalytics.use_proximity.html">arcgis.geoanalytics.use_proximity module</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="arcgis.geocoding.html">arcgis.geocoding module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="arcgis.geoenrichment.html">arcgis.geoenrichment module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="arcgis.geometry.html">arcgis.geometry module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="arcgis.geoprocessing.html">arcgis.geoprocessing module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="arcgis.mapping.html">arcgis.mapping module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="arcgis.realtime.html">arcgis.realtime module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="arcgis.schematics.html">arcgis.schematics module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="arcgis.widgets.html">arcgis.widgets module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="arcgis.apps.html">arcgis.apps module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="arcgis.learn.html">arcgis.learn module</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">arcgis</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="arcgis.geoanalytics.toc.html">arcgis.geoanalytics module</a> &raquo;</li>
+        
+      <li>arcgis.geoanalytics.summarize_data module</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+<!-- This code block is inserted close near the <body> tag. See http://bit.ly/2BHUQzB -->
+<!-- The point of this code block is to send us google analytics on website views -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NJGGV5"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+
+  <div class="section" id="arcgis-geoanalytics-summarize-data-module">
+<h1>arcgis.geoanalytics.summarize_data module<a class="headerlink" href="#arcgis-geoanalytics-summarize-data-module" title="Permalink to this headline">¶</a></h1>
+<span class="target" id="module-arcgis.geoanalytics.summarize_data"></span><p>The Summarize Data module contains functions that calculate total counts, lengths, areas, and basic descriptive statistics of features and their attributes within areas or near other features.</p>
+<p>aggregate_points calculates statistics about points that fall within specified areas or bins.
+join_features calculates statistics about features that share a spatial, temporal, or attribute relationship with other features.
+reconstruct_tracks calculates statistics about points or polygons that belong to the same track and reconstructs inputs into tracks.
+summarize_attributes calculates statistics about feature or tabular data that share attributes.
+summarize_within calculates statistics for area features and attributes that overlap each other.</p>
+<div class="section" id="aggregate-points">
+<h2>aggregate_points<a class="headerlink" href="#aggregate-points" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt id="arcgis.geoanalytics.summarize_data.aggregate_points">
+<code class="sig-prename descclassname">arcgis.geoanalytics.summarize_data.</code><code class="sig-name descname">aggregate_points</code><span class="sig-paren">(</span><em class="sig-param">point_layer</em>, <em class="sig-param">bin_type: str = None</em>, <em class="sig-param">bin_size: float = None</em>, <em class="sig-param">bin_size_unit: str = None</em>, <em class="sig-param">polygon_layer=None</em>, <em class="sig-param">time_step_interval: int = None</em>, <em class="sig-param">time_step_interval_unit: str = None</em>, <em class="sig-param">time_step_repeat_interval: int = None</em>, <em class="sig-param">time_step_repeat_interval_unit: str = None</em>, <em class="sig-param">time_step_reference: datetime.datetime = None</em>, <em class="sig-param">summary_fields: str = None</em>, <em class="sig-param">output_name: str = None</em>, <em class="sig-param">gis=None</em>, <em class="sig-param">future=False</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.geoanalytics.summarize_data.aggregate_points" title="Permalink to this definition">¶</a></dt>
+<dd><img alt="_images/aggregate_points1.png" src="_images/aggregate_points1.png" />
+<p>This <code class="docutils literal notranslate"><span class="pre">aggregate_points</span></code> tool works with a layer of point features and a layer of areas.
+The layer of areas can be an input polygon layer or it can be square or hexagonal bins calculated
+when the task is run. The tool first determines which points fall within each specified area.
+After determining this point-in-area spatial relationship, statistics about all points in the
+area are calculated and assigned to the area. The most basic statistic is the count of the
+number of points within the area, but you can get other statistics as well.</p>
+<p>For example, suppose you have point features of coffee shop locations and area features of counties,
+and you want to summarize coffee sales by county. Assuming the coffee shops have a TOTAL_SALES attribute,
+you can get the sum of all TOTAL_SALES within each county, the minimum or maximum TOTAL_SALES within each
+county, or other statistics like the count, range, standard deviation, and variance.</p>
+<p>This tool can also work on data that is time-enabled. If time is enabled on the input points, then
+the time slicing options are available. Time slicing allows you to calculate the point-in area relationship
+while looking at a specific slice in time. For example, you could look at hourly intervals, which would
+result in outputs for each hour.</p>
+<p>For an example with time, suppose you had point features of every transaction made at a coffee shop location and no area layer.
+The data has been recorded over a year, and each transaction has a location and a time stamp. Assuming each transaction has a
+TOTAL_SALES attribute, you can get the sum of all TOTAL SALES within the space and time of interest. If these transactions are
+for a single city, we could generate areas that are one kilometer grids, and look at weekly time slices to summarize the
+transactions in both time and space.</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 18%" />
+<col style="width: 82%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><strong>Argument</strong></p></td>
+<td><p><strong>Description</strong></p></td>
+</tr>
+<tr class="row-even"><td><p>point_layer</p></td>
+<td><p>Required point feature layer. The point features that will be aggregated
+into the polygons in the <code class="docutils literal notranslate"><span class="pre">polygon_layer</span></code> or bins of the specified <code class="docutils literal notranslate"><span class="pre">bin_size</span></code>.
+See <a class="reference internal" href="arcgis.geoanalytics.toc.html#featureinput"><span class="std std-ref">Feature Input</span></a>.</p></td>
+</tr>
+<tr class="row-odd"><td><p>bin_type</p></td>
+<td><p>Optional string. If <code class="docutils literal notranslate"><span class="pre">polygon_layer</span></code> is not defined, it is required.</p>
+<p>The type of bin that will be generated and into which points will be aggregated.</p>
+<p>Choice list:[‘Square’, ‘Hexagon’].</p>
+<p>The default value is “Square”.</p>
+<p>When generating bins for Square, the number and units specified determine the height
+and length of the square. For Hexagon, the number and units specified determine the
+distance between parallel sides. Either <code class="docutils literal notranslate"><span class="pre">bin_type</span></code> or <code class="docutils literal notranslate"><span class="pre">polygon_layer</span></code> must be specified.
+If <code class="docutils literal notranslate"><span class="pre">bin_type</span></code> is chosen, <code class="docutils literal notranslate"><span class="pre">bin_size</span></code> and <code class="docutils literal notranslate"><span class="pre">bin_size_unit</span></code> specifying the size of the bins must be included.</p>
+</td>
+</tr>
+<tr class="row-even"><td><p>bin_size (Required if <code class="docutils literal notranslate"><span class="pre">bin_type</span></code> is used)</p></td>
+<td><p>Optional float. The distance for the bins of type binType that
+the <code class="docutils literal notranslate"><span class="pre">point_layer</span></code> will be aggregated into. When generating bins, for Square,
+the number and units specified determine the height and length of the square.
+For Hexagon, the number and units specified determine the distance between parallel sides.</p></td>
+</tr>
+<tr class="row-odd"><td><p>bin_size_unit (Required if <code class="docutils literal notranslate"><span class="pre">bin_size</span></code> is used)</p></td>
+<td><p>Optional string. The distance unit for the bins that the <code class="docutils literal notranslate"><span class="pre">point_layer</span></code> will be aggregated into.</p>
+<p>Choice list:[‘Feet’, ‘Yards’, ‘Miles’, ‘Meters’, ‘Kilometers’, ‘NauticalMiles’]</p>
+<p>When generating bins for Square, the number and units specified determine the height and
+length of the square. For Hexagon, the number and units specified determine the distance
+between parallel sides. Either <code class="docutils literal notranslate"><span class="pre">bin_type</span></code> or <code class="docutils literal notranslate"><span class="pre">polygon_layer</span></code> must be specified.
+If <code class="docutils literal notranslate"><span class="pre">bin_type</span></code> is chosen, <code class="docutils literal notranslate"><span class="pre">bin_size</span></code> and <code class="docutils literal notranslate"><span class="pre">bin_size_unit</span></code> specifying the size of the bins must be included.</p>
+</td>
+</tr>
+<tr class="row-even"><td><p>polygon_layer</p></td>
+<td><p>Optional polygon feature layer. The polygon features (areas) into which the input points will be aggregated.
+See <a class="reference internal" href="arcgis.geoanalytics.toc.html#featureinput"><span class="std std-ref">Feature Input</span></a>.</p>
+<p>One of <code class="docutils literal notranslate"><span class="pre">polygon_layer</span></code> or bins <code class="docutils literal notranslate"><span class="pre">bin_size</span></code> and  <code class="docutils literal notranslate"><span class="pre">bin_size_unit</span></code> is required.</p>
+</td>
+</tr>
+<tr class="row-odd"><td><p>time_step_interval</p></td>
+<td><p>Optional integer. A numeric value that specifies duration of the time step interval. This option is only
+available if the input points are time-enabled and represent an instant in time.</p>
+<p>The default value is ‘None’.</p>
+</td>
+</tr>
+<tr class="row-even"><td><p>time_step_interval_unit</p></td>
+<td><p>Optional string. A string that specifies units of the time step interval. This option is only available if the
+input points are time-enabled and represent an instant in time.</p>
+<p>Choice list:[‘Years’, ‘Months’, ‘Weeks’, ‘Days’, ‘Hours’, ‘Minutes’, ‘Seconds’, ‘Milliseconds’]</p>
+<p>The default value is ‘None’.</p>
+</td>
+</tr>
+<tr class="row-odd"><td><p>time_step_repeat_interval</p></td>
+<td><p>Optional integer. A numeric value that specifies how often the time step repeat occurs.
+This option is only available if the input points are time-enabled and of time type instant.</p></td>
+</tr>
+<tr class="row-even"><td><p>time_step_repeat_interval_unit</p></td>
+<td><p>Optional string. A string that specifies the temporal unit of the step repeat.
+This option is only available if the input points are time-enabled and of time type instant.</p>
+<p>Choice list:[‘Years’, ‘Months’, ‘Weeks’, ‘Days’, ‘Hours’, ‘Minutes’, ‘Seconds’, ‘Milliseconds’]</p>
+<p>The default value is ‘None’.</p>
+</td>
+</tr>
+<tr class="row-odd"><td><p>time_step_reference</p></td>
+<td><p>Optional datetime. A date that specifies the reference time to align the time slices to, represented in milliseconds from epoch.
+The default is January 1, 1970, at 12:00 a.m. (epoch time stamp 0). This option is only available if the
+input points are time-enabled and of time type instant.</p></td>
+</tr>
+<tr class="row-even"><td><p>summary_fields</p></td>
+<td><p>Optional list of dicts. A list of field names and statistical summary types that you want to calculate
+for all points within each polygon or bin. Note that the count of points within each polygon is always
+returned. By default, all statistics are returned.</p>
+<p>Example: [{“statisticType”: “Count”, “onStatisticField”: “fieldName1”}, {“statisticType”: “Any”, “onStatisticField”: “fieldName2”}]</p>
+<p>fieldName is the name of the fields in the input point layer.</p>
+<p>statisticType is one of the following for numeric fields:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">Count</span></code> -Totals the number of values of all the points in each polygon.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Sum</span></code> -Adds the total value of all the points in each polygon.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Mean</span></code> -Calculates the average of all the points in each polygon.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Min</span></code> -Finds the smallest value of all the points in each polygon.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Max</span></code> -Finds the largest value of all the points in each polygon.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Range</span></code> -Finds the difference between the Min and Max values.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Stddev</span></code> -Finds the standard deviation of all the points in each polygon.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Var</span></code> -Finds the variance of all the points in each polygon.</p></li>
+</ul>
+</div></blockquote>
+<p>statisticType is one of the following for string fields:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">Count</span></code> -Totals the number of strings for all the points in each polygon.</p></li>
+<li><p><a href="#id1"><span class="problematic" id="id2">``</span></a>Any` <a href="#id3"><span class="problematic" id="id4">`</span></a>-Returns a sample string of a point in each polygon.</p></li>
+</ul>
+</div></blockquote>
+</td>
+</tr>
+<tr class="row-odd"><td><p>output_name</p></td>
+<td><p>Optional string. The method will create a feature service of the results. You define the name of the service.</p></td>
+</tr>
+<tr class="row-even"><td><p>gis</p></td>
+<td><p>Optional, the GIS on which this tool runs. If not specified, the active GIS is used.</p></td>
+</tr>
+<tr class="row-odd"><td><p>context</p></td>
+<td><p>Optional dict. The context parameter contains additional settings that affect task execution. For this task, there are four settings:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>Extent (<code class="docutils literal notranslate"><span class="pre">extent</span></code>) - a bounding box that defines the analysis area. Only those features that intersect the bounding box will be analyzed.</p></li>
+<li><p>Processing spatial reference (<code class="docutils literal notranslate"><span class="pre">processSR</span></code>) The features will be projected into this coordinate system for analysis.</p></li>
+<li><p>Output Spatial Reference (<code class="docutils literal notranslate"><span class="pre">outSR</span></code>) - the features will be projected into this coordinate system after the analysis to be saved. The output spatial reference for the spatiotemporal big data store is always WGS84.</p></li>
+<li><p>Data store (<code class="docutils literal notranslate"><span class="pre">dataStore</span></code>) Results will be saved to the specified data store. The default is the spatiotemporal big data store.</p></li>
+</ul>
+</div></blockquote>
+</td>
+</tr>
+<tr class="row-even"><td><p>future</p></td>
+<td><p>optional Boolean. If True, a GPJob is returned instead of
+results. The GPJob can be queried on the status of the execution.</p></td>
+</tr>
+</tbody>
+</table>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>result_layer : Output Features as feature layer item.</p>
+</dd>
+</dl>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Usage Example: To aggregate number of 911 calls within 1 km summarized by Day count.</span>
+
+<span class="n">agg_result</span> <span class="o">=</span> <span class="n">aggregate_points</span><span class="p">(</span><span class="n">calls</span><span class="p">,</span>
+                              <span class="n">bin_size</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span>
+                              <span class="n">bin_size_unit</span><span class="o">=</span><span class="s1">&#39;Kilometers&#39;</span><span class="p">,</span>
+                              <span class="n">time_step_interval</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span>
+                              <span class="n">time_step_interval_unit</span><span class="o">=</span><span class="s2">&quot;Years&quot;</span><span class="p">,</span>
+                              <span class="n">summary_fields</span><span class="o">=</span><span class="p">[{</span><span class="s2">&quot;statisticType&quot;</span><span class="p">:</span> <span class="s2">&quot;Count&quot;</span><span class="p">,</span> <span class="s2">&quot;onStatisticField&quot;</span><span class="p">:</span> <span class="s2">&quot;Day&quot;</span><span class="p">}],</span>
+                              <span class="n">output_name</span><span class="o">=</span><span class="s1">&#39;testaggregatepoints01&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+</div>
+<div class="section" id="build-multivariable-grid">
+<h2>build_multivariable_grid<a class="headerlink" href="#build-multivariable-grid" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt id="arcgis.geoanalytics.summarize_data.build_multivariable_grid">
+<code class="sig-prename descclassname">arcgis.geoanalytics.summarize_data.</code><code class="sig-name descname">build_multivariable_grid</code><span class="sig-paren">(</span><em class="sig-param">input_layers</em>, <em class="sig-param">variable_calculations</em>, <em class="sig-param">bin_size</em>, <em class="sig-param">bin_unit='Meters'</em>, <em class="sig-param">bin_type='Square'</em>, <em class="sig-param">output_name=None</em>, <em class="sig-param">gis=None</em>, <em class="sig-param">future=False</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.geoanalytics.summarize_data.build_multivariable_grid" title="Permalink to this definition">¶</a></dt>
+<dd><img alt="_images/Grid.png" src="_images/Grid.png" />
+<p>The <code class="docutils literal notranslate"><span class="pre">build_multivariable_grid</span></code> task works with one or more layers of point, line, or polygon features.
+The task generates a grid of square or hexagonal bins and compiles information about each input layer into each bin.
+For each input layer, this information can include the following variables:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">Distance</span> <span class="pre">to</span> <span class="pre">Nearest</span></code> - The distance from each bin to the nearest feature.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Attribute</span> <span class="pre">of</span> <span class="pre">Nearest</span></code> - An attribute value of the feature nearest to each bin.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Attribute</span> <span class="pre">Summary</span> <span class="pre">of</span> <span class="pre">Related</span></code> - A statistical summary of all features within <code class="docutils literal notranslate"><span class="pre">search_distance</span></code> of each bin.</p></li>
+</ul>
+</div></blockquote>
+<p>Only variables you specify in <code class="docutils literal notranslate"><span class="pre">variable_calculations</span></code> will be included in the result layer. These variables can help
+you understand the proximity of your data throughout the extent of your analysis. The results can help you answer
+questions such as the following:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>Given multiple layers of public transportation infrastructure, what part of the city is least accessible by public transportation?</p></li>
+<li><p>Given layers of lakes and rivers, what is the name of the water body closest to each location in the U.S.?</p></li>
+<li><p>Given a layer of household income, where in the U.S. is the variation of income in the surrounding 50 miles the greatest?</p></li>
+</ul>
+</div></blockquote>
+<p>The result of <code class="docutils literal notranslate"><span class="pre">build_multivariable_grid</span></code> can also be used in prediction and classification workflows. The task allows you
+to calculate and compile information from many different data sources into a single, spatially continuous layer in one step.
+This layer can then be used with the Enrich From Multi-Variable Grid task to quickly enrich point features with the variables
+you have calculated, reducing the amount of effort required to build prediction and classification models from point data.</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 24%" />
+<col style="width: 76%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><strong>Argument</strong></p></td>
+<td><p><strong>Description</strong></p></td>
+</tr>
+<tr class="row-even"><td><p>input_layers</p></td>
+<td><p>Required list of layers. A list of input layers that will be used in analysis.
+See <a class="reference internal" href="arcgis.geoanalytics.toc.html#featureinput"><span class="std std-ref">Feature Input</span></a>.</p></td>
+</tr>
+<tr class="row-odd"><td><p>variable_calculations</p></td>
+<td><p>Required list of dicts. A dict containing objects that describe
+the variables that will be calculated for each layer in <code class="docutils literal notranslate"><span class="pre">input_layers</span></code>.</p>
+<dl>
+<dt>[</dt><dd><blockquote>
+<div><dl>
+<dt>{</dt><dd><p>“layer”:&lt;index&gt;,
+“variables”:[</p>
+<blockquote>
+<div><dl class="simple">
+<dt>{</dt><dd><p>“type”:”DistanceToNearest”,
+“outFieldName”:”&lt;output field name&gt;”,
+“searchDistance”:&lt;number&gt;,
+“searchDistanceUnit”:”&lt;unit&gt;”,
+“filter”:”&lt;filter&gt;”</p>
+</dd>
+</dl>
+<p>},
+{</p>
+<blockquote>
+<div><p>“type”:”AttributeOfNearest”,
+“outFieldName”:”&lt;output field name&gt;”,
+“attributeField”:”&lt;field name&gt;”,
+“searchDistance”:&lt;number&gt;,
+“searchDistanceUnit”:”&lt;unit&gt;”,
+“filter”:”&lt;filter&gt;”</p>
+</div></blockquote>
+<p>},
+{</p>
+<blockquote>
+<div><p>“type”:”AttributeSummaryOfRelated”,
+“outFieldName”:”&lt;output field name&gt;”,
+“statisticType”:”&lt;statistic type&gt;”,
+“statisticField”:”&lt;field name&gt;”,
+“searchDistance”:&lt;number&gt;,
+“searchDistanceUnit”:”&lt;unit&gt;”,
+“filter”:”&lt;filter&gt;”</p>
+</div></blockquote>
+</div></blockquote>
+<p>]</p>
+</dd>
+</dl>
+</div></blockquote>
+<p>]</p>
+</dd>
+</dl>
+<p>layer is the index of the layer in <code class="docutils literal notranslate"><span class="pre">input_layers</span></code> that will be
+used to calculate the specified variables.</p>
+<p>Variables is an array of dict objects that describe the variables
+you want to include in the result layer. The array must contain at least
+one variable for each layer.</p>
+<p>type can be one of the following variable types:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>DistanceToNearest</p></li>
+<li><p>AttributeOfNearest</p></li>
+<li><p>AttributeSummaryOfRelated</p></li>
+</ul>
+</div></blockquote>
+<p>Each type must be configured with a unique set of parameters:</p>
+<blockquote>
+<div><ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">outFieldName</span></code> is the name of the field that will be created in the result
+layer to store a variable. This is required.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">searchDistance</span></code> and searchDistanceUnit are a number and linear unit.
+For DistanceToNearest and AttributeOfNearest, searchDistance and searchDistanceUnit
+are required and define the maximum distance that the tool will search from the
+center of each bin to find a feature in the layer. If no feature is within the
+distance, null is returned. For AttributeSummaryOfRelated, searchDistance and
+searchDistanceUnit are optional and define the radius of a circular neighborhood
+surrounding each bin. All features that intersect this neighborhood will be used
+to calculate statisticType. If a distance is not defined, only features that
+intersect a bin will be used to calculate statisticType.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">attributeField</span></code> is required by AttributeOfNearest and is the name of a field `
+in the input layer. The value of this field in the closest feature to each bin will
+be included in the result layer.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">statisticField</span></code> is required by AttributeSummaryOfRelated and is the name of a
+field in the input layer. This field’s values will be used to calculate statisticType.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">statisticType</span></code> is required by AttributeSummaryOfRelated and is one of the following
+when statisticField is a numeric field:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">Count</span></code> - Totals the number of features near or intersecting each bin.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Sum</span></code> - Adds the total value of all features near or intersecting each bin.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Mean</span></code> - Calculates the average of all features near or intersecting each bin.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Min</span></code> - Finds the smallest value of all features near or intersecting each bin.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Max</span></code> - Finds the largest value of all features near or intersecting each bin.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Range</span></code> - Finds the difference between Min and Max.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Stddev</span></code> - Finds the standard deviation of all features near or intersecting each bin.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Var</span></code> - Finds the variance of all features near or intersecting each bin.</p></li>
+</ul>
+</div></blockquote>
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">statisticType</span></code> is one of the following when statisticField is a string field:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>Count Totals the number of strings for all features near or intersecting each bin.</p></li>
+<li><p>Any Returns a sample string of all features near or intersecting each bin.</p></li>
+</ul>
+</div></blockquote>
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">filter</span></code> is optional for all variable types and is formatted as described in the Feature Input topic.</p></li>
+</ul>
+</div></blockquote>
+</td>
+</tr>
+<tr class="row-even"><td><p>bin_size</p></td>
+<td><p>Required float. The distance for the bins of type <code class="docutils literal notranslate"><span class="pre">bin_type</span></code> in the output polygon layer.
+<code class="docutils literal notranslate"><span class="pre">variable_calculations</span></code> will be calculated at the center of each bin. When generating bins,
+for Square, the number and units specified determine the height and length of the square.
+For Hexagon, the number and units specified determine the distance between parallel sides.</p></td>
+</tr>
+<tr class="row-odd"><td><p>bin_unit</p></td>
+<td><p>Optional string. The distance unit for the bins that will be used to calculate <code class="docutils literal notranslate"><span class="pre">variable_calculations</span></code>.</p>
+<p>Choice list:[‘Feet’, ‘Yards’, ‘Miles’, ‘Meters’, ‘Kilometers’, ‘NauticalMiles’]</p>
+</td>
+</tr>
+<tr class="row-even"><td><p>bin_type</p></td>
+<td><p>Optional string. The type of bin that will be used to generate the result grid. Bin options are the following:</p>
+<p>Choice list: [‘Hexagon’, ‘Square’]</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Analysis using Square or Hexagon bins requires a projected coordinate system.
+When aggregating layers into bins, the input layers or processing extent (<code class="docutils literal notranslate"><span class="pre">processSR</span></code>)
+must have a projected coordinate system. If a projected coordinate system is not
+specified when running analysis, the World Cylindrical Equal Area (WKID 54034) projection
+will be used. At 10.7 or later, if a projected coordinate system is not specified when
+running analysis, a projection will be picked based on the extent of the data.</p>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td><p>output_name</p></td>
+<td><p>Optional string. The task will create a feature service of the results. You define the name of the service.</p></td>
+</tr>
+<tr class="row-even"><td><p>context</p></td>
+<td><p>Optional string. The context parameter contains additional settings that affect task execution. For this task, there are four settings:</p>
+<ol class="arabic simple">
+<li><p>Extent (<code class="docutils literal notranslate"><span class="pre">extent</span></code>) - a bounding box that defines the analysis area. Only those features that intersect the bounding box will be analyzed.</p></li>
+<li><p>Processing spatial reference (<code class="docutils literal notranslate"><span class="pre">processSR</span></code>) The features will be projected into this coordinate system for analysis.</p></li>
+<li><p>Output Spatial Reference (<code class="docutils literal notranslate"><span class="pre">outSR</span></code>) - the features will be projected into this coordinate system after the analysis to be saved. The output spatial reference for the spatiotemporal big data store is always WGS84.</p></li>
+<li><p>Data store (<code class="docutils literal notranslate"><span class="pre">dataStore</span></code>) Results will be saved to the specified data store. The default is the spatiotemporal big data store.</p></li>
+</ol>
+</td>
+</tr>
+</tbody>
+</table>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>boolean</p>
+</dd>
+</dl>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Usage Example: To create multivariable grid by summarizing information such as distance to nearest</span>
+
+<span class="n">variables</span> <span class="o">=</span> <span class="p">[</span> <span class="p">{</span> <span class="s2">&quot;layer&quot;</span><span class="p">:</span><span class="mi">0</span><span class="p">,</span>
+                <span class="s2">&quot;variables&quot;</span><span class="p">:[</span>
+                    <span class="p">{</span> <span class="s2">&quot;type&quot;</span><span class="p">:</span><span class="s2">&quot;DistanceToNearest&quot;</span><span class="p">,</span>
+                      <span class="s2">&quot;outFieldName&quot;</span><span class="p">:</span><span class="s2">&quot;road&quot;</span><span class="p">,</span>
+                      <span class="s2">&quot;searchDistance&quot;</span><span class="p">:</span><span class="mi">10</span><span class="p">,</span>
+                      <span class="s2">&quot;searchDistanceUnit&quot;</span><span class="p">:</span><span class="s2">&quot;Kilometers&quot;</span>
+                    <span class="p">}</span>
+                <span class="p">]</span>
+              <span class="p">},</span>
+              <span class="p">{</span> <span class="s2">&quot;layer&quot;</span><span class="p">:</span><span class="mi">1</span><span class="p">,</span>
+              <span class="s2">&quot;variables&quot;</span><span class="p">:[</span>
+                  <span class="p">{</span> <span class="s2">&quot;type&quot;</span><span class="p">:</span><span class="s2">&quot;AttributeSummaryOfRelated&quot;</span><span class="p">,</span>
+                    <span class="s2">&quot;outFieldName&quot;</span><span class="p">:</span><span class="s2">&quot;MeanPopAge&quot;</span><span class="p">,</span>
+                    <span class="s2">&quot;statisticType&quot;</span><span class="p">:</span><span class="s2">&quot;Mean&quot;</span><span class="p">,</span>
+                    <span class="s2">&quot;statisticField&quot;</span><span class="p">:</span><span class="s2">&quot;Age&quot;</span><span class="p">,</span>
+                    <span class="s2">&quot;searchDistance&quot;</span><span class="p">:</span><span class="mi">50</span><span class="p">,</span>
+                    <span class="s2">&quot;searchDistanceUnit&quot;</span><span class="p">:</span><span class="s2">&quot;Kilometers&quot;</span>
+                  <span class="p">}</span>
+              <span class="p">]</span>
+              <span class="p">}</span>
+            <span class="p">]</span>
+<span class="n">grid</span> <span class="o">=</span> <span class="n">build_multivariable_grid</span><span class="p">(</span><span class="n">input_layers</span><span class="o">=</span><span class="p">[</span><span class="n">lyr0</span><span class="p">,</span> <span class="n">lyr1</span><span class="p">],</span>
+                                <span class="n">variable_calculations</span><span class="o">=</span><span class="n">variables</span><span class="p">,</span>
+                                <span class="n">bin_size</span><span class="o">=</span><span class="mi">100</span><span class="p">,</span>
+                                <span class="n">bin_unit</span><span class="o">=</span><span class="s1">&#39;Meters&#39;</span><span class="p">,</span>
+                                <span class="n">bin_type</span><span class="o">=</span><span class="s1">&#39;Square&#39;</span><span class="p">,</span>
+                                <span class="n">output_name</span><span class="o">=</span><span class="s2">&quot;multi_variable_grid&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+</div>
+<div class="section" id="describe-dataset">
+<h2>describe_dataset<a class="headerlink" href="#describe-dataset" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt id="arcgis.geoanalytics.summarize_data.describe_dataset">
+<code class="sig-prename descclassname">arcgis.geoanalytics.summarize_data.</code><code class="sig-name descname">describe_dataset</code><span class="sig-paren">(</span><em class="sig-param">input_layer</em>, <em class="sig-param">extent_output=False</em>, <em class="sig-param">sample_size=None</em>, <em class="sig-param">output_name=None</em>, <em class="sig-param">gis=None</em>, <em class="sig-param">context=None</em>, <em class="sig-param">future=False</em>, <em class="sig-param">return_tuple=False</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.geoanalytics.summarize_data.describe_dataset" title="Permalink to this definition">¶</a></dt>
+<dd><img alt="_images/describe_dataset.png" src="_images/describe_dataset.png" />
+<p>The <code class="docutils literal notranslate"><span class="pre">describe_dataset</span></code> task provides an overview of your big data.
+The tool outputs a feature layer representing a sample of your 
+input features or a single polygon feature layer that represents the extent of your 
+input features. You can choose to output one, both, or none.</p>
+<p>For example, imagine you are tasked with completing an analysis workflow on a large 
+volume of data. You want to try the workflow, but it could take hours or days with 
+your full dataset. Instead of using time and resources running the full analysis, 
+first create a sample layer to efficiently test your workflow before running it 
+on the full dataset.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Only available at ArcGIS Enterprise 10.7 and later.</p>
+</div>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 7%" />
+<col style="width: 93%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><strong>Argument</strong></p></td>
+<td><p><strong>Description</strong></p></td>
+</tr>
+<tr class="row-even"><td><p>input_layer</p></td>
+<td><p>Required feature layer. The table, point, line, or polygon feature
+layer that will be described, summarized, and sampled.
+See <a class="reference internal" href="arcgis.geoanalytics.toc.html#featureinput"><span class="std std-ref">Feature Input</span></a>.</p></td>
+</tr>
+<tr class="row-odd"><td><p>extent_output</p></td>
+<td><p>Optional boolean. The task will output a single rectangle
+feature representing the extent of the <code class="docutils literal notranslate"><span class="pre">input_layer</span></code> if this value
+is set to ‘True’.</p>
+<p>The default value is ‘False’.</p>
+</td>
+</tr>
+<tr class="row-even"><td><p>sample_size</p></td>
+<td><p>Optional integer. The task will output a feature layer
+representing a sample of features from the <code class="docutils literal notranslate"><span class="pre">input_layer</span></code>. Specify
+the number of sample features to return. If the input value is
+0 or empty then no sample layer will be created. The output
+will have the same schema, geometry, and time type as the input
+layer.</p></td>
+</tr>
+<tr class="row-odd"><td><p>output_name</p></td>
+<td><p>Optional string. The task will create a feature layer of the results.
+You define the name of the service.</p></td>
+</tr>
+<tr class="row-even"><td><p>gis</p></td>
+<td><p>Optional GIS. The GIS object where the analysis will take place.</p></td>
+</tr>
+<tr class="row-odd"><td><p>context</p></td>
+<td><p>Optional dict. The context parameter contains additional settings that affect task execution. For this task, there are four settings:</p>
+<ol class="arabic simple">
+<li><p>Extent (<code class="docutils literal notranslate"><span class="pre">extent</span></code>) - A bounding box that defines the analysis area. Only those features that intersect the bounding box will be analyzed.</p></li>
+<li><p>Processing spatial reference (<code class="docutils literal notranslate"><span class="pre">processSR</span></code>) - The features will be projected into this coordinate system for analysis.</p></li>
+<li><p>Output spatial reference (<code class="docutils literal notranslate"><span class="pre">outSR</span></code>) - The features will be projected into this coordinate system after the analysis to be saved. The output spatial reference for the spatiotemporal big data store is always WGS84.</p></li>
+<li><p>Data store (<code class="docutils literal notranslate"><span class="pre">dataStore</span></code>) - Results will be saved to the specified data store. The default is the spatiotemporal big data store.</p></li>
+</ol>
+</td>
+</tr>
+<tr class="row-even"><td><p>future</p></td>
+<td><p>Optional boolean. If True, a GPJob is returned instead of
+results. The GPJob can be queried on the status of the execution.</p></td>
+</tr>
+</tbody>
+</table>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p><p>a named tuple with the following keys if <code class="docutils literal notranslate"><span class="pre">return_tuple</span></code> is set to ‘True’:</p>
+<p>”output_json” : dict</p>
+<p>”output” : Table</p>
+<p>”extent_layer” : feature layer</p>
+<p>”sample_layer” : feature layer</p>
+<p>”process_info” : list</p>
+</p>
+</dd>
+</dl>
+<p>else returns a feature layer of the results.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Usage Example: To get an overview of your big data item</span>
+
+<span class="n">data</span> <span class="o">=</span> <span class="n">describe_dataset</span><span class="p">(</span><span class="n">input_layer</span><span class="o">=</span><span class="n">big_data_layer</span><span class="p">,</span> 
+                        <span class="n">extent_output</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+                        <span class="n">sample_size</span><span class="o">=</span><span class="mi">2000</span><span class="p">,</span>
+                        <span class="n">output_name</span><span class="o">=</span><span class="s2">&quot;describe dataset&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+</div>
+<div class="section" id="join-features">
+<h2>join_features<a class="headerlink" href="#join-features" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt id="arcgis.geoanalytics.summarize_data.join_features">
+<code class="sig-prename descclassname">arcgis.geoanalytics.summarize_data.</code><code class="sig-name descname">join_features</code><span class="sig-paren">(</span><em class="sig-param">target_layer</em>, <em class="sig-param">join_layer</em>, <em class="sig-param">join_operation: str = 'JoinOneToOne'</em>, <em class="sig-param">join_fields: str = None</em>, <em class="sig-param">summary_fields: str = None</em>, <em class="sig-param">spatial_relationship: str = 'Equals'</em>, <em class="sig-param">spatial_near_distance: float = None</em>, <em class="sig-param">spatial_near_distance_unit: str = None</em>, <em class="sig-param">temporal_relationship: str = None</em>, <em class="sig-param">temporal_near_distance: int = None</em>, <em class="sig-param">temporal_near_distance_unit: str = None</em>, <em class="sig-param">attribute_relationship: str = None</em>, <em class="sig-param">join_condition: str = None</em>, <em class="sig-param">output_name: str = None</em>, <em class="sig-param">gis=None</em>, <em class="sig-param">context=None</em>, <em class="sig-param">future=False</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.geoanalytics.summarize_data.join_features" title="Permalink to this definition">¶</a></dt>
+<dd><img alt="_images/join_features_geo.png" src="_images/join_features_geo.png" />
+<p>Using either feature layers or tabular data, you can join features and records based on
+specific relationships between the input layers or tables. Joins will be determined by
+spatial, temporal, and attribute relationships, and summary statistics can be optionally
+calculated.</p>
+<p>For example</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>Given point locations of crime incidents with a time, join the crime data to itself
+specifying a spatial relationship of crimes within 1 kilometer of each other and that
+occurred within 1 hour of each other to determine if there are a sequence of crimes
+close to each other in space and time.</p></li>
+<li><p>Given a table of ZIP Codes with demographic information and area features representing
+residential buildings, join the demographic information to the residences so each
+residence now has the information.</p></li>
+</ul>
+</div></blockquote>
+<p>The <code class="docutils literal notranslate"><span class="pre">join_features</span></code> task works with two layers. <code class="docutils literal notranslate"><span class="pre">join_features</span></code> joins attributes from one
+feature to another based on spatial, temporal, and attribute relationships or some
+combination of the three. The tool determines all input features that meet the specified
+join conditions and joins the second input layer to the first. You can optionally join
+all features to the matching features or summarize the matching features.</p>
+<p><code class="docutils literal notranslate"><span class="pre">join_features</span></code> can be applied to points, lines, areas, and tables. A temporal join
+requires that your input data is time-enabled, and a spatial join requires that your
+data has a geometry.</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 33%" />
+<col style="width: 67%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><strong>Argument</strong></p></td>
+<td><p><strong>Description</strong></p></td>
+</tr>
+<tr class="row-even"><td><p>target_layer</p></td>
+<td><p>Required layer. The table, point, line, or polygon features to be joined to. See <a class="reference internal" href="arcgis.geoanalytics.toc.html#featureinput"><span class="std std-ref">Feature Input</span></a>.</p></td>
+</tr>
+<tr class="row-odd"><td><p>join_layer</p></td>
+<td><p>Required layer. The point, line, or polygon features that will be joined to the <code class="docutils literal notranslate"><span class="pre">target_layer</span></code>.
+See <a class="reference internal" href="arcgis.geoanalytics.toc.html#featureinput"><span class="std std-ref">Feature Input</span></a>.</p></td>
+</tr>
+<tr class="row-even"><td><p>join_operation</p></td>
+<td><p>Optional string. A string representing the type of join that will be applied.</p>
+<p>Choice list: [‘JoinOneToOne’, ‘JoinOneToMany’].</p>
+<blockquote>
+<div><ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">JoinOneToOne</span></code> - If multiple join features are found that have the same relationships
+with a single target feature, the attributes from the multiple join features will be
+aggregated using the specified summary statistics. For example, if a point target
+feature is found within two separate polygon join features, the attributes from
+the two polygons will be aggregated before being transferred to the output point
+feature class. If one polygon has an attribute value of 3 and the other has a value
+of 7, and a SummaryField of sum is selected, the aggregated value in the output
+feature class will be 10. There will always be a Count field calculated, with a
+value of 2, for the number of features specified. This is the default.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">JoinOneToMany</span></code> - If multiple join features are found that have the same relationship
+with a single target feature, the output feature class will contain multiple copies (records)
+of the target feature. For example, if a single point target feature is found within two
+separate polygon join features, the output feature class will contain two copies of the
+target feature: one record with the attributes of the first polygon, and another record
+with the attributes of the second polygon. There are no summary statistics calculated
+with this method.</p></li>
+</ul>
+</div></blockquote>
+<p>The default value is ‘JoinOneToOne’.</p>
+</td>
+</tr>
+<tr class="row-odd"><td><p>join_fields</p></td>
+<td><p>Optional list of dicts. A list of modifications to field names in the joinLayer to be
+made before completing analysis. Any field that is removed will not have
+statistics calculated on it.</p>
+<p>Syntax: [{ “action” : “action”, “field” : “fieldname1”}, { “action” : “action”, “field” : “initial_fieldname”, “to” : “new_fieldname”}]</p>
+<p><code class="docutils literal notranslate"><span class="pre">action</span></code> can be the following:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>remove - Remove a field from analysis and output .</p></li>
+<li><p>rename - Rename a field before running analysis.</p></li>
+</ul>
+</div></blockquote>
+</td>
+</tr>
+<tr class="row-even"><td><p>summary_fields</p></td>
+<td><p>Optional list of dicts. A list of field names and statistical summary types you want to calculate.
+Note that the count is always returned. By default, all statistics are returned.</p>
+<p>Syntax: [{“statisticType” : “&lt;statistic type&gt;”, “onStatisticField” : “&lt;field name&gt;” }, …]</p>
+<p>fieldName is the name of the fields in the target layer.</p>
+<p>statisticType is one of the following for numeric fields:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">Count</span></code> - Totals the number of values of all the points in each polygon.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Sum</span></code> - Adds the total value of all the points in each polygon.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Mean</span></code> - Calculates the average of all the points in each polygon.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Min</span></code> - Finds the smallest value of all the points in each polygon.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Max</span></code> - Finds the largest value of all the points in each polygon.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Range</span></code> - Finds the difference between the Min and Max values.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Stddev</span></code> - Finds the standard deviation of all the points in each polygon.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Var</span></code> - Finds the variance of all the points in each polygon.</p></li>
+</ul>
+</div></blockquote>
+<p>statisticType is one of the following for string fields:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">Count</span></code> - Totals the number of strings for all the points in each polygon.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Any</span></code> - Returns a sample string of a point in each polygon.</p></li>
+</ul>
+</div></blockquote>
+</td>
+</tr>
+<tr class="row-odd"><td><p>spatial_relationship</p></td>
+<td><p>Optional string. Defines the spatial relationship used to spatially join features.</p>
+<p>Choice list: [‘Equals’, ‘Intersects’, ‘Contains’, ‘Within’, ‘Crosses’, ‘Touches’, ‘Overlaps’, ‘Near’, ‘NearGeodesic’]</p>
+</td>
+</tr>
+<tr class="row-even"><td><p>spatial_near_distance (Required if <code class="docutils literal notranslate"><span class="pre">spatial_relationship</span></code> is Near or NearGeodesic)</p></td>
+<td><p>Optional float.  A float value used for the search distance to determine if
+the target features are near the join features. This is only applied if <code class="docutils literal notranslate"><span class="pre">Near</span></code>,
+or <code class="docutils literal notranslate"><span class="pre">NearGeodesic</span></code> is the selected <code class="docutils literal notranslate"><span class="pre">spatial_relationship</span></code>. You can only enter a
+single distance value. The units of the distance values are supplied by the
+<code class="docutils literal notranslate"><span class="pre">spatial_near_distance</span></code> parameter.</p></td>
+</tr>
+<tr class="row-odd"><td><p>spatial_near_distance_unit (Required if <code class="docutils literal notranslate"><span class="pre">spatial_relationship</span></code> is Near or NearGeodesic)</p></td>
+<td><p>Optional string. The linear unit to be used with the distance value specified in <code class="docutils literal notranslate"><span class="pre">spatial_near_distance</span></code>.</p>
+<p>Choice list:[‘Feet’, ‘Yards’, ‘Miles’, ‘Meters’, ‘Kilometers’, ‘NauticalMiles’]</p>
+</td>
+</tr>
+<tr class="row-even"><td><p>temporal_relationship</p></td>
+<td><p>Optional string. Defines the temporal relationship used to temporally join features.</p>
+<p>Choice list : [‘Equals’, ‘Intersects’, ‘During’, ‘Contains’,
+‘Finishes’, ‘FinishedBy’, ‘Meets’, ‘MetBy’, ‘Overlaps’, ‘OverlappedBy’, ‘Starts’, ‘StartedBy’, ‘Near’]</p>
+</td>
+</tr>
+<tr class="row-odd"><td><p>temporal_near_distance (Required if <code class="docutils literal notranslate"><span class="pre">temporal_relationship</span></code> is Near, NearBefore, or NearAfter)</p></td>
+<td><p>Optional integer. An integer value used for the temporal search distance to determine
+if the target features are temporally near the join features. This is only applied if Near,
+NearBefore, or NearAfter is the selected <code class="docutils literal notranslate"><span class="pre">temporal_relationship</span></code>. You can only enter a single
+distance value. The units of the distance values are supplied by the <code class="docutils literal notranslate"><span class="pre">temporal_near_distance_unit</span></code> parameter.</p></td>
+</tr>
+<tr class="row-even"><td><p>temporal_near_distance_unit (Required if <code class="docutils literal notranslate"><span class="pre">temporal_relationship</span></code> is Near, NearBefore, or NearAfter)</p></td>
+<td><p>Optional string.The temporal unit to be used with the distance value specified in <code class="docutils literal notranslate"><span class="pre">temporal_near_distance</span></code>.</p>
+<p>Choice list:[‘Years’, ‘Months’, ‘Weeks’, ‘Days’, ‘Hours’, ‘Minutes’, ‘Seconds’, ‘Milliseconds’]</p>
+</td>
+</tr>
+<tr class="row-odd"><td><p>attribute_relationship</p></td>
+<td><p>Optional list of dicts. A target field, relationship, and join field used to join equal attributes.</p>
+<p>Syntax: [{ “targetField” : “fieldname1”, “joinField” : “fieldname2”, “operator” : “operator” }]</p>
+</td>
+</tr>
+<tr class="row-even"><td><p>join_condition</p></td>
+<td><p>Optional string. Applies a condition to specified fields. Only features with fields that meet
+these conditions will be joined. For example, to apply a join to a dataset for only those features
+where health_spending is greater than 20 percent of income, apply a join condition of target[‘health_spending’] &gt; (join[‘income’] * .20)
+using the field health_spending from the first dataset (<code class="docutils literal notranslate"><span class="pre">target_layer</span></code>) and the income field from the second dataset (<code class="docutils literal notranslate"><span class="pre">join_layer</span></code>).</p></td>
+</tr>
+<tr class="row-odd"><td><p>output_name</p></td>
+<td><p>Optional string. The task will create a feature service of the
+results. You define the name of the service.</p></td>
+</tr>
+<tr class="row-even"><td><p>gis</p></td>
+<td><p>Optional GIS. The GIS object where the analysis will take place.</p></td>
+</tr>
+<tr class="row-odd"><td><p>context</p></td>
+<td><p>Optional dict. The context parameter contains additional settings that affect task execution. For this task, there are four settings:</p>
+<ol class="arabic simple">
+<li><p>Extent (<code class="docutils literal notranslate"><span class="pre">extent</span></code>) - A bounding box that defines the analysis area. Only those features that intersect the bounding box will be analyzed.</p></li>
+<li><p>Processing spatial reference (<code class="docutils literal notranslate"><span class="pre">processSR</span></code>) - The features will be projected into this coordinate system for analysis.</p></li>
+<li><p>Output spatial reference (<code class="docutils literal notranslate"><span class="pre">outSR</span></code>) - The features will be projected into this coordinate system after the analysis to be saved. The output spatial reference for the spatiotemporal big data store is always WGS84.</p></li>
+<li><p>Data store (<code class="docutils literal notranslate"><span class="pre">dataStore</span></code>) - Results will be saved to the specified data store. The default is the spatiotemporal big data store.</p></li>
+</ol>
+</td>
+</tr>
+<tr class="row-even"><td><p>future</p></td>
+<td><p>Optional boolean. If ‘True’, a GPJob is returned instead of
+results. The GPJob can be queried on the status of the execution.</p>
+<p>The default value is ‘False’.</p>
+</td>
+</tr>
+</tbody>
+</table>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>Output Features as Feature Layer Collection Item</p>
+</dd>
+</dl>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Usage Example: To find power outages in your state that may have been caused by a lightning strike. </span>
+
+<span class="n">output</span> <span class="o">=</span> <span class="n">join_features</span><span class="p">(</span><span class="n">target_layer</span><span class="o">=</span><span class="n">outages_layer</span><span class="p">,</span> 
+                       <span class="n">join_layer</span><span class="o">=</span><span class="n">lightning</span><span class="p">,</span> 
+                       <span class="n">join_operation</span><span class="o">=</span><span class="s2">&quot;JoinOneToMany&quot;</span><span class="p">,</span> 
+                       <span class="n">spatial_relationship</span><span class="o">=</span><span class="s2">&quot;Near&quot;</span><span class="p">,</span> 
+                       <span class="n">spatial_near_distance</span><span class="o">=</span><span class="mi">20</span><span class="p">,</span>  
+                       <span class="n">spatial_near_distance_unit</span><span class="o">=</span><span class="s2">&quot;Miles&quot;</span><span class="p">,</span> 
+                       <span class="n">temporal_relationship</span><span class="o">=</span><span class="s2">&quot;NearAfter&quot;</span><span class="p">,</span> 
+                       <span class="n">temporal_near_distance</span><span class="o">=</span><span class="mi">30</span><span class="p">,</span> 
+                       <span class="n">temporal_near_distance_unit</span><span class="o">=</span><span class="s2">&quot;Minutes&quot;</span><span class="p">,</span> 
+                       <span class="n">output_name</span><span class="o">=</span><span class="s2">&quot;LightningOutages&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+</div>
+<div class="section" id="reconstruct-tracks">
+<h2>reconstruct_tracks<a class="headerlink" href="#reconstruct-tracks" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt id="arcgis.geoanalytics.summarize_data.reconstruct_tracks">
+<code class="sig-prename descclassname">arcgis.geoanalytics.summarize_data.</code><code class="sig-name descname">reconstruct_tracks</code><span class="sig-paren">(</span><em class="sig-param">input_layer</em>, <em class="sig-param">track_fields: str</em>, <em class="sig-param">method: str = 'Planar'</em>, <em class="sig-param">buffer_field: str = None</em>, <em class="sig-param">summary_fields: str = None</em>, <em class="sig-param">distance_split=None</em>, <em class="sig-param">distance_split_unit=None</em>, <em class="sig-param">time_boundary_split=None</em>, <em class="sig-param">time_boundary_split_unit=None</em>, <em class="sig-param">time_boundary_reference=None</em>, <em class="sig-param">output_name: str = None</em>, <em class="sig-param">gis=None</em>, <em class="sig-param">time_split: int = None</em>, <em class="sig-param">time_split_unit: str = None</em>, <em class="sig-param">context=None</em>, <em class="sig-param">future=False</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.geoanalytics.summarize_data.reconstruct_tracks" title="Permalink to this definition">¶</a></dt>
+<dd><img alt="_images/reconstruct_tracks.png" src="_images/reconstruct_tracks.png" />
+<p>The <code class="docutils literal notranslate"><span class="pre">reconstruct_tracks</span></code> task works with a time-enabled layer of either point or polygon 
+features that represents an instant in time. It first determines which features belong to a 
+track using an identifier. Using the time at each location, the tracks are ordered sequentially 
+and transformed into a line or polygon representing the path of movement over time. Optionally, 
+the input can be buffered by a field, which will create a polygon at each location. These buffered 
+points, or polygons if the inputs are polygons, are then joined sequentially to create a track as a 
+polygon where the width is representative of the attribute of interest. Resulting tracks have start 
+and end times that represent the time at the first and last feature in a given track. When the tracks 
+are created, statistics about the input features are calculated and assigned to the output track. The 
+most basic statistic is the count of points within the area, but other statistics can be calculated as 
+well. Features in time-enabled layers can be represented in one of two ways:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>Instant - A single moment in time</p></li>
+<li><p>Interval - A start and end time</p></li>
+</ul>
+</div></blockquote>
+<p>For example, suppose you have GPS measurements of hurricanes every 10 minutes. Each GPS measurement records 
+the hurricane name, location, time of recording, and the wind speed. You could create tracks of the hurricanes 
+using the name of the hurricane as the track identification, and all hurricanes’ tracks would be generated. 
+You could calculate statistics such as the mean, maximum, and minimum wind speed of each hurricane, as well 
+as the count of measurements in each track.</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 28%" />
+<col style="width: 72%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><strong>Argument</strong></p></td>
+<td><p><strong>Description</strong></p></td>
+</tr>
+<tr class="row-even"><td><p>input_layer</p></td>
+<td><p>Required layer. The point or polygon features from which tracks
+will be constructed. See <a class="reference internal" href="arcgis.geoanalytics.toc.html#featureinput"><span class="std std-ref">Feature Input</span></a>.</p></td>
+</tr>
+<tr class="row-odd"><td><p>track_fields</p></td>
+<td><p>Required string. The fields used to identify distinct tracks. There can
+be multiple <code class="docutils literal notranslate"><span class="pre">track_fields</span></code>.</p></td>
+</tr>
+<tr class="row-even"><td><p>method</p></td>
+<td><p>Optional string. The method used to apply reconstruct tracks and, optionally,
+to apply the buffer. There are two methods to choose from:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">Planar</span></code> - This method joins points using a plane method and will not
+cross the international date line. For buffers, this method applies a Euclidean
+buffer and is appropriate for local analysis on projected data. This is the default.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Geodesic</span></code> - This method joins points geodesically and will allow tracks to cross
+the international date line. For buffers, this method is appropriate for large areas
+and any geographic coordinate system.</p></li>
+</ul>
+<p>The default value is ‘Planar’.</p>
+</td>
+</tr>
+<tr class="row-odd"><td><p>buffer_field</p></td>
+<td><p>Optional string. A field in the <code class="docutils literal notranslate"><span class="pre">input_layer</span></code> that contains a buffer distance or a buffer expression.</p></td>
+</tr>
+<tr class="row-even"><td><p>summary_fields</p></td>
+<td><p>Optional list of dicts. A list of field names and statistical summary types that you want to calculate for
+all reconstructed track features. By default, all statistics are returned.</p>
+<p>Syntax: [{“statisticType” : “&lt;statistic type&gt;”, “onStatisticField” : “&lt;field name&gt;” }, …]</p>
+<p>fieldName is the name of the fields in the input point layer.</p>
+<p>statisticType is one of the following for numeric fields:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">Count</span></code> - Totals the number of values of all the points in each polygon.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Sum</span></code> - Adds the total value of all the points in each polygon.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Mean</span></code> - Calculates the average of all the points in each polygon.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Min</span></code> - Finds the smallest value of all the points in each polygon.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Max</span></code> - Finds the largest value of all the points in each polygon.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Range</span></code> - Finds the difference between the Min and Max values.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Stddev</span></code> - Finds the standard deviation of all the points in each polygon.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Var</span></code> - Finds the variance of all the points in each polygon.</p></li>
+</ul>
+</div></blockquote>
+<p>statisticType is one of the following for string fields:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">Count</span></code> - Totals the number of strings for all the points in each polygon.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Any</span></code> - Returns a sample string of a point in each polygon.</p></li>
+</ul>
+</div></blockquote>
+</td>
+</tr>
+<tr class="row-odd"><td><p>time_boundary_split</p></td>
+<td><p>Optional integer. A time boundary allows your to analyze values within a defined
+time span. For example, if you use a time boundary of 1 day, starting on January 1st,
+1980 tracks will be analyzed 1 day at a time. The time boundary parameter was introduced
+in ArcGIS Enterprise 10.7.</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">time_boundary_split</span></code> parameter defines the scale of the time boundary. In the
+case above, this would be 1.</p>
+</td>
+</tr>
+<tr class="row-even"><td><p>time_boundary_split_unit (Required if <code class="docutils literal notranslate"><span class="pre">time_boundary_split</span></code> is specified)</p></td>
+<td><p>Optional string. The unit applied to the time boundary. <code class="docutils literal notranslate"><span class="pre">time_boundary_split</span></code> is required
+if a <code class="docutils literal notranslate"><span class="pre">time_boundary_split</span></code> is provided.</p>
+<p>Choice list:[‘Years’, ‘Months’, ‘Weeks’, ‘Days’, ‘Hours’, ‘Minutes’, ‘Seconds’, ‘Milliseconds’]</p>
+</td>
+</tr>
+<tr class="row-odd"><td><p>time_boundary_reference</p></td>
+<td><p>Optional datetime.datetime. A date that specifies the reference time to align the time boundary to,
+represented in milliseconds from epoch.
+This option is only available if the <code class="docutils literal notranslate"><span class="pre">time_boundary_split</span></code> and <code class="docutils literal notranslate"><span class="pre">time_boundary_split_unit</span></code> are set.</p></td>
+</tr>
+<tr class="row-even"><td><p>distance_split</p></td>
+<td><p>Optional float. A distance used to split tracks. Any features in the <code class="docutils literal notranslate"><span class="pre">input_layer</span></code> that are in the same
+track and are greater than this distance apart will be split into a new track. The units of the distance
+values are supplied by the <code class="docutils literal notranslate"><span class="pre">distance_split_unit</span></code> parameter.</p>
+<p>If both <code class="docutils literal notranslate"><span class="pre">distance_split</span></code> and <code class="docutils literal notranslate"><span class="pre">time_split</span></code> are used, the track is split when at least one condition is met.</p>
+</td>
+</tr>
+<tr class="row-odd"><td><p>distance_split_unit (Required if <code class="docutils literal notranslate"><span class="pre">distance_split</span></code> is specified)</p></td>
+<td><p>Optional string. The distance unit to be used with the distance value specified in <code class="docutils literal notranslate"><span class="pre">distance_split</span></code>.</p>
+<p>Choice list: [‘Meters’, ‘Kilometers’, ‘Feet’, ‘Miles’, ‘NauticalMiles’, ‘Yards’].</p>
+</td>
+</tr>
+<tr class="row-even"><td><p>output_name</p></td>
+<td><p>Optional string. The task will create a feature service of the results. You define the name of the service.</p></td>
+</tr>
+<tr class="row-odd"><td><p>gis</p></td>
+<td><p>Optional, the GIS on which this tool runs. If not specified, the active GIS is used.</p></td>
+</tr>
+<tr class="row-even"><td><p>time_split</p></td>
+<td><p>Optional integer. A time duration used to split tracks. Any features in the <code class="docutils literal notranslate"><span class="pre">input_layer</span></code> that are in
+the same track and are greater than this time apart will be split into a new track. The units of the distance
+values are supplied by the <code class="docutils literal notranslate"><span class="pre">time_split</span></code> parameter.</p>
+<p>If both <code class="docutils literal notranslate"><span class="pre">distance_split</span></code> and <code class="docutils literal notranslate"><span class="pre">time_split</span></code> are used, a track is split when at least one condition is met.</p>
+</td>
+</tr>
+<tr class="row-odd"><td><p>time_split_unit  (Required if <code class="docutils literal notranslate"><span class="pre">time_split</span></code> is specified)</p></td>
+<td><p>Optional string. The temporal unit to be used with the temporal distance value specified in <code class="docutils literal notranslate"><span class="pre">time_split</span></code>.</p>
+<p>Choice list: [‘Milliseconds’, ‘Seconds’, ‘Minutes’, ‘Hours’, ‘Days’, ‘Weeks’, ‘Months’, ‘Years’]</p>
+</td>
+</tr>
+<tr class="row-even"><td><p>context</p></td>
+<td><p>Optional dict. The context parameter contains additional settings that affect task execution.
+For this task, there are four settings:</p>
+<ol class="arabic simple">
+<li><p>Extent (<code class="docutils literal notranslate"><span class="pre">extent</span></code>) - A bounding box that defines the analysis area. Only those features that intersect the bounding box will be analyzed.</p></li>
+<li><p>Processing spatial reference (<code class="docutils literal notranslate"><span class="pre">processSR</span></code>) - The features will be projected into this coordinate system for analysis.</p></li>
+<li><p>Output spatial reference (<code class="docutils literal notranslate"><span class="pre">outSR</span></code>) - The features will be projected into this coordinate system after the analysis to be saved. The output spatial reference for the spatiotemporal big data store is always WGS84.</p></li>
+<li><p>Data store (<code class="docutils literal notranslate"><span class="pre">dataStore</span></code>) - Results will be saved to the specified data store. The default is the spatiotemporal big data store.</p></li>
+</ol>
+</td>
+</tr>
+<tr class="row-odd"><td><p>future</p></td>
+<td><p>Optional boolean. If ‘True’, a GPJob is returned instead of results. The GPJob can be queried on the status of the execution.</p>
+<p>The default value is ‘False’.</p>
+</td>
+</tr>
+</tbody>
+</table>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>feature layer collection item</p>
+</dd>
+</dl>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Usage Example: To reconstruct hurricane tracks.    </span>
+
+<span class="n">tracks</span> <span class="o">=</span> <span class="n">reconstruct_tracks</span><span class="p">(</span><span class="n">input_layer</span><span class="o">=</span><span class="n">hurricane_lyr</span><span class="p">,</span>
+                            <span class="n">track_fields</span><span class="o">=</span><span class="s1">&#39;season, trackID&#39;</span><span class="p">,</span>
+                            <span class="n">method</span><span class="o">=</span><span class="s1">&#39;Geodesic&#39;</span><span class="p">,</span>
+                            <span class="n">buffer_field</span><span class="o">=</span><span class="s1">&#39;size&#39;</span><span class="p">,</span>
+                            <span class="n">summary_fields</span><span class="o">=</span><span class="p">[{</span><span class="s2">&quot;statisticType&quot;</span> <span class="p">:</span> <span class="s2">&quot;Range&quot;</span><span class="p">,</span> <span class="s2">&quot;onStatisticField&quot;</span> <span class="p">:</span> <span class="s2">&quot;Wind&quot;</span> <span class="p">}],</span>
+                            <span class="n">distance_split</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span>
+                            <span class="n">distance_split_unit</span><span class="o">=</span><span class="s1">&#39;Kilometers&#39;</span><span class="p">,</span>
+                            <span class="n">time_boundary_split</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span>
+                            <span class="n">time_boundary_split_unit</span><span class="o">=</span><span class="s1">&#39;Days&#39;</span><span class="p">,</span>
+                            <span class="n">output_name</span><span class="o">=</span><span class="s1">&#39;reconstruct hurricane tracks&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+</div>
+<div class="section" id="summarize-attributes">
+<h2>summarize_attributes<a class="headerlink" href="#summarize-attributes" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt id="arcgis.geoanalytics.summarize_data.summarize_attributes">
+<code class="sig-prename descclassname">arcgis.geoanalytics.summarize_data.</code><code class="sig-name descname">summarize_attributes</code><span class="sig-paren">(</span><em class="sig-param">input_layer</em>, <em class="sig-param">fields: str = None</em>, <em class="sig-param">summary_fields: str = None</em>, <em class="sig-param">output_name: str = None</em>, <em class="sig-param">gis=None</em>, <em class="sig-param">context=None</em>, <em class="sig-param">future=False</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.geoanalytics.summarize_data.summarize_attributes" title="Permalink to this definition">¶</a></dt>
+<dd><img alt="_images/summarize_attributes.png" src="_images/summarize_attributes.png" />
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 35%" />
+<col style="width: 65%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><strong>Argument</strong></p></td>
+<td><p><strong>Description</strong></p></td>
+</tr>
+<tr class="row-even"><td><p>input_layer</p></td>
+<td><p>Required layer. The features that will be summarized. See <a class="reference internal" href="arcgis.geoanalytics.toc.html#featureinput"><span class="std std-ref">Feature Input</span></a>.</p></td>
+</tr>
+<tr class="row-odd"><td><p>fields</p></td>
+<td><p>Optional string. The fields that will be used to summarize like features. For example,
+if you chose a field called property type with the values of commercial and residential,
+all of the features with property type residential would be summarized together with
+summary statistics calculated and all of the commercial features would be summarized together.</p></td>
+</tr>
+<tr class="row-even"><td><p>summary_fields</p></td>
+<td><p>Optional list of dicts. A list of field names and statistical summary types you want
+to calculate for features that are summarized together. Note that the count of features
+with the same fields values is always returned. By default, all statistics are returned.</p>
+<p>Syntax: [{“statisticType” : “&lt;statistic type&gt;”, “onStatisticField” : “&lt;field name&gt;” }, …]</p>
+<p>fieldName is the name of the fields in the input point layer.</p>
+<p>statisticType is one of the following for numeric fields:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>Count - Totals the number of values of all the points in each polygon.</p></li>
+<li><p>Sum - Adds the total value of all the points in each polygon.</p></li>
+<li><p>Mean - Calculates the average of all the points in each polygon.</p></li>
+<li><p>Min - Finds the smallest value of all the points in each polygon.</p></li>
+<li><p>Max - Finds the largest value of all the points in each polygon.</p></li>
+<li><p>Range - Finds the difference between the Min and Max values.</p></li>
+<li><p>Stddev - Finds the standard deviation of all the points in each polygon.</p></li>
+<li><p>Var - Finds the variance of all the points in each polygon.</p></li>
+</ul>
+</div></blockquote>
+<p>statisticType is one of the following for string fields:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>Count - Totals the number of strings for all the points in each polygon.</p></li>
+<li><p>Any - Returns a sample string of a point in each polygon.</p></li>
+</ul>
+</div></blockquote>
+</td>
+</tr>
+<tr class="row-odd"><td><p>output_name</p></td>
+<td><p>Optional string. The task will create a feature service of the results. You define the name of the service.</p></td>
+</tr>
+<tr class="row-even"><td><p>gis</p></td>
+<td><p>Optional GIS. The GIS on which this tool runs. If not specified, the active GIS is used.</p></td>
+</tr>
+<tr class="row-odd"><td><p>context</p></td>
+<td><p>Optional dict. Context contains additional settings that affect task execution. For this task,
+there is one setting:</p>
+<ol class="arabic simple">
+<li><p>Extent (<code class="docutils literal notranslate"><span class="pre">extent</span></code>) - A bounding box that defines the analysis area. Only those features that intersect the bounding box will be analyzed.</p></li>
+<li><p>Data store (<code class="docutils literal notranslate"><span class="pre">dataStore</span></code>) - Results will be saved to the specified data store. The default is the spatiotemporal big data store.</p></li>
+</ol>
+</td>
+</tr>
+<tr class="row-even"><td><p>future</p></td>
+<td><p>Optional boolean. If ‘True’, a GPJob is returned instead of results. The GPJob can be queried on the status of the execution.</p>
+<p>The default value is ‘False’.</p>
+</td>
+</tr>
+</tbody>
+</table>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>feature layer collection</p>
+</dd>
+</dl>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Usage Example: To summarize similar types of storms to find the sum of property damage.</span>
+
+<span class="n">summarized_result</span> <span class="o">=</span> <span class="n">summarize_attributes</span><span class="p">(</span><span class="n">input_layer</span><span class="o">=</span><span class="n">storms</span><span class="p">,</span> 
+                                         <span class="n">fields</span><span class="o">=</span><span class="s2">&quot;Storm_type&quot;</span><span class="p">,</span>
+                                         <span class="n">summary_fields</span><span class="o">=</span><span class="p">[{</span><span class="s2">&quot;statisticType&quot;</span> <span class="p">:</span> <span class="s2">&quot;Sum&quot;</span><span class="p">,</span> <span class="s2">&quot;onStatisticField&quot;</span> <span class="p">:</span> <span class="s2">&quot;PropertyDamage&quot;</span><span class="p">}],</span>
+                                         <span class="n">output_name</span><span class="o">=</span><span class="s2">&quot;summarized_storms&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+</div>
+<div class="section" id="summarize-within">
+<h2>summarize_within<a class="headerlink" href="#summarize-within" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt id="arcgis.geoanalytics.summarize_data.summarize_within">
+<code class="sig-prename descclassname">arcgis.geoanalytics.summarize_data.</code><code class="sig-name descname">summarize_within</code><span class="sig-paren">(</span><em class="sig-param">summarized_layer</em>, <em class="sig-param">summary_polygons=None</em>, <em class="sig-param">bin_type: str = None</em>, <em class="sig-param">bin_size: float = None</em>, <em class="sig-param">bin_size_unit: str = None</em>, <em class="sig-param">standard_summary_fields: str = None</em>, <em class="sig-param">weighted_summary_fields: str = None</em>, <em class="sig-param">sum_shape: bool = True</em>, <em class="sig-param">shape_units: str = None</em>, <em class="sig-param">group_by_field: str = None</em>, <em class="sig-param">minority_majority: bool = False</em>, <em class="sig-param">percent_shape: bool = False</em>, <em class="sig-param">output_name: str = None</em>, <em class="sig-param">gis=None</em>, <em class="sig-param">context=None</em>, <em class="sig-param">future=False</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.geoanalytics.summarize_data.summarize_within" title="Permalink to this definition">¶</a></dt>
+<dd><img alt="_images/summarize_within_geo.png" src="_images/summarize_within_geo.png" />
+<p>The <code class="docutils literal notranslate"><span class="pre">summarize_within</span></code> task finds features (and portions of features) that are within the 
+boundaries of areas in the first input layer. The following are examples:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>Given a layer of watershed boundaries and a layer of land-use boundaries, calculate the total acreage of land-use type for each watershed.</p></li>
+<li><p>Given a layer of parcels in a county and a layer of city boundaries, summarize the average value of vacant parcels within each city boundary.</p></li>
+<li><p>Given a layer of counties and a layer of roads, summarize the total mileage of roads by road type within each county.</p></li>
+</ul>
+</div></blockquote>
+<p>You can think of <code class="docutils literal notranslate"><span class="pre">summarize_within</span></code> as taking two layers and stacking them on top of each other. One of the layers, 
+<code class="docutils literal notranslate"><span class="pre">summary_polygons</span></code>, must be a polygon layer, and imagine that these polygon boundaries are all colored red. The other layer, 
+<code class="docutils literal notranslate"><span class="pre">summarized_layer</span></code>, can be any feature type—point, line, or polygon. After stacking these layers on top of each other, you 
+peer down through the stack and count the number of features in <code class="docutils literal notranslate"><span class="pre">summarized_layer</span></code> that fall within the polygons with the 
+red boundaries (<code class="docutils literal notranslate"><span class="pre">summary_polygons</span></code>). Not only can you count the number of features, you can calculate simple statistics about 
+the attributes of the features in <code class="docutils literal notranslate"><span class="pre">summarized_layer</span></code>, such as sum, mean, minimum, maximum, and so on.</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 26%" />
+<col style="width: 74%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><strong>Argument</strong></p></td>
+<td><p><strong>Description</strong></p></td>
+</tr>
+<tr class="row-even"><td><p>summarized_layer</p></td>
+<td><p>Required layer. Point, line, or polygon features that will be summarized for each
+polygon in <code class="docutils literal notranslate"><span class="pre">summary_polygons</span></code> or bins. See <a class="reference internal" href="arcgis.geoanalytics.toc.html#featureinput"><span class="std std-ref">Feature Input</span></a>.</p></td>
+</tr>
+<tr class="row-odd"><td><p>summary_polygons</p></td>
+<td><p>Optional layer. The polygon features. Features, or portions of features,
+in <code class="docutils literal notranslate"><span class="pre">summarized_layer</span></code> that fall within the boundaries of these polygons
+will be summarized. You can choose to summarize within a polygon layer that you
+provide or within square or hexagon bins that are generated when the tool runs.
+See <a class="reference internal" href="arcgis.geoanalytics.toc.html#featureinput"><span class="std std-ref">Feature Input</span></a>.</p></td>
+</tr>
+<tr class="row-even"><td><p>bin_type (Required if <code class="docutils literal notranslate"><span class="pre">summary_polygons</span></code> is not specified)</p></td>
+<td><p>Optional string. The type of bin that will be generated and <code class="docutils literal notranslate"><span class="pre">summarized_layer</span></code> will be summarized into.</p>
+<p>Choice list: [‘Hexagon’, ‘Square’]</p>
+<p>Either <code class="docutils literal notranslate"><span class="pre">bin_type</span></code> or <code class="docutils literal notranslate"><span class="pre">summary_polygons</span></code> must be specified. If <code class="docutils literal notranslate"><span class="pre">bin_type</span></code> is chosen,
+then <code class="docutils literal notranslate"><span class="pre">bin_size</span></code> and <code class="docutils literal notranslate"><span class="pre">bin_size_unit</span></code> - specifying the size of the bin - must be included.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Analysis using Square or Hexagon bins requires a projected coordinate system.
+When aggregating layers into bins, the input layer or processing extent (<code class="docutils literal notranslate"><span class="pre">processSR</span></code>)
+must have a projected coordinate system. At 10.5.1, 10.6, and 10.6.1, if a projected
+coordinate system is not specified when running analysis, the World Cylindrical Equal
+Area (WKID 54034) projection will be used. At 10.7 or later, if a projected coordinate
+system is not specified when running analysis, a projection will be picked based on
+the extent of the data.</p>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td><p>bin_size  (Required if <code class="docutils literal notranslate"><span class="pre">bin_type</span></code> is specified)</p></td>
+<td><p>Optional float. The distance for the bins of type <code class="docutils literal notranslate"><span class="pre">bin_type</span></code>.
+When generating bins, for Square, the number and units specified determine the
+height and length of the square, and for Hexagon, the number and units specified
+determine the distance between parallel sides.</p></td>
+</tr>
+<tr class="row-even"><td><p>bin_size_unit (Required if <code class="docutils literal notranslate"><span class="pre">bin_size</span></code> is specified)</p></td>
+<td><p>Optional string. The linear distance unit for the bins that <code class="docutils literal notranslate"><span class="pre">summarized_layer</span></code> will be summarized into.</p>
+<p>Choice list:[‘Feet’, ‘Yards’, ‘Miles’, ‘Meters’, ‘Kilometers’, ‘NauticalMiles’]</p>
+</td>
+</tr>
+<tr class="row-odd"><td><p>standard_summary_fields</p></td>
+<td><p>Optional list of dicts. A list of field names and statistical summary type that you want to calculate
+for all features in <code class="docutils literal notranslate"><span class="pre">summarized_layer</span></code> that are within each polygon in <code class="docutils literal notranslate"><span class="pre">summary_polygons</span></code> or bins.
+The standard statistics are calculated using the whole attribute values from any feature
+that is within <code class="docutils literal notranslate"><span class="pre">summary_polygons</span></code>.</p>
+<p>Syntax: [{“statisticType” : “&lt;statistic type&gt;”, “onStatisticField” : “&lt;field name&gt;” }, …]</p>
+<p>fieldName is the name of the fields in the input point layer.</p>
+<p>statisticType is one of the following for numeric fields:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">Count</span></code> - Totals the number of features in each polygon.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Sum</span></code> - Adds the total value of all the features in each polygon.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Mean</span></code> - Calculates the average of all the features in each polygon.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Min</span></code> - Finds the smallest value of all the features in each polygon.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Max</span></code> - Finds the largest value of all the features in each polygon.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Range</span></code> - Finds the difference between Min and Max.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Stddev</span></code> - Finds the standard deviation of all the features in each polygon.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Var</span></code> - Finds the variance of all the features in each polygon.</p></li>
+</ul>
+</div></blockquote>
+<p>statisticType is one of the following for string fields:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">Count</span></code> - Totals the number of strings for all the features in each polygon.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Any</span></code> - Returns a sample string of a feature in each polygon.</p></li>
+</ul>
+</div></blockquote>
+</td>
+</tr>
+<tr class="row-even"><td><p>weighted_summary_fields</p></td>
+<td><p>Optional list of dicts. A list of field names and statistical summary type that you want to calculate
+for all features in <code class="docutils literal notranslate"><span class="pre">summarized_layer</span></code> that are within each polygon in <code class="docutils literal notranslate"><span class="pre">summary_polygons</span></code> or bins.
+The weighted statistics are calculated using the geographically weighted attribute values
+from features that are within <code class="docutils literal notranslate"><span class="pre">summary_polygons</span></code>. Resulting fields from proportional statistics
+will be denoted with a p. Weighted statistics can only be applied to <code class="docutils literal notranslate"><span class="pre">summarized_layer</span></code> that
+are lines or polygons.</p>
+<p>Syntax: [{“statisticType” : “&lt;statistic type&gt;”, “onStatisticField” : “&lt;field name&gt;” }, …]</p>
+<p>fieldName is the name of the fields in the input point layer.</p>
+<p>statisticType is one of the following for numeric fields:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">Count</span></code> - The count of each field multiplied by the proportion of the summarized layer within the polygons.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Sum</span></code> - The sum of weighted of values in each field. Where the weight applied is the proportion of the summarized layer within the polygons.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Mean</span></code> - The weighted mean of values in each field. Where the weight applied is the proportion of the summarized layer within the polygons.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Min</span></code> - The minimum of weighted values in each field. Where the weight applied is the proportion of the summarized layer within the polygons.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Max</span></code> - The maximum of weighted values in each field. Where the weight applied is the proportion of the summarized layer within the polygons.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Range</span></code> - Finds the difference between Min and Max.</p></li>
+</ul>
+</div></blockquote>
+</td>
+</tr>
+<tr class="row-odd"><td><p>sum_shape</p></td>
+<td><p>Optional boolean. A boolean value that instructs the task to calculate statistics based on the
+shape type of <code class="docutils literal notranslate"><span class="pre">summarized_layer</span></code>, such as the length of lines or areas of polygons
+of <code class="docutils literal notranslate"><span class="pre">summarized_layer</span></code> within each polygon in <code class="docutils literal notranslate"><span class="pre">summary_polygons</span></code>.</p>
+<p>The default value is ‘True’.</p>
+</td>
+</tr>
+<tr class="row-even"><td><p>shape_units</p></td>
+<td><p>Optional string. The units used to calculate <code class="docutils literal notranslate"><span class="pre">sum_shape</span></code>.</p>
+<p>Values:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>When <code class="docutils literal notranslate"><span class="pre">summarized_layer</span></code> contains polygons, Choice list: [‘Acres’, ‘Hectares’, ‘SquareMeters’, ‘SquareKilometers’, ‘SquareMiles’, ‘SquareYards’, ‘SquareFeet’].</p></li>
+<li><p>When <code class="docutils literal notranslate"><span class="pre">summarized_layer</span></code> contains lines, Choice list: [‘Meters’, ‘Kilometers’, ‘Feet’, ‘Yards’, ‘Miles’]</p></li>
+</ul>
+</div></blockquote>
+</td>
+</tr>
+<tr class="row-odd"><td><p>group_by_field</p></td>
+<td><p>Optional string. This is a field of the <code class="docutils literal notranslate"><span class="pre">summarized_layer</span></code> features that you can use to calculate
+statistics separately for each unique attribute value. For example, suppose the <code class="docutils literal notranslate"><span class="pre">summarized_layer</span></code> contains city boundaries and the summaryPolygons features are parcels. `
+One of the fields of the parcels is Status which contains two values: VACANT and OCCUPIED.
+To calculate the total area of vacant and occupied parcels within the boundaries of cities,
+use Status as the <code class="docutils literal notranslate"><span class="pre">group_by_field</span></code> field. This parameter is available at ArcGIS Enterprise 10.6.1+.</p>
+<p>When a <code class="docutils literal notranslate"><span class="pre">group_by_field</span></code> field is provided, the service returns a table containing the
+statistics in the groupBySummaryoutput parameter.</p>
+</td>
+</tr>
+<tr class="row-even"><td><p>minority_majority</p></td>
+<td><p>Optioal boolean. This boolean parameter is applicable only when a <code class="docutils literal notranslate"><span class="pre">group_by_field</span></code> is specified.
+If true, the minority (least dominant) or the majority (most dominant) attribute values
+for each group field are calculated. Two new fields are added to the <code class="docutils literal notranslate"><span class="pre">result_layer</span></code> prefixed with
+<a href="#id5"><span class="problematic" id="id6">Majority_</span></a> and <a href="#id7"><span class="problematic" id="id8">Minority_</span></a>. This parameter is available at ArcGIS Enterprise 10.6.1+.</p>
+<p>The default value is ‘False’.</p>
+</td>
+</tr>
+<tr class="row-odd"><td><p>percent_shape</p></td>
+<td><p>Optioal boolean. This boolean parameter is applicable only when a <code class="docutils literal notranslate"><span class="pre">group_by_field</span></code> is specified.
+If set to true, the percentage of each unique <code class="docutils literal notranslate"><span class="pre">group_by_field</span></code> value is calculated for
+each sum within layer polygon. The default is false. This parameter is available at ArcGIS Enterprise 10.6.1+.</p>
+<p>The default value is ‘False’.</p>
+</td>
+</tr>
+<tr class="row-even"><td><p>output_name</p></td>
+<td><p>Optional string. The task will create a feature service of the results. You define the name of the service.</p></td>
+</tr>
+<tr class="row-odd"><td><p>context</p></td>
+<td><p>Optional dict. The context parameter contains additional settings that affect task execution. For this task, there are four settings:</p>
+<ol class="arabic simple">
+<li><p>Extent (<code class="docutils literal notranslate"><span class="pre">extent</span></code>) - A bounding box that defines the analysis area. Only those features that intersect the bounding box will be analyzed.</p></li>
+<li><p>Processing spatial reference (<code class="docutils literal notranslate"><span class="pre">processSR</span></code>) - The features will be projected into this coordinate system for analysis.</p></li>
+<li><p>Output spatial reference (<code class="docutils literal notranslate"><span class="pre">outSR</span></code>) - The features will be projected into this coordinate system after the analysis to be saved. The output spatial reference for the spatiotemporal big data store is always WGS84.</p></li>
+<li><p>Data store (<code class="docutils literal notranslate"><span class="pre">dataStore</span></code>) - Results will be saved to the specified data store. The default is the spatiotemporal big data store.</p></li>
+</ol>
+</td>
+</tr>
+<tr class="row-even"><td><p>gis</p></td>
+<td><p>Optional GIS. The GIS on which this tool runs. If not specified, the active GIS is used.</p></td>
+</tr>
+<tr class="row-odd"><td><p>future</p></td>
+<td><p>Optional boolean. If ‘True’, a GPJob is returned instead of results. The GPJob can be queried on the status of the execution.</p></td>
+</tr>
+</tbody>
+</table>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>result_layer : Output Features as feature layer item.</p>
+</dd>
+</dl>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Usage Example: To calculate the distance and average slope of bike lanes within each city district.</span>
+
+<span class="n">summarize_within_result</span> <span class="o">=</span> <span class="n">summarize_within</span><span class="p">(</span><span class="n">summary_polygons</span><span class="o">=</span><span class="n">districts</span><span class="p">,</span> 
+                                           <span class="n">summarized_layer</span><span class="o">=</span><span class="n">bike_lanes</span><span class="p">,</span>
+                                           <span class="n">weighted_summary_fields</span><span class="o">=</span><span class="p">[{</span><span class="s2">&quot;statisticType&quot;</span> <span class="p">:</span> <span class="s2">&quot;Average&quot;</span><span class="p">,</span><span class="s2">&quot;onStatisticField&quot;</span> <span class="p">:</span> <span class="s2">&quot;Slope&quot;</span><span class="p">}],</span>
+                                           <span class="n">output_name</span><span class="o">=</span><span class="s2">&quot;summary_of_bike_lanes&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+</div>
+</div>
+
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="arcgis.geoanalytics.use_proximity.html" class="btn btn-neutral float-right" title="arcgis.geoanalytics.use_proximity module" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="arcgis.geoanalytics.manage_data.html" class="btn btn-neutral float-left" title="arcgis.geoanalytics.manage_data module" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        
+        &copy; Copyright 2016-2019, Esri
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

@@ -1,0 +1,3249 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>arcgis.mapping module &mdash; arcgis 1.8.2 documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="_static/theme_overrides.css" type="text/css" />
+
+  
+  
+    <link rel="shortcut icon" href="_static/favicon.ico"/>
+  
+  
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/doctools.js"></script>
+        <script src="_static/language_data.js"></script>
+        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="arcgis.mapping.ogc module" href="arcgis.mapping.ogc.html" />
+    <link rel="prev" title="arcgis.geoprocessing module" href="arcgis.geoprocessing.html" />
+<!-- This code block is inserted close near the <head> tag. See http://bit.ly/2BHUQzB -->
+<!-- The point of this code block is to send us google analytics on website views -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-NJGGV5');</script>
+ 
+
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="index.html" class="icon icon-home" alt="Documentation Home"> arcgis
+          
+
+          
+            
+            <img src="_static/python_api_logo.png" class="logo" alt="Logo"/>
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1.8.2
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">arcgis</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="arcgis.gis.toc.html">arcgis.gis module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="arcgis.env.html">arcgis.env module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="arcgis.features.toc.html">arcgis.features module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="arcgis.raster.toc.html">arcgis.raster module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="arcgis.network.toc.html">arcgis.network module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="arcgis.geoanalytics.toc.html">arcgis.geoanalytics module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="arcgis.geocoding.html">arcgis.geocoding module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="arcgis.geoenrichment.html">arcgis.geoenrichment module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="arcgis.geometry.html">arcgis.geometry module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="arcgis.geoprocessing.html">arcgis.geoprocessing module</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">arcgis.mapping module</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#webmap">WebMap</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#offlinemapareamanager">OfflineMapAreaManager</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#packagingjob">PackagingJob</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#webscene">WebScene</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#mapimagelayer">MapImageLayer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#mapimagelayermanager">MapImageLayerManager</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#vectortilelayer">VectorTileLayer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#scenelayer">SceneLayer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#export-map">export_map</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#get-layout-templates">get_layout_templates</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#module-arcgis.mapping.symbol">Symbology</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#renderers">Renderers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#generate-renderer">generate_renderer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#visual-variables">visual_variables</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#submodules">Submodules</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="arcgis.mapping.ogc.html">arcgis.mapping.ogc module</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="arcgis.realtime.html">arcgis.realtime module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="arcgis.schematics.html">arcgis.schematics module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="arcgis.widgets.html">arcgis.widgets module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="arcgis.apps.html">arcgis.apps module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="arcgis.learn.html">arcgis.learn module</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">arcgis</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
+        
+      <li>arcgis.mapping module</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+<!-- This code block is inserted close near the <body> tag. See http://bit.ly/2BHUQzB -->
+<!-- The point of this code block is to send us google analytics on website views -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NJGGV5"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+
+  <div class="section" id="arcgis-mapping-module">
+<h1>arcgis.mapping module<a class="headerlink" href="#arcgis-mapping-module" title="Permalink to this headline">¶</a></h1>
+<span class="target" id="module-arcgis.mapping"></span><p>The arcgis.mapping module provides components for visualizing GIS data and analysis.
+This module includes WebMap and WebScene components that enable 2D and 3D
+mapping and visualization in the GIS. This module also includes mapping layers like
+MapImageLayer, SceneLayer and VectorTileLayer.</p>
+<div class="section" id="webmap">
+<h2>WebMap<a class="headerlink" href="#webmap" title="Permalink to this headline">¶</a></h2>
+<dl class="py class">
+<dt id="arcgis.mapping.WebMap">
+<em class="property">class </em><code class="sig-prename descclassname">arcgis.mapping.</code><code class="sig-name descname">WebMap</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">webmapitem</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.mapping.WebMap" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">collections.OrderedDict</span></code></p>
+<p>Represents a web map and provides access to its basemaps and operational layers as well
+as functionality to visualize and interact with them.</p>
+<p>An ArcGIS web map is an interactive display of geographic information that you can use to tell stories and answer
+questions. Maps contain a basemap over which a set of data layers called operational layers are drawn. To learn
+more about web maps, refer: <a class="reference external" href="https://doc.arcgis.com/en/arcgis-online/reference/what-is-web-map.htm">https://doc.arcgis.com/en/arcgis-online/reference/what-is-web-map.htm</a></p>
+<p>Web maps can be used across ArcGIS apps because they adhere to the same web map specification. This means you can
+author web maps in one ArcGIS app (including the Python API) and view and modify them in another. To learn more
+about the web map specification, refer: <a class="reference external" href="https://developers.arcgis.com/web-map-specification/">https://developers.arcgis.com/web-map-specification/</a></p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 21%" />
+<col style="width: 79%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><strong>Argument</strong></p></td>
+<td><p><strong>Description</strong></p></td>
+</tr>
+<tr class="row-even"><td><p>webmapitem</p></td>
+<td><p>Optional Item object whose Item.type is ‘Web Map’. If not specified
+an empty WebMap object is created with some useful defaults.</p></td>
+</tr>
+</tbody>
+</table>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># USAGE EXAMPLE 1: Creating a WebMap object from an existing web map item</span>
+
+<span class="kn">from</span> <span class="nn">arcgis.mapping</span> <span class="kn">import</span> <span class="n">WebMap</span>
+<span class="kn">from</span> <span class="nn">arcgis.gis</span> <span class="kn">import</span> <span class="n">GIS</span>
+
+<span class="c1"># connect to your GIS and get the web map item</span>
+<span class="n">gis</span> <span class="o">=</span> <span class="n">GIS</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="n">username</span><span class="p">,</span> <span class="n">password</span><span class="p">)</span>
+<span class="n">wm_item</span> <span class="o">=</span> <span class="n">gis</span><span class="o">.</span><span class="n">content</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;1234abcd_web map item id&#39;</span><span class="p">)</span>
+
+<span class="c1"># create a WebMap object from the existing web map item</span>
+<span class="n">wm</span> <span class="o">=</span> <span class="n">WebMap</span><span class="p">(</span><span class="n">wm_item</span><span class="p">)</span>
+<span class="nb">type</span><span class="p">(</span><span class="n">wm</span><span class="p">)</span>
+<span class="o">&gt;&gt;</span> <span class="n">arcgis</span><span class="o">.</span><span class="n">mapping</span><span class="o">.</span><span class="n">_types</span><span class="o">.</span><span class="n">WebMap</span>
+
+<span class="c1"># explore the layers in this web map using the &#39;layers&#39; property</span>
+<span class="n">wm</span><span class="o">.</span><span class="n">layers</span>
+<span class="o">&gt;&gt;</span> <span class="p">[{}</span><span class="o">...</span><span class="p">{}]</span>  <span class="c1"># returns a list of dictionaries representing each operational layer</span>
+</pre></div>
+</div>
+<dl class="py method">
+<dt id="arcgis.mapping.WebMap.add_layer">
+<code class="sig-name descname">add_layer</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">layer</span></em>, <em class="sig-param"><span class="n">options</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.mapping.WebMap.add_layer" title="Permalink to this definition">¶</a></dt>
+<dd><p>Adds the given layer to the WebMap.</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 17%" />
+<col style="width: 83%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><strong>Argument</strong></p></td>
+<td><p><strong>Description</strong></p></td>
+</tr>
+<tr class="row-even"><td><p>layer</p></td>
+<td><p>Required object. You can add:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>Layer objects such as FeatureLayer, MapImageLayer, ImageryLayer etc.</p></li>
+<li><p>Item objects and FeatureSet and FeatureCollections</p></li>
+<li><p>Table objects</p></li>
+</ul>
+</div></blockquote>
+</td>
+</tr>
+<tr class="row-odd"><td><p>options</p></td>
+<td><p>Optional dict. Specify properties such as title, symbol, opacity, visibility, renderer
+for the layer that is added. If not specified, appropriate defaults are applied.</p></td>
+</tr>
+</tbody>
+</table>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># USAGE EXAMPLE: Add feature layer and map image layer item objects to the WebMap object.</span>
+
+<span class="n">crime_fl_item</span> <span class="o">=</span> <span class="n">gis</span><span class="o">.</span><span class="n">content</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="s2">&quot;2012 crime&quot;</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
+<span class="n">streets_item</span> <span class="o">=</span> <span class="n">gis</span><span class="o">.</span><span class="n">content</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="s2">&quot;LA Streets&quot;</span><span class="p">,</span><span class="s2">&quot;Map Service&quot;</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
+
+<span class="n">wm</span> <span class="o">=</span> <span class="n">WebMap</span><span class="p">()</span>  <span class="c1"># create an empty web map with a default basemap</span>
+<span class="n">wm</span><span class="o">.</span><span class="n">add_layer</span><span class="p">(</span><span class="n">streets_item</span><span class="p">)</span>
+<span class="o">&gt;&gt;</span> <span class="kc">True</span>
+
+<span class="c1"># Add crime layer, but customize the title, transparency and turn off the default visibility.</span>
+<span class="n">wm</span><span class="o">.</span><span class="n">add_layer</span><span class="p">(</span><span class="n">fl_item</span><span class="p">,</span> <span class="p">{</span><span class="s1">&#39;title&#39;</span><span class="p">:</span><span class="s1">&#39;2012 crime in LA city&#39;</span><span class="p">,</span>
+                       <span class="s1">&#39;opacity&#39;</span><span class="p">:</span><span class="mf">0.5</span><span class="p">,</span>
+                       <span class="s1">&#39;visibility&#39;</span><span class="p">:</span><span class="kc">False</span><span class="p">})</span>
+ <span class="o">&gt;&gt;</span> <span class="kc">True</span>
+</pre></div>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>True if layer was successfully added. Else, raises appropriate exception.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="arcgis.mapping.WebMap.add_table">
+<code class="sig-name descname">add_table</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">table</span></em>, <em class="sig-param"><span class="n">options</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.mapping.WebMap.add_table" title="Permalink to this definition">¶</a></dt>
+<dd><p>Adds the given layer to the WebMap.</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 17%" />
+<col style="width: 83%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><strong>Argument</strong></p></td>
+<td><p><strong>Description</strong></p></td>
+</tr>
+<tr class="row-even"><td><p>table</p></td>
+<td><p>Required object. You can add:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>Table objects</p></li>
+</ul>
+</div></blockquote>
+</td>
+</tr>
+<tr class="row-odd"><td><p>options</p></td>
+<td><p>Optional dict. Specify properties such as title, symbol, opacity, visibility, renderer
+for the table that is added. If not specified, appropriate defaults are applied.</p></td>
+</tr>
+</tbody>
+</table>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">wm</span> <span class="o">=</span> <span class="n">WebMap</span><span class="p">()</span>
+<span class="n">table</span> <span class="o">=</span> <span class="n">Table</span><span class="p">(</span><span class="s1">&#39;https://some-url.com/&#39;</span><span class="p">)</span>
+<span class="n">wm</span><span class="o">.</span><span class="n">add_layer</span><span class="p">(</span><span class="n">table</span><span class="p">)</span>
+</pre></div>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>True if table was successfully added. Else, raises appropriate exception.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="arcgis.mapping.WebMap.basemap">
+<em class="property">property </em><code class="sig-name descname">basemap</code><a class="headerlink" href="#arcgis.mapping.WebMap.basemap" title="Permalink to this definition">¶</a></dt>
+<dd><p>Base map layers in the web map</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>List of layers as dictionaries</p>
+</dd>
+</dl>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Usage example 1: Get the basemap used in the web map</span>
+
+<span class="kn">from</span> <span class="nn">arcgis.mapping</span> <span class="kn">import</span> <span class="n">WebMap</span>
+<span class="n">wm</span> <span class="o">=</span> <span class="n">WebMap</span><span class="p">(</span><span class="n">wm_item</span><span class="p">)</span>
+
+<span class="n">wm</span><span class="o">.</span><span class="n">basemap</span>
+<span class="o">&gt;&gt;</span> <span class="p">{</span><span class="s2">&quot;baseMapLayers&quot;</span><span class="p">:</span> <span class="p">[</span>
+    <span class="p">{</span><span class="s2">&quot;id&quot;</span><span class="p">:</span> <span class="s2">&quot;defaultBasemap&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;layerType&quot;</span><span class="p">:</span> <span class="s2">&quot;ArcGISTiledMapServiceLayer&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;url&quot;</span><span class="p">:</span> <span class="s2">&quot;https://services.arcgisonline.com/ArcGIS/rest/services/World_Topo_Map/MapServer&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;visibility&quot;</span><span class="p">:</span> <span class="n">true</span><span class="p">,</span>
+    <span class="s2">&quot;opacity&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+    <span class="s2">&quot;title&quot;</span><span class="p">:</span> <span class="s2">&quot;Topographic&quot;</span>
+    <span class="p">}],</span>
+    <span class="s2">&quot;title&quot;</span><span class="p">:</span> <span class="s2">&quot;Topographic&quot;</span>
+    <span class="p">}</span>
+
+<span class="c1"># Usage example 2: Set the basemap used in the web map</span>
+<span class="kn">from</span> <span class="nn">arcgis.mapping</span> <span class="kn">import</span> <span class="n">WebMap</span>
+<span class="n">wm</span> <span class="o">=</span> <span class="n">WebMap</span><span class="p">(</span><span class="n">wm_item</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">wm</span><span class="o">.</span><span class="n">basemaps</span><span class="p">)</span>
+<span class="o">&gt;&gt;</span> <span class="p">[</span><span class="s1">&#39;dark-gray&#39;</span><span class="p">,</span> <span class="s1">&#39;dark-gray-vector&#39;</span><span class="p">,</span> <span class="s1">&#39;gray&#39;</span><span class="p">,</span> <span class="s1">&#39;gray-vector&#39;</span><span class="p">,</span> <span class="s1">&#39;hybrid&#39;</span><span class="p">,</span> <span class="s1">&#39;national-geographic&#39;</span><span class="p">,</span> <span class="s1">&#39;oceans&#39;</span><span class="p">,</span> <span class="s1">&#39;osm&#39;</span><span class="p">,</span> <span class="s1">&#39;satellite&#39;</span><span class="p">,</span> <span class="s1">&#39;streets&#39;</span><span class="p">,</span> <span class="s1">&#39;streets-navigation-vector&#39;</span><span class="p">,</span> <span class="s1">&#39;streets-night-vector&#39;</span><span class="p">,</span> <span class="s1">&#39;streets-relief-vector&#39;</span><span class="p">,</span> <span class="s1">&#39;streets-vector&#39;</span><span class="p">,</span> <span class="s1">&#39;terrain&#39;</span><span class="p">,</span> <span class="s1">&#39;topo&#39;</span><span class="p">,</span> <span class="s1">&#39;topo-vector&#39;</span><span class="p">]</span>
+<span class="n">wm</span><span class="o">.</span><span class="n">basemap</span> <span class="o">=</span> <span class="s1">&#39;dark-gray&#39;</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">wm</span><span class="o">.</span><span class="n">gallery_basemaps</span><span class="p">)</span>
+<span class="o">&gt;&gt;</span> <span class="p">[</span><span class="s1">&#39;custom_dark_gray_canvas&#39;</span><span class="p">,</span> <span class="s1">&#39;imagery&#39;</span><span class="p">,</span> <span class="s1">&#39;imagery_hybrid&#39;</span><span class="p">,</span> <span class="s1">&#39;light_gray_canvas&#39;</span><span class="p">,</span> <span class="s1">&#39;custom_basemap_vector_(proxy)&#39;</span><span class="p">,</span> <span class="s1">&#39;world_imagery_(proxy)&#39;</span><span class="p">,</span> <span class="s1">&#39;world_street_map_(proxy)&#39;</span><span class="p">]</span>
+<span class="n">wm</span><span class="o">.</span><span class="n">basemap</span> <span class="o">=</span> <span class="s1">&#39;custom_dark_gray_canvas&#39;</span>
+
+<span class="c1"># Usage example 3: Set the basemap equal to an item</span>
+<span class="kn">from</span> <span class="nn">arcgis.mapping</span> <span class="kn">import</span> <span class="n">WebMap</span>
+<span class="n">wm</span> <span class="o">=</span> <span class="n">WebMap</span><span class="p">(</span><span class="n">wm_item</span><span class="p">)</span>
+<span class="c1"># Use basemap from another item as your own</span>
+<span class="n">wm</span><span class="o">.</span><span class="n">basemap</span> <span class="o">=</span> <span class="n">wm_item_2</span>
+<span class="n">wm</span><span class="o">.</span><span class="n">basemap</span> <span class="o">=</span> <span class="n">tiled_map_service_item</span>
+<span class="n">wm</span><span class="o">.</span><span class="n">basemap</span> <span class="o">=</span> <span class="n">image_layer_item</span>
+<span class="n">wm</span><span class="o">.</span><span class="n">basemap</span> <span class="o">=</span> <span class="n">wm2</span><span class="o">.</span><span class="n">basemap</span>
+<span class="n">wm</span><span class="o">.</span><span class="n">basemap</span> <span class="o">=</span> <span class="n">wm2</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt id="arcgis.mapping.WebMap.basemaps">
+<em class="property">property </em><code class="sig-name descname">basemaps</code><a class="headerlink" href="#arcgis.mapping.WebMap.basemaps" title="Permalink to this definition">¶</a></dt>
+<dd><p>A list of possible basemaps to set for the map</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="arcgis.mapping.WebMap.gallery_basemaps">
+<em class="property">property </em><code class="sig-name descname">gallery_basemaps</code><a class="headerlink" href="#arcgis.mapping.WebMap.gallery_basemaps" title="Permalink to this definition">¶</a></dt>
+<dd><p>View your portal’s custom basemap group</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="arcgis.mapping.WebMap.layers">
+<em class="property">property </em><code class="sig-name descname">layers</code><a class="headerlink" href="#arcgis.mapping.WebMap.layers" title="Permalink to this definition">¶</a></dt>
+<dd><p>Operational layers in the web map</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>List of Layers as dictionaries</p>
+</dd>
+</dl>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># USAGE EXAMPLE 1: Get the list of layers from a web map</span>
+
+<span class="kn">from</span> <span class="nn">arcgis.mapping</span> <span class="kn">import</span> <span class="n">WebMap</span>
+<span class="n">wm</span> <span class="o">=</span> <span class="n">WebMap</span><span class="p">(</span><span class="n">wm_item</span><span class="p">)</span>
+
+<span class="n">wm</span><span class="o">.</span><span class="n">layers</span>
+<span class="o">&gt;&gt;</span> <span class="p">[{</span><span class="s2">&quot;id&quot;</span><span class="p">:</span> <span class="s2">&quot;Landsat8_Views_515&quot;</span><span class="p">,</span>
+<span class="s2">&quot;layerType&quot;</span><span class="p">:</span> <span class="s2">&quot;ArcGISImageServiceLayer&quot;</span><span class="p">,</span>
+<span class="s2">&quot;url&quot;</span><span class="p">:</span> <span class="s2">&quot;https://landsat2.arcgis.com/arcgis/rest/services/Landsat8_Views/ImageServer&quot;</span><span class="p">,</span>
+<span class="o">...</span><span class="p">},</span>
+<span class="p">{</span><span class="o">...</span><span class="p">}]</span>
+
+<span class="nb">len</span><span class="p">(</span><span class="n">wm</span><span class="o">.</span><span class="n">layers</span><span class="p">)</span>
+<span class="o">&gt;&gt;</span> <span class="mi">2</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt id="arcgis.mapping.WebMap.offline_areas">
+<em class="property">property </em><code class="sig-name descname">offline_areas</code><a class="headerlink" href="#arcgis.mapping.WebMap.offline_areas" title="Permalink to this definition">¶</a></dt>
+<dd><p>Resource manager for offline areas cached for the web map
+:return:</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="arcgis.mapping.WebMap.remove_layer">
+<code class="sig-name descname">remove_layer</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">layer</span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.mapping.WebMap.remove_layer" title="Permalink to this definition">¶</a></dt>
+<dd><p>Removes the specified layer from the web map. You can get the list of layers in map using the ‘layers’ property
+and pass one of those layers to this method for removal form the map.</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 17%" />
+<col style="width: 83%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><strong>Argument</strong></p></td>
+<td><p><strong>Description</strong></p></td>
+</tr>
+<tr class="row-even"><td><p>layer</p></td>
+<td><p>Required object. Pass the layer that needs to be removed from the map. You can get the
+list of layers in the map by calling the <cite>layers</cite> property.</p></td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="py method">
+<dt id="arcgis.mapping.WebMap.remove_table">
+<code class="sig-name descname">remove_table</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">table</span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.mapping.WebMap.remove_table" title="Permalink to this definition">¶</a></dt>
+<dd><p>Removes the specified table from the web map. You can get the list of tables in map using the ‘tables’ property
+and pass one of those tables to this method for removal form the map.</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 17%" />
+<col style="width: 83%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><strong>Argument</strong></p></td>
+<td><p><strong>Description</strong></p></td>
+</tr>
+<tr class="row-even"><td><p>table</p></td>
+<td><p>Required object. Pass the table that needs to be removed from the map. You can get the
+list of tables in the map by calling the <cite>tables</cite> property.</p></td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="py method">
+<dt id="arcgis.mapping.WebMap.save">
+<code class="sig-name descname">save</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">item_properties</span></em>, <em class="sig-param"><span class="n">thumbnail</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">metadata</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">owner</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">folder</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.mapping.WebMap.save" title="Permalink to this definition">¶</a></dt>
+<dd><p>Save the WebMap object into a new web map Item in your GIS.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>If you started out with a fresh WebMap object, use this method to save it as a the web map item in your GIS.</p>
+<p>If you started with a WebMap object from an existing web map item, calling this method will create a new item
+with your changes. If you want to update the existing web map item with your changes, call the <cite>update()</cite>
+method instead.</p>
+</div>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 18%" />
+<col style="width: 82%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><strong>Argument</strong></p></td>
+<td><p><strong>Description</strong></p></td>
+</tr>
+<tr class="row-even"><td><p>item_properties</p></td>
+<td><p>Required dictionary. See table below for the keys and values.</p></td>
+</tr>
+<tr class="row-odd"><td><p>thumbnail</p></td>
+<td><p>Optional string. Either a path or URL to a thumbnail image.</p></td>
+</tr>
+<tr class="row-even"><td><p>metadata</p></td>
+<td><p>Optional string. Either a path or URL to the metadata.</p></td>
+</tr>
+<tr class="row-odd"><td><p>owner</p></td>
+<td><p>Optional string. Defaults to the logged in user.</p></td>
+</tr>
+<tr class="row-even"><td><p>folder</p></td>
+<td><p>Optional string. Name of the folder into which the web map should be
+saved.</p></td>
+</tr>
+</tbody>
+</table>
+<p><em>Key:Value Dictionary Options for Argument item_properties</em></p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 15%" />
+<col style="width: 85%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><strong>Key</strong></p></td>
+<td><p><strong>Value</strong></p></td>
+</tr>
+<tr class="row-even"><td><p>typeKeywords</p></td>
+<td><p>Optional string. Provide a lists all sub-types, see URL 1 below for valid values.</p></td>
+</tr>
+<tr class="row-odd"><td><p>description</p></td>
+<td><p>Optional string. Description of the item.</p></td>
+</tr>
+<tr class="row-even"><td><p>title</p></td>
+<td><p>Optional string. Name label of the item.</p></td>
+</tr>
+<tr class="row-odd"><td><p>tags</p></td>
+<td><p>Optional string. Tags listed as comma-separated values, or a list of strings.
+Used for searches on items.</p></td>
+</tr>
+<tr class="row-even"><td><p>snippet</p></td>
+<td><p>Optional string. Provide a short summary (limit to max 250 characters) of the what the item is.</p></td>
+</tr>
+<tr class="row-odd"><td><p>accessInformation</p></td>
+<td><p>Optional string. Information on the source of the content.</p></td>
+</tr>
+<tr class="row-even"><td><p>licenseInfo</p></td>
+<td><p>Optional string.  Any license information or restrictions regarding the content.</p></td>
+</tr>
+<tr class="row-odd"><td><p>culture</p></td>
+<td><p>Optional string. Locale, country and language information.</p></td>
+</tr>
+<tr class="row-even"><td><p>access</p></td>
+<td><p>Optional string. Valid values are private, shared, org, or public.</p></td>
+</tr>
+<tr class="row-odd"><td><p>commentsEnabled</p></td>
+<td><p>Optional boolean. Default is true, controls whether comments are allowed (true)
+or not allowed (false).</p></td>
+</tr>
+<tr class="row-even"><td><p>culture</p></td>
+<td><p>Optional string. Language and country information.</p></td>
+</tr>
+</tbody>
+</table>
+<p>The above are the most common item properties (metadata) that you set. To get a complete list, see
+<a class="reference external" href="https://developers.arcgis.com/rest/users-groups-and-items/common-parameters.htm#ESRI_SECTION1_1FFBA7FE775B4BDA8D97524A6B9F7C98">https://developers.arcgis.com/rest/users-groups-and-items/common-parameters.htm#ESRI_SECTION1_1FFBA7FE775B4BDA8D97524A6B9F7C98</a></p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>Item object corresponding to the new web map Item created.</p>
+</dd>
+</dl>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># USAGE EXAMPLE 1: Save a WebMap object into a new web map item</span>
+<span class="kn">from</span> <span class="nn">arcgis.gis</span> <span class="kn">import</span> <span class="n">GIS</span>
+<span class="kn">from</span> <span class="nn">arcgis.mapping</span> <span class="kn">import</span> <span class="n">WebMap</span>
+
+<span class="c1"># log into your GIS</span>
+<span class="n">gis</span> <span class="o">=</span> <span class="n">GIS</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="n">username</span><span class="p">,</span> <span class="n">password</span><span class="p">)</span>
+
+<span class="c1"># compose web map by adding, removing, editing layers and basemaps</span>
+<span class="n">wm</span> <span class="o">=</span> <span class="n">WebMap</span><span class="p">()</span>  <span class="c1"># new web map</span>
+<span class="n">wm</span><span class="o">.</span><span class="n">add_layer</span><span class="p">(</span><span class="o">...</span><span class="p">)</span>  <span class="c1"># add some layers</span>
+
+<span class="c1"># save the web map</span>
+<span class="n">webmap_item_properties</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;title&#39;</span><span class="p">:</span><span class="s1">&#39;Ebola incidents and facilities&#39;</span><span class="p">,</span>
+             <span class="s1">&#39;snippet&#39;</span><span class="p">:</span><span class="s1">&#39;Map created using Python API showing locations of Ebola treatment centers&#39;</span><span class="p">,</span>
+             <span class="s1">&#39;tags&#39;</span><span class="p">:[</span><span class="s1">&#39;automation&#39;</span><span class="p">,</span> <span class="s1">&#39;ebola&#39;</span><span class="p">,</span> <span class="s1">&#39;world health&#39;</span><span class="p">,</span> <span class="s1">&#39;python&#39;</span><span class="p">]}</span>
+
+<span class="n">new_wm_item</span> <span class="o">=</span> <span class="n">wm</span><span class="o">.</span><span class="n">save</span><span class="p">(</span><span class="n">webmap_item_properties</span><span class="p">,</span> <span class="n">thumbnail</span><span class="o">=</span><span class="s1">&#39;./webmap_thumbnail.png&#39;</span><span class="p">)</span>
+
+<span class="c1"># to visit the web map using a browser</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">new_wm_item</span><span class="o">.</span><span class="n">homepage</span><span class="p">)</span>
+<span class="o">&gt;&gt;</span> <span class="s1">&#39;https://your portal url.com/webadaptor/item.html?id=1234abcd...&#39;</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt id="arcgis.mapping.WebMap.tables">
+<em class="property">property </em><code class="sig-name descname">tables</code><a class="headerlink" href="#arcgis.mapping.WebMap.tables" title="Permalink to this definition">¶</a></dt>
+<dd><p>Tables in the web map</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>List of Tables as dictionaries</p>
+</dd>
+</dl>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">wm</span> <span class="o">=</span> <span class="n">WebMap</span><span class="p">()</span>
+<span class="n">table</span> <span class="o">=</span> <span class="n">Table</span><span class="p">(</span><span class="s1">&#39;https://some-url.com/&#39;</span><span class="p">)</span>
+<span class="n">wm</span><span class="o">.</span><span class="n">add_layer</span><span class="p">(</span><span class="n">table</span><span class="p">)</span>
+<span class="n">wm</span><span class="o">.</span><span class="n">tables</span>
+<span class="o">&gt;&gt;</span> <span class="p">[{</span><span class="s2">&quot;id&quot;</span><span class="p">:</span> <span class="s2">&quot;fZvgsrA68ElmNajAZl3sOMSPG3iTnL&quot;</span><span class="p">,</span>
+     <span class="s2">&quot;title&quot;</span><span class="p">:</span> <span class="s2">&quot;change_table&quot;</span><span class="p">,</span>
+     <span class="s2">&quot;url&quot;</span><span class="p">:</span> <span class="s2">&quot;https://some-url.com/&quot;</span><span class="p">,</span>
+     <span class="s2">&quot;popupInfo&quot;</span><span class="p">:</span> <span class="p">{</span>
+     <span class="o">...</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt id="arcgis.mapping.WebMap.update">
+<code class="sig-name descname">update</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">item_properties</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">thumbnail</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">metadata</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.mapping.WebMap.update" title="Permalink to this definition">¶</a></dt>
+<dd><p>Updates the web map item in your GIS with the changes you made to the WebMap object. In addition, you can update
+other item properties, thumbnail and metadata.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>If you started with a WebMap object from an existing web map item, calling this method will update the item
+with your changes.</p>
+<p>If you started out with a fresh WebMap object (without a web map item), calling this method will raise a
+RuntimeError exception. If you want to save the WebMap object into a new web map item, call the <cite>save()</cite>
+method instead.</p>
+<p>For item_properties, pass in arguments for the properties you want to be updated.
+All other properties will be untouched.  For example, if you want to update only the
+item’s description, then only provide the description argument in item_properties.</p>
+</div>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 18%" />
+<col style="width: 82%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><strong>Argument</strong></p></td>
+<td><p><strong>Description</strong></p></td>
+</tr>
+<tr class="row-even"><td><p>item_properties</p></td>
+<td><p>Optional dictionary. See table below for the keys and values.</p></td>
+</tr>
+<tr class="row-odd"><td><p>thumbnail</p></td>
+<td><p>Optional string. Either a path or URL to a thumbnail image.</p></td>
+</tr>
+<tr class="row-even"><td><p>metadata</p></td>
+<td><p>Optional string. Either a path or URL to the metadata.</p></td>
+</tr>
+</tbody>
+</table>
+<p><em>Key:Value Dictionary Options for Argument item_properties</em></p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 15%" />
+<col style="width: 85%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><strong>Key</strong></p></td>
+<td><p><strong>Value</strong></p></td>
+</tr>
+<tr class="row-even"><td><p>typeKeywords</p></td>
+<td><p>Optional string. Provide a lists all sub-types, see URL 1 below for valid values.</p></td>
+</tr>
+<tr class="row-odd"><td><p>description</p></td>
+<td><p>Optional string. Description of the item.</p></td>
+</tr>
+<tr class="row-even"><td><p>title</p></td>
+<td><p>Optional string. Name label of the item.</p></td>
+</tr>
+<tr class="row-odd"><td><p>tags</p></td>
+<td><p>Optional string. Tags listed as comma-separated values, or a list of strings.
+Used for searches on items.</p></td>
+</tr>
+<tr class="row-even"><td><p>snippet</p></td>
+<td><p>Optional string. Provide a short summary (limit to max 250 characters) of the what the item is.</p></td>
+</tr>
+<tr class="row-odd"><td><p>accessInformation</p></td>
+<td><p>Optional string. Information on the source of the content.</p></td>
+</tr>
+<tr class="row-even"><td><p>licenseInfo</p></td>
+<td><p>Optional string.  Any license information or restrictions regarding the content.</p></td>
+</tr>
+<tr class="row-odd"><td><p>culture</p></td>
+<td><p>Optional string. Locale, country and language information.</p></td>
+</tr>
+<tr class="row-even"><td><p>access</p></td>
+<td><p>Optional string. Valid values are private, shared, org, or public.</p></td>
+</tr>
+<tr class="row-odd"><td><p>commentsEnabled</p></td>
+<td><p>Optional boolean. Default is true, controls whether comments are allowed (true)
+or not allowed (false).</p></td>
+</tr>
+</tbody>
+</table>
+<p>The above are the most common item properties (metadata) that you set. To get a complete list, see
+<a class="reference external" href="https://developers.arcgis.com/rest/users-groups-and-items/common-parameters.htm#ESRI_SECTION1_1FFBA7FE775B4BDA8D97524A6B9F7C98">https://developers.arcgis.com/rest/users-groups-and-items/common-parameters.htm#ESRI_SECTION1_1FFBA7FE775B4BDA8D97524A6B9F7C98</a></p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>A boolean indicating success (True) or failure (False).</p>
+</dd>
+</dl>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># USAGE EXAMPLE 1: Update an existing web map</span>
+
+<span class="kn">from</span> <span class="nn">arcgis.gis</span> <span class="kn">import</span> <span class="n">GIS</span>
+<span class="kn">from</span> <span class="nn">arcgis.mapping</span> <span class="kn">import</span> <span class="n">WebMap</span>
+
+<span class="c1"># log into your GIS</span>
+<span class="n">gis</span> <span class="o">=</span> <span class="n">GIS</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="n">username</span><span class="p">,</span> <span class="n">password</span><span class="p">)</span>
+
+<span class="c1"># edit web map by adding, removing, editing layers and basemaps</span>
+<span class="n">wm</span> <span class="o">=</span> <span class="n">WebMap</span><span class="p">()</span>  <span class="c1"># new web map</span>
+<span class="n">wm</span><span class="o">.</span><span class="n">add_layer</span><span class="p">(</span><span class="o">...</span><span class="p">)</span>  <span class="c1"># add some layers</span>
+
+<span class="c1"># save the web map</span>
+<span class="n">webmap_item_properties</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;title&#39;</span><span class="p">:</span><span class="s1">&#39;Ebola incidents and facilities&#39;</span><span class="p">,</span>
+             <span class="s1">&#39;snippet&#39;</span><span class="p">:</span><span class="s1">&#39;Map created using Python API showing locations of Ebola treatment centers&#39;</span><span class="p">,</span>
+             <span class="s1">&#39;tags&#39;</span><span class="p">:[</span><span class="s1">&#39;automation&#39;</span><span class="p">,</span> <span class="s1">&#39;ebola&#39;</span><span class="p">,</span> <span class="s1">&#39;world health&#39;</span><span class="p">,</span> <span class="s1">&#39;python&#39;</span><span class="p">]}</span>
+
+<span class="n">new_wm_item</span> <span class="o">=</span> <span class="n">wm</span><span class="o">.</span><span class="n">save</span><span class="p">(</span><span class="n">webmap_item_properties</span><span class="p">,</span> <span class="n">thumbnail</span><span class="o">=</span><span class="s1">&#39;./webmap_thumbnail.png&#39;</span><span class="p">)</span>
+
+<span class="c1"># to visit the web map using a browser</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">new_wm_item</span><span class="o">.</span><span class="n">homepage</span><span class="p">)</span>
+<span class="o">&gt;&gt;</span> <span class="s1">&#39;https://your portal url.com/webadaptor/item.html?id=1234abcd...&#39;</span>
+</pre></div>
+</div>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="offlinemapareamanager">
+<h2>OfflineMapAreaManager<a class="headerlink" href="#offlinemapareamanager" title="Permalink to this headline">¶</a></h2>
+<dl class="py class">
+<dt id="arcgis.mapping.OfflineMapAreaManager">
+<em class="property">class </em><code class="sig-prename descclassname">arcgis.mapping.</code><code class="sig-name descname">OfflineMapAreaManager</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">item</span></em>, <em class="sig-param"><span class="n">gis</span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.mapping.OfflineMapAreaManager" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>Helper class to manage offline map areas attached to a web map item. Users should not instantiate this class
+directly, instead, should access the methods exposed by accessing the <cite>offline_areas</cite> property on the <cite>WebMap</cite>
+object.</p>
+<dl class="py method">
+<dt id="arcgis.mapping.OfflineMapAreaManager.create">
+<code class="sig-name descname">create</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">area</span></em>, <em class="sig-param"><span class="n">item_properties</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">folder</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">min_scale</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">max_scale</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">layers_to_ignore</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">refresh_schedule</span><span class="o">=</span><span class="default_value">'Never'</span></em>, <em class="sig-param"><span class="n">refresh_rates</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">enable_updates</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="n">ignore_layers</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">tile_services</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">future</span><span class="o">=</span><span class="default_value">False</span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.mapping.OfflineMapAreaManager.create" title="Permalink to this definition">¶</a></dt>
+<dd><p>Create offline map area items and packages for ArcGIS Runtime powered applications. This method creates two
+different types of items. It first creates ‘Map Area’ items for the specified extent or bookmark. Next it
+creates one or more map area packages corresponding to each layer type in the extent.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<ul class="simple">
+<li><p>There can be only 1 map area item for an extent or bookmark.</p></li>
+<li><p>You need to be the owner of the web map or an administrator of your GIS.</p></li>
+</ul>
+</div>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 15%" />
+<col style="width: 85%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><strong>Argument</strong></p></td>
+<td><p><strong>Description</strong></p></td>
+</tr>
+<tr class="row-even"><td><p>area</p></td>
+<td><p>Required object.  Bookmark or extent. Specify as either:</p>
+<blockquote>
+<div><ul class="simple">
+<li><dl class="simple">
+<dt>bookmark name</dt><dd><p><cite>WebMap.definition.bookmarks</cite> returns list of bookmarks.</p>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>list of coordinate pairs:</dt><dd><p>[[‘xmin’, ‘ymin’], [‘xmax’, ‘ymax’]]</p>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>dictionary:</dt><dd><p>{‘xmin’: &lt;value&gt;,
+‘ymin’: &lt;value&gt;,
+‘xmax’: &lt;value&gt;,
+‘ymax’: &lt;value&gt;,
+‘spatialReference’ : {‘wkid’ : &lt;value&gt;}}</p>
+</dd>
+</dl>
+</li>
+</ul>
+</div></blockquote>
+<p>If spatial reference is not specified, it is assumed ‘wkid’: 4326.</p>
+</td>
+</tr>
+<tr class="row-odd"><td><p>item_properties</p></td>
+<td><p>Required dictionary. See table below for the keys and values.</p></td>
+</tr>
+<tr class="row-even"><td><p>folder</p></td>
+<td><p>Optional string. Specify a folder name if you want the offline map
+area item and the packages to be created inside a folder.</p></td>
+</tr>
+<tr class="row-odd"><td><p>min_scale</p></td>
+<td><p>Optional number. Specify the minimum scale to cache tile and vector
+tile layers. When zoomed out beyond this scale, cached layers would
+not display.</p></td>
+</tr>
+<tr class="row-even"><td><p>max_scale</p></td>
+<td><p>Optional number. Specify the maximum scale to cache tile and vector
+tile layers. When zoomed in beyond this scale, cached layers would
+not display.</p></td>
+</tr>
+<tr class="row-odd"><td><p>layers_to_ignore</p></td>
+<td><p>Optional List of layer objects to exclude when creating offline
+packages. You can get the list of layers in a web map by calling
+the <cite>layers</cite> property on the <cite>WebMap</cite> object.</p></td>
+</tr>
+<tr class="row-even"><td><p>refresh_schedule</p></td>
+<td><p>Optional string. Allows for the scheduling of refreshes at given times.</p>
+<p>The following are valid variables:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>Never - never refreshes the offline package (default)</p></li>
+<li><p>Daily - refreshes everyday</p></li>
+<li><p>Weekly - refreshes once a week</p></li>
+<li><p>Monthly - refreshes once a month</p></li>
+</ul>
+</div></blockquote>
+</td>
+</tr>
+<tr class="row-odd"><td><p>refresh_rates</p></td>
+<td><p>Optional dict. This parameter allows for the customization of the
+scheduler.  The dictionary accepts the following:</p>
+<blockquote>
+<div><dl class="simple">
+<dt>{</dt><dd><p>“hour” : 1
+“minute” = 0
+“nthday” = 3
+“day_of_week” = 0</p>
+</dd>
+</dl>
+<p>}</p>
+</div></blockquote>
+<ul class="simple">
+<li><p>hour - a value between 0-23 (integers)</p></li>
+<li><p>minute a value between 0-60 (integers)</p></li>
+<li><p>nthday - this is used for monthly only. This say the refresh will occur on the ‘x’ day of the month.</p></li>
+<li><p>day_of_week - a value between 0-6 where 0 is Sunday and 6 is Saturday.</p></li>
+</ul>
+<p>Example <strong>Daily</strong>:</p>
+<blockquote>
+<div><dl class="simple">
+<dt>{</dt><dd><p>“hour”: 10,
+“minute” : 30</p>
+</dd>
+</dl>
+<p>}</p>
+</div></blockquote>
+<p>This means every day at 10:30 AM UTC</p>
+<p>Example <strong>Weekly</strong>:</p>
+<blockquote>
+<div><dl class="simple">
+<dt>{</dt><dd><p>“hour” : 23,
+“minute” : 59,
+“day_of_week” : 4</p>
+</dd>
+</dl>
+<p>}</p>
+</div></blockquote>
+<p>This means every Wednesday at 11:59 PM UTC</p>
+</td>
+</tr>
+<tr class="row-even"><td><p>enable_updates</p></td>
+<td><p>Optional Boolean.  Allows for the updating of the layers.</p></td>
+</tr>
+<tr class="row-odd"><td><p>ignore_layers</p></td>
+<td><p>Optional List.  A list of individual layers, specified with their
+service URLs, in the map to ignore. The task generates packages for
+all map layers by default.</p>
+<p>Example:</p>
+<blockquote>
+<div><dl class="simple">
+<dt>[</dt><dd><p>“<a class="reference external" href="https://services.arcgis.com/ERmEceOGq5cHrItq/arcgis/rest/services/SaveTheBaySync/FeatureServer/1">https://services.arcgis.com/ERmEceOGq5cHrItq/arcgis/rest/services/SaveTheBaySync/FeatureServer/1</a>”,
+“<a class="reference external" href="https://services.arcgis.com/ERmEceOGq5cHrItq/arcgis/rest/services/WildfireSync/FeatureServer/0">https://services.arcgis.com/ERmEceOGq5cHrItq/arcgis/rest/services/WildfireSync/FeatureServer/0</a>”</p>
+</dd>
+</dl>
+<p>]</p>
+</div></blockquote>
+</td>
+</tr>
+<tr class="row-even"><td><p>tile_services</p></td>
+<td><p>Optional List.  An array of JSON objects that contains additional
+export tiles enabled tile services for which tile packages (.tpk or
+.vtpk) need to be created. Each tile service is specified with its
+URL and desired level of details.</p>
+<p>Example:</p>
+<blockquote>
+<div><dl>
+<dt>[</dt><dd><dl class="simple">
+<dt>{</dt><dd><p>“url”: “<a class="reference external" href="https://tiledbasemaps.arcgis.com/arcgis/rest/services/World_Imagery/MapServer">https://tiledbasemaps.arcgis.com/arcgis/rest/services/World_Imagery/MapServer</a>”,
+“levels”: “17,18,19”</p>
+</dd>
+</dl>
+<p>}</p>
+</dd>
+</dl>
+<p>]</p>
+</div></blockquote>
+</td>
+</tr>
+</tbody>
+</table>
+<p><em>Hint: Your min_scale is always bigger in value than your max_scale</em></p>
+<p><em>Key:Value Dictionary Options for Argument item_properties</em></p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 20%" />
+<col style="width: 80%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><strong>Key</strong></p></td>
+<td><p><strong>Value</strong></p></td>
+</tr>
+<tr class="row-even"><td><p>description</p></td>
+<td><p>Optional string. Description of the item.</p></td>
+</tr>
+<tr class="row-odd"><td><p>title</p></td>
+<td><p>Optional string. Name label of the item.</p></td>
+</tr>
+<tr class="row-even"><td><p>tags</p></td>
+<td><p>Optional string. Tags listed as comma-separated values, or a list of
+strings. Used for searches on items.</p></td>
+</tr>
+<tr class="row-odd"><td><p>snippet</p></td>
+<td><p>Optional string. Provide a short summary (limit to max 250 characters)
+of the what the item is.</p></td>
+</tr>
+</tbody>
+</table>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>Item object for the offline map area item that was created.
+If Future==True, then the result is a PackageJob</p>
+</dd>
+</dl>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">USAGE</span> <span class="n">EXAMPLE</span><span class="p">:</span> <span class="n">Creating</span> <span class="n">offline</span> <span class="nb">map</span> <span class="n">areas</span>
+
+<span class="n">wm</span> <span class="o">=</span> <span class="n">WebMap</span><span class="p">(</span><span class="n">wm_item</span><span class="p">)</span>
+
+<span class="c1"># create offline areas ignoring a layer and for certain min, max scales for other layers</span>
+<span class="n">item_prop</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;title&#39;</span><span class="p">:</span> <span class="s1">&#39;Clear lake hyperspectral field campaign&#39;</span><span class="p">,</span>
+            <span class="s1">&#39;snippet&#39;</span><span class="p">:</span> <span class="s1">&#39;Offline package for field data collection using spectro-radiometer&#39;</span><span class="p">,</span>
+            <span class="s1">&#39;tags&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;python api&#39;</span><span class="p">,</span> <span class="s1">&#39;in-situ data&#39;</span><span class="p">,</span> <span class="s1">&#39;field data collection&#39;</span><span class="p">]}</span>
+
+<span class="n">aviris_layer</span> <span class="o">=</span> <span class="n">wm</span><span class="o">.</span><span class="n">layers</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+
+<span class="n">north_bed</span> <span class="o">=</span> <span class="n">wm</span><span class="o">.</span><span class="n">definition</span><span class="o">.</span><span class="n">bookmarks</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">][</span><span class="s1">&#39;name&#39;</span><span class="p">]</span>
+<span class="n">wm</span><span class="o">.</span><span class="n">offline_areas</span><span class="o">.</span><span class="n">create</span><span class="p">(</span><span class="n">area</span><span class="o">=</span><span class="n">north_bed</span><span class="p">,</span> <span class="n">item_properties</span><span class="o">=</span><span class="n">item_prop</span><span class="p">,</span>
+                      <span class="n">folder</span><span class="o">=</span><span class="s1">&#39;clear_lake&#39;</span><span class="p">,</span> <span class="n">min_scale</span><span class="o">=</span><span class="mi">9000</span><span class="p">,</span> <span class="n">max_scale</span><span class="o">=</span><span class="mi">4500</span><span class="p">,</span>
+                       <span class="n">layers_to_ignore</span><span class="o">=</span><span class="p">[</span><span class="n">aviris_layer</span><span class="p">])</span>
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>This method executes silently. To view informative status messages, set the verbosity environment variable
+as shown below:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">USAGE</span> <span class="n">EXAMPLE</span><span class="p">:</span> <span class="n">setting</span> <span class="n">verbosity</span>
+
+<span class="kn">from</span> <span class="nn">arcgis</span> <span class="kn">import</span> <span class="n">env</span>
+<span class="n">env</span><span class="o">.</span><span class="n">verbose</span> <span class="o">=</span> <span class="kc">True</span>
+</pre></div>
+</div>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt id="arcgis.mapping.OfflineMapAreaManager.list">
+<code class="sig-name descname">list</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.mapping.OfflineMapAreaManager.list" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns a list of Map Area items related to the current WebMap object.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Map Area items and the corresponding offline packages cached for each share a relationship of type
+‘Area2Package’. You can use this relationship to get the list of package items cached for a particular Map
+Area item. Refer to the Python snippet below for the steps:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">USAGE</span> <span class="n">EXAMPLE</span><span class="p">:</span> <span class="n">Finding</span> <span class="n">packages</span> <span class="n">cached</span> <span class="k">for</span> <span class="n">a</span> <span class="n">Map</span> <span class="n">Area</span> <span class="n">item</span>
+
+<span class="kn">from</span> <span class="nn">arcgis.mapping</span> <span class="kn">import</span> <span class="n">WebMap</span>
+<span class="n">wm</span> <span class="o">=</span> <span class="n">WebMap</span><span class="p">(</span><span class="n">a_web_map_item_object</span><span class="p">)</span>
+<span class="n">all_map_areas</span> <span class="o">=</span> <span class="n">wm</span><span class="o">.</span><span class="n">offline_areas</span><span class="o">.</span><span class="n">list</span><span class="p">()</span>  <span class="c1"># get all the offline areas for that web map</span>
+
+<span class="n">area1</span> <span class="o">=</span> <span class="n">all_map_areas</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+<span class="n">area1_packages</span> <span class="o">=</span> <span class="n">area1</span><span class="o">.</span><span class="n">related_items</span><span class="p">(</span><span class="s1">&#39;Area2Package&#39;</span><span class="p">,</span><span class="s1">&#39;forward&#39;</span><span class="p">)</span>
+
+<span class="k">for</span> <span class="n">pkg</span> <span class="ow">in</span> <span class="n">area1_packages</span><span class="p">:</span>
+     <span class="nb">print</span><span class="p">(</span><span class="n">pkg</span><span class="o">.</span><span class="n">homepage</span><span class="p">)</span>  <span class="c1"># get the homepage url for each package item.</span>
+</pre></div>
+</div>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>List of Map Area items related to the current WebMap object</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="arcgis.mapping.OfflineMapAreaManager.modify_refresh_schedule">
+<code class="sig-name descname">modify_refresh_schedule</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">item</span></em>, <em class="sig-param"><span class="n">refresh_schedule</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">refresh_rates</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.mapping.OfflineMapAreaManager.modify_refresh_schedule" title="Permalink to this definition">¶</a></dt>
+<dd><p>Modifies an Existing Package’s Refresh Schedule for offline packages.</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 22%" />
+<col style="width: 78%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><strong>Argument</strong></p></td>
+<td><p><strong>Description</strong></p></td>
+</tr>
+<tr class="row-even"><td><p>item</p></td>
+<td><p>Required Item. This is the Offline Package to update the refresh
+schedule.</p></td>
+</tr>
+<tr class="row-odd"><td><p>refresh_schedule</p></td>
+<td><p>Optional String.  This is the rate of refreshing.</p>
+<p>The following are valid variables:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>Never - never refreshes the offline package (default)</p></li>
+<li><p>Daily - refreshes everyday</p></li>
+<li><p>Weekly - refreshes once a week</p></li>
+<li><p>Monthly - refreshes once a month</p></li>
+</ul>
+</div></blockquote>
+</td>
+</tr>
+<tr class="row-even"><td><p>refresh_rates</p></td>
+<td><p>Optional dict. This parameter allows for the customization of the
+scheduler. Note all time is in UTC.</p>
+<p>The dictionary accepts the following:</p>
+<dl class="simple">
+<dt>{</dt><dd><p>“hour” : 1
+“minute” = 0
+“nthday” = 3
+“day_of_week” = 0</p>
+</dd>
+</dl>
+<p>}</p>
+<ul class="simple">
+<li><p>hour - a value between 0-23 (integers)</p></li>
+<li><p>minute a value between 0-60 (integers)</p></li>
+<li><p>nthday - this is used for monthly only. This say the refresh will occur on the ‘x’ day of the month.</p></li>
+<li><p>day_of_week - a value between 0-6 where 0 is Sunday and 6 is Saturday.</p></li>
+</ul>
+<p>Example <strong>Daily</strong>:</p>
+<dl class="simple">
+<dt>{</dt><dd><p>“hour”: 10,
+“minute” : 30</p>
+</dd>
+</dl>
+<p>}</p>
+<p>This means every day at 10:30 AM UTC</p>
+<p>Example <strong>Weekly</strong>:</p>
+<dl class="simple">
+<dt>{</dt><dd><p>“hour” : 23,
+“minute” : 59,
+“day_of_week” : 4</p>
+</dd>
+</dl>
+<p>}</p>
+<p>This means every Wednesday at 11:59 PM UTC</p>
+</td>
+</tr>
+</tbody>
+</table>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>boolean</p>
+</dd>
+</dl>
+<p>## Updates Offline Package Building Everyday at 10:30 AM UTC</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">gis</span> <span class="o">=</span> <span class="n">GIS</span><span class="p">(</span><span class="n">profile</span><span class="o">=</span><span class="s1">&#39;owner_profile&#39;</span><span class="p">)</span>
+<span class="n">item</span> <span class="o">=</span> <span class="n">gis</span><span class="o">.</span><span class="n">content</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;9b93887c640a4c278765982aa2ec999c&#39;</span><span class="p">)</span>
+<span class="n">oa</span> <span class="o">=</span> <span class="n">wm</span><span class="o">.</span><span class="n">offline_areas</span><span class="o">.</span><span class="n">modify_refresh_schedule</span><span class="p">(</span><span class="n">item</span><span class="o">.</span><span class="n">id</span><span class="p">,</span> <span class="s1">&#39;daily&#39;</span><span class="p">,</span> <span class="p">{</span><span class="s1">&#39;hour&#39;</span> <span class="p">:</span> <span class="mi">10</span><span class="p">,</span> <span class="s1">&#39;minute&#39;</span> <span class="p">:</span> <span class="mi">30</span><span class="p">})</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt id="arcgis.mapping.OfflineMapAreaManager.offline_properties">
+<em class="property">property </em><code class="sig-name descname">offline_properties</code><a class="headerlink" href="#arcgis.mapping.OfflineMapAreaManager.offline_properties" title="Permalink to this definition">¶</a></dt>
+<dd><p>This property allows users to configure the offline properties 
+for a webmap.  The <cite>offline_properties</cite> allows for the definition 
+of how available offline editing, basemap, and read-only layers 
+behave in the web map application.</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 21%" />
+<col style="width: 79%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><strong>Argument</strong></p></td>
+<td><p><strong>Description</strong></p></td>
+</tr>
+<tr class="row-even"><td><p>values</p></td>
+<td><p>Required Dict.  The key/value object that defines the offline
+application properties.</p></td>
+</tr>
+</tbody>
+</table>
+<p>The dictionary supports the following keys in the dictionary</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 14%" />
+<col style="width: 86%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><strong>Key</strong></p></td>
+<td><p><strong>Values</strong></p></td>
+</tr>
+<tr class="row-even"><td><p>download</p></td>
+<td><p>When editing layers, the edits are always sent to the server. This
+string value indicates which data is retrieved. For example, none
+indicates that only the schema is written since neither the features
+nor attachments are retrieved. For a full sync without downloading
+attachments, indicate features. Lastly, the default behavior is to
+have a full sync using <cite>features_and_attachments</cite> where both
+features and attachments are retrieved.</p>
+<p>If property is present, must be one of the following values:</p>
+<p>Allowed Values: [features, features_and_attachments, None]</p>
+</td>
+</tr>
+<tr class="row-odd"><td><p>sync</p></td>
+<td><p><cite>sync</cite> applies to editing layers only.  This string value indicates
+how the data is synced.</p>
+<p>Allowed Values:</p>
+<p>sync_features_and_attachments  - bidirectional sync
+sync_features_upload_attachments - bidirection sync for feaures but upload only for attachments
+upload_features_and_attachments - upload only for both features and attachments (initial replica is just a schema)</p>
+</td>
+</tr>
+<tr class="row-even"><td><p>reference_basemap</p></td>
+<td><p>The filename of a basemap that has been copied to a mobile device.
+This can be used instead of the default basemap for the map to
+reduce downloads.</p></td>
+</tr>
+<tr class="row-odd"><td><p>get_attachments</p></td>
+<td><p>Boolean value that indicates whether to include attachments with the
+read-only data.</p></td>
+</tr>
+</tbody>
+</table>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>Dictionary</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="arcgis.mapping.OfflineMapAreaManager.update">
+<code class="sig-name descname">update</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">offline_map_area_items</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">future</span><span class="o">=</span><span class="default_value">False</span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.mapping.OfflineMapAreaManager.update" title="Permalink to this definition">¶</a></dt>
+<dd><p>Refreshes existing map area packages associated with the list of map area items specified.
+This process updates the packages with changes made on the source data since the last time those packages were
+created or refreshed.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<ul class="simple">
+<li><p>Offline map area functionality is only available if your GIS is ArcGIS Online.</p></li>
+<li><p>You need to be the owner of the web map or an administrator of your GIS.</p></li>
+</ul>
+</div>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 27%" />
+<col style="width: 73%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><strong>Argument</strong></p></td>
+<td><p><strong>Description</strong></p></td>
+</tr>
+<tr class="row-even"><td><p>offline_map_area_items</p></td>
+<td><p>Optional list. Specify one or more Map Area items for which the packages need
+to be refreshed. If not specified, this method updates all the packages
+associated with all the map area items of the web map.</p>
+<p>To get the list of Map Area items related to the WebMap object, call the
+<cite>list()</cite> method.</p>
+</td>
+</tr>
+<tr class="row-odd"><td><p>future</p></td>
+<td><p>Optional Boolean.</p></td>
+</tr>
+</tbody>
+</table>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>Dictionary containing update status.</p>
+</dd>
+</dl>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>This method executes silently. To view informative status messages, set the verbosity environment variable
+as shown below:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">USAGE</span> <span class="n">EXAMPLE</span><span class="p">:</span> <span class="n">setting</span> <span class="n">verbosity</span>
+
+<span class="kn">from</span> <span class="nn">arcgis</span> <span class="kn">import</span> <span class="n">env</span>
+<span class="n">env</span><span class="o">.</span><span class="n">verbose</span> <span class="o">=</span> <span class="kc">True</span>
+</pre></div>
+</div>
+</div>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="packagingjob">
+<h2>PackagingJob<a class="headerlink" href="#packagingjob" title="Permalink to this headline">¶</a></h2>
+<dl class="py class">
+<dt id="arcgis.mapping.PackagingJob">
+<em class="property">class </em><code class="sig-prename descclassname">arcgis.mapping.</code><code class="sig-name descname">PackagingJob</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">future</span></em>, <em class="sig-param"><span class="n">notify</span><span class="o">=</span><span class="default_value">False</span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.mapping.PackagingJob" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>Represents a Single Packaging Job.</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 20%" />
+<col style="width: 80%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><strong>Argument</strong></p></td>
+<td><p><strong>Description</strong></p></td>
+</tr>
+<tr class="row-even"><td><p>future</p></td>
+<td><p>Required ccurrent.futures.Future.  The async object created by
+the geoprocessing (GP) task.</p></td>
+</tr>
+<tr class="row-odd"><td><p>notify</p></td>
+<td><p>Optional Boolean.  When set to True, a message will inform the
+user that the geoprocessing task has completed. The default is
+False.</p></td>
+</tr>
+</tbody>
+</table>
+<dl class="py method">
+<dt id="arcgis.mapping.PackagingJob.cancel">
+<code class="sig-name descname">cancel</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.mapping.PackagingJob.cancel" title="Permalink to this definition">¶</a></dt>
+<dd><p>Attempt to cancel the call. If the call is currently being executed
+or finished running and cannot be cancelled then the method will
+return False, otherwise the call will be cancelled and the method
+will return True.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>boolean</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="arcgis.mapping.PackagingJob.cancelled">
+<code class="sig-name descname">cancelled</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.mapping.PackagingJob.cancelled" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return True if the call was successfully cancelled.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>boolean</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="arcgis.mapping.PackagingJob.done">
+<code class="sig-name descname">done</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.mapping.PackagingJob.done" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return True if the call was successfully cancelled or finished running.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>boolean</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="arcgis.mapping.PackagingJob.ellapse_time">
+<em class="property">property </em><code class="sig-name descname">ellapse_time</code><a class="headerlink" href="#arcgis.mapping.PackagingJob.ellapse_time" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the Ellapse Time for the Job</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="arcgis.mapping.PackagingJob.result">
+<code class="sig-name descname">result</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.mapping.PackagingJob.result" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the value returned by the call. If the call hasn’t yet completed
+then this method will wait.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>object</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="arcgis.mapping.PackagingJob.running">
+<code class="sig-name descname">running</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.mapping.PackagingJob.running" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return True if the call is currently being executed and cannot be cancelled.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>boolean</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="arcgis.mapping.PackagingJob.status">
+<em class="property">property </em><code class="sig-name descname">status</code><a class="headerlink" href="#arcgis.mapping.PackagingJob.status" title="Permalink to this definition">¶</a></dt>
+<dd><p>returns the GP status</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>String</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="webscene">
+<h2>WebScene<a class="headerlink" href="#webscene" title="Permalink to this headline">¶</a></h2>
+<dl class="py class">
+<dt id="arcgis.mapping.WebScene">
+<em class="property">class </em><code class="sig-prename descclassname">arcgis.mapping.</code><code class="sig-name descname">WebScene</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">websceneitem</span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.mapping.WebScene" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">collections.OrderedDict</span></code></p>
+<p>Represents a web scene and provides access to its basemaps and operational layers as well
+as functionality to visualize and interact with them.</p>
+<p>If you would like more robust webscene authoring functionality,
+consider using the <a class="reference internal" href="arcgis.widgets.html#arcgis.widgets.MapView" title="arcgis.widgets.MapView"><code class="xref py py-class docutils literal notranslate"><span class="pre">MapView</span></code></a> class. You need to be using a
+Jupyter environment for the MapView class to function properly, but you can
+make copies of WebScenes, add layers using a simple <cite>add_layer()</cite> call,
+adjust the basemaps, save to new webscenes, and more.</p>
+<dl class="py method">
+<dt id="arcgis.mapping.WebScene.update">
+<code class="sig-name descname">update</code><span class="sig-paren">(</span><span class="optional">[</span><em class="sig-param">E</em>, <span class="optional">]</span><em class="sig-param">**F</em><span class="sig-paren">)</span> &#x2192; None.  Update D from dict/iterable E and F.<a class="headerlink" href="#arcgis.mapping.WebScene.update" title="Permalink to this definition">¶</a></dt>
+<dd><p>If E is present and has a .keys() method, then does:  for k in E: D[k] = E[k]
+If E is present and lacks a .keys() method, then does:  for k, v in E: D[k] = v
+In either case, this is followed by: for k in F:  D[k] = F[k]</p>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="mapimagelayer">
+<h2>MapImageLayer<a class="headerlink" href="#mapimagelayer" title="Permalink to this headline">¶</a></h2>
+<dl class="py class">
+<dt id="arcgis.mapping.MapImageLayer">
+<em class="property">class </em><code class="sig-prename descclassname">arcgis.mapping.</code><code class="sig-name descname">MapImageLayer</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">url</span></em>, <em class="sig-param"><span class="n">gis</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.mapping.MapImageLayer" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="arcgis.gis.toc.html#arcgis.gis.Layer" title="arcgis.gis.Layer"><code class="xref py py-class docutils literal notranslate"><span class="pre">arcgis.gis.Layer</span></code></a></p>
+<p>MapImageLayer allows you to display and analyze data from sublayers defined in a map service, exporting images
+instead of features. Map service images are dynamically generated on the server based on a request, which includes
+an LOD (level of detail), a bounding box, dpi, spatial reference and other options. The exported image is of the
+entire map extent specified.</p>
+<p>MapImageLayer does not display tiled images. To display tiled map service layers, see TileLayer.</p>
+<dl class="py method">
+<dt id="arcgis.mapping.MapImageLayer.create_dynamic_layer">
+<code class="sig-name descname">create_dynamic_layer</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">layer</span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.mapping.MapImageLayer.create_dynamic_layer" title="Permalink to this definition">¶</a></dt>
+<dd><p>A dynamic layer / table method represents a single layer / table
+of a map service published by ArcGIS Server or of a registered
+workspace. This resource is supported only when the map image layer
+supports dynamic layers, as indicated by supportsDynamicLayers on
+the map image layer properties.</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 20%" />
+<col style="width: 80%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><strong>Argument</strong></p></td>
+<td><p><strong>Description</strong></p></td>
+</tr>
+<tr class="row-even"><td><p>layer</p></td>
+<td><p>required dict.  Dynamic layer/table source definition.
+Syntax:
+{</p>
+<blockquote>
+<div><p>“id”: &lt;layerOrTableId&gt;,
+“source”: &lt;layer source&gt;, //required
+“definitionExpression”: “&lt;definitionExpression&gt;”,
+“drawingInfo”:
+{</p>
+<blockquote>
+<div><p>“renderer”: &lt;renderer&gt;,
+“transparency”: &lt;transparency&gt;,
+“scaleSymbols”: &lt;true,false&gt;,
+“showLabels”: &lt;true,false&gt;,
+“labelingInfo”: &lt;labeling info&gt;</p>
+</div></blockquote>
+<p>},
+“layerTimeOptions”: //supported only for time enabled map layers
+{</p>
+<blockquote>
+<div><p>“useTime” : &lt;true,false&gt;,
+“timeDataCumulative” : &lt;true,false&gt;,
+“timeOffset” : &lt;timeOffset&gt;,
+“timeOffsetUnits” : “&lt;esriTimeUnitsCenturies,esriTimeUnitsDays,</p>
+<blockquote>
+<div><p>esriTimeUnitsDecades,esriTimeUnitsHours,
+esriTimeUnitsMilliseconds,esriTimeUnitsMinutes,
+esriTimeUnitsMonths,esriTimeUnitsSeconds,
+esriTimeUnitsWeeks,esriTimeUnitsYears |
+esriTimeUnitsUnknown&gt;”</p>
+</div></blockquote>
+</div></blockquote>
+<p>}</p>
+</div></blockquote>
+<p>}</p>
+</td>
+</tr>
+</tbody>
+</table>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>arcgis.features.FeatureLayer or None (if not enabled)</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="arcgis.mapping.MapImageLayer.estimate_export_tiles_size">
+<code class="sig-name descname">estimate_export_tiles_size</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">export_by</span></em>, <em class="sig-param"><span class="n">levels</span></em>, <em class="sig-param"><span class="n">tile_package</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="n">export_extent</span><span class="o">=</span><span class="default_value">'DEFAULTEXTENT'</span></em>, <em class="sig-param"><span class="n">area_of_interest</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">asynchronous</span><span class="o">=</span><span class="default_value">True</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.mapping.MapImageLayer.estimate_export_tiles_size" title="Permalink to this definition">¶</a></dt>
+<dd><p>The estimate_export_tiles_size method is an asynchronous task that
+allows estimation of the size of the tile package or the cache data
+set that you download using the Export Tiles operation. This
+operation can also be used to estimate the tile count in a tile
+package and determine if it will exceced the maxExportTileCount
+limit set by the administrator of the service. The result of this
+operation is Map Service Job. This job response contains reference
+to Map Service Result resource that returns the total size of the
+cache to be exported (in bytes) and the number of tiles that will
+be exported.</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 21%" />
+<col style="width: 79%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><strong>Argument</strong></p></td>
+<td><p><strong>Description</strong></p></td>
+</tr>
+<tr class="row-even"><td><p>tile_package</p></td>
+<td><p>optional boolean. Allows estimating the size for either a tile
+package or a cache raster data set. Specify the value true for tile
+packages format and false for Cache Raster data set. The default
+value is False</p></td>
+</tr>
+<tr class="row-odd"><td><p>levels</p></td>
+<td><p>required string. Specify the tiled service levels for which you want
+to get the estimates. The values should correspond to Level IDs,
+cache scales or the Resolution as specified in export_by parameter.
+The values can be comma separated values or a range.
+Example 1: 1,2,3,4,5,6,7,8,9
+Example 2: 1-4,7-9</p></td>
+</tr>
+<tr class="row-even"><td><p>export_by</p></td>
+<td><p>required string. The criteria that will be used to select the tile
+service levels to export. The values can be Level IDs, cache scales
+or the Resolution (in the case of image services).
+Values: LevelID, Resolution, Scale</p></td>
+</tr>
+<tr class="row-odd"><td><p>export_extent</p></td>
+<td><p>The extent (bounding box) of the tile package or the cache dataset
+to be exported. If extent does not include a spatial reference, the
+extent values are assumed to be in the spatial reference of the map.
+The default value is full extent of the tiled map service.
+Syntax: &lt;xmin&gt;, &lt;ymin&gt;, &lt;xmax&gt;, &lt;ymax&gt;
+Example: -104,35.6,-94.32,41</p></td>
+</tr>
+<tr class="row-even"><td><p>area_of_interest</p></td>
+<td><p>optiona dictionary or Polygon. This allows exporting tiles within
+the specified polygon areas. This parameter supersedes extent
+parameter.
+Example: { “features”: [{“geometry”:{“rings”:[[[-100,35],</p>
+<blockquote>
+<div><p>[-100,45],[-90,45],[-90,35],[-100,35]]],
+“spatialReference”:{“wkid”:4326}}}]}</p>
+</div></blockquote>
+</td>
+</tr>
+<tr class="row-odd"><td><p>asynchronous</p></td>
+<td><p>optional boolean. The estimate function is run asynchronously
+requiring the tool status to be checked manually to force it to
+run synchronously the tool will check the status until the
+estimation completes.  The default is True, which means the status
+of the job and results need to be checked manually.  If the value
+is set to False, the function will wait until the task completes.</p></td>
+</tr>
+</tbody>
+</table>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>dictionary</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="arcgis.mapping.MapImageLayer.export_map">
+<code class="sig-name descname">export_map</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">bbox</span></em>, <em class="sig-param"><span class="n">bbox_sr</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">size</span><span class="o">=</span><span class="default_value">'600,550'</span></em>, <em class="sig-param"><span class="n">dpi</span><span class="o">=</span><span class="default_value">200</span></em>, <em class="sig-param"><span class="n">image_sr</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">image_format</span><span class="o">=</span><span class="default_value">'png'</span></em>, <em class="sig-param"><span class="n">layer_defs</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">layers</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">transparent</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="n">time_value</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">time_options</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">dynamic_layers</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">gdb_version</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">scale</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">rotation</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">transformation</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">map_range_values</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">layer_range_values</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">layer_parameter</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">f</span><span class="o">=</span><span class="default_value">'json'</span></em>, <em class="sig-param"><span class="n">save_folder</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">save_file</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.mapping.MapImageLayer.export_map" title="Permalink to this definition">¶</a></dt>
+<dd><p>The export operation is performed on a map service resource.
+The result of this operation is a map image resource. This
+resource provides information about the exported map image such
+as its URL, its width and height, extent and scale.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>string, image of the map.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="arcgis.mapping.MapImageLayer.export_tiles">
+<code class="sig-name descname">export_tiles</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">levels</span></em>, <em class="sig-param"><span class="n">export_by</span><span class="o">=</span><span class="default_value">'LevelID'</span></em>, <em class="sig-param"><span class="n">tile_package</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="n">export_extent</span><span class="o">=</span><span class="default_value">'DEFAULT'</span></em>, <em class="sig-param"><span class="n">optimize_for_size</span><span class="o">=</span><span class="default_value">True</span></em>, <em class="sig-param"><span class="n">compression</span><span class="o">=</span><span class="default_value">75</span></em>, <em class="sig-param"><span class="n">area_of_interest</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">asynchronous</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.mapping.MapImageLayer.export_tiles" title="Permalink to this definition">¶</a></dt>
+<dd><p>The exportTiles operation is performed as an asynchronous task and
+allows client applications to download map tiles from a server for
+offline use. This operation is performed on a Map Service that
+allows clients to export cache tiles. The result of this operation
+is Map Service Job. This job response contains a reference to the
+Map Service Result resource, which returns a URL to the resulting
+tile package (.tpk) or a cache raster dataset.
+exportTiles can be enabled in a service by using ArcGIS for Desktop
+or the ArcGIS Server Administrator Directory. In ArcGIS for Desktop
+make an admin or publisher connection to the server, go to service
+properties, and enable Allow Clients to Export Cache Tiles in the
+advanced caching page of the Service Editor. You can also specify
+the maximum tiles clients will be allowed to download. The default
+maximum allowed tile count is 100,000. To enable this capability
+using the Administrator Directory, edit the service, and set the
+properties exportTilesAllowed=true and maxExportTilesCount=100000.</p>
+<p>At 10.2.2 and later versions, exportTiles is supported as an
+operation of the Map Server. The use of the
+<a class="reference external" href="http://Map">http://Map</a> Service/exportTiles/submitJob operation is deprecated.
+You can provide arguments to the exportTiles operation as defined
+in the following parameters table:</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 21%" />
+<col style="width: 79%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><strong>Argument</strong></p></td>
+<td><p><strong>Description</strong></p></td>
+</tr>
+<tr class="row-even"><td><p>levels</p></td>
+<td><p>required string. Specifies the tiled service levels to export. The
+values should correspond to Level IDs, cache scales. or the
+resolution as specified in export_by parameter. The values can be
+comma separated values or a range. Make sure tiles are present at
+the levels where you attempt to export tiles.
+Example 1: 1,2,3,4,5,6,7,8,9
+Example 2: 1-4,7-9</p></td>
+</tr>
+<tr class="row-odd"><td><p>export_by</p></td>
+<td><p>required string. The criteria that will be used to select the tile
+service levels to export. The values can be Level IDs, cache scales.
+or the resolution.  The defaut is ‘LevelID’.
+Values: LevelID | Resolution | Scale</p></td>
+</tr>
+<tr class="row-even"><td><p>tile_package</p></td>
+<td><p>optiona boolean. Allows exporting either a tile package or a cache
+raster data set. If the value is true, output will be in tile
+package format, and if the value is false, a cache raster data
+set is returned. The default value is false.</p></td>
+</tr>
+<tr class="row-odd"><td><p>export_extent</p></td>
+<td><p>optional dictionary or string. The extent (bounding box) of the tile
+package or the cache dataset to be exported. If extent does not
+include a spatial reference, the extent values are assumed to be in
+the spatial reference of the map. The default value is full extent
+of the tiled map service.
+Syntax: &lt;xmin&gt;, &lt;ymin&gt;, &lt;xmax&gt;, &lt;ymax&gt;
+Example 1: -104,35.6,-94.32,41
+Example 2: {“xmin” : -109.55, “ymin” : 25.76,</p>
+<blockquote>
+<div><p>“xmax” : -86.39, “ymax” : 49.94,
+“spatialReference” : {“wkid” : 4326}}</p>
+</div></blockquote>
+</td>
+</tr>
+<tr class="row-even"><td><p>optimize_for_size</p></td>
+<td><p>optional boolean. Use this parameter to enable compression of JPEG
+tiles and reduce the size of the downloaded tile package or the
+cache raster data set. Compressing tiles slightly compromises the
+quality of tiles but helps reduce the size of the download. Try
+sample compressions to determine the optimal compression before
+using this feature.
+The default value is True.</p></td>
+</tr>
+<tr class="row-odd"><td><p>compression=75,</p></td>
+<td><p>optional integer. When optimize_for_size=true, you can specify a
+compression factor. The value must be between 0 and 100. The value
+cannot be greater than the default compression already set on the
+original tile. For example, if the default value is 75, the value
+of compressionQuality must be between 0 and 75. A value greater
+than 75 in this example will attempt to up sample an already
+compressed tile and will further degrade the quality of tiles.</p></td>
+</tr>
+<tr class="row-even"><td><p>area_of_interest</p></td>
+<td><p>optional dictionary, Polygon. The area_of_interest polygon allows
+exporting tiles within the specified polygon areas. This parameter
+supersedes the exportExtent parameter.
+Example: { “features”: [{“geometry”:{“rings”:[[[-100,35],</p>
+<blockquote>
+<div><p>[-100,45],[-90,45],[-90,35],[-100,35]]],
+“spatialReference”:{“wkid”:4326}}}]}</p>
+</div></blockquote>
+</td>
+</tr>
+<tr class="row-odd"><td><p>asynchronous</p></td>
+<td><p>optional boolean. Default False, this value ensures the returns are
+returned to the user instead of the user having the check the job
+status manually.</p></td>
+</tr>
+</tbody>
+</table>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>path to download file is asynchronous is False. If True, a dictionary is returned.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="arcgis.mapping.MapImageLayer.find">
+<code class="sig-name descname">find</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">search_text</span></em>, <em class="sig-param"><span class="n">layers</span></em>, <em class="sig-param"><span class="n">contains</span><span class="o">=</span><span class="default_value">True</span></em>, <em class="sig-param"><span class="n">search_fields</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">sr</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">layer_defs</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">return_geometry</span><span class="o">=</span><span class="default_value">True</span></em>, <em class="sig-param"><span class="n">max_offset</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">precision</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">dynamic_layers</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">return_z</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="n">return_m</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="n">gdb_version</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">return_unformatted</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="n">return_field_name</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="n">transformations</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">map_range_values</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">layer_range_values</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">layer_parameters</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.mapping.MapImageLayer.find" title="Permalink to this definition">¶</a></dt>
+<dd><p>performs the map service find operation</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 21%" />
+<col style="width: 79%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><strong>Argument</strong></p></td>
+<td><p><strong>Description</strong></p></td>
+</tr>
+<tr class="row-even"><td><p>search_text</p></td>
+<td><p>required string.The search string. This is the text that is searched
+across the layers and fields the user specifies.</p></td>
+</tr>
+<tr class="row-odd"><td><p>layers</p></td>
+<td><p>optional string. The layers to perform the identify operation on.
+There are three ways to specify which layers to identify on:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>top: Only the top-most layer at the specified location.</p></li>
+<li><p>visible: All visible layers at the specified location.</p></li>
+<li><p>all: All layers at the specified location.</p></li>
+</ul>
+</div></blockquote>
+</td>
+</tr>
+<tr class="row-even"><td><p>contains</p></td>
+<td><p>optional boolean. If false, the operation searches for an exact
+match of the search_text string. An exact match is case sensitive.
+Otherwise, it searches for a value that contains the search_text
+provided. This search is not case sensitive. The default is true.</p></td>
+</tr>
+<tr class="row-odd"><td><p>search_fields</p></td>
+<td><p>optional string. List of field names to look in.</p></td>
+</tr>
+<tr class="row-even"><td><p>sr</p></td>
+<td><p>optional dict, string, or SpatialReference. The well-known ID of the
+spatial reference of the input and output geometries as well as the
+map_extent. If sr is not specified, the geometry and the map_extent
+are assumed to be in the spatial reference of the map, and the
+output geometries are also in the spatial reference of the map.</p></td>
+</tr>
+<tr class="row-odd"><td><p>layer_defs</p></td>
+<td><p>optional dict. Allows you to filter the features of individual
+layers in the exported map by specifying definition expressions for
+those layers. Definition expression for a layer that is
+published with the service will be always honored.</p></td>
+</tr>
+<tr class="row-even"><td><p>return_geometry</p></td>
+<td><p>optional boolean. If true, the resultset will include the geometries
+associated with each result. The default is true.</p></td>
+</tr>
+<tr class="row-odd"><td><p>max_offset</p></td>
+<td><p>optional integer. This option can be used to specify the maximum
+allowable offset to be used for generalizing geometries returned by
+the identify operation.</p></td>
+</tr>
+<tr class="row-even"><td><p>precision</p></td>
+<td><p>optional integer. This option can be used to specify the number of
+decimal places in the response geometries returned by the identify
+operation. This applies to X and Y values only (not m or z-values).</p></td>
+</tr>
+<tr class="row-odd"><td><p>dynamic_layers</p></td>
+<td><p>optional dict. Use dynamicLayers property to reorder layers and
+change the layer data source. dynamicLayers can also be used to add
+new layer that was not defined in the map used to create the map
+service. The new layer should have its source pointing to one of the
+registered workspaces that was defined at the time the map service
+was created.
+The order of dynamicLayers array defines the layer drawing order.
+The first element of the dynamicLayers is stacked on top of all
+other layers. When defining a dynamic layer, source is required.</p></td>
+</tr>
+<tr class="row-even"><td><p>return_z</p></td>
+<td><p>optional boolean. If true, Z values will be included in the results
+if the features have Z values. Otherwise, Z values are not returned.
+The default is false.</p></td>
+</tr>
+<tr class="row-odd"><td><p>return_m</p></td>
+<td><p>optional boolean.If true, M values will be included in the results
+if the features have M values. Otherwise, M values are not returned.
+The default is false.</p></td>
+</tr>
+<tr class="row-even"><td><p>gdb_version</p></td>
+<td><p>optional string. Switch map layers to point to an alternate
+geodatabase version.</p></td>
+</tr>
+<tr class="row-odd"><td><p>return_unformatted</p></td>
+<td><p>optional boolean. If true, the values in the result will not be
+formatted i.e. numbers will returned as is and dates will be
+returned as epoch values.</p></td>
+</tr>
+<tr class="row-even"><td><p>return_field_name</p></td>
+<td><p>optional boolean. If true, field names will be returned instead of
+field aliases.</p></td>
+</tr>
+<tr class="row-odd"><td><p>transformations</p></td>
+<td><p>optional list. Use this parameter to apply one or more datum
+transformations to the map when sr is different than the map
+service’s spatial reference. It is an array of transformation
+elements.</p></td>
+</tr>
+<tr class="row-even"><td><p>map_range_values</p></td>
+<td><p>optional list. Allows you to filter features in the exported map
+from all layer that are within the specified range instant or
+extent.</p></td>
+</tr>
+<tr class="row-odd"><td><p>layer_range_values</p></td>
+<td><p>optional dictionary. Allows you to filter features for each
+individual layer that are within the specified range instant or
+extent. Note: Check range infos at the layer resources for the
+available ranges.</p></td>
+</tr>
+<tr class="row-even"><td><p>layer_parameters</p></td>
+<td><p>optional list. Allows you to filter the features of individual
+layers in the exported map by specifying value(s) to an array of
+pre-authored parameterized filters for those layers. When value is
+not specified for any parameter in a request, the default value,
+that is assigned during authoring time, gets used instead.</p></td>
+</tr>
+</tbody>
+</table>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>dictionary</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="arcgis.mapping.MapImageLayer.fromitem">
+<em class="property">classmethod </em><code class="sig-name descname">fromitem</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">item</span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.mapping.MapImageLayer.fromitem" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the layer at the specified index from a layer item.</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 21%" />
+<col style="width: 79%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><strong>Argument</strong></p></td>
+<td><p><strong>Description</strong></p></td>
+</tr>
+<tr class="row-even"><td><p>item</p></td>
+<td><p>Required string. An item ID representing a layer.</p></td>
+</tr>
+<tr class="row-odd"><td><p>index</p></td>
+<td><p>Optional int. The index of the layer amongst the item’s layers</p></td>
+</tr>
+</tbody>
+</table>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>The layer at the specified index.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="arcgis.mapping.MapImageLayer.generate_kml">
+<code class="sig-name descname">generate_kml</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">save_location</span></em>, <em class="sig-param"><span class="n">name</span></em>, <em class="sig-param"><span class="n">layers</span></em>, <em class="sig-param"><span class="n">options</span><span class="o">=</span><span class="default_value">'composite'</span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.mapping.MapImageLayer.generate_kml" title="Permalink to this definition">¶</a></dt>
+<dd><p>The generateKml operation is performed on a map service resource.
+The result of this operation is a KML document wrapped in a KMZ
+file. The document contains a network link to the KML Service
+endpoint with properties and parameters you specify.</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 20%" />
+<col style="width: 80%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><strong>Argument</strong></p></td>
+<td><p><strong>Description</strong></p></td>
+</tr>
+<tr class="row-even"><td><p>save_location</p></td>
+<td><p>required string. Save folder.</p></td>
+</tr>
+<tr class="row-odd"><td><p>name</p></td>
+<td><p>The name of the resulting KML document. This is the name that
+appears in the Places panel of Google Earth.</p></td>
+</tr>
+<tr class="row-even"><td><p>layers</p></td>
+<td><p>required string. the layers to perform the generateKML operation on.
+The layers are specified as a comma-separated list of layer ids.</p></td>
+</tr>
+<tr class="row-odd"><td><p>options</p></td>
+<td><p>required string. The layer drawing options. Based on the option
+chosen, the layers are drawn as one composite image, as separate
+images, or as vectors. When the KML capability is enabled, the
+ArcGIS Server administrator has the option of setting the layer
+operations allowed. If vectors are not allowed, then the caller will
+not be able to get vectors. Instead, the caller receives a single
+composite image.
+values: composite, separateImage, nonComposite</p></td>
+</tr>
+</tbody>
+</table>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>string to file path</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="arcgis.mapping.MapImageLayer.identify">
+<code class="sig-name descname">identify</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">geometry</span></em>, <em class="sig-param"><span class="n">map_extent</span></em>, <em class="sig-param"><span class="n">image_display</span></em>, <em class="sig-param"><span class="n">geometry_type</span><span class="o">=</span><span class="default_value">'Point'</span></em>, <em class="sig-param"><span class="n">sr</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">layer_defs</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">time_value</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">time_options</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">layers</span><span class="o">=</span><span class="default_value">'all'</span></em>, <em class="sig-param"><span class="n">tolerance</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">return_geometry</span><span class="o">=</span><span class="default_value">True</span></em>, <em class="sig-param"><span class="n">max_offset</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">precision</span><span class="o">=</span><span class="default_value">4</span></em>, <em class="sig-param"><span class="n">dynamic_layers</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">return_z</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="n">return_m</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="n">gdb_version</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">return_unformatted</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="n">return_field_name</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="n">transformations</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">map_range_values</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">layer_range_values</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">layer_parameters</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.mapping.MapImageLayer.identify" title="Permalink to this definition">¶</a></dt>
+<dd><p>The identify operation is performed on a map service resource
+to discover features at a geographic location. The result of this
+operation is an identify results resource. Each identified result
+includes its name, layer ID, layer name, geometry and geometry type,
+and other attributes of that result as name-value pairs.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>dictionary</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="arcgis.mapping.MapImageLayer.item_info">
+<em class="property">property </em><code class="sig-name descname">item_info</code><a class="headerlink" href="#arcgis.mapping.MapImageLayer.item_info" title="Permalink to this definition">¶</a></dt>
+<dd><p>returns the service’s item’s infomation</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="arcgis.mapping.MapImageLayer.kml">
+<em class="property">property </em><code class="sig-name descname">kml</code><a class="headerlink" href="#arcgis.mapping.MapImageLayer.kml" title="Permalink to this definition">¶</a></dt>
+<dd><p>returns the KML file for the layer</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="arcgis.mapping.MapImageLayer.legend">
+<em class="property">property </em><code class="sig-name descname">legend</code><a class="headerlink" href="#arcgis.mapping.MapImageLayer.legend" title="Permalink to this definition">¶</a></dt>
+<dd><p>The legend resource represents a map service’s legend. It returns
+the legend information for all layers in the service. Each layer’s
+legend information includes the symbol images and labels for each
+symbol. Each symbol is an image of size 20 x 20 pixels at 96 DPI.
+Additional information for each layer such as the layer ID, name,
+and min and max scales are also included.</p>
+<p>The legend symbols include the base64 encoded imageData as well as
+a url that could be used to retrieve the image from the server.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="arcgis.mapping.MapImageLayer.manager">
+<em class="property">property </em><code class="sig-name descname">manager</code><a class="headerlink" href="#arcgis.mapping.MapImageLayer.manager" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="arcgis.mapping.MapImageLayer.metadata">
+<em class="property">property </em><code class="sig-name descname">metadata</code><a class="headerlink" href="#arcgis.mapping.MapImageLayer.metadata" title="Permalink to this definition">¶</a></dt>
+<dd><p>returns the service’s XML metadata file</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="arcgis.mapping.MapImageLayer.thumbnail">
+<code class="sig-name descname">thumbnail</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">out_path</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.mapping.MapImageLayer.thumbnail" title="Permalink to this definition">¶</a></dt>
+<dd><p>if present, this operation will download the image to local disk</p>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="mapimagelayermanager">
+<h2>MapImageLayerManager<a class="headerlink" href="#mapimagelayermanager" title="Permalink to this headline">¶</a></h2>
+<dl class="py class">
+<dt id="arcgis.mapping.MapImageLayerManager">
+<em class="property">class </em><code class="sig-prename descclassname">arcgis.mapping.</code><code class="sig-name descname">MapImageLayerManager</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">url</span></em>, <em class="sig-param"><span class="n">gis</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">map_img_lyr</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.mapping.MapImageLayerManager" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">arcgis.gis._GISResource</span></code></p>
+<p>allows administration (if access permits) of ArcGIS Online hosted map image layers.
+A map image layer offers access to map and layer content.</p>
+<dl class="py method">
+<dt id="arcgis.mapping.MapImageLayerManager.cancel_job">
+<code class="sig-name descname">cancel_job</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">job_id</span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.mapping.MapImageLayerManager.cancel_job" title="Permalink to this definition">¶</a></dt>
+<dd><p>The cancel job operation supports cancelling a job while update
+tiles is running from a hosted feature service. The result of this
+operation is a response indicating success or failure with error
+code and description.</p>
+<dl class="simple">
+<dt>Inputs:</dt><dd><p>job_id - job id to cancel</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="arcgis.mapping.MapImageLayerManager.delete_tiles">
+<code class="sig-name descname">delete_tiles</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">levels</span></em>, <em class="sig-param"><span class="n">extent</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.mapping.MapImageLayerManager.delete_tiles" title="Permalink to this definition">¶</a></dt>
+<dd><p>Deletes tiles for the current cache</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 22%" />
+<col style="width: 78%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><strong>Argument</strong></p></td>
+<td><p><strong>Description</strong></p></td>
+</tr>
+<tr class="row-even"><td><p>extent</p></td>
+<td><p>optional dictionary,  If specified, the tiles within
+this extent will be deleted or will be deleted based
+on the service’s full extent.
+Example:
+6224324.092137296,487347.5253569535,
+11473407.698535524,4239488.369818687
+the minx, miny, maxx, maxy values or,
+{“xmin”:6224324.092137296,”ymin”:487347.5253569535,
+“xmax”:11473407.698535524,”ymax”:4239488.369818687,
+“spatialReference”:{“wkid”:102100}} the JSON
+representation of the Extent object.</p></td>
+</tr>
+<tr class="row-odd"><td><p>levels</p></td>
+<td><p>required string, The level to delete.
+Example, 0-5,10,11-20 or 1,2,3 or 0-5</p></td>
+</tr>
+</tbody>
+</table>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>dictionary</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="arcgis.mapping.MapImageLayerManager.edit_tile_service">
+<code class="sig-name descname">edit_tile_service</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">service_definition</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">min_scale</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">max_scale</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">source_item_id</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">export_tiles_allowed</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="n">max_export_tile_count</span><span class="o">=</span><span class="default_value">100000</span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.mapping.MapImageLayerManager.edit_tile_service" title="Permalink to this definition">¶</a></dt>
+<dd><p>This operation updates a Tile Service’s properties</p>
+<dl>
+<dt>Inputs:</dt><dd><p>service_definition - updates a service definition
+min_scale - sets the services minimum scale for caching
+max_scale - sets the service’s maximum scale for caching
+source_item_id - The Source Item ID is the GeoWarehouse Item ID of the map service
+export_tiles_allowed - sets the value to let users export tiles
+max_export_tile_count - sets the maximum amount of tiles to be exported</p>
+<blockquote>
+<div><p>from a single call.</p>
+</div></blockquote>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="arcgis.mapping.MapImageLayerManager.import_tiles">
+<code class="sig-name descname">import_tiles</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">item</span></em>, <em class="sig-param"><span class="n">levels</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">extent</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">merge</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="n">replace</span><span class="o">=</span><span class="default_value">False</span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.mapping.MapImageLayerManager.import_tiles" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils align-default">
+<colgroup>
+<col style="width: 18%" />
+<col style="width: 82%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><strong>Argument</strong></p></td>
+<td><p><strong>Description</strong></p></td>
+</tr>
+<tr class="row-even"><td><p>item</p></td>
+<td><p>Required ItemId or Item. The TPK file’s item id.
+This TPK file contains to-be-extracted bundle files
+which are then merged into an existing cache service.</p></td>
+</tr>
+<tr class="row-odd"><td><p>levels</p></td>
+<td><p>Optional String / List of integers, The level of details
+to update. Example: “1,2,10,20” or [1,2,10,20]</p></td>
+</tr>
+<tr class="row-even"><td><p>extent</p></td>
+<td><p>Optional String / Dict. The area to update as Xmin, YMin, XMax, YMax
+example: “-100,-50,200,500” or
+{‘xmin’:100, ‘ymin’:200, ‘xmax’:105, ‘ymax’:205}</p></td>
+</tr>
+<tr class="row-odd"><td><p>merge</p></td>
+<td><p>Optional Boolean. Default is false and applicable to
+compact cache storage format. It controls whether
+the bundle files from the TPK file are merged with
+the one in the existing cached service. Otherwise,
+the bundle files are overwritten.</p></td>
+</tr>
+<tr class="row-even"><td><p>replace</p></td>
+<td><p>Optional Boolean. Default is false, applicable to
+compact cache storage format and used when
+merge=true. It controls whether the new tiles will
+replace the existing ones when merging bundles.</p></td>
+</tr>
+</tbody>
+</table>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>Dict</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="arcgis.mapping.MapImageLayerManager.job_statistics">
+<code class="sig-name descname">job_statistics</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">job_id</span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.mapping.MapImageLayerManager.job_statistics" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the job statistics for the given jobId</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="arcgis.mapping.MapImageLayerManager.refresh">
+<code class="sig-name descname">refresh</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">service_definition</span><span class="o">=</span><span class="default_value">True</span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.mapping.MapImageLayerManager.refresh" title="Permalink to this definition">¶</a></dt>
+<dd><p>The refresh operation refreshes a service, which clears the web
+server cache for the service.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="arcgis.mapping.MapImageLayerManager.rerun_job">
+<em class="property">property </em><code class="sig-name descname">rerun_job</code><a class="headerlink" href="#arcgis.mapping.MapImageLayerManager.rerun_job" title="Permalink to this definition">¶</a></dt>
+<dd><p>The rerun job operation supports re-running a canceled job from a
+hosted map service. The result of this operation is a response
+indicating success or failure with error code and description.</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 22%" />
+<col style="width: 78%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><strong>Argument</strong></p></td>
+<td><p><strong>Description</strong></p></td>
+</tr>
+<tr class="row-even"><td><p>code</p></td>
+<td><p>required string, parameter used to re-run a given
+jobs with a specific error
+code: ALL | ERROR | CANCELED</p></td>
+</tr>
+<tr class="row-odd"><td><p>job_id</p></td>
+<td><p>required string, job to reprocess</p></td>
+</tr>
+</tbody>
+</table>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>boolean or dictionary</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="arcgis.mapping.MapImageLayerManager.update_tiles">
+<code class="sig-name descname">update_tiles</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">levels</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">extent</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.mapping.MapImageLayerManager.update_tiles" title="Permalink to this definition">¶</a></dt>
+<dd><p>The starts tile generation for ArcGIS Online.  The levels of detail
+and the extent are needed to determine the area where tiles need
+to be rebuilt.</p>
+<p>..Note: This operation is for ArcGIS Online only.</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 18%" />
+<col style="width: 82%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><strong>Argument</strong></p></td>
+<td><p><strong>Description</strong></p></td>
+</tr>
+<tr class="row-even"><td><p>levels</p></td>
+<td><p>Optional String / List of integers, The level of details
+to update. Example: “1,2,10,20” or [1,2,10,20]</p></td>
+</tr>
+<tr class="row-odd"><td><p>extent</p></td>
+<td><p>Optional String / Dict. The area to update as Xmin, YMin, XMax, YMax
+example: “-100,-50,200,500” or
+{‘xmin’:100, ‘ymin’:200, ‘xmax’:105, ‘ymax’:205}</p></td>
+</tr>
+</tbody>
+</table>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>Dictionary. If the product is not ArcGIS Online tile service, the
+result will be None.</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="vectortilelayer">
+<h2>VectorTileLayer<a class="headerlink" href="#vectortilelayer" title="Permalink to this headline">¶</a></h2>
+<dl class="py class">
+<dt id="arcgis.mapping.VectorTileLayer">
+<em class="property">class </em><code class="sig-prename descclassname">arcgis.mapping.</code><code class="sig-name descname">VectorTileLayer</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">url</span></em>, <em class="sig-param"><span class="n">gis</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.mapping.VectorTileLayer" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="arcgis.gis.toc.html#arcgis.gis.Layer" title="arcgis.gis.Layer"><code class="xref py py-class docutils literal notranslate"><span class="pre">arcgis.gis.Layer</span></code></a></p>
+<dl class="py method">
+<dt id="arcgis.mapping.VectorTileLayer.fromitem">
+<em class="property">classmethod </em><code class="sig-name descname">fromitem</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">item</span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.mapping.VectorTileLayer.fromitem" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the layer at the specified index from a layer item.</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 21%" />
+<col style="width: 79%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><strong>Argument</strong></p></td>
+<td><p><strong>Description</strong></p></td>
+</tr>
+<tr class="row-even"><td><p>item</p></td>
+<td><p>Required string. An item ID representing a layer.</p></td>
+</tr>
+<tr class="row-odd"><td><p>index</p></td>
+<td><p>Optional int. The index of the layer amongst the item’s layers</p></td>
+</tr>
+</tbody>
+</table>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>The layer at the specified index.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="arcgis.mapping.VectorTileLayer.info">
+<em class="property">property </em><code class="sig-name descname">info</code><a class="headerlink" href="#arcgis.mapping.VectorTileLayer.info" title="Permalink to this definition">¶</a></dt>
+<dd><p>This returns relative paths to a list of resource files</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="arcgis.mapping.VectorTileLayer.styles">
+<em class="property">property </em><code class="sig-name descname">styles</code><a class="headerlink" href="#arcgis.mapping.VectorTileLayer.styles" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="arcgis.mapping.VectorTileLayer.tile_fonts">
+<code class="sig-name descname">tile_fonts</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">fontstack</span></em>, <em class="sig-param"><span class="n">stack_range</span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.mapping.VectorTileLayer.tile_fonts" title="Permalink to this definition">¶</a></dt>
+<dd><p>This resource returns glyphs in PBF format. The template url for
+this fonts resource is represented in Vector Tile Style resource.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="arcgis.mapping.VectorTileLayer.tile_sprite">
+<code class="sig-name descname">tile_sprite</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">out_format</span><span class="o">=</span><span class="default_value">'sprite.json'</span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.mapping.VectorTileLayer.tile_sprite" title="Permalink to this definition">¶</a></dt>
+<dd><p>This resource returns sprite image and metadata</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="arcgis.mapping.VectorTileLayer.vector_tile">
+<code class="sig-name descname">vector_tile</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">level</span></em>, <em class="sig-param"><span class="n">row</span></em>, <em class="sig-param"><span class="n">column</span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.mapping.VectorTileLayer.vector_tile" title="Permalink to this definition">¶</a></dt>
+<dd><p>This resource represents a single vector tile for the map. The
+bytes for the tile at the specified level, row and column are
+returned in PBF format. If a tile is not found, an error is returned.</p>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="scenelayer">
+<h2>SceneLayer<a class="headerlink" href="#scenelayer" title="Permalink to this headline">¶</a></h2>
+<dl class="py class">
+<dt id="arcgis.mapping.SceneLayer">
+<em class="property">class </em><code class="sig-prename descclassname">arcgis.mapping.</code><code class="sig-name descname">SceneLayer</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">url</span></em>, <em class="sig-param"><span class="n">gis</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.mapping.SceneLayer" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="arcgis.gis.toc.html#arcgis.gis.Layer" title="arcgis.gis.Layer"><code class="xref py py-class docutils literal notranslate"><span class="pre">arcgis.gis.Layer</span></code></a></p>
+<p>Represents a Web scene layer. Web scene layers are cached web layers that are optimized for displaying a large
+amount of 2D and 3D features. You can use scene layers to represent 3D points, point clouds, 3D objects and
+integrated mesh layers.</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 21%" />
+<col style="width: 79%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><strong>Argument</strong></p></td>
+<td><p><strong>Description</strong></p></td>
+</tr>
+<tr class="row-even"><td><p>url</p></td>
+<td><p>Required string, specify the url ending in /SceneServer/</p></td>
+</tr>
+<tr class="row-odd"><td><p>gis</p></td>
+<td><p>Optional GIS object. If not specified, the active GIS connection is
+used.</p></td>
+</tr>
+</tbody>
+</table>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># USAGE EXAMPLE 1: Instantiating a SceneLayer object</span>
+
+<span class="kn">from</span> <span class="nn">arcgis.mapping</span> <span class="kn">import</span> <span class="n">SceneLayer</span>
+<span class="n">s_layer</span> <span class="o">=</span> <span class="n">SceneLayer</span><span class="p">(</span><span class="n">url</span><span class="o">=</span><span class="s1">&#39;https://your_portal.com/arcgis/rest/services/service_name/SceneServer/&#39;</span><span class="p">)</span>
+
+<span class="nb">type</span><span class="p">(</span><span class="n">s_layer</span><span class="p">)</span>
+<span class="o">&gt;&gt;</span> <span class="n">arcgis</span><span class="o">.</span><span class="n">mapping</span><span class="o">.</span><span class="n">_types</span><span class="o">.</span><span class="n">SceneLayer</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">s_layer</span><span class="o">.</span><span class="n">properties</span><span class="o">.</span><span class="n">layers</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">name</span><span class="p">)</span>
+<span class="o">&gt;&gt;</span> <span class="s1">&#39;your layer name&#39;</span>
+</pre></div>
+</div>
+</dd></dl>
+
+</div>
+<div class="section" id="export-map">
+<h2>export_map<a class="headerlink" href="#export-map" title="Permalink to this headline">¶</a></h2>
+<dl class="py function">
+<dt id="arcgis.mapping.export_map">
+<code class="sig-prename descclassname">arcgis.mapping.</code><code class="sig-name descname">export_map</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">web_map_as_json</span><span class="p">:</span> <span class="n">str</span> <span class="o">=</span> <span class="default_value">None</span></em>, <em class="sig-param"><span class="n">format</span><span class="p">:</span> <span class="n">str</span> <span class="o">=</span> <span class="default_value">'PDF'</span></em>, <em class="sig-param"><span class="n">layout_template</span><span class="p">:</span> <span class="n">str</span> <span class="o">=</span> <span class="default_value">'MAP_ONLY'</span></em>, <em class="sig-param"><span class="n">gis</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.mapping.export_map" title="Permalink to this definition">¶</a></dt>
+<dd><p>This function takes the state of the web map(for example, included services, layer visibility
+settings, client-side graphics, and so forth) and returns either (a) a page layout or
+(b) a map without page surrounds of the specified area of interest in raster or vector format.
+The input for this function is a piece of text in JavaScript object notation (JSON) format describing the layers,
+graphics, and other settings in the web map. The JSON must be structured according to the WebMap specification
+in the ArcGIS HelpThis tool is shipped with ArcGIS Server to support web services for printing, including the
+preconfigured service named PrintingTools.
+Parameters:</p>
+<blockquote>
+<div><p>web_map_as_json: Web Map as JSON (str). Required parameter.  A JSON representation of the state of the map to be exported as it appears in the web application. See the WebMap specification in the ArcGIS Help to understand how this text should be formatted. The ArcGIS web APIs (for JavaScript, Flex, Silverlight, etc.) allow developers to easily get this JSON string from the map.</p>
+<dl>
+<dt>format: Format (str). Optional parameter.  The format in which the map image for printing will be delivered. The following strings are accepted.For example:PNG8 (default if the parameter is left blank)PDFPNG32JPGGIFEPSSVGSVGZ</dt><dd><p>Choice list:[‘PDF’, ‘PNG32’, ‘PNG8’, ‘JPG’, ‘GIF’, ‘EPS’, ‘SVG’, ‘SVGZ’]</p>
+</dd>
+<dt>layout_template: Layout Template (str). Optional parameter.  Either a name of a template from the list or the keyword MAP_ONLY. When MAP_ONLY is chosen or an empty string is passed in, the output map does not contain any page layout surroundings (for example title, legends, scale bar, and so forth)</dt><dd><blockquote>
+<div><p>Choice list:[‘A3 Landscape’, ‘A3 Portrait’, ‘A4 Landscape’, ‘A4 Portrait’, ‘Letter ANSI A Landscape’, ‘Letter ANSI A Portrait’, ‘Tabloid ANSI B Landscape’, ‘Tabloid ANSI B Portrait’, ‘MAP_ONLY’]</p>
+</div></blockquote>
+<p>gis: Optional, the GIS on which this tool runs. If not specified, the active GIS is used.</p>
+</dd>
+</dl>
+</div></blockquote>
+<dl class="simple">
+<dt>Returns:</dt><dd><p>output_file - Output File as a DataFile</p>
+</dd>
+</dl>
+<p>See <a class="reference external" href="https://utility.arcgisonline.com/arcgis/rest/directories/arcgisoutput/Utilities/PrintingTools_GPServer/Utilities_PrintingTools/ExportWebMapTask.htm">https://utility.arcgisonline.com/arcgis/rest/directories/arcgisoutput/Utilities/PrintingTools_GPServer/Utilities_PrintingTools/ExportWebMapTask.htm</a> for additional help.</p>
+</dd></dl>
+
+</div>
+<div class="section" id="get-layout-templates">
+<h2>get_layout_templates<a class="headerlink" href="#get-layout-templates" title="Permalink to this headline">¶</a></h2>
+<dl class="py function">
+<dt id="arcgis.mapping.get_layout_templates">
+<code class="sig-prename descclassname">arcgis.mapping.</code><code class="sig-name descname">get_layout_templates</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">gis</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span> &#x2192; str<a class="headerlink" href="#arcgis.mapping.get_layout_templates" title="Permalink to this definition">¶</a></dt>
+<dd><p>This function returns the content of the GIS’s layout templates formatted as dict.</p>
+<p>Parameters:</p>
+<p>gis: Optional, the GIS on which this tool runs. If not specified, the active GIS is used.</p>
+<dl class="simple">
+<dt>Returns:</dt><dd><p>output_json - layout templates as Python dict</p>
+</dd>
+</dl>
+<p>See <a class="reference external" href="https://utility.arcgisonline.com/arcgis/rest/directories/arcgisoutput/Utilities/PrintingTools_GPServer/Utilities_PrintingTools/GetLayoutTemplatesInfo.htm">https://utility.arcgisonline.com/arcgis/rest/directories/arcgisoutput/Utilities/PrintingTools_GPServer/Utilities_PrintingTools/GetLayoutTemplatesInfo.htm</a> for additional help.</p>
+</dd></dl>
+
+</div>
+<div class="section" id="module-arcgis.mapping.symbol">
+<span id="symbology"></span><h2>Symbology<a class="headerlink" href="#module-arcgis.mapping.symbol" title="Permalink to this headline">¶</a></h2>
+<p>Generates Symbol Types</p>
+<dl class="py function">
+<dt id="arcgis.mapping.symbol.create_symbol">
+<code class="sig-prename descclassname">arcgis.mapping.symbol.</code><code class="sig-name descname">create_symbol</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">geometry_type</span></em>, <em class="sig-param"><span class="n">symbol_type</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">symbol_style</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">colors</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.mapping.symbol.create_symbol" title="Permalink to this definition">¶</a></dt>
+<dd><p>Generates a Symbol from a given set of Paramters</p>
+<p>This method creates either a Picture, Text, Cartographic, or Simple Symbol
+based on a given set of parameters.  Each symbol type has a specific set of
+parameters that are excepted.  There is a simplified input definition similar
+to matplotlib.</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 29%" />
+<col style="width: 71%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><strong>Required Argument</strong></p></td>
+<td><p><strong>Description</strong></p></td>
+</tr>
+<tr class="row-even"><td><p>geometry_type</p></td>
+<td><p>required string.  This can be point, line, polygon, or
+multipoint.  It helps to ensure that the symbol created
+will be supported by that geometry type.</p></td>
+</tr>
+</tbody>
+</table>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 28%" />
+<col style="width: 72%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><strong>Optional Argument</strong></p></td>
+<td><p><strong>Description</strong></p></td>
+</tr>
+<tr class="row-even"><td><p>symbol_type</p></td>
+<td><p>optional string. This is the type of symbol the user
+needs to create.  Valid inputs are: simple, picture, text,
+or carto.  The default is simple.</p></td>
+</tr>
+<tr class="row-odd"><td><p>symbol_style</p></td>
+<td><p>optional string. This is the symbology used by the
+geometry.  For example ‘s’ for a Line geometry is a solid
+line. And ‘-‘ is a dash line.</p>
+<p><strong>Point Symbols</strong></p>
+<ul class="simple">
+<li><p>‘o’ - Circle (default)</p></li>
+<li><p>‘+’ - Cross</p></li>
+<li><p>‘D’ - Diamond</p></li>
+<li><p>‘s’ - Square</p></li>
+<li><p>‘x’ - X</p></li>
+</ul>
+<p><strong>Polyline Symbols</strong></p>
+<ul class="simple">
+<li><p>‘s’ - Solid (default)</p></li>
+<li><p>‘-‘ - Dash</p></li>
+<li><p>‘-.’ - Dash Dot</p></li>
+<li><p>‘-..’ - Dash Dot Dot</p></li>
+<li><p>‘.’ - Dot</p></li>
+<li><p>‘–’ - Long Dash</p></li>
+<li><p>‘–.’ - Long Dash Dot</p></li>
+<li><p>‘n’ - Null</p></li>
+<li><p>‘s-‘ - Short Dash</p></li>
+<li><p>‘s-.’ - Short Dash Dot</p></li>
+<li><p>‘s-..’ - Short Dash Dot Dot</p></li>
+<li><p>‘s.’ - Short Dot</p></li>
+</ul>
+<p><strong>Polygon Symbols</strong></p>
+<ul class="simple">
+<li><p>‘s’ - Solid Fill (default)</p></li>
+<li><p>‘’ - Backward Diagonal</p></li>
+<li><p>‘/’ - Forward Diagonal</p></li>
+<li><p>‘|’ - Vertical Bar</p></li>
+<li><p>‘-‘ - Horizontal Bar</p></li>
+<li><p>‘x’ - Diagonal Cross</p></li>
+<li><p>‘+’ - Cross</p></li>
+</ul>
+</td>
+</tr>
+<tr class="row-even"><td><p>colors</p></td>
+<td><blockquote>
+<div><p>optional string or list.  This is the color scheme a user</p>
+</div></blockquote>
+<p>can provide if the exact color is not needed, or a user
+can provide a list with the color defined as:
+[red, green blue, alpha]. The values red, green, blue are
+from 0-255 and alpha is a float value from 0 - 1.
+The default value is ‘jet’ color scheme.</p>
+</td>
+</tr>
+<tr class="row-odd"><td><p>cstep</p></td>
+<td><p>optional integer.  If provided, its the color location on
+the color scheme.</p></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Simple Symbols</strong></p>
+<p>This is a list of optional parameters that can be given for point, line or
+polygon geometries.</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 22%" />
+<col style="width: 78%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><strong>Argument</strong></p></td>
+<td><p><strong>Description</strong></p></td>
+</tr>
+<tr class="row-even"><td><p>marker_size</p></td>
+<td><p>optional float.  Numeric size of the symbol given in
+points.</p></td>
+</tr>
+<tr class="row-odd"><td><p>marker_angle</p></td>
+<td><p>optional float. Numeric value used to rotate the symbol.
+The symbol is rotated counter-clockwise. For example,
+The following, angle=-30, in will create a symbol rotated
+-30 degrees counter-clockwise; that is, 30 degrees
+clockwise.</p></td>
+</tr>
+<tr class="row-even"><td><p>marker_xoffset</p></td>
+<td><p>Numeric value indicating the offset on the x-axis in points.</p></td>
+</tr>
+<tr class="row-odd"><td><p>marker_yoffset</p></td>
+<td><p>Numeric value indicating the offset on the y-axis in points.</p></td>
+</tr>
+<tr class="row-even"><td><p>line_width</p></td>
+<td><p>optional float. Numeric value indicating the width of the line in points</p></td>
+</tr>
+<tr class="row-odd"><td><p>outline_style</p></td>
+<td><p>Optional string. For polygon point, and line geometries , a
+customized outline type can be provided.</p>
+<p>Allowed Styles:</p>
+<ul class="simple">
+<li><p>‘s’ - Solid (default)</p></li>
+<li><p>‘-‘ - Dash</p></li>
+<li><p>‘-.’ - Dash Dot</p></li>
+<li><p>‘-..’ - Dash Dot Dot</p></li>
+<li><p>‘.’ - Dot</p></li>
+<li><p>‘–’ - Long Dash</p></li>
+<li><p>‘–.’ - Long Dash Dot</p></li>
+<li><p>‘n’ - Null</p></li>
+<li><p>‘s-‘ - Short Dash</p></li>
+<li><p>‘s-.’ - Short Dash Dot</p></li>
+<li><p>‘s-..’ - Short Dash Dot Dot</p></li>
+<li><p>‘s.’ - Short Dot</p></li>
+</ul>
+</td>
+</tr>
+<tr class="row-even"><td><p>outline_color</p></td>
+<td><p>optional string or list.  This is the same color as the
+colors property, but specifically applies to the outline_color.</p></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Picture Symbol</strong></p>
+<p>This type of symbol only applies to Points, MultiPoints and Polygons.</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 7%" />
+<col style="width: 93%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><strong>Argument</strong></p></td>
+<td><p><strong>Description</strong></p></td>
+</tr>
+<tr class="row-even"><td><p>marker_angle</p></td>
+<td><p>Numeric value that defines the number of degrees ranging
+from 0-360, that a marker symbol is rotated. The rotation
+is from East in a counter-clockwise direction where East
+is the 0 axis.</p></td>
+</tr>
+<tr class="row-odd"><td><p>marker_xoffset</p></td>
+<td><p>Numeric value indicating the offset on the x-axis in points.</p></td>
+</tr>
+<tr class="row-even"><td><p>marker_yoffset</p></td>
+<td><p>Numeric value indicating the offset on the y-axis in points.</p></td>
+</tr>
+<tr class="row-odd"><td><p>height</p></td>
+<td><p>Numeric value used if needing to resize the symbol. Specify a value in points. If images are to be displayed in their original size, leave this blank.</p></td>
+</tr>
+<tr class="row-even"><td><p>width</p></td>
+<td><p>Numeric value used if needing to resize the symbol. Specify a value in points. If images are to be displayed in their original size, leave this blank.</p></td>
+</tr>
+<tr class="row-odd"><td><p>url</p></td>
+<td><p>String value indicating the URL of the image. The URL should be relative if working with static layers. A full URL should be used for map service dynamic layers. A relative URL can be dereferenced by accessing the map layer image resource or the feature layer image resource.</p></td>
+</tr>
+<tr class="row-even"><td><p>image_data</p></td>
+<td><p>String value indicating the base64 encoded data.</p></td>
+</tr>
+<tr class="row-odd"><td><p>xscale</p></td>
+<td><p>Numeric value indicating the scale factor in x direction.</p></td>
+</tr>
+<tr class="row-even"><td><p>yscale</p></td>
+<td><p>Numeric value indicating the scale factor in y direction.</p></td>
+</tr>
+<tr class="row-odd"><td><p>outline_color</p></td>
+<td><p>optional string or list.  This is the same color as the
+colors property, but specifically applies to the outline_color.</p></td>
+</tr>
+<tr class="row-even"><td><p>outline_style</p></td>
+<td><p>Optional string. For polygon point, and line geometries , a
+customized outline type can be provided.</p>
+<p>Allowed Styles:</p>
+<ul class="simple">
+<li><p>‘s’ - Solid (default)</p></li>
+<li><p>‘-‘ - Dash</p></li>
+<li><p>‘-.’ - Dash Dot</p></li>
+<li><p>‘-..’ - Dash Dot Dot</p></li>
+<li><p>‘.’ - Dot</p></li>
+<li><p>‘–’ - Long Dash</p></li>
+<li><p>‘–.’ - Long Dash Dot</p></li>
+<li><p>‘n’ - Null</p></li>
+<li><p>‘s-‘ - Short Dash</p></li>
+<li><p>‘s-.’ - Short Dash Dot</p></li>
+<li><p>‘s-..’ - Short Dash Dot Dot</p></li>
+<li><p>‘s.’ - Short Dot</p></li>
+</ul>
+</td>
+</tr>
+<tr class="row-odd"><td><p>outline_color</p></td>
+<td><p>optional string or list.  This is the same color as the
+colors property, but specifically applies to the outline_color.</p></td>
+</tr>
+<tr class="row-even"><td><p>line_width</p></td>
+<td><p>optional float. Numeric value indicating the width of the line in points</p></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Text Symbol</strong></p>
+<p>This type of symbol only applies to Points, MultiPoints and Polygons.</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 26%" />
+<col style="width: 74%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><strong>Argument</strong></p></td>
+<td><p><strong>Description</strong></p></td>
+</tr>
+<tr class="row-even"><td><p>font_decoration</p></td>
+<td><p>The text decoration. Must be one of the following values:
+- line-through
+- underline
+- none</p></td>
+</tr>
+<tr class="row-odd"><td><p>font_family</p></td>
+<td><p>Optional string. The font family.</p></td>
+</tr>
+<tr class="row-even"><td><p>font_size</p></td>
+<td><p>Optional float. The font size in points.</p></td>
+</tr>
+<tr class="row-odd"><td><p>font_style</p></td>
+<td><p>Optional string. The text style.
+- italic
+- normal
+- oblique</p></td>
+</tr>
+<tr class="row-even"><td><p>font_weight</p></td>
+<td><p>Optional string. The text weight.
+Must be one of the following values:
+- bold
+- bolder
+- lighter
+- normal</p></td>
+</tr>
+<tr class="row-odd"><td><p>background_color</p></td>
+<td><p>optional string/list. Background color is represented as
+a four-element array or string of a color map.</p></td>
+</tr>
+<tr class="row-even"><td><p>halo_color</p></td>
+<td><p>Optional string/list. Color of the halo around the text.
+The default is None.</p></td>
+</tr>
+<tr class="row-odd"><td><p>halo_size</p></td>
+<td><p>Optional integer/float. The point size of a halo around
+the text symbol.</p></td>
+</tr>
+<tr class="row-even"><td><p>horizontal_alignment</p></td>
+<td><p>optional string. One of the following string values
+representing the horizontal alignment of the text.
+Must be one of the following values:
+- left
+- right
+- center
+- justify</p></td>
+</tr>
+<tr class="row-odd"><td><p>kerning</p></td>
+<td><p>optional boolean. Boolean value indicating whether to
+adjust the spacing between characters in the text string.</p></td>
+</tr>
+<tr class="row-even"><td><p>line_color</p></td>
+<td><p>optional string/list. Outline color is represented as
+a four-element array or string of a color map.</p></td>
+</tr>
+<tr class="row-odd"><td><p>line_width</p></td>
+<td><p>optional integer/float. Outline size.</p></td>
+</tr>
+<tr class="row-even"><td><p>marker_angle</p></td>
+<td><p>optional int. A numeric value that defines the number of
+degrees (0 to 360) that a text symbol is rotated. The
+rotation is from East in a counter-clockwise direction
+where East is the 0 axis.</p></td>
+</tr>
+<tr class="row-odd"><td><p>marker_xoffset</p></td>
+<td><p>optional int/float.Numeric value indicating the offset
+on the x-axis in points.</p></td>
+</tr>
+<tr class="row-even"><td><p>marker_yoffset</p></td>
+<td><p>optional int/float.Numeric value indicating the offset
+on the x-axis in points.</p></td>
+</tr>
+<tr class="row-odd"><td><p>right_to_left</p></td>
+<td><p>optional boolean. Set to true if using Hebrew or Arabic
+fonts.</p></td>
+</tr>
+<tr class="row-even"><td><p>rotated</p></td>
+<td><p>optional boolean. Boolean value indicating whether every
+character in the text string is rotated.</p></td>
+</tr>
+<tr class="row-odd"><td><p>text</p></td>
+<td><p>Required string.  Text Value to display next to geometry.</p></td>
+</tr>
+<tr class="row-even"><td><p>vertical_alignment</p></td>
+<td><p>Optional string. One of the following string values
+representing the vertical alignment of the text.
+Must be one of the following values:
+- top
+- bottom
+- middle
+- baseline</p></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Cartographic Symbol</strong></p>
+<p>This type of symbol only applies to line geometries.</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 22%" />
+<col style="width: 78%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><strong>Argument</strong></p></td>
+<td><p><strong>Description</strong></p></td>
+</tr>
+<tr class="row-even"><td><p>line_width</p></td>
+<td><p>optional float. Numeric value indicating the width of the line in points</p></td>
+</tr>
+<tr class="row-odd"><td><p>cap</p></td>
+<td><p>Optional string.  The cap style.</p></td>
+</tr>
+<tr class="row-even"><td><p>join</p></td>
+<td><p>Optional string. The join style.</p></td>
+</tr>
+<tr class="row-odd"><td><p>miter_limit</p></td>
+<td><p>Optional string. Size threshold for showing mitered line joins.</p></td>
+</tr>
+</tbody>
+</table>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>Dictionary</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="arcgis.mapping.symbol.display_colormaps">
+<code class="sig-prename descclassname">arcgis.mapping.symbol.</code><code class="sig-name descname">display_colormaps</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">colors</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.mapping.symbol.display_colormaps" title="Permalink to this definition">¶</a></dt>
+<dd><p>Displays a visual colormaps in order to assist users in selecting a color scheme for
+the data they wish to display on a map, or in a web map.</p>
+<p>This is a variation of <a class="reference external" href="http://matplotlib.org/examples/color/colormaps_reference.html">http://matplotlib.org/examples/color/colormaps_reference.html</a></p>
+</dd></dl>
+
+<dl class="py function">
+<dt id="arcgis.mapping.symbol.show_styles">
+<code class="sig-prename descclassname">arcgis.mapping.symbol.</code><code class="sig-name descname">show_styles</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">geometry_type</span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.mapping.symbol.show_styles" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the available styles for a given geometry type as a Pandas dataframe</p>
+</dd></dl>
+
+</div>
+<div class="section" id="renderers">
+<h2>Renderers<a class="headerlink" href="#renderers" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="generate-renderer">
+<h2>generate_renderer<a class="headerlink" href="#generate-renderer" title="Permalink to this headline">¶</a></h2>
+<dl class="py function">
+<dt id="arcgis.mapping.renderer.generate_renderer">
+<code class="sig-prename descclassname">arcgis.mapping.renderer.</code><code class="sig-name descname">generate_renderer</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">geometry_type</span></em>, <em class="sig-param"><span class="n">sdf_or_series</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">label</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">render_type</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">colors</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">symbol_args</span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.mapping.renderer.generate_renderer" title="Permalink to this definition">¶</a></dt>
+<dd><p>Generates the Renderer JSON</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 27%" />
+<col style="width: 73%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><strong>Explicit Argument</strong></p></td>
+<td><p><strong>Description</strong></p></td>
+</tr>
+<tr class="row-even"><td><p>geometry_type</p></td>
+<td><p>required string. The allowed values are: Point, Polyline,
+Polygon, or Raster. This required parameter is used to
+help ensure the requested renderer is valid for the
+specific type of geometry.</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 25%" />
+<col style="width: 75%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><strong>Geometry</strong></p></td>
+<td><p><strong>Supported Renderer Types</strong></p></td>
+</tr>
+<tr class="row-even"><td><p>Point</p></td>
+<td><p>simple, unique, class breaks, heat map,
+temporal</p></td>
+</tr>
+<tr class="row-odd"><td><p>Polyline</p></td>
+<td><p>simple, unique, class break</p></td>
+</tr>
+<tr class="row-even"><td><p>Polygon</p></td>
+<td><p>simple, unique, class break, dot density</p></td>
+</tr>
+<tr class="row-odd"><td><p>Raster</p></td>
+<td><p>stretched</p></td>
+</tr>
+</tbody>
+</table>
+<p>The table above provides a quick summary based on the
+allowed renderer types based on the geometry.</p>
+</td>
+</tr>
+<tr class="row-even"><td><p>sdf_or_series</p></td>
+<td><p>optional SpatialDataFrame/Pandas Series/GeoSeries. The
+spatial dataset to render.</p></td>
+</tr>
+<tr class="row-odd"><td><p>label</p></td>
+<td><p>optional string. Name of the layer in the TOC/Legend</p></td>
+</tr>
+<tr class="row-even"><td><p>render_type</p></td>
+<td><p>optional string.  Determines the type of renderer to use
+for the provided dataset. The default is ‘s’ which is for
+simple renderers.</p>
+<p>Allowed values:</p>
+<ul class="simple">
+<li><p>‘s’ - is a simple renderer that uses one symbol only.</p></li>
+<li><dl class="simple">
+<dt>‘u’ - unique renderer symbolizes features based on one</dt><dd><p>or more matching string attributes.</p>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>‘u-a’ - unique renderer symbolizes features based on</dt><dd><p>an arcade expression.</p>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>‘c’ - A class breaks renderer symbolizes based on the</dt><dd><p>value of some numeric attribute.</p>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>‘h’ - heatmap renders point data into a raster</dt><dd><p>visualization that emphasizes areas of higher
+density or weighted values.</p>
+</dd>
+</dl>
+</li>
+<li><p>‘d’ - dot density renderer</p></li>
+</ul>
+</td>
+</tr>
+<tr class="row-odd"><td><p>colors</p></td>
+<td><p>optional string/list.  Color mapping.  For simple renderer,
+just provide a string.  For more robust renderers like
+unique renderer, a list can be given.</p></td>
+</tr>
+</tbody>
+</table>
+<p>** Simple Renderer**</p>
+<p>A simple renderer is a renderer that uses one symbol only.</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 28%" />
+<col style="width: 73%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><strong>Optional Argument</strong></p></td>
+<td><p><strong>Description</strong></p></td>
+</tr>
+<tr class="row-even"><td><p>symbol_type</p></td>
+<td><p>optional string. This is the type of symbol the user
+needs to create.  Valid inputs are: simple, picture, text,
+or carto.  The default is simple.</p></td>
+</tr>
+<tr class="row-odd"><td><p>symbol_style</p></td>
+<td><p>optional string. This is the symbology used by the
+geometry.  For example ‘s’ for a Line geometry is a solid
+line. And ‘-‘ is a dash line.</p>
+<p><strong>Point Symbols</strong></p>
+<ul class="simple">
+<li><p>‘o’ - Circle (default)</p></li>
+<li><p>‘+’ - Cross</p></li>
+<li><p>‘D’ - Diamond</p></li>
+<li><p>‘s’ - Square</p></li>
+<li><p>‘x’ - X</p></li>
+</ul>
+<p><strong>Polyline Symbols</strong></p>
+<ul class="simple">
+<li><p>‘s’ - Solid (default)</p></li>
+<li><p>‘-‘ - Dash</p></li>
+<li><p>‘-.’ - Dash Dot</p></li>
+<li><p>‘-..’ - Dash Dot Dot</p></li>
+<li><p>‘.’ - Dot</p></li>
+<li><p>‘–’ - Long Dash</p></li>
+<li><p>‘–.’ - Long Dash Dot</p></li>
+<li><p>‘n’ - Null</p></li>
+<li><p>‘s-‘ - Short Dash</p></li>
+<li><p>‘s-.’ - Short Dash Dot</p></li>
+<li><p>‘s-..’ - Short Dash Dot Dot</p></li>
+<li><p>‘s.’ - Short Dot</p></li>
+</ul>
+<p><strong>Polygon Symbols</strong></p>
+<ul class="simple">
+<li><p>‘s’ - Solid Fill (default)</p></li>
+<li><p>‘’ - Backward Diagonal</p></li>
+<li><p>‘/’ - Forward Diagonal</p></li>
+<li><p>‘|’ - Vertical Bar</p></li>
+<li><p>‘-‘ - Horizontal Bar</p></li>
+<li><p>‘x’ - Diagonal Cross</p></li>
+<li><p>‘+’ - Cross</p></li>
+</ul>
+</td>
+</tr>
+<tr class="row-even"><td><p>description</p></td>
+<td><p>Description of the renderer.</p></td>
+</tr>
+<tr class="row-odd"><td><p>rotation_expression</p></td>
+<td><p>A constant value or an expression that derives the angle
+of rotation based on a feature attribute value. When an
+attribute name is specified, it’s enclosed in square
+brackets.</p></td>
+</tr>
+<tr class="row-even"><td><p>rotation_type</p></td>
+<td><p>String value which controls the origin and direction of
+rotation on point features. If the rotationType is
+defined as arithmetic, the symbol is rotated from East in
+a counter-clockwise direction where East is the 0 degree
+axis. If the rotationType is defined as geographic, the
+symbol is rotated from North in a clockwise direction
+where North is the 0 degree axis.</p>
+<p>Must be one of the following values:</p>
+<ul class="simple">
+<li><p>arithmetic</p></li>
+<li><p>geographic</p></li>
+</ul>
+</td>
+</tr>
+<tr class="row-odd"><td><p>visual_variables</p></td>
+<td><p>An array of objects used to set rendering properties.</p></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Heatmap Renderer</strong></p>
+<p>The HeatmapRenderer renders point data into a raster visualization that emphasizes
+areas of higher density or weighted values.</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 28%" />
+<col style="width: 72%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><strong>Optional Argument</strong></p></td>
+<td><p><strong>Description</strong></p></td>
+</tr>
+<tr class="row-even"><td><p>blur_radius</p></td>
+<td><p>The radius (in pixels) of the circle over which the
+majority of each point’s value is spread.</p></td>
+</tr>
+<tr class="row-odd"><td><p>field</p></td>
+<td><p>This is optional as this renderer can be created if no
+field is specified. Each feature gets the same
+value/importance/weight or with a field where each
+feature is weighted by the field’s value.</p></td>
+</tr>
+<tr class="row-even"><td><p>max_intensity</p></td>
+<td><p>The pixel intensity value which is assigned the final
+color in the color ramp.</p></td>
+</tr>
+<tr class="row-odd"><td><p>min_intensity</p></td>
+<td><p>The pixel intensity value which is assigned the initial
+color in the color ramp.</p></td>
+</tr>
+<tr class="row-even"><td><p>ratio</p></td>
+<td><p>A number between 0-1. Describes what portion along the
+gradient the colorStop is added.</p></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Predominance/Unique Renderer</strong></p>
+<p>This renderer symbolizes features based on one or more matching string attributes.</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 28%" />
+<col style="width: 72%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><strong>Optional Argument</strong></p></td>
+<td><p><strong>Description</strong></p></td>
+</tr>
+<tr class="row-even"><td><p>background_fill_symbol</p></td>
+<td><p>A symbol used for polygon features as a background if the
+renderer uses point symbols, e.g. for bivariate types &amp;
+size rendering. Only applicable to polygon layers.
+PictureFillSymbols can also be used outside of the Map
+Viewer for Size and Predominance and Size renderers.</p></td>
+</tr>
+<tr class="row-odd"><td><p>default_label</p></td>
+<td><p>Default label for the default symbol used to draw
+unspecified values.</p></td>
+</tr>
+<tr class="row-even"><td><p>default_symbol</p></td>
+<td><p>Symbol used when a value cannot be matched.</p></td>
+</tr>
+<tr class="row-odd"><td><p>field1, field2, field3</p></td>
+<td><p>Attribute field renderer uses to match values.</p></td>
+</tr>
+<tr class="row-even"><td><p>field_delimiter</p></td>
+<td><p>String inserted between the values if multiple attribute
+fields are specified.</p></td>
+</tr>
+<tr class="row-odd"><td><p>rotation_expression</p></td>
+<td><p>A constant value or an expression that derives the angle
+of rotation based on a feature attribute value. When an
+attribute name is specified, it’s enclosed in square
+brackets. Rotation is set using a visual variable of type
+rotation info with a specified field or value expression
+property.</p></td>
+</tr>
+<tr class="row-even"><td><p>rotation_type</p></td>
+<td><p>String property which controls the origin and direction
+of rotation. If the rotation type is defined as
+arithmetic the symbol is rotated from East in a
+counter-clockwise direction where East is the 0 degree
+axis. If the rotation type is defined as geographic, the
+symbol is rotated from North in a clockwise direction
+where North is the 0 degree axis.
+Must be one of the following values:</p>
+<ul class="simple">
+<li><p>arithmetic</p></li>
+<li><p>geographic</p></li>
+</ul>
+</td>
+</tr>
+<tr class="row-odd"><td><p>arcade_expression</p></td>
+<td><p>An Arcade expression evaluating to either a string or a
+number.</p></td>
+</tr>
+<tr class="row-even"><td><p>arcade_title</p></td>
+<td><p>The title identifying and describing the associated
+Arcade expression as defined in the valueExpression
+property.</p></td>
+</tr>
+<tr class="row-odd"><td><p>visual_variables</p></td>
+<td><p>An array of objects used to set rendering properties.</p></td>
+</tr>
+<tr class="row-even"><td><p>unique_values</p></td>
+<td><p>Optional list of dictionaries.  If you want to define the
+unique values listed in the renderer, specify the list
+using this variable.  The format of each unique value is
+as follows:</p>
+<dl class="simple">
+<dt>{</dt><dd><p>“value” : &lt;value&gt;,
+“label” : &lt;label value&gt;,
+“description” : &lt;optional text description&gt;,
+“symbol” : {…symbol…}</p>
+</dd>
+</dl>
+<p>}</p>
+</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Class Breaks Renderer</strong></p>
+<p>A class breaks renderer symbolizes based on the value of some numeric attribute.</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 28%" />
+<col style="width: 72%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><strong>Optional Argument</strong></p></td>
+<td><p><strong>Description</strong></p></td>
+</tr>
+<tr class="row-even"><td><p>background_fill_symbol</p></td>
+<td><p>A symbol used for polygon features as a background if the
+renderer uses point symbols, e.g. for bivariate types &amp;
+size rendering. Only applicable to polygon layers.
+PictureFillSymbols can also be used outside of the Map
+Viewer for Size and Predominance and Size renderers.</p></td>
+</tr>
+<tr class="row-odd"><td><p>default_label</p></td>
+<td><p>Default label for the default symbol used to draw
+unspecified values.</p></td>
+</tr>
+<tr class="row-even"><td><p>default_symbol</p></td>
+<td><p>Symbol used when a value cannot be matched.</p></td>
+</tr>
+<tr class="row-odd"><td><p>method</p></td>
+<td><p>Determines the classification method that was used to
+generate class breaks.</p>
+<p>Must be one of the following values:</p>
+<ul class="simple">
+<li><p>esriClassifyDefinedInterval</p></li>
+<li><p>esriClassifyEqualInterval</p></li>
+<li><p>esriClassifyGeometricalInterval</p></li>
+<li><p>esriClassifyNaturalBreaks</p></li>
+<li><p>esriClassifyQuantile</p></li>
+<li><p>esriClassifyStandardDeviation</p></li>
+<li><p>esriClassifyManual</p></li>
+</ul>
+</td>
+</tr>
+<tr class="row-even"><td><p>field</p></td>
+<td><p>Attribute field used for renderer.</p></td>
+</tr>
+<tr class="row-odd"><td><p>min_value</p></td>
+<td><p>The minimum numeric data value needed to begin class
+breaks.</p></td>
+</tr>
+<tr class="row-even"><td><p>normalization_field</p></td>
+<td><p>Used when normalizationType is field. The string value
+indicating the attribute field by which the data value is
+normalized.</p></td>
+</tr>
+<tr class="row-odd"><td><p>normalization_total</p></td>
+<td><p>Used when normalizationType is percent-of-total, this
+number property contains the total of all data values.</p></td>
+</tr>
+<tr class="row-even"><td><p>normalization_type</p></td>
+<td><p>Determine how the data was normalized.</p>
+<p>Must be one of the following values:</p>
+<ul class="simple">
+<li><p>esriNormalizeByField</p></li>
+<li><p>esriNormalizeByLog</p></li>
+<li><p>esriNormalizeByPercentOfTotal</p></li>
+</ul>
+</td>
+</tr>
+<tr class="row-odd"><td><p>rotation_expression</p></td>
+<td><p>A constant value or an expression that derives the angle
+of rotation based on a feature attribute value. When an
+attribute name is specified, it’s enclosed in square
+brackets.</p></td>
+</tr>
+<tr class="row-even"><td><p>rotation_type</p></td>
+<td><p>A string property which controls the origin and direction
+of rotation. If the rotation_type is defined as
+arithmetic, the symbol is rotated from East in a
+couter-clockwise direction where East is the 0 degree
+axis. If the rotationType is defined as geographic, the
+symbol is rotated from North in a clockwise direction
+where North is the 0 degree axis.</p>
+<p>Must be one of the following values:</p>
+<ul class="simple">
+<li><p>arithmetic</p></li>
+<li><p>geographic</p></li>
+</ul>
+</td>
+</tr>
+<tr class="row-odd"><td><p>arcade_expression</p></td>
+<td><p>An Arcade expression evaluating to a number.</p></td>
+</tr>
+<tr class="row-even"><td><p>arcade_title</p></td>
+<td><p>The title identifying and describing the associated
+Arcade expression as defined in the arcade_expression
+property.</p></td>
+</tr>
+<tr class="row-odd"><td><p>visual_variables</p></td>
+<td><p>An object used to set rendering options.</p></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Dot Density Renderer</strong></p>
+<p>A class breaks renderer symbolizes based on the value of some numeric attribute.</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 20%" />
+<col style="width: 80%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><strong>Optional Argument</strong></p></td>
+<td><p><strong>Description</strong></p></td>
+</tr>
+<tr class="row-even"><td><p>attributes</p></td>
+<td><p>Required List. The fields, labels and colors to add to
+the web map.  The list consists of dictionarys with the
+following keys:</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 18%" />
+<col style="width: 82%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><strong>Argument</strong></p></td>
+<td><p><strong>Description</strong></p></td>
+</tr>
+<tr class="row-even"><td><p>field</p></td>
+<td><p>Required String.  Name of the dataset field</p></td>
+</tr>
+<tr class="row-odd"><td><p>label</p></td>
+<td><p>Required String.  Descriptive name of the field.</p></td>
+</tr>
+<tr class="row-even"><td><p>color</p></td>
+<td><p>Required List. A integer array consisting of R,G,B,A values</p></td>
+</tr>
+<tr class="row-odd"><td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p>If the field name is not in the SeDF, then an error will be raised on renderering.</p>
+</td>
+</tr>
+<tr class="row-even"><td><p>dot_value</p></td>
+<td><p>Required Float. The unit value of what 1 dot equals.</p></td>
+</tr>
+<tr class="row-odd"><td><p>ref_scale</p></td>
+<td><p>Required Int. The reference scale of the dots.</p></td>
+</tr>
+<tr class="row-even"><td><p>unit</p></td>
+<td><p>Required string.  A label of the unit which each dot
+means.</p></td>
+</tr>
+<tr class="row-odd"><td><p>blend_dots</p></td>
+<td><p>Optional boolean.  Allows for the dots to overlap.</p></td>
+</tr>
+<tr class="row-even"><td><p>size</p></td>
+<td><p>Optional float. The size of the dot on the density map.</p></td>
+</tr>
+<tr class="row-odd"><td><p>background</p></td>
+<td><p>Optional List.  A color background as a list of [r,g,b,a]
+values.  The default is no background [0,0,0,0].</p></td>
+</tr>
+</tbody>
+</table>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>dict</p>
+</dd>
+</dl>
+</dd></dl>
+
+</div>
+<div class="section" id="visual-variables">
+<h2>visual_variables<a class="headerlink" href="#visual-variables" title="Permalink to this headline">¶</a></h2>
+<dl class="py function">
+<dt id="arcgis.mapping.renderer.visual_variables">
+<code class="sig-prename descclassname">arcgis.mapping.renderer.</code><code class="sig-name descname">visual_variables</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">geometry_type</span></em>, <em class="sig-param"><span class="n">sdf_or_list</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.mapping.renderer.visual_variables" title="Permalink to this definition">¶</a></dt>
+<dd><p>a function to create visual variables</p>
+<p>This operation allows developers to take a deep dive into developing custom renderer.
+Here a user/developer can create transparancy, size information, and other rules to
+improve the overall feel and look of spatial information on a map.</p>
+<p>Each type of information is detailed in the tables below.</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 28%" />
+<col style="width: 72%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><strong>arguements</strong></p></td>
+<td><p><strong>description</strong></p></td>
+</tr>
+<tr class="row-even"><td><p>ri_field</p></td>
+<td><p>Attribute field used for setting the rotation of a symbol
+if no ri_expression is provided.</p></td>
+</tr>
+<tr class="row-odd"><td><p>ri_type</p></td>
+<td><p>Defines the origin and direction of rotation depending on
+how the angle of rotation was measured. Possible values
+are geographic which rotates the symbol from the north in
+a clockwise direction and arithmetic which rotates the
+symbol from the east in a counter-clockwise direction.
+Must be one of the following values:</p>
+<ul class="simple">
+<li><p>geographic</p></li>
+<li><p>arithmetic</p></li>
+</ul>
+</td>
+</tr>
+<tr class="row-even"><td><p>ri_expression</p></td>
+<td><p>An Arcade expression evaluating to a number.</p></td>
+</tr>
+<tr class="row-odd"><td><p>ri_expression_title</p></td>
+<td><p>The title identifying and describing the ri_expression</p></td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</div>
+<div class="section" id="submodules">
+<h2>Submodules<a class="headerlink" href="#submodules" title="Permalink to this headline">¶</a></h2>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="arcgis.mapping.ogc.html">arcgis.mapping.ogc module</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.mapping.ogc.html#csvlayer">CSVLayer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.mapping.ogc.html#geojsonlayer">GeoJSONLayer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.mapping.ogc.html#georsslayer">GeoRSSLayer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.mapping.ogc.html#wmslayer">WMSLayer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.mapping.ogc.html#wmtslayer">WMTSLayer</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+</div>
+
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="arcgis.mapping.ogc.html" class="btn btn-neutral float-right" title="arcgis.mapping.ogc module" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="arcgis.geoprocessing.html" class="btn btn-neutral float-left" title="arcgis.geoprocessing module" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        
+        &copy; Copyright 2016-2019, Esri
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

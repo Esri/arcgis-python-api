@@ -1,0 +1,136 @@
+arcgis.geometry module
+======================
+
+.. automodule:: arcgis.geometry
+
+Point
+--------------
+.. autoclass:: arcgis.geometry.Point
+    :members:
+    :undoc-members:
+
+MultiPoint
+--------------
+.. autoclass:: arcgis.geometry.MultiPoint
+    :members:
+    :undoc-members:
+
+Polyline
+--------------
+.. autoclass:: arcgis.geometry.Polyline
+    :members:
+    :undoc-members:
+
+Polygon
+--------------
+.. autoclass:: arcgis.geometry.Polygon
+    :members:
+    :undoc-members:
+
+Envelope
+--------------
+.. autoclass:: arcgis.geometry.Envelope
+    :members:
+    :undoc-members:
+
+SpatialReference
+--------------
+.. autoclass:: arcgis.geometry.SpatialReference
+    :members:
+    :undoc-members:
+
+Geometry
+--------------
+.. autoclass:: arcgis.geometry.Geometry
+    :members:
+    :undoc-members:
+
+areas_and_lengths
+--------------
+.. automethod:: arcgis.geometry.areas_and_lengths
+
+auto_complete
+--------------
+.. automethod:: arcgis.geometry.auto_complete
+
+buffer
+--------------
+.. automethod:: arcgis.geometry.buffer
+
+convex_hull
+--------------
+.. automethod:: arcgis.geometry.convex_hull
+
+cut
+--------------
+.. automethod:: arcgis.geometry.cut
+
+density
+--------------
+.. automethod:: arcgis.geometry.density
+
+difference
+--------------
+.. automethod:: arcgis.geometry.difference
+
+distance
+--------------
+.. automethod:: arcgis.geometry.distance
+
+find_transformation
+--------------
+.. automethod:: arcgis.geometry.find_transformation
+
+from_geo_coordinate_string
+--------------
+.. automethod:: arcgis.geometry.from_geo_coordinate_string
+
+generalize
+--------------
+.. automethod:: arcgis.geometry.generalize
+
+intersect
+--------------
+.. automethod:: arcgis.geometry.intersect
+
+label_points
+--------------
+.. automethod:: arcgis.geometry.label_points
+
+lengths
+--------------
+.. automethod:: arcgis.geometry.lengths
+
+offset
+--------------
+.. automethod:: arcgis.geometry.offset
+
+project
+--------------
+.. automethod:: arcgis.geometry.project
+
+
+relation
+--------------
+.. automethod:: arcgis.geometry.relation
+
+
+reshape
+--------------
+.. automethod:: arcgis.geometry.reshape
+
+
+to_geo_coordinate_string
+--------------
+.. automethod:: arcgis.geometry.to_geo_coordinate_string
+
+
+trim_extend
+--------------
+.. automethod:: arcgis.geometry.trim_extend
+
+
+union
+--------------
+.. automethod:: arcgis.geometry.union
+

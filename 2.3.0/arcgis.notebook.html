@@ -1,0 +1,651 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <title>arcgis.notebook module &mdash; arcgis 2.3.0 documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="_static/theme_overrides.css" type="text/css" />
+
+  
+  
+    <link rel="shortcut icon" href="_static/favicon.ico"/>
+  
+
+  
+  
+
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/doctools.js"></script>
+        <script src="_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="arcgis.geoanalytics module" href="arcgis.geoanalytics.toc.html" />
+    <link rel="prev" title="arcgis.network.analysis module" href="arcgis.network.analysis.html" />
+<!-- This code block is inserted close near the <head> tag. See http://bit.ly/2BHUQzB -->
+<!-- The point of this code block is to send us google analytics on website views -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-NJGGV5');</script>
+ 
+
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="index.html" class="icon icon-home"> arcgis
+          
+
+          
+            
+            <img src="_static/python_api_logo.png" class="logo" alt="Logo"/>
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                2.3.0
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">arcgis</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="arcgis.gis.toc.html">arcgis.gis module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="arcgis.env.html">arcgis.env module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="arcgis.features.toc.html">arcgis.features module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="arcgis.raster.toc.html">arcgis.raster module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="arcgis.network.toc.html">arcgis.network module</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">arcgis.notebook module</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#notebookjob">NotebookJob</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#create-snapshot">create_snapshot</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#execute-notebook">execute_notebook</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#list-runtimes">list_runtimes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#list-snapshots">list_snapshots</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="arcgis.geoanalytics.toc.html">arcgis.geoanalytics module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="arcgis.geocoding.html">arcgis.geocoding module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="arcgis.geoenrichment.html">arcgis.geoenrichment module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="arcgis.geometry.html">arcgis.geometry module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="arcgis.geoprocessing.html">arcgis.geoprocessing module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="arcgis.graph.html">arcgis.graph module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="arcgis.mapping.toc.html">arcgis.mapping module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="arcgis.realtime.html">arcgis.realtime module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="arcgis.schematics.html">arcgis.schematics module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="arcgis.widgets.html">arcgis.widgets module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="arcgis.apps.html">arcgis.apps module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="arcgis.learn.toc.html">arcgis.learn module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="arcgis.auth.html">arcgis.auth package</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">arcgis</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
+        
+      <li>arcgis.notebook module</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+<!-- This code block is inserted close near the <body> tag. See http://bit.ly/2BHUQzB -->
+<!-- The point of this code block is to send us google analytics on website views -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NJGGV5"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+
+  <div class="section" id="module-arcgis.notebook">
+<span id="arcgis-notebook-module"></span><h1>arcgis.notebook module<a class="headerlink" href="#module-arcgis.notebook" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="notebookjob">
+<h2>NotebookJob<a class="headerlink" href="#notebookjob" title="Permalink to this headline">¶</a></h2>
+<dl class="py class">
+<dt id="arcgis.notebook.NotebookJob">
+<em class="property">class </em><code class="sig-prename descclassname">arcgis.notebook.</code><code class="sig-name descname">NotebookJob</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">future</span></em>, <em class="sig-param"><span class="n">task_name</span></em>, <em class="sig-param"><span class="n">jobid</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">task_url</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">notify</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="n">gis</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.notebook.NotebookJob" title="Permalink to this definition">¶</a></dt>
+<dd><p>represents an asynchronous job</p>
+<dl class="py method">
+<dt id="arcgis.notebook.NotebookJob.cancel">
+<code class="sig-name descname">cancel</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.notebook.NotebookJob.cancel" title="Permalink to this definition">¶</a></dt>
+<dd><p>cancels the current job</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="arcgis.notebook.NotebookJob.cancelled">
+<code class="sig-name descname">cancelled</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.notebook.NotebookJob.cancelled" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return True if the call was successfully cancelled.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>boolean</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="arcgis.notebook.NotebookJob.done">
+<code class="sig-name descname">done</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.notebook.NotebookJob.done" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return True if the call was successfully cancelled or finished running.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>boolean</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="arcgis.notebook.NotebookJob.ellapse_time">
+<em class="property">property </em><code class="sig-name descname">ellapse_time</code><a class="headerlink" href="#arcgis.notebook.NotebookJob.ellapse_time" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the Ellapse Time for the Job</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="arcgis.notebook.NotebookJob.result">
+<code class="sig-name descname">result</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.notebook.NotebookJob.result" title="Permalink to this definition">¶</a></dt>
+<dd><p>returns the job result</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="arcgis.notebook.NotebookJob.running">
+<code class="sig-name descname">running</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.notebook.NotebookJob.running" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return True if the call is currently being executed and cannot be cancelled.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>boolean</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="create-snapshot">
+<h2>create_snapshot<a class="headerlink" href="#create-snapshot" title="Permalink to this headline">¶</a></h2>
+<dl class="py function">
+<dt id="arcgis.notebook.create_snapshot">
+<code class="sig-prename descclassname">arcgis.notebook.</code><code class="sig-name descname">create_snapshot</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">item</span></em>, <em class="sig-param"><span class="n">name</span></em>, <em class="sig-param"><span class="o">*</span></em>, <em class="sig-param"><span class="n">description</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">notebook_json</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">access</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="n">server_index</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.notebook.create_snapshot" title="Permalink to this definition">¶</a></dt>
+<dd><p>Creates a Snapshot of a Given Item.</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 14%" />
+<col style="width: 86%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><strong>Parameter</strong></p></td>
+<td><p><strong>Description</strong></p></td>
+</tr>
+<tr class="row-even"><td><p>item</p></td>
+<td><p>Required Item. The ‘Notebook’ typed item to create a snapshot for.</p></td>
+</tr>
+<tr class="row-odd"><td><p>name</p></td>
+<td><p>Required String.  The name of the snapshot. This is the identifier
+used to identify the snapshot.</p></td>
+</tr>
+<tr class="row-even"><td><p>description</p></td>
+<td><p>Optional String. An piece of text that describes the snapshot.</p></td>
+</tr>
+<tr class="row-odd"><td><p>notebook_json</p></td>
+<td><p>Optional Dict. If you want to store different JSON text other
+than what is in the current notebook provide it here.</p></td>
+</tr>
+<tr class="row-even"><td><p>access</p></td>
+<td><p>Optional Bool. When false, the snapshot will not be publicly available.</p></td>
+</tr>
+<tr class="row-odd"><td><p>server_index</p></td>
+<td><p>Optional Int. The ArcGIS Notebook server to use to run the notebook.  This only applies to ArcGIS Enterprise.</p></td>
+</tr>
+</tbody>
+</table>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>Snapshot | dict (on error)</p>
+</dd>
+</dl>
+</dd></dl>
+
+</div>
+<div class="section" id="execute-notebook">
+<h2>execute_notebook<a class="headerlink" href="#execute-notebook" title="Permalink to this headline">¶</a></h2>
+<dl class="py function">
+<dt id="arcgis.notebook.execute_notebook">
+<code class="sig-prename descclassname">arcgis.notebook.</code><code class="sig-name descname">execute_notebook</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">item</span></em>, <em class="sig-param"><span class="o">*</span></em>, <em class="sig-param"><span class="n">timeout</span><span class="o">=</span><span class="default_value">50</span></em>, <em class="sig-param"><span class="n">update_portal_item</span><span class="o">=</span><span class="default_value">True</span></em>, <em class="sig-param"><span class="n">parameters</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">save_parameters</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="n">server_index</span><span class="o">=</span><span class="default_value">0</span></em>, <em class="sig-param"><span class="n">gis</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">future</span><span class="o">=</span><span class="default_value">False</span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.notebook.execute_notebook" title="Permalink to this definition">¶</a></dt>
+<dd><p>The Execute Notebook operation allows administrators and users with
+the <cite>Create and Edit Notebooks</cite> privilege to remotely run a notebook
+that they own.  The notebook specified in the operation will be run
+with all cells in order.</p>
+<p>Using this operation, you can schedule the execution of a notebook,
+either once or with a regular occurrence. This allows you to
+automate repeating tasks such as data collection and cleaning,
+content updates, and portal administration. On Linux machines, use
+a cron job to schedule the executeNotebook operation; on Windows
+machines, you can use the Task Scheduler app.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>To run this operation in ArcGIS Enterprise, you must log in with
+an Enterprise account. You cannot execute notebooks using the
+ArcGIS Notebook Server primary site administrator account.</p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>ArcGIS Online has additional parameters, as noted in the parameter
+table below.</p>
+</div>
+<p>You can specify parameters to be used in the notebook at execution
+time. If you’ve specified one or more parameters, they’ll be
+inserted into the notebook as a new cell. This cell will be placed
+at the beginning of the notebook, unless you have added the tag
+parameters to a cell.</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 15%" />
+<col style="width: 85%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><strong>Parameter</strong></p></td>
+<td><p><strong>Description</strong></p></td>
+</tr>
+<tr class="row-even"><td><p>item</p></td>
+<td><p>Required <a class="reference internal" href="arcgis.gis.toc.html#arcgis.gis.Item" title="arcgis.gis.Item"><code class="xref py py-class docutils literal notranslate"><span class="pre">Item</span></code></a>. Opens an existing portal item.</p></td>
+</tr>
+<tr class="row-odd"><td><p>update_portal_item</p></td>
+<td><p>Optional Boolean. Specifies whether you want to update the
+notebook’s portal item after execution. The default is true. You may
+want to specify true when the notebook you’re executing contains
+information that needs to be updated, such as a workflow that
+collects the most recent version of a dataset. It may not be
+important to update the portal item if the notebook won’t store any
+new information after executing, such as an administrative notebook
+that emails reminders to inactive users.</p></td>
+</tr>
+<tr class="row-even"><td><p>parameters</p></td>
+<td><p>Optional List. An optional array of parameters to add to the
+notebook for this execution. The parameters will be inserted as a
+new cell directly after the cell you have tagged <code class="docutils literal notranslate"><span class="pre">parameters</span></code>.
+Separate parameters with a comma. Use the format “x”:1 when
+defining parameters with numbers, and “y”:”text” when defining
+parameters with text strings.</p></td>
+</tr>
+<tr class="row-odd"><td><p>save_parameters</p></td>
+<td><p>Optional Boolean.  Specifies whether the notebook parameters cell
+should be saved in the notebook for future use. The default is
+false.</p></td>
+</tr>
+<tr class="row-even"><td><p>timeout</p></td>
+<td><p>Optional Int. The number of minutes to run the instance before timeout. This is only available on ArcGIS Online.</p></td>
+</tr>
+<tr class="row-odd"><td><p>future</p></td>
+<td><p>Optional boolean. If True, a Job object will be returned and the process
+will not wait for the task to complete. The default is False, which means wait for results.</p></td>
+</tr>
+</tbody>
+</table>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>Dict else If <code class="docutils literal notranslate"><span class="pre">future</span> <span class="pre">=</span> <span class="pre">True</span></code>, then the result is
+a <a class="reference external" href="https://docs.python.org/3/library/concurrent.futures.html">concurrent.futures.Future</a> object.
+Call <code class="docutils literal notranslate"><span class="pre">result()</span></code> to get the response</p>
+</dd>
+</dl>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1">#Usage example</span>
+
+<span class="o">&gt;&gt;&gt;</span> <span class="kn">from</span> <span class="nn">arcgis.gis</span> <span class="kn">import</span> <span class="n">GIS</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="kn">from</span> <span class="nn">arcgis.notebook</span> <span class="kn">import</span> <span class="n">execute_notebook</span>
+
+<span class="o">&gt;&gt;&gt;</span> <span class="n">gis</span> <span class="o">=</span> <span class="n">GIS</span><span class="p">(</span><span class="n">profile</span><span class="o">=</span><span class="s2">&quot;your_org_profile&quot;</span><span class="p">)</span>
+
+<span class="o">&gt;&gt;&gt;</span> <span class="n">nb_item</span> <span class="o">=</span> <span class="n">gis</span><span class="o">.</span><span class="n">content</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;ac7b7792913b4b3c9b22da4e2c42f986&quot;</span><span class="p">)</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">execute_notebook</span><span class="p">(</span><span class="n">nb_item</span><span class="p">)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+</div>
+<div class="section" id="list-runtimes">
+<h2>list_runtimes<a class="headerlink" href="#list-runtimes" title="Permalink to this headline">¶</a></h2>
+<dl class="py function">
+<dt id="arcgis.notebook.list_runtimes">
+<code class="sig-prename descclassname">arcgis.notebook.</code><code class="sig-name descname">list_runtimes</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">gis</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.notebook.list_runtimes" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns a list of avaialable runtimes.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>list[dict[str:str]]</p>
+</dd>
+</dl>
+</dd></dl>
+
+</div>
+<div class="section" id="list-snapshots">
+<h2>list_snapshots<a class="headerlink" href="#list-snapshots" title="Permalink to this headline">¶</a></h2>
+<dl class="py function">
+<dt id="arcgis.notebook.list_snapshots">
+<code class="sig-prename descclassname">arcgis.notebook.</code><code class="sig-name descname">list_snapshots</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">item</span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.notebook.list_snapshots" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns all snapshots associated with a given item.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>list</p>
+</dd>
+</dl>
+</dd></dl>
+
+</div>
+</div>
+
+
+
+           </div>
+           
+          </div>
+          <footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+        <a href="arcgis.geoanalytics.toc.html" class="btn btn-neutral float-right" title="arcgis.geoanalytics module" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="arcgis.network.analysis.html" class="btn btn-neutral float-left" title="arcgis.network.analysis module" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &#169; Copyright 2016-2023, Esri.
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+    Options v: 2.3.0
+
+  <div class="rst-versions" data-toggle="rst-versions" role="note" aria-label="versions">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      <span class="fa fa-book"> Pick an earlier version</span>
+      v: 2.3.0
+      <span class="fa fa-caret-down"></span>
+    </span>
+    <div class="rst-other-versions">
+      
+      
+      <dl>
+        <dt>Versions</dt>
+        
+          
+          <dd><a href="2.2.0/">2.2.0</a></dd>
+          
+        
+          
+          <dd><a href="2.1.0/">2.1.0</a></dd>
+          
+        
+          
+          <dd><a href="2.0.1/">2.0.1</a></dd>
+          
+        
+          
+          <dd><a href="2.0.0/">2.0.0</a></dd>
+          
+        
+          
+          <dd><a href="1.9.1/">1.9.1</a></dd>
+          
+        
+          
+          <dd><a href="1.9.0/">1.9.0</a></dd>
+          
+        
+          
+          <dd><a href="1.8.5/">1.8.5</a></dd>
+          
+        
+          
+          <dd><a href="1.8.4/">1.8.4</a></dd>
+          
+        
+          
+          <dd><a href="1.8.3/">1.8.3</a></dd>
+          
+        
+          
+          <dd><a href="1.8.2/">1.8.2</a></dd>
+          
+        
+          
+          <dd><a href="1.8.1/">1.8.1</a></dd>
+          
+        
+          
+          <dd><a href="1.8.0/">1.8.0</a></dd>
+          
+        
+          
+          <dd><a href="1.7.1/">1.7.1</a></dd>
+          
+        
+          
+          <dd><a href="1.7.0/">1.7.0</a></dd>
+          
+        
+          
+          <dd><a href="1.6.2/">1.6.2</a></dd>
+          
+        
+          
+          <dd><a href="1.6.1/">1.6.1</a></dd>
+          
+        
+          
+          <dd><a href="1.6.0/">1.6.0</a></dd>
+          
+        
+          
+          <dd><a href="1.5.2/">1.5.2</a></dd>
+          
+        
+          
+          <dd><a href="1.5.1/">1.5.1</a></dd>
+          
+        
+          
+          <dd><a href="1.5.0/">1.5.0</a></dd>
+          
+        
+          
+          <dd><a href="1.4.2/">1.4.2</a></dd>
+          
+        
+          
+          <dd><a href="1.4.1/">1.4.1</a></dd>
+          
+        
+          
+          <dd><a href="1.4.0/">1.4.0</a></dd>
+          
+        
+          
+          <dd><a href="1.3.0/">1.3.0</a></dd>
+          
+        
+          
+          <dd><a href="1.2.5/">1.2.5</a></dd>
+          
+        
+          
+          <dd><a href="1.2.4/">1.2.4</a></dd>
+          
+        
+          
+          <dd><a href="1.2.3/">1.2.3</a></dd>
+          
+        
+          
+          <dd><a href="1.2.2/">1.2.2</a></dd>
+          
+        
+          
+          <dd><a href="1.2.1/">1.2.1</a></dd>
+          
+        
+          
+          <dd><a href="1.2.0/">1.2.0</a></dd>
+          
+        
+          
+          <dd><a href="1.1.0/">1.1.0</a></dd>
+          
+        
+          
+          <dd><a href="1.0.1/">1.0.1</a></dd>
+          
+        
+          
+          <dd><a href="1.0.0/">1.0.0</a></dd>
+          
+        
+          
+          <dd><a href="0.3.0/">0.3.0</a></dd>
+          
+        
+          
+          <dd><a href="0.2.0/">0.2.0</a></dd>
+          
+        
+          
+          <dd><a href="0.1.0/">0.1.0</a></dd>
+          
+        
+      </dl>
+      
+      
+      
+    </div>
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

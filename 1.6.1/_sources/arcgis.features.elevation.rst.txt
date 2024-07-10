@@ -1,0 +1,16 @@
+arcgis.features.elevation module
+====================================
+
+.. automodule:: arcgis.features.elevation
+
+profile
+-------------------------------
+.. automethod:: arcgis.features.elevation.profile
+    
+viewshed
+--------------
+.. automethod:: arcgis.features.elevation.viewshed
+
+summarize_elevation
+-----------------------
+.. automethod:: arcgis.features.elevation.summarize_elevation

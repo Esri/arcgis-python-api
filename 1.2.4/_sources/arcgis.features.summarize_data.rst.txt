@@ -1,0 +1,16 @@
+arcgis.features.summarize_data module
+=====================================
+
+.. automodule:: arcgis.features.summarize_data
+
+aggregate_points
+--------------
+.. automethod:: arcgis.features.summarize_data.aggregate_points
+    
+summarize_nearby
+--------------
+.. automethod:: arcgis.features.summarize_data.summarize_nearby
+
+summarize_within
+--------------
+.. automethod:: arcgis.features.summarize_data.summarize_within

@@ -1,0 +1,11 @@
+arcgis.widgets module
+=================
+
+.. automodule:: arcgis.widgets
+
+MapView
+------------------
+.. autoclass:: arcgis.widgets.MapView
+    :members:
+    :undoc-members:
+    :show-inheritance:

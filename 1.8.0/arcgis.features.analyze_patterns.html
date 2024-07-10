@@ -1,0 +1,825 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>arcgis.features.analyze_patterns module &mdash; arcgis 1.8.0 documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="_static/theme_overrides.css" type="text/css" />
+
+  
+  
+    <link rel="shortcut icon" href="_static/favicon.ico"/>
+  
+  
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/doctools.js"></script>
+        <script src="_static/language_data.js"></script>
+        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="arcgis.features.elevation module" href="arcgis.features.elevation.html" />
+    <link rel="prev" title="arcgis.features.analysis module" href="arcgis.features.analysis.html" />
+<!-- This code block is inserted close near the <head> tag. See http://bit.ly/2BHUQzB -->
+<!-- The point of this code block is to send us google analytics on website views -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-NJGGV5');</script>
+ 
+
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="index.html" class="icon icon-home" alt="Documentation Home"> arcgis
+          
+
+          
+            
+            <img src="_static/python_api_logo.png" class="logo" alt="Logo"/>
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1.8.0
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">arcgis</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="arcgis.gis.toc.html">arcgis.gis module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="arcgis.env.html">arcgis.env module</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="arcgis.features.toc.html">arcgis.features module</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="arcgis.features.toc.html#feature">Feature</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.features.toc.html#featurelayer">FeatureLayer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.features.toc.html#table">Table</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.features.toc.html#featurelayercollection">FeatureLayerCollection</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.features.toc.html#featureset">FeatureSet</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.features.toc.html#featurecollection">FeatureCollection</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.features.toc.html#geoaccessor">GeoAccessor</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.features.toc.html#geoseriesaccessor">GeoSeriesAccessor</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.features.toc.html#spatialdataframe">SpatialDataFrame</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="arcgis.features.toc.html#submodules">Submodules</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="arcgis.features.analysis.html">arcgis.features.analysis module</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">arcgis.features.analyze_patterns module</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#calculate-density">calculate_density</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#find-hot-spots">find_hot_spots</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#find-outliers">find_outliers</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#interpolate-points">interpolate_points</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="arcgis.features.elevation.html">arcgis.features.elevation module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="arcgis.features.enrich_data.html">arcgis.features.enrich_data module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="arcgis.features.find_locations.html">arcgis.features.find_locations module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="arcgis.features.hydrology.html">arcgis.features.hydrology module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="arcgis.features.manage_data.html">arcgis.features.manage_data module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="arcgis.features.managers.html">arcgis.features.managers module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="arcgis.features.summarize_data.html">arcgis.features.summarize_data module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="arcgis.features.use_proximity.html">arcgis.features.use_proximity module</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="arcgis.raster.toc.html">arcgis.raster module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="arcgis.network.toc.html">arcgis.network module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="arcgis.geoanalytics.toc.html">arcgis.geoanalytics module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="arcgis.geocoding.html">arcgis.geocoding module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="arcgis.geoenrichment.html">arcgis.geoenrichment module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="arcgis.geometry.html">arcgis.geometry module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="arcgis.geoprocessing.html">arcgis.geoprocessing module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="arcgis.mapping.html">arcgis.mapping module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="arcgis.realtime.html">arcgis.realtime module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="arcgis.schematics.html">arcgis.schematics module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="arcgis.widgets.html">arcgis.widgets module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="arcgis.apps.html">arcgis.apps module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="arcgis.learn.html">arcgis.learn module</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">arcgis</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="arcgis.features.toc.html">arcgis.features module</a> &raquo;</li>
+        
+      <li>arcgis.features.analyze_patterns module</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+<!-- This code block is inserted close near the <body> tag. See http://bit.ly/2BHUQzB -->
+<!-- The point of this code block is to send us google analytics on website views -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NJGGV5"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+
+  <div class="section" id="module-arcgis.features.analyze_patterns">
+<span id="arcgis-features-analyze-patterns-module"></span><h1>arcgis.features.analyze_patterns module<a class="headerlink" href="#module-arcgis.features.analyze_patterns" title="Permalink to this headline">¶</a></h1>
+<p>These functions help you identify, quantify, and visualize spatial patterns in your data.</p>
+<p>calculate_density takes known quantities of some phenomenon and spreads these quantities across the map.
+find_hot_spots identifies statistically significant clustering in the spatial pattern of your data.
+interpolate_points predicts values at new locations based on measurements found in a collection of points.</p>
+<div class="section" id="calculate-density">
+<h2>calculate_density<a class="headerlink" href="#calculate-density" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt id="arcgis.features.analyze_patterns.calculate_density">
+<code class="sig-prename descclassname">arcgis.features.analyze_patterns.</code><code class="sig-name descname">calculate_density</code><span class="sig-paren">(</span><em class="sig-param">input_layer</em>, <em class="sig-param">field=None</em>, <em class="sig-param">cell_size=None</em>, <em class="sig-param">cell_size_units='Meters'</em>, <em class="sig-param">radius=None</em>, <em class="sig-param">radius_units=None</em>, <em class="sig-param">bounding_polygon_layer=None</em>, <em class="sig-param">area_units=None</em>, <em class="sig-param">classification_type='EqualInterval'</em>, <em class="sig-param">num_classes=10</em>, <em class="sig-param">output_name=None</em>, <em class="sig-param">context=None</em>, <em class="sig-param">gis=None</em>, <em class="sig-param">estimate=False</em>, <em class="sig-param">future=False</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.features.analyze_patterns.calculate_density" title="Permalink to this definition">¶</a></dt>
+<dd><img alt="_images/calculate_density.png" src="_images/calculate_density.png" />
+<p>The calculate_density function creates a density map from point or line features by spreading known quantities of
+some phenomenon (represented as attributes of the points or lines) across the map. The result is a layer of areas
+classified from least dense to most dense.</p>
+<p>For point input, each point should represent the location of some event     or incident, and the result layer represents
+a count of the incident per unit area. A higher density value in a new location means that there are more points near
+that location. In many cases, the result layer can be interpreted as a risk surface for future events. For example,
+if the input points represent locations of lightning strikes, the result layer can be interpreted as a risk surface
+for future lightning strikes.</p>
+<p>For line input, the line density surface represents the total amount of line that is near each location. The units of
+the calculated density values are the length of line per unit area. For example, if the lines represent rivers, the
+result layer will represent the total length of rivers that are within the search radius. This result can be used to
+identify areas that are hospitable to grazing animals.</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 6%" />
+<col style="width: 94%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><strong>Argument</strong></p></td>
+<td><p><strong>Description</strong></p></td>
+</tr>
+<tr class="row-even"><td><p>input_layer</p></td>
+<td><p>Required layer. The point or line features from which to calculate density. See <a class="reference internal" href="arcgis.geoanalytics.toc.html#featureinput"><span class="std std-ref">Feature Input</span></a>.</p></td>
+</tr>
+<tr class="row-odd"><td><p>field</p></td>
+<td><p>Optional string. A numeric field name specifying the number of incidents at each location.  For example, if you have points that represent cities, you can use a field representing the population of the city as the count field, and the resulting population density layer will calculate larger population densities near cities with larger populations. If not specified, each location will be assumed to represent a single count.</p></td>
+</tr>
+<tr class="row-even"><td><p>cell_size</p></td>
+<td><p>Optional float. This value is used to create a mesh of points where density values are calculated. The default is approximately 1/1000th of the smaller of the width and height of the analysis extent as defined in the context parameter. The smaller the value, the smoother the polygon boundaries will be. Conversely, with larger values, the polygon boundaries will be more coarse and jagged.</p></td>
+</tr>
+<tr class="row-odd"><td><p>cell_size_units</p></td>
+<td><p>Optional string. The units of the cell_size value.
+Choice list: [‘Miles’, ‘Feet’, ‘Kilometers’,  ‘Meters’]</p></td>
+</tr>
+<tr class="row-even"><td><p>radius</p></td>
+<td><p>Optional float. A distance specifying how far to search to find point or line features when calculating density values.</p></td>
+</tr>
+<tr class="row-odd"><td><p>radius_units</p></td>
+<td><p>Optional string. The units of the radius parameter. If no distance is provided, a default will be calculated that is based on the locations of the input features and the values in the count field (if a count field is provided).
+Choice list: [‘Miles’, ‘Feet’, ‘Kilometers’,  ‘Meters’]</p></td>
+</tr>
+<tr class="row-even"><td><p>bounding_polygon_layer</p></td>
+<td><p>Optional layer. A layer specifying the polygon(s) where you want densities to be calculated. For example, if you are interpolating densities of fish within a lake, you can use the boundary of the lake in this parameter and the output will only draw within the boundary of the lake. See <a class="reference internal" href="arcgis.geoanalytics.toc.html#featureinput"><span class="std std-ref">Feature Input</span></a>.</p></td>
+</tr>
+<tr class="row-odd"><td><p>area_units</p></td>
+<td><p>Optional string. The units of the calculated density values.
+Choice list: [‘areaUnits’, ‘SquareMiles’]</p></td>
+</tr>
+<tr class="row-even"><td><p>classification_type</p></td>
+<td><p>Optional string. Determines how density values will be classified into polygons.
+Choice list: [‘EqualInterval’, ‘GeometricInterval’, ‘NaturalBreaks’, ‘EqualArea’, ‘StandardDeviation’]</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>EqualInterval - Polygons are created such that the range of density values is equal for each area.</p></li>
+<li><p>GeometricInterval - Polygons are based on class intervals that have a geometric series. This method ensures that each class range has approximately the same number of values within each class and that the change between intervals is consistent.</p></li>
+<li><p>NaturalBreaks - Class intervals for polygons are based on natural groupings of the data. Class break values are identified that best group similar values and that maximize the differences between classes.</p></li>
+<li><p>EqualArea - Polygons are created such that the size of each area is equal. For example, if the result has more high density values than low density values, more polygons will be created for high densities.</p></li>
+<li><p>StandardDeviation - Polygons are created based upon the standard deviation of the predicted density values.</p></li>
+</ul>
+</div></blockquote>
+</td>
+</tr>
+<tr class="row-odd"><td><p>num_classes</p></td>
+<td><p>Optional int. This value is used to divide the range of predicted values into distinct classes. The range of values in each class is determined by the classification_type parameter.</p></td>
+</tr>
+<tr class="row-even"><td><p>output_name</p></td>
+<td><p>Optional string. Additional properties such as output feature service name.</p></td>
+</tr>
+<tr class="row-odd"><td><p>context</p></td>
+<td><p>Optional string. Additional settings such as processing extent and output spatial reference. For calculate_density, there are two settings.</p>
+<ol class="arabic simple">
+<li><p>Extent (extent)-a bounding box that defines the analysis area. Only those points in the input_layer that intersect the bounding box will be analyzed.</p></li>
+<li><p>Output Spatial Reference (outSR) the output features will be projected into the output spatial reference.</p></li>
+</ol>
+</td>
+</tr>
+<tr class="row-even"><td><p>gis</p></td>
+<td><p>Optional, the GIS on which this tool runs. If not specified, the active GIS is used.</p></td>
+</tr>
+<tr class="row-odd"><td><p>estimate</p></td>
+<td><p>Optional Boolean. Is true, the number of credits needed to run the operation will be returned as a float.</p></td>
+</tr>
+<tr class="row-even"><td><p>future</p></td>
+<td><p>Optional boolean. If True, the result will be a GPJob object and results will be returned asynchronously.</p></td>
+</tr>
+</tbody>
+</table>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>result_layer : feature layer Item if output_name is specified, else Feature Collection.</p>
+</dd>
+</dl>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">USAGE</span> <span class="n">EXAMPLE</span><span class="p">:</span> <span class="n">To</span> <span class="n">create</span> <span class="n">a</span> <span class="n">layer</span> <span class="n">that</span> <span class="n">shows</span> <span class="n">density</span> <span class="n">of</span> <span class="n">collisions</span> <span class="n">within</span> <span class="mi">2</span> <span class="n">miles</span><span class="o">.</span>
+               <span class="n">The</span> <span class="n">density</span> <span class="ow">is</span> <span class="n">classified</span> <span class="n">based</span> <span class="n">upon</span> <span class="n">the</span> <span class="n">standard</span> <span class="n">deviation</span><span class="o">.</span>
+               <span class="n">The</span> <span class="nb">range</span> <span class="n">of</span> <span class="n">density</span> <span class="n">values</span> <span class="ow">is</span> <span class="n">divided</span> <span class="n">into</span> <span class="mi">5</span> <span class="n">classes</span><span class="o">.</span>
+
+<span class="n">collision_density</span> <span class="o">=</span> <span class="n">calculate_density</span><span class="p">(</span><span class="n">input_layer</span><span class="o">=</span><span class="n">collisions</span><span class="p">,</span>
+                                <span class="n">radius</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span>
+                                <span class="n">radius_units</span><span class="o">=</span><span class="s1">&#39;Miles&#39;</span><span class="p">,</span>
+                                <span class="n">bounding_polygon_layer</span><span class="o">=</span><span class="n">zoning_lyr</span><span class="p">,</span>
+                                <span class="n">area_units</span><span class="o">=</span><span class="s1">&#39;SquareMiles&#39;</span><span class="p">,</span>
+                                <span class="n">classification_type</span><span class="o">=</span><span class="s1">&#39;StandardDeviation&#39;</span><span class="p">,</span>
+                                <span class="n">num_classes</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span>
+                                <span class="n">output_name</span><span class="o">=</span><span class="s1">&#39;density_of_incidents&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+</div>
+<div class="section" id="find-hot-spots">
+<h2>find_hot_spots<a class="headerlink" href="#find-hot-spots" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt id="arcgis.features.analyze_patterns.find_hot_spots">
+<code class="sig-prename descclassname">arcgis.features.analyze_patterns.</code><code class="sig-name descname">find_hot_spots</code><span class="sig-paren">(</span><em class="sig-param">analysis_layer</em>, <em class="sig-param">analysis_field=None</em>, <em class="sig-param">divided_by_field=None</em>, <em class="sig-param">bounding_polygon_layer=None</em>, <em class="sig-param">aggregation_polygon_layer=None</em>, <em class="sig-param">output_name=None</em>, <em class="sig-param">context=None</em>, <em class="sig-param">gis=None</em>, <em class="sig-param">estimate=False</em>, <em class="sig-param">shape_type=None</em>, <em class="sig-param">cell_size=None</em>, <em class="sig-param">cell_size_unit=None</em>, <em class="sig-param">distance_band=None</em>, <em class="sig-param">distance_band_unit=None</em>, <em class="sig-param">future=False</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.features.analyze_patterns.find_hot_spots" title="Permalink to this definition">¶</a></dt>
+<dd><img alt="_images/find_hot_spots.png" src="_images/find_hot_spots.png" />
+<p>The <code class="docutils literal notranslate"><span class="pre">find_hot_spots</span></code> method analyzes point data (such as crime incidents, traffic accidents, or trees) or field values associated with
+points or area features (such as the number of people in each census tract or the total sales for retail stores). It finds statistically
+significant spatial clusters of high values (hot spots) and low values (cold spots). For point data when no field is specified, hot spots
+are locations with lots of points and cold spots are locations with very few points.</p>
+<p>The result map layer shows hot spots in red and cold spots in blue. The darkest red features indicate the strongest clustering of high values
+or point densities; you can be 99 percent confident that the clustering associated with these features could not be the result of random chance.
+Similarly, the darkest blue features are associated with the strongest spatial clustering of low values or the lowest point densities.
+Features that are beige are not part of a statistically significant cluster; the spatial pattern associated with these features could very likely
+be the result of random processes and random chance.</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 28%" />
+<col style="width: 72%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><strong>Argument</strong></p></td>
+<td><p><strong>Description</strong></p></td>
+</tr>
+<tr class="row-even"><td><p>analysis_layer (Required if the analysis_layer contains polygons)</p></td>
+<td><p>Required layer. The point or polygon feature layer for which hot spots will be calculated. See <a class="reference internal" href="arcgis.geoanalytics.toc.html#featureinput"><span class="std std-ref">Feature Input</span></a>.</p></td>
+</tr>
+<tr class="row-odd"><td><p>analysis_field</p></td>
+<td><p>Optional string. The numeric field that will be analyzed. The field you select might represent:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>counts (such as the number of traffic accidents)</p></li>
+<li><p>rates (such as the number of crimes per square mile)</p></li>
+<li><p>averages (such as the mean math test score)</p></li>
+<li><p>indices (such as a customer satisfaction score)</p></li>
+</ul>
+</div></blockquote>
+<p>If an <code class="docutils literal notranslate"><span class="pre">analysis_field</span></code> is not supplied, hot spot results are based on point densities only.</p>
+</td>
+</tr>
+<tr class="row-even"><td><p>divided_by_field</p></td>
+<td><p>Optional string. The numeric field in the <code class="docutils literal notranslate"><span class="pre">analysis_layer</span></code> that will be used to normalize your data.
+For example, if your points represent crimes, dividing by total population would result in an analysis of crimes per capita rather than raw crime counts.</p>
+<p>You can use esriPopulation to geoenrich each area feature with the most recent population values, which will then be
+used as the attribute to divide by. This option will use credits.</p>
+</td>
+</tr>
+<tr class="row-odd"><td><p>bounding_polygon_layer</p></td>
+<td><p>Optional layer. When the analysis layer is points and no <code class="docutils literal notranslate"><span class="pre">analysis_field</span></code> is specified, you can provide polygons features that define where incidents could have occurred.
+For example, if you are analyzing boating accidents in a harbor, the outline of the harbor might provide a good boundary for where accidents could occur.
+When no bounding areas are provided, only locations with at least one point will be included in the analysis. See <a class="reference internal" href="arcgis.geoanalytics.toc.html#featureinput"><span class="std std-ref">Feature Input</span></a>.</p></td>
+</tr>
+<tr class="row-even"><td><p>aggregation_polygon_layer</p></td>
+<td><p>Optional layer. When the <code class="docutils literal notranslate"><span class="pre">analysis_layer</span></code> contains points and no <code class="docutils literal notranslate"><span class="pre">analysis_field</span></code> is specified,
+you can provide polygon features into which the points will be aggregated and analyzed, such as administrative units.
+The number of points that fall within each polygon are counted, and the point count in each polygon is analyzed. See <a class="reference internal" href="arcgis.geoanalytics.toc.html#featureinput"><span class="std std-ref">Feature Input</span></a>.</p></td>
+</tr>
+<tr class="row-odd"><td><p>output_name</p></td>
+<td><p>Optional string. If provided, the task will create a feature service of the results.
+You define the name of the service. If <code class="docutils literal notranslate"><span class="pre">output_name</span></code> is not supplied, the task will return a feature collection.</p></td>
+</tr>
+<tr class="row-even"><td><p>context</p></td>
+<td><p>Optional string. Context contains additional settings that affects method execution. For <code class="docutils literal notranslate"><span class="pre">find_hot_spots</span></code>, there are two settings.</p>
+<ol class="arabic simple">
+<li><p>Extent (<code class="docutils literal notranslate"><span class="pre">extent</span></code>) - a bounding box that defines the analysis area. Only those features in the <code class="docutils literal notranslate"><span class="pre">analysis_layer</span></code> that intersect the bounding box will be analyzed.</p></li>
+<li><p>Output Spatial Reference (<code class="docutils literal notranslate"><span class="pre">outSR</span></code>) - the data will be projected into the output spatial reference prior to analysis.</p></li>
+</ol>
+</td>
+</tr>
+<tr class="row-odd"><td><p>gis</p></td>
+<td><p>Optional, the GIS on which this tool runs. If not specified, the active GIS is used.</p></td>
+</tr>
+<tr class="row-even"><td><p>estimate</p></td>
+<td><p>Optional Boolean. Is true, the number of credits needed to run the operation will be returned as a float.</p></td>
+</tr>
+<tr class="row-odd"><td><p>shape_type</p></td>
+<td><p>Optional string. The shape of the polygon mesh the input features will be aggregated into.</p>
+<blockquote>
+<div><ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">Fishnet</span></code>-The input features will be aggregated into a grid of square (fishnet) cells.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Hexagon</span></code>-The input features will be aggregated into a grid of hexagonal cells.</p></li>
+</ul>
+</div></blockquote>
+</td>
+</tr>
+<tr class="row-even"><td><p>cell_size</p></td>
+<td><p>Optional float. The size of the grid cells used to aggregate your features.
+When aggregating into a hexagon grid, this distance is used as the height to construct the hexagon polygons.</p></td>
+</tr>
+<tr class="row-odd"><td><p>cell_size_unit</p></td>
+<td><p>Optional string. The units of the <code class="docutils literal notranslate"><span class="pre">cell_size</span></code> value. You must provide a value if <code class="docutils literal notranslate"><span class="pre">cell_size</span></code> has been set.</p>
+<p>Choice list: [‘Meters’, ‘Miles’, ‘Feet’, ‘Kilometers’]</p>
+</td>
+</tr>
+<tr class="row-even"><td><p>distance_band</p></td>
+<td><p>Optional float. The spatial extent of the analysis neighborhood. This value determines which features are analyzed together
+in order to assess local clustering.</p></td>
+</tr>
+<tr class="row-odd"><td><p>distance_band_unit</p></td>
+<td><p>Optional string. The units of the <code class="docutils literal notranslate"><span class="pre">distance_band</span></code> value. You must provide a value if <code class="docutils literal notranslate"><span class="pre">distance_band</span></code> has been set.</p></td>
+</tr>
+<tr class="row-even"><td><p>future</p></td>
+<td><p>Optional boolean. If True, the result will be a GPJob object and results will be returned asynchronously.</p></td>
+</tr>
+</tbody>
+</table>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>result_layer : feature layer Item if output_name is specified, else a dictionary with a Feature Collection and processing messages.</p>
+</dd>
+</dl>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">USAGE</span> <span class="n">EXAMPLE</span><span class="p">:</span> <span class="n">To</span> <span class="n">find</span> <span class="n">significant</span> <span class="n">hot</span> <span class="n">ot</span> <span class="n">cold</span> <span class="n">spots</span> <span class="n">of</span> <span class="n">collisions</span> <span class="n">involving</span> <span class="n">a</span> <span class="n">bicycle</span> <span class="n">within</span> <span class="n">a</span> <span class="n">specific</span> <span class="n">boundary</span><span class="o">.</span>
+<span class="n">collision_hot_spots</span> <span class="o">=</span> <span class="n">find_hot_spots</span><span class="p">(</span><span class="n">collisions</span><span class="p">,</span>
+                                     <span class="n">bounding_polygon_layer</span><span class="o">=</span><span class="n">boundry_lyr</span><span class="p">,</span>
+                                     <span class="n">output_name</span><span class="o">=</span><span class="s1">&#39;collision_hexagon_hot_spots&#39;</span><span class="p">,</span>
+                                     <span class="n">shape_type</span><span class="o">=</span><span class="s1">&#39;hexagon&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+</div>
+<div class="section" id="find-outliers">
+<h2>find_outliers<a class="headerlink" href="#find-outliers" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt id="arcgis.features.analyze_patterns.find_outliers">
+<code class="sig-prename descclassname">arcgis.features.analyze_patterns.</code><code class="sig-name descname">find_outliers</code><span class="sig-paren">(</span><em class="sig-param">analysis_layer</em>, <em class="sig-param">analysis_field=None</em>, <em class="sig-param">divided_by_field=None</em>, <em class="sig-param">bounding_polygon_layer=None</em>, <em class="sig-param">aggregation_polygon_layer=None</em>, <em class="sig-param">permutations=None</em>, <em class="sig-param">shape_type=None</em>, <em class="sig-param">cell_size=None</em>, <em class="sig-param">cell_units=None</em>, <em class="sig-param">distance_band=None</em>, <em class="sig-param">band_units=None</em>, <em class="sig-param">output_name=None</em>, <em class="sig-param">context=None</em>, <em class="sig-param">gis=None</em>, <em class="sig-param">estimate=False</em>, <em class="sig-param">future=False</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.features.analyze_patterns.find_outliers" title="Permalink to this definition">¶</a></dt>
+<dd><img alt="_images/find_outliers.png" src="_images/find_outliers.png" />
+<p>The <code class="docutils literal notranslate"><span class="pre">find_outliers</span></code> method analyzes point data (such as crime incidents, traffic accidents, or trees) or field values associated with points
+or area features (such as the number of people in each census tract or the total sales for retail stores). It finds statistically significant
+spatial clusters of high values and low values and statistically significant high or low spatial outliers within those clusters.</p>
+<p>The result map layer shows high outliers in red and low outliers in dark blue. Clusters of high values appear pink and clusters of low values
+appear light blue. Features that are beige are not a statistically significant outlier and not part of a statistically significant cluster; the
+spatial pattern associated with these features could very likely be the result of random processes and random chance.</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 25%" />
+<col style="width: 75%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><strong>Argument</strong></p></td>
+<td><p><strong>Description</strong></p></td>
+</tr>
+<tr class="row-even"><td><p>analysis_layer</p></td>
+<td><p>Required feature layer. The point or polygon feature layer for which outliers will be calculated. See <a class="reference internal" href="arcgis.geoanalytics.toc.html#featureinput"><span class="std std-ref">Feature Input</span></a>.</p></td>
+</tr>
+<tr class="row-odd"><td><p>analysis_field (Required if the analysis_layer contains polygons)</p></td>
+<td><p>Optional string. The numeric field that will be analyzed. The field you select might represent:</p>
+<ul class="simple">
+<li><p>counts (such as the number of traffic accidents)</p></li>
+<li><p>rates (such as the number of crimes per square mile)</p></li>
+<li><p>averages (such as the mean math test score)</p></li>
+<li><p>indices (such as a customer satisfaction score)</p></li>
+</ul>
+<p>If an <code class="docutils literal notranslate"><span class="pre">analysis_field</span></code> is not supplied, hot spot results are based on point densities only.</p>
+</td>
+</tr>
+<tr class="row-even"><td><p>divided_by_field</p></td>
+<td><p>Optional string. The numeric field in the <code class="docutils literal notranslate"><span class="pre">analysis_layer</span></code> that will be used to normalize your data.
+For example, if your points represent crimes, dividing by total population would result in an analysis
+of crimes per capita rather than raw crime counts.</p>
+<p>You can use esriPopulation to geoenrich each area feature with the most recent population values,
+which will then be used as the attribute to divide by. This option will use credits.</p>
+</td>
+</tr>
+<tr class="row-odd"><td><p>bounding_polygon_layer</p></td>
+<td><p>Optional layer. When the analysis layer is points and no <code class="docutils literal notranslate"><span class="pre">analysis_field</span></code> is specified, you can provide polygon features that define where incidents could have occurred.
+For example, if you are analyzing boating accidents in a harbor, the outline of the harbor might provide a good boundary for where accidents could occur.
+When no bounding areas are provided, only locations with at least one point will be included in the analysis. See <a class="reference internal" href="arcgis.geoanalytics.toc.html#featureinput"><span class="std std-ref">Feature Input</span></a>.</p></td>
+</tr>
+<tr class="row-even"><td><p>aggregation_polygon_layer</p></td>
+<td><p>Optional layer. When the <code class="docutils literal notranslate"><span class="pre">analysis_layer</span></code> contains points and no <code class="docutils literal notranslate"><span class="pre">analysis_field</span></code> is specified, you can provide polygon features into which the
+points will be aggregated and analyzed, such as administrative units. The number of points that fall within each polygon
+are counted, and the point count in each polygon is analyzed. See <a class="reference internal" href="arcgis.geoanalytics.toc.html#featureinput"><span class="std std-ref">Feature Input</span></a>.</p></td>
+</tr>
+<tr class="row-odd"><td><p>permutations</p></td>
+<td><p>Optional string. Permutations are used to determine how likely it would be to find the actual spatial distribution of the values you are analyzing.
+Choosing the number of permutations is a balance between precision and increased processing time. A lower number of permutations
+can be used when first exploring a problem, but it is best practice to increase the permutations to the highest number feasible for final results.</p>
+<p>Choice list: [‘Speed’, ‘Balance’, ‘Presision’]</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">Speed</span></code> - implements 199 permutations and results in p-values with a precision of 0.01.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Balance</span></code> - implements 499 permutations and results in p-values with a precision of 0.002.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Precision</span></code> - implements 999 permutations and results in p-values with a precision of 0.001.</p></li>
+</ul>
+</td>
+</tr>
+<tr class="row-even"><td><p>shape_type</p></td>
+<td><p>Optional string. The shape of the polygon mesh the input features will be aggregated into.</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">Fishnet</span></code> - The input features will be aggregated into a grid of square (fishnet) cells.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Hexagon</span></code> -  The input features will be aggregated into a grid of hexagonal cells.</p></li>
+</ul>
+</td>
+</tr>
+<tr class="row-odd"><td><p>cell_size</p></td>
+<td><p>Optional float. The size of the grid cells used to aggregate your features. When aggregating into a hexagon grid, this distance is used as the height to construct the hexagon polygons.</p></td>
+</tr>
+<tr class="row-even"><td><p>cell_units</p></td>
+<td><p>Optional string. The units of the <code class="docutils literal notranslate"><span class="pre">cell_size</span></code> value. You must provide a value if <code class="docutils literal notranslate"><span class="pre">cell_size</span></code> has been set.</p>
+<p>Choice list: [‘Meters’, ‘Miles’, ‘Feet’, ‘Kilometers’]</p>
+</td>
+</tr>
+<tr class="row-odd"><td><p>distance_band</p></td>
+<td><p>Optional float. The spatial extent of the analysis neighborhood. This value determines which features are analyzed together
+in order to assess local clustering.</p></td>
+</tr>
+<tr class="row-even"><td><p>band_units</p></td>
+<td><p>Optional string. The units of the <code class="docutils literal notranslate"><span class="pre">distance_band</span></code> value. You must provide a value if <code class="docutils literal notranslate"><span class="pre">distance_band</span></code> has been set.</p>
+<p>Choice list: [‘Meters’, ‘Miles’, ‘Feet’, ‘Kilometers’]</p>
+</td>
+</tr>
+<tr class="row-odd"><td><p>output_name</p></td>
+<td><p>Optional string. If provided, the method will create a feature service of the results. You define the name of the service. If <code class="docutils literal notranslate"><span class="pre">output_name</span></code> is not supplied, the method will return a feature collection.</p></td>
+</tr>
+<tr class="row-even"><td><p>context</p></td>
+<td><p>Context contains additional settings that affect task execution. For <code class="docutils literal notranslate"><span class="pre">find_outliers</span></code>, there are two settings:</p>
+<ol class="arabic simple">
+<li><p>Extent (extent) a bounding box that defines the analysis area. Only those features in the <code class="docutils literal notranslate"><span class="pre">analysis_layer</span></code> that intersect the bounding box will be analyzed.</p></li>
+<li><p>Output Spatial Reference (outSR) the data will be projected into the output spatial reference prior to analysis.</p></li>
+</ol>
+</td>
+</tr>
+<tr class="row-odd"><td><p>estimate</p></td>
+<td><p>Optional boolean. Returns the number of credit for the operation.</p></td>
+</tr>
+<tr class="row-even"><td><p>future</p></td>
+<td><p>Optional boolean. If True, the result will be a GPJob object and results will be returned asynchronously.</p></td>
+</tr>
+</tbody>
+</table>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p></p></dd>
+</dl>
+<p>Item if output_name is set. else results in a dict with the following keys:</p>
+<blockquote>
+<div><p>“find_outliers_result_layer” : layer (FeatureCollection)</p>
+<p>“process_info” : list of messages</p>
+</div></blockquote>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1">#USAGE EXAMPLE: To find statistically significant outliers within the collision clusters.</span>
+<span class="n">outliers</span> <span class="o">=</span> <span class="n">find_outliers</span><span class="p">(</span><span class="n">analysis_layer</span><span class="o">=</span><span class="n">collisions</span><span class="p">,</span>
+                         <span class="n">shape_type</span><span class="o">=</span><span class="s1">&#39;fishnet&#39;</span><span class="p">,</span>
+                         <span class="n">output_name</span><span class="o">=</span><span class="s1">&#39;find outliers&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+</div>
+<div class="section" id="interpolate-points">
+<h2>interpolate_points<a class="headerlink" href="#interpolate-points" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt id="arcgis.features.analyze_patterns.interpolate_points">
+<code class="sig-prename descclassname">arcgis.features.analyze_patterns.</code><code class="sig-name descname">interpolate_points</code><span class="sig-paren">(</span><em class="sig-param">input_layer</em>, <em class="sig-param">field</em>, <em class="sig-param">interpolate_option='5'</em>, <em class="sig-param">output_prediction_error=False</em>, <em class="sig-param">classification_type='GeometricInterval'</em>, <em class="sig-param">num_classes=10</em>, <em class="sig-param">class_breaks=[]</em>, <em class="sig-param">bounding_polygon_layer=None</em>, <em class="sig-param">predict_at_point_layer=None</em>, <em class="sig-param">output_name=None</em>, <em class="sig-param">context=None</em>, <em class="sig-param">gis=None</em>, <em class="sig-param">estimate=False</em>, <em class="sig-param">future=False</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.features.analyze_patterns.interpolate_points" title="Permalink to this definition">¶</a></dt>
+<dd><img alt="_images/interpolate_points.png" src="_images/interpolate_points.png" />
+<p>The <code class="docutils literal notranslate"><span class="pre">interpolate_points</span></code> method allows you to predict values at new locations based on measurements
+from a collection of points. The method takes point data with values at each point and returns
+areas classified by predicted values. For example:</p>
+<ul class="simple">
+<li><p>An air quality management district has sensors that measure pollution levels.
+<code class="docutils literal notranslate"><span class="pre">interpolate_points</span></code> can be used to predict pollution levels at locations that don’t have sensors,
+such as locations with at-risk populations, schools, or hospitals, for example.</p></li>
+<li><p>Predict heavy metal concentrations in crops based on samples taken from individual plants.</p></li>
+<li><p>Predict soil nutrient levels (nitrogen, phosphorus, potassium, and so on) and other
+indicators (such as electrical conductivity) in order to study their relationships to crop yield
+and prescribe precise amounts of fertilizer for each location in the field.</p></li>
+<li><p>Meteorological applications include prediction of temperatures, rainfall,
+and associated variables (such as acid rain).</p></li>
+</ul>
+<p><code class="docutils literal notranslate"><span class="pre">interpolate_points</span></code> uses the <a class="reference external" href="http://desktop.arcgis.com/en/arcmap/latest/tools/geostatistical-analyst-toolbox/empirical-bayesian-kriging.htm">Empirical Bayesian
+Kriging</a>
+geoprocessing tool to perform the interpolation. The parameters that are supplied to
+the Empirical Bayesian Kriging tool are controlled by the <code class="docutils literal notranslate"><span class="pre">interpolate_option</span></code> request parameter.</p>
+<p>If a value of 1 is provided for <code class="docutils literal notranslate"><span class="pre">interpolate_option</span></code>, empirical Bayesian kriging will
+use the following parameters:</p>
+<ul class="simple">
+<li><p>transformation_type - NONE</p></li>
+<li><p>semivariogram_model_type - POWER</p></li>
+<li><p>max_local_points - 50</p></li>
+<li><p>overlap_factor - 1</p></li>
+<li><p>number_semivariograms - 30</p></li>
+<li><p>nbrMin - 8</p></li>
+<li><p>nbrMax - 8</p></li>
+</ul>
+<p>If a value of 5 is provided for <code class="docutils literal notranslate"><span class="pre">interpolate_option</span></code>, empirical Bayesian kriging
+will use the following parameters:</p>
+<ul class="simple">
+<li><p>transformation_type - NONE</p></li>
+<li><p>semivariogram_model_type - POWER</p></li>
+<li><p>max_local_points 75</p></li>
+<li><p>overlap_factor - 1.5</p></li>
+<li><p>number_semivariograms - 100</p></li>
+<li><p>nbrMin - 10</p></li>
+<li><p>nbrMax - 10</p></li>
+</ul>
+<p>If a value of 9 is provided for <code class="docutils literal notranslate"><span class="pre">interpolate_option</span></code>, empirical Bayesian kriging
+will use the following parameters:</p>
+<ul class="simple">
+<li><p>transformation_type - EMPIRICAL</p></li>
+<li><p>semivariogram_model_type - K_BESSEL</p></li>
+<li><p>max_local_points - 200</p></li>
+<li><p>overlap_factor - 3</p></li>
+<li><p>number_semivariograms - 200</p></li>
+<li><p>nbrMin - 15</p></li>
+<li><p>nbrMax - 15</p></li>
+</ul>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 16%" />
+<col style="width: 84%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><strong>Argument</strong></p></td>
+<td><p><strong>Description</strong></p></td>
+</tr>
+<tr class="row-even"><td><p>input_layer</p></td>
+<td><p>Required layer. The point layer whose features will be interpolated. See <a class="reference internal" href="arcgis.geoanalytics.toc.html#featureinput"><span class="std std-ref">Feature Input</span></a>.</p></td>
+</tr>
+<tr class="row-odd"><td><p>field</p></td>
+<td><p>Required string. Name of the numeric field containing the values you wish to interpolate.</p></td>
+</tr>
+<tr class="row-even"><td><p>interpolate_option</p></td>
+<td><p>Optional integer. Integer value declaring your preference for speed versus accuracy, from 1 (fastest) to 9 (most accurate).
+More accurate predictions take longer to calculate.</p>
+<p>Choice list: [1, 5, 9].</p>
+<p>The default is 5.</p>
+</td>
+</tr>
+<tr class="row-odd"><td><p>output_prediction_error</p></td>
+<td><p>Optional boolean. If True, a polygon layer of standard errors for the interpolation
+predictions will be returned in the <code class="docutils literal notranslate"><span class="pre">prediction_error</span></code> output parameter.</p>
+<p>Standard errors are useful because they provide information about the reliability of the predicted values.
+A simple rule of thumb is that the true value will fall within two standard errors of the predicted
+value 95 percent of the time. For example, suppose a new location gets a predicted value of 50 with a
+standard error of 5. This means that this task’s best guess is that the true value at that location is 50,
+but it reasonably could be as low as 40 or as high as 60. To calculate this range of reasonable values,
+multiply the standard error by 2, add this value to the predicted value to get the upper end of the range,
+and subtract it from the predicted value to get the lower end of the range.</p>
+</td>
+</tr>
+<tr class="row-even"><td><p>classification_type</p></td>
+<td><p>Optional string. Determines how predicted values will be classified into areas.</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">EqualArea</span></code> - Polygons are created such that the number of data values in each area is equal.
+For example, if the data has more large values than small values, more areas will be created for large values.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">EqualInterval</span></code> - Polygons are created such that the range of predicted values is equal for each area.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">GeometricInterval</span></code> - Polygons are based on class intervals that have a geometrical series.
+This method ensures that each class range has approximately the same number of values within
+each class and that the change between intervals is consistent.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Manual</span></code> - You to define your own range of values for areas. These values will be entered in
+the <code class="docutils literal notranslate"><span class="pre">class_breaks</span></code> parameter below.</p></li>
+</ul>
+<p>Choice list: [‘EqualArea’, ‘EqualInterval’, ‘GeometricInterval’, ‘Manual’]</p>
+<p>The default is ‘GeometricInterval’.</p>
+</td>
+</tr>
+<tr class="row-odd"><td><p>num_classes</p></td>
+<td><p>Optional integer. This value is used to divide the range of interpolated values into distinct classes.
+The range of values in each class is determined by the <code class="docutils literal notranslate"><span class="pre">classification_type</span></code> parameter.
+Each class defines the boundaries of the result polygons.</p>
+<p>The default is 10. The maximum value is 32.</p>
+</td>
+</tr>
+<tr class="row-even"><td><p>class_breaks</p></td>
+<td><p>Optional list of floats. If <code class="docutils literal notranslate"><span class="pre">classification_type</span></code> is Manual, supply desired class break values separated by spaces.
+These values define the upper limit of each class, so the number of classes will equal the number of entered values.
+Areas will not be created for any locations with predicted values above the largest entered break value.
+You must enter at least two values and no more than 32.</p></td>
+</tr>
+<tr class="row-odd"><td><p>bounding_polygon_layer</p></td>
+<td><p>Optional layer. A layer specifying the polygon(s) where you want values to be interpolated.  For example,
+if you are interpolating densities of fish within a lake, you can use the boundary of the lake in this
+parameter and the output will only contain polygons within the boundary of the lake. See <a class="reference internal" href="arcgis.geoanalytics.toc.html#featureinput"><span class="std std-ref">Feature Input</span></a>.</p></td>
+</tr>
+<tr class="row-even"><td><p>predict_at_point_layer</p></td>
+<td><p>Optional layer. An optional layer specifying point locations to calculate prediction values.
+This allows you to make predictions at specific locations of interest. For example, if the <code class="docutils literal notranslate"><span class="pre">input_layer</span></code> represents
+measurements of pollution levels, you can use this parameter to predict the pollution levels of locations with large
+at-risk populations, such as schools or hospitals. You can then use this information to give recommendations to health
+officials in those locations.</p>
+<p>If supplied, the output <code class="docutils literal notranslate"><span class="pre">predicted_point_layer</span></code> will contain predictions at the specified locations. See <a class="reference internal" href="arcgis.geoanalytics.toc.html#featureinput"><span class="std std-ref">Feature Input</span></a>.</p>
+</td>
+</tr>
+<tr class="row-odd"><td><p>output_name</p></td>
+<td><p>Optional string. If provided, the method will create a feature service of the results.
+You define the name of the service. If <code class="docutils literal notranslate"><span class="pre">output_name</span></code> is not supplied, the method will return a feature collection.</p></td>
+</tr>
+<tr class="row-even"><td><p>context</p></td>
+<td><p>Optional string. Additional settings such as processing extent and output spatial reference.</p></td>
+</tr>
+<tr class="row-odd"><td><p>gis</p></td>
+<td><p>Optional, the GIS on which this tool runs. If not specified, the active GIS is used.</p></td>
+</tr>
+<tr class="row-even"><td><p>estimate</p></td>
+<td><p>Optional boolean. If True, the number of credits to run the operation will be returned.</p></td>
+</tr>
+<tr class="row-odd"><td><p>future</p></td>
+<td><p>Optional boolean. If True, the result will be a GPJob object and results will be returned asynchronously.</p></td>
+</tr>
+</tbody>
+</table>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p><p>result_layer : feature layer Item if <code class="docutils literal notranslate"><span class="pre">output_name</span></code> is specified, else Python dictionary with the following keys:</p>
+<p>”result_layer” : layer (FeatureCollection)</p>
+<p>”prediction_error” : layer (FeatureCollection)</p>
+<p>”predicted_point_layer” : layer (FeatureCollection)</p>
+</p>
+</dd>
+</dl>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1">#USAGE EXAMPLE: To predict mine production in US at new locations.</span>
+<span class="n">interpolated</span> <span class="o">=</span> <span class="n">interpolate_points</span><span class="p">(</span><span class="n">coal_mines_us</span><span class="p">,</span>
+                                  <span class="n">field</span><span class="o">=</span><span class="s1">&#39;Total_Prod&#39;</span><span class="p">,</span>
+                                  <span class="n">interpolate_option</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span>
+                                  <span class="n">output_prediction_error</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+                                  <span class="n">classification_type</span><span class="o">=</span><span class="s1">&#39;GeometricInterval&#39;</span><span class="p">,</span>
+                                  <span class="n">num_classes</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span>
+                                  <span class="n">output_name</span><span class="o">=</span><span class="s1">&#39;interpolate coal mines production&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+</div>
+</div>
+
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="arcgis.features.elevation.html" class="btn btn-neutral float-right" title="arcgis.features.elevation module" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="arcgis.features.analysis.html" class="btn btn-neutral float-left" title="arcgis.features.analysis module" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        
+        &copy; Copyright 2016-2019, Esri
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

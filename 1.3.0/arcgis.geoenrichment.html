@@ -1,0 +1,1285 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>arcgis.geoenrichment module &mdash; arcgis 1.3.0 documentation</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  
+
+  
+    <link rel="stylesheet" href="_static/theme_overrides.css" type="text/css" />
+  
+
+  
+        <link rel="index" title="Index"
+              href="genindex.html"/>
+        <link rel="search" title="Search" href="search.html"/>
+    <link rel="top" title="arcgis 1.3.0 documentation" href="index.html"/>
+        <link rel="next" title="arcgis.geometry module" href="arcgis.geometry.html"/>
+        <link rel="prev" title="arcgis.geocoding module" href="arcgis.geocoding.html"/> 
+
+  
+  <script src="_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="index.html" class="icon icon-home"> arcgis
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1.3.0
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+                <p class="caption"><span class="caption-text">arcgis</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="arcgis.gis.toc.html">arcgis.gis module</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.gis.toc.html#gis">GIS</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.gis.toc.html#item">Item</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.gis.toc.html#user">User</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.gis.toc.html#group">Group</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.gis.toc.html#datastore">Datastore</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.gis.toc.html#role">Role</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.gis.toc.html#layer">Layer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.gis.toc.html#groupapplication">GroupApplication</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.gis.toc.html#contentmanager">ContentManager</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.gis.toc.html#usermanager">UserManager</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.gis.toc.html#groupmanager">GroupManager</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.gis.toc.html#datastoremanager">DatastoreManager</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.gis.toc.html#rolemanager">RoleManager</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.gis.toc.html#resourcemanager">ResourceManager</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.gis.toc.html#submodules">Submodules</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="arcgis.gis.admin.html">arcgis.gis.admin module</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.gis.admin.html#agoladminmanager">AGOLAdminManager</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.gis.admin.html#portaladminmanager">PortalAdminManager</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.gis.admin.html#categorymanager">CategoryManager</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.gis.admin.html#collaborationmanager">CollaborationManager</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.gis.admin.html#collaboration">Collaboration</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.gis.admin.html#creditmanager">CreditManager</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.gis.admin.html#identityprovidermanager">IdentityProviderManager</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.gis.admin.html#passwordpolicy">PasswordPolicy</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.gis.admin.html#portalresourcemanager">PortalResourceManager</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.gis.admin.html#ux">UX</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.gis.admin.html#federation">Federation</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.gis.admin.html#logs">Logs</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.gis.admin.html#machines">Machines</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.gis.admin.html#security">Security</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.gis.admin.html#oauth">OAuth</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.gis.admin.html#sslcertificate">SSLCertificate</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.gis.admin.html#sslcertificates">SSLCertificates</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.gis.admin.html#enterpriseusers">EnterpriseUsers</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.gis.admin.html#enterprisegroups">EnterpriseGroups</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.gis.admin.html#site">Site</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.gis.admin.html#system">System</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.gis.admin.html#licenses">Licenses</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.gis.admin.html#directory">Directory</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.gis.admin.html#webadaptor">WebAdaptor</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.gis.admin.html#webadaptors">WebAdaptors</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="arcgis.gis.server.html">arcgis.gis.server module</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.gis.server.html#server">Server</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.gis.server.html#module-arcgis.gis.server.catalog">ServicesDirectory</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.gis.server.html#service">Service</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.gis.server.html#machine">Machine</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.gis.server.html#report">Report</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.gis.server.html#datastore">Datastore</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.gis.server.html#user">User</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.gis.server.html#role">Role</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.gis.server.html#servermanager">ServerManager</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.gis.server.html#servicemanager">ServiceManager</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.gis.server.html#machinemanager">MachineManager</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.gis.server.html#logmanager">LogManager</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.gis.server.html#reportmanager">ReportManager</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.gis.server.html#datastoremanager">DataStoreManager</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.gis.server.html#usermanager">UserManager</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.gis.server.html#rolemanager">RoleManager</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.gis.server.html#systemmanager">SystemManager</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.gis.server.html#sitemanager">SiteManager</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.gis.server.html#directorymanager">DirectoryManager</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.gis.server.html#configurationstore">ConfigurationStore</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.gis.server.html#jobs">Jobs</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.gis.server.html#serverdirectory">ServerDirectory</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.gis.server.html#serverproperties">ServerProperties</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="arcgis.env.html">arcgis.env module</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.env.html#active-gis">active_gis</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.env.html#analysis-extent">analysis_extent</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.env.html#out-spatial-reference">out_spatial_reference</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.env.html#process-spatial-reference">process_spatial_reference</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.env.html#output-datastore">output_datastore</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.env.html#return-z">return_z</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.env.html#return-m">return_m</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.env.html#verbose">verbose</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="arcgis.features.toc.html">arcgis.features module</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.features.toc.html#feature">Feature</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.features.toc.html#featurelayer">FeatureLayer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.features.toc.html#table">Table</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.features.toc.html#featurelayercollection">FeatureLayerCollection</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.features.toc.html#featureset">FeatureSet</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.features.toc.html#featurecollection">FeatureCollection</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.features.toc.html#spatialdataframe">SpatialDataFrame</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.features.toc.html#submodules">Submodules</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="arcgis.features.analysis.html">arcgis.features.analysis module</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.features.analysis.html#aggregate-points">aggregate_points</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.features.analysis.html#calculate-density">calculate_density</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.features.analysis.html#connect-origins-to-destinations">connect_origins_to_destinations</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.features.analysis.html#create-buffers">create_buffers</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.features.analysis.html#create-drive-time-areas">create_drive_time_areas</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.features.analysis.html#create-route-layers">create_route_layers</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.features.analysis.html#create-viewshed">create_viewshed</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.features.analysis.html#create-watersheds">create_watersheds</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.features.analysis.html#derive-new-locations">derive_new_locations</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.features.analysis.html#dissolve-boundaries">dissolve_boundaries</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.features.analysis.html#enrich-layer">enrich_layer</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.features.analysis.html#extract-data">extract_data</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.features.analysis.html#find-existing-locations">find_existing_locations</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.features.analysis.html#find-hot-spots">find_hot_spots</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.features.analysis.html#find-nearest">find_nearest</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.features.analysis.html#find-similar-locations">find_similar_locations</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.features.analysis.html#interpolate-points">interpolate_points</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.features.analysis.html#join-features">join_features</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.features.analysis.html#merge-layers">merge_layers</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.features.analysis.html#overlay-layers">overlay_layers</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.features.analysis.html#plan-routes">plan_routes</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.features.analysis.html#summarize-nearby">summarize_nearby</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.features.analysis.html#summarize-within">summarize_within</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.features.analysis.html#trace-downstream">trace_downstream</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="arcgis.features.analyze_patterns.html">arcgis.features.analyze_patterns module</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.features.analyze_patterns.html#calculate-density">calculate_density</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.features.analyze_patterns.html#find-hot-spots">find_hot_spots</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.features.analyze_patterns.html#interpolate-points">interpolate_points</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="arcgis.features.enrich_data.html">arcgis.features.enrich_data module</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.features.enrich_data.html#enrich-layer">enrich_layer</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="arcgis.features.find_locations.html">arcgis.features.find_locations module</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.features.find_locations.html#find-existing-locations">find_existing_locations</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.features.find_locations.html#derive-new-locations">derive_new_locations</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.features.find_locations.html#find-similar-locations">find_similar_locations</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.features.find_locations.html#choose-best-facilities">choose_best_facilities</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.features.find_locations.html#create-viewshed">create_viewshed</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.features.find_locations.html#create-watersheds">create_watersheds</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.features.find_locations.html#trace-downstream">trace_downstream</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="arcgis.features.manage_data.html">arcgis.features.manage_data module</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.features.manage_data.html#dissolve-boundaries">dissolve_boundaries</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.features.manage_data.html#extract-data">extract_data</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.features.manage_data.html#merge-layers">merge_layers</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.features.manage_data.html#overlay-layers">overlay_layers</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="arcgis.features.summarize_data.html">arcgis.features.summarize_data module</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.features.summarize_data.html#aggregate-points">aggregate_points</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.features.summarize_data.html#summarize-nearby">summarize_nearby</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.features.summarize_data.html#summarize-within">summarize_within</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="arcgis.features.use_proximity.html">arcgis.features.use_proximity module</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.features.use_proximity.html#connect-origins-to-destinations">connect_origins_to_destinations</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.features.use_proximity.html#create-buffers">create_buffers</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.features.use_proximity.html#create-drive-time-areas">create_drive_time_areas</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.features.use_proximity.html#find-nearest">find_nearest</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.features.use_proximity.html#plan-routes">plan_routes</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="arcgis.features.elevation.html">arcgis.features.elevation module</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.features.elevation.html#profile">profile</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.features.elevation.html#viewshed">viewshed</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.features.elevation.html#summarize-elevation">summarize_elevation</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="arcgis.features.managers.html">arcgis.features.managers module</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.features.managers.html#attachmentmanager">AttachmentManager</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.features.managers.html#syncmanager">SyncManager</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.features.managers.html#featurelayercollectionmanager">FeatureLayerCollectionManager</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.features.managers.html#featurelayermanager">FeatureLayerManager</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="arcgis.raster.toc.html">arcgis.raster module</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.raster.toc.html#imagerylayer">ImageryLayer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.raster.toc.html#rastercatalogitem">RasterCatalogItem</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.raster.toc.html#rastermanager">RasterManager</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.raster.toc.html#imagerytilemanager">ImageryTileManager</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.raster.toc.html#submodules">Submodules</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="arcgis.raster.analytics.html">arcgis.raster.analytics module</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.raster.analytics.html#get-datastores">get_datastores</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.raster.analytics.html#is-supported">is_supported</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.raster.analytics.html#generate-raster">generate_raster</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.raster.analytics.html#interpolate-points">interpolate_points</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.raster.analytics.html#create-viewshed">create_viewshed</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.raster.analytics.html#summarize-raster-within">summarize_raster_within</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.raster.analytics.html#calculate-density">calculate_density</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.raster.analytics.html#classify">classify</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.raster.analytics.html#segment">segment</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.raster.analytics.html#train-classifier">train_classifier</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.raster.analytics.html#convert-feature-to-raster">convert_feature_to_raster</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.raster.analytics.html#convert-raster-to-feature">convert_raster_to_feature</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.raster.analytics.html#copy-raster">copy_raster</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="arcgis.raster.functions.html">arcgis.raster.functions module</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#abs">abs</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#acos">acos</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#acosh">acosh</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#apply">apply</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#arg-max">arg_max</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#arg-median">arg_median</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#arg-min">arg_min</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#arg-statistics">arg_statistics</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#arithmetic">arithmetic</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#asin">asin</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#asinh">asinh</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#aspect">aspect</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#atan">atan</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#atan2">atan2</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#atanh">atanh</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#band-arithmetic">band_arithmetic</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#bitwise-and">bitwise_and</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#bitwise-left-shift">bitwise_left_shift</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#bitwise-not">bitwise_not</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#bitwise-or">bitwise_or</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#bitwise-right-shift">bitwise_right_shift</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#bitwise-xor">bitwise_xor</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#boolean-and">boolean_and</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#boolean-not">boolean_not</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#boolean-or">boolean_or</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#boolean-xor">boolean_xor</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#classify">classify</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#clip">clip</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#colormap">colormap</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#colormap-to-rgb">colormap_to_rgb</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#id1">colormap_to_rgb</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#colorspace-conversion">colorspace_conversion</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#composite-band">composite_band</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#con">con</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#contrast-brightness">contrast_brightness</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#convolution">convolution</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#cos">cos</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#cosh">cosh</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#curvature">curvature</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#divide">divide</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#duration">duration</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#elevation-void-fill">elevation_void_fill</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#equal-to">equal_to</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#exp">exp</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#exp10">exp10</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#exp2">exp2</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#expression">expression</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#extract-band">extract_band</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#float">FLOAT</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#float-divide">float_divide</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#floor-divide">floor_divide</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#gemi">gemi</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#geometric">geometric</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#greater-than">greater_than</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#greater-than-equal">greater_than_equal</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#gvitm">gvitm</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#hillshade">hillshade</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#identity">identity</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#int">INT</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#is-null">is_null</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#less-than">less_than</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#less-than-equal">less_than_equal</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#ln">ln</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#local">local</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#log10">log10</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#log2">log2</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#majority">majority</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#mask">mask</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#max">max</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#mean">mean</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#med">med</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#min">min</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#minority">minority</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#minus">minus</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#ml-classify">ml_classify</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#mod">mod</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#mode">mode</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#msavi">msavi</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#multiply">MULTIPLY</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#ndvi">ndvi</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#negate">negate</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#not-equal">not_equal</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#pansharpen">pansharpen</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#plus">plus</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#power">power</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#pvi">pvi</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#cellstats-range">cellstats_range</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#remap">remap</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#resample">resample</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#round-down">round_down</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#round-up">round_up</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#savi">savi</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#segment-mean-shift">segment_mean_shift</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#set-null">set_null</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#shaded-relief">shaded_relief</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#sin">sin</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#sinh">sinh</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#slope">slope</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#sqrt">sqrt</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#square">square</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#focal-statistics">focal_statistics</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#statistics-histogram">statistics_histogram</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#std">std</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#stretch">stretch</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#sultan">sultan</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#sum">sum</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#tan">tan</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#tanh">tanh</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#tasseled-cap">tasseled_cap</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#threshold">threshold</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#times">times</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#transpose-bits">transpose_bits</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#tsavi">tsavi</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#unit-conversion">unit_conversion</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#variety">variety</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#vector-field">vector_field</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#vector-field-renderer">vector_field_renderer</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="arcgis.raster.functions.gbl.html">arcgis.raster.functions.gbl module</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.gbl.html#cost-allocation">cost_allocation</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.gbl.html#cost-distance">cost_distance</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.gbl.html#euclidean-allocation">euclidean_allocation</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.gbl.html#euclidean-distance">euclidean_distance</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.gbl.html#fill">fill</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.gbl.html#flow-accumulation">flow_accumulation</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.gbl.html#flow-distance">flow_distance</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.gbl.html#flow-direction">flow_direction</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.gbl.html#least-cost-path">least_cost_path</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.gbl.html#nibble">nibble</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.gbl.html#stream-link">stream_link</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.gbl.html#watershed">watershed</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.gbl.html#zonal-statistics">zonal_statistics</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="arcgis.network.toc.html">arcgis.network module</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.network.toc.html#networklayer">NetworkLayer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.network.toc.html#routelayer">RouteLayer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.network.toc.html#servicearealayer">ServiceAreaLayer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.network.toc.html#closestfacilitylayer">ClosestFacilityLayer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.network.toc.html#networkdataset">NetworkDataset</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.network.toc.html#submodules">Submodules</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="arcgis.network.analysis.html">arcgis.network.analysis module</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.network.analysis.html#solve-vehicle-routing-problem">solve_vehicle_routing_problem</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.network.analysis.html#find-closest-facilities">find_closest_facilities</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.network.analysis.html#solve-location-allocation">solve_location_allocation</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.network.analysis.html#generate-origin-destination-cost-matrix">generate_origin_destination_cost_matrix</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.network.analysis.html#find-routes">find_routes</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.network.analysis.html#generate-service-areas">generate_service_areas</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.network.analysis.html#get-travel-modes">get_travel_modes</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="arcgis.geoanalytics.toc.html">arcgis.geoanalytics module</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.geoanalytics.toc.html#get-datastores">get_datastores</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.geoanalytics.toc.html#is-supported">is_supported</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.geoanalytics.toc.html#submodules">Submodules</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="arcgis.geoanalytics.analyze_patterns.html">arcgis.geoanalytics.analyze_patterns module</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.geoanalytics.analyze_patterns.html#calculate-density">calculate_density</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.geoanalytics.analyze_patterns.html#find-hot-spots">find_hot_spots</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.geoanalytics.analyze_patterns.html#create-space-time-cube">create_space_time_cube</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="arcgis.geoanalytics.find_locations.html">arcgis.geoanalytics.find_locations module</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.geoanalytics.find_locations.html#detect-incidents">detect_incidents</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.geoanalytics.find_locations.html#find-similar-locations">find_similar_locations</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.geoanalytics.find_locations.html#geocode-locations">geocode_locations</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="arcgis.geoanalytics.manage_data.html">arcgis.geoanalytics.manage_data module</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.geoanalytics.manage_data.html#calculate-fields">calculate_fields</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.geoanalytics.manage_data.html#copy-to-data-store">copy_to_data_store</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="arcgis.geoanalytics.summarize_data.html">arcgis.geoanalytics.summarize_data module</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.geoanalytics.summarize_data.html#aggregate-points">aggregate_points</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.geoanalytics.summarize_data.html#join-features">join_features</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.geoanalytics.summarize_data.html#reconstruct-tracks">reconstruct_tracks</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.geoanalytics.summarize_data.html#summarize-attributes">summarize_attributes</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.geoanalytics.summarize_data.html#summarize-within">summarize_within</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="arcgis.geoanalytics.use_proximity.html">arcgis.geoanalytics.use_proximity module</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.geoanalytics.use_proximity.html#create-buffers">create_buffers</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="arcgis.geocoding.html">arcgis.geocoding module</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.geocoding.html#geocoder">Geocoder</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.geocoding.html#get-geocoders">get_geocoders</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.geocoding.html#geocode">geocode</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.geocoding.html#geocode-from-items">geocode_from_items</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.geocoding.html#analyze-geocode-input">analyze_geocode_input</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.geocoding.html#reverse-geocode">reverse_geocode</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.geocoding.html#batch-geocode">batch_geocode</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.geocoding.html#suggest">suggest</a></li>
+</ul>
+</li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">arcgis.geoenrichment module</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#country">Country</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#get-countries">get_countries</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#create-report">create_report</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#enrich">enrich</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#find-businesses">find_businesses</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#standard-geography-query">standard_geography_query</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="arcgis.geometry.html">arcgis.geometry module</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.geometry.html#point">Point</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.geometry.html#multipoint">MultiPoint</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.geometry.html#polyline">Polyline</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.geometry.html#polygon">Polygon</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.geometry.html#envelope">Envelope</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.geometry.html#spatialreference">SpatialReference</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.geometry.html#geometry">Geometry</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.geometry.html#areas-and-lengths">areas_and_lengths</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.geometry.html#auto-complete">auto_complete</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.geometry.html#buffer">buffer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.geometry.html#convex-hull">convex_hull</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.geometry.html#cut">cut</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.geometry.html#density">density</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.geometry.html#difference">difference</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.geometry.html#distance">distance</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.geometry.html#find-transformation">find_transformation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.geometry.html#from-geo-coordinate-string">from_geo_coordinate_string</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.geometry.html#generalize">generalize</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.geometry.html#intersect">intersect</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.geometry.html#label-points">label_points</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.geometry.html#lengths">lengths</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.geometry.html#offset">offset</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.geometry.html#project">project</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.geometry.html#relation">relation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.geometry.html#reshape">reshape</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.geometry.html#to-geo-coordinate-string">to_geo_coordinate_string</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.geometry.html#trim-extend">trim_extend</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.geometry.html#union">union</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.geometry.html#submodules">Submodules</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="arcgis.geometry.filters.html">arcgis.geometry.filters module</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.geometry.filters.html#intersects">intersects</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.geometry.filters.html#contains">contains</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.geometry.filters.html#crosses">crosses</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.geometry.filters.html#envelope-intersects">envelope_intersects</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.geometry.filters.html#index-intersects">index_intersects</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.geometry.filters.html#overlaps">overlaps</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.geometry.filters.html#touches">touches</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.geometry.filters.html#within">within</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="arcgis.geoprocessing.html">arcgis.geoprocessing module</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.geoprocessing.html#import-toolbox">import_toolbox</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.geoprocessing.html#datafile">DataFile</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.geoprocessing.html#linearunit">LinearUnit</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.geoprocessing.html#rasterdata">RasterData</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="arcgis.mapping.html">arcgis.mapping module</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.mapping.html#webmap">WebMap</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.mapping.html#webscene">WebScene</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.mapping.html#mapimagelayer">MapImageLayer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.mapping.html#mapimagelayermanager">MapImageLayerManager</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.mapping.html#vectortilelayer">VectorTileLayer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.mapping.html#export-map">export_map</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.mapping.html#get-layout-templates">get_layout_templates</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="arcgis.realtime.html">arcgis.realtime module</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.realtime.html#streamlayer">StreamLayer</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="arcgis.schematics.html">arcgis.schematics module</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.schematics.html#schematiclayers">SchematicLayers</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="arcgis.widgets.html">arcgis.widgets module</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.widgets.html#mapview">MapView</a></li>
+</ul>
+</li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="index.html">arcgis</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+ 
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="index.html">Docs</a> &raquo;</li>
+      
+    <li>arcgis.geoenrichment module</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="_sources/arcgis.geoenrichment.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="module-arcgis.geoenrichment">
+<span id="arcgis-geoenrichment-module"></span><h1>arcgis.geoenrichment module<a class="headerlink" href="#module-arcgis.geoenrichment" title="Permalink to this headline">¶</a></h1>
+<p>The arcgis.geoenrichment module  enables you to answer questions about locations that you can’t answer with maps alone.</p>
+<p>GeoEnrichment provides the ability to get facts about a location or area. Using GeoEnrichment, you can get information
+about the people, places, and businesses in a specific area or within a certain distance or drive time from a location.
+It enables you to query and use information from a large collection of data sets including population, income, housing,
+consumer behavior, and the natural environment.</p>
+<p>For example: What kind of people live here? What do people like to do in this area? What are their habits and
+lifestyles? What kind of businesses are in this area?</p>
+<p>The enrich() method to can be used retrieve demographics and other relevant characteristics associated with the area
+surrounding the requested places. You can also use the arcgis.geoenrichment module to obtain additional geographic
+context (for example, the ZIP Code of a location) and geographic boundaries (for example, the geometry for a drive-time
+service area).</p>
+<p>Site analysis is a popular application of this type of data enrichment. For example, GeoEnrichment can be leveraged to
+study the population that would be affected by the development of a new community center within their neighborhood.
+With the enrich() method, the proposed site can be submitted, and the demographics and other relevant characteristics
+associated with the area around the site will be returned.</p>
+<div class="section" id="country">
+<h2>Country<a class="headerlink" href="#country" title="Permalink to this headline">¶</a></h2>
+<dl class="class">
+<dt id="arcgis.geoenrichment.Country">
+<em class="property">class </em><code class="descclassname">arcgis.geoenrichment.</code><code class="descname">Country</code><span class="sig-paren">(</span><em>dictdata</em>, <em>gis</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.geoenrichment.Country" title="Permalink to this definition">¶</a></dt>
+<dd><p>A country for which geoenrichment data is available. The Country class can be used
+to discover the data collections, sub-geographies and available reports for a country.</p>
+<dl class="attribute">
+<dt id="arcgis.geoenrichment.Country.data_collections">
+<code class="descname">data_collections</code><a class="headerlink" href="#arcgis.geoenrichment.Country.data_collections" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the supported data collections and analysis variables as a Pandas dataframe.</p>
+<p>The dataframe is indexed by the data collection id(dataCollectionID) and contains columns for
+analysis variables(analysisVariable)</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="arcgis.geoenrichment.Country.dataset">
+<code class="descname">dataset</code><a class="headerlink" href="#arcgis.geoenrichment.Country.dataset" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the currently used dataset for this country</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="arcgis.geoenrichment.Country.geometry">
+<code class="descname">geometry</code><a class="headerlink" href="#arcgis.geoenrichment.Country.geometry" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="classmethod">
+<dt id="arcgis.geoenrichment.Country.get">
+<em class="property">classmethod </em><code class="descname">get</code><span class="sig-paren">(</span><em>name</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.geoenrichment.Country.get" title="Permalink to this definition">¶</a></dt>
+<dd><p>Gets a reference to a particular country, given its name, or its
+2 letter abbreviation or ISO3 code.</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="22%" />
+<col width="78%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><strong>Argument</strong></td>
+<td><strong>Description</strong></td>
+</tr>
+<tr class="row-even"><td>name</td>
+<td>Required string. The country name or 2 letter/ISO3 code</td>
+</tr>
+</tbody>
+</table>
+<p>Returns the country</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="arcgis.geoenrichment.Country.levels">
+<code class="descname">levels</code><a class="headerlink" href="#arcgis.geoenrichment.Country.levels" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns levels of geography in this country, for the current dataset</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="arcgis.geoenrichment.Country.reports">
+<code class="descname">reports</code><a class="headerlink" href="#arcgis.geoenrichment.Country.reports" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="arcgis.geoenrichment.Country.search">
+<code class="descname">search</code><span class="sig-paren">(</span><em>query, layers=['*']</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.geoenrichment.Country.search" title="Permalink to this definition">¶</a></dt>
+<dd><p>Searches this country for places that have the specified query string in their name.</p>
+<p>Returns a list of named areas matching the specified query</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="22%" />
+<col width="78%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><strong>Argument</strong></td>
+<td><strong>Description</strong></td>
+</tr>
+<tr class="row-even"><td>query</td>
+<td>Required string. The query string to search for places
+within this country.</td>
+</tr>
+<tr class="row-odd"><td>levels</td>
+<td>Optional list of layer ids. Layer ids for a country
+can be queried using Country.levels properties.</td>
+</tr>
+</tbody>
+</table>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">A list of named areas that match the query string</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="arcgis.geoenrichment.Country.subgeographies">
+<code class="descname">subgeographies</code><a class="headerlink" href="#arcgis.geoenrichment.Country.subgeographies" title="Permalink to this definition">¶</a></dt>
+<dd><blockquote>
+<div><p>Returns the named geographical places in this country, as NamedArea objects. Each named area has attributes for the
+supported subgeography levels within it, and the value of those attributes are dictionaries containing the named
+places within that level of geography. This allows for interactive selection of places using intellisense and a
+notation such as the following:</p>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="c1"># Usage Example 1</span>
+
+<span class="n">usa</span> <span class="o">=</span> <span class="n">Country</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;USA&#39;</span><span class="p">)</span>
+<span class="n">usa</span><span class="o">.</span><span class="n">subgeographies</span><span class="o">.</span><span class="n">states</span><span class="p">[</span><span class="s1">&#39;California&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">counties</span><span class="p">[</span><span class="s1">&#39;San_Bernardino_County&#39;</span><span class="p">]</span>
+</pre></div>
+</div>
+</div></blockquote>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="c1"># Usage Example 2</span>
+
+<span class="n">india</span><span class="o">.</span><span class="n">named_places</span><span class="o">.</span><span class="n">states</span><span class="p">[</span><span class="s1">&#39;Bihar&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">districts</span><span class="p">[</span><span class="s1">&#39;Aurangabad&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">subdistricts</span><span class="p">[</span><span class="s1">&#39;Barun&#39;</span><span class="p">]</span>
+</pre></div>
+</div>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="get-countries">
+<h2>get_countries<a class="headerlink" href="#get-countries" title="Permalink to this headline">¶</a></h2>
+<dl class="method">
+<dt id="arcgis.geoenrichment.get_countries">
+<code class="descclassname">geoenrichment.</code><code class="descname">get_countries</code><span class="sig-paren">(</span><em>gis=None</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.geoenrichment.get_countries" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the countries for which there is GeoEnrichment data.</p>
+</dd></dl>
+
+</div>
+<div class="section" id="create-report">
+<h2>create_report<a class="headerlink" href="#create-report" title="Permalink to this headline">¶</a></h2>
+<dl class="method">
+<dt id="arcgis.geoenrichment.create_report">
+<code class="descclassname">geoenrichment.</code><code class="descname">create_report</code><span class="sig-paren">(</span><em>study_areas</em>, <em>report=None</em>, <em>export_format='pdf'</em>, <em>report_fields=None</em>, <em>options=None</em>, <em>return_type=None</em>, <em>use_data=None</em>, <em>in_sr=4326</em>, <em>out_name=None</em>, <em>out_folder=None</em>, <em>gis=None</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.geoenrichment.create_report" title="Permalink to this definition">¶</a></dt>
+<dd><p>The Create Report method allows you to create many types of high quality reports for a
+variety of use cases describing the input area. If a point is used as a study area, the
+service will create a 1-mile ring buffer around the point to collect and append enrichment
+data. Optionally, you can create a buffer ring or drive-time service area around points of
+interest to generate PDF or Excel reports containing relevant information for the area on
+demographics, consumer spending, tapestry market, business or market potential.</p>
+<p>Report options are available and can be used to describe and gain a better understanding
+about the market, customers / clients and competition associated with an area of interest.</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="21%" />
+<col width="79%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><strong>Argument</strong></td>
+<td><strong>Description</strong></td>
+</tr>
+<tr class="row-even"><td>study_areas</td>
+<td>required list. Required parameter: Study areas may be defined by
+input points, polygons, administrative boundaries or addresses.</td>
+</tr>
+<tr class="row-odd"><td>report</td>
+<td>optional string. identify the id of the report. This may be one of
+the many default reports available along with our demographic data
+collections or a customized report. Custom report templates are
+stored in an ArcGIS Online organization as a Report Template item.
+The organization URL and a valid ArcGIS Online authentication token
+is required for security purposes to access these templates. If no
+report is specified, the default report is census profile for United
+States and a general demographic summary report for most countries.</td>
+</tr>
+<tr class="row-even"><td>export_format</td>
+<td>Optional parameter to specify the format of the generated report.
+Supported formats include PDF and XLSX.</td>
+</tr>
+<tr class="row-odd"><td>report_fields</td>
+<td>Optional parameter specifies additional choices to customize
+reports. Below is an example of the position on the report header
+for each field.</td>
+</tr>
+<tr class="row-even"><td>options</td>
+<td><p class="first">Optional parameter to specify the properties for the study area
+buffer. For a full list of valid buffer properties values and
+further examples review the Input XY Locations’ options parameter.</p>
+<p class="last">By default a 1 mile radius buffer will be applied to point(s) and
+address locations to define a study area.</p>
+</td>
+</tr>
+<tr class="row-odd"><td>return_type</td>
+<td><p class="first">Optional parameter used for storing an output report item to Portal
+for ArcGIS instead of returning a report to a customer via binary
+stream. The attributes are used by Portal to determine where and how
+an item is stored. Parameter attributes include: user, folder,
+title, item_properties, URL, token, and referrer.
+Example</p>
+<p>Creating a new output in a Portal for ArcGIS Instance:</p>
+<dl class="last docutils">
+<dt>return_type = {‘user’ <span class="classifier-delimiter">:</span> <span class="classifier">‘testUser’,</span></dt>
+<dd>‘folder’ : ‘FolderName’,
+‘title’ : ‘Report Title’,
+‘item_properties’ : ‘&lt;properties&gt;’,
+‘url’ : ‘<a class="reference external" href="https://hostname.domain.com/webadaptor">https://hostname.domain.com/webadaptor</a>’,
+‘token’ : ‘token’, ‘referrer’ : ‘referrer’}</dd>
+</dl>
+</td>
+</tr>
+<tr class="row-even"><td>use_data</td>
+<td><p class="first">Optional dictionary. This parameter explicitly specify the country
+or dataset to query. When all input features specified in the
+study_areas parameter describe locations or areas that lie in the
+same country or dataset, this parameter can be specified to provide
+an additional ‘performance hint’ to the service.</p>
+<p>By default, the service will automatically determine the country or
+dataset that is associated with each location or area submitted in
+the study_areas parameter. Specifying a specific dataset or country
+through this parameter will potentially improve response time.</p>
+<p class="last">By default, the data apportionment method is determined by the size
+of the study area. Small study areas use block apportionment for
+higher accuracy whereas large study areas (100 miles or more) will
+use a cascading centroid apportionment method to maintain
+performance. This default behavior can be overridden by using the
+detailed_aggregation parameter.</p>
+</td>
+</tr>
+<tr class="row-odd"><td>in_sr</td>
+<td>Optional parameter to define the input geometries in the study_areas
+parameter in a specified spatial reference system.
+When input points are defined in the study_areas parameter, this
+optional parameter can be specified to explicitly indicate the
+spatial reference system of the point features. The parameter value
+can be specified as the well-known ID describing the projected
+coordinate system or geographic coordinate system.
+The default is 4326</td>
+</tr>
+<tr class="row-even"><td>out_name</td>
+<td>Optional string.  Name of the output file [ending in .pdf or .xlsx)</td>
+</tr>
+<tr class="row-odd"><td>out_folder</td>
+<td>Optional string. Name of the save folder</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</div>
+<div class="section" id="enrich">
+<h2>enrich<a class="headerlink" href="#enrich" title="Permalink to this headline">¶</a></h2>
+<dl class="method">
+<dt id="arcgis.geoenrichment.enrich">
+<code class="descclassname">geoenrichment.</code><code class="descname">enrich</code><span class="sig-paren">(</span><em>study_areas</em>, <em>data_collections=None</em>, <em>analysis_variables=None</em>, <em>comparison_levels=None</em>, <em>add_derivative_variables=None</em>, <em>intersecting_geographies=None</em>, <em>return_geometry=True</em>, <em>gis=None</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.geoenrichment.enrich" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns demographic and other requested information for the specified study areas.
+Study areas define the location of the point or area that you want to enrich
+with additional information or creare reports about. If one or many points are input as
+a study area, the method will create a 1-mile ring buffer around
+the point to collect and append enrichment data. You can optionally
+change the ring buffer size or create drive-time service areas
+around the point.</p>
+<p>You can create a buffer ring or drive-time service
+area around the points to aggregate data for the study areas. You
+can also return enrichment data for buffers around input line
+features.</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="27%" />
+<col width="73%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><strong>Argument</strong></td>
+<td><strong>Description</strong></td>
+</tr>
+<tr class="row-even"><td>study_areas</td>
+<td><p class="first">Required list, FeatureSet or SpatialDataFrame containing the input
+areas to be enriched.</p>
+<p class="last">study_areas can be a SpatialDataFrame, FeatureSet or a lists of the
+following types:
+* addresses, points of interest, place names or other
+supported locations as strings.
+* dicts such as [{“address”:{“Address”:”380 New York St.”,
+“Admin1”:”Redlands”,”Admin2”:”CA”,”Postal”:”92373”,
+“CountryCode”:”USA”}}] for multiple field addresses
+* arcgis.gis.Geometry instances
+* BufferStudyArea instances. By default, one-mile ring
+buffers are created around the points to collect and append
+enrichment data. You can use BufferStudyArea to change the ring
+buffer size or create drive-time service areas around the points.
+* NamedArea instances to support standard geography. They are
+obtained using Country.subgeographies()/search(). When
+the NamedArea instances should be combined together (union), a list
+of such NamedArea instances should constitute a study area in the
+list of requested study areas.</p>
+</td>
+</tr>
+<tr class="row-odd"><td>data_collections</td>
+<td>Optional list. A Data Collection is a preassembled list of
+attributes that will be used to enrich the input features.
+Enrichment attributes can describe various types of information such
+as demographic characteristics and geographic context of the
+locations or areas submitted as input features in study_areas.</td>
+</tr>
+<tr class="row-even"><td>analysis_variables</td>
+<td>Optional list. A Data Collection is a preassembled list of
+attributes that will be used to enrich the input features. With the
+analysis_variables parameter you can return a subset of variables
+enrichment attributes can describe various types of information such
+as demographic characteristics and geographic context of the
+locations or areas submitted as input features in study_areas.</td>
+</tr>
+<tr class="row-odd"><td>add_derivative_variables</td>
+<td>Optional list. This parameter is used to specify an array of string
+values that describe what derivative variables to include in the
+output. The list of accepted values includes:
+[‘percent’,’index’,’average’,’all’,’*’]</td>
+</tr>
+<tr class="row-even"><td>comparison_levels</td>
+<td>Optional list of layer IDs for which the intersecting
+geographies should be geoenriched.</td>
+</tr>
+<tr class="row-odd"><td>intersecting_geographies</td>
+<td>Optional parameter to explicitly define the geographic layers used
+to provide geographic context during the enrichment process. For
+example, you can use this optional parameter to return the U.S.
+county and ZIP Code that each input study area intersects.
+You can intersect input features defined in the study_areas
+parameter with standard geography layers that are provided by the
+GeoEnrichment class for each country. You can also intersect
+features from a publicly available feature service.</td>
+</tr>
+<tr class="row-even"><td>return_geometry</td>
+<td>Optional boolean. A parameter to request the output geometries in
+the response.</td>
+</tr>
+<tr class="row-odd"><td>gis</td>
+<td>Optional GIS.  If None, the GIS object will be used from the
+arcgis.env.active_gis.  This GIS object must be authenticated and
+have the ability to consume credits</td>
+</tr>
+</tbody>
+</table>
+<p>Refer to <a class="reference external" href="https://developers.arcgis.com/rest/geoenrichment/api-reference/street-address-locations.htm">https://developers.arcgis.com/rest/geoenrichment/api-reference/street-address-locations.htm</a> for
+the format of intersection_geographies parameter.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">Spatial DataFrame or Panda’s DataFrame with the requested information for the study areas</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</div>
+<div class="section" id="find-businesses">
+<h2>find_businesses<a class="headerlink" href="#find-businesses" title="Permalink to this headline">¶</a></h2>
+<dl class="method">
+<dt id="arcgis.geoenrichment.find_businesses">
+<code class="descclassname">geoenrichment.</code><code class="descname">find_businesses</code><span class="sig-paren">(</span><em>type_filters=None</em>, <em>feature_limit=1000</em>, <em>feature_offset=0</em>, <em>exact_match=False</em>, <em>search_string=None</em>, <em>spatial_filter=None</em>, <em>simple_search=False</em>, <em>dataset_id=None</em>, <em>full_error_message=False</em>, <em>out_sr=4326</em>, <em>return_geometry=False</em>, <em>as_featureset=False</em>, <em>gis=None</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.geoenrichment.find_businesses" title="Permalink to this definition">¶</a></dt>
+<dd><p>The find_businesses method returns business points matching a given search criteria.
+Business points can be selected using any combination of three search criteria: search
+string, spatial filter and business type. A business point will be selected if it matches
+all search criteria specified.</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="24%" />
+<col width="76%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><strong>Argument</strong></td>
+<td><strong>Description</strong></td>
+</tr>
+<tr class="row-even"><td>type_filters</td>
+<td>Optional list. List of business type filters restricting the search.
+For USA, either the NAICS or SIC filter is useful as a business type
+filter. If both filters are specified in the type_filters parameter
+value, selected business points will match both of them.</td>
+</tr>
+<tr class="row-odd"><td>feature_limit</td>
+<td>Optional integer. The limit of returned business points.</td>
+</tr>
+<tr class="row-even"><td>feature_offset</td>
+<td>Optional integer. Start the results on the number of the record
+specified.</td>
+</tr>
+<tr class="row-odd"><td>exact_match</td>
+<td>Optional boolean. True value of the parameter means the exact match
+of the string to search.</td>
+</tr>
+<tr class="row-even"><td>search_string</td>
+<td>Optional string. A string of characters which is used in the search
+query.</td>
+</tr>
+<tr class="row-odd"><td>spatial_filter</td>
+<td>Optional SpatialFilter. A spatial filter restricting the search.</td>
+</tr>
+<tr class="row-even"><td>simple_search</td>
+<td>Optional boolean. A spatial filter restricting the search. True
+value of the parameter means a simple search (e.g., in company
+names only).</td>
+</tr>
+<tr class="row-odd"><td>dataset_id</td>
+<td>Optional string. ID of the active dataset.</td>
+</tr>
+<tr class="row-even"><td>full_error_message</td>
+<td>Optional boolean. Parameter for composing error message.</td>
+</tr>
+<tr class="row-odd"><td>out_sr</td>
+<td>Optional integer. Parameter specifying the spatial reference to
+return the output dataframe.</td>
+</tr>
+<tr class="row-even"><td>return_geometry</td>
+<td>Optional boolean. When true, geometries are returned with the
+response.</td>
+</tr>
+<tr class="row-odd"><td>as_featureset</td>
+<td>Optional boolean.  The default is False. If True, the result will be
+a arcgis.features.FeatureSet object instead of a SpatailDataFrame or
+Pandas’ DataFrame.</td>
+</tr>
+<tr class="row-even"><td>gis</td>
+<td>Optional GIS.  If None, the GIS object will be used from the
+arcgis.env.active_gis.  This GIS object must be authenticated and
+have the ability to consume credits</td>
+</tr>
+</tbody>
+</table>
+<p>returns: DataFrame (Spatial or Pandas), FeatureSet, or dictionary on error.</p>
+</dd></dl>
+
+</div>
+<div class="section" id="standard-geography-query">
+<h2>standard_geography_query<a class="headerlink" href="#standard-geography-query" title="Permalink to this headline">¶</a></h2>
+<dl class="method">
+<dt id="arcgis.geoenrichment.standard_geography_query">
+<code class="descclassname">geoenrichment.</code><code class="descname">standard_geography_query</code><span class="sig-paren">(</span><em>source_country=None</em>, <em>country_dataset=None</em>, <em>layers=None</em>, <em>ids=None</em>, <em>geoquery=None</em>, <em>return_sub_geography=False</em>, <em>sub_geography_layer=None</em>, <em>sub_geography_query=None</em>, <em>out_sr=4326</em>, <em>return_geometry=False</em>, <em>return_centroids=False</em>, <em>generalization_level=0</em>, <em>use_fuzzy_search=False</em>, <em>feature_limit=1000</em>, <em>as_featureset=False</em>, <em>gis=None</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.geoenrichment.standard_geography_query" title="Permalink to this definition">¶</a></dt>
+<dd><p>This method allows you to search and query standard geography areas so that they can be used to
+obtain facts about the location using the enrich() method or create reports about.</p>
+<p>GeoEnrichment uses the concept of a study area to define the location of the point
+or area that you want to enrich with additional information. Locations can also be passed as
+one or many named statistical areas. This form of a study area lets you define an area by
+the ID of a standard geographic statistical feature, such as a census or postal area. For
+example, to obtain enrichment information for a U.S. state, county or ZIP Code or a Canadian
+province or postal code, the Standard Geography Query helper method allows you to search and
+query standard geography areas so that they can be used in the GeoEnrichment method to
+obtain facts about the location.
+The most common workflow for this service is to find a FIPS (standard geography ID) for a
+geographic name. For example, you can use this service to find the FIPS for the county of
+San Diego which is 06073. You can then use this FIPS ID within the GeoEnrichment class study
+area definition to get geometry and optional demographic data for the county. This study
+area definition is passed as a parameter to the GeoEnrichment class to return data defined
+in the enrichment pack and optionally return geometry for the feature.</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="24%" />
+<col width="76%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><strong>Argument</strong></td>
+<td><strong>Description</strong></td>
+</tr>
+<tr class="row-even"><td>source_country</td>
+<td>Optional string. to specify the source country for the search. Use
+this parameter to limit the search and query of standard geographic
+features to one country. This parameter supports both the two-digit
+and three-digit country codes illustrated in the coverage table.</td>
+</tr>
+<tr class="row-odd"><td>country_dataset</td>
+<td>Optional string. parameter to specify a specific dataset within a
+defined country.</td>
+</tr>
+<tr class="row-even"><td>layers</td>
+<td>Optional list/string. Parameter specifies which standard geography
+layers are being queried or searched. If this parameter is not
+provided, all layers within the defined country will be queried.</td>
+</tr>
+<tr class="row-odd"><td>ids</td>
+<td>Optional parameter to specify which IDs for the standard geography
+layers are being queried or searched. You can use this parameter to
+return attributes and/or geometry for standard geographic areas for
+administrative areas where you already know the ID, for example, if
+you know the Federal Information Processing Standard (FIPS) Codes for
+a U.S. state or county; or, in Canada, to return the geometry and
+attributes for a Forward Sortation Area (FSA).
+Example:
+Return the state of California where the layers parameter is set to
+layers=[‘US.States’]
+then set ids=[“06”]</td>
+</tr>
+<tr class="row-even"><td>geoquery</td>
+<td>Optional string/list. This parameter specifies the text to query
+and search the standard geography layers specified. You can use this
+parameter to query and find standard geography features that meet an
+input term, for example, for a list of all the U.S. counties that
+contain the word “orange”. The geoquery parameter can be a string
+that contains one or more words.</td>
+</tr>
+<tr class="row-odd"><td>return_sub_geography</td>
+<td>Optional boolean. Use this optional parameter to return all the
+subgeographic areas that are within a parent geography.
+For example, you could return all the U.S. counties for a given
+U.S. state or you could return all the Canadian postal areas
+(FSAs) within a Census Metropolitan Area (city).
+When this parameter is set to true, the output features will be
+defined in the sub_geography_layer. The output geometries will be
+in the spatial reference system defined by out_sr.</td>
+</tr>
+<tr class="row-even"><td>sub_geography_layer</td>
+<td>Optional string/list. Use this optional parameter to return all the
+subgeographic areas that are within a parent geography. For example,
+you could return all the U.S. counties within a given U.S. state or
+you could return all the Canadian postal areas (FSAs) within a
+Census Metropolitan Areas (city).
+When this parameter is set to true, the output features will be
+defined in the sub_geography_layer. The output geometries will be
+in the spatial reference system defined by out_sr.</td>
+</tr>
+<tr class="row-odd"><td>sub_geography_query</td>
+<td>Optional string.User this parameter to filter the results of the
+subgeography features that are returned by a search term.
+You can use this parameter to query and find subgeography
+features that meet an input term. This parameter is used to
+filter the list of subgeography features that are within a
+parent geography. For example, you may want a list of all the
+ZIP Codes that are within “San Diego County” and filter the
+results so that only ZIP Codes that start with “921” are
+included in the output response. The subgeography query is a
+string that contains one or more words.</td>
+</tr>
+<tr class="row-even"><td>out_sr</td>
+<td>Optional integer Use this parameter to request the output geometries
+in a specified spatial reference system.</td>
+</tr>
+<tr class="row-odd"><td>return_geometry</td>
+<td>Optional boolean. Use this parameter to request the output
+geometries in the response.  The return type will become a Spatial
+DataFrame instead of a Panda’s DataFrame.</td>
+</tr>
+<tr class="row-even"><td>return_centroids</td>
+<td>Optional Boolean.  Use this parameter to request the output geometry
+to return the center point for each feature.</td>
+</tr>
+<tr class="row-odd"><td>generalization_level</td>
+<td>Optional integer that specifies the level of generalization or
+detail in the area representations of the administrative boundary or
+standard geographic data layers.
+Values must be whole integers from 0 through 6, where 0 is most
+detailed and 6 is most generalized.</td>
+</tr>
+<tr class="row-even"><td>use_fuzzy_search</td>
+<td>Optional Boolean parameter to define if text provided in the
+geoquery parameter should utilize fuzzy search logic. Fuzzy searches
+are based on the Levenshtein Distance or Edit Distance algorithm.</td>
+</tr>
+<tr class="row-odd"><td>feature_limit</td>
+<td>Optional integer value where you can limit the number of features
+that are returned from the geoquery.</td>
+</tr>
+<tr class="row-even"><td>as_featureset</td>
+<td>Optional boolean.  The default is False. If True, the result will be
+a arcgis.features.FeatureSet object instead of a SpatailDataFrame or
+Pandas’ DataFrame.</td>
+</tr>
+<tr class="row-odd"><td>gis</td>
+<td>Optional GIS.  If None, the GIS object will be used from the
+arcgis.env.active_gis.  This GIS object must be authenticated and
+have the ability to consume credits</td>
+</tr>
+</tbody>
+</table>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">Spatial or Pandas Dataframe on success, FeatureSet, or dictionary on failure.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</div>
+</div>
+
+
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="arcgis.geometry.html" class="btn btn-neutral float-right" title="arcgis.geometry module" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="arcgis.geocoding.html" class="btn btn-neutral" title="arcgis.geocoding module" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2016-2017, Esri.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'./',
+            VERSION:'1.3.0',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="_static/jquery.js"></script>
+      <script type="text/javascript" src="_static/underscore.js"></script>
+      <script type="text/javascript" src="_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

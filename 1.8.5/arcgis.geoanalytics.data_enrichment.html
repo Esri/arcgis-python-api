@@ -1,0 +1,639 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <title>arcgis.geoanalytics.data_enrichment module &mdash; arcgis 1.8.5 documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="_static/theme_overrides.css" type="text/css" />
+
+  
+  
+    <link rel="shortcut icon" href="_static/favicon.ico"/>
+  
+
+  
+  
+
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/doctools.js"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="arcgis.geoanalytics.find_locations module" href="arcgis.geoanalytics.find_locations.html" />
+    <link rel="prev" title="arcgis.geoanalytics.analyze_patterns module" href="arcgis.geoanalytics.analyze_patterns.html" />
+<!-- This code block is inserted close near the <head> tag. See http://bit.ly/2BHUQzB -->
+<!-- The point of this code block is to send us google analytics on website views -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-NJGGV5');</script>
+ 
+
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="index.html" class="icon icon-home"> arcgis
+          
+
+          
+            
+            <img src="_static/python_api_logo.png" class="logo" alt="Logo"/>
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1.8.5
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">arcgis</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="arcgis.gis.toc.html">arcgis.gis module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="arcgis.env.html">arcgis.env module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="arcgis.features.toc.html">arcgis.features module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="arcgis.raster.toc.html">arcgis.raster module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="arcgis.network.toc.html">arcgis.network module</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="arcgis.geoanalytics.toc.html">arcgis.geoanalytics module</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="arcgis.geoanalytics.toc.html#define-output-datastore">define_output_datastore</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.geoanalytics.toc.html#get-datastores">get_datastores</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.geoanalytics.toc.html#is-supported">is_supported</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="arcgis.geoanalytics.toc.html#submodules">Submodules</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="arcgis.geoanalytics.analyze_patterns.html">arcgis.geoanalytics.analyze_patterns module</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">arcgis.geoanalytics.data_enrichment module</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#enrich-from-grid">enrich_from_grid</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#calculate-motion-statistics">calculate_motion_statistics</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="arcgis.geoanalytics.find_locations.html">arcgis.geoanalytics.find_locations module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="arcgis.geoanalytics.manage_data.html">arcgis.geoanalytics.manage_data module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="arcgis.geoanalytics.summarize_data.html">arcgis.geoanalytics.summarize_data module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="arcgis.geoanalytics.use_proximity.html">arcgis.geoanalytics.use_proximity module</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="arcgis.geocoding.html">arcgis.geocoding module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="arcgis.geoenrichment.html">arcgis.geoenrichment module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="arcgis.geometry.html">arcgis.geometry module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="arcgis.geoprocessing.html">arcgis.geoprocessing module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="arcgis.mapping.toc.html">arcgis.mapping module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="arcgis.realtime.html">arcgis.realtime module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="arcgis.schematics.html">arcgis.schematics module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="arcgis.widgets.html">arcgis.widgets module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="arcgis.apps.html">arcgis.apps module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="arcgis.learn.toc.html">arcgis.learn module</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">arcgis</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="arcgis.geoanalytics.toc.html">arcgis.geoanalytics module</a> &raquo;</li>
+        
+      <li>arcgis.geoanalytics.data_enrichment module</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+<!-- This code block is inserted close near the <body> tag. See http://bit.ly/2BHUQzB -->
+<!-- The point of this code block is to send us google analytics on website views -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NJGGV5"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+
+  <div class="section" id="arcgis-geoanalytics-data-enrichment-module">
+<h1>arcgis.geoanalytics.data_enrichment module<a class="headerlink" href="#arcgis-geoanalytics-data-enrichment-module" title="Permalink to this headline">¶</a></h1>
+<span class="target" id="module-arcgis.geoanalytics.data_enrichment"></span><p>These tools are used for data enrichment using geoanalytics</p>
+<div class="section" id="enrich-from-grid">
+<h2>enrich_from_grid<a class="headerlink" href="#enrich-from-grid" title="Permalink to this headline">¶</a></h2>
+<dl class="py function">
+<dt id="arcgis.geoanalytics.data_enrichment.enrich_from_grid">
+<code class="sig-prename descclassname"><span class="pre">arcgis.geoanalytics.data_enrichment.</span></code><code class="sig-name descname"><span class="pre">enrich_from_grid</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">input_layer</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">grid_layer</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">enrichment_attributes</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">output_name</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">gis</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">context</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">future</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.geoanalytics.data_enrichment.enrich_from_grid" title="Permalink to this definition">¶</a></dt>
+<dd><img alt="_images/enrich_from_grid.png" src="_images/enrich_from_grid.png" />
+<p>The Enrich From Multi-Variable Grid task joins attributes from a multivariable grid to a point layer.
+The multivariable grid must be created using the <code class="docutils literal notranslate"><span class="pre">build_multivariable_grid</span></code> task. Metadata from the
+multivariable grid is used to efficiently enrich the input point features, making it faster than the
+Join Features task. Attributes in the multivariable grid are joined to the input point features when
+the features intersect the grid.</p>
+<p>The attributes in the multivariable grid can be used as explanatory variables when modeling spatial
+relationships with your input point features, and this task allows you to join those attributes to
+the point features quickly.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Only available at ArcGIS Enterprise 10.7 and later.</p>
+</div>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 91%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><strong>Argument</strong></p></td>
+<td><p><strong>Description</strong></p></td>
+</tr>
+<tr class="row-even"><td><p>input_layer</p></td>
+<td><p>Required layer. The point features that will be enriched
+by the multi-variable grid. See <a class="reference internal" href="arcgis.geoanalytics.toc.html#gaxfeatureinput"><span class="std std-ref">Feature Input</span></a>.</p></td>
+</tr>
+<tr class="row-odd"><td><p>grid_layer</p></td>
+<td><p>Required layer. The multivariable grid layer created using the Build Multi-Variable Grid task.
+See <a class="reference internal" href="arcgis.geoanalytics.toc.html#gaxfeatureinput"><span class="std std-ref">Feature Input</span></a>.</p></td>
+</tr>
+<tr class="row-even"><td><p>enrichment_attributes</p></td>
+<td><p>optional string. A list of fields in the multi-variable grid
+that will be joined to the input point features. If the
+attributes are not provided, all fields in the multi-variable
+grid will be joined to the input point features.</p></td>
+</tr>
+<tr class="row-odd"><td><p>output_name</p></td>
+<td><p>optional string. The task will create a feature service of the
+results. You define the name of the service.</p></td>
+</tr>
+<tr class="row-even"><td><p>gis</p></td>
+<td><p>optional GIS. The GIS object where the analysis will take place.</p></td>
+</tr>
+<tr class="row-odd"><td><p>context</p></td>
+<td><p>Optional dict. The context parameter contains additional settings that affect task execution. For this task, there are five settings:</p>
+<ol class="arabic simple">
+<li><p>Extent (<code class="docutils literal notranslate"><span class="pre">extent</span></code>) - A bounding box that defines the analysis area. Only those features that intersect the bounding box will be analyzed.</p></li>
+<li><p>Processing spatial reference (<code class="docutils literal notranslate"><span class="pre">processSR</span></code>) - The features will be projected into this coordinate system for analysis.</p></li>
+<li><p>Output spatial reference (<code class="docutils literal notranslate"><span class="pre">outSR</span></code>) - The features will be projected into this coordinate system after the analysis to be saved. The output spatial reference for the spatiotemporal big data store is always WGS84.</p></li>
+<li><p>Data store (<code class="docutils literal notranslate"><span class="pre">dataStore</span></code>) - Results will be saved to the specified data store. For ArcGIS Enterprise, the default is the spatiotemporal big data store.</p></li>
+<li><p>Default aggregation styles (<code class="docutils literal notranslate"><span class="pre">defaultAggregationStyles</span></code>) - If set to ‘True’, results will have square, hexagon, and triangle aggregation styles enabled on results map services.</p></li>
+</ol>
+</td>
+</tr>
+<tr class="row-even"><td><p>future</p></td>
+<td><p>optional boolean. If ‘True’, a GPJob is returned instead of
+results. The GPJob can be queried on the status of the execution.</p>
+<p>The default value is ‘False’.</p>
+</td>
+</tr>
+</tbody>
+</table>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>result_layer : Output Features as feature layer item.</p>
+</dd>
+</dl>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Usage Example: To enrich a layer of crime data with a multivariable grid containing demographic information.</span>
+
+<span class="n">enrich_result</span> <span class="o">=</span> <span class="n">enrich_from_grid</span><span class="p">(</span><span class="n">input_layer</span><span class="o">=</span><span class="n">crime_lyr</span><span class="p">,</span>
+                                 <span class="n">grid_layer</span><span class="o">=</span><span class="n">mvg_layer</span><span class="p">,</span>
+                                 <span class="n">output_name</span><span class="o">=</span><span class="s2">&quot;chicago_crimes_enriched&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+</div>
+<div class="section" id="calculate-motion-statistics">
+<h2>calculate_motion_statistics<a class="headerlink" href="#calculate-motion-statistics" title="Permalink to this headline">¶</a></h2>
+<dl class="py function">
+<dt id="arcgis.geoanalytics.data_enrichment.calculate_motion_statistics">
+<code class="sig-prename descclassname"><span class="pre">arcgis.geoanalytics.data_enrichment.</span></code><code class="sig-name descname"><span class="pre">calculate_motion_statistics</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">input_layer</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">track_fields</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">motion_statistics</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'All'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">track_history_window</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">3</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">idle_tol_dist</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">idle_tol_unit</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">idle_time_tol</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">idle_time_tol_unit</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">time_boundary_split</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">split_unit</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">time_bound_ref</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dist_method</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'Geodesic'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">distance_unit</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'Meters'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">duration_unit</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'Seconds'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">speed_unit</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'MetersPerSecond'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">accel_unit</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'MetersPerSecondSquared'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">elev_unit</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'meters'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">output_name</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">gis</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">context</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">future</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.geoanalytics.data_enrichment.calculate_motion_statistics" title="Permalink to this definition">¶</a></dt>
+<dd><p>The Calculate Motion Statistics task calculates motion statistics and
+descriptors for time-enabled points that represent one or more moving
+entities. Points are grouped together into tracks representing each
+entity using a unique identifier. Motion statistics are calculated at
+each point using one or more points in the track history. Calculations
+include summaries of distance traveled, duration, elevation, speed,
+acceleration, bearing, and idle status. The result is a new point layer
+enriched with the requested statistics.</p>
+<p>For example, a city is monitoring snowplow operations and wants to
+better understand vehicle movement. The Calculate Motion Statistics
+tool can be used to determine idle locations and time spent idling,
+average and maximum speeds over time, total distance covered, and other
+statistics.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Only available at ArcGIS Enterprise 10.9 and later.</p>
+</div>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 91%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><strong>Argument</strong></p></td>
+<td><p><strong>Description</strong></p></td>
+</tr>
+<tr class="row-even"><td><p>input_layer</p></td>
+<td><p>Required layer. The time-enabled point features that will be
+grouped into tracks and analyzed. The input layer must be of
+time type instant. See <a class="reference internal" href="arcgis.geoanalytics.toc.html#gaxfeatureinput"><span class="std std-ref">Feature Input</span></a>.</p></td>
+</tr>
+<tr class="row-odd"><td><p>track_fields</p></td>
+<td><p>Required String. The fields used to identify distinct tracks.
+There can be multiple trackFields in seperated by commas.</p></td>
+</tr>
+<tr class="row-even"><td><p>motion_statistics</p></td>
+<td><p>Optional String. The type of motion statistics to calulcated.
+The allowed values are: <cite>distance</cite>, <cite>speed</cite>, <cite>acceleration</cite>,
+<cite>duration</cite> or <cite>elevation</cite>, <cite>slope</cite>, <cite>idle</cite>, <cite>bearing</cite>, or <cite>all</cite> (default).</p></td>
+</tr>
+<tr class="row-odd"><td><p>track_history_window</p></td>
+<td><p>Optional Integer. The number of observations (including the
+current observation) that will be used when calculating summary
+statistics that are not instantaneous. This includes minimum,
+maximum, average, and total statistics. The default track history
+window is <strong>3</strong>, which means that at each point in a track
+summary statistic will be calculated using the current
+observation and the previous three observations. This parameter
+does not affect instantaneous statistics or idle classification.</p></td>
+</tr>
+<tr class="row-even"><td><p>idle_tol_dist</p></td>
+<td><p>Optional Float. Used along with <cite>idle_time_tol</cite> to decide if an
+entity is idling. An entity is idling when it hasn’t moved more
+than this distance in at least the amount of time specified by
+<cite>idle_time_tol</cite>. The units of the time values are supplied by
+the <cite>idle_tol_dist</cite> parameter.</p>
+<p>This value is only used for statistics in the Idle group.</p>
+</td>
+</tr>
+<tr class="row-odd"><td><p>idle_tol_unit</p></td>
+<td><p>Optional String. The unit of distance for idle distance tolerance.</p></td>
+</tr>
+<tr class="row-even"><td><p>idle_time_tol</p></td>
+<td><p>Optional Float. The lead amount of time used to determine if someone is idling.</p></td>
+</tr>
+<tr class="row-odd"><td><p>idle_time_tol_unit</p></td>
+<td><p>Optional String. The time tolerance unit for idling.</p></td>
+</tr>
+<tr class="row-even"><td><p>time_boundary_split</p></td>
+<td><p>Optional Float. A time boundary allows your to analyze values within a defined time span.</p></td>
+</tr>
+<tr class="row-odd"><td><p>split_unit</p></td>
+<td><p>Optional String. The unit of time represented in the <cite>time_boundary_split</cite>.</p></td>
+</tr>
+<tr class="row-even"><td><p>time_bound_ref</p></td>
+<td><p>Optional Datetime. A date that specifies the reference time to
+align the time boundary to, represented in milliseconds from epoch.</p></td>
+</tr>
+<tr class="row-odd"><td><p>dist_method</p></td>
+<td><p>Optional String. The method used to calculate distances between
+track observations. There are two methods to choose from: <cite>Planar</cite>
+and <cite>Geodesic</cite>. The <cite>Planar</cite> method measures distances using an
+Euclidean plane and will not calculate statistics across the
+date line. When the <cite>Geodesic</cite> method is used to calculate
+distance and the spatial reference can be panned, calculations
+will cross the date line when appropriate. If the spatial
+reference cannot be panned, calculations will be limited to the
+coordinate system extent and may not wrap.</p></td>
+</tr>
+<tr class="row-even"><td><p>distance_unit</p></td>
+<td><p>Optional String. The units for all results in the Distance
+motion statistics group.
+Values: Meters (default) | Kilometers | Feet | Miles | NauticalMiles | Yards</p></td>
+</tr>
+<tr class="row-odd"><td><p>duration_unit</p></td>
+<td><p>Optional String. The units for all results in the Duration motion statistics group.</p>
+<p>Values: Milliseconds | Seconds (default) | Minutes | Hours | Days | Weeks| Months | Years</p>
+</td>
+</tr>
+<tr class="row-even"><td><p>speed_unit</p></td>
+<td><p>Optional String. The units for all results in the Speed motion statistics group.</p>
+<p>Values: MetersPerSecond (default) | KilometersPerHour | FeetPerSecond | MilesPerHour | NauticalMilesPerHour</p>
+</td>
+</tr>
+<tr class="row-odd"><td><p>accel_unit</p></td>
+<td><p>Optional String. The units for all results in the Acceleration motion statistics group.</p>
+<p>Values: MetersPerSecondSquared (default) | FeetPerSecondSquared</p>
+</td>
+</tr>
+<tr class="row-even"><td><p>elev_unit</p></td>
+<td><p>Optional String. The units for all results in the Elevation motion statistics group.</p>
+<p>Values: Meters (default) | Kilometers | Feet | Miles | NauticalMiles | Yards</p>
+</td>
+</tr>
+<tr class="row-odd"><td><p>output_name</p></td>
+<td><p>optional string. The task will create a feature service of the
+results. You define the name of the service.</p></td>
+</tr>
+<tr class="row-even"><td><p>gis</p></td>
+<td><p>optional GIS. The GIS object where the analysis will take place.</p></td>
+</tr>
+<tr class="row-odd"><td><p>context</p></td>
+<td><p>Optional dict. The context parameter contains additional settings that affect task execution. For this task, there are five settings:</p>
+<ol class="arabic simple">
+<li><p>Extent (<code class="docutils literal notranslate"><span class="pre">extent</span></code>) - A bounding box that defines the analysis area. Only those features that intersect the bounding box will be analyzed.</p></li>
+<li><p>Processing spatial reference (<code class="docutils literal notranslate"><span class="pre">processSR</span></code>) - The features will be projected into this coordinate system for analysis.</p></li>
+<li><p>Output spatial reference (<code class="docutils literal notranslate"><span class="pre">outSR</span></code>) - The features will be projected into this coordinate system after the analysis to be saved. The output spatial reference for the spatiotemporal big data store is always WGS84.</p></li>
+<li><p>Data store (<code class="docutils literal notranslate"><span class="pre">dataStore</span></code>) - Results will be saved to the specified data store. For ArcGIS Enterprise, the default is the spatiotemporal big data store.</p></li>
+<li><p>Default aggregation styles (<code class="docutils literal notranslate"><span class="pre">defaultAggregationStyles</span></code>) - If set to ‘True’, results will have square, hexagon, and triangle aggregation styles enabled on results map services.</p></li>
+</ol>
+</td>
+</tr>
+<tr class="row-even"><td><p>future</p></td>
+<td><p>optional boolean. If ‘True’, a GPJob is returned instead of
+results. The GPJob can be queried on the status of the execution.</p>
+<p>The default value is ‘False’.</p>
+</td>
+</tr>
+</tbody>
+</table>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>result_layer : Output Features as feature layer item.</p>
+</dd>
+</dl>
+</dd></dl>
+
+</div>
+</div>
+
+
+
+           </div>
+           
+          </div>
+          <footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+        <a href="arcgis.geoanalytics.find_locations.html" class="btn btn-neutral float-right" title="arcgis.geoanalytics.find_locations module" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="arcgis.geoanalytics.analyze_patterns.html" class="btn btn-neutral float-left" title="arcgis.geoanalytics.analyze_patterns module" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &#169; Copyright 2016-2021, Esri.
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+    Options v: 1.8.5
+
+  <div class="rst-versions" data-toggle="rst-versions" role="note" aria-label="versions">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      <span class="fa fa-book"> Pick an earlier version</span>
+      v: 1.8.5
+      <span class="fa fa-caret-down"></span>
+    </span>
+    <div class="rst-other-versions">
+      
+      
+      <dl>
+        <dt>Versions</dt>
+        
+          
+          <dd><a href="1.8.4/">1.8.4</a></dd>
+          
+        
+          
+          <dd><a href="1.8.3/">1.8.3</a></dd>
+          
+        
+          
+          <dd><a href="1.8.2/">1.8.2</a></dd>
+          
+        
+          
+          <dd><a href="1.8.1/">1.8.1</a></dd>
+          
+        
+          
+          <dd><a href="1.8.0/">1.8.0</a></dd>
+          
+        
+          
+          <dd><a href="1.7.1/">1.7.1</a></dd>
+          
+        
+          
+          <dd><a href="1.7.0/">1.7.0</a></dd>
+          
+        
+          
+          <dd><a href="1.6.2/">1.6.2</a></dd>
+          
+        
+          
+          <dd><a href="1.6.1/">1.6.1</a></dd>
+          
+        
+          
+          <dd><a href="1.6.0/">1.6.0</a></dd>
+          
+        
+          
+          <dd><a href="1.5.3/">1.5.3</a></dd>
+          
+        
+          
+          <dd><a href="1.5.2/">1.5.2</a></dd>
+          
+        
+          
+          <dd><a href="1.5.1/">1.5.1</a></dd>
+          
+        
+          
+          <dd><a href="1.5.0/">1.5.0</a></dd>
+          
+        
+          
+          <dd><a href="1.4.2/">1.4.2</a></dd>
+          
+        
+          
+          <dd><a href="1.4.1/">1.4.1</a></dd>
+          
+        
+          
+          <dd><a href="1.4.0/">1.4.0</a></dd>
+          
+        
+          
+          <dd><a href="1.3.0/">1.3.0</a></dd>
+          
+        
+          
+          <dd><a href="1.2.5/">1.2.5</a></dd>
+          
+        
+          
+          <dd><a href="1.2.4/">1.2.4</a></dd>
+          
+        
+          
+          <dd><a href="1.2.3/">1.2.3</a></dd>
+          
+        
+          
+          <dd><a href="1.2.2/">1.2.2</a></dd>
+          
+        
+          
+          <dd><a href="1.2.1/">1.2.1</a></dd>
+          
+        
+          
+          <dd><a href="1.2.0/">1.2.0</a></dd>
+          
+        
+          
+          <dd><a href="1.0.1/">1.0.1</a></dd>
+          
+        
+          
+          <dd><a href="1.0.0/">1.0.0</a></dd>
+          
+        
+          
+          <dd><a href="0.3.0/">0.3.0</a></dd>
+          
+        
+          
+          <dd><a href="0.2.0/">0.2.0</a></dd>
+          
+        
+          
+          <dd><a href="0.1.0/">0.1.0</a></dd>
+          
+        
+      </dl>
+      
+      
+      
+    </div>
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

@@ -1,0 +1,57 @@
+.. arcgis documentation master file, created by
+   sphinx-quickstart on Thu Oct 20 23:21:00 2016.
+   You can adapt this file completely to your liking, but it should at least
+   contain the root `toctree` directive.
+
+arcgis.raster module
+======================
+
+.. automodule:: arcgis.raster
+
+ImageryLayer
+--------------
+.. autoclass:: arcgis.raster.ImageryLayer
+    :inherited-members:
+    :members:
+    :undoc-members:
+
+Raster
+------
+.. autoclass:: arcgis.raster.Raster
+    :inherited-members:
+    :members:
+    :undoc-members:
+
+RasterCatalogItem
+-----------------
+.. autoclass:: arcgis.raster.RasterCatalogItem
+    :inherited-members:
+    :members:
+    :undoc-members:
+
+RasterManager
+------------------
+.. autoclass:: arcgis.raster.RasterManager
+    :inherited-members:
+    :members:
+    :undoc-members:
+
+ImageryTileManager
+------------------
+.. autoclass:: arcgis.raster.ImageryTileManager
+    :inherited-members:
+    :members:
+    :undoc-members:
+
+
+
+Submodules
+--------------
+.. toctree::
+   :maxdepth: 3
+
+   arcgis.raster.analytics
+   arcgis.raster.functions
+   arcgis.raster.functions.gbl
+   arcgis.raster.orthomapping
+   arcgis.raster.functions.RFT

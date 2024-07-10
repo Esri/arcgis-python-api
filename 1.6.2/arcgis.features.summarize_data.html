@@ -1,0 +1,905 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>arcgis.features.summarize_data module &mdash; arcgis 1.6.2 documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="_static/theme_overrides.css" type="text/css" />
+
+  
+  
+    <link rel="shortcut icon" href="_static/favicon.ico"/>
+  
+  
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/doctools.js"></script>
+        <script src="_static/language_data.js"></script>
+        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="arcgis.features.use_proximity module" href="arcgis.features.use_proximity.html" />
+    <link rel="prev" title="arcgis.features.managers module" href="arcgis.features.managers.html" />
+<!-- This code block is inserted close near the <head> tag. See http://bit.ly/2BHUQzB -->
+<!-- The point of this code block is to send us google analytics on website views -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-NJGGV5');</script>
+ 
+
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="index.html" class="icon icon-home" alt="Documentation Home"> arcgis
+          
+
+          
+            
+            <img src="_static/python_api_logo.png" class="logo" alt="Logo"/>
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1.6.2
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">arcgis</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="arcgis.gis.toc.html">arcgis.gis module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="arcgis.env.html">arcgis.env module</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="arcgis.features.toc.html">arcgis.features module</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="arcgis.features.toc.html#feature">Feature</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.features.toc.html#featurelayer">FeatureLayer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.features.toc.html#table">Table</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.features.toc.html#featurelayercollection">FeatureLayerCollection</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.features.toc.html#featureset">FeatureSet</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.features.toc.html#featurecollection">FeatureCollection</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.features.toc.html#geoaccessor">GeoAccessor</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.features.toc.html#geoseriesaccessor">GeoSeriesAccessor</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.features.toc.html#spatialdataframe">SpatialDataFrame</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="arcgis.features.toc.html#submodules">Submodules</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="arcgis.features.analysis.html">arcgis.features.analysis module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="arcgis.features.analyze_patterns.html">arcgis.features.analyze_patterns module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="arcgis.features.elevation.html">arcgis.features.elevation module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="arcgis.features.enrich_data.html">arcgis.features.enrich_data module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="arcgis.features.find_locations.html">arcgis.features.find_locations module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="arcgis.features.hydrology.html">arcgis.features.hydrology module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="arcgis.features.manage_data.html">arcgis.features.manage_data module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="arcgis.features.managers.html">arcgis.features.managers module</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">arcgis.features.summarize_data module</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#aggregate-points">aggregate_points</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#describe-dataset">describe_dataset</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#join-features">join_features</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#summarize-nearby">summarize_nearby</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#summarize-center-and-dispersion">summarize_center_and_dispersion</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#summarize-within">summarize_within</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="arcgis.features.use_proximity.html">arcgis.features.use_proximity module</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="arcgis.raster.toc.html">arcgis.raster module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="arcgis.network.toc.html">arcgis.network module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="arcgis.geoanalytics.toc.html">arcgis.geoanalytics module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="arcgis.geocoding.html">arcgis.geocoding module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="arcgis.geoenrichment.html">arcgis.geoenrichment module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="arcgis.geometry.html">arcgis.geometry module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="arcgis.geoprocessing.html">arcgis.geoprocessing module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="arcgis.mapping.html">arcgis.mapping module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="arcgis.realtime.html">arcgis.realtime module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="arcgis.schematics.html">arcgis.schematics module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="arcgis.widgets.html">arcgis.widgets module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="arcgis.apps.html">arcgis.apps module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="arcgis.learn.html">arcgis.learn module</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">arcgis</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="arcgis.features.toc.html">arcgis.features module</a> &raquo;</li>
+        
+      <li>arcgis.features.summarize_data module</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+<!-- This code block is inserted close near the <body> tag. See http://bit.ly/2BHUQzB -->
+<!-- The point of this code block is to send us google analytics on website views -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NJGGV5"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+
+  <div class="section" id="module-arcgis.features.summarize_data">
+<span id="arcgis-features-summarize-data-module"></span><h1>arcgis.features.summarize_data module<a class="headerlink" href="#module-arcgis.features.summarize_data" title="Permalink to this headline">¶</a></h1>
+<p>These functions calculate total counts, lengths, areas, and basic descriptive statistics of features and their attributes
+within areas or near other features.</p>
+<p>aggregate_points calculates statistics about points that fall within specified areas.
+summarize_nearby calculates statistics for features and their attributes that are within a specified distance.
+summarize_within calculates statistics for area features and attributes that overlap each other.</p>
+<div class="section" id="aggregate-points">
+<h2>aggregate_points<a class="headerlink" href="#aggregate-points" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt id="arcgis.features.summarize_data.aggregate_points">
+<code class="sig-prename descclassname">arcgis.features.summarize_data.</code><code class="sig-name descname">aggregate_points</code><span class="sig-paren">(</span><em class="sig-param">point_layer</em>, <em class="sig-param">polygon_layer</em>, <em class="sig-param">keep_boundaries_with_no_points=True</em>, <em class="sig-param">summary_fields=[]</em>, <em class="sig-param">group_by_field=None</em>, <em class="sig-param">minority_majority=False</em>, <em class="sig-param">percent_points=False</em>, <em class="sig-param">output_name=None</em>, <em class="sig-param">context=None</em>, <em class="sig-param">gis=None</em>, <em class="sig-param">estimate=False</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.features.summarize_data.aggregate_points" title="Permalink to this definition">¶</a></dt>
+<dd><p>The Aggregate Points task works with a layer of point features and a layer of polygon features. It first figures out which points fall within each polygon’s area.
+After determining this point-in-polygon spatial relationship, statistics about all points in the polygon are calculated and assigned to the area. The most basic statistic is the count of the number of points within the polygon, but you can get other statistics as well.
+For example, if your points represented coffee shops and each point has a TOTAL_SALES attribute, you can get statistics like the sum of all TOTAL_SALES within the polygon, or the minimum or maximum TOTAL_SALES value, or the standard deviation of all sales within the polygon.</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 5%" />
+<col style="width: 95%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><strong>Parameter</strong></p></td>
+<td><p><strong>Description</strong></p></td>
+</tr>
+<tr class="row-even"><td><p>point_layer</p></td>
+<td><p>Required point layer. The point features that will be aggregated into the polygons in the polygon_layer. See <a class="reference internal" href="arcgis.features.analysis.html#featureinput"><span class="std std-ref">Feature Input</span></a>.</p></td>
+</tr>
+<tr class="row-odd"><td><p>polygon_layer</p></td>
+<td><p>Required polygon layer. The polygon features (areas) into which the input points will be aggregated. See <a class="reference internal" href="arcgis.features.analysis.html#featureinput"><span class="std std-ref">Feature Input</span></a>.</p></td>
+</tr>
+<tr class="row-even"><td><p>keep_boundaries_with_no_points</p></td>
+<td><p>Optional boolean. A Boolean value that specifies whether the polygons that have no points within them should be returned in the output. The default is true.</p></td>
+</tr>
+<tr class="row-odd"><td><p>summary_fields</p></td>
+<td><p>Optional list of strings. A list of field names and statistical summary type that you wish to calculate for all points within each polygon.
+Note that the count of points within each polygon is always returned.
+summary type is one of the following:</p>
+<ul class="simple">
+<li><p>Sum—Adds the total value of all the points in each polygon</p></li>
+<li><p>Mean—Calculates the average of all the points in each polygon.</p></li>
+<li><p>Min—Finds the smallest value of all the points in each polygon.</p></li>
+<li><p>Max—Finds the largest value of all the points in each polygon.</p></li>
+<li><p>Stddev—Finds the standard deviation of all the points in each polygon.</p></li>
+</ul>
+<p>Example [fieldName1 summaryType1,fieldName2 summaryType2].</p>
+</td>
+</tr>
+<tr class="row-even"><td><p>group_by_field</p></td>
+<td><p>Optional string. A field name in the point_layer. Points that have the same value for the group by field will have their own counts and summary field statistics. You can create statistical groups using an attribute in the analysis layer. For example, if you are aggregating crimes to neighborhood boundaries, you may have an attribute Crime_type with five different crime types. Each unique crime type forms a group, and the statistics you choose will be calculated for each unique value of Crime_type. When you choose a grouping attribute, two results are created: the result layer and a related table containing the statistics.</p></td>
+</tr>
+<tr class="row-odd"><td><p>minority_majority</p></td>
+<td><p>Optional boolean. This boolean parameter is applicable only when a group_by_field is specified. If true, the minority (least dominant) or the majority (most dominant) attribute values for each group field within each boundary are calculated. Two new fields are added to the aggregated_layer prefixed with <a href="#id1"><span class="problematic" id="id2">Majority_</span></a> and <a href="#id3"><span class="problematic" id="id4">Minority_</span></a>.
+The default is false.</p></td>
+</tr>
+<tr class="row-even"><td><p>percent_points</p></td>
+<td><p>Optional boolean. This boolean parameter is applicable only when a group_by_field is specified. If set to true, the percentage count of points for each unique group_by_field value is calculated. A new field is added to the group summary output table containing the percentages of each attribute value within each group. If minority_majority is true, two additional fields are added to the aggregated_layer containing the percentages of the minority and majority attribute values within each group.</p></td>
+</tr>
+<tr class="row-odd"><td><p>output_name</p></td>
+<td><p>Optional string. Output Features Name (str). Optional parameter.</p></td>
+</tr>
+<tr class="row-even"><td><p>context</p></td>
+<td><p>Optional string. Context contains additional settings that affect task execution. For Aggregate Points, there are two settings.</p>
+<ol class="arabic simple">
+<li><p>Extent (extent)-a bounding box that defines the analysis area. Only those points in the input pointLayer that intersect the bounding box will be analyzed.</p></li>
+<li><p>Output Spatial Reference (outSR)—the output features will be projected into the output spatial reference.</p></li>
+</ol>
+</td>
+</tr>
+<tr class="row-odd"><td><p>gis</p></td>
+<td><p>Optional, the GIS on which this tool runs. If not specified, the active GIS is used.</p></td>
+</tr>
+<tr class="row-even"><td><p>estimate</p></td>
+<td><p>Optional Boolean. If True, the number of credits to run the operation will be returned.</p></td>
+</tr>
+</tbody>
+</table>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>result_layer : feature layer Item if output_name is specified, else Feature Collection.</p>
+</dd>
+</dl>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">USAGE</span> <span class="n">EXAMPLE</span><span class="p">:</span> <span class="n">To</span> <span class="n">find</span> <span class="n">number</span> <span class="n">of</span> <span class="n">permits</span> <span class="n">issued</span> <span class="ow">in</span> <span class="n">each</span> <span class="nb">zip</span> <span class="n">code</span> <span class="n">of</span> <span class="n">US</span><span class="o">.</span>
+
+<span class="n">agg_result</span> <span class="o">=</span> <span class="n">aggregate_points</span><span class="p">(</span><span class="n">point_layer</span><span class="o">=</span><span class="n">permits</span><span class="p">,</span>
+                        <span class="n">polygon_layer</span><span class="o">=</span><span class="n">zip_codes</span><span class="p">,</span>
+                        <span class="n">keep_boundaries_with_no_points</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
+                        <span class="n">summary_fields</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;DeclValNu mean&quot;</span><span class="p">,</span><span class="s2">&quot;DeclValNu2 mean&quot;</span><span class="p">],</span>
+                        <span class="n">group_by_field</span><span class="o">=</span><span class="s1">&#39;Declared_V&#39;</span><span class="p">,</span>
+                        <span class="n">minority_majority</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+                        <span class="n">percent_points</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+                        <span class="n">output_name</span><span class="o">=</span><span class="s2">&quot;aggregated_permits&quot;</span><span class="p">,</span>
+                        <span class="n">context</span><span class="o">=</span><span class="s1">&#39;{&quot;extent&quot;:{&quot;xmin&quot;:-8609738.077325115,&quot;ymin&quot;:4743483.445485223,&quot;xmax&quot;:-8594030.268012533,&quot;ymax&quot;:4752206.821338257,&quot;spatialReference&quot;:{&quot;wkid&quot;:102100,&quot;latestWkid&quot;:3857}}}&#39;</span><span class="p">)</span> 
+</pre></div>
+</div>
+</dd></dl>
+
+</div>
+<div class="section" id="describe-dataset">
+<h2>describe_dataset<a class="headerlink" href="#describe-dataset" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="join-features">
+<h2>join_features<a class="headerlink" href="#join-features" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt id="arcgis.features.summarize_data.join_features">
+<code class="sig-prename descclassname">arcgis.features.summarize_data.</code><code class="sig-name descname">join_features</code><span class="sig-paren">(</span><em class="sig-param">target_layer</em>, <em class="sig-param">join_layer</em>, <em class="sig-param">spatial_relationship=None</em>, <em class="sig-param">spatial_relationship_distance=None</em>, <em class="sig-param">spatial_relationship_distance_units=None</em>, <em class="sig-param">attribute_relationship=None</em>, <em class="sig-param">join_operation='JoinOneToOne'</em>, <em class="sig-param">summary_fields=None</em>, <em class="sig-param">output_name=None</em>, <em class="sig-param">context=None</em>, <em class="sig-param">gis=None</em>, <em class="sig-param">estimate=False</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.features.summarize_data.join_features" title="Permalink to this definition">¶</a></dt>
+<dd><img alt="_images/join_features.png" src="_images/join_features.png" />
+<p>The <code class="docutils literal notranslate"><span class="pre">join_features</span></code> method works with two layers and joins the attributes 
+from one feature to another based on spatial and attribute relationships.</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 37%" />
+<col style="width: 63%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><strong>Parameter</strong></p></td>
+<td><p><strong>Description</strong></p></td>
+</tr>
+<tr class="row-even"><td><p>target_layer</p></td>
+<td><p>Required layer. The point, line, polygon or table layer that will have attributes from
+the <code class="docutils literal notranslate"><span class="pre">join_layer</span></code> appended to its table. See <a class="reference internal" href="arcgis.features.analysis.html#featureinput"><span class="std std-ref">Feature Input</span></a>.</p></td>
+</tr>
+<tr class="row-odd"><td><p>join_layer</p></td>
+<td><p>Required layer. The point, line, polygon or table layer that will be joined to the <code class="docutils literal notranslate"><span class="pre">target_layer</span></code>. See <a class="reference internal" href="arcgis.features.analysis.html#featureinput"><span class="std std-ref">Feature Input</span></a>.</p></td>
+</tr>
+<tr class="row-even"><td><p>spatial_relationship</p></td>
+<td><p>Required string. Defines the spatial relationship used to spatially join features.</p>
+<p>Choice list: [‘identicalto’, ‘intersects’, ‘completelycontains’, ‘completelywithin’, ‘withindistance’]</p>
+</td>
+</tr>
+<tr class="row-odd"><td><p>spatial_relationship_distance (Required if <code class="docutils literal notranslate"><span class="pre">spatial_relationship</span></code> is withindistance)</p></td>
+<td><p>Optional float. A float value used for the search distance to determine if the target features are near or within a
+specified distance of the join features.
+This is only applied if Within a distance of is the selected <code class="docutils literal notranslate"><span class="pre">spatial_relationship</span></code>.
+You can only enter a single distance value. The units of the distance values are supplied by the
+<code class="docutils literal notranslate"><span class="pre">spatial_relationship_distance_units</span></code> parameter.</p></td>
+</tr>
+<tr class="row-even"><td><p>spatial_relationship_distance_units (Required if <code class="docutils literal notranslate"><span class="pre">spatial_relationship</span></code> is withindistance)</p></td>
+<td><p>Optional string. The linear unit to be used with the distance value specified in <code class="docutils literal notranslate"><span class="pre">spatial_relationship_distance</span></code>.</p>
+<p>Choice list: [‘Miles’, ‘Yards’, ‘Feet’, ‘NauticalMiles’, ‘Meters’, ‘Kilometers’]</p>
+<p>The default is ‘Miles’.</p>
+</td>
+</tr>
+<tr class="row-odd"><td><p>attribute_relationship</p></td>
+<td><p>Optional list of dicts. Defines an attribute relationship used to join features. Features are matched when the field
+values in the join layer are equal to field values in the target layer.</p></td>
+</tr>
+<tr class="row-even"><td><p>join_operation</p></td>
+<td><p>Optional string. A string representing the type of join that will be applied.</p>
+<p>Choice list: [‘JoinOneToOne’, ‘JoinOneToMany’]</p>
+<blockquote>
+<div><ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">JoinOneToOne</span></code>—If multiple join features are found that have the same relationships with a
+single target feature, the attributes from the multiple join features will be aggregated using
+the specified summary statistics. For example, if a point target feature is found within two
+separate polygon join features, the attributes from the two polygons will be aggregated before
+being transferred to the output point feature class. If one polygon has an attribute value of
+3 and the other has a value of 7, and a SummaryField of sum is selected, the aggregated value
+in the output feature class will be 10. There will always be a Count field calculated, with a
+value of 2, for the number of features specified. This is the default.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">JoinOneToMany</span></code>—If multiple join features are found that have the same relationship with
+a single target feature, the output feature class will contain multiple copies (records) of
+the target feature. For example, if a single point target feature is found within two separate
+polygon join features, the output feature class will contain two copies of the target feature:
+one record with the attributes of the first polygon, and another record with the attributes of
+the second polygon. There are no summary statistics calculated with this method.</p></li>
+</ul>
+</div></blockquote>
+</td>
+</tr>
+<tr class="row-odd"><td><p>summary_fields</p></td>
+<td><p>Optional list of dicts. A list of field names and statistical summary types that you want to calculate.
+Note that the count is always returned by default.</p>
+<p>fieldName is the name of one of the numeric fields found in the input join layer.</p>
+<p>statisticType is one of the following:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">SUM</span></code>—Adds the total value of all the points in each polygon</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">MEAN</span></code>—Calculates the average of all the points in each polygon</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">MIN</span></code>—Finds the smallest value of all the points in each polygon</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">MAX</span></code>—Finds the largest value of all the points in each polygon</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">STDDEV</span></code>—Finds the standard deviation of all the points in each polygon</p></li>
+</ul>
+</div></blockquote>
+</td>
+</tr>
+<tr class="row-even"><td><p>output_name</p></td>
+<td><p>Optional string. If provided, the method will create a feature service of the results. You define the name of the service.
+If <code class="docutils literal notranslate"><span class="pre">output_name</span></code> is not supplied, the task will return a feature collection.</p></td>
+</tr>
+<tr class="row-odd"><td><p>context</p></td>
+<td><p>Optional string. Context contains additional settings that affect method execution. For <code class="docutils literal notranslate"><span class="pre">join_features</span></code>, there are the following two settings:</p>
+<ol class="arabic simple">
+<li><p>Extent (<code class="docutils literal notranslate"><span class="pre">extent</span></code>)—A bounding box that defines the analysis area. Only those features in the input layer that intersect the bounding box will be analyzed.</p></li>
+<li><p>Output Spatial Reference (<code class="docutils literal notranslate"><span class="pre">outSR</span></code>)—The output features will be projected into the output spatial reference.</p></li>
+</ol>
+</td>
+</tr>
+<tr class="row-even"><td><p>estimate</p></td>
+<td><p>Optional boolean. If True, the number of credits to run the operation will be returned.</p></td>
+</tr>
+</tbody>
+</table>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>result_layer : feature layer Item if <code class="docutils literal notranslate"><span class="pre">output_name</span></code> is specified, else feature collection.</p>
+</dd>
+</dl>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">USAGE</span> <span class="n">EXAMPLE</span><span class="p">:</span> <span class="n">To</span> <span class="n">summarize</span> <span class="n">traffic</span> <span class="n">accidents</span> <span class="n">within</span> <span class="n">each</span> <span class="n">parcel</span> <span class="n">using</span> <span class="n">spatial</span> <span class="n">relationship</span><span class="o">.</span>
+<span class="n">accident_count_in_each_parcel</span> <span class="o">=</span> <span class="n">join_features</span><span class="p">(</span><span class="n">target_layer</span><span class="o">=</span><span class="n">parcel_lyr</span><span class="p">,</span>
+                                              <span class="n">join_layer</span><span class="o">=</span><span class="n">traffic_accidents_lyr</span><span class="p">,</span>
+                                              <span class="n">spatial_relationship</span><span class="o">=</span><span class="s1">&#39;intersects&#39;</span><span class="p">,</span>
+                                              <span class="n">output_name</span><span class="o">=</span><span class="s1">&#39;join features&#39;</span><span class="p">,</span>
+                                              <span class="n">context</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;extent&quot;</span><span class="p">:{</span><span class="s2">&quot;xmin&quot;</span><span class="p">:</span><span class="o">-</span><span class="mf">9375809.87305117</span><span class="p">,</span><span class="s2">&quot;ymin&quot;</span><span class="p">:</span><span class="mf">4031882.3806860778</span><span class="p">,</span><span class="s2">&quot;xmax&quot;</span><span class="p">:</span><span class="o">-</span><span class="mf">9370182.196843527</span><span class="p">,</span><span class="s2">&quot;ymax&quot;</span><span class="p">:</span><span class="mf">4034872.9794178144</span><span class="p">,</span><span class="s2">&quot;spatialReference&quot;</span><span class="p">:{</span><span class="s2">&quot;wkid&quot;</span><span class="p">:</span><span class="mi">102100</span><span class="p">,</span><span class="s2">&quot;latestWkid&quot;</span><span class="p">:</span><span class="mi">3857</span><span class="p">}}},</span> <span class="p">)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+</div>
+<div class="section" id="summarize-nearby">
+<h2>summarize_nearby<a class="headerlink" href="#summarize-nearby" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt id="arcgis.features.summarize_data.summarize_nearby">
+<code class="sig-prename descclassname">arcgis.features.summarize_data.</code><code class="sig-name descname">summarize_nearby</code><span class="sig-paren">(</span><em class="sig-param">sum_nearby_layer</em>, <em class="sig-param">summary_layer</em>, <em class="sig-param">near_type='StraightLine'</em>, <em class="sig-param">distances=[]</em>, <em class="sig-param">units='Meters'</em>, <em class="sig-param">time_of_day=None</em>, <em class="sig-param">time_zone_for_time_of_day='GeoLocal'</em>, <em class="sig-param">return_boundaries=True</em>, <em class="sig-param">sum_shape=True</em>, <em class="sig-param">shape_units=None</em>, <em class="sig-param">summary_fields=[]</em>, <em class="sig-param">group_by_field=None</em>, <em class="sig-param">minority_majority=False</em>, <em class="sig-param">percent_shape=False</em>, <em class="sig-param">output_name=None</em>, <em class="sig-param">context=None</em>, <em class="sig-param">gis=None</em>, <em class="sig-param">estimate=False</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.features.summarize_data.summarize_nearby" title="Permalink to this definition">¶</a></dt>
+<dd><img alt="_images/summarize_nearby.png" src="_images/summarize_nearby.png" />
+<p>The <code class="docutils literal notranslate"><span class="pre">summarize_nearby</span></code> method finds features that are within a specified distance of features in the input layer.
+Distance can be measured as a straight-line distance, a drive-time distance (for example, within 10 minutes), or a
+drive distance (within 5 kilometers). Statistics are then calculated for the nearby features. For example:</p>
+<ul class="simple">
+<li><p>Calculate the total population within five minutes of driving time of a proposed new store location.</p></li>
+<li><p>Calculate the number of freeway access ramps within a one-mile driving distance of a proposed new store location to use as a measure of
+store accessibility.</p></li>
+</ul>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 11%" />
+<col style="width: 89%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><strong>Parameter</strong></p></td>
+<td><p><strong>Description</strong></p></td>
+</tr>
+<tr class="row-even"><td><p>sum_nearby_layer</p></td>
+<td><p>Required feature layer. Point, line, or polygon features from which distances will be measured to features in the <code class="docutils literal notranslate"><span class="pre">summary_layer</span></code>. See <a class="reference internal" href="arcgis.features.analysis.html#featureinput"><span class="std std-ref">Feature Input</span></a>.</p></td>
+</tr>
+<tr class="row-odd"><td><p>summary_layer</p></td>
+<td><p>Required layer. Point, line, or polygon features. Features in this layer that are within the specified distance to features in the <code class="docutils literal notranslate"><span class="pre">sum_nearby_layer</span></code> will be summarized. See <a class="reference internal" href="arcgis.features.analysis.html#featureinput"><span class="std std-ref">Feature Input</span></a>.</p></td>
+</tr>
+<tr class="row-even"><td><p>near_type</p></td>
+<td><p>Optional string. Defines what kind of distance measurement you want to use: straight-line distance, or by measuring travel
+time or travel distance along a street network using various modes of transportation known as travel modes.</p>
+<p>The default is ‘StraightLine’.</p>
+<p>Choice list: [‘StraightLine’, ‘Driving Distance’, ‘Driving Time’, ‘Rural Driving Distance’, ‘Rural Driving Time’, ‘Trucking Distance’, ‘Trucking Time’, ‘Walking Distance’, ‘Walking Time’]</p>
+</td>
+</tr>
+<tr class="row-odd"><td><p>distances</p></td>
+<td><p>Optional float. Float values that defines the search distance (for ‘StraightLine’ and distance based travel modes) or time (for time based travel modes).
+You can enter a single distance value or multiple values, separating each value with a space. Features that are within (or equal to) the distances you
+enter will be summarized. The units of the distance values is supplied by the units parameter.</p></td>
+</tr>
+<tr class="row-even"><td><p>units</p></td>
+<td><p>Otional string. If <code class="docutils literal notranslate"><span class="pre">near_type</span></code> is ‘StraightLine’ or a distance-based travel mode, this is the linear unit to be used with the distance value(s) specified in distances.</p>
+<p>Choice list: [‘Meters’, ‘Kilometers’, ‘Feet’, ‘Yards’, ‘Miles’]</p>
+<p>If <code class="docutils literal notranslate"><span class="pre">near_type</span></code> is a time based travel mode, the following values can be used as units:</p>
+<p>Choice list: [‘Seconds’, ‘Minutes’, ‘Hours’]</p>
+<p>The default is ‘Meters’.</p>
+</td>
+</tr>
+<tr class="row-odd"><td><p>time_of_day</p></td>
+<td><p>Optional datetime.datetime. Specify whether travel times should consider traffic conditions. To use traffic in the analysis,
+set <code class="docutils literal notranslate"><span class="pre">near_type</span></code> to a travel mode object whose impedance_attribute_name property is set to travel_time and assign a value
+to <code class="docutils literal notranslate"><span class="pre">time_of_day</span></code>. (A travel mode with other impedance_attribute_name values don’t support traffic.) The <code class="docutils literal notranslate"><span class="pre">time_of_day</span></code> value represents
+the time at which travel begins, or departs, from the origin points. The time is specified as datetime.datetime.</p>
+<p>The service supports two kinds of traffic: typical and live. Typical traffic references travel speeds that are made up of historical
+averages for each five-minute interval spanning a week. Live traffic retrieves speeds from a traffic feed that processes phone probe
+records, sensors, and other data sources to record actual travel speeds and predict speeds for the near future.</p>
+<p>The <a class="reference external" href="http://www.arcgis.com/home/webmap/viewer.html?webmap=b7a893e8e1e04311bd925ea25cb8d7c7">data coverage</a> page shows the countries
+Esri currently provides traffic data for.</p>
+<p>Typical Traffic:</p>
+<p>To ensure the task uses typical traffic in locations where it is available, choose a time and day of the week, and then convert the day
+of the week to one of the following dates from 1990:</p>
+<ul class="simple">
+<li><p>Monday—1/1/1990</p></li>
+<li><p>Tuesday—1/2/1990</p></li>
+<li><p>Wednesday—1/3/1990</p></li>
+<li><p>Thursday—1/4/1990</p></li>
+<li><p>Friday—1/5/1990</p></li>
+<li><p>Saturday—1/6/1990</p></li>
+<li><p>Sunday—1/7/1990</p></li>
+</ul>
+<p>Set the time and date as datetime.datetime.</p>
+<p>For example, to solve for 1:03 p.m. on Thursdays, set the time and date to 1:03 p.m., 4 January 1990; and convert to
+datetime eg. datetime.datetime(1990, 1, 4, 1, 3).</p>
+<p>Live Traffic:</p>
+<p>To use live traffic when and where it is available, choose a time and date and convert to datetime.</p>
+<p>Esri saves live traffic data for 12 hours and references predictive data extending 12 hours into the future. If the time and date you
+specify for this parameter is outside the 24-hour time window, or the travel time in the analysis continues past the predictive data window,
+the task falls back to typical traffic speeds.</p>
+<p>Examples:
+from datetime import datetime</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">time_of_day</span></code>- datetime(1990, 1, 4, 1, 3) # 13:03, 4 January 1990. Typical traffic on Thursdays at 1:03 p.m.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">time_of_day</span></code>- datetime(1990, 1, 7, 17, 0) # 17:00, 7 January 1990. Typical traffic on Sundays at 5:00 p.m.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">time_of_day</span></code>- datetime(2014, 10, 22, 8, 0) # 8:00, 22 October 2014. If the current time is between 8:00 p.m., 21 Oct. 2014 and 8:00 p.m., 22 Oct. 2014,
+live traffic speeds are referenced in the analysis; otherwise, typical traffic speeds are referenced.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">time_of_day</span></code>- datetime(2015, 3, 18, 10, 20) # 10:20, 18 March 2015. If the current time is between 10:20 p.m., 17 Mar. 2015 and 10:20 p.m., 18 Mar. 2015,
+live traffic speeds are referenced in the analysis; otherwise, typical traffic speeds are referenced.</p></li>
+</ul>
+</td>
+</tr>
+<tr class="row-even"><td><p>time_zone_for_time_of_day</p></td>
+<td><p>Optional string. Specify the time zone or zones of the <code class="docutils literal notranslate"><span class="pre">time_of_day</span></code> parameter.</p>
+<p>Choice list: [‘GeoLocal’, ‘UTC’]</p>
+<p>GeoLocal-refers to the time zone in which the originsLayer points are located.</p>
+<p>UTC-refers to Coordinated Universal Time.</p>
+<p>The default is ‘GeoLocal’.</p>
+</td>
+</tr>
+<tr class="row-odd"><td><p>return_boundaries</p></td>
+<td><p>Optional boolean. If true, the <code class="docutils literal notranslate"><span class="pre">result_layer</span></code> will contain areas defined by the specified <code class="docutils literal notranslate"><span class="pre">near_type</span></code>. For example, if using ‘StraightLine’ of 5 miles,
+the <code class="docutils literal notranslate"><span class="pre">result_layer</span></code> will contain areas with a 5 mile radius around the input <code class="docutils literal notranslate"><span class="pre">sum_nearby_layer</span></code> features.</p>
+<p>If False, the <code class="docutils literal notranslate"><span class="pre">result_ayer</span></code> will contain the same features as the <code class="docutils literal notranslate"><span class="pre">sum_nearby_layer</span></code>.</p>
+<p>The default is True.</p>
+</td>
+</tr>
+<tr class="row-even"><td><p>sum_shape</p></td>
+<td><p>Optional boolean. A boolean value that instructs the task to calculate statistics based on shape type of the <code class="docutils literal notranslate"><span class="pre">summary_layer</span></code>,
+such as the length of lines or areas of polygons of the <code class="docutils literal notranslate"><span class="pre">summary_layer</span></code> within each polygon in <code class="docutils literal notranslate"><span class="pre">sum_within_layer</span></code>.</p>
+<p>The default is True.</p>
+</td>
+</tr>
+<tr class="row-odd"><td><p>shape_units</p></td>
+<td><p>Optional string. If <code class="docutils literal notranslate"><span class="pre">sum_shape</span></code> is true, you must specify the units of the shape summary.
+Values:</p>
+<p>When <code class="docutils literal notranslate"><span class="pre">summary_layer</span></code> contains polygons: Values: [‘Acres’, ‘Hectares’, ‘SquareMeters’, ‘SquareKilometers’, ‘SquareFeet’, ‘SquareYards’, ‘SquareMiles’]
+When <code class="docutils literal notranslate"><span class="pre">summary_layer</span></code> contains lines: Values: [‘Meters’, ‘Kilometers’, ‘Feet’, ‘Yards’, ‘Miles’]</p>
+</td>
+</tr>
+<tr class="row-even"><td><p>summary_fields</p></td>
+<td><p>Optional list of strings.A list of field names and statistical summary types that you want to calculate.
+Note that the count is always returned by default.</p>
+<p>fieldName is the name of one of the numeric fields found in the input join layer.</p>
+<p>statisticType is one of the following:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">SUM</span></code>-Adds the total value of all the points in each polygon</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">MEAN</span></code>-Calculates the average of all the points in each polygon</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">MIN</span></code>-Finds the smallest value of all the points in each polygon</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">MAX</span></code>-Finds the largest value of all the points in each polygon</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">STDDEV</span></code>-Finds the standard deviation of all the points in each polygon</p></li>
+</ul>
+<p>Example: [“fieldName summaryType”,”fieldName summaryType”, …]</p>
+</td>
+</tr>
+<tr class="row-odd"><td><p>group_by_field</p></td>
+<td><p>Optional string. This is a field of the <code class="docutils literal notranslate"><span class="pre">summary_layer</span></code> features that you can use to calculate statistics separately for each unique attribute value.
+For example, suppose the <code class="docutils literal notranslate"><span class="pre">summary_layer</span></code> contains point locations of businesses that store hazardous materials, and one of the fields is HazardClass
+containing codes that describe the type of hazardous material stored. To calculate summaries by each unique value of HazardClass, use HazardClass as
+the <code class="docutils literal notranslate"><span class="pre">group_by_field</span></code> field.</p></td>
+</tr>
+<tr class="row-even"><td><p>minority_majority</p></td>
+<td><p>Optional boolean. This boolean parameter is applicable only when a <code class="docutils literal notranslate"><span class="pre">group_by_field</span></code> is specified. If true, the minority (least dominant) or the
+majority (most dominant) attribute values for each group field within each nearby area are calculated. Two new fields are added to
+the <code class="docutils literal notranslate"><span class="pre">result_layer</span></code> prefixed with <a href="#id5"><span class="problematic" id="id6">Majority_</span></a> and <a href="#id7"><span class="problematic" id="id8">Minority_</span></a>.</p>
+<p>The default is False.</p>
+</td>
+</tr>
+<tr class="row-odd"><td><p>percent_shape</p></td>
+<td><p>Optional boolean. This Boolean parameter is applicable only when a <code class="docutils literal notranslate"><span class="pre">group_by_field</span></code> is specified. If set to true,
+the percentage of each unique <code class="docutils literal notranslate"><span class="pre">group_by_field</span></code> value is calculated for each <code class="docutils literal notranslate"><span class="pre">sum_nearby_layer</span></code> feature.</p>
+<p>The default is False.</p>
+</td>
+</tr>
+<tr class="row-even"><td><p>output_name</p></td>
+<td><p>Optional string. If provided, the task will create a feature service of the results. You define the name of the service.
+If <code class="docutils literal notranslate"><span class="pre">output_name</span></code> is not supplied, the task will return a feature collection.</p></td>
+</tr>
+<tr class="row-odd"><td><p>context</p></td>
+<td><p>Optional string. Context contains additional settings that affect task execution. For  <code class="docutils literal notranslate"><span class="pre">summarize_nearby</span></code>, there are two settings.</p>
+<ol class="arabic simple">
+<li><p>Extent (<code class="docutils literal notranslate"><span class="pre">extent</span></code>)—a bounding box that defines the analysis area. Only those features in the <code class="docutils literal notranslate"><span class="pre">sum_nearby_layer</span></code> and <code class="docutils literal notranslate"><span class="pre">summary_layer</span></code> that intersect the bounding box will be analyzed.</p></li>
+<li><p>Output Spatial Reference (<code class="docutils literal notranslate"><span class="pre">outSR</span></code>)—the output features will be projected into the output spatial reference.</p></li>
+</ol>
+</td>
+</tr>
+<tr class="row-even"><td><p>estimate</p></td>
+<td><p>Optional boolean. Returns the number of credit for the operation.</p></td>
+</tr>
+</tbody>
+</table>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p><p>result_layer : feature layer Item if <code class="docutils literal notranslate"><span class="pre">output_name</span></code> is specified, else Feature Collection.</p>
+<p>dict with the following keys:</p>
+<blockquote>
+<div><p>”result_layer” : layer (FeatureCollection)</p>
+<p>”group_by_summary” : layer (FeatureCollection)</p>
+</div></blockquote>
+</p>
+</dd>
+</dl>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># USAGE EXAMPLE: To find hospital facilities that are within 5 miles of a school.</span>
+<span class="n">summarize_nearby</span><span class="p">(</span><span class="n">sum_nearby_layer</span><span class="o">=</span><span class="n">item2</span><span class="o">.</span><span class="n">layers</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span>
+                 <span class="n">summary_layer</span><span class="o">=</span><span class="n">item1</span><span class="o">.</span><span class="n">layers</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span>
+                 <span class="n">near_type</span><span class="o">=</span><span class="s1">&#39;StraightLine&#39;</span><span class="p">,</span>
+                 <span class="n">distances</span><span class="o">=</span><span class="p">[</span><span class="mi">5</span><span class="p">],</span>
+                 <span class="n">units</span><span class="o">=</span><span class="s1">&#39;Miles&#39;</span><span class="p">,</span>
+                 <span class="n">time_zone_for_time_of_day</span><span class="o">=</span><span class="s1">&#39;GeoLocal&#39;</span><span class="p">,</span>
+                 <span class="n">return_boundaries</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
+                 <span class="n">sum_shape</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+                 <span class="n">shape_units</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+                 <span class="n">output_name</span><span class="o">=</span><span class="s1">&#39;nearest hospitals to schools&#39;</span><span class="p">)</span>        
+</pre></div>
+</div>
+</dd></dl>
+
+</div>
+<div class="section" id="summarize-center-and-dispersion">
+<h2>summarize_center_and_dispersion<a class="headerlink" href="#summarize-center-and-dispersion" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt id="arcgis.features.summarize_data.summarize_center_and_dispersion">
+<code class="sig-prename descclassname">arcgis.features.summarize_data.</code><code class="sig-name descname">summarize_center_and_dispersion</code><span class="sig-paren">(</span><em class="sig-param">analysis_layer, summarize_type=['CentralFeature'], ellipse_size=None, weight_field=None, group_field=None, output_name=None, context=None, gis=None, estimate=False</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.features.summarize_data.summarize_center_and_dispersion" title="Permalink to this definition">¶</a></dt>
+<dd><img alt="_images/summarize_center_and_dispersion.png" src="_images/summarize_center_and_dispersion.png" />
+<p>The <code class="docutils literal notranslate"><span class="pre">summarize_center_and_dispersion</span></code> method finds central features and directional distributions. It can be used to answer questions such as:</p>
+<ul class="simple">
+<li><p>Where is the center?</p></li>
+<li><p>Which feature is the most accessible from all other features?</p></li>
+<li><p>How dispersed, compact, or integrated are the features?</p></li>
+<li><p>Are there directional trends?s</p></li>
+</ul>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 11%" />
+<col style="width: 89%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><strong>Argument</strong></p></td>
+<td><p><strong>Description</strong></p></td>
+</tr>
+<tr class="row-even"><td><p>analysis_layer</p></td>
+<td><p>Required frature layer. The point, line, or polygon features to be analyzed. See <a class="reference internal" href="arcgis.features.analysis.html#featureinput"><span class="std std-ref">Feature Input</span></a>.</p></td>
+</tr>
+<tr class="row-odd"><td><p>summarize_type</p></td>
+<td><p>Required list of strings. The method with which to summarize the <code class="docutils literal notranslate"><span class="pre">analysis_layer</span></code>.</p>
+<p>Choice list: [“CentralFeature”, “MeanCenter”, “MedianCenter”, “Ellipse”]</p>
+</td>
+</tr>
+<tr class="row-even"><td><p>ellipse_size</p></td>
+<td><p>Optional string. The size of the output ellipse in standard deviations.</p>
+<p>Choice list: [‘1 standard deviations’, ‘2 standard deviations’, ‘3 standard deviations’]</p>
+<p>The default ellipse size is ‘1 standard deviations’.</p>
+</td>
+</tr>
+<tr class="row-odd"><td><p>weight_field</p></td>
+<td><p>Optional field. A numeric field in the <code class="docutils literal notranslate"><span class="pre">analysis_layer</span></code> to be used to
+weight locations according to their relative importance.</p></td>
+</tr>
+<tr class="row-even"><td><p>group_field</p></td>
+<td><p>Optional field. The field used to group features for separate directional
+distribution calculations. The <code class="docutils literal notranslate"><span class="pre">group_field</span></code> can be of
+integer, date, or string type.</p></td>
+</tr>
+<tr class="row-odd"><td><p>output_name</p></td>
+<td><p>Optional string. If provided, the method will create a feature service of the results.
+You define the name of the service. If <code class="docutils literal notranslate"><span class="pre">output_name</span></code> is not supplied, the method will return a feature collection.</p></td>
+</tr>
+<tr class="row-even"><td><p>context</p></td>
+<td><p>Optional string. Context contains additional settings that affect task execution. For <code class="docutils literal notranslate"><span class="pre">summarize_center_and_dispersion</span></code>, there are two settings.</p>
+<ol class="arabic simple">
+<li><p>Extent (<code class="docutils literal notranslate"><span class="pre">extent</span></code>)—a bounding box that defines the analysis area. Only those features in the input layer that intersect the bounding box will be buffered.</p></li>
+<li><p>Output Spatial Reference (<code class="docutils literal notranslate"><span class="pre">outSR</span></code>)—the output features will be projected into the output spatial reference.</p></li>
+</ol>
+</td>
+</tr>
+<tr class="row-odd"><td><p>estimate</p></td>
+<td><p>Optional boolean. If True, the number of credits to run the operation will be returned.</p></td>
+</tr>
+</tbody>
+</table>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>list of items if <code class="docutils literal notranslate"><span class="pre">output_name</span></code> is supplied else, a Python dictionary with the following keys:
+“central_feature_result_layer” : layer (FeatureCollection)
+“mean_feature_result_layer” : layer (FeatureCollection)
+“median_feature_result_layer” : layer (FeatureCollection)
+“ellipse_feature_result_layer” : layer (FeatureCollection)</p>
+</dd>
+</dl>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># USAGE EXAMPLE: To find central features and mean center of earthquake over past months.</span>
+<span class="n">central_features</span> <span class="o">=</span> <span class="n">summarize_center_and_dispersion</span><span class="p">(</span><span class="n">analysis_layer</span><span class="o">=</span><span class="n">earthquakes</span><span class="p">,</span>
+                                                   <span class="n">summarize_type</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;CentralFeature&quot;</span><span class="p">,</span><span class="s2">&quot;MeanCenter&quot;</span><span class="p">],</span>
+                                                   <span class="n">ellipse_size</span><span class="o">=</span><span class="s1">&#39;2 standard deviations&#39;</span><span class="p">,</span>
+                                                   <span class="n">weight_field</span><span class="o">=</span><span class="s1">&#39;mag&#39;</span><span class="p">,</span>
+                                                   <span class="n">group_field</span><span class="o">=</span><span class="s1">&#39;magType&#39;</span><span class="p">,</span>
+                                                   <span class="n">output_name</span><span class="o">=</span><span class="s1">&#39;find central features and mean center of earthquake over past months&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+</div>
+<div class="section" id="summarize-within">
+<h2>summarize_within<a class="headerlink" href="#summarize-within" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt id="arcgis.features.summarize_data.summarize_within">
+<code class="sig-prename descclassname">arcgis.features.summarize_data.</code><code class="sig-name descname">summarize_within</code><span class="sig-paren">(</span><em class="sig-param">sum_within_layer</em>, <em class="sig-param">summary_layer</em>, <em class="sig-param">sum_shape=True</em>, <em class="sig-param">shape_units=None</em>, <em class="sig-param">summary_fields=[]</em>, <em class="sig-param">group_by_field=None</em>, <em class="sig-param">minority_majority=False</em>, <em class="sig-param">percent_shape=False</em>, <em class="sig-param">output_name=None</em>, <em class="sig-param">context=None</em>, <em class="sig-param">gis=None</em>, <em class="sig-param">estimate=False</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.features.summarize_data.summarize_within" title="Permalink to this definition">¶</a></dt>
+<dd><img alt="_images/summarize_within.png" src="_images/summarize_within.png" />
+<p>The <code class="docutils literal notranslate"><span class="pre">summarize_within</span></code> method finds the point, line, or polygon features (or portions of these features) 
+that are within the boundaries of polygons in another layer. For example:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>Given a layer of watershed boundaries and a layer of land-use boundaries by land-use type, calculate total acreage of land-use type for each watershed.</p></li>
+<li><p>Given a layer of parcels in a county and a layer of city boundaries, summarize the average value of vacant parcels within each city boundary.</p></li>
+<li><p>Given a layer of counties and a layer of roads, summarize the total mileage of roads by road type within each county.</p></li>
+</ul>
+</div></blockquote>
+<p>You can think of <code class="docutils literal notranslate"><span class="pre">summarize_within</span></code> as taking two layers and stacking them on top of each other. 
+One of the layers, the <code class="docutils literal notranslate"><span class="pre">sum_within_layer</span></code> must be a polygon layer, and imagine that these polygon 
+boundaries are all colored red. The other layer, the <code class="docutils literal notranslate"><span class="pre">summary_layer</span></code>, can be any feature type—point, 
+line, or polygon. After stacking these layers on top of each other, you peer down through the stack 
+and count the number of features in the <code class="docutils literal notranslate"><span class="pre">summary_layer</span></code> that fall within the polygons with the red 
+boundaries (the <code class="docutils literal notranslate"><span class="pre">sum_within_layer</span></code>). Not only can you count the number of features, you can calculate 
+simple statistics about the attributes of the features in the <code class="docutils literal notranslate"><span class="pre">summary_layer</span></code>, such as sum, mean, minimum, maximum, and so on.</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 16%" />
+<col style="width: 84%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><strong>Argument</strong></p></td>
+<td><p><strong>Description</strong></p></td>
+</tr>
+<tr class="row-even"><td><p>sum_within_layer</p></td>
+<td><p>Required feature layer. The polygon features. Features, or
+portions of features, in the <code class="docutils literal notranslate"><span class="pre">summary_layer</span></code> (below) that fall within
+the boundaries of these polygons will be summarized. See <a class="reference internal" href="arcgis.features.analysis.html#featureinput"><span class="std std-ref">Feature Input</span></a>.</p></td>
+</tr>
+<tr class="row-odd"><td><p>summary_layer</p></td>
+<td><p>Required feature layer. Point, line, or polygon features that will be summarized for each polygon in the <code class="docutils literal notranslate"><span class="pre">sum_within_layer</span></code>.
+See <a class="reference internal" href="arcgis.features.analysis.html#featureinput"><span class="std std-ref">Feature Input</span></a>.</p></td>
+</tr>
+<tr class="row-even"><td><p>sum_shape</p></td>
+<td><p>Optional boolean. A boolean value that instructs the task to calculate statistics
+based on shape type of the <code class="docutils literal notranslate"><span class="pre">summary_layer</span></code>, such as the length of lines or areas of
+polygons of the <code class="docutils literal notranslate"><span class="pre">summary_layer</span></code> within each polygon in <code class="docutils literal notranslate"><span class="pre">sum_within_layer</span></code>.</p>
+<p>The default is True.</p>
+</td>
+</tr>
+<tr class="row-odd"><td><p>shape_units</p></td>
+<td><p>Optional string. Specify units to summarize the length or areas when <code class="docutils literal notranslate"><span class="pre">sum_shape</span></code> is set to true. Units is not required to summarize
+points.</p>
+<p>When <code class="docutils literal notranslate"><span class="pre">summary_layer</span></code> contains polygons: [‘Acres’, ‘Hectares’, ‘SquareMeters’, ‘SquareKilometers’, ‘SquareMiles’, ‘SquareYards’, ‘SquareFeet’]</p>
+<p>When <code class="docutils literal notranslate"><span class="pre">summary_layer</span></code> contains lines: [‘Meters’, ‘Kilometers’, ‘Feet’, ‘Yards’, ‘Miles’]</p>
+</td>
+</tr>
+<tr class="row-even"><td><p>summary_fields</p></td>
+<td><p>Optional list of strings. A list of field names and statistical summary type that you wish
+to calculate for all features in the <code class="docutils literal notranslate"><span class="pre">summary_layer</span></code> that are within each polygon in the <code class="docutils literal notranslate"><span class="pre">sum_within_layer</span></code> .</p>
+<p>Example: [“fieldname1 summary”, “fieldname2 summary”]</p>
+</td>
+</tr>
+<tr class="row-odd"><td><p>group_by_field</p></td>
+<td><p>Optional string. This is a field of the <code class="docutils literal notranslate"><span class="pre">summary_layer</span></code> features that you can use to calculate statistics separately
+for each unique attribute value. For example, suppose the <code class="docutils literal notranslate"><span class="pre">sum_within_layer</span></code> contains city boundaries and
+the <code class="docutils literal notranslate"><span class="pre">summary_layer</span></code> features are parcels. One of the fields of the parcels is Status which contains
+two values: VACANT and OCCUPIED. To calculate the total area of vacant and occupied parcels within the
+boundaries of cities, use Status as the <code class="docutils literal notranslate"><span class="pre">group_by_field</span></code> field.</p></td>
+</tr>
+<tr class="row-even"><td><p>minority_majority</p></td>
+<td><p>Optional boolean. This boolean parameter is applicable only when a <code class="docutils literal notranslate"><span class="pre">group_by_field</span></code> is specified.
+If true, the minority (least dominant) or the majority (most dominant) attribute values for each group
+field are calculated. Two new fields are added to the <code class="docutils literal notranslate"><span class="pre">result_layer</span></code> prefixed with <a href="#id9"><span class="problematic" id="id10">Majority_</span></a> and <a href="#id11"><span class="problematic" id="id12">Minority_</span></a>.</p>
+<p>The default is False.</p>
+</td>
+</tr>
+<tr class="row-odd"><td><p>percent_shape</p></td>
+<td><p>Optional boolean. This Boolean parameter is applicable only when a <code class="docutils literal notranslate"><span class="pre">group_by_field</span></code> is specified.
+If set to true, the percentage of each unique <code class="docutils literal notranslate"><span class="pre">group_by_field</span></code> value is calculated for
+each <code class="docutils literal notranslate"><span class="pre">sum_within_layer</span></code> polygon.</p>
+<p>The default is False.</p>
+</td>
+</tr>
+<tr class="row-even"><td><p>output_name</p></td>
+<td><p>Optional string. If provided, the method will create a feature service of the results.
+You define the name of the service. If <code class="docutils literal notranslate"><span class="pre">output_name</span></code> is not supplied, the method will return a feature collection.</p></td>
+</tr>
+<tr class="row-odd"><td><p>context</p></td>
+<td><p>Optional string. Context contains additional settings that affect task execution. For <code class="docutils literal notranslate"><span class="pre">summarize_within</span></code>, there are two settings.</p>
+<ol class="arabic simple">
+<li><p>Extent (<code class="docutils literal notranslate"><span class="pre">extent</span></code>)—a bounding box that defines the analysis area. Only those features in the <code class="docutils literal notranslate"><span class="pre">sum_within_layer</span></code> and the <code class="docutils literal notranslate"><span class="pre">Summary_layer</span></code> that intersect the bounding box will be summarized.</p></li>
+<li><p>Output Spatial Reference (<code class="docutils literal notranslate"><span class="pre">outSR</span></code>)—the output features will be projected into the output spatial reference.</p></li>
+</ol>
+</td>
+</tr>
+<tr class="row-even"><td><p>estimate</p></td>
+<td><p>Optional boolean. If True, the number of credits to run the operation will be returned.</p></td>
+</tr>
+</tbody>
+</table>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p><p>Item if <code class="docutils literal notranslate"><span class="pre">output_name</span></code> is set. else results in a Python dict with the following keys:</p>
+<p>dict with the following keys:</p>
+<blockquote>
+<div><p>”result_layer” : layer (FeatureCollection)</p>
+<p>”group_by_summary” : layer (FeatureCollection)</p>
+</div></blockquote>
+</p>
+</dd>
+</dl>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># USAGE EXAMPLE: To summarize traffic accidents within each county and group them by the day of accident. </span>
+<span class="n">acc_within_county</span> <span class="o">=</span> <span class="n">summarize_within</span><span class="p">(</span><span class="n">sum_within_layer</span><span class="o">=</span><span class="n">boundaries</span><span class="p">,</span>
+                                     <span class="n">summary_layer</span><span class="o">=</span><span class="n">collision_lyr</span><span class="p">,</span>
+                                     <span class="n">sum_shape</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+                                     <span class="n">group_by_field</span><span class="o">=</span><span class="s1">&#39;Day&#39;</span><span class="p">,</span>
+                                     <span class="n">minority_majority</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+                                     <span class="n">percent_shape</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+                                     <span class="n">output_name</span><span class="o">=</span><span class="s1">&#39;summarize accidents within each county&#39;</span><span class="p">,</span>
+                                     <span class="n">context</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;extent&quot;</span><span class="p">:{</span><span class="s2">&quot;xmin&quot;</span><span class="p">:</span><span class="o">-</span><span class="mf">13160690.837046918</span><span class="p">,</span><span class="s2">&quot;ymin&quot;</span><span class="p">:</span><span class="mf">4041586.5461609075</span><span class="p">,</span><span class="s2">&quot;xmax&quot;</span><span class="p">:</span><span class="o">-</span><span class="mf">13132466.464352652</span><span class="p">,</span><span class="s2">&quot;ymax&quot;</span><span class="p">:</span><span class="mf">4058001.397985127</span><span class="p">,</span><span class="s2">&quot;spatialReference&quot;</span><span class="p">:{</span><span class="s2">&quot;wkid&quot;</span><span class="p">:</span><span class="mi">102100</span><span class="p">,</span><span class="s2">&quot;latestWkid&quot;</span><span class="p">:</span><span class="mi">3857</span><span class="p">}}})</span>           
+</pre></div>
+</div>
+</dd></dl>
+
+</div>
+</div>
+
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="arcgis.features.use_proximity.html" class="btn btn-neutral float-right" title="arcgis.features.use_proximity module" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="arcgis.features.managers.html" class="btn btn-neutral float-left" title="arcgis.features.managers module" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        
+        &copy; Copyright 2016-2019, Esri
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

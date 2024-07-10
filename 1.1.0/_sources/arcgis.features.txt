@@ -1,0 +1,43 @@
+arcgis.features module
+======================
+
+.. automodule:: arcgis.features
+
+arcgis.features.Feature
+--------------
+.. autoclass:: arcgis.features.Feature
+    :members:
+    :undoc-members:
+
+arcgis.features.FeatureLayer
+--------------
+.. autoclass:: arcgis.features.FeatureLayer
+    :inherited-members:
+    :members:
+    :undoc-members:
+
+arcgis.features.Table
+--------------
+.. autoclass:: arcgis.features.Table
+    :inherited-members:
+    :members:
+    :undoc-members:
+
+arcgis.features.FeatureLayerCollection
+--------------
+.. autoclass:: arcgis.features.FeatureLayerCollection
+    :inherited-members:
+    :members:
+    :undoc-members:
+
+arcgis.features.FeatureSet
+--------------
+.. autoclass:: arcgis.features.FeatureSet
+    :members:
+    :undoc-members:
+
+arcgis.features.FeatureCollection
+--------------
+.. autoclass:: arcgis.features.FeatureCollection
+    :members:
+    :undoc-members:

@@ -1,0 +1,36 @@
+arcgis.gis.workflowmanager module
+===========================
+
+.. automodule:: arcgis.gis.workflowmanager
+
+
+WorkflowManager
+---------------------------
+.. autoclass:: arcgis.gis.workflowmanager.WorkflowManager
+    :members:
+    :undoc-members:
+    :show-inheritance:
+
+WorkflowManagerAdmin
+---------------------------
+.. autoclass:: arcgis.gis.workflowmanager.WorkflowManagerAdmin
+    :members:
+    :undoc-members:
+    :show-inheritance:
+
+JobManager
+--------------
+.. autoclass:: arcgis.gis.workflowmanager.JobManager
+    :members:
+    :undoc-members:
+    :show-inheritance:
+
+Job
+--------------
+.. autoclass:: arcgis.gis.workflowmanager.Job
+    :members:
+
+JobDiagram
+--------------
+.. autoclass:: arcgis.gis.workflowmanager.JobDiagram
+    :members:

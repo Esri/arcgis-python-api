@@ -1,0 +1,36 @@
+arcgis.geoanalytics.manage_data module
+==================================
+
+.. automodule:: arcgis.geoanalytics.manage_data
+
+append_data
+--------------
+.. automethod:: arcgis.geoanalytics.manage_data.append_data
+
+calculate_fields
+--------------
+.. automethod:: arcgis.geoanalytics.manage_data.calculate_fields
+
+clip_layer
+-------------
+..automethod:: arcgis.geoanalytics.manage_data.clip_layer
+
+copy_to_data_store
+--------------
+.. automethod:: arcgis.geoanalytics.manage_data.copy_to_data_store
+
+describe_data
+--------------
+.. automethod:: arcgis.geoanalytics.manage_data.describe_data
+
+dissolve_boundaries
+--------------
+.. automethod:: arcgis.geoanalytics.manage_data.dissolve_boundaries
+
+merge_layers
+--------------
+.. automethod:: arcgis.geoanalytics.manage_data.merge_layers
+
+overlay_data
+--------------
+.. automethod:: arcgis.geoanalytics.manage_data.overlay_data

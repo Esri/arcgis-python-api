@@ -1,0 +1,8 @@
+arcgis.geoanalytics.find_locations module
+=====================================
+
+.. automodule:: arcgis.geoanalytics.find_locations
+
+find_similar_locations
+--------------
+.. automethod:: arcgis.geoanalytics.find_locations.find_similar_locations

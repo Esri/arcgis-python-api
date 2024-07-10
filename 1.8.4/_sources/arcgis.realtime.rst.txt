@@ -1,0 +1,10 @@
+arcgis.realtime module
+=====================================
+
+.. automodule:: arcgis.realtime
+
+StreamLayer
+-------------------------
+.. autoclass:: arcgis.realtime.StreamLayer
+    :members:
+    :undoc-members:

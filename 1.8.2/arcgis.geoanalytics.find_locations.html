@@ -1,0 +1,867 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>arcgis.geoanalytics.find_locations module &mdash; arcgis 1.8.2 documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="_static/theme_overrides.css" type="text/css" />
+
+  
+  
+    <link rel="shortcut icon" href="_static/favicon.ico"/>
+  
+  
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/doctools.js"></script>
+        <script src="_static/language_data.js"></script>
+        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="arcgis.geoanalytics.manage_data module" href="arcgis.geoanalytics.manage_data.html" />
+    <link rel="prev" title="arcgis.geoanalytics.data_enrichment module" href="arcgis.geoanalytics.data_enrichment.html" />
+<!-- This code block is inserted close near the <head> tag. See http://bit.ly/2BHUQzB -->
+<!-- The point of this code block is to send us google analytics on website views -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-NJGGV5');</script>
+ 
+
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="index.html" class="icon icon-home" alt="Documentation Home"> arcgis
+          
+
+          
+            
+            <img src="_static/python_api_logo.png" class="logo" alt="Logo"/>
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1.8.2
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">arcgis</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="arcgis.gis.toc.html">arcgis.gis module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="arcgis.env.html">arcgis.env module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="arcgis.features.toc.html">arcgis.features module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="arcgis.raster.toc.html">arcgis.raster module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="arcgis.network.toc.html">arcgis.network module</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="arcgis.geoanalytics.toc.html">arcgis.geoanalytics module</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="arcgis.geoanalytics.toc.html#define-output-datastore">define_output_datastore</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.geoanalytics.toc.html#get-datastores">get_datastores</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.geoanalytics.toc.html#is-supported">is_supported</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="arcgis.geoanalytics.toc.html#submodules">Submodules</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="arcgis.geoanalytics.analyze_patterns.html">arcgis.geoanalytics.analyze_patterns module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="arcgis.geoanalytics.data_enrichment.html">arcgis.geoanalytics.data_enrichment module</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">arcgis.geoanalytics.find_locations module</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#detect-incidents">detect_incidents</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#find-dwell-locations">find_dwell_locations</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#find-similar-locations">find_similar_locations</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#geocode-locations">geocode_locations</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="arcgis.geoanalytics.manage_data.html">arcgis.geoanalytics.manage_data module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="arcgis.geoanalytics.summarize_data.html">arcgis.geoanalytics.summarize_data module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="arcgis.geoanalytics.use_proximity.html">arcgis.geoanalytics.use_proximity module</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="arcgis.geocoding.html">arcgis.geocoding module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="arcgis.geoenrichment.html">arcgis.geoenrichment module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="arcgis.geometry.html">arcgis.geometry module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="arcgis.geoprocessing.html">arcgis.geoprocessing module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="arcgis.mapping.toc.html">arcgis.mapping module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="arcgis.realtime.html">arcgis.realtime module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="arcgis.schematics.html">arcgis.schematics module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="arcgis.widgets.html">arcgis.widgets module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="arcgis.apps.html">arcgis.apps module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="arcgis.learn.html">arcgis.learn module</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">arcgis</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="arcgis.geoanalytics.toc.html">arcgis.geoanalytics module</a> &raquo;</li>
+        
+      <li>arcgis.geoanalytics.find_locations module</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+<!-- This code block is inserted close near the <body> tag. See http://bit.ly/2BHUQzB -->
+<!-- The point of this code block is to send us google analytics on website views -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NJGGV5"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+
+  <div class="section" id="arcgis-geoanalytics-find-locations-module">
+<h1>arcgis.geoanalytics.find_locations module<a class="headerlink" href="#arcgis-geoanalytics-find-locations-module" title="Permalink to this headline">¶</a></h1>
+<span class="target" id="module-arcgis.geoanalytics.find_locations"></span><p>These tools are used to identify areas that meet a number of different criteria you specify.</p>
+<p>find_similar_locations finds locations most similar to one or more reference locations based on criteria you specify.</p>
+<div class="section" id="detect-incidents">
+<h2>detect_incidents<a class="headerlink" href="#detect-incidents" title="Permalink to this headline">¶</a></h2>
+<dl class="py function">
+<dt id="arcgis.geoanalytics.find_locations.detect_incidents">
+<code class="sig-prename descclassname">arcgis.geoanalytics.find_locations.</code><code class="sig-name descname">detect_incidents</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">input_layer</span></em>, <em class="sig-param"><span class="n">track_fields</span></em>, <em class="sig-param"><span class="n">start_condition_expression</span></em>, <em class="sig-param"><span class="n">end_condition_expression</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">output_mode</span><span class="o">=</span><span class="default_value">'AllFeatures'</span></em>, <em class="sig-param"><span class="n">time_boundary_split</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">time_split_unit</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">time_reference</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">output_name</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">gis</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">context</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">future</span><span class="o">=</span><span class="default_value">False</span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.geoanalytics.find_locations.detect_incidents" title="Permalink to this definition">¶</a></dt>
+<dd><img alt="_images/detect_incidents.png" src="_images/detect_incidents.png" />
+<p>The <code class="docutils literal notranslate"><span class="pre">detect_incidents</span></code> task works with a time-enabled layer of points,
+lines, areas, or tables that represents an instant in time. Using
+sequentially ordered features, called tracks, this tool determines
+which features are incidents of interest. Incidents are determined by
+conditions that you specify. First, the tool determines which features
+belong to a track using one or more fields. Using the time at each
+feature, the tracks are ordered sequentially and the incident condition
+is applied. Features that meet the starting incident condition are
+marked as an incident. You can optionally apply an ending incident
+condition; when the end condition is ‘True’, the feature is no longer
+an incident. The results will be returned with the original features
+with new columns representing the incident name and indicate which
+feature meets the incident condition. You can return all original
+features, only the features that are incidents, or all of the features
+within tracks where at least one incident occurred.</p>
+<p>For example, suppose you have GPS measurements of hurricanes every 10
+minutes. Each GPS measurement records the hurricane’s name, location,
+time of recording, and wind speed. Using these fields, you could create
+an incident where any measurement with a wind speed greater than 208
+km/h is an incident titled Catastrophic. By not setting an end
+condition, the incident would end if the feature no longer meets the
+start condition (wind speed slows down to less than 208).</p>
+<p>Using another example, suppose you were monitoring concentrations of a
+chemical in your local water supply using a field called
+contanimateLevel. You know that the recommended levels are less than
+0.01 mg/L, and dangerous levels are above 0.03 mg/L. To detect
+incidents, where a value above 0.03mg/L is an incident, and remains an
+incident until contamination levels are back to normal, you create an
+incident using a start condition of contanimateLevel &gt; 0.03 and an end
+condition of contanimateLevel &lt; 0.01. This will mark any sequence where
+values exceed 0.03mg/L until they return to a value less than 0.01.</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 11%" />
+<col style="width: 89%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><strong>Argument</strong></p></td>
+<td><p><strong>Description</strong></p></td>
+</tr>
+<tr class="row-even"><td><p>input_layer</p></td>
+<td><p>Required layer. The table, point, line or polygon features
+containing potential incidents. See <a class="reference internal" href="arcgis.geoanalytics.toc.html#gaxfeatureinput"><span class="std std-ref">Feature Input</span></a>.</p></td>
+</tr>
+<tr class="row-odd"><td><p>track_fields</p></td>
+<td><p>Required string. The fields used to identify distinct tracks.
+There can be multiple <code class="docutils literal notranslate"><span class="pre">track_fields</span></code>.</p></td>
+</tr>
+<tr class="row-even"><td><p>start_condition_expression</p></td>
+<td><p>Required string. The condition used to identify incidents. If there
+is no <code class="docutils literal notranslate"><span class="pre">end_condition_expression</span></code> specified, any feature
+that meets this condition is an incident. If there
+is an end condition, any feature that meets the
+<code class="docutils literal notranslate"><span class="pre">start_condition_expression</span></code> and does not meet the
+<code class="docutils literal notranslate"><span class="pre">end_condition_expression</span></code> is an incident.
+The expressions are Arcade expressions.</p></td>
+</tr>
+<tr class="row-odd"><td><p>end_condition_expression</p></td>
+<td><p>Optional string. The condition used to identify incidents. If there is
+no <code class="docutils literal notranslate"><span class="pre">end_condition_expression</span></code> specified, any feature that
+meets this condition is an incident. If there is an
+end condition, any feature that meets the
+<code class="docutils literal notranslate"><span class="pre">start_condition_expression</span></code> and does not meet the
+<code class="docutils literal notranslate"><span class="pre">end_condition_expression</span></code> is an incident. This is an
+Arcade expression.</p></td>
+</tr>
+<tr class="row-even"><td><p>output_mode</p></td>
+<td><p>Optional string. Determines which features are returned.</p>
+<p>Choice list: [AllFeatures’, ‘Incidents’]</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">AllFeatures</span></code> - All of the input features are returned.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Incidents</span></code> - Only features that were found to be incidents
+are returned.</p></li>
+</ul>
+<p>The default value is ‘AllFeatures’.</p>
+</td>
+</tr>
+<tr class="row-odd"><td><p>time_boundary_split</p></td>
+<td><p>Optional integer. A time boundary to detect and incident. A time
+boundary allows your to analyze values within a defined time span.
+For example, if you use a time boundary of 1 day, starting on January
+1st, 1980 tracks will be analyzed 1 day at a time. The time boundary
+parameter was introduced in ArcGIS Enterprise 10.7.</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">time_boundary_split</span></code> parameter defines the scale of the time boundary.
+In the case above, this would be 1. See the portal documentation for
+this tool to learn more.</p>
+</td>
+</tr>
+<tr class="row-even"><td><p>time_split_unit</p></td>
+<td><p>Optional string. The unit to detect an incident is <cite>time_boundary_split</cite> is used.</p>
+<p>Choice list: [‘Years’, ‘Months’, ‘Weeks’, ‘Days’, ‘Hours’, ‘Minutes’, ‘Seconds’, ‘Milliseconds’].</p>
+</td>
+</tr>
+<tr class="row-odd"><td><p>time_reference</p></td>
+<td><p>Optional datetime.detetime. The starting date/time where analysis will
+begin from.</p></td>
+</tr>
+<tr class="row-even"><td><p>output_name</p></td>
+<td><p>optional string, The task will create a feature service of the
+results. You define the name of the service.</p></td>
+</tr>
+<tr class="row-odd"><td><p>gis</p></td>
+<td><p>optional GIS, the GIS on which this tool runs. If not
+specified, the active GIS is used.</p></td>
+</tr>
+<tr class="row-even"><td><p>context</p></td>
+<td><p>Optionl dict. The context parameter contains additional settings that affect task execution. For this task, there are four settings:</p>
+<ol class="arabic simple">
+<li><p>Extent (<code class="docutils literal notranslate"><span class="pre">extent</span></code>) - A bounding box that defines the analysis area. Only those features that intersect the bounding box will be analyzed.</p></li>
+<li><p>Processing spatial reference (<code class="docutils literal notranslate"><span class="pre">processSR</span></code>) - The features will be projected into this coordinate system for analysis.</p></li>
+<li><p>Output spatial reference (<code class="docutils literal notranslate"><span class="pre">outSR</span></code>) - The features will be projected into this coordinate system after the analysis to be saved. The output spatial reference for the spatiotemporal big data store is always WGS84.</p></li>
+<li><p>Data store (<code class="docutils literal notranslate"><span class="pre">dataStore</span></code>) - Results will be saved to the specified data store. The default is the spatiotemporal big data store.</p></li>
+</ol>
+</td>
+</tr>
+<tr class="row-odd"><td><p>future</p></td>
+<td><p>optional boolean. If True, a GPJob is returned instead of
+results. The GPJob can be queried on the status of the execution.</p>
+<p>The default value is ‘False’.</p>
+</td>
+</tr>
+</tbody>
+</table>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>result_layer : Output Features as feature layer collection item.</p>
+</dd>
+</dl>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Usage Example: This example finds when and where snowplows were moving slower than 10 miles per hour by calculating the mean of a moving window of five speed values.</span>
+
+<span class="n">arcgis</span><span class="o">.</span><span class="n">env</span><span class="o">.</span><span class="n">verbose</span> <span class="o">=</span> <span class="kc">True</span> <span class="c1"># set environment</span>
+<span class="n">arcgis</span><span class="o">.</span><span class="n">env</span><span class="o">.</span><span class="n">defaultAggregations</span> <span class="o">=</span> <span class="kc">True</span> <span class="c1"># set environment</span>
+
+<span class="n">delay_incidents</span> <span class="o">=</span> <span class="n">output</span> <span class="o">=</span> <span class="n">detect_incidents</span><span class="p">(</span><span class="n">input_layer</span><span class="o">=</span><span class="n">snowplows</span><span class="p">,</span> 
+                                            <span class="n">track_fields</span><span class="o">=</span><span class="s2">&quot;plowID, dayOfYear&quot;</span><span class="p">,</span> 
+                                            <span class="n">start_condition_expression</span><span class="o">=</span><span class="s2">&quot;Mean($track.field[&quot;</span><span class="n">speed</span><span class="s2">&quot;].window(-5, 0)) &lt; 10&quot;</span><span class="p">,</span> 
+                                            <span class="n">output_name</span><span class="o">=</span><span class="s2">&quot;Slow_Plow_Incidents&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+</div>
+<div class="section" id="find-dwell-locations">
+<h2>find_dwell_locations<a class="headerlink" href="#find-dwell-locations" title="Permalink to this headline">¶</a></h2>
+<dl class="py function">
+<dt id="arcgis.geoanalytics.find_locations.find_dwell_locations">
+<code class="sig-prename descclassname">arcgis.geoanalytics.find_locations.</code><code class="sig-name descname">find_dwell_locations</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">input_layer</span></em>, <em class="sig-param"><span class="n">track_fields</span></em>, <em class="sig-param"><span class="n">distance_tolerance</span></em>, <em class="sig-param"><span class="n">distance_unit</span></em>, <em class="sig-param"><span class="n">time_tolerance</span></em>, <em class="sig-param"><span class="n">time_unit</span></em>, <em class="sig-param"><span class="n">summary_fields</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">method</span><span class="o">=</span><span class="default_value">'Planar'</span></em>, <em class="sig-param"><span class="n">dwell_type</span><span class="o">=</span><span class="default_value">'DwellMeanCenters'</span></em>, <em class="sig-param"><span class="n">output_name</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">gis</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">context</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">future</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="n">time_boundary_split</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">time_split_unit</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">time_reference</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.geoanalytics.find_locations.find_dwell_locations" title="Permalink to this definition">¶</a></dt>
+<dd><img alt="_images/find_similar_locations.png" src="_images/find_similar_locations.png" />
+<p>The <code class="docutils literal notranslate"><span class="pre">find_dwell_locations</span></code> works with time-enabled points of type instant 
+to find where points dwell within a specific distance and duration.</p>
+<p>Dwell locations are determined using both time (<cite>time_tolerance</cite>) and distance 
+(<cite>distance_tolerance</cite>) values. First, the tool assigns features to a track using 
+a unique identifier. Track order is determined by the time of features. Next, 
+the distance between the first observation in a track and the next is 
+calculated. Features are considered to be part of a dwell if two temporally 
+consecutive points stay within the given distance for at least the given 
+duration. When two features are found to be part of a dwell, the first 
+feature in the dwell is used as a reference point, and the tool finds 
+consecutive features that are within the specified distance of the reference
+point in the dwell. Once all features within the specified distance are 
+found, the tool collects the dwell features and calculates their mean 
+center. Features before and after the current dwell are added to the dwell 
+if they are within the given distance of the dwell location’s mean center. 
+This process continues until the end of the track.</p>
+<p>For example, ecologists and conservation workers can use the Find Dwell 
+Locations tool to improve the safety of elk during migratory seasons. Leverage
+the results to implement or improve protected areas in locations where the 
+animals are spending the most time.</p>
+<p>For another example, let’s say you work with the Department of Transportation 
+and you want to improve traffic congestion on highways near exits. Using the 
+Find Dwell Locations tool, you can isolate areas experiencing congestion by 
+identifying vehicle tracks that stay within a certain distance for a certain 
+amount of time.</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 11%" />
+<col style="width: 89%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><strong>Argument</strong></p></td>
+<td><p><strong>Description</strong></p></td>
+</tr>
+<tr class="row-even"><td><p>input_layer</p></td>
+<td><p>Required layer. The <code class="docutils literal notranslate"><span class="pre">input_layer</span></code> is a time-enabled point
+features from which dwell locations will be found.</p></td>
+</tr>
+<tr class="row-odd"><td><p>track_fields</p></td>
+<td><p>Required String. The fields used to identify distinct tracks.</p></td>
+</tr>
+<tr class="row-even"><td><p>distance_tolerance</p></td>
+<td><p>Required Float.  The dwell distance tolerance is the maximum
+distance between points to be considered in a single dwell
+location.  Dwell locations are determined using both distance
+and time.</p></td>
+</tr>
+<tr class="row-odd"><td><p>distance_unit</p></td>
+<td><p>Required String. The unit value.</p></td>
+</tr>
+<tr class="row-even"><td><p>time_tolerance</p></td>
+<td><p>Required Integer.  The dwell time tolerance is the minimum time
+duration of a dwell to be considered in a single dwell
+location.  Dwell locations are determined using both distance
+and time.</p></td>
+</tr>
+<tr class="row-odd"><td><p>time_unit</p></td>
+<td><p>Required String.  The time units.</p></td>
+</tr>
+<tr class="row-even"><td><p>summary_fields</p></td>
+<td><p>Optional List.  A list of field names and statistical summary
+types you want to calculate. Note that the count of points in a
+dwell is always returned.</p>
+<p>By default, all statistics are returned if the <cite>dwell_type</cite>
+specified is DwellMeanCenters (this is the default) or
+DwellConvexHulls.</p>
+<p>Only the count is returned if the <cite>dwell_type</cite> specified is
+DwellFeatures or AllFeatures.</p>
+<p>onStatisticField specifies the name of the fields in the target layer. statisticType is one of the following:</p>
+<ul class="simple">
+<li><p>Count - For numeric fields, this totals the number of values for all the points in each dwell. For string fields, this totals the number of strings for all the points in each dwell.</p></li>
+<li><p>Sum - Adds the total value of all the points in each dwell. For numeric fields.</p></li>
+<li><p>Mean - Calculates the average of all the points in each dwell. For numeric fields.</p></li>
+<li><p>Max - Calculates the largest value of all the points in each dwell. For numeric fields.</p></li>
+<li><p>Range - Finds the difference between the Min and Max values. For numeric fields.</p></li>
+<li><p>Stddev - Finds the standard deviation of all the points in each dwell. For numeric fields.</p></li>
+<li><p>Var - Finds the variance of all the points in each dwell. For numeric fields.</p></li>
+<li><p>Any - Returns a sample string of a point in each dwell. For string and numeric fields.</p></li>
+<li><p>First - Returns a the first value of a specified field in the summarized track. For string and numeric fields. This parameters was introduced at ArcGIS Enterprise 10.8.1.</p></li>
+<li><p>Last - Returns a the last value of a specified field in the summarized track. For string and numeric fields. This parameters was introduced at ArcGIS Enterprise 10.8.1.</p></li>
+</ul>
+<p>Example:</p>
+<p><a href="#id1"><span class="problematic" id="id2">``</span></a><a href="#id3"><span class="problematic" id="id4">`</span></a>python</p>
+<dl class="simple">
+<dt>[{“statisticType”: “Mean”, “onStatisticField”: “Annual_Sales”},</dt><dd><p>{“statisticType”: “Sum”, “onStatisticField”: “Annual_Sales”}]</p>
+</dd>
+</dl>
+<p><a href="#id5"><span class="problematic" id="id6">``</span></a><a href="#id7"><span class="problematic" id="id8">`</span></a></p>
+</td>
+</tr>
+<tr class="row-odd"><td><p>dwell_type</p></td>
+<td><p>Optional String. Determines which features are returned and the
+format. Four types are available:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>DwellMeanCenters - A point representing the centroid of each discovered dwell location. This is the default.</p></li>
+<li><p>DwellConvexHulls - Polygons representing the convex hull of each dwell group.</p></li>
+<li><p>DwellFeatures - All of the input point features determined to belong to a dwell are returned.</p></li>
+<li><p>AllFeatures - All of the input point features are returned.</p></li>
+</ul>
+</div></blockquote>
+</td>
+</tr>
+<tr class="row-even"><td><p>method</p></td>
+<td><p>Optional String. The method used to calculate distances between
+points. There are two methods from which to choose: Planar and
+Geodesic. The Planar method joins points using a planar method
+and will not cross the international date line. This method is
+appropriate for local analysis on projected data. This is the
+default. The Geodesic method joins points geodesically and will
+allow tracks to cross the international date line. This method
+is appropriate for large areas and geographic coordinate
+systems.</p></td>
+</tr>
+<tr class="row-odd"><td><p>output_name</p></td>
+<td><p>Optional string. The task will create a feature service of the results.
+You define the name of the service.</p></td>
+</tr>
+<tr class="row-even"><td><p>gis</p></td>
+<td><p>Optional GIS. The GIS on which this tool runs. If not specified, the active GIS is used.</p></td>
+</tr>
+<tr class="row-odd"><td><p>context</p></td>
+<td><p>Optional dict. The context parameter contains additional settings that affect task execution. For this task, there are four settings:</p>
+<ol class="arabic simple">
+<li><p>Extent (<code class="docutils literal notranslate"><span class="pre">extent</span></code>) - A bounding box that defines the analysis area. Only those features that intersect the bounding box will be analyzed.</p></li>
+<li><p>Processing spatial reference (<code class="docutils literal notranslate"><span class="pre">processSR</span></code>) - The features will be projected into this coordinate system for analysis.</p></li>
+<li><p>Output spatial reference (<code class="docutils literal notranslate"><span class="pre">outSR</span></code>) - The features will be projected into this coordinate system after the analysis to be saved. The output spatial reference for the spatiotemporal big data store is always WGS84.</p></li>
+<li><p>Data store (<code class="docutils literal notranslate"><span class="pre">dataStore</span></code>) - Results will be saved to the specified data store. The default is the spatiotemporal big data store.</p></li>
+</ol>
+</td>
+</tr>
+<tr class="row-even"><td><p>future</p></td>
+<td><p>Optional boolean. If ‘True’, a GPJob is returned instead of results. The GPJob can be queried on the status of the execution.</p>
+<p>The default value is ‘False’.</p>
+</td>
+</tr>
+<tr class="row-odd"><td><p>time_boundary_split</p></td>
+<td><p>Optional integer. A time boundary to detect and incident. A time
+boundary allows your to analyze values within a defined time span.
+For example, if you use a time boundary of 1 day, starting on January
+1st, 1980 tracks will be analyzed 1 day at a time. The time boundary
+parameter was introduced in ArcGIS Enterprise 10.8.1.</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">time_boundary_split</span></code> parameter defines the scale of the time boundary.
+In the case above, this would be 1. See the portal documentation for
+this tool to learn more.</p>
+</td>
+</tr>
+<tr class="row-even"><td><p>time_split_unit</p></td>
+<td><p>Optional string. The unit to detect an incident is <cite>time_boundary_split</cite> is used. This was introduced in ArcGIS Enterprise 10.8.1.</p>
+<p>Choice list: [‘Years’, ‘Months’, ‘Weeks’, ‘Days’, ‘Hours’, ‘Minutes’, ‘Seconds’, ‘Milliseconds’].</p>
+</td>
+</tr>
+<tr class="row-odd"><td><p>time_reference</p></td>
+<td><p>Optional datetime.detetime. The starting date/time where analysis will
+begin from. This parameter was introduced in ArcGIS Enterprise 10.8.1.</p></td>
+</tr>
+</tbody>
+</table>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>Output Service if future is False and GAJob if future is True</p>
+</dd>
+</dl>
+</dd></dl>
+
+</div>
+<div class="section" id="find-similar-locations">
+<h2>find_similar_locations<a class="headerlink" href="#find-similar-locations" title="Permalink to this headline">¶</a></h2>
+<dl class="py function">
+<dt id="arcgis.geoanalytics.find_locations.find_similar_locations">
+<code class="sig-prename descclassname">arcgis.geoanalytics.find_locations.</code><code class="sig-name descname">find_similar_locations</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">input_layer</span></em>, <em class="sig-param"><span class="n">search_layer</span></em>, <em class="sig-param"><span class="n">analysis_fields</span></em>, <em class="sig-param"><span class="n">most_or_least_similar</span><span class="p">:</span> <span class="n">str</span> <span class="o">=</span> <span class="default_value">'MostSimilar'</span></em>, <em class="sig-param"><span class="n">match_method</span><span class="p">:</span> <span class="n">str</span> <span class="o">=</span> <span class="default_value">'AttributeValues'</span></em>, <em class="sig-param"><span class="n">number_of_results</span><span class="p">:</span> <span class="n">int</span> <span class="o">=</span> <span class="default_value">10</span></em>, <em class="sig-param"><span class="n">append_fields</span><span class="p">:</span> <span class="n">str</span> <span class="o">=</span> <span class="default_value">None</span></em>, <em class="sig-param"><span class="n">output_name</span><span class="p">:</span> <span class="n">str</span> <span class="o">=</span> <span class="default_value">None</span></em>, <em class="sig-param"><span class="n">gis</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">context</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">future</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="n">return_tuple</span><span class="o">=</span><span class="default_value">False</span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.geoanalytics.find_locations.find_similar_locations" title="Permalink to this definition">¶</a></dt>
+<dd><img alt="_images/find_similar_locations.png" src="_images/find_similar_locations.png" />
+<p>The <code class="docutils literal notranslate"><span class="pre">find_similar_locations</span></code> task measures the similarity of candidate locations to one or more reference locations.</p>
+<p>Based on criteria you specify, <code class="docutils literal notranslate"><span class="pre">find_similar_locations</span></code> can answer questions such as the following:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>Which of your stores are most similar to your top performers with regard to customer profiles?</p></li>
+<li><p>Based on characteristics of villages hardest hit by the disease, which other villages are high risk?</p></li>
+<li><p>To answer questions such as these, you provide the reference locations (the <code class="docutils literal notranslate"><span class="pre">input_layer</span></code> parameter), 
+the candidate locations (the <code class="docutils literal notranslate"><span class="pre">search_layer</span></code> parameter), and the fields representing the criteria 
+you want to match. For example, the <code class="docutils literal notranslate"><span class="pre">input_layer</span></code> might be a layer containing your top performing stores 
+or the villages hardest hit by the disease. The <code class="docutils literal notranslate"><span class="pre">search_layer</span></code> contains your candidate locations to search. 
+This might be all of your stores or all other villages. Finally, you supply a list of fields to use for 
+measuring similarity. The <code class="docutils literal notranslate"><span class="pre">find_similar_locations</span></code> task will rank all of the candidate locations by how 
+closely they match your reference locations across all of the fields you have selected.</p></li>
+</ul>
+</div></blockquote>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 11%" />
+<col style="width: 89%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><strong>Argument</strong></p></td>
+<td><p><strong>Description</strong></p></td>
+</tr>
+<tr class="row-even"><td><p>input_layer</p></td>
+<td><p>Required layer. The <code class="docutils literal notranslate"><span class="pre">input_layer</span></code> contains one or more reference locations
+against which features in the <code class="docutils literal notranslate"><span class="pre">search_layer</span></code> will be evaluated for similarity.
+For example, the <code class="docutils literal notranslate"><span class="pre">input_layer</span></code> might contain your top performing stores or the
+villages hardest hit by a disease. See <a class="reference internal" href="arcgis.geoanalytics.toc.html#gaxfeatureinput"><span class="std std-ref">Feature Input</span></a>.</p>
+<p>It is not uncommon for <code class="docutils literal notranslate"><span class="pre">input_layer</span></code> and <code class="docutils literal notranslate"><span class="pre">search_layer</span></code> to be the same feature service.
+For example, the feature service contains locations of all stores, one of which
+is your top performing store. If you want to rank the remaining stores from most
+to least similar to your top performing store, you can provide a filter for both
+<code class="docutils literal notranslate"><span class="pre">input_layer</span></code> and <code class="docutils literal notranslate"><span class="pre">search_layer</span></code>. The filter on <code class="docutils literal notranslate"><span class="pre">input_layer</span></code> would select the top performing
+store, while the filter on <code class="docutils literal notranslate"><span class="pre">search_layer</span></code> would select all stores except for the top
+performing store. You can use the optional filter parameter to specify reference locations.</p>
+<p>If there is more than one reference location, similarity will be based on averages
+for the fields you specify in the <code class="docutils literal notranslate"><span class="pre">analysis_fields</span></code> parameter. For example, if there
+are two reference locations and you are interested in matching population, the task
+will look for candidate locations in <code class="docutils literal notranslate"><span class="pre">search_layer</span></code> with populations that are most
+like the average population for both reference locations. If the values for the
+reference locations are 100 and 102, for example, the task will look for candidate
+locations with populations near 101. Consequently, you will want to use fields for
+the reference locations fields that have similar values. If, for example, the
+population values for one reference location is 100 and the other is 100,000,
+the tool will look for candidate locations with population values near the average
+of those two values: 50,050. Notice that this averaged value is nothing like the
+population for either of the reference locations.</p>
+</td>
+</tr>
+<tr class="row-odd"><td><p>search_layer</p></td>
+<td><p>Required layer. The layer containing candidate locations that will be
+evaluated against the reference locations.  See <a class="reference internal" href="arcgis.geoanalytics.toc.html#gaxfeatureinput"><span class="std std-ref">Feature Input</span></a>.</p></td>
+</tr>
+<tr class="row-even"><td><p>analysis_fields</p></td>
+<td><p>Required string. A list of fields whose values are used to determine similarity.
+They must be numeric fields, and the fields must exist on both the <code class="docutils literal notranslate"><span class="pre">input_layer</span></code>
+and the <code class="docutils literal notranslate"><span class="pre">search_layer</span></code>. Depending on the <code class="docutils literal notranslate"><span class="pre">match_method</span></code> selected, the task will
+find features that are most similar based on values or profiles of the fields.</p></td>
+</tr>
+<tr class="row-odd"><td><p>most_or_least_similar</p></td>
+<td><p>Optional string. The features you want to be returned. You can search for
+features that are either most similar or least similar to the <code class="docutils literal notranslate"><span class="pre">input_layer</span></code>,
+or search both the most and least similar.</p>
+<p>Choice list:[‘MostSimilar’, ‘LeastSimilar’, ‘Both’]</p>
+<p>The default value is ‘MostSimilar’.</p>
+</td>
+</tr>
+<tr class="row-even"><td><p>match_method</p></td>
+<td><p>Optional string. The method you select determines how matching is determined.</p>
+<p>Choice list:[‘AttributeValues’, ‘AttributeProfiles’]</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>The <code class="docutils literal notranslate"><span class="pre">AttributeValues</span></code> method uses the squared differences of standardized values.</p></li>
+<li><p>The <code class="docutils literal notranslate"><span class="pre">AttributeProfiles</span></code> method uses cosine similarity mathematics to compare the profile
+of standardized values. Using <code class="docutils literal notranslate"><span class="pre">AttributeProfiles</span></code> requires the use of at least two analysis fields.</p></li>
+</ul>
+</div></blockquote>
+<p>The default value is ‘AttributeValues’.</p>
+</td>
+</tr>
+<tr class="row-odd"><td><p>number_of_results</p></td>
+<td><p>Optional integer. The number of ranked candidate locations output
+to <code class="docutils literal notranslate"><span class="pre">similar_result_layer</span></code>. If <code class="docutils literal notranslate"><span class="pre">number_of_results</span></code> is not set, the 10
+locations will be returned. The maximum number of results is 10000.</p>
+<p>The default value is 10.</p>
+</td>
+</tr>
+<tr class="row-even"><td><p>append_fields</p></td>
+<td><p>Optional string. Optionally add fields to your data from your search layer.
+By default, all fields from the search layer are appended.</p></td>
+</tr>
+<tr class="row-odd"><td><p>output_name</p></td>
+<td><p>Optional string. The task will create a feature service of the results.
+You define the name of the service.</p></td>
+</tr>
+<tr class="row-even"><td><p>gis</p></td>
+<td><p>Optional GIS. The GIS on which this tool runs. If not specified, the active GIS is used.</p></td>
+</tr>
+<tr class="row-odd"><td><p>context</p></td>
+<td><p>Optional dict. The context parameter contains additional settings that affect task execution. For this task, there are four settings:</p>
+<ol class="arabic simple">
+<li><p>Extent (<code class="docutils literal notranslate"><span class="pre">extent</span></code>) - A bounding box that defines the analysis area. Only those features that intersect the bounding box will be analyzed.</p></li>
+<li><p>Processing spatial reference (<code class="docutils literal notranslate"><span class="pre">processSR</span></code>) - The features will be projected into this coordinate system for analysis.</p></li>
+<li><p>Output spatial reference (<code class="docutils literal notranslate"><span class="pre">outSR</span></code>) - The features will be projected into this coordinate system after the analysis to be saved. The output spatial reference for the spatiotemporal big data store is always WGS84.</p></li>
+<li><p>Data store (<code class="docutils literal notranslate"><span class="pre">dataStore</span></code>) - Results will be saved to the specified data store. The default is the spatiotemporal big data store.</p></li>
+</ol>
+</td>
+</tr>
+<tr class="row-even"><td><p>future</p></td>
+<td><p>Optional boolean. If ‘True’, a GPJob is returned instead of results. The GPJob can be queried on the status of the execution.</p>
+<p>The default value is ‘False’.</p>
+</td>
+</tr>
+<tr class="row-odd"><td><p>return_tuple</p></td>
+<td><p>Optional boolean. If ‘True’, a named tuple with multiple output keys is returned.</p>
+<p>The default value is ‘False’.</p>
+</td>
+</tr>
+</tbody>
+</table>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p><p>named tuple with the following keys if <code class="docutils literal notranslate"><span class="pre">return_tuple</span></code> is set to ‘True’:</p>
+<p>”output” : feature layer</p>
+<p>”process_info” : list</p>
+</p>
+</dd>
+</dl>
+<p>else returns a feature layer of the results.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Usage Example: To find potential retail locations based on the current top locations and their attributes.</span>
+
+<span class="n">similar_location_result</span> <span class="o">=</span> <span class="n">find_similar_locations</span><span class="p">(</span><span class="n">input_layer</span><span class="o">=</span><span class="n">stores_layer</span><span class="p">,</span>
+                                                 <span class="n">search_layer</span><span class="o">=</span><span class="n">locations</span><span class="p">,</span>
+                                                 <span class="n">analysis_fields</span><span class="o">=</span><span class="s2">&quot;median_income, population, nearest_competitor&quot;</span><span class="p">,</span>
+                                                 <span class="n">most_or_least_similar</span><span class="o">=</span><span class="s2">&quot;MostSimilar&quot;</span><span class="p">,</span> 
+                                                 <span class="n">match_method</span><span class="o">=</span><span class="s2">&quot;AttributeValues&quot;</span><span class="p">,</span> 
+                                                 <span class="n">number_of_results</span><span class="o">=</span><span class="mi">50</span><span class="p">,</span> 
+                                                 <span class="n">output_name</span><span class="o">=</span><span class="s2">&quot;similar_locations&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+</div>
+<div class="section" id="geocode-locations">
+<h2>geocode_locations<a class="headerlink" href="#geocode-locations" title="Permalink to this headline">¶</a></h2>
+<dl class="py function">
+<dt id="arcgis.geoanalytics.find_locations.geocode_locations">
+<code class="sig-prename descclassname">arcgis.geoanalytics.find_locations.</code><code class="sig-name descname">geocode_locations</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">input_layer</span></em>, <em class="sig-param"><span class="n">country</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">category</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">include_attributes</span><span class="o">=</span><span class="default_value">True</span></em>, <em class="sig-param"><span class="n">locator_parameters</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">output_name</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">geocode_service</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">geocode_parameters</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">gis</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">context</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">future</span><span class="o">=</span><span class="default_value">False</span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.geoanalytics.find_locations.geocode_locations" title="Permalink to this definition">¶</a></dt>
+<dd><img alt="_images/geocode_locations.png" src="_images/geocode_locations.png" />
+<p>The <code class="docutils literal notranslate"><span class="pre">geocode_locations</span></code> task geocodes a table from a big data file share. 
+The task uses a geocode utility service configured with your portal. If you 
+do not have a geocode utility service configured, talk to your administrator. 
+<a class="reference external" href="https://enterprise.arcgis.com/en/portal/latest/administer/windows/configure-portal-to-geocode-addresses.htm">Learn more about configuring a locator 
+service</a>.</p>
+<p>When preparing to use the Geocode Location task be sure to review <a class="reference external" href="https://enterprise.arcgis.com/en/portal/latest/use/geoanalytics-geocoding-best-practices.htm">Best Practices 
+for geocoding with GeoAnalytics Server</a>.</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 11%" />
+<col style="width: 89%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><strong>Argument</strong></p></td>
+<td><p><strong>Description</strong></p></td>
+</tr>
+<tr class="row-even"><td><p>input_layer</p></td>
+<td><p>Required layer. The tabular input that will be geocoded. See <a class="reference internal" href="arcgis.geoanalytics.toc.html#gaxfeatureinput"><span class="std std-ref">Feature Input</span></a>.</p></td>
+</tr>
+<tr class="row-odd"><td><p>country</p></td>
+<td><p>Optional string. If all your data is in one country, this helps
+improve performance for locators that accept that variable.</p></td>
+</tr>
+<tr class="row-even"><td><p>category</p></td>
+<td><p>Optional string. Enter a category for more precise geocoding
+results, if applicable. Some geocoding services do not support
+category, and the available options depend on your geocode service.</p></td>
+</tr>
+<tr class="row-odd"><td><p>include_attributes</p></td>
+<td><p>Optional boolean. A Boolean value to return the output fields
+from the geocoding service in the results. To output all available
+output fields, set this value to ‘True’. Setting the value to false will
+return your original data and with geocode coordinates. Some geocoding
+services do not support output fields, and the available options depend
+on your geocode service.</p></td>
+</tr>
+<tr class="row-even"><td><p>locator_parameters</p></td>
+<td><p>Optional dict. Additional parameters specific to your locator.</p></td>
+</tr>
+<tr class="row-odd"><td><p>output_name</p></td>
+<td><p>Optional string. The task will create a feature service of the
+results. You define the name of the service.</p></td>
+</tr>
+<tr class="row-even"><td><p>geocode_service</p></td>
+<td><p>Optional string or Geocoder. The URL of the geocode service
+that you want to geocode your addresses against. The URL must end in
+geocodeServer and allow batch requests. The geocode service must be
+configured to allow for batch geocoding. For more information,
+see <a class="reference external" href="https://enterprise.arcgis.com/en/portal/latest/administer/windows/configure-portal-to-geocode-addresses.htm">Configuring batch geocoding</a></p></td>
+</tr>
+<tr class="row-odd"><td><p>geocode_parameters</p></td>
+<td><p>optional dict. This includes parameters that help parse
+the input data, as well the field lengths and a field mapping.
+This value is the output from the AnalyzeGeocodeInput tool
+available on your server designated to geocode. It is important
+to inspect the field mapping closely and adjust them accordingly
+before submitting your job, otherwise your geocoding results may
+not be accurate. It is recommended to use the output from
+AnalyzeGeocodeInput and modify the field mapping instead of
+constructing this JSON by hand.</p>
+<p><strong>Values</strong></p>
+<p><strong>field_info</strong> - A list of triples with the field names of your input
+data, the field type (usually TEXT), and the allowed length
+(usually 255).
+Example: [[‘ObjectID’, ‘TEXT’, 255], [‘Address’, ‘TEXT’, 255],</p>
+<blockquote>
+<div><p>[‘Region’, ‘TEXT’, 255], [‘Postal’, ‘TEXT’, 255]]</p>
+</div></blockquote>
+<p><strong>header_row_exists</strong> - Enter true or false.</p>
+<p><strong>column_names</strong> - Submit the column names of your data if your data
+does not have a header row.</p>
+<p><strong>field_mapping</strong> - Field mapping between each input field and
+candidate fields on the geocoding service.
+Example: [[‘ObjectID’, ‘OBJECTID’], [‘Address’, ‘Address’],</p>
+<blockquote>
+<div><p>[‘Region’, ‘Region’], [‘Postal’, ‘Postal’]]</p>
+</div></blockquote>
+</td>
+</tr>
+<tr class="row-even"><td><p>gis</p></td>
+<td><p>Optional GIS. The GIS on which this tool runs. If not
+specified, the active GIS is used.</p></td>
+</tr>
+<tr class="row-odd"><td><p>context</p></td>
+<td><p>Optional dict. Context contains additional settings that affect task execution.
+For this task, there are three settings:</p>
+<p>Processing spatial reference (<code class="docutils literal notranslate"><span class="pre">processSR</span></code>) - The features will be projected into this coordinate system for analysis.
+Output spatial reference (<code class="docutils literal notranslate"><span class="pre">outSR</span></code>) - The features will be projected into this coordinate system after the analysis to be saved. The output spatial reference for the spatiotemporal big data store is always WGS84.
+Data store (<code class="docutils literal notranslate"><span class="pre">dataStore</span></code>) - Results will be saved to the specified data store. The default is the spatiotemporal big data store.</p>
+</td>
+</tr>
+<tr class="row-even"><td><p>future</p></td>
+<td><p>Optional boolean. If True, a GPJob is returned instead of
+results. The GPJob can be queried on the status of the execution.</p></td>
+</tr>
+</tbody>
+</table>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>Feature Layer</p>
+</dd>
+</dl>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Usage Example: To geocode a big data file share of mailing addresses in the United States Northwest.</span>
+
+<span class="n">geocode_server</span> <span class="o">=</span> <span class="s2">&quot;https://mymachine.domain.com/server/rest/services/USALocator/GeocodeServer&quot;</span>
+<span class="n">geo_parameters</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;field_info&quot;</span><span class="p">:</span> <span class="s2">&quot;[(&#39;ObjectID&#39;, &#39;TEXT&#39;, 255), (&#39;Street&#39;, &#39;TEXT&#39;, 255), (&#39;City&#39;, &#39;TEXT&#39;, 255), (&#39;Region&#39;, &#39;TEXT&#39;, 255), (&#39;State&#39;, &#39;TEXT&#39;, 255)]&quot;</span><span class="p">,</span> <span class="s2">&quot;column_names&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="s2">&quot;file_type&quot;</span><span class="p">:</span> <span class="s2">&quot;table&quot;</span><span class="p">,</span> <span class="s2">&quot;header_row_exists&quot;</span><span class="p">:</span> <span class="s2">&quot;true&quot;</span><span class="p">,</span> <span class="s2">&quot;field_mapping&quot;</span><span class="p">:</span> <span class="s2">&quot;[[&quot;</span><span class="n">Street</span><span class="s2">&quot;, &quot;</span><span class="n">Street</span><span class="s2">&quot;], [&quot;</span><span class="n">City</span><span class="s2">&quot;, &quot;</span><span class="n">City</span><span class="s2">&quot;], [&quot;</span><span class="n">State</span><span class="s2">&quot;, &quot;</span><span class="n">State</span><span class="s2">&quot;], [&quot;</span><span class="n">ZIP</span><span class="s2">&quot;, &quot;</span><span class="n">ZIP</span><span class="s2">&quot;]]&quot;</span><span class="p">}</span>
+<span class="n">geocode_result</span> <span class="o">=</span> <span class="n">find_locations</span><span class="o">.</span><span class="n">geocode_locations</span><span class="p">(</span><span class="n">input_layer</span><span class="o">=</span><span class="n">NW_addresses</span><span class="p">,</span> 
+                                            <span class="n">output_name</span><span class="o">=</span><span class="s2">&quot;geocoded_NW_USA&quot;</span><span class="p">,</span>
+                                            <span class="n">geocode_service</span><span class="o">=</span><span class="n">geocode_server</span><span class="p">,</span>
+                                            <span class="n">geocode_parameters</span> <span class="o">=</span> <span class="n">geo_parameters</span><span class="p">)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+</div>
+</div>
+
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="arcgis.geoanalytics.manage_data.html" class="btn btn-neutral float-right" title="arcgis.geoanalytics.manage_data module" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="arcgis.geoanalytics.data_enrichment.html" class="btn btn-neutral float-left" title="arcgis.geoanalytics.data_enrichment module" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        
+        &copy; Copyright 2016-2019, Esri
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

@@ -1,0 +1,1291 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>arcgis.features.use_proximity module &mdash; arcgis 1.6.2 documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="_static/theme_overrides.css" type="text/css" />
+
+  
+  
+    <link rel="shortcut icon" href="_static/favicon.ico"/>
+  
+  
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/doctools.js"></script>
+        <script src="_static/language_data.js"></script>
+        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="arcgis.raster module" href="arcgis.raster.toc.html" />
+    <link rel="prev" title="arcgis.features.summarize_data module" href="arcgis.features.summarize_data.html" />
+<!-- This code block is inserted close near the <head> tag. See http://bit.ly/2BHUQzB -->
+<!-- The point of this code block is to send us google analytics on website views -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-NJGGV5');</script>
+ 
+
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="index.html" class="icon icon-home" alt="Documentation Home"> arcgis
+          
+
+          
+            
+            <img src="_static/python_api_logo.png" class="logo" alt="Logo"/>
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1.6.2
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">arcgis</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="arcgis.gis.toc.html">arcgis.gis module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="arcgis.env.html">arcgis.env module</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="arcgis.features.toc.html">arcgis.features module</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="arcgis.features.toc.html#feature">Feature</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.features.toc.html#featurelayer">FeatureLayer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.features.toc.html#table">Table</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.features.toc.html#featurelayercollection">FeatureLayerCollection</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.features.toc.html#featureset">FeatureSet</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.features.toc.html#featurecollection">FeatureCollection</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.features.toc.html#geoaccessor">GeoAccessor</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.features.toc.html#geoseriesaccessor">GeoSeriesAccessor</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.features.toc.html#spatialdataframe">SpatialDataFrame</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="arcgis.features.toc.html#submodules">Submodules</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="arcgis.features.analysis.html">arcgis.features.analysis module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="arcgis.features.analyze_patterns.html">arcgis.features.analyze_patterns module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="arcgis.features.elevation.html">arcgis.features.elevation module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="arcgis.features.enrich_data.html">arcgis.features.enrich_data module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="arcgis.features.find_locations.html">arcgis.features.find_locations module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="arcgis.features.hydrology.html">arcgis.features.hydrology module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="arcgis.features.manage_data.html">arcgis.features.manage_data module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="arcgis.features.managers.html">arcgis.features.managers module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="arcgis.features.summarize_data.html">arcgis.features.summarize_data module</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">arcgis.features.use_proximity module</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#connect-origins-to-destinations">connect_origins_to_destinations</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#create-buffers">create_buffers</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#create-drive-time-areas">create_drive_time_areas</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#find-nearest">find_nearest</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#plan-routes">plan_routes</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="arcgis.raster.toc.html">arcgis.raster module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="arcgis.network.toc.html">arcgis.network module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="arcgis.geoanalytics.toc.html">arcgis.geoanalytics module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="arcgis.geocoding.html">arcgis.geocoding module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="arcgis.geoenrichment.html">arcgis.geoenrichment module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="arcgis.geometry.html">arcgis.geometry module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="arcgis.geoprocessing.html">arcgis.geoprocessing module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="arcgis.mapping.html">arcgis.mapping module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="arcgis.realtime.html">arcgis.realtime module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="arcgis.schematics.html">arcgis.schematics module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="arcgis.widgets.html">arcgis.widgets module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="arcgis.apps.html">arcgis.apps module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="arcgis.learn.html">arcgis.learn module</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">arcgis</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="arcgis.features.toc.html">arcgis.features module</a> &raquo;</li>
+        
+      <li>arcgis.features.use_proximity module</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+<!-- This code block is inserted close near the <body> tag. See http://bit.ly/2BHUQzB -->
+<!-- The point of this code block is to send us google analytics on website views -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NJGGV5"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+
+  <div class="section" id="module-arcgis.features.use_proximity">
+<span id="arcgis-features-use-proximity-module"></span><h1>arcgis.features.use_proximity module<a class="headerlink" href="#module-arcgis.features.use_proximity" title="Permalink to this headline">¶</a></h1>
+<p>These functions help you answer one of the most common questions posed in spatial analysis: “What is near what?”</p>
+<p>connect_origins_to_destinations measures the travel time or distance between pairs of points.
+create_buffers create areas of equal distance from features.
+create_drive_time_areas finds areas around locations that can be reached within a time period.
+find_nearest identifies those places that are the closest to known locations.
+plan_routes determines the best way to route a fleet of vehicles to visit many stops.</p>
+<div class="section" id="connect-origins-to-destinations">
+<h2>connect_origins_to_destinations<a class="headerlink" href="#connect-origins-to-destinations" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt id="arcgis.features.use_proximity.connect_origins_to_destinations">
+<code class="sig-prename descclassname">arcgis.features.use_proximity.</code><code class="sig-name descname">connect_origins_to_destinations</code><span class="sig-paren">(</span><em class="sig-param">origins_layer</em>, <em class="sig-param">destinations_layer</em>, <em class="sig-param">measurement_type='DrivingTime'</em>, <em class="sig-param">origins_layer_route_id_field=None</em>, <em class="sig-param">destinations_layer_route_id_field=None</em>, <em class="sig-param">time_of_day=None</em>, <em class="sig-param">time_zone_for_time_of_day='GeoLocal'</em>, <em class="sig-param">output_name=None</em>, <em class="sig-param">context=None</em>, <em class="sig-param">gis=None</em>, <em class="sig-param">estimate=False</em>, <em class="sig-param">point_barrier_layer=None</em>, <em class="sig-param">line_barrier_layer=None</em>, <em class="sig-param">polygon_barrier_layer=None</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.features.use_proximity.connect_origins_to_destinations" title="Permalink to this definition">¶</a></dt>
+<dd><p>The Connect Origins to Destinations task measures the travel time or distance between pairs of points. Using this tool, you can</p>
+<ul class="simple">
+<li><p>Calculate the total distance or time commuters travel on their home-to-work trips.</p></li>
+<li><p>Measure how far customers are traveling to shop at your stores. Use this information to define your market reach, especially when targeting advertising campaigns or choosing new store locations.</p></li>
+<li><p>Calculate the expected trip mileage for your fleet of vehicles. Afterward, run the Summarize Within tool to report mileage by state or other region.</p></li>
+</ul>
+<p>You provide starting and ending points, and the tool returns a layer containing route lines, including measurements, between the
+paired origins and destinations.</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 16%" />
+<col style="width: 84%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><strong>Argument</strong></p></td>
+<td><p><strong>Description</strong></p></td>
+</tr>
+<tr class="row-even"><td><p>origins_layer</p></td>
+<td><p>Required layer. The starting point or points of the routes to be generated. See <a class="reference internal" href="arcgis.features.analysis.html#featureinput"><span class="std std-ref">Feature Input</span></a>.</p></td>
+</tr>
+<tr class="row-odd"><td><p>destinations_layer</p></td>
+<td><p>Required layer. The routes end at points in the destinations layer. See <a class="reference internal" href="arcgis.features.analysis.html#featureinput"><span class="std std-ref">Feature Input</span></a>.</p></td>
+</tr>
+<tr class="row-even"><td><p>measurement_type</p></td>
+<td><p>Required string. The origins and destinations can be connected by measuring straight-line distance,
+or by measuring travel time or travel distance along a street network using various modes of transportation
+known as travel modes.</p>
+<p>Valid values are a string, StraightLine, which indicates Euclidean distance to be used as distance measure or
+a Python dictionary representing settings for a travel mode.</p>
+<p>When using a travel mode for the measurement_type, you need to specify a dictionary
+containing the settings for a travel mode supported by your organization. The code in the example section below generates
+a valid Python dictionary and then passes it as the value for the measurement_type parameter.</p>
+<p>Supported travel modes: [‘Driving Distance’, ‘Driving Time’, ‘Rural Driving Distance’, ‘Rural Driving Time’,
+‘Trucking Distance’, ‘Trucking Time’, ‘Walking Distance’, ‘Walking Time’]</p>
+</td>
+</tr>
+<tr class="row-odd"><td><p>origins_layer_route_id_field</p></td>
+<td><p>Optional string. Specify the field in the origins layer containing the IDs that pair origins with destinations.</p>
+<ul class="simple">
+<li><p>The ID values must uniquely identify points in the origins layer.</p></li>
+<li><p>Each ID value must also correspond with exactly one route ID value in the destinations layer. Route IDs that match
+across the layers create origin-destination pairs, which the tool connects together.</p></li>
+<li><p>Specifying origins_layer_route_id_field is optional when there is exactly one point feature in the origins or
+destinations layer. The tool will connect all origins to the one destination or the one origin to all destinations,
+depending on which layer contains one point.</p></li>
+</ul>
+</td>
+</tr>
+<tr class="row-even"><td><p>destinations_layer_route_id_field</p></td>
+<td><p>Optional string. Specify the field in the destinations layer containing the IDs that pair origins with destinations.</p>
+<ul class="simple">
+<li><p>The ID values must uniquely identify points in the destinations layer.</p></li>
+<li><p>Each ID value must also correspond with exactly one route ID value in the origins layer. Route IDs that match across the
+layers create origin-destination pairs, which the tool connects together.</p></li>
+<li><p>Specifying destinations_layer_route_id_field is optional when there is exactly one point feature in the origins or
+destinations layer. The tool will connect all origins to the one destination or the one origin to all destinations,
+depending on which layer contains one point.</p></li>
+</ul>
+</td>
+</tr>
+<tr class="row-odd"><td><p>time_of_day</p></td>
+<td><p>Optional datetime.datetime. Specify whether travel times should consider traffic conditions. To use traffic in the analysis,
+set measurement_type to a travel mode object whose impedance_attribute_name property is set to travel_time and assign a value
+to time_of_day. (A travel mode with other impedance_attribute_name values don’t support traffic.) The time_of_day value represents
+the time at which travel begins, or departs, from the origin points. The time is specified as datetime.datetime.</p>
+<p>The service supports two kinds of traffic: typical and live. Typical traffic references travel speeds that are made up of historical
+averages for each five-minute interval spanning a week. Live traffic retrieves speeds from a traffic feed that processes phone probe
+records, sensors, and other data sources to record actual travel speeds and predict speeds for the near future.</p>
+<p>The <a class="reference external" href="http://www.arcgis.com/home/webmap/viewer.html?webmap=b7a893e8e1e04311bd925ea25cb8d7c7">data coverage</a> page shows the countries
+Esri currently provides traffic data for.</p>
+<p>Typical Traffic:</p>
+<p>To ensure the task uses typical traffic in locations where it is available, choose a time and day of the week, and then convert the day
+of the week to one of the following dates from 1990:</p>
+<ul class="simple">
+<li><p>Monday—1/1/1990</p></li>
+<li><p>Tuesday—1/2/1990</p></li>
+<li><p>Wednesday—1/3/1990</p></li>
+<li><p>Thursday—1/4/1990</p></li>
+<li><p>Friday—1/5/1990</p></li>
+<li><p>Saturday—1/6/1990</p></li>
+<li><p>Sunday—1/7/1990</p></li>
+</ul>
+<p>Set the time and date as datetime.datetime.</p>
+<p>For example, to solve for 1:03 p.m. on Thursdays, set the time and date to 1:03 p.m., 4 January 1990; and convert to
+datetime eg. datetime.datetime(1990, 1, 4, 1, 3).</p>
+<p>Live Traffic:</p>
+<p>To use live traffic when and where it is available, choose a time and date and convert to datetime.</p>
+<p>Esri saves live traffic data for 12 hours and references predictive data extending 12 hours into the future. If the time and date you
+specify for this parameter is outside the 24-hour time window, or the travel time in the analysis continues past the predictive data window, the task falls back to typical traffic speeds.</p>
+<p>Examples:
+from datetime import datetime</p>
+<ul class="simple">
+<li><p>“time_of_day”: datetime(1990, 1, 4, 1, 3) # 13:03, 4 January 1990. Typical traffic on Thursdays at 1:03 p.m.</p></li>
+<li><p>“time_of_day”: datetime(1990, 1, 7, 17, 0) # 17:00, 7 January 1990. Typical traffic on Sundays at 5:00 p.m.</p></li>
+<li><p>“time_of_day”: datetime(2014, 10, 22, 8, 0) # 8:00, 22 October 2014. If the current time is between 8:00 p.m., 21 Oct. 2014 and 8:00 p.m., 22 Oct. 2014,
+live traffic speeds are referenced in the analysis; otherwise, typical traffic speeds are referenced.</p></li>
+<li><p>“time_of_day”: datetime(2015, 3, 18, 10, 20) # 10:20, 18 March 2015. If the current time is between 10:20 p.m., 17 Mar. 2015 and 10:20 p.m., 18 Mar. 2015,
+live traffic speeds are referenced in the analysis; otherwise, typical traffic speeds are referenced.</p></li>
+</ul>
+</td>
+</tr>
+<tr class="row-even"><td><p>time_zone_for_time_of_day</p></td>
+<td><p>Optional string. Specify the time zone or zones of the timeOfDay parameter.
+Choice list: [‘GeoLocal’, ‘UTC’]</p>
+<p>GeoLocal-refers to the time zone in which the originsLayer points are located.</p>
+<p>UTC-refers to Coordinated Universal Time.</p>
+</td>
+</tr>
+<tr class="row-odd"><td><p>include_route_layers</p></td>
+<td><p>Optional Boolean. When include_route_layers is set to True, each route from the result is also saved as a route layer item. A route layer includes all the
+information for a particular route such as the stops assigned to the route as well as the travel directions. Creating route layers is useful if you want
+to share individual routes with other members in your organization. The route layers use the output feature service name provided in the outputName
+parameter as a prefix and the route name generated as part of the analysis is added to create a unique name for each route layer.</p>
+<p>Caution: Route layers cannot be created when the output is a feature collection. The task will raise an error if output_name is not specified
+(which indicates feature collection output) and include_route_layers is True.</p>
+<p>The maximum number of route layers that can be created is 1,000. If the result contains more than 1,000 routes and include_route_layers is True,
+the task will only create the output feature service.</p>
+</td>
+</tr>
+<tr class="row-even"><td><p>output_name</p></td>
+<td><p>Optional string. If provided, the task will create a feature layer of the results. You define the name of the layer. If output_name is not supplied,
+the task will return a feature collection.</p></td>
+</tr>
+<tr class="row-odd"><td><p>context</p></td>
+<td><p>Optional string. Additional settings such as processing extent and output spatial reference. For calculate_density, there are two settings.</p>
+<ol class="arabic simple">
+<li><p>Extent (extent)-a bounding box that defines the analysis area. Only those points in the origins_layer and destinations_layer that intersect the
+bounding box will be analyzed.</p></li>
+<li><p>Output Spatial Reference (outSR)-If the output is a feature service, the spatial reference will be the same as originsLayer. Setting outSR for feature services has no effect.
+If the output is a feature collection, the features will be in the spatial reference of the outSRvalue or the spatial reference of originsLayer when outSR is not specified.</p></li>
+</ol>
+</td>
+</tr>
+<tr class="row-even"><td><p>gis</p></td>
+<td><p>Optional, the GIS on which this tool runs. If not specified, the active GIS is used.</p></td>
+</tr>
+<tr class="row-odd"><td><p>estimate</p></td>
+<td><p>Optional Boolean. Is True, the number of credits needed to run the operation will be returned as a float.</p></td>
+</tr>
+<tr class="row-even"><td><p>point_barrier_layer</p></td>
+<td><p>Optional layer. Specify one or more point features that act as temporary restrictions (in other words, barriers) when traveling on the underlying streets.</p>
+<p>A point barrier can model a fallen tree, an accident, a downed electrical line, or anything that completely blocks traffic at a specific position along
+the street. Travel is permitted on the street but not through the barrier. See <a class="reference internal" href="arcgis.features.analysis.html#featureinput"><span class="std std-ref">Feature Input</span></a>.</p>
+</td>
+</tr>
+<tr class="row-odd"><td><p>line_barrier_layer</p></td>
+<td><p>Optional layer. Specify one or more line features that prohibit travel anywhere the lines intersect the streets.</p>
+<p>A line barrier prohibits travel anywhere the barrier intersects the streets. For example, a parade or protest that blocks traffic across several street
+segments can be modeled with a line barrier. See <a class="reference internal" href="arcgis.features.analysis.html#featureinput"><span class="std std-ref">Feature Input</span></a>.</p>
+</td>
+</tr>
+<tr class="row-even"><td><p>polygon_barrier_layer</p></td>
+<td><p>Optional string. Specify one or more polygon features that completely restrict travel on the streets intersected by the polygons.</p>
+<p>One use of this type of barrier is to model floods covering areas of the street network and making road travel there impossible. See <a class="reference internal" href="arcgis.features.analysis.html#featureinput"><span class="std std-ref">Feature Input</span></a>.</p>
+</td>
+</tr>
+</tbody>
+</table>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p><p>dict with the following keys:</p>
+<p>”routes_layer” : layer (FeatureCollection)</p>
+<p>”unassigned_origins_layer” : layer (FeatureCollection)</p>
+<p>”unassigned_destinations_layer” : layer (FeatureCollection)</p>
+</p>
+</dd>
+</dl>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">USAGE</span> <span class="n">EXAMPLE</span><span class="p">:</span> <span class="n">To</span> <span class="n">retrieve</span> <span class="n">trvel</span> <span class="n">modes</span> <span class="ow">and</span> <span class="n">run</span> <span class="n">connect_origins_to_destinations</span> <span class="n">tool</span><span class="o">.</span>
+
+<span class="n">This</span> <span class="n">example</span> <span class="n">creates</span> <span class="n">route</span> <span class="n">between</span> <span class="n">esri</span> <span class="n">regional</span> <span class="n">offices</span> <span class="n">to</span> <span class="n">esri</span> <span class="n">headquarter</span><span class="o">.</span>
+
+<span class="kn">import</span> <span class="nn">arcgis.network</span> <span class="k">as</span> <span class="nn">network</span>
+<span class="n">route_service</span> <span class="o">=</span> <span class="n">network</span><span class="o">.</span><span class="n">RouteLayer</span><span class="p">(</span><span class="n">gis</span><span class="o">.</span><span class="n">properties</span><span class="o">.</span><span class="n">helperServices</span><span class="o">.</span><span class="n">route</span><span class="o">.</span><span class="n">url</span><span class="p">,</span> <span class="n">gis</span><span class="o">=</span><span class="n">gis</span><span class="p">)</span>
+<span class="n">travel_mode</span> <span class="o">=</span> <span class="p">[</span><span class="n">i</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">route_service</span><span class="o">.</span><span class="n">retrieve_travel_modes</span><span class="p">()[</span><span class="s1">&#39;supportedTravelModes&#39;</span><span class="p">]</span>
+    <span class="k">if</span> <span class="n">i</span><span class="p">[</span><span class="s1">&#39;name&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;Rural Driving Distance&#39;</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span>
+<span class="n">routes</span> <span class="o">=</span>  <span class="n">connect_origins_to_destinations</span><span class="p">(</span><span class="n">origins_layer</span><span class="o">=</span><span class="n">esri_regional</span><span class="p">,</span>
+                                 <span class="n">destinations_layer</span><span class="o">=</span><span class="n">dest_layer</span><span class="p">,</span>
+                                 <span class="n">measurement_type</span><span class="o">=</span><span class="n">travel_mode</span><span class="p">,</span>
+                                 <span class="n">time_of_day</span><span class="o">=</span><span class="n">datetime</span><span class="p">(</span><span class="mi">1990</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">),</span>
+                                 <span class="n">output_name</span><span class="o">=</span><span class="s2">&quot;routes_from_offices_to_hq&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+</div>
+<div class="section" id="create-buffers">
+<h2>create_buffers<a class="headerlink" href="#create-buffers" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt id="arcgis.features.use_proximity.create_buffers">
+<code class="sig-prename descclassname">arcgis.features.use_proximity.</code><code class="sig-name descname">create_buffers</code><span class="sig-paren">(</span><em class="sig-param">input_layer</em>, <em class="sig-param">distances=[]</em>, <em class="sig-param">field=None</em>, <em class="sig-param">units='Meters'</em>, <em class="sig-param">dissolve_type='None'</em>, <em class="sig-param">ring_type='Disks'</em>, <em class="sig-param">side_type='Full'</em>, <em class="sig-param">end_type='Round'</em>, <em class="sig-param">output_name=None</em>, <em class="sig-param">context=None</em>, <em class="sig-param">gis=None</em>, <em class="sig-param">estimate=False</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.features.use_proximity.create_buffers" title="Permalink to this definition">¶</a></dt>
+<dd><img alt="_images/create_buffers.png" src="_images/create_buffers.png" />
+<p>The <code class="docutils literal notranslate"><span class="pre">create_buffers</span></code> task creates polygons that cover a given distance from a point,
+line, or polygon feature. Buffers are typically used to create areas that can be 
+further analyzed using a tool such as <code class="docutils literal notranslate"><span class="pre">overlay_layers</span></code>. For example, if the question 
+is “What buildings are within one mile of the school?”, the answer can be found by 
+creating a one-mile buffer around the school and overlaying the buffer with the layer 
+containing building footprints. The end result is a layer of those buildings within 
+one mile of the school.</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 16%" />
+<col style="width: 84%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><strong>Parameter</strong></p></td>
+<td><p><strong>Description</strong></p></td>
+</tr>
+<tr class="row-even"><td><p>input_layer</p></td>
+<td><p>Required point, line or polygon feature layer. The input features to be buffered. See <a class="reference internal" href="arcgis.features.analysis.html#featureinput"><span class="std std-ref">Feature Input</span></a>.</p></td>
+</tr>
+<tr class="row-odd"><td><p>distances</p></td>
+<td><p>Optional list of floats to buffer the input features. The distance(s) that will be buffered. You must supply values
+for either the <code class="docutils literal notranslate"><span class="pre">distances</span></code> or <code class="docutils literal notranslate"><span class="pre">field</span></code> parameter. You can enter a single distance value or multiple values.
+The units of the distance values is suppied by the units parameter.</p></td>
+</tr>
+<tr class="row-even"><td><p>field</p></td>
+<td><p>Optional string. A field on the <code class="docutils literal notranslate"><span class="pre">input_layer</span></code> containing a buffer distance. Buffers will be created using field values.
+Unlike the <code class="docutils literal notranslate"><span class="pre">distances</span></code> parameter, multiple distances are not supported on field input.</p></td>
+</tr>
+<tr class="row-odd"><td><p>units</p></td>
+<td><p>Optional string. The linear unit to be used with the distance value(s) specified in distances or contained in the field value.</p>
+<p>Choice list: [‘Meters’, ‘Kilometers’, ‘Feet’, ‘Miles’, ‘NauticalMiles’, ‘Yards’]</p>
+<p>The default is ‘Meters’.</p>
+</td>
+</tr>
+<tr class="row-even"><td><p>dissolve_type</p></td>
+<td><p>Optional string. Determines how overlapping buffers are processed.</p>
+<p>Choice list: [‘None’, ‘Dissolve’]</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 13%" />
+<col style="width: 87%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><img alt="None" src="_images/None.png" /></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">None</span></code>—Overlapping areas are kept. This is the default.</p></td>
+</tr>
+<tr class="row-even"><td><p><img alt="Dissolve" src="_images/Dissolve.png" /></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">Dissolve</span></code>—Overlapping areas are combined.</p></td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+<tr class="row-odd"><td><p>ring_type</p></td>
+<td><p>Optional string. Determines how multiple-distance buffers are processed.</p>
+<p>Choice list: [‘Disks’, ‘Rings’]</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 10%" />
+<col style="width: 90%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><img alt="Disks" src="_images/Disks.png" /></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">Disks</span></code>—buffers are concentric and will overlap. For example, if your distances are 10 and 14,
+the result will be two buffers, one from 0 to 10 and one from 0 to 14. This is the default.</p></td>
+</tr>
+<tr class="row-even"><td><p><img alt="Rings" src="_images/Rings.png" /></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">Rings</span></code>—buffers will not overlap. For example, if your distances are 10 and 14, the result will
+be two buffers, one from 0 to 10 and one from 10 to 14.</p></td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+<tr class="row-odd"><td><p>side_type</p></td>
+<td><p>Optional string. When buffering line features, you can choose which side of the line to buffer.</p>
+<p>Typically, you choose both sides (Full, which is the default). Left and right are determined as
+if you were walking from the first x,y coordinate of the line (the start coordinate) to the last
+x,y coordinate of the line (the end coordinate). Choosing left or right usually means you know
+that your line features were created and stored in a particular direction (for example, upstream
+or downstream in a river network).</p>
+<p>When buffering polygon features, you can choose whether the buffer includes or excludes the polygon
+being buffered.</p>
+<p>Choice list: [‘Full’, ‘Left’, ‘Right’, ‘Outside’]</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 13%" />
+<col style="width: 87%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><img alt="Full" src="_images/Full.png" /></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">Full</span></code>—both sides of the line will be buffered. This is the default for line featuress.</p></td>
+</tr>
+<tr class="row-even"><td><p><img alt="Left" src="_images/Left.png" /></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">Left</span></code>—only the right side of the line will be buffered.</p></td>
+</tr>
+<tr class="row-odd"><td><p><img alt="Right" src="_images/Right.png" /></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">Right</span></code>—only the right side of the line will be buffered.</p></td>
+</tr>
+<tr class="row-even"><td><p><img alt="Outside" src="_images/Outside.png" /></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">Outside</span></code>—when buffering a polygon, the polygon being buffered is excluded in the result buffer.</p></td>
+</tr>
+<tr class="row-odd"><td><p><img alt="Unspecified" src="_images/Unspecified.png" /></p></td>
+<td><p>If <code class="docutils literal notranslate"><span class="pre">side_type</span></code> not supplied, the polygon being buffered is included in the result buffer.
+This is the  default for polygon features.</p></td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+<tr class="row-even"><td><p>end_type</p></td>
+<td><p>Optional string. The shape of the buffer at the end of line input features. This parameter is not
+valid for polygon input features. At the ends of lines the buffer can be rounded (Round) or be
+straight across (Flat).</p>
+<p>Choice list: [‘Round’, ‘Flat’]</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 10%" />
+<col style="width: 90%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><img alt="Round" src="_images/Round.png" /></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">Round</span></code>—buffers will be rounded at the ends of lines. This is the default.</p></td>
+</tr>
+<tr class="row-even"><td><p><img alt="Flat" src="_images/Flat.png" /></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">Flat</span></code>—buffers will be flat at the ends of lines.</p></td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+<tr class="row-odd"><td><p>output_name</p></td>
+<td><p>Optional string. Output feature service name. If not provided, a feature collection is returned.</p></td>
+</tr>
+<tr class="row-even"><td><p>context</p></td>
+<td><p>Optional dict. Context contains additional settings that affect task execution. For <code class="docutils literal notranslate"><span class="pre">create_buffers</span></code>, there are two settings.</p>
+<ol class="arabic simple">
+<li><p>Extent (<code class="docutils literal notranslate"><span class="pre">extent</span></code>)-a bounding box that defines the analysis area. Only those points in the <code class="docutils literal notranslate"><span class="pre">input_layer</span></code>
+that intersect the bounding box will be analyzed.</p></li>
+<li><p>Output Spatial Reference (<code class="docutils literal notranslate"><span class="pre">outSR</span></code>)—the output features will be projected into the output spatial reference.</p></li>
+</ol>
+</td>
+</tr>
+<tr class="row-odd"><td><p>gis</p></td>
+<td><p>Optional, the GIS on which this tool runs. If not specified, the active GIS is used.</p></td>
+</tr>
+<tr class="row-even"><td><p>estimate</p></td>
+<td><p>Optional boolean. If True, the estimated number of credits required to run the operation will be returned.</p></td>
+</tr>
+</tbody>
+</table>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>result_layer : feature layer Item if output_name is specified, else Feature Collection.</p>
+</dd>
+</dl>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">USAGE</span> <span class="n">EXAMPLE</span><span class="p">:</span> <span class="n">To</span> <span class="n">create</span> <span class="mi">5</span> <span class="n">mile</span> <span class="n">buffer</span> <span class="n">around</span> <span class="n">US</span> <span class="n">parks</span><span class="p">,</span> <span class="n">within</span> <span class="n">the</span> <span class="n">specified</span> <span class="n">extent</span><span class="o">.</span>
+
+<span class="n">polygon_lyr_buffer</span> <span class="o">=</span> <span class="n">create_buffers</span><span class="p">(</span><span class="n">input_layer</span><span class="o">=</span><span class="n">parks_lyr</span><span class="p">,</span>
+                         <span class="n">distances</span><span class="o">=</span><span class="p">[</span><span class="mi">5</span><span class="p">],</span>
+                         <span class="n">units</span><span class="o">=</span><span class="s1">&#39;Miles&#39;</span><span class="p">,</span>
+                         <span class="n">ring_type</span><span class="o">=</span><span class="s1">&#39;Rings&#39;</span><span class="p">,</span>
+                         <span class="n">end_type</span><span class="o">=</span><span class="s1">&#39;Flat&#39;</span><span class="p">,</span>
+                         <span class="n">output_name</span><span class="o">=</span><span class="s1">&#39;create_buffers&#39;</span><span class="p">,</span>
+                         <span class="n">context</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;extent&quot;</span><span class="p">:{</span><span class="s2">&quot;xmin&quot;</span><span class="p">:</span><span class="o">-</span><span class="mf">12555831.656684224</span><span class="p">,</span><span class="s2">&quot;ymin&quot;</span><span class="p">:</span><span class="mf">5698027.566358956</span><span class="p">,</span><span class="s2">&quot;xmax&quot;</span><span class="p">:</span><span class="o">-</span><span class="mf">11835489.102124758</span><span class="p">,</span><span class="s2">&quot;ymax&quot;</span><span class="p">:</span><span class="mf">6104672.556836072</span><span class="p">,</span><span class="s2">&quot;spatialReference&quot;</span><span class="p">:{</span><span class="s2">&quot;wkid&quot;</span><span class="p">:</span><span class="mi">102100</span><span class="p">,</span><span class="s2">&quot;latestWkid&quot;</span><span class="p">:</span><span class="mi">3857</span><span class="p">}}})</span>
+</pre></div>
+</div>
+</dd></dl>
+
+</div>
+<div class="section" id="create-drive-time-areas">
+<h2>create_drive_time_areas<a class="headerlink" href="#create-drive-time-areas" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt id="arcgis.features.use_proximity.create_drive_time_areas">
+<code class="sig-prename descclassname">arcgis.features.use_proximity.</code><code class="sig-name descname">create_drive_time_areas</code><span class="sig-paren">(</span><em class="sig-param">input_layer, break_values=[5, 10, 15], break_units='Minutes', travel_mode='Driving Time', overlap_policy='Overlap', time_of_day=None, time_zone_for_time_of_day='GeoLocal', output_name=None, context=None, gis=None, estimate=False, point_barrier_layer=None, line_barrier_layer=None, polygon_barrier_layer=None</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.features.use_proximity.create_drive_time_areas" title="Permalink to this definition">¶</a></dt>
+<dd><img alt="_images/create_drive_time_areas.png" src="_images/create_drive_time_areas.png" />
+<p>The <code class="docutils literal notranslate"><span class="pre">create_drive_time_areas</span></code> method creates areas that can be reached within a 
+given drive time or drive distance. It can help you answer questions such as:</p>
+<ul class="simple">
+<li><p>How far can I drive from here in five minutes?</p></li>
+<li><p>What areas are covered within a three-mile drive distance of my stores?</p></li>
+<li><p>What areas are within four minutes of our fire stations?</p></li>
+</ul>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 12%" />
+<col style="width: 88%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><strong>Parameter</strong></p></td>
+<td><p><strong>Description</strong></p></td>
+</tr>
+<tr class="row-even"><td><p>input_layer</p></td>
+<td><p>Required point feature layer. The points around which travel areas
+based on a mode of transportation will be drawn.
+See <a class="reference internal" href="arcgis.features.analysis.html#featureinput"><span class="std std-ref">Feature Input</span></a>.</p></td>
+</tr>
+<tr class="row-odd"><td><p>travel_mode</p></td>
+<td><p>Optional string or dict. Specify the mode of transportation for the analysis.</p>
+<p>Choice list: [‘Driving Distance’, ‘Driving Time’, ‘Rural Driving Distance’, ‘Rural Driving Time’, ‘Trucking Distance’, ‘Trucking Time’, ‘Walking Distance’, ‘Walking Time’]</p>
+<p>The default is ‘Driving Time’.</p>
+</td>
+</tr>
+<tr class="row-even"><td><p>break_values</p></td>
+<td><p>Optional list of floats. The size of the polygons to create.
+The units for break_values is specified with the break_units parameter.</p>
+<p>By setting many unique values in the list, polygons of different sizes are generated around each input location.</p>
+<p>The default is [5, 10, 15].</p>
+</td>
+</tr>
+<tr class="row-odd"><td><p>break_units</p></td>
+<td><p>Optional string. The units of the break_values parameter.</p>
+<p>To create areas showing how far you can go along roads or walkways within a given time, specify a time unit.
+Alternatively, specify a distance unit to generate areas bounded by a maximum travel distance.</p>
+<p>When the travel_mode is time based, a time unit should be specified for the break_units. When the
+travel_mode is distance based, a distance unit should be specified for the break_units.</p>
+<p>Choice list: [‘Seconds’, ‘Minutes’, Hours’, ‘Feet’, ‘Meters’, ‘Kilometers’, ‘Feet’, ‘Miles’, ‘Yards’]</p>
+<p>The default is ‘Minutes’.</p>
+</td>
+</tr>
+<tr class="row-even"><td><p>overlap_policy</p></td>
+<td><p>Optional string. Determines how overlapping areas are processed.</p>
+<p>Choice list: [‘Overlap’, ‘Dissolve’, ‘Split’]</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 13%" />
+<col style="width: 87%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><img alt="Overlap" src="_images/Overlap.png" /></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">Overlap</span></code>-Overlapping areas are kept. This is the default.</p></td>
+</tr>
+<tr class="row-even"><td><p><img alt="Dissolve" src="_images/Dissolve.png" /></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">Dissolve</span></code>-Overlapping areas are combined by break value. Because the areas are dissolved,
+use this option when you need to know the areas that can be reached within a
+given time or distance, but you don’t need to know which input points are nearest.</p></td>
+</tr>
+<tr class="row-odd"><td><p><img alt="Split" src="_images/Split.png" /></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">Split</span></code>-Overlapping areas are split in the middle. Use this option when you need to know
+the one nearest input location to the covered area.</p></td>
+</tr>
+</tbody>
+</table>
+<p>The default is ‘Overlap’</p>
+</td>
+</tr>
+<tr class="row-even"><td><p>time_of_day</p></td>
+<td><p>Optional datetime.datetime. Specify whether travel times should consider traffic conditions. To use traffic in the analysis,
+set measurement_type to a travel mode object whose impedance_attribute_name property is set to travel_time and assign a value
+to time_of_day. (A travel mode with other impedance_attribute_name values don’t support traffic.) The time_of_day value represents
+the time at which travel begins, or departs, from the origin points. The time is specified as datetime.datetime.</p>
+<p>The service supports two kinds of traffic: typical and live. Typical traffic references travel speeds that are made up of historical
+averages for each five-minute interval spanning a week. Live traffic retrieves speeds from a traffic feed that processes phone probe
+records, sensors, and other data sources to record actual travel speeds and predict speeds for the near future.</p>
+<p>The <a class="reference external" href="http://www.arcgis.com/home/webmap/viewer.html?webmap=b7a893e8e1e04311bd925ea25cb8d7c7">data coverage</a> page shows the countries
+Esri currently provides traffic data for.</p>
+<p>Typical Traffic:</p>
+<p>To ensure the task uses typical traffic in locations where it is available, choose a time and day of the week, and then convert the day
+of the week to one of the following dates from 1990:</p>
+<ul class="simple">
+<li><p>Monday—1/1/1990</p></li>
+<li><p>Tuesday—1/2/1990</p></li>
+<li><p>Wednesday—1/3/1990</p></li>
+<li><p>Thursday—1/4/1990</p></li>
+<li><p>Friday—1/5/1990</p></li>
+<li><p>Saturday—1/6/1990</p></li>
+<li><p>Sunday—1/7/1990</p></li>
+</ul>
+<p>Set the time and date as datetime.datetime.</p>
+<p>For example, to solve for 1:03 p.m. on Thursdays, set the time and date to 1:03 p.m., 4 January 1990; and convert to
+datetime eg. datetime.datetime(1990, 1, 4, 1, 3).</p>
+<p>Live Traffic:</p>
+<p>To use live traffic when and where it is available, choose a time and date and convert to datetime.</p>
+<p>Esri saves live traffic data for 12 hours and references predictive data extending 12 hours into the future. If the time and date you
+specify for this parameter is outside the 24-hour time window, or the travel time in the analysis continues past the predictive data window, the task falls back to typical traffic speeds.</p>
+<p>Examples:
+from datetime import datetime</p>
+<ul class="simple">
+<li><p>“time_of_day”: datetime(1990, 1, 4, 1, 3) # 13:03, 4 January 1990. Typical traffic on Thursdays at 1:03 p.m.</p></li>
+<li><p>“time_of_day”: datetime(1990, 1, 7, 17, 0) # 17:00, 7 January 1990. Typical traffic on Sundays at 5:00 p.m.</p></li>
+<li><p>“time_of_day”: datetime(2014, 10, 22, 8, 0) # 8:00, 22 October 2014. If the current time is between 8:00 p.m., 21 Oct. 2014 and 8:00 p.m., 22 Oct. 2014,
+live traffic speeds are referenced in the analysis; otherwise, typical traffic speeds are referenced.</p></li>
+<li><p>“time_of_day”: datetime(2015, 3, 18, 10, 20) # 10:20, 18 March 2015. If the current time is between 10:20 p.m., 17 Mar. 2015 and 10:20 p.m., 18 Mar. 2015,
+live traffic speeds are referenced in the analysis; otherwise, typical traffic speeds are referenced.</p></li>
+</ul>
+</td>
+</tr>
+<tr class="row-odd"><td><p>time_zone_for_time_of_day</p></td>
+<td><p>Optional string. Specify the time zone or zones of the time_of_day parameter.</p>
+<p>Choice list: [‘GeoLocal’, ‘UTC’]</p>
+<p>GeoLocal-refers to the time zone in which the originsLayer points are located.</p>
+<p>UTC-refers to Coordinated Universal Time.</p>
+<p>The default is ‘GeoLocal’.</p>
+</td>
+</tr>
+<tr class="row-even"><td><p>output_name</p></td>
+<td><p>Optional string. Output feature service name. If not provided, a feature collection is returned.</p></td>
+</tr>
+<tr class="row-odd"><td><p>context</p></td>
+<td><p>Optional dict. Context contains additional settings that affect task execution. For <code class="docutils literal notranslate"><span class="pre">create_drive_time_areas</span></code>, there are two settings.</p>
+<ol class="arabic simple">
+<li><p>Extent (<code class="docutils literal notranslate"><span class="pre">extent</span></code>)-a bounding box that defines the analysis area. Only those points in the <code class="docutils literal notranslate"><span class="pre">input_layer</span></code>
+that intersect the bounding box will be analyzed.</p></li>
+<li><p>Output Spatial Reference (<code class="docutils literal notranslate"><span class="pre">outSR</span></code>)—the output features will be projected into the output spatial reference.</p></li>
+</ol>
+</td>
+</tr>
+<tr class="row-even"><td><p>gis</p></td>
+<td><p>Optional, the GIS on which this tool runs. If not specified, the active GIS is used.</p></td>
+</tr>
+<tr class="row-odd"><td><p>estimate</p></td>
+<td><p>Optional boolean. If True, the estimated number of credits required to run the operation will be returned.</p></td>
+</tr>
+<tr class="row-even"><td><p>point_barrier_layer</p></td>
+<td><p>Optional layer. Specify one or more point features that act as temporary restrictions (in other words, barriers)
+when traveling on the underlying streets.</p>
+<p>A point barrier can model a fallen tree, an accident, a downed electrical line, or anything that completely blocks
+traffic at a specific position along the street. Travel is permitted on the street but not through the barrier. See <a class="reference internal" href="arcgis.features.analysis.html#featureinput"><span class="std std-ref">Feature Input</span></a>.</p>
+</td>
+</tr>
+<tr class="row-odd"><td><p>line_barrier_layer</p></td>
+<td><p>Optional layer. Specify one or more line features that prohibit travel anywhere the lines intersect the streets.</p>
+<p>A line barrier prohibits travel anywhere the barrier intersects the streets. For example, a parade or protest that blocks traffic across several street
+segments can be modeled with a line barrier. See <a class="reference internal" href="arcgis.features.analysis.html#featureinput"><span class="std std-ref">Feature Input</span></a>.</p>
+</td>
+</tr>
+<tr class="row-even"><td><p>polygon_barrier_layer</p></td>
+<td><p>Optional string. Specify one or more polygon features that completely restrict travel on the streets intersected by the polygons.</p>
+<p>One use of this type of barrier is to model floods covering areas of the street network and making road travel there impossible. See <a class="reference internal" href="arcgis.features.analysis.html#featureinput"><span class="std std-ref">Feature Input</span></a>.</p>
+</td>
+</tr>
+</tbody>
+</table>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>result_layer : feature layer Item if output_name is specified, else Feature Collection.</p>
+</dd>
+</dl>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">USAGE</span> <span class="n">EXAMPLE</span><span class="p">:</span> <span class="n">To</span> <span class="n">create</span> <span class="n">drive</span> <span class="n">time</span> <span class="n">areas</span> <span class="n">around</span> <span class="n">USA</span> <span class="n">airports</span><span class="p">,</span> <span class="n">within</span> <span class="n">the</span> <span class="n">specified</span> <span class="n">extent</span><span class="o">.</span>
+
+<span class="n">target_area4</span> <span class="o">=</span> <span class="n">create_drive_time_areas</span><span class="p">(</span><span class="n">airport_lyr</span><span class="p">,</span>
+                               <span class="n">break_values</span><span class="o">=</span><span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">4</span><span class="p">],</span>
+                               <span class="n">break_units</span><span class="o">=</span><span class="s1">&#39;Hours&#39;</span><span class="p">,</span>
+                               <span class="n">travel_mode</span><span class="o">=</span><span class="s1">&#39;Trucking Time&#39;</span><span class="p">,</span>
+                               <span class="n">overlap_policy</span><span class="o">=</span><span class="s1">&#39;Split&#39;</span><span class="p">,</span>  
+                               <span class="n">time_of_day</span><span class="o">=</span><span class="n">datetime</span><span class="p">(</span><span class="mi">2019</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">13</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">52</span><span class="p">),</span>
+                               <span class="n">output_name</span><span class="o">=</span><span class="s1">&#39;create_drive_time_areas&#39;</span><span class="p">,</span>
+                               <span class="n">context</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;extent&quot;</span><span class="p">:{</span><span class="s2">&quot;xmin&quot;</span><span class="p">:</span><span class="o">-</span><span class="mf">11134400.655784884</span><span class="p">,</span><span class="s2">&quot;ymin&quot;</span><span class="p">:</span><span class="mf">3368261.7800108367</span><span class="p">,</span><span class="s2">&quot;xmax&quot;</span><span class="p">:</span><span class="o">-</span><span class="mf">10682810.692676282</span><span class="p">,</span><span class="s2">&quot;ymax&quot;</span><span class="p">:</span><span class="mf">3630899.409198575</span><span class="p">,</span><span class="s2">&quot;spatialReference&quot;</span><span class="p">:{</span><span class="s2">&quot;wkid&quot;</span><span class="p">:</span><span class="mi">102100</span><span class="p">,</span><span class="s2">&quot;latestWkid&quot;</span><span class="p">:</span><span class="mi">3857</span><span class="p">}}})</span> 
+</pre></div>
+</div>
+</dd></dl>
+
+</div>
+<div class="section" id="find-nearest">
+<h2>find_nearest<a class="headerlink" href="#find-nearest" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt id="arcgis.features.use_proximity.find_nearest">
+<code class="sig-prename descclassname">arcgis.features.use_proximity.</code><code class="sig-name descname">find_nearest</code><span class="sig-paren">(</span><em class="sig-param">analysis_layer</em>, <em class="sig-param">near_layer</em>, <em class="sig-param">measurement_type='StraightLine'</em>, <em class="sig-param">max_count=100</em>, <em class="sig-param">search_cutoff=2147483647</em>, <em class="sig-param">search_cutoff_units=None</em>, <em class="sig-param">time_of_day=None</em>, <em class="sig-param">time_zone_for_time_of_day='GeoLocal'</em>, <em class="sig-param">output_name=None</em>, <em class="sig-param">context=None</em>, <em class="sig-param">gis=None</em>, <em class="sig-param">estimate=False</em>, <em class="sig-param">include_route_layers=None</em>, <em class="sig-param">point_barrier_layer=None</em>, <em class="sig-param">line_barrier_layer=None</em>, <em class="sig-param">polygon_barrier_layer=None</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.features.use_proximity.find_nearest" title="Permalink to this definition">¶</a></dt>
+<dd><img alt="_images/find_nearest.png" src="_images/find_nearest.png" />
+<p>The <code class="docutils literal notranslate"><span class="pre">find_nearest</span></code> method measures the straight-line distance, driving distance, or driving time from 
+features in the analysis layer to features in the near layer, and copies the nearest features in the near 
+layer to a new layer. Connecting lines showing the measured path are returned as well. <code class="docutils literal notranslate"><span class="pre">find_nearest</span></code> also 
+reports the measurement and relative rank of each nearest feature. There are options to limit the number 
+of nearest features to find or the search range in which to find them. The results from this method can help 
+you answer the following kinds of questions:</p>
+<ul class="simple">
+<li><p>What is the nearest park from here?</p></li>
+<li><p>Which hospital can I reach in the shortest drive time? And how long would the trip take on a Tuesday at 5:30 p.m. during rush hour?</p></li>
+<li><p>What are the road distances between major European cities?</p></li>
+<li><p>Which of these patients reside within two miles of these chemical plants?</p></li>
+</ul>
+<p>Find Nearest returns a layer containing the nearest features and a line layer that links the start locations to their nearest locations. 
+The connecting line layer contains information about the start and nearest locations and the distances between.</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 5%" />
+<col style="width: 95%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><strong>Parameter</strong></p></td>
+<td><p><strong>Description</strong></p></td>
+</tr>
+<tr class="row-even"><td><p>analysis_layer</p></td>
+<td><p>Required layer. The features from which the nearest locations are found. This layer can have point, line, or polygon features. See <a class="reference internal" href="arcgis.features.analysis.html#featureinput"><span class="std std-ref">Feature Input</span></a>.</p></td>
+</tr>
+<tr class="row-odd"><td><p>near_layer</p></td>
+<td><p>Required layer. The nearest features are chosen from this layer. This layer can have point, line, or polygon features. See <a class="reference internal" href="arcgis.features.analysis.html#featureinput"><span class="std std-ref">Feature Input</span></a>.</p></td>
+</tr>
+<tr class="row-even"><td><p>measurement_type</p></td>
+<td><p>Required string. Specify the mode of transportation for the analysis.</p>
+<p>Choice list: [‘StraightLine’, ‘Driving Distance’, ‘Driving Time ‘, ‘Rural Driving Distance’, ‘Rural Driving Time’, ‘Trucking Distance’, ‘Trucking Time’, ‘Walking Distance’, ‘Walking Time’]</p>
+<p>The default is ‘Driving Time’.</p>
+</td>
+</tr>
+<tr class="row-odd"><td><p>max_count</p></td>
+<td><p>Optional string. The maximum number of nearest locations to find for each feature in <code class="docutils literal notranslate"><span class="pre">analysis_layer</span></code>. The default is the maximum cutoff allowed by the service, which is 100.</p>
+<p>Note that setting a maxCount for this parameter doesn’t guarantee that many features will be found. The <code class="docutils literal notranslate"><span class="pre">search_cutoff</span></code> and other constraints may also reduce the number of features found.</p>
+</td>
+</tr>
+<tr class="row-even"><td><p>search_cutoff</p></td>
+<td><p>Optional float. The maximum range to search for nearest locations from each feature in the <code class="docutils literal notranslate"><span class="pre">analysis_layer</span></code>.
+The units for this parameter is always minutes when <code class="docutils literal notranslate"><span class="pre">measurement_type</span></code> is set to a time based travel mode;
+otherwise the units are set in the <code class="docutils literal notranslate"><span class="pre">search_cutoff_units</span></code> parameter.</p>
+<p>The default is to search without bounds.</p>
+</td>
+</tr>
+<tr class="row-odd"><td><p>search_cutoff_units</p></td>
+<td><p>The units of the <code class="docutils literal notranslate"><span class="pre">search_cutoff</span></code> parameter. This parameter is ignored when <code class="docutils literal notranslate"><span class="pre">measurement_type</span></code> is set to a time based travel
+mode because the units for <code class="docutils literal notranslate"><span class="pre">search_cutoff</span></code> are always minutes in those cases. If <code class="docutils literal notranslate"><span class="pre">measurement_type</span></code> is set to StraightLine or another distance-based travel mode, and a value for <code class="docutils literal notranslate"><span class="pre">search_cutoff</span></code> is specified, set the cutoff units using this parameter.</p>
+<p>Choice list: [‘Kilometers’, ‘Meters’, ‘Miles’, ‘Feet’, ‘’]</p>
+<p>The default value is null, which causes the service to choose either miles or kilometers according to the units property of the user making the request.</p>
+</td>
+</tr>
+<tr class="row-even"><td><p>time_of_day</p></td>
+<td><p>Optional datetime.datetime. Specify whether travel times should consider traffic conditions. To use traffic in the analysis, set <code class="docutils literal notranslate"><span class="pre">measurement_type</span></code> to a travel mode object whose impedance_attribute_name property is set to travel_time and assign a value to <code class="docutils literal notranslate"><span class="pre">time_of_day</span></code>. (A travel mode with other impedance_attribute_name values don’t support traffic.) The <code class="docutils literal notranslate"><span class="pre">time_of_day</span></code> value represents the time at which travel begins, or departs, from the origin points. The time is specified as datetime.datetime.</p>
+<p>The service supports two kinds of traffic: typical and live. Typical traffic references travel speeds that are made up of historical averages for each five-minute interval spanning a week. Live traffic retrieves speeds from a traffic feed that processes phone probe records, sensors, and other data sources to record actual travel speeds and predict speeds for the near future.</p>
+<p>The <a class="reference external" href="http://www.arcgis.com/home/webmap/viewer.html?webmap=b7a893e8e1e04311bd925ea25cb8d7c7">data coverage</a> page shows the countries Esri currently provides traffic data for.</p>
+<p>Typical Traffic:</p>
+<p>To ensure the task uses typical traffic in locations where it is available, choose a time and day of the week, and then convert the day of the week to one of the following dates from 1990:</p>
+<ul class="simple">
+<li><p>Monday—1/1/1990</p></li>
+<li><p>Tuesday—1/2/1990</p></li>
+<li><p>Wednesday—1/3/1990</p></li>
+<li><p>Thursday—1/4/1990</p></li>
+<li><p>Friday—1/5/1990</p></li>
+<li><p>Saturday—1/6/1990</p></li>
+<li><p>Sunday—1/7/1990</p></li>
+</ul>
+<p>Set the time and date as datetime.datetime.</p>
+<p>For example, to solve for 1:03 p.m. on Thursdays, set the time and date to 1:03 p.m., 4 January 1990; and convert to datetime eg. datetime.datetime(1990, 1, 4, 1, 3).</p>
+<p>Live Traffic:</p>
+<p>To use live traffic when and where it is available, choose a time and date and convert to datetime.</p>
+<p>Esri saves live traffic data for 12 hours and references predictive data extending 12 hours into the future. If the time and date you specify for this parameter is outside the 24-hour time window, or the travel time in the analysis continues past the predictive data window, the task falls back to typical traffic speeds.</p>
+<p>Examples:
+from datetime import datetime</p>
+<ul class="simple">
+<li><p>“time_of_day”: datetime(1990, 1, 4, 1, 3) # 13:03, 4 January 1990. Typical traffic on Thursdays at 1:03 p.m.</p></li>
+<li><p>“time_of_day”: datetime(1990, 1, 7, 17, 0) # 17:00, 7 January 1990. Typical traffic on Sundays at 5:00 p.m.</p></li>
+<li><p>“time_of_day”: datetime(2014, 10, 22, 8, 0) # 8:00, 22 October 2014. If the current time is between 8:00 p.m., 21 Oct. 2014 and 8:00 p.m., 22 Oct. 2014, live traffic speeds are referenced in the analysis; otherwise, typical traffic speeds are referenced.</p></li>
+<li><p>“time_of_day”: datetime(2015, 3, 18, 10, 20) # 10:20, 18 March 2015. If the current time is between 10:20 p.m., 17 Mar. 2015 and 10:20 p.m., 18 Mar. 2015, live traffic speeds are referenced in the analysis; otherwise, typical traffic speeds are referenced.</p></li>
+</ul>
+</td>
+</tr>
+<tr class="row-odd"><td><p>time_zone_for_time_of_day</p></td>
+<td><p>Optional string. Specify the time zone or zones of the <code class="docutils literal notranslate"><span class="pre">time_of_day</span></code> parameter.</p>
+<p>Choice list: [‘GeoLocal’, ‘UTC’]</p>
+<p><code class="docutils literal notranslate"><span class="pre">GeoLocal</span></code>-refers to the time zone in which the origins_layer points are located.</p>
+<p><code class="docutils literal notranslate"><span class="pre">UTC</span></code>-refers to Coordinated Universal Time.</p>
+</td>
+</tr>
+<tr class="row-even"><td><p>include_route_layers</p></td>
+<td><p>Optional boolean. When <code class="docutils literal notranslate"><span class="pre">include_route_layers</span></code> is set to True, each route from the result is also saved as a route layer item.
+A route layer includes all the information for a particular route such as the stops assigned to the route as well
+as the travel directions. Creating route layers is useful if you want to share individual routes with other members in your organization.
+The route layers use the output feature service name provided in the <code class="docutils literal notranslate"><span class="pre">output_name</span></code> parameter as a prefix and the route name generated as part
+of the analysis is added to create a unique name for each route layer.</p>
+<p><strong>Caution:</strong></p>
+<p>Route layers cannot be created when the output is a feature collection. The task will raise an error if <code class="docutils literal notranslate"><span class="pre">output_name</span></code> is not
+specified (which indicates feature collection output) and <code class="docutils literal notranslate"><span class="pre">include_route_layers</span></code> is True.</p>
+<p>The maximum number of route layers that can be created is 1,000. If the result contains more than 1,000 routes
+and <code class="docutils literal notranslate"><span class="pre">include_route_layers</span></code> is True, the task will only create the output feature service.</p>
+</td>
+</tr>
+<tr class="row-odd"><td><p>point_barrier_layer</p></td>
+<td><p>Optional layer. Specify one or more point features that act as temporary restrictions (in other words, barriers) when traveling on the underlying streets.</p>
+<p>A point barrier can model a fallen tree, an accident, a downed electrical line, or anything that completely blocks traffic at a specific
+position along the street. Travel is permitted on the street but not through the barrier.</p>
+</td>
+</tr>
+<tr class="row-even"><td><p>line_barrier_layer</p></td>
+<td><p>Optional layer. Specify one or more line features that prohibit travel anywhere the lines intersect the streets.</p>
+<p>A line barrier prohibits travel anywhere the barrier intersects the streets. For example, a parade or protest that blocks traffic across
+several street segments can be modeled with a line barrier.</p>
+</td>
+</tr>
+<tr class="row-odd"><td><p>polygon_barrier_layer</p></td>
+<td><p>Optional layer. Specify one or more polygon features that completely restrict travel on the streets intersected by the polygons.</p>
+<p>One use of this type of barrier is to model floods covering areas of the street network and making road travel there impossible.</p>
+</td>
+</tr>
+<tr class="row-even"><td><p>output_name</p></td>
+<td><p>Optional string. Output feature layer collection. If not provided, a feature collection is returned.</p></td>
+</tr>
+<tr class="row-odd"><td><p>context</p></td>
+<td><p>Optional dict. Context contains additional settings that affect task execution. For <code class="docutils literal notranslate"><span class="pre">find_nearest</span></code>, there are two settings.</p>
+<ol class="arabic simple">
+<li><p>Extent (<code class="docutils literal notranslate"><span class="pre">extent</span></code>)-a bounding box that defines the analysis area. Only those points in the <code class="docutils literal notranslate"><span class="pre">input_layer</span></code>
+that intersect the bounding box will be analyzed.</p></li>
+<li><p>Output Spatial Reference (<code class="docutils literal notranslate"><span class="pre">outSR</span></code>)—the output features will be projected into the output spatial reference.</p></li>
+</ol>
+</td>
+</tr>
+<tr class="row-even"><td><p>gis</p></td>
+<td><p>Optional, the GIS on which this tool runs. If not specified, the active GIS is used.</p></td>
+</tr>
+<tr class="row-odd"><td><p>estimate</p></td>
+<td><p>Optional boolean. If True, the estimated number of credits required to run the operation will be returned.</p></td>
+</tr>
+</tbody>
+</table>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p></p></dd>
+</dl>
+<p>dict with the following keys:</p>
+<blockquote>
+<div><p>“nearest_layer” : layer (FeatureCollection)</p>
+<p>“connecting_lines_layer” : layer (FeatureCollection)</p>
+</div></blockquote>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1">#USAGE EXAMPLE: To find which regional office can be reached in the shortest drive time from esri headquarter. </span>
+
+<span class="n">result1</span> <span class="o">=</span> <span class="n">find_nearest</span><span class="p">(</span><span class="n">analysis_layer</span><span class="o">=</span><span class="n">esri_hq_lyr</span><span class="p">,</span>
+                       <span class="n">near_layer</span><span class="o">=</span><span class="n">regional_offices_lyr</span><span class="p">,</span>
+                       <span class="n">measurement_type</span><span class="o">=</span><span class="s2">&quot;Driving Time&quot;</span><span class="p">,</span>
+                       <span class="n">output_name</span><span class="o">=</span><span class="s2">&quot;find nearest office&quot;</span><span class="p">,</span>
+                       <span class="n">include_route_layers</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+                       <span class="n">point_barrier_layer</span><span class="o">=</span><span class="n">road_closures_lyr</span><span class="p">))</span>           
+</pre></div>
+</div>
+</dd></dl>
+
+</div>
+<div class="section" id="plan-routes">
+<h2>plan_routes<a class="headerlink" href="#plan-routes" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt id="arcgis.features.use_proximity.plan_routes">
+<code class="sig-prename descclassname">arcgis.features.use_proximity.</code><code class="sig-name descname">plan_routes</code><span class="sig-paren">(</span><em class="sig-param">stops_layer</em>, <em class="sig-param">route_count</em>, <em class="sig-param">max_stops_per_route</em>, <em class="sig-param">route_start_time</em>, <em class="sig-param">start_layer</em>, <em class="sig-param">start_layer_route_id_field=None</em>, <em class="sig-param">return_to_start=True</em>, <em class="sig-param">end_layer=None</em>, <em class="sig-param">end_layer_route_id_field=None</em>, <em class="sig-param">travel_mode='Driving Time'</em>, <em class="sig-param">stop_service_time=0</em>, <em class="sig-param">max_route_time=525600</em>, <em class="sig-param">include_route_layers=False</em>, <em class="sig-param">output_name=None</em>, <em class="sig-param">context=None</em>, <em class="sig-param">gis=None</em>, <em class="sig-param">estimate=False</em>, <em class="sig-param">point_barrier_layer=None</em>, <em class="sig-param">line_barrier_layer=None</em>, <em class="sig-param">polygon_barrier_layer=None</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.features.use_proximity.plan_routes" title="Permalink to this definition">¶</a></dt>
+<dd><img alt="_images/plan_routes.png" src="_images/plan_routes.png" />
+<p>The <code class="docutils literal notranslate"><span class="pre">plan_routes</span></code> method determines how to efficiently divide tasks among a mobile workforce.</p>
+<p>You provide the input, which includes a set of stops and the number of vehicles available to 
+visit the stops, and the tool assigns the stops to vehicles and returns routes showing how each 
+vehicle can reach their assigned stops in the least amount of time.</p>
+<p>With <code class="docutils literal notranslate"><span class="pre">plan_routes</span></code>, mobile workforces reach more jobsites in less time, which increases 
+productivity and improves customer service. Organizations often use <code class="docutils literal notranslate"><span class="pre">plan_routes</span></code> to:</p>
+<ul class="simple">
+<li><p>Inspect homes, restaurants, and construction sites</p></li>
+<li><p>Provide repair, installation, and technical services</p></li>
+<li><p>Deliver items and small packages</p></li>
+<li><p>Make sales calls</p></li>
+<li><p>Provide van transportation from spectators’ homes to events</p></li>
+</ul>
+<p>The output from <code class="docutils literal notranslate"><span class="pre">plan_routes</span></code> includes a layer of routes showing the shortest paths to visit 
+the stops; a layer of the stops assigned to routes, as well as any stops that couldn’t be reached 
+due to the given parameter settings; and a layer of directions containing the travel itinerary for each route.</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 10%" />
+<col style="width: 90%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><strong>Parameter</strong></p></td>
+<td><p><strong>Description</strong></p></td>
+</tr>
+<tr class="row-even"><td><p>stops_layer</p></td>
+<td><p>Required feature layer. The points that the vehicles, drivers, or routes, should visit.
+The fields on the input stops are included in the output stops, so if your input
+layer has a field such as Name, Address, or ProductDescription, that information
+will be available in the results. See <a class="reference internal" href="arcgis.features.analysis.html#featureinput"><span class="std std-ref">Feature Input</span></a>.</p></td>
+</tr>
+<tr class="row-odd"><td><p>route_count</p></td>
+<td><p>Required integer. The number of vehicles that are available to visit the stops.
+The method supports up to 100 vehicles.</p>
+<p>The default value is 0.</p>
+<p>The method may be able to find and return a solution that uses fewer vehicles than
+the number you specify for this parameter. The number of vehicles returned also
+depends on four other parameters: the total number of stops in <code class="docutils literal notranslate"><span class="pre">stops_layer</span></code>, the
+number of stops per vehicle you allow (<code class="docutils literal notranslate"><span class="pre">max_stops_per_route</span></code>), the travel time between
+stops, the time spent at each stop (<code class="docutils literal notranslate"><span class="pre">stop_service_time</span></code>), and any limit you set on the
+total route time per vehicle (<code class="docutils literal notranslate"><span class="pre">max_route_time</span></code>).</p>
+</td>
+</tr>
+<tr class="row-even"><td><p>max_stops_per_route</p></td>
+<td><p>Required integer. The maximum number of stops a route, or vehicle, is allowed to visit.
+The largest value you can specify is 200. The default value is zero.</p>
+<p>This is one of two parameters that balance the overall workload across routes.
+The other is <code class="docutils literal notranslate"><span class="pre">max_route_time</span></code>.</p>
+<p>By lowering the maximum number of stops that can be assigned to each vehicle, the vehicles
+are more likely to have an equal number of stops assigned to them. This helps
+balance workloads among drivers. The drawback, however, is that it may result in a
+solution that is less efficient.</p>
+<p>By increasing the stops per vehicle, the tool has more freedom to find more efficient solutions;
+however, the workload may be unevenly distributed among drivers and vehicles. Note that you can
+balance workloads by time instead of number of stops by specifying a value for the <code class="docutils literal notranslate"><span class="pre">max_route_time</span></code> parameter.</p>
+<p>The following examples demonstrate the effects of limiting the maximum stops per vehicle or the
+total time per vehicle. In all of these examples, two routes start at the same location
+and visit a total of six stops.</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 21%" />
+<col style="width: 79%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><img alt="balanced" src="_images/balanced.png" /></p></td>
+<td><p>Balanced travel times and stops per route:</p>
+<p>The stops are more or less uniformly spread apart, so setting <a href="#id3"><span class="problematic" id="id4">``</span></a>max_stops_per_route``=3 to evenly
+distribute the workload results in routes that are roughly the same duration.</p>
+</td>
+</tr>
+<tr class="row-even"><td><p><img alt="partially_balanced" src="_images/partially_balanced.png" /></p></td>
+<td><p>Balanced stops per route but unbalanced travel times:</p>
+<p>Five of the six stops are clustered near the starting location, but one stop is set apart
+and requires a much longer drive to be reached. Dividing the stops equally between the two
+routes (<a href="#id5"><span class="problematic" id="id6">``</span></a>max_stops_per_route``=3) causes unbalanced travel times.</p>
+</td>
+</tr>
+<tr class="row-odd"><td><p><img alt="unbalanced" src="_images/unbalanced.png" /></p></td>
+<td><p>Unbalanced stops per route but balanced travel times:</p>
+<p>The stops are in the same location as the previous graphic. By increasing the value of
+<code class="docutils literal notranslate"><span class="pre">max_stops_per_route</span></code> to 4, and limiting the total travel time per vehicle (<code class="docutils literal notranslate"><span class="pre">max_route_time</span></code>),
+the travel times are balanced even though one route visits more stops.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+<tr class="row-even"><td><p>route_start_time</p></td>
+<td><p>Required datetime.datetime. Specify when the vehicles or people start their routes.
+The time is specified as datetime.
+The starting time value is the same for all routes; that is, all routes start at the same time.</p>
+<p>Time zones affect what value you assign to <code class="docutils literal notranslate"><span class="pre">route_start_time</span></code>. The time zone for the start time is
+based on the time zone in which the starting point is geographically located. For instance,
+if you have one route starting location and it is located in Pacific Standard Time (PST),
+the time you specify for <code class="docutils literal notranslate"><span class="pre">route_start_time</span></code> is in PST.</p>
+<p>There are a couple of scenarios to beware of given that starting times are based on where
+the starting points are located. One situation to be careful of is when you are located in
+one time zone but your starting locations are in another times zone. For instance, assume
+you are in Pacific Standard Time (UTC-8:00) and the vehicles you are routing are stationed
+in Mountain Standard Time (UTC-7:00). If it is currently 9:30 a.m. PST (10:30 a.m. MST)
+and your vehicles need to begin their routes in 30 minutes, you would set the start time
+to 11:00 a.m. That is, the starting locations for the routes are in the Mountain time zone,
+and it is currently 10:30 a.m. there, therefore, a starting time of 30 minutes from now is 11:00 a.m.
+Make sure you set the parameter according to the proper time zone.</p>
+<p>The other situation that requires caution is where starting locations are spread across
+multiple time zones. The time you set for <code class="docutils literal notranslate"><span class="pre">route_start_time</span></code> is specific to the time zone in
+which the starting location is—regardless of whether there are one or more starting locations
+in the problem you submit. For instance, if one route starts from a point in PST and another
+route starts from MST, and you enter 11:00 a.m. as the start time, the route in PST will start
+at 11:00 a.m. PST and the route in MST will start at 11:00 a.m. MST—a one-hour difference. The
+starting times are the same in local time, but offset in actual time, or UTC.</p>
+<p>The service automatically determines the time zones of the input starting locations (<code class="docutils literal notranslate"><span class="pre">start_layer</span></code>) for you.</p>
+<p>Examples:</p>
+<ul class="simple">
+<li><p>datetime(2014, 10, 22, 8, 0) # 8:00, 22 October 2014. Routes will depart their
+starting locations at 8:00 a.m., 22 October. Any routes with starting points in Mountain
+Standard Time start at 8:00 a.m., 22 October 2014 MST; any routes with starting points in
+Pacific Standard Time start at 8:00 a.m. 22 October 2014 PST, and so on.</p></li>
+<li><p>datetime(2015, 3, 18, 10, 20) # 10:20, 18 March 2015.</p></li>
+</ul>
+</td>
+</tr>
+<tr class="row-odd"><td><p>start_layer</p></td>
+<td><p>Required feature layer. Provide the locations where the people or vehicles start their routes.
+You can specify one or many starting locations.</p>
+<p>If specifying one, all routes will start from the one location. If specifying many starting
+locations, each route needs exactly one predefined starting location, and the following criteria must be met:</p>
+<p>The number of routes (<code class="docutils literal notranslate"><span class="pre">route_count</span></code>) must equal the number of points in <code class="docutils literal notranslate"><span class="pre">start_layer</span></code>. (However,
+when only one point is included in <code class="docutils literal notranslate"><span class="pre">start_layer</span></code>, it is assumed that all routes start from
+the same location, and the two numbers can be different.)
+The starting location for each route must be identified with the <code class="docutils literal notranslate"><span class="pre">start_layer_route_id_field</span></code>
+parameter. This implies that the input points in <code class="docutils literal notranslate"><span class="pre">start_layer</span></code> have a unique identifier.
+Bear in mind that if you also have many ending locations, those locations need to be
+predetermined as well. The predetermined start and end locations of each route are
+paired together by matching route ID values.
+See the the section of this topic entitled Starting and ending locations of
+routes to learn more. See <a class="reference internal" href="arcgis.features.analysis.html#featureinput"><span class="std std-ref">Feature Input</span></a>.</p>
+</td>
+</tr>
+<tr class="row-even"><td><p>start_layer_route_id_field</p></td>
+<td><p>Optional string. Choose a field that uniquely identifies points in start_layer.
+This parameter is required when <code class="docutils literal notranslate"><span class="pre">start_layer</span></code> has more than one point; it is ignored otherwise.</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">start_layer_route_id_field</span></code> parameter helps identify where routes begin and
+indicates the names of the output routes.</p>
+<p>See the the section of this topic entitled Starting and ending locations
+of routes to learn more.</p>
+</td>
+</tr>
+<tr class="row-odd"><td><p>return_to_start</p></td>
+<td><p>Optional boolean. A True value indicates each route must end its trip at the same place where
+it started. The starting location is defined by the <code class="docutils literal notranslate"><span class="pre">start_layer</span></code> and <code class="docutils literal notranslate"><span class="pre">start_layer_route_id_field</span></code> parameters.</p>
+<p>The default value is True.</p>
+</td>
+</tr>
+<tr class="row-even"><td><p>end_layer</p></td>
+<td><p>Optional layer. Provide the locations where the people or vehicles end their routes.</p>
+<p>If <code class="docutils literal notranslate"><span class="pre">end_layer</span></code> is not specified, <code class="docutils literal notranslate"><span class="pre">return_to_start</span></code> must be set to True.</p>
+<p>You can specify one or many ending locations.</p>
+<p>If specifying one, all routes will end at the one location. If specifying many ending
+locations, each route needs exactly one predefined ending location, and the following criteria must be met:</p>
+<ul class="simple">
+<li><p>The number of routes (<code class="docutils literal notranslate"><span class="pre">route_count</span></code>) must equal the number of points in <code class="docutils literal notranslate"><span class="pre">end_layer</span></code>.</p></li>
+</ul>
+<blockquote>
+<div><p>(However, when only one point is included in <code class="docutils literal notranslate"><span class="pre">end_layer</span></code>, it is assumed that all routes
+end at the same location, and the two numbers can be different.)</p>
+</div></blockquote>
+<ul class="simple">
+<li><p>The ending location for each route must be identified with the <code class="docutils literal notranslate"><span class="pre">start_layer_route_id_field</span></code></p></li>
+</ul>
+<blockquote>
+<div><p>parameter. This implies that the input points in endLayer have a unique identifier.
+Bear in mind that if you also have many starting locations, those locations need to be
+predetermined as well. The predetermined start and end locations of each route are paired
+together by matching route ID values. See <a class="reference internal" href="arcgis.features.analysis.html#featureinput"><span class="std std-ref">Feature Input</span></a>.</p>
+</div></blockquote>
+</td>
+</tr>
+<tr class="row-odd"><td><p>end_layer_route_id_field</p></td>
+<td><p>Optional string. Choose a field that uniquely identifies points in <code class="docutils literal notranslate"><span class="pre">end_layer</span></code>.
+This parameter is required when <code class="docutils literal notranslate"><span class="pre">end_layer</span></code> has more than one point; it is ignored
+if there is one point or if <code class="docutils literal notranslate"><span class="pre">return_to_start</span></code> is True.</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">end_layer_route_id_field</span></code> parameter helps identify where routes end and indicates the names of the output routes.</p>
+<p>See the the section of this topic entitled Starting and ending locations of routes to learn more.</p>
+</td>
+</tr>
+<tr class="row-even"><td><p>travel_mode</p></td>
+<td><p>Optional string. Optional string. Specify the mode of transportation for the analysis.</p>
+<p>Choice list: [‘Driving Distance’, ‘Driving Time’, ‘Rural Driving Distance’, ‘Rural Driving Time’, ‘Trucking Distance’, ‘Trucking Time’, ‘Walking Distance’, ‘Walking Time’]</p>
+</td>
+</tr>
+<tr class="row-odd"><td><p>stop_service_time</p></td>
+<td><p>Optional float. Indicates how much time, in minutes, is spent at each stop.
+The units are minutes. All stops are assinged the same service duration from
+this parameter—unique values for individual stops cannot be specified with this service.</p></td>
+</tr>
+<tr class="row-even"><td><p>max_route_time</p></td>
+<td><p>Optional float. The amount of time you specify here limits the maximum duration of each route.
+The maximum route time is an accumulation of travel time and the total service time at visited
+stops (<code class="docutils literal notranslate"><span class="pre">stop_service_time</span></code>). This parameter is commonly used to prevent drivers from working
+too many hours or to balance workloads across routes or drivers.</p>
+<p>The units are ‘minutes’. The default value, which is also the maximum value, is 525600 minutes, or one year.</p>
+</td>
+</tr>
+<tr class="row-odd"><td><p>include_route_layers</p></td>
+<td><p>Optional boolean. When <code class="docutils literal notranslate"><span class="pre">include_route_layers</span></code> is set to True, each route from the result is also
+saved as a route layer item. A route layer includes all the information for a particular route such as the stops assigned to
+the route as well as the travel directions. Creating route layers is useful if you want to share individual routes with other
+members in your organization. The route layers use the output feature service name provided in the <code class="docutils literal notranslate"><span class="pre">output_name</span></code> parameter as a
+prefix and the route name generated as part of the analysis is added to create a unique name for each route layer.</p></td>
+</tr>
+<tr class="row-even"><td><p>output_name</p></td>
+<td><p>Optional string. If provided, the method will create a feature service of the results. You define
+the name of the service. If <code class="docutils literal notranslate"><span class="pre">output_name</span></code> is not supplied, the method will return a feature collection.</p></td>
+</tr>
+<tr class="row-odd"><td><p>context</p></td>
+<td><p>Optional string. Context contains additional settings that affect task execution. For <code class="docutils literal notranslate"><span class="pre">plan_routes</span></code>, there are two settings:</p>
+<ol class="arabic simple">
+<li><p>Extent (<code class="docutils literal notranslate"><span class="pre">extent</span></code>)—A bounding box that defines the analysis area. Only those points in the inputLayer, start_layer, and endLayer that are within the bounding box can be visited by routes.</p></li>
+<li><p>Output Spatial Reference (<code class="docutils literal notranslate"><span class="pre">outSR</span></code>)-If the output is a feature service, the spatial reference will be the same as <code class="docutils literal notranslate"><span class="pre">stops_layer</span></code>. Setting outSR for feature services has no effect.
+If the output is a feature collection, the features will be in the spatial reference of the outSR value or the spatial reference of <code class="docutils literal notranslate"><span class="pre">stops_layer</span></code> when outSR is not specified.</p></li>
+</ol>
+</td>
+</tr>
+<tr class="row-even"><td><p>gis</p></td>
+<td><p>Optional, the GIS on which this tool runs. If not specified, the active GIS is used.</p></td>
+</tr>
+<tr class="row-odd"><td><p>estimate</p></td>
+<td><p>Optional boolean. If True, the number of credits to run the operation will be returned.</p></td>
+</tr>
+<tr class="row-even"><td><p>point_barrier_layer</p></td>
+<td><p>Optional feature layer. Specify one or more point features that act as temporary restrictions (in other words, barriers) when traveling on the underlying streets.</p>
+<p>A point barrier can model a fallen tree, an accident, a downed electrical line, or anything that completely blocks traffic at a specific position along the street. Travel is permitted on the street but not through the barrier. See <a class="reference internal" href="arcgis.features.analysis.html#featureinput"><span class="std std-ref">Feature Input</span></a>.</p>
+</td>
+</tr>
+<tr class="row-odd"><td><p>line_barrier_layer</p></td>
+<td><p>Optional feature layer. Specify one or more line features that prohibit travel anywhere the lines intersect the streets.</p>
+<p>A line barrier prohibits travel anywhere the barrier intersects the streets. For example, a parade or protest that blocks traffic across several street segments can be modeled with a line barrier. See <a class="reference internal" href="arcgis.features.analysis.html#featureinput"><span class="std std-ref">Feature Input</span></a>.</p>
+</td>
+</tr>
+<tr class="row-even"><td><p>polygon_barrier_layer</p></td>
+<td><p>Optional feature layer. Specify one or more polygon features that completely restrict travel on the streets intersected by the polygons.</p>
+<p>One use of this type of barrier is to model floods covering areas of the street network and making road travel there impossible. See <a class="reference internal" href="arcgis.features.analysis.html#featureinput"><span class="std std-ref">Feature Input</span></a>.</p>
+</td>
+</tr>
+</tbody>
+</table>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p><p>feature layer Item if <code class="docutils literal notranslate"><span class="pre">output_name</span></code> is specified, else dict with the following keys:</p>
+<p>”routes_layer” : layer (FeatureCollection)</p>
+<p>”assigned_stops_layer” : layer (FeatureCollection)</p>
+<p>”unassigned_stops_layer” : layer (FeatureCollection)</p>
+</p>
+</dd>
+</dl>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># USAGE EXAMPLE: To plan routes to provide cab from employee residence to office.</span>
+<span class="n">route</span> <span class="o">=</span> <span class="n">plan_routes</span><span class="p">(</span><span class="n">stops_layer</span><span class="o">=</span><span class="n">employee_residence</span><span class="p">,</span>
+                    <span class="n">route_count</span><span class="o">=</span><span class="mi">4</span><span class="p">,</span>
+                    <span class="n">max_stops_per_route</span><span class="o">=</span><span class="mi">4</span><span class="p">,</span>
+                    <span class="n">route_start_time</span><span class="o">=</span><span class="n">datetime</span><span class="p">(</span><span class="mi">2019</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span>
+                    <span class="n">start_layer</span><span class="o">=</span><span class="n">office_location</span><span class="p">,</span>
+                    <span class="n">start_layer_route_id_field</span><span class="o">=</span><span class="s1">&#39;n_office&#39;</span><span class="p">,</span>
+                    <span class="n">return_to_start</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
+                    <span class="n">end_layer</span><span class="o">=</span><span class="n">office_location</span><span class="p">,</span>
+                    <span class="n">end_layer_route_id_field</span><span class="o">=</span><span class="s1">&#39;n_office&#39;</span><span class="p">,</span>
+                    <span class="n">travel_mode</span><span class="o">=</span><span class="s1">&#39;Driving Time&#39;</span><span class="p">,</span>
+                    <span class="n">stop_service_time</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span>
+                    <span class="n">include_route_layers</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
+                    <span class="n">output_name</span><span class="o">=</span><span class="s1">&#39;plan route for employees&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+</div>
+</div>
+
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="arcgis.raster.toc.html" class="btn btn-neutral float-right" title="arcgis.raster module" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="arcgis.features.summarize_data.html" class="btn btn-neutral float-left" title="arcgis.features.summarize_data module" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        
+        &copy; Copyright 2016-2019, Esri
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

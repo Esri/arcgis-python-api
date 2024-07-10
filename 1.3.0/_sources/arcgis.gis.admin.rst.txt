@@ -1,0 +1,182 @@
+arcgis.gis.admin module
+====================
+
+.. automodule:: arcgis.gis.admin
+
+AGOLAdminManager
+---------------
+.. autoclass:: arcgis.gis.admin.AGOLAdminManager
+    :members:
+    :undoc-members:
+    :show-inheritance:
+
+
+PortalAdminManager
+---------------
+.. autoclass:: arcgis.gis.admin.PortalAdminManager
+    :members:
+    :undoc-members:
+    :show-inheritance:
+
+CategoryManager
+---------------
+.. autoclass:: arcgis.gis.admin.CategoryManager
+    :members:
+    :undoc-members:
+    :show-inheritance:
+
+CollaborationManager
+--------------------
+.. autoclass:: arcgis.gis.admin.CollaborationManager
+    :members:
+    :undoc-members:
+    :show-inheritance:
+
+
+Collaboration
+---------------
+.. autoclass:: arcgis.gis.admin.Collaboration
+    :members:
+    :undoc-members:
+    :show-inheritance:
+
+
+CreditManager
+---------------
+.. autoclass:: arcgis.gis.admin.CreditManager
+    :members:
+    :undoc-members:
+    :show-inheritance:
+
+IdentityProviderManager
+---------------
+.. autoclass:: arcgis.gis.admin.IdentityProviderManager
+    :members:
+    :undoc-members:
+    :show-inheritance:
+
+PasswordPolicy
+---------------
+.. autoclass:: arcgis.gis.admin.PasswordPolicy
+    :members:
+    :undoc-members:
+    :show-inheritance:
+
+PortalResourceManager
+---------------
+.. autoclass:: arcgis.gis.admin.PortalResourceManager
+    :members:
+    :undoc-members:
+    :show-inheritance:
+
+UX
+---------------
+.. autoclass:: arcgis.gis.admin.UX
+    :members:
+    :undoc-members:
+    :show-inheritance:
+
+
+Federation
+---------------
+.. autoclass:: arcgis.gis.admin.Federation
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+
+Logs
+---------------
+.. autoclass:: arcgis.gis.admin.Logs
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+
+Machines
+---------------
+.. autoclass:: arcgis.gis.admin.Machines
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+
+Security
+---------------
+.. autoclass:: arcgis.gis.admin.Security
+   :members:
+   :undoc-members:
+
+
+OAuth
+---------------
+.. autoclass:: arcgis.gis.admin.OAuth
+   :members:
+   :undoc-members:
+
+
+SSLCertificate
+---------------
+.. autoclass:: arcgis.gis.admin.SSLCertificate
+   :members:
+   :undoc-members:
+
+SSLCertificates
+---------------
+.. autoclass:: arcgis.gis.admin.SSLCertificates
+   :members:
+   :undoc-members:
+
+
+EnterpriseUsers
+---------------
+.. autoclass:: arcgis.gis.admin.EnterpriseUsers
+   :members:
+   :undoc-members:
+
+EnterpriseGroups
+---------------
+.. autoclass:: arcgis.gis.admin.EnterpriseGroups
+   :members:
+   :undoc-members:
+
+Site
+---------------
+.. autoclass:: arcgis.gis.admin.Site
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+
+System
+---------------
+.. autoclass:: arcgis.gis.admin.System
+   :members:
+   :undoc-members:
+
+
+Licenses
+---------------
+.. autoclass:: arcgis.gis.admin.Licenses
+   :members:
+   :undoc-members:
+
+
+Directory
+---------------
+.. autoclass:: arcgis.gis.admin.Directory
+   :members:
+   :undoc-members:
+
+WebAdaptor
+---------------
+.. autoclass:: arcgis.gis.admin.WebAdaptor
+   :members:
+   :undoc-members:
+
+WebAdaptors
+---------------
+.. autoclass:: arcgis.gis.admin.WebAdaptors
+   :members:
+   :undoc-members:
+

@@ -1,0 +1,164 @@
+.. arcgis documentation master file, created by
+   sphinx-quickstart on Thu Oct 20 23:21:00 2016.
+   You can adapt this file completely to your liking, but it should at least
+   contain the root `toctree` directive.
+
+arcgis.mapping module
+=================
+
+.. automodule:: arcgis.mapping
+
+WebMap
+-----------------
+.. autoclass:: arcgis.mapping.WebMap
+    :members:
+    :undoc-members:
+    :show-inheritance:
+
+OfflineMapAreaManager
+-----------------------
+.. autoclass:: arcgis.mapping.OfflineMapAreaManager
+    :members:
+    :undoc-members:
+    :show-inheritance:
+
+PackagingJob
+-----------------------
+.. autoclass:: arcgis.mapping.PackagingJob
+    :members:
+    :undoc-members:
+    :show-inheritance:
+
+WebScene
+-------------------
+.. autoclass:: arcgis.mapping.WebScene
+    :members:
+    :undoc-members:
+    :show-inheritance:
+
+MapImageLayer
+-----------------
+.. autoclass:: arcgis.mapping.MapImageLayer
+    :members:
+    :undoc-members:
+    :show-inheritance:
+
+MapServiceLayer
+-----------------
+.. autoclass:: arcgis.mapping.MapServiceLayer
+    :members:
+    :undoc-members:
+    :show-inheritance:
+
+MapFeatureLayer
+-----------------
+.. autoclass:: arcgis.mapping.MapFeatureLayer
+    :members:
+    :undoc-members:
+    :show-inheritance:
+
+MapRasterLayer
+-----------------
+.. autoclass:: arcgis.mapping.MapRasterLayer
+    :members:
+    :undoc-members:
+    :show-inheritance:
+
+MapTable
+-----------------
+.. autoclass:: arcgis.mapping.MapTable
+    :members:
+    :undoc-members:
+    :show-inheritance:
+
+MapImageLayerManager
+-------------------
+.. autoclass:: arcgis.mapping.MapImageLayerManager
+    :members:
+    :undoc-members:
+    :show-inheritance:
+
+VectorTileLayer
+------------------
+.. autoclass:: arcgis.mapping.VectorTileLayer
+    :members:
+    :undoc-members:
+    :show-inheritance:
+
+SceneLayer
+------------------
+.. autoclass:: arcgis.mapping.SceneLayer
+    :members:
+    :undoc-members:
+    :show-inheritance:
+
+BuildingLayer
+------------------
+.. autoclass:: arcgis.mapping.BuildingLayer
+    :members:
+    :undoc-members:
+    :show-inheritance:
+
+IntegratedMeshLayer
+------------------
+.. autoclass:: arcgis.mapping.IntegratedMeshLayer
+    :members:
+    :undoc-members:
+    :show-inheritance:
+
+Object3DLayer
+------------------
+.. autoclass:: arcgis.mapping.Object3DLayer
+    :members:
+    :undoc-members:
+    :show-inheritance:
+
+
+Point3DLayer
+------------------
+.. autoclass:: arcgis.mapping.Point3DLayer
+    :members:
+    :undoc-members:
+    :show-inheritance:
+
+PointCloudLayer
+------------------
+.. autoclass:: arcgis.mapping.PointCloudLayer
+    :members:
+    :undoc-members:
+    :show-inheritance:
+
+export_map
+------------
+.. autofunction:: arcgis.mapping.export_map
+
+get_layout_templates
+-----------
+.. autofunction:: arcgis.mapping.get_layout_templates
+
+
+Symbology
+-------------------
+.. automodule:: arcgis.mapping.symbol
+    :members:
+    :undoc-members:
+    :show-inheritance:
+
+Renderers
+-------------------
+
+generate_renderer
+-----------
+.. autofunction:: arcgis.mapping.renderer.generate_renderer
+
+visual_variables
+-----------
+.. autofunction:: arcgis.mapping.renderer.visual_variables
+
+
+Submodules
+--------------
+.. toctree::
+   :maxdepth: 3
+
+   arcgis.mapping.ogc

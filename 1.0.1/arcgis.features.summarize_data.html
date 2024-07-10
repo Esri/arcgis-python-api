@@ -1,0 +1,612 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>arcgis.features.summarize_data module &mdash; arcgis 1.0.1 documentation</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+        <link rel="index" title="Index"
+              href="genindex.html"/>
+        <link rel="search" title="Search" href="search.html"/>
+    <link rel="top" title="arcgis 1.0.1 documentation" href="index.html"/>
+        <link rel="up" title="arcgis.features module" href="arcgis.features.toc.html"/>
+        <link rel="next" title="arcgis.features.use_proximity module" href="arcgis.features.use_proximity.html"/>
+        <link rel="prev" title="arcgis.features.manage_data module" href="arcgis.features.manage_data.html"/> 
+
+  
+  <script src="_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="index.html" class="icon icon-home"> arcgis
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1.0.1
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+                <p class="caption"><span class="caption-text">arcgis</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="arcgis.gis.html">arcgis.gis module</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.gis.html#gis">GIS</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.gis.html#item">Item</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.gis.html#user">User</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.gis.html#group">Group</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.gis.html#datastore">Datastore</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.gis.html#role">Role</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.gis.html#layer">Layer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.gis.html#contentmanager">ContentManager</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.gis.html#usermanager">UserManager</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.gis.html#groupmanager">GroupManager</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.gis.html#datastoremanager">DatastoreManager</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.gis.html#rolemanager">RoleManager</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="arcgis.env.html">arcgis.env module</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.env.html#active-gis">active_gis</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.env.html#analysis-extent">analysis_extent</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.env.html#out-spatial-reference">out_spatial_reference</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.env.html#process-spatial-reference">process_spatial_reference</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.env.html#return-z">return_z</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.env.html#return-m">return_m</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.env.html#verbose">verbose</a></li>
+</ul>
+</li>
+<li class="toctree-l1 current"><a class="reference internal" href="arcgis.features.toc.html">arcgis.features module</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="arcgis.features.toc.html#feature">Feature</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.features.toc.html#featurelayer">FeatureLayer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.features.toc.html#table">Table</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.features.toc.html#featurelayercollection">FeatureLayerCollection</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.features.toc.html#featureset">FeatureSet</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.features.toc.html#featurecollection">FeatureCollection</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="arcgis.features.toc.html#submodules">Submodules</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="arcgis.features.analyze_patterns.html">arcgis.features.analyze_patterns module</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.features.analyze_patterns.html#calculate-density">calculate_density</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.features.analyze_patterns.html#find-hot-spots">find_hot_spots</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.features.analyze_patterns.html#interpolate-points">interpolate_points</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="arcgis.features.enrich_data.html">arcgis.features.enrich_data module</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.features.enrich_data.html#enrich-layer">enrich_layer</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="arcgis.features.find_locations.html">arcgis.features.find_locations module</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.features.find_locations.html#find-existing-locations">find_existing_locations</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.features.find_locations.html#derive-new-locations">derive_new_locations</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.features.find_locations.html#find-similar-locations">find_similar_locations</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.features.find_locations.html#choose-best-facilities">choose_best_facilities</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.features.find_locations.html#create-viewshed">create_viewshed</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.features.find_locations.html#create-watersheds">create_watersheds</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.features.find_locations.html#trace-downstream">trace_downstream</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="arcgis.features.manage_data.html">arcgis.features.manage_data module</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.features.manage_data.html#dissolve-boundaries">dissolve_boundaries</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.features.manage_data.html#extract-data">extract_data</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.features.manage_data.html#merge-layers">merge_layers</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.features.manage_data.html#overlay-layers">overlay_layers</a></li>
+</ul>
+</li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">arcgis.features.summarize_data module</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#aggregate-points">aggregate_points</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#summarize-nearby">summarize_nearby</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#summarize-within">summarize_within</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="arcgis.features.use_proximity.html">arcgis.features.use_proximity module</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.features.use_proximity.html#connect-origins-to-destinations">connect_origins_to_destinations</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.features.use_proximity.html#create-buffers">create_buffers</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.features.use_proximity.html#create-drive-time-areas">create_drive_time_areas</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.features.use_proximity.html#find-nearest">find_nearest</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.features.use_proximity.html#plan-routes">plan_routes</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="arcgis.features.elevation.html">arcgis.features.elevation module</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.features.elevation.html#profile">profile</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.features.elevation.html#viewshed">viewshed</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.features.elevation.html#summarize-elevation">summarize_elevation</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="arcgis.features.managers.html">arcgis.features.managers module</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.features.managers.html#attachmentmanager">AttachmentManager</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.features.managers.html#syncmanager">SyncManager</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.features.managers.html#featurelayercollectionmanager">FeatureLayerCollectionManager</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.features.managers.html#featurelayermanager">FeatureLayerManager</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="arcgis.raster.toc.html">arcgis.raster module</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.raster.toc.html#imagerylayer">ImageryLayer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.raster.toc.html#submodules">Submodules</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="arcgis.raster.analytics.html">arcgis.raster.analytics module</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.raster.analytics.html#get-datastores">get_datastores</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.raster.analytics.html#is-supported">is_supported</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.raster.analytics.html#generate-raster">generate_raster</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.raster.analytics.html#interpolate-points">interpolate_points</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.raster.analytics.html#create-viewshed">create_viewshed</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.raster.analytics.html#summarize-raster-within">summarize_raster_within</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.raster.analytics.html#calculate-density">calculate_density</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.raster.analytics.html#classify">classify</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.raster.analytics.html#segment">segment</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.raster.analytics.html#train-classifier">train_classifier</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.raster.analytics.html#convert-feature-to-raster">convert_feature_to_raster</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.raster.analytics.html#convert-raster-to-feature">convert_raster_to_feature</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.raster.analytics.html#copy-raster">copy_raster</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="arcgis.network.toc.html">arcgis.network module</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.network.toc.html#networklayer">NetworkLayer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.network.toc.html#routelayer">RouteLayer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.network.toc.html#servicearealayer">ServiceAreaLayer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.network.toc.html#closestfacilitylayer">ClosestFacilityLayer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.network.toc.html#networkdataset">NetworkDataset</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.network.toc.html#submodules">Submodules</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="arcgis.network.analysis.html">arcgis.network.analysis module</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.network.analysis.html#solve-vehicle-routing-problem">solve_vehicle_routing_problem</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.network.analysis.html#find-closest-facilities">find_closest_facilities</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.network.analysis.html#solve-location-allocation">solve_location_allocation</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.network.analysis.html#generate-origin-destination-cost-matrix">generate_origin_destination_cost_matrix</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.network.analysis.html#find-routes">find_routes</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.network.analysis.html#generate-service-areas">generate_service_areas</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.network.analysis.html#get-travel-modes">get_travel_modes</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="arcgis.geoanalytics.toc.html">arcgis.geoanalytics module</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.geoanalytics.toc.html#get-datastores">get_datastores</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.geoanalytics.toc.html#is-supported">is_supported</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.geoanalytics.toc.html#submodules">Submodules</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="arcgis.geoanalytics.analyze_patterns.html">arcgis.geoanalytics.analyze_patterns module</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.geoanalytics.analyze_patterns.html#calculate-density">calculate_density</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.geoanalytics.analyze_patterns.html#find-hot-spots">find_hot_spots</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="arcgis.geoanalytics.find_locations.html">arcgis.geoanalytics.find_locations module</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.geoanalytics.find_locations.html#find-similar-locations">find_similar_locations</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="arcgis.geoanalytics.manage_data.html">arcgis.geoanalytics.manage_data module</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.geoanalytics.manage_data.html#copy-to-data-store">copy_to_data_store</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="arcgis.geoanalytics.summarize_data.html">arcgis.geoanalytics.summarize_data module</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.geoanalytics.summarize_data.html#aggregate-points">aggregate_points</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.geoanalytics.summarize_data.html#join-features">join_features</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.geoanalytics.summarize_data.html#reconstruct-tracks">reconstruct_tracks</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.geoanalytics.summarize_data.html#summarize-attributes">summarize_attributes</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.geoanalytics.summarize_data.html#summarize-within">summarize_within</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="arcgis.geoanalytics.use_proximity.html">arcgis.geoanalytics.use_proximity module</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.geoanalytics.use_proximity.html#create-buffers">create_buffers</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="arcgis.geocoding.html">arcgis.geocoding module</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.geocoding.html#geocoder">Geocoder</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.geocoding.html#get-geocoders">get_geocoders</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.geocoding.html#geocode">geocode</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.geocoding.html#reverse-geocode">reverse_geocode</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.geocoding.html#batch-geocode">batch_geocode</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.geocoding.html#suggest">suggest</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="arcgis.geometry.html">arcgis.geometry module</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.geometry.html#point">Point</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.geometry.html#multipoint">MultiPoint</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.geometry.html#polyline">Polyline</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.geometry.html#polygon">Polygon</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.geometry.html#envelope">Envelope</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.geometry.html#spatialreference">SpatialReference</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.geometry.html#geometry">Geometry</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.geometry.html#areas-and-lengths">areas_and_lengths</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.geometry.html#auto-complete">auto_complete</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.geometry.html#buffer">buffer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.geometry.html#convex-hull">convex_hull</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.geometry.html#cut">cut</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.geometry.html#density">density</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.geometry.html#difference">difference</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.geometry.html#distance">distance</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.geometry.html#find-transformation">find_transformation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.geometry.html#from-geo-coordinate-string">from_geo_coordinate_string</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.geometry.html#generalize">generalize</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.geometry.html#intersect">intersect</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.geometry.html#label-points">label_points</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.geometry.html#lengths">lengths</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.geometry.html#offset">offset</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.geometry.html#project">project</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.geometry.html#relation">relation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.geometry.html#reshape">reshape</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.geometry.html#to-geo-coordinate-string">to_geo_coordinate_string</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.geometry.html#trim-extend">trim_extend</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.geometry.html#union">union</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="arcgis.geoprocessing.html">arcgis.geoprocessing module</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.geoprocessing.html#import-toolbox">import_toolbox</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.geoprocessing.html#datafile">DataFile</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.geoprocessing.html#linearunit">LinearUnit</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.geoprocessing.html#rasterdata">RasterData</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="arcgis.mapping.html">arcgis.mapping module</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.mapping.html#webmap">WebMap</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.mapping.html#webscene">WebScene</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.mapping.html#mapimagelayer">MapImageLayer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.mapping.html#mapimagelayermanager">MapImageLayerManager</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.mapping.html#vectortilelayer">VectorTileLayer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.mapping.html#export-map">export_map</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.mapping.html#get-layout-templates">get_layout_templates</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="arcgis.realtime.html">arcgis.realtime module</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.realtime.html#streamlayer">StreamLayer</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="arcgis.schematics.html">arcgis.schematics module</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.schematics.html#schematiclayers">SchematicLayers</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="arcgis.widgets.html">arcgis.widgets module</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.widgets.html#mapview">MapView</a></li>
+</ul>
+</li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="index.html">arcgis</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+ 
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="index.html">Docs</a> &raquo;</li>
+      
+          <li><a href="arcgis.features.toc.html">arcgis.features module</a> &raquo;</li>
+      
+    <li>arcgis.features.summarize_data module</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="_sources/arcgis.features.summarize_data.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="module-arcgis.features.summarize_data">
+<span id="arcgis-features-summarize-data-module"></span><h1>arcgis.features.summarize_data module<a class="headerlink" href="#module-arcgis.features.summarize_data" title="Permalink to this headline">¶</a></h1>
+<p>These functions calculate total counts, lengths, areas, and basic descriptive statistics of features and their attributes
+within areas or near other features.</p>
+<p>aggregate_points calculates statistics about points that fall within specified areas.
+summarize_nearby calculates statistics for features and their attributes that are within a specified distance.
+summarize_within calculates statistics for area features and attributes that overlap each other.</p>
+<div class="section" id="aggregate-points">
+<h2>aggregate_points<a class="headerlink" href="#aggregate-points" title="Permalink to this headline">¶</a></h2>
+<dl class="method">
+<dt id="arcgis.features.summarize_data.aggregate_points">
+<code class="descclassname">summarize_data.</code><code class="descname">aggregate_points</code><span class="sig-paren">(</span><em>point_layer</em>, <em>polygon_layer</em>, <em>keep_boundaries_with_no_points=True</em>, <em>summary_fields=[]</em>, <em>group_by_field=None</em>, <em>minority_majority=False</em>, <em>percent_points=False</em>, <em>output_name=None</em>, <em>context=None</em>, <em>gis=None</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.features.summarize_data.aggregate_points" title="Permalink to this definition">¶</a></dt>
+<dd><p>Aggregate points task allows you to aggregate or count the total number of points that are distributed within
+specified areas or boundaries (polygons). You can also summarize Sum, Mean, Min, Max and Standard deviation
+calculations for attributes of the point layer to understand the general characteristics of aggregated points.</p>
+<dl class="docutils">
+<dt>point_layer</dt>
+ <span class="classifier-delimiter">:</span> <span class="classifier">Required layer (see Feature Input in documentation)</span><dd>Point layer to be aggregated</dd>
+<dt>polygon_layer</dt>
+ <span class="classifier-delimiter">:</span> <span class="classifier">Required layer (see Feature Input in documentation)</span><dd>Polygon layer to which the points should be aggregated.</dd>
+<dt>keep_boundaries_with_no_points</dt>
+ <span class="classifier-delimiter">:</span> <span class="classifier">Optional bool</span><dd>Specify whether the polygons without any points should be returned in the output.</dd>
+<dt>summary_fields</dt>
+ <span class="classifier-delimiter">:</span> <span class="classifier">Optional list of strings</span><dd>A list of field names and summary type. Example [fieldName1 summaryType1,fieldName2 summaryType2].</dd>
+<dt>group_by_field</dt>
+ <span class="classifier-delimiter">:</span> <span class="classifier">Optional string</span><dd>A field name from PointLayer based on which the points will be grouped.</dd>
+<dt>minority_majority</dt>
+ <span class="classifier-delimiter">:</span> <span class="classifier">Optional bool</span><dd>This boolean parameter is applicable only when a groupByField is specified. If true, the minority
+(least dominant) or the majority (most dominant) attribute values within each group, within each boundary will
+be calculated.</dd>
+<dt>percent_points</dt>
+ <span class="classifier-delimiter">:</span> <span class="classifier">Optional bool</span><dd>This boolean parameter is applicable only when a groupByField is specified. If set to true, the percentage count
+of points for each unique groupByField value is calculated.</dd>
+<dt>output_name</dt>
+ <span class="classifier-delimiter">:</span> <span class="classifier">Optional string</span><dd>Additional properties such as output feature service name.</dd>
+<dt>context</dt>
+ <span class="classifier-delimiter">:</span> <span class="classifier">Optional string</span><dd>Additional settings such as processing extent and output spatial reference.</dd>
+<dt>gis :</dt>
+<dd>Optional, the GIS on which this tool runs. If not specified, the active GIS is used.</dd>
+</dl>
+<dl class="docutils">
+<dt>dict with the following keys:</dt>
+<dd>&#8220;aggregated_layer&#8221; : layer (FeatureCollection)
+&#8220;group_summary&#8221; : layer (FeatureCollection)</dd>
+</dl>
+</dd></dl>
+
+</div>
+<div class="section" id="summarize-nearby">
+<h2>summarize_nearby<a class="headerlink" href="#summarize-nearby" title="Permalink to this headline">¶</a></h2>
+<dl class="method">
+<dt id="arcgis.features.summarize_data.summarize_nearby">
+<code class="descclassname">summarize_data.</code><code class="descname">summarize_nearby</code><span class="sig-paren">(</span><em>sum_nearby_layer</em>, <em>summary_layer</em>, <em>near_type='StraightLine'</em>, <em>distances=[]</em>, <em>units='Meters'</em>, <em>time_of_day=None</em>, <em>time_zone_for_time_of_day='GeoLocal'</em>, <em>return_boundaries=True</em>, <em>sum_shape=True</em>, <em>shape_units=None</em>, <em>summary_fields=[]</em>, <em>group_by_field=None</em>, <em>minority_majority=False</em>, <em>percent_shape=False</em>, <em>output_name=None</em>, <em>context=None</em>, <em>gis=None</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.features.summarize_data.summarize_nearby" title="Permalink to this definition">¶</a></dt>
+<dd><p>The SummarizeNearby task finds features that are within a specified distance of features in the input layer.
+Distance can be measured as a straight-line distance, a drive-time distance (for example, within 10 minutes), or a
+drive distance (within 5 kilometers). Statistics are then calculated for the nearby features. For example:Calculate
+the total population within five minutes of driving time of a proposed new store location.Calculate the number of
+freeway access ramps within a one-mile driving distance of a proposed new store location to use as a measure of
+store accessibility.</p>
+<dl class="docutils">
+<dt>sum_nearby_layer</dt>
+ <span class="classifier-delimiter">:</span> <span class="classifier">Required layer (see Feature Input in documentation)</span><dd>Point, line, or polygon features from which distances will be measured to features in the summarizeLayer.</dd>
+<dt>summary_layer</dt>
+ <span class="classifier-delimiter">:</span> <span class="classifier">Required layer (see Feature Input in documentation)</span><dd>Point, line, or polygon features. Features in this layer that are within the specified distance to features in
+the sumNearbyLayer will be summarized.</dd>
+<dt>near_type</dt>
+ <span class="classifier-delimiter">:</span> <span class="classifier">Optional string</span><dd>Defines what kind of distance measurement you want to use to create areas around the nearbyLayer features.</dd>
+<dt>distances</dt>
+ <span class="classifier-delimiter">:</span> <span class="classifier">Required list of floats</span><dd>An array of double values that defines the search distance for creating areas mentioned above</dd>
+<dt>units</dt>
+ <span class="classifier-delimiter">:</span> <span class="classifier">Optional string</span><dd>The linear unit for distances parameter above. Eg. Miles, Kilometers, Minutes Seconds etc</dd>
+<dt>time_of_day</dt>
+ <span class="classifier-delimiter">:</span> <span class="classifier">Optional datetime.datetime</span><dd>For timeOfDay, set the time and day according to the number of milliseconds elapsed since the Unix epoc
+(January 1, 1970 UTC). When specified and if relevant for the nearType parameter, the traffic conditions during
+the time of the day will be considered.</dd>
+<dt>time_zone_for_time_of_day</dt>
+ <span class="classifier-delimiter">:</span> <span class="classifier">Optional string</span><dd>Determines if the value specified for timeOfDay is specified in UTC or in a time zone that is local to the
+location of the origins.</dd>
+<dt>return_boundaries</dt>
+ <span class="classifier-delimiter">:</span> <span class="classifier">Optional bool</span><dd>If true, will return a result layer of areas that contain the requested summary information.  The resulting
+areas are defined by the specified nearType.  For example, if using a StraightLine of 5 miles, your result will
+contain areas with a 5 mile radius around the input features and specified summary information.If false, the
+resulting layer will return the same features as the input analysis layer with requested summary information.</dd>
+<dt>sum_shape</dt>
+ <span class="classifier-delimiter">:</span> <span class="classifier">Optional bool</span><dd>A boolean value that instructs the task to calculate count of points, length of lines or areas of polygons of
+the summaryLayer within each polygon in sumWithinLayer.</dd>
+<dt>shape_units</dt>
+ <span class="classifier-delimiter">:</span> <span class="classifier">Optional string</span><dd>Specify units to summarize the length or areas when sumShape is set to true. Units is not required to summarize
+points.</dd>
+<dt>summary_fields</dt>
+ <span class="classifier-delimiter">:</span> <span class="classifier">Optional list of strings</span><dd>A list of field names and statistical summary type that you wish to calculate for all features in the
+summaryLayer that are within each polygon in the sumWithinLayer . Eg: [&#8220;fieldname1 summary&#8221;,
+&#8220;fieldname2 summary&#8221;]</dd>
+<dt>group_by_field</dt>
+ <span class="classifier-delimiter">:</span> <span class="classifier">Optional string</span><dd>Specify a field from the summaryLayer features to calculate statistics separately for each unique value of the
+field.</dd>
+<dt>minority_majority</dt>
+ <span class="classifier-delimiter">:</span> <span class="classifier">Optional bool</span><dd>This boolean parameter is applicable only when a groupByField is specified. If true, the minority
+(least dominant) or the majority (most dominant) attribute values within each group, within each boundary will
+be calculated.</dd>
+<dt>percent_shape</dt>
+ <span class="classifier-delimiter">:</span> <span class="classifier">Optional bool</span><dd>This boolean parameter is applicable only when a groupByField is specified. If set to true, the percentage of
+shape (eg. length for lines) for each unique groupByField value is calculated.</dd>
+<dt>output_name</dt>
+ <span class="classifier-delimiter">:</span> <span class="classifier">Optional string</span><dd>Additional properties such as output feature service name.</dd>
+<dt>context</dt>
+ <span class="classifier-delimiter">:</span> <span class="classifier">Optional string</span><dd>Additional settings such as processing extent and output spatial reference.</dd>
+<dt>gis :</dt>
+<dd>Optional, the GIS on which this tool runs. If not specified, the active GIS is used.</dd>
+</dl>
+<dl class="docutils">
+<dt>dict with the following keys:</dt>
+<dd>&#8220;result_layer&#8221; : layer (FeatureCollection)
+&#8220;group_by_summary&#8221; : layer (FeatureCollection)</dd>
+</dl>
+</dd></dl>
+
+</div>
+<div class="section" id="summarize-within">
+<h2>summarize_within<a class="headerlink" href="#summarize-within" title="Permalink to this headline">¶</a></h2>
+<dl class="method">
+<dt id="arcgis.features.summarize_data.summarize_within">
+<code class="descclassname">summarize_data.</code><code class="descname">summarize_within</code><span class="sig-paren">(</span><em>sum_within_layer</em>, <em>summary_layer</em>, <em>sum_shape=True</em>, <em>shape_units=None</em>, <em>summary_fields=[]</em>, <em>group_by_field=None</em>, <em>minority_majority=False</em>, <em>percent_shape=False</em>, <em>output_name=None</em>, <em>context=None</em>, <em>gis=None</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.features.summarize_data.summarize_within" title="Permalink to this definition">¶</a></dt>
+<dd><p>The SummarizeWithin task helps you to summarize and find statistics on the point, line, or polygon features (or
+portions of these features) that are within the boundaries of polygons in another layer. For example:Given a layer
+of watershed boundaries and a layer of land-use boundaries by land-use type, calculate total acreage of land-use
+type for each watershed.Given a layer of parcels in a county and a layer of city boundaries, summarize the average
+value of vacant parcels within each city boundary.Given a layer of counties and a layer of roads, summarize the
+total mileage of roads by road type within each county.</p>
+<dl class="docutils">
+<dt>sum_within_layer</dt>
+ <span class="classifier-delimiter">:</span> <span class="classifier">Required layer (see Feature Input in documentation)</span><dd>A polygon feature layer or featurecollection. Features, or portions of features, in the summaryLayer (below)
+that fall within the boundaries of these polygons will be summarized.</dd>
+<dt>summary_layer</dt>
+ <span class="classifier-delimiter">:</span> <span class="classifier">Required layer (see Feature Input in documentation)</span><dd>Point, line, or polygon features that will be summarized for each polygon in the sumWithinLayer.</dd>
+<dt>sum_shape</dt>
+ <span class="classifier-delimiter">:</span> <span class="classifier">Optional bool</span><dd>A boolean value that instructs the task to calculate count of points, length of lines or areas of polygons of
+the summaryLayer within each polygon in sumWithinLayer.</dd>
+<dt>shape_units</dt>
+ <span class="classifier-delimiter">:</span> <span class="classifier">Optional string</span><dd>Specify units to summarize the length or areas when sumShape is set to true. Units is not required to summarize
+points.</dd>
+<dt>summary_fields</dt>
+ <span class="classifier-delimiter">:</span> <span class="classifier">Optional list of strings</span><dd>A list of field names and statistical summary type that you wish to calculate for all features in the
+summaryLayer that are within each polygon in the sumWithinLayer. Eg:[&#8220;fieldname1 summary&#8221;, &#8220;fieldname2 summary&#8221;]</dd>
+<dt>group_by_field</dt>
+ <span class="classifier-delimiter">:</span> <span class="classifier">Optional string</span><dd>Specify a field from the summaryLayer features to calculate statistics separately for each unique attribute
+value.</dd>
+<dt>minority_majority</dt>
+ <span class="classifier-delimiter">:</span> <span class="classifier">Optional bool</span><dd>This boolean parameter is applicable only when a groupByField is specified. If true, the minority
+(least dominant) or the majority (most dominant) attribute values within each group, within each boundary will
+be calculated.</dd>
+<dt>percent_shape</dt>
+ <span class="classifier-delimiter">:</span> <span class="classifier">Optional bool</span><dd>This boolean parameter is applicable only when a groupByField is specified. If set to true, the percentage of
+shape (eg. length for lines) for each unique groupByField value is calculated.</dd>
+<dt>output_name</dt>
+ <span class="classifier-delimiter">:</span> <span class="classifier">Optional string</span><dd>Additional properties such as output feature service name.</dd>
+<dt>context</dt>
+ <span class="classifier-delimiter">:</span> <span class="classifier">Optional string</span><dd>Additional settings such as processing extent and output spatial reference.</dd>
+<dt>gis :</dt>
+<dd>Optional, the GIS on which this tool runs. If not specified, the active GIS is used.</dd>
+</dl>
+<dl class="docutils">
+<dt>dict with the following keys:</dt>
+<dd>&#8220;result_layer&#8221; : layer (FeatureCollection)
+&#8220;group_by_summary&#8221; : layer (FeatureCollection)</dd>
+</dl>
+</dd></dl>
+
+</div>
+</div>
+
+
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="arcgis.features.use_proximity.html" class="btn btn-neutral float-right" title="arcgis.features.use_proximity module" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="arcgis.features.manage_data.html" class="btn btn-neutral" title="arcgis.features.manage_data module" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2016-2017, Esri.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'./',
+            VERSION:'1.0.1',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="_static/jquery.js"></script>
+      <script type="text/javascript" src="_static/underscore.js"></script>
+      <script type="text/javascript" src="_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

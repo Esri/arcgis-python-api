@@ -1,0 +1,2021 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>arcgis.apps.dashboard module &mdash; arcgis 1.8.4 documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="_static/theme_overrides.css" type="text/css" />
+
+  
+  
+    <link rel="shortcut icon" href="_static/favicon.ico"/>
+  
+  
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/doctools.js"></script>
+        <script src="_static/language_data.js"></script>
+        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="arcgis.apps.workforce module" href="arcgis.apps.workforce.html" />
+    <link rel="prev" title="arcgis.apps.hub module" href="arcgis.apps.hub.html" />
+<!-- This code block is inserted close near the <head> tag. See http://bit.ly/2BHUQzB -->
+<!-- The point of this code block is to send us google analytics on website views -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-NJGGV5');</script>
+ 
+
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="index.html" class="icon icon-home" alt="Documentation Home"> arcgis
+          
+
+          
+            
+            <img src="_static/python_api_logo.png" class="logo" alt="Logo"/>
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1.8.4
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">arcgis</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="arcgis.gis.toc.html">arcgis.gis module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="arcgis.env.html">arcgis.env module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="arcgis.features.toc.html">arcgis.features module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="arcgis.raster.toc.html">arcgis.raster module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="arcgis.network.toc.html">arcgis.network module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="arcgis.geoanalytics.toc.html">arcgis.geoanalytics module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="arcgis.geocoding.html">arcgis.geocoding module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="arcgis.geoenrichment.html">arcgis.geoenrichment module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="arcgis.geometry.html">arcgis.geometry module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="arcgis.geoprocessing.html">arcgis.geoprocessing module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="arcgis.mapping.toc.html">arcgis.mapping module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="arcgis.realtime.html">arcgis.realtime module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="arcgis.schematics.html">arcgis.schematics module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="arcgis.widgets.html">arcgis.widgets module</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="arcgis.apps.html">arcgis.apps module</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="arcgis.apps.html#build-collector-url">build_collector_url</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.apps.html#build-explorer-url">build_explorer_url</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.apps.html#build-field-maps-url">build_field_maps_url</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.apps.html#build-navigator-url">build_navigator_url</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.apps.html#build-survey123-url">build_survey123_url</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.apps.html#build-tracker-url">build_tracker_url</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.apps.html#build-workforce-url">build_workforce_url</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="arcgis.apps.html#submodules">Submodules</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="arcgis.apps.hub.html">arcgis.apps.hub module</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">arcgis.apps.dashboard module</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#dashboard">Dashboard</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#details">Details</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#embeddedcontent">EmbeddedContent</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#gauge">Gauge</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#header">Header</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#indicator">Indicator</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#list">List</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#maplegend">MapLegend</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#piechart">PieChart</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#richtext">RichText</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#serialchart">SerialChart</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#sidepanel">SidePanel</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#datepicker">DatePicker</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#categoryselector">CategorySelector</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#numberselector">NumberSelector</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#add-row">add_row</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#add-column">add_column</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="arcgis.apps.workforce.html">arcgis.apps.workforce module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="arcgis.apps.storymap.html">arcgis.apps.storymap module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="arcgis.apps.survey123.html">arcgis.apps.survey123 module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="arcgis.apps.tracker.html">arcgis.apps.tracker module</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="arcgis.learn.toc.html">arcgis.learn module</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">arcgis</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="arcgis.apps.html">arcgis.apps module</a> &raquo;</li>
+        
+      <li>arcgis.apps.dashboard module</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+<!-- This code block is inserted close near the <body> tag. See http://bit.ly/2BHUQzB -->
+<!-- The point of this code block is to send us google analytics on website views -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NJGGV5"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+
+  <div class="section" id="arcgis-apps-dashboard-module">
+<h1>arcgis.apps.dashboard module<a class="headerlink" href="#arcgis-apps-dashboard-module" title="Permalink to this headline">¶</a></h1>
+<span class="target" id="module-arcgis.apps.dashboard"></span><p>The <a class="reference internal" href="#arcgis.apps.dashboard.Dashboard" title="arcgis.apps.dashboard.Dashboard"><code class="xref py py-class docutils literal notranslate"><span class="pre">Dashboard</span></code></a> is the main entry point into the Dashboard module.</p>
+<div class="section" id="dashboard">
+<h2>Dashboard<a class="headerlink" href="#dashboard" title="Permalink to this headline">¶</a></h2>
+<dl class="py class">
+<dt id="arcgis.apps.dashboard.Dashboard">
+<em class="property">class </em><code class="sig-prename descclassname">arcgis.apps.dashboard.</code><code class="sig-name descname">Dashboard</code><a class="headerlink" href="#arcgis.apps.dashboard.Dashboard" title="Permalink to this definition">¶</a></dt>
+<dd><p>Creates a Dashboard Object.</p>
+<p>:return Dashboard object</p>
+<dl class="py method">
+<dt id="arcgis.apps.dashboard.Dashboard.header">
+<em class="property">property </em><code class="sig-name descname">header</code><a class="headerlink" href="#arcgis.apps.dashboard.Dashboard.header" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>Header Object</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="arcgis.apps.dashboard.Dashboard.layout">
+<em class="property">property </em><code class="sig-name descname">layout</code><a class="headerlink" href="#arcgis.apps.dashboard.Dashboard.layout" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>Layout of the dashboard</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="arcgis.apps.dashboard.Dashboard.save">
+<code class="sig-name descname">save</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">title</span></em>, <em class="sig-param"><span class="n">description</span><span class="o">=</span><span class="default_value">''</span></em>, <em class="sig-param"><span class="n">summary</span><span class="o">=</span><span class="default_value">''</span></em>, <em class="sig-param"><span class="n">tags</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">gis</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">overwrite</span><span class="o">=</span><span class="default_value">False</span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.apps.dashboard.Dashboard.save" title="Permalink to this definition">¶</a></dt>
+<dd><p>Publishes a Dashboard Object.</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 35%" />
+<col style="width: 65%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><strong>Argument</strong></p></td>
+<td><p><strong>Description</strong></p></td>
+</tr>
+<tr class="row-even"><td><p>title</p></td>
+<td><p>Required string. Title or Caption for the
+Dashboard.</p></td>
+</tr>
+<tr class="row-odd"><td><p>description</p></td>
+<td><p>Optional string. Description for the Dashboard.</p></td>
+</tr>
+<tr class="row-even"><td><p>summary</p></td>
+<td><p>Optional string. Summary of the Dashboard.</p></td>
+</tr>
+<tr class="row-odd"><td><p>tags</p></td>
+<td><p>Optional string. Comma separated tags.</p></td>
+</tr>
+<tr class="row-even"><td><p>gis</p></td>
+<td><p>Optional GIS to publish dashboard.
+By default uses active gis.</p></td>
+</tr>
+<tr class="row-odd"><td><p>overwrite</p></td>
+<td><p>Optional Boolean.
+Overwrite existing dashboard.</p></td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="py method">
+<dt id="arcgis.apps.dashboard.Dashboard.side_panel">
+<em class="property">property </em><code class="sig-name descname">side_panel</code><a class="headerlink" href="#arcgis.apps.dashboard.Dashboard.side_panel" title="Permalink to this definition">¶</a></dt>
+<dd><p>:return Side Panel Object</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="arcgis.apps.dashboard.Dashboard.theme">
+<em class="property">property </em><code class="sig-name descname">theme</code><a class="headerlink" href="#arcgis.apps.dashboard.Dashboard.theme" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="details">
+<h2>Details<a class="headerlink" href="#details" title="Permalink to this headline">¶</a></h2>
+<dl class="py class">
+<dt id="arcgis.apps.dashboard.Details">
+<em class="property">class </em><code class="sig-prename descclassname">arcgis.apps.dashboard.</code><code class="sig-name descname">Details</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">item</span></em>, <em class="sig-param"><span class="n">name</span><span class="o">=</span><span class="default_value">'Details'</span></em>, <em class="sig-param"><span class="n">layer</span><span class="o">=</span><span class="default_value">0</span></em>, <em class="sig-param"><span class="n">title</span><span class="o">=</span><span class="default_value">''</span></em>, <em class="sig-param"><span class="n">description</span><span class="o">=</span><span class="default_value">''</span></em>, <em class="sig-param"><span class="n">max_features_displayed</span><span class="o">=</span><span class="default_value">50</span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.apps.dashboard.Details" title="Permalink to this definition">¶</a></dt>
+<dd><p>Creates a dashboard Details widget.</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 36%" />
+<col style="width: 64%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><strong>Argument</strong></p></td>
+<td><p><strong>Description</strong></p></td>
+</tr>
+<tr class="row-even"><td><p>item</p></td>
+<td><p>Required Portal Item object. Item object can
+be a Feature Layer or a MapWidget.</p></td>
+</tr>
+<tr class="row-odd"><td><p>name</p></td>
+<td><p>Optional string. Name of the widget.</p></td>
+</tr>
+<tr class="row-even"><td><p>layer</p></td>
+<td><p>Optional integer. Layer number when item is
+a mapwidget.</p></td>
+</tr>
+<tr class="row-odd"><td><p>title</p></td>
+<td><p>Optional string. Title of the widget.</p></td>
+</tr>
+<tr class="row-even"><td><p>description</p></td>
+<td><p>Optional string. Description of the widget.</p></td>
+</tr>
+<tr class="row-odd"><td><p>max_features_displayed</p></td>
+<td><p>Optional integer. Maximum number of features
+to display.</p></td>
+</tr>
+</tbody>
+</table>
+<dl class="py method">
+<dt id="arcgis.apps.dashboard.Details.max_features">
+<em class="property">property </em><code class="sig-name descname">max_features</code><a class="headerlink" href="#arcgis.apps.dashboard.Details.max_features" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>Max Features to display for feature data.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="arcgis.apps.dashboard.Details.no_data">
+<em class="property">property </em><code class="sig-name descname">no_data</code><a class="headerlink" href="#arcgis.apps.dashboard.Details.no_data" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>NoDataProperties Object</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="arcgis.apps.dashboard.Details.show_attachment">
+<em class="property">property </em><code class="sig-name descname">show_attachment</code><a class="headerlink" href="#arcgis.apps.dashboard.Details.show_attachment" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>True if attachment is enabled else False.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="arcgis.apps.dashboard.Details.show_content">
+<em class="property">property </em><code class="sig-name descname">show_content</code><a class="headerlink" href="#arcgis.apps.dashboard.Details.show_content" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>True if content is enabled else False.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="arcgis.apps.dashboard.Details.show_media">
+<em class="property">property </em><code class="sig-name descname">show_media</code><a class="headerlink" href="#arcgis.apps.dashboard.Details.show_media" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>True if media is enabled else False.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="arcgis.apps.dashboard.Details.show_title">
+<em class="property">property </em><code class="sig-name descname">show_title</code><a class="headerlink" href="#arcgis.apps.dashboard.Details.show_title" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>True if title is enabled else False.</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="embeddedcontent">
+<h2>EmbeddedContent<a class="headerlink" href="#embeddedcontent" title="Permalink to this headline">¶</a></h2>
+<dl class="py class">
+<dt id="arcgis.apps.dashboard.EmbeddedContent">
+<em class="property">class </em><code class="sig-prename descclassname">arcgis.apps.dashboard.</code><code class="sig-name descname">EmbeddedContent</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">url</span></em>, <em class="sig-param"><span class="n">name</span><span class="o">=</span><span class="default_value">'EmbeddedContent'</span></em>, <em class="sig-param"><span class="n">title</span><span class="o">=</span><span class="default_value">''</span></em>, <em class="sig-param"><span class="n">description</span><span class="o">=</span><span class="default_value">''</span></em>, <em class="sig-param"><span class="n">content_type</span><span class="o">=</span><span class="default_value">'document'</span></em>, <em class="sig-param"><span class="n">refresh_interval</span><span class="o">=</span><span class="default_value">0</span></em>, <em class="sig-param"><span class="n">item</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">layer</span><span class="o">=</span><span class="default_value">0</span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.apps.dashboard.EmbeddedContent" title="Permalink to this definition">¶</a></dt>
+<dd><p>Creates a dashboard Embedded Content Widget.</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 36%" />
+<col style="width: 64%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><strong>Argument</strong></p></td>
+<td><p><strong>Description</strong></p></td>
+</tr>
+<tr class="row-even"><td><p>url</p></td>
+<td><p>Required string. Url of the embedded content
+or field name if item is not None.</p></td>
+</tr>
+<tr class="row-odd"><td><p>name</p></td>
+<td><p>Optional string. Name of the widget.</p></td>
+</tr>
+<tr class="row-even"><td><p>title</p></td>
+<td><p>Optional string. Title of the widget.</p></td>
+</tr>
+<tr class="row-odd"><td><p>description</p></td>
+<td><p>Optional string. Description of the widget.</p></td>
+</tr>
+<tr class="row-even"><td><p>content_type</p></td>
+<td><p>Optional string. Type of the content.
+Choose from “document”, “image”, “video”.</p></td>
+</tr>
+<tr class="row-odd"><td><p>refresh_interval</p></td>
+<td><p>Optional integer. Interval to refresh in
+minutes. It is only applicable for
+content_type = ‘image’</p></td>
+</tr>
+<tr class="row-even"><td><p>item</p></td>
+<td><p>Optional Portal Item. To show content from
+portal.</p></td>
+</tr>
+<tr class="row-odd"><td><p>layer</p></td>
+<td><p>Optional integer. Layer number when item is
+a mapwidget.</p></td>
+</tr>
+</tbody>
+</table>
+<dl class="py method">
+<dt id="arcgis.apps.dashboard.EmbeddedContent.content_type">
+<em class="property">property </em><code class="sig-name descname">content_type</code><a class="headerlink" href="#arcgis.apps.dashboard.EmbeddedContent.content_type" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>Content type of the embedded content.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="arcgis.apps.dashboard.EmbeddedContent.max_features">
+<em class="property">property </em><code class="sig-name descname">max_features</code><a class="headerlink" href="#arcgis.apps.dashboard.EmbeddedContent.max_features" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>Max Features to display for feature data.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="arcgis.apps.dashboard.EmbeddedContent.no_data">
+<em class="property">property </em><code class="sig-name descname">no_data</code><a class="headerlink" href="#arcgis.apps.dashboard.EmbeddedContent.no_data" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>NoDataProperties Object</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="arcgis.apps.dashboard.EmbeddedContent.refresh_interval">
+<em class="property">property </em><code class="sig-name descname">refresh_interval</code><a class="headerlink" href="#arcgis.apps.dashboard.EmbeddedContent.refresh_interval" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>Refresh interval for image content.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="arcgis.apps.dashboard.EmbeddedContent.url">
+<em class="property">property </em><code class="sig-name descname">url</code><a class="headerlink" href="#arcgis.apps.dashboard.EmbeddedContent.url" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>Url of the embedded content.</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="gauge">
+<h2>Gauge<a class="headerlink" href="#gauge" title="Permalink to this headline">¶</a></h2>
+<dl class="py class">
+<dt id="arcgis.apps.dashboard.Gauge">
+<em class="property">class </em><code class="sig-prename descclassname">arcgis.apps.dashboard.</code><code class="sig-name descname">Gauge</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">item</span></em>, <em class="sig-param"><span class="n">name</span><span class="o">=</span><span class="default_value">'Gauge'</span></em>, <em class="sig-param"><span class="n">layer</span><span class="o">=</span><span class="default_value">0</span></em>, <em class="sig-param"><span class="n">title</span><span class="o">=</span><span class="default_value">''</span></em>, <em class="sig-param"><span class="n">description</span><span class="o">=</span><span class="default_value">''</span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.apps.dashboard.Gauge" title="Permalink to this definition">¶</a></dt>
+<dd><p>Creates a dashboard Gauge widget.</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 36%" />
+<col style="width: 64%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><strong>Argument</strong></p></td>
+<td><p><strong>Description</strong></p></td>
+</tr>
+<tr class="row-even"><td><p>item</p></td>
+<td><p>Required Portal Item object. Item object can
+be a Feature Layer or a MapWidget.</p></td>
+</tr>
+<tr class="row-odd"><td><p>name</p></td>
+<td><p>Optional string. Name of the gauge widget.</p></td>
+</tr>
+<tr class="row-even"><td><p>layer</p></td>
+<td><p>Optional integer. Layer number when item is
+a mapwidget.</p></td>
+</tr>
+<tr class="row-odd"><td><p>title</p></td>
+<td><p>Optional string. Title or Caption for the
+widget.</p></td>
+</tr>
+<tr class="row-even"><td><p>description</p></td>
+<td><p>Optional string. Description for the widget.</p></td>
+</tr>
+</tbody>
+</table>
+<dl class="py method">
+<dt id="arcgis.apps.dashboard.Gauge.data">
+<em class="property">property </em><code class="sig-name descname">data</code><a class="headerlink" href="#arcgis.apps.dashboard.Gauge.data" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>Gauge Data object. Set data properties, categories and values.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="arcgis.apps.dashboard.Gauge.gauge_options">
+<em class="property">property </em><code class="sig-name descname">gauge_options</code><a class="headerlink" href="#arcgis.apps.dashboard.Gauge.gauge_options" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>Gauge options object. Set gauge properties.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="arcgis.apps.dashboard.Gauge.max_features">
+<em class="property">property </em><code class="sig-name descname">max_features</code><a class="headerlink" href="#arcgis.apps.dashboard.Gauge.max_features" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>max features for widget.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="arcgis.apps.dashboard.Gauge.no_data">
+<em class="property">property </em><code class="sig-name descname">no_data</code><a class="headerlink" href="#arcgis.apps.dashboard.Gauge.no_data" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>Nodata Object, set various nodata properties</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="arcgis.apps.dashboard.Gauge.show_last_update">
+<em class="property">property </em><code class="sig-name descname">show_last_update</code><a class="headerlink" href="#arcgis.apps.dashboard.Gauge.show_last_update" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>show last update or not.</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="header">
+<h2>Header<a class="headerlink" href="#header" title="Permalink to this headline">¶</a></h2>
+<dl class="py class">
+<dt id="arcgis.apps.dashboard.Header">
+<em class="property">class </em><code class="sig-prename descclassname">arcgis.apps.dashboard.</code><code class="sig-name descname">Header</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">title</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">subtitle</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">margin</span><span class="o">=</span><span class="default_value">True</span></em>, <em class="sig-param"><span class="n">size</span><span class="o">=</span><span class="default_value">'medium'</span></em>, <em class="sig-param"><span class="n">logo_image_url</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">logo_url</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">background_image_url</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">background_image_size</span><span class="o">=</span><span class="default_value">'fit-width'</span></em>, <em class="sig-param"><span class="n">background_image_position</span><span class="o">=</span><span class="default_value">'left'</span></em>, <em class="sig-param"><span class="n">signout_link</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="n">menu_links</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.apps.dashboard.Header" title="Permalink to this definition">¶</a></dt>
+<dd><p>Creates a dashboard header widget.</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 33%" />
+<col style="width: 67%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><strong>Argument</strong></p></td>
+<td><p><strong>Description</strong></p></td>
+</tr>
+<tr class="row-even"><td><p>title</p></td>
+<td><p>Optional string. Title of the header.</p></td>
+</tr>
+<tr class="row-odd"><td><p>subtitle</p></td>
+<td><p>Optional string. Subtitle of the header.</p></td>
+</tr>
+<tr class="row-even"><td><p>margin</p></td>
+<td><p>Optional boolean. Set True to add margin to
+header position.</p></td>
+</tr>
+<tr class="row-odd"><td><p>size</p></td>
+<td><p>Optional string. Define size of header from
+small, medium, large.
+Default is medium.</p></td>
+</tr>
+<tr class="row-even"><td><p>logo_image_url</p></td>
+<td><p>Optional url string. Define a logo image.</p></td>
+</tr>
+<tr class="row-odd"><td><p>logo_url</p></td>
+<td><p>Optional url string. Define a hyperlink for
+the logo image.</p></td>
+</tr>
+<tr class="row-even"><td><p>background_image_url</p></td>
+<td><p>Optional url string. Add a background image
+to the header.</p></td>
+</tr>
+<tr class="row-odd"><td><p>background_image_size</p></td>
+<td><p>Optional string. Select size of the image.
+Options:</p>
+<blockquote>
+<div><p>fit-width
+fit-height
+fit-both
+repeat</p>
+</div></blockquote>
+</td>
+</tr>
+<tr class="row-even"><td><p>background_image_position</p></td>
+<td><p>Optional string. Define the image position
+when using fit-width or fit-height.
+Allowed options:
+fit-height: left, center, right
+fit-width: top, middle, bottom</p></td>
+</tr>
+<tr class="row-odd"><td><p>signout_link</p></td>
+<td><p>Optional boolean. Parameter to save the best model
+during training. If set to <cite>True</cite> the best model
+based on validation loss will be saved during
+training.</p></td>
+</tr>
+<tr class="row-even"><td><p>menu_links</p></td>
+<td><p>Optional list of tuples. Each tuple contains
+string label and string url.</p></td>
+</tr>
+</tbody>
+</table>
+<dl class="py method">
+<dt id="arcgis.apps.dashboard.Header.add_selector">
+<code class="sig-name descname">add_selector</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">selector</span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.apps.dashboard.Header.add_selector" title="Permalink to this definition">¶</a></dt>
+<dd><p>Add Number Selector, Category Selector or Date Picker widget.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="arcgis.apps.dashboard.Header.background_color">
+<em class="property">property </em><code class="sig-name descname">background_color</code><a class="headerlink" href="#arcgis.apps.dashboard.Header.background_color" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>Background color HEX code.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="arcgis.apps.dashboard.Header.background_image_placement">
+<em class="property">property </em><code class="sig-name descname">background_image_placement</code><a class="headerlink" href="#arcgis.apps.dashboard.Header.background_image_placement" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>Background image position.</p>
+</dd>
+</dl>
+<p>If fit-height then left, right, center
+If fit-width then top, bottom, middle
+fit-both, repeat then None</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="arcgis.apps.dashboard.Header.background_image_url">
+<em class="property">property </em><code class="sig-name descname">background_image_url</code><a class="headerlink" href="#arcgis.apps.dashboard.Header.background_image_url" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>Background image url.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="arcgis.apps.dashboard.Header.logo_image_url">
+<em class="property">property </em><code class="sig-name descname">logo_image_url</code><a class="headerlink" href="#arcgis.apps.dashboard.Header.logo_image_url" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>Logo Image Url</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="arcgis.apps.dashboard.Header.logo_url">
+<em class="property">property </em><code class="sig-name descname">logo_url</code><a class="headerlink" href="#arcgis.apps.dashboard.Header.logo_url" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>Logo image hyperlink</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="arcgis.apps.dashboard.Header.margin">
+<em class="property">property </em><code class="sig-name descname">margin</code><a class="headerlink" href="#arcgis.apps.dashboard.Header.margin" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>Header margin, True or False</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="arcgis.apps.dashboard.Header.menu_links">
+<em class="property">property </em><code class="sig-name descname">menu_links</code><a class="headerlink" href="#arcgis.apps.dashboard.Header.menu_links" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>List of menu links.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="arcgis.apps.dashboard.Header.sign_out_link">
+<em class="property">property </em><code class="sig-name descname">sign_out_link</code><a class="headerlink" href="#arcgis.apps.dashboard.Header.sign_out_link" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>Sign out link enabled or disabled.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="arcgis.apps.dashboard.Header.size">
+<em class="property">property </em><code class="sig-name descname">size</code><a class="headerlink" href="#arcgis.apps.dashboard.Header.size" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return size of the header. small, medium or large
+:return: string</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="arcgis.apps.dashboard.Header.subtitle">
+<em class="property">property </em><code class="sig-name descname">subtitle</code><a class="headerlink" href="#arcgis.apps.dashboard.Header.subtitle" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>Subtitle of the header. A string.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="arcgis.apps.dashboard.Header.text_color">
+<em class="property">property </em><code class="sig-name descname">text_color</code><a class="headerlink" href="#arcgis.apps.dashboard.Header.text_color" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>None for default text color else HEX code.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="arcgis.apps.dashboard.Header.title">
+<em class="property">property </em><code class="sig-name descname">title</code><a class="headerlink" href="#arcgis.apps.dashboard.Header.title" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>Returns title of the header</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="indicator">
+<h2>Indicator<a class="headerlink" href="#indicator" title="Permalink to this headline">¶</a></h2>
+<dl class="py class">
+<dt id="arcgis.apps.dashboard.Indicator">
+<em class="property">class </em><code class="sig-prename descclassname">arcgis.apps.dashboard.</code><code class="sig-name descname">Indicator</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">item</span></em>, <em class="sig-param"><span class="n">name</span><span class="o">=</span><span class="default_value">'Indicator'</span></em>, <em class="sig-param"><span class="n">layer</span><span class="o">=</span><span class="default_value">0</span></em>, <em class="sig-param"><span class="n">title</span><span class="o">=</span><span class="default_value">''</span></em>, <em class="sig-param"><span class="n">description</span><span class="o">=</span><span class="default_value">''</span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.apps.dashboard.Indicator" title="Permalink to this definition">¶</a></dt>
+<dd><p>Creates a dashboard Indicator widget.</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 36%" />
+<col style="width: 64%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><strong>Argument</strong></p></td>
+<td><p><strong>Description</strong></p></td>
+</tr>
+<tr class="row-even"><td><p>item</p></td>
+<td><p>Required Portal Item object. Item object can
+be a Feature Layer or a MapWidget.</p></td>
+</tr>
+<tr class="row-odd"><td><p>name</p></td>
+<td><p>Optional string. Name of the Indicator
+widget.</p></td>
+</tr>
+<tr class="row-even"><td><p>title</p></td>
+<td><p>Optional string. Title or Caption for the
+widget.</p></td>
+</tr>
+<tr class="row-odd"><td><p>layer</p></td>
+<td><p>Optional integer. Layer number when item is
+a mapwidget.</p></td>
+</tr>
+<tr class="row-even"><td><p>description</p></td>
+<td><p>Optional string. Description for the widget.</p></td>
+</tr>
+</tbody>
+</table>
+<dl class="py method">
+<dt id="arcgis.apps.dashboard.Indicator.data">
+<em class="property">property </em><code class="sig-name descname">data</code><a class="headerlink" href="#arcgis.apps.dashboard.Indicator.data" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>Indicator Data object. Set data properties, categories and values.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="arcgis.apps.dashboard.Indicator.max_features">
+<em class="property">property </em><code class="sig-name descname">max_features</code><a class="headerlink" href="#arcgis.apps.dashboard.Indicator.max_features" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>max features for widget.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="arcgis.apps.dashboard.Indicator.reference">
+<em class="property">property </em><code class="sig-name descname">reference</code><a class="headerlink" href="#arcgis.apps.dashboard.Indicator.reference" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>Indicator reference object. Set data properties, categories and values.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="arcgis.apps.dashboard.Indicator.show_last_update">
+<em class="property">property </em><code class="sig-name descname">show_last_update</code><a class="headerlink" href="#arcgis.apps.dashboard.Indicator.show_last_update" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>show last update or not.</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="list">
+<h2>List<a class="headerlink" href="#list" title="Permalink to this headline">¶</a></h2>
+<dl class="py class">
+<dt id="arcgis.apps.dashboard.List">
+<em class="property">class </em><code class="sig-prename descclassname">arcgis.apps.dashboard.</code><code class="sig-name descname">List</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">item</span></em>, <em class="sig-param"><span class="n">name</span><span class="o">=</span><span class="default_value">'List'</span></em>, <em class="sig-param"><span class="n">layer</span><span class="o">=</span><span class="default_value">0</span></em>, <em class="sig-param"><span class="n">title</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">description</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.apps.dashboard.List" title="Permalink to this definition">¶</a></dt>
+<dd><p>Creates a dashboard List widget.</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 36%" />
+<col style="width: 64%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><strong>Argument</strong></p></td>
+<td><p><strong>Description</strong></p></td>
+</tr>
+<tr class="row-even"><td><p>item</p></td>
+<td><p>Required Portal Item object. Item object can
+be a Feature Layer or a MapWidget.</p></td>
+</tr>
+<tr class="row-odd"><td><p>name</p></td>
+<td><p>Optional string. Name of the List widget.</p></td>
+</tr>
+<tr class="row-even"><td><p>layer</p></td>
+<td><p>Optional integer. Layer number when item is
+a mapwidget.</p></td>
+</tr>
+<tr class="row-odd"><td><p>title</p></td>
+<td><p>Optional string. Title or Caption for the
+widget.</p></td>
+</tr>
+<tr class="row-even"><td><p>description</p></td>
+<td><p>Optional string. Description for the widget.</p></td>
+</tr>
+</tbody>
+</table>
+<dl class="py method">
+<dt id="arcgis.apps.dashboard.List.events">
+<em class="property">property </em><code class="sig-name descname">events</code><a class="headerlink" href="#arcgis.apps.dashboard.List.events" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>list of events attached to the widget.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="arcgis.apps.dashboard.List.list_icon">
+<em class="property">property </em><code class="sig-name descname">list_icon</code><a class="headerlink" href="#arcgis.apps.dashboard.List.list_icon" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>use icon for list or not.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="arcgis.apps.dashboard.List.list_text">
+<em class="property">property </em><code class="sig-name descname">list_text</code><a class="headerlink" href="#arcgis.apps.dashboard.List.list_text" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>list text.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="arcgis.apps.dashboard.List.max_features">
+<em class="property">property </em><code class="sig-name descname">max_features</code><a class="headerlink" href="#arcgis.apps.dashboard.List.max_features" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>max number of features to display.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="arcgis.apps.dashboard.List.no_data">
+<em class="property">property </em><code class="sig-name descname">no_data</code><a class="headerlink" href="#arcgis.apps.dashboard.List.no_data" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>Nodata Object, set various nodata properties</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="arcgis.apps.dashboard.List.selection_color">
+<em class="property">property </em><code class="sig-name descname">selection_color</code><a class="headerlink" href="#arcgis.apps.dashboard.List.selection_color" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>selection color.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="arcgis.apps.dashboard.List.selection_mode">
+<em class="property">property </em><code class="sig-name descname">selection_mode</code><a class="headerlink" href="#arcgis.apps.dashboard.List.selection_mode" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>selection mode.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="arcgis.apps.dashboard.List.selection_text_color">
+<em class="property">property </em><code class="sig-name descname">selection_text_color</code><a class="headerlink" href="#arcgis.apps.dashboard.List.selection_text_color" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>selection text color.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="arcgis.apps.dashboard.List.seperator_color">
+<em class="property">property </em><code class="sig-name descname">seperator_color</code><a class="headerlink" href="#arcgis.apps.dashboard.List.seperator_color" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>seperator color.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="arcgis.apps.dashboard.List.show_last_update">
+<em class="property">property </em><code class="sig-name descname">show_last_update</code><a class="headerlink" href="#arcgis.apps.dashboard.List.show_last_update" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>show last update or not.</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="maplegend">
+<h2>MapLegend<a class="headerlink" href="#maplegend" title="Permalink to this headline">¶</a></h2>
+<dl class="py class">
+<dt id="arcgis.apps.dashboard.MapLegend">
+<em class="property">class </em><code class="sig-prename descclassname">arcgis.apps.dashboard.</code><code class="sig-name descname">MapLegend</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">map_widget</span></em>, <em class="sig-param"><span class="n">name</span><span class="o">=</span><span class="default_value">'MapLegend'</span></em>, <em class="sig-param"><span class="n">title</span><span class="o">=</span><span class="default_value">''</span></em>, <em class="sig-param"><span class="n">description</span><span class="o">=</span><span class="default_value">''</span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.apps.dashboard.MapLegend" title="Permalink to this definition">¶</a></dt>
+<dd><p>Create a MapLegend widget for Dashboard</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 37%" />
+<col style="width: 63%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><strong>Argument</strong></p></td>
+<td><p><strong>Description</strong></p></td>
+</tr>
+<tr class="row-even"><td><p>map_widget</p></td>
+<td><p>Required web map widget. Legend for this
+Map widget is displayed.
+This map widget needs to be a part of the
+final Dashboard as well.</p></td>
+</tr>
+<tr class="row-odd"><td><p>name</p></td>
+<td><p>Optional String. Name of the widget.</p></td>
+</tr>
+<tr class="row-even"><td><p>title</p></td>
+<td><p>Optional string. Title of the widget.</p></td>
+</tr>
+<tr class="row-odd"><td><p>description</p></td>
+<td><p>Optional string. Description of the widget.</p></td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</div>
+<div class="section" id="piechart">
+<h2>PieChart<a class="headerlink" href="#piechart" title="Permalink to this headline">¶</a></h2>
+<dl class="py class">
+<dt id="arcgis.apps.dashboard.PieChart">
+<em class="property">class </em><code class="sig-prename descclassname">arcgis.apps.dashboard.</code><code class="sig-name descname">PieChart</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">item</span></em>, <em class="sig-param"><span class="n">name</span><span class="o">=</span><span class="default_value">'PieChart'</span></em>, <em class="sig-param"><span class="n">layer</span><span class="o">=</span><span class="default_value">0</span></em>, <em class="sig-param"><span class="n">categories_from</span><span class="o">=</span><span class="default_value">'groupByValues'</span></em>, <em class="sig-param"><span class="n">title</span><span class="o">=</span><span class="default_value">''</span></em>, <em class="sig-param"><span class="n">description</span><span class="o">=</span><span class="default_value">''</span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.apps.dashboard.PieChart" title="Permalink to this definition">¶</a></dt>
+<dd><p>Creates a dashboard Pie Chart widget.</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 36%" />
+<col style="width: 64%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><strong>Argument</strong></p></td>
+<td><p><strong>Description</strong></p></td>
+</tr>
+<tr class="row-even"><td><p>item</p></td>
+<td><p>Required Portal Item object. Item object can
+be a Feature Layer or a MapWidget.</p></td>
+</tr>
+<tr class="row-odd"><td><p>name</p></td>
+<td><p>Optional string. Name of the pie chart
+widget.</p></td>
+</tr>
+<tr class="row-even"><td><p>layer</p></td>
+<td><p>Optional integer. Layer number when item is
+a mapwidget.</p></td>
+</tr>
+<tr class="row-odd"><td><p>categories_from</p></td>
+<td><p>Optional string. Select from groupByValues,
+features or fields.</p></td>
+</tr>
+<tr class="row-even"><td><p>title</p></td>
+<td><p>Optional string. Title or Caption for the
+widget.</p></td>
+</tr>
+<tr class="row-odd"><td><p>description</p></td>
+<td><p>Optional string. Description for the widget.</p></td>
+</tr>
+</tbody>
+</table>
+<dl class="py method">
+<dt id="arcgis.apps.dashboard.PieChart.data">
+<em class="property">property </em><code class="sig-name descname">data</code><a class="headerlink" href="#arcgis.apps.dashboard.PieChart.data" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>Pie Chart Data object. Set data properties, categories and values.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="arcgis.apps.dashboard.PieChart.events">
+<em class="property">property </em><code class="sig-name descname">events</code><a class="headerlink" href="#arcgis.apps.dashboard.PieChart.events" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>list of events attached to the widget.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="arcgis.apps.dashboard.PieChart.labels">
+<em class="property">property </em><code class="sig-name descname">labels</code><a class="headerlink" href="#arcgis.apps.dashboard.PieChart.labels" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>show labels or not.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="arcgis.apps.dashboard.PieChart.legend">
+<em class="property">property </em><code class="sig-name descname">legend</code><a class="headerlink" href="#arcgis.apps.dashboard.PieChart.legend" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>Legend Object, set Visibility and placement</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="arcgis.apps.dashboard.PieChart.max_features">
+<em class="property">property </em><code class="sig-name descname">max_features</code><a class="headerlink" href="#arcgis.apps.dashboard.PieChart.max_features" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>max number of features to display.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="arcgis.apps.dashboard.PieChart.no_data">
+<em class="property">property </em><code class="sig-name descname">no_data</code><a class="headerlink" href="#arcgis.apps.dashboard.PieChart.no_data" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>Nodata Object, set various nodata properties</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="arcgis.apps.dashboard.PieChart.outline">
+<em class="property">property </em><code class="sig-name descname">outline</code><a class="headerlink" href="#arcgis.apps.dashboard.PieChart.outline" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>Outline Object, set various outline properties</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="arcgis.apps.dashboard.PieChart.pie">
+<em class="property">property </em><code class="sig-name descname">pie</code><a class="headerlink" href="#arcgis.apps.dashboard.PieChart.pie" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>Pie Object, set various pie properties</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="arcgis.apps.dashboard.PieChart.show_last_update">
+<em class="property">property </em><code class="sig-name descname">show_last_update</code><a class="headerlink" href="#arcgis.apps.dashboard.PieChart.show_last_update" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>show last update or not.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="arcgis.apps.dashboard.PieChart.slices">
+<em class="property">property </em><code class="sig-name descname">slices</code><a class="headerlink" href="#arcgis.apps.dashboard.PieChart.slices" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>Slices Object, set various slices properties</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="richtext">
+<h2>RichText<a class="headerlink" href="#richtext" title="Permalink to this headline">¶</a></h2>
+<dl class="py class">
+<dt id="arcgis.apps.dashboard.RichText">
+<em class="property">class </em><code class="sig-prename descclassname">arcgis.apps.dashboard.</code><code class="sig-name descname">RichText</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">html_text</span></em>, <em class="sig-param"><span class="n">name</span><span class="o">=</span><span class="default_value">'RichText'</span></em>, <em class="sig-param"><span class="n">title</span><span class="o">=</span><span class="default_value">''</span></em>, <em class="sig-param"><span class="n">description</span><span class="o">=</span><span class="default_value">''</span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.apps.dashboard.RichText" title="Permalink to this definition">¶</a></dt>
+<dd><p>Creates a dashboard Rich Text widget.</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 37%" />
+<col style="width: 63%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><strong>Argument</strong></p></td>
+<td><p><strong>Description</strong></p></td>
+</tr>
+<tr class="row-even"><td><p>html_text</p></td>
+<td><p>Required HTML text. This text will be
+displayed in Rich Text format.</p></td>
+</tr>
+<tr class="row-odd"><td><p>name</p></td>
+<td><p>Optional String. Name of the widget.</p></td>
+</tr>
+<tr class="row-even"><td><p>title</p></td>
+<td><p>Optional string. Title of the widget.</p></td>
+</tr>
+<tr class="row-odd"><td><p>description</p></td>
+<td><p>Optional string. Description of the widget.</p></td>
+</tr>
+</tbody>
+</table>
+<dl class="py method">
+<dt id="arcgis.apps.dashboard.RichText.no_data">
+<em class="property">property </em><code class="sig-name descname">no_data</code><a class="headerlink" href="#arcgis.apps.dashboard.RichText.no_data" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>Nodata Object, set various nodata properties</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="arcgis.apps.dashboard.RichText.text">
+<em class="property">property </em><code class="sig-name descname">text</code><a class="headerlink" href="#arcgis.apps.dashboard.RichText.text" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>text field for rich text</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="arcgis.apps.dashboard.RichText.type">
+<em class="property">property </em><code class="sig-name descname">type</code><a class="headerlink" href="#arcgis.apps.dashboard.RichText.type" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>widget type.</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="serialchart">
+<h2>SerialChart<a class="headerlink" href="#serialchart" title="Permalink to this headline">¶</a></h2>
+<dl class="py class">
+<dt id="arcgis.apps.dashboard.SerialChart">
+<em class="property">class </em><code class="sig-prename descclassname">arcgis.apps.dashboard.</code><code class="sig-name descname">SerialChart</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">item</span></em>, <em class="sig-param"><span class="n">name</span><span class="o">=</span><span class="default_value">'SerialChart'</span></em>, <em class="sig-param"><span class="n">layer</span><span class="o">=</span><span class="default_value">0</span></em>, <em class="sig-param"><span class="n">categories_from</span><span class="o">=</span><span class="default_value">'groupByValues'</span></em>, <em class="sig-param"><span class="n">title</span><span class="o">=</span><span class="default_value">''</span></em>, <em class="sig-param"><span class="n">description</span><span class="o">=</span><span class="default_value">''</span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.apps.dashboard.SerialChart" title="Permalink to this definition">¶</a></dt>
+<dd><p>Creates a dashboard Serial Chart widget.</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 36%" />
+<col style="width: 64%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><strong>Argument</strong></p></td>
+<td><p><strong>Description</strong></p></td>
+</tr>
+<tr class="row-even"><td><p>item</p></td>
+<td><p>Required Portal Item object. Item object can
+be a Feature Layer or a MapWidget.</p></td>
+</tr>
+<tr class="row-odd"><td><p>name</p></td>
+<td><p>Optional string. Name of the serial chart
+widget.</p></td>
+</tr>
+<tr class="row-even"><td><p>layer</p></td>
+<td><p>Optional integer. Layer number when item is
+a mapwidget.</p></td>
+</tr>
+<tr class="row-odd"><td><p>categories_from</p></td>
+<td><p>Optional string. Select from groupByValues,
+features or fields.</p></td>
+</tr>
+<tr class="row-even"><td><p>title</p></td>
+<td><p>Optional string. Title or Caption for the
+widget.</p></td>
+</tr>
+<tr class="row-odd"><td><p>description</p></td>
+<td><p>Optional string. Description for the widget.</p></td>
+</tr>
+</tbody>
+</table>
+<dl class="py method">
+<dt id="arcgis.apps.dashboard.SerialChart.category_axis">
+<em class="property">property </em><code class="sig-name descname">category_axis</code><a class="headerlink" href="#arcgis.apps.dashboard.SerialChart.category_axis" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>Returns Category Axis Properties object.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="arcgis.apps.dashboard.SerialChart.data">
+<em class="property">property </em><code class="sig-name descname">data</code><a class="headerlink" href="#arcgis.apps.dashboard.SerialChart.data" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>Serial Chart Data object. Set data properties, categories and values.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="arcgis.apps.dashboard.SerialChart.events">
+<em class="property">property </em><code class="sig-name descname">events</code><a class="headerlink" href="#arcgis.apps.dashboard.SerialChart.events" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>list of events attached to the widget.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="arcgis.apps.dashboard.SerialChart.font_size">
+<em class="property">property </em><code class="sig-name descname">font_size</code><a class="headerlink" href="#arcgis.apps.dashboard.SerialChart.font_size" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>Font Size</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="arcgis.apps.dashboard.SerialChart.legend">
+<em class="property">property </em><code class="sig-name descname">legend</code><a class="headerlink" href="#arcgis.apps.dashboard.SerialChart.legend" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>Legend Object, set Visibility and placement</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="arcgis.apps.dashboard.SerialChart.no_data">
+<em class="property">property </em><code class="sig-name descname">no_data</code><a class="headerlink" href="#arcgis.apps.dashboard.SerialChart.no_data" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>NoDataProperties Object</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="arcgis.apps.dashboard.SerialChart.orientation">
+<em class="property">property </em><code class="sig-name descname">orientation</code><a class="headerlink" href="#arcgis.apps.dashboard.SerialChart.orientation" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>Orientation of the serial chart, “horizontal” or “vertical”.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="arcgis.apps.dashboard.SerialChart.scroll">
+<em class="property">property </em><code class="sig-name descname">scroll</code><a class="headerlink" href="#arcgis.apps.dashboard.SerialChart.scroll" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>True if scroll is enabled else False.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="arcgis.apps.dashboard.SerialChart.value_axis">
+<em class="property">property </em><code class="sig-name descname">value_axis</code><a class="headerlink" href="#arcgis.apps.dashboard.SerialChart.value_axis" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>Value Axis Properties object.</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="sidepanel">
+<h2>SidePanel<a class="headerlink" href="#sidepanel" title="Permalink to this headline">¶</a></h2>
+<dl class="py class">
+<dt id="arcgis.apps.dashboard.SidePanel">
+<em class="property">class </em><code class="sig-prename descclassname">arcgis.apps.dashboard.</code><code class="sig-name descname">SidePanel</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">title</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">description</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.apps.dashboard.SidePanel" title="Permalink to this definition">¶</a></dt>
+<dd><p>Creates a dashboard Side Panel widget.</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 37%" />
+<col style="width: 63%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><strong>Argument</strong></p></td>
+<td><p><strong>Description</strong></p></td>
+</tr>
+<tr class="row-even"><td><p>title</p></td>
+<td><p>Optional string. Title of the header.</p></td>
+</tr>
+<tr class="row-odd"><td><p>description</p></td>
+<td><p>Optional string. Description of the widget.</p></td>
+</tr>
+</tbody>
+</table>
+<dl class="py method">
+<dt id="arcgis.apps.dashboard.SidePanel.add_selector">
+<code class="sig-name descname">add_selector</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">selector</span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.apps.dashboard.SidePanel.add_selector" title="Permalink to this definition">¶</a></dt>
+<dd><p>Add Number Selector, Category Selector or Date Picker widget.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="arcgis.apps.dashboard.SidePanel.allow_sliding">
+<em class="property">property </em><code class="sig-name descname">allow_sliding</code><a class="headerlink" href="#arcgis.apps.dashboard.SidePanel.allow_sliding" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>True or False for sliding enabled or disabled.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="arcgis.apps.dashboard.SidePanel.background_color">
+<em class="property">property </em><code class="sig-name descname">background_color</code><a class="headerlink" href="#arcgis.apps.dashboard.SidePanel.background_color" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>Background color of the side panel widget.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="arcgis.apps.dashboard.SidePanel.description">
+<em class="property">property </em><code class="sig-name descname">description</code><a class="headerlink" href="#arcgis.apps.dashboard.SidePanel.description" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>Description of the widget.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="arcgis.apps.dashboard.SidePanel.text_color">
+<em class="property">property </em><code class="sig-name descname">text_color</code><a class="headerlink" href="#arcgis.apps.dashboard.SidePanel.text_color" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>Text color of the side panel.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="arcgis.apps.dashboard.SidePanel.title">
+<em class="property">property </em><code class="sig-name descname">title</code><a class="headerlink" href="#arcgis.apps.dashboard.SidePanel.title" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>Title of the widget.</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="datepicker">
+<h2>DatePicker<a class="headerlink" href="#datepicker" title="Permalink to this headline">¶</a></h2>
+<dl class="py class">
+<dt id="arcgis.apps.dashboard.DatePicker">
+<em class="property">class </em><code class="sig-prename descclassname">arcgis.apps.dashboard.</code><code class="sig-name descname">DatePicker</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">range</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="n">operator</span><span class="o">=</span><span class="default_value">'is'</span></em>, <em class="sig-param"><span class="n">label</span><span class="o">=</span><span class="default_value">''</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.apps.dashboard.DatePicker" title="Permalink to this definition">¶</a></dt>
+<dd><p>Creates a Date Selector widget for Side Panel or Header.</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 37%" />
+<col style="width: 63%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><strong>Argument</strong></p></td>
+<td><p><strong>Description</strong></p></td>
+</tr>
+<tr class="row-even"><td><p>range</p></td>
+<td><p>Optional boolean. True to create a range
+selector.</p></td>
+</tr>
+<tr class="row-odd"><td><p>operator</p></td>
+<td><p>Optional String. Operator for non range
+datepicker.
+Options: “is”, “is not”, “is before”,
+“is or is before”, “is after”,
+“is or is after”.</p></td>
+</tr>
+<tr class="row-even"><td><p>label</p></td>
+<td><p>Optional String. Label for the widget.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a href="#id1"><span class="problematic" id="id2">**</span></a>kwargs</p></td>
+<td><p>If “range” is True, provide two parameters
+“min_value” and “max_value”. If “range” is
+False provide single parameter “value”.
+Allowed values:
+None, “Today”, or a fixed value in
+24 hours format
+(year, month, day, hour, minutes)
+or
+(year, month, day)</p></td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</div>
+<div class="section" id="categoryselector">
+<h2>CategorySelector<a class="headerlink" href="#categoryselector" title="Permalink to this headline">¶</a></h2>
+<dl class="py class">
+<dt id="arcgis.apps.dashboard.CategorySelector">
+<em class="property">class </em><code class="sig-prename descclassname">arcgis.apps.dashboard.</code><code class="sig-name descname">CategorySelector</code><a class="headerlink" href="#arcgis.apps.dashboard.CategorySelector" title="Permalink to this definition">¶</a></dt>
+<dd><p>Creates a Category Selector widget for Side Panel or Header.</p>
+<dl class="py method">
+<dt id="arcgis.apps.dashboard.CategorySelector.selector">
+<em class="property">property </em><code class="sig-name descname">selector</code><a class="headerlink" href="#arcgis.apps.dashboard.CategorySelector.selector" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>Selector Properties Object, set label, preferred display, display threshold, operator etc.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="arcgis.apps.dashboard.CategorySelector.set_defined_values">
+<code class="sig-name descname">set_defined_values</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">key_value_pairs</span></em>, <em class="sig-param"><span class="n">value_type</span><span class="o">=</span><span class="default_value">'string'</span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.apps.dashboard.CategorySelector.set_defined_values" title="Permalink to this definition">¶</a></dt>
+<dd><p>Set defined values for the dropdown.</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 35%" />
+<col style="width: 65%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><strong>Argument</strong></p></td>
+<td><p><strong>Description</strong></p></td>
+</tr>
+<tr class="row-even"><td><p>key_value_pairs</p></td>
+<td><p>Optional list of tuples. The tuple should
+contain labels and their corresponding values.</p></td>
+</tr>
+<tr class="row-odd"><td><p>value_type</p></td>
+<td><p>Optional String.
+The data type of the values in the tuple.
+“integer” or “string</p></td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="py method">
+<dt id="arcgis.apps.dashboard.CategorySelector.set_feature_options">
+<code class="sig-name descname">set_feature_options</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">item</span></em>, <em class="sig-param"><span class="n">line_item_text</span><span class="o">=</span><span class="default_value">''</span></em>, <em class="sig-param"><span class="n">field_name</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">max_features</span><span class="o">=</span><span class="default_value">50</span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.apps.dashboard.CategorySelector.set_feature_options" title="Permalink to this definition">¶</a></dt>
+<dd><p>Set feature values for dropdown.</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 36%" />
+<col style="width: 64%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><strong>Argument</strong></p></td>
+<td><p><strong>Description</strong></p></td>
+</tr>
+<tr class="row-even"><td><p>item</p></td>
+<td><p>Required Portal Item.
+Dropdown values will be populated from this.</p></td>
+</tr>
+<tr class="row-odd"><td><p>line_item_text</p></td>
+<td><p>Optional String.
+This text will be displayed with options.</p></td>
+</tr>
+<tr class="row-even"><td><p>field_name</p></td>
+<td><p>Optional String.
+Data from this field will be added to list.</p></td>
+</tr>
+<tr class="row-odd"><td><p>max_features</p></td>
+<td><p>Optional Integer.
+Set max features to display.</p></td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="py method">
+<dt id="arcgis.apps.dashboard.CategorySelector.set_group_by_values">
+<code class="sig-name descname">set_group_by_values</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">item</span></em>, <em class="sig-param"><span class="n">category_field</span></em>, <em class="sig-param"><span class="n">max_features</span><span class="o">=</span><span class="default_value">50</span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.apps.dashboard.CategorySelector.set_group_by_values" title="Permalink to this definition">¶</a></dt>
+<dd><p>Set group by values for dropdown.</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 36%" />
+<col style="width: 64%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><strong>Argument</strong></p></td>
+<td><p><strong>Description</strong></p></td>
+</tr>
+<tr class="row-even"><td><p>item</p></td>
+<td><p>Required Portal Item.
+Dropdown values will be populated from this.</p></td>
+</tr>
+<tr class="row-odd"><td><p>category_field</p></td>
+<td><p>Optional String. This string denotes the
+field to pick the values from.</p></td>
+</tr>
+<tr class="row-even"><td><p>max_features</p></td>
+<td><p>Optional Integer.
+Set max features to display.</p></td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="numberselector">
+<h2>NumberSelector<a class="headerlink" href="#numberselector" title="Permalink to this headline">¶</a></h2>
+<dl class="py class">
+<dt id="arcgis.apps.dashboard.NumberSelector">
+<em class="property">class </em><code class="sig-prename descclassname">arcgis.apps.dashboard.</code><code class="sig-name descname">NumberSelector</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">range</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="n">display_type</span><span class="o">=</span><span class="default_value">'spinner'</span></em>, <em class="sig-param"><span class="n">label</span><span class="o">=</span><span class="default_value">'Select a number'</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.apps.dashboard.NumberSelector" title="Permalink to this definition">¶</a></dt>
+<dd><p>Creates a Number Selector widget for Side Panel or Header.</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 37%" />
+<col style="width: 63%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><strong>Argument</strong></p></td>
+<td><p><strong>Description</strong></p></td>
+</tr>
+<tr class="row-even"><td><p>range</p></td>
+<td><p>Optional boolean. True to create a range
+selector.</p></td>
+</tr>
+<tr class="row-odd"><td><p>display_type</p></td>
+<td><p>Optional String. Display type can be from
+“spinner”, “slider”, “input”.</p></td>
+</tr>
+<tr class="row-even"><td><p>label</p></td>
+<td><p>Optional string. Label for the selector.</p></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Keyword Arguments</strong></p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 35%" />
+<col style="width: 65%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><strong>Argument</strong></p></td>
+<td><p><strong>Description</strong></p></td>
+</tr>
+<tr class="row-even"><td><p>operator</p></td>
+<td><p>Optional string for non-range input.
+Allowed: “equal”, “not equal”, “greater than”,
+“greater than or equal”, “less than”,
+“less than or equal”.
+Default: “equal”</p></td>
+</tr>
+<tr class="row-odd"><td><p>increment_factor</p></td>
+<td><p>Optional int for slider and spinner input.</p></td>
+</tr>
+</tbody>
+</table>
+<dl class="py method">
+<dt id="arcgis.apps.dashboard.NumberSelector.placeholder_text">
+<em class="property">property </em><code class="sig-name descname">placeholder_text</code><a class="headerlink" href="#arcgis.apps.dashboard.NumberSelector.placeholder_text" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>Text for left place holder in range type or default place holder.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="arcgis.apps.dashboard.NumberSelector.right_placeholder_text">
+<em class="property">property </em><code class="sig-name descname">right_placeholder_text</code><a class="headerlink" href="#arcgis.apps.dashboard.NumberSelector.right_placeholder_text" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>Text for right place holder in range type.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="arcgis.apps.dashboard.NumberSelector.set_defined_limits">
+<code class="sig-name descname">set_defined_limits</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">lower_limit</span><span class="o">=</span><span class="default_value">0</span></em>, <em class="sig-param"><span class="n">upper_limit</span><span class="o">=</span><span class="default_value">100</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.apps.dashboard.NumberSelector.set_defined_limits" title="Permalink to this definition">¶</a></dt>
+<dd><p>Set the item to pick values from for spinner and slider display type.</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 37%" />
+<col style="width: 63%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><strong>Argument</strong></p></td>
+<td><p><strong>Description</strong></p></td>
+</tr>
+<tr class="row-even"><td><p>lower_limit</p></td>
+<td><p>Optional integer. Set the lower limit.</p></td>
+</tr>
+<tr class="row-odd"><td><p>upper_limit</p></td>
+<td><p>Optional integer. Set the upper limit.</p></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Keyword Arguments</strong></p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 37%" />
+<col style="width: 63%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><strong>Argument</strong></p></td>
+<td><p><strong>Description</strong></p></td>
+</tr>
+<tr class="row-even"><td><p>default</p></td>
+<td><p>Optional integer. Set default value for
+non-range selector.</p></td>
+</tr>
+<tr class="row-odd"><td><p>lower_default</p></td>
+<td><p>Optional integer. Set the lower default
+value for range selector.</p></td>
+</tr>
+<tr class="row-even"><td><p>upper_default</p></td>
+<td><p>Optional integer. Set the upper default
+value for range selector.</p></td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="py method">
+<dt id="arcgis.apps.dashboard.NumberSelector.set_statistics_limits">
+<code class="sig-name descname">set_statistics_limits</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">item</span></em>, <em class="sig-param"><span class="n">field</span></em>, <em class="sig-param"><span class="n">default</span><span class="o">=</span><span class="default_value">'min'</span></em>, <em class="sig-param"><span class="n">layer_id</span><span class="o">=</span><span class="default_value">0</span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.apps.dashboard.NumberSelector.set_statistics_limits" title="Permalink to this definition">¶</a></dt>
+<dd><p>Set the item to pick values from for spinner and slider display type.</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 35%" />
+<col style="width: 65%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><strong>Argument</strong></p></td>
+<td><p><strong>Description</strong></p></td>
+</tr>
+<tr class="row-even"><td><p>item</p></td>
+<td><p>Required Portal Item. Item to pick values from.</p></td>
+</tr>
+<tr class="row-odd"><td><p>field</p></td>
+<td><p>Required String. Field from the Portal Item.</p></td>
+</tr>
+<tr class="row-even"><td><p>default</p></td>
+<td><p>Optional String. Default value statistic.
+Options: “min”, “max”, “avg”</p></td>
+</tr>
+<tr class="row-odd"><td><p>layer_id</p></td>
+<td><p>Optional Int. Layer Id for the item.</p></td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="add-row">
+<h2>add_row<a class="headerlink" href="#add-row" title="Permalink to this headline">¶</a></h2>
+<dl class="py class">
+<dt id="arcgis.apps.dashboard.add_row">
+<em class="property">class </em><code class="sig-prename descclassname">arcgis.apps.dashboard.</code><code class="sig-name descname">add_row</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">elements</span></em>, <em class="sig-param"><span class="n">height</span><span class="o">=</span><span class="default_value">1</span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.apps.dashboard.add_row" title="Permalink to this definition">¶</a></dt>
+<dd><p>Creates a Row Layout.</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 37%" />
+<col style="width: 63%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><strong>Argument</strong></p></td>
+<td><p><strong>Description</strong></p></td>
+</tr>
+<tr class="row-even"><td><p>elements</p></td>
+<td><p>Required List. Widgets that have to be part
+of the row.</p></td>
+</tr>
+<tr class="row-odd"><td><p>height</p></td>
+<td><p>Optional int. Height of the row.</p></td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</div>
+<div class="section" id="add-column">
+<h2>add_column<a class="headerlink" href="#add-column" title="Permalink to this headline">¶</a></h2>
+<dl class="py class">
+<dt id="arcgis.apps.dashboard.add_column">
+<em class="property">class </em><code class="sig-prename descclassname">arcgis.apps.dashboard.</code><code class="sig-name descname">add_column</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">elements</span></em>, <em class="sig-param"><span class="n">width</span><span class="o">=</span><span class="default_value">1</span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.apps.dashboard.add_column" title="Permalink to this definition">¶</a></dt>
+<dd><p>Creates a Column Layout.</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 37%" />
+<col style="width: 63%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><strong>Argument</strong></p></td>
+<td><p><strong>Description</strong></p></td>
+</tr>
+<tr class="row-even"><td><p>elements</p></td>
+<td><p>Required List. Widgets that have to be part
+of the row.</p></td>
+</tr>
+<tr class="row-odd"><td><p>width</p></td>
+<td><p>Optional int. Width of the Column.</p></td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</div>
+</div>
+
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="arcgis.apps.workforce.html" class="btn btn-neutral float-right" title="arcgis.apps.workforce module" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="arcgis.apps.hub.html" class="btn btn-neutral float-left" title="arcgis.apps.hub module" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        
+        &copy; Copyright 2016-2021, Esri
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+    Options v: 1.8.4
+
+  <div class="rst-versions" data-toggle="rst-versions" role="note" aria-label="versions">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      <span class="fa fa-book"> Pick an earlier version</span>
+      v: 1.8.4
+      <span class="fa fa-caret-down"></span>
+    </span>
+    <div class="rst-other-versions">
+      
+      
+      <dl>
+        <dt>Versions</dt>
+        
+          
+          <dd><a href="1.8.3/">1.8.3</a></dd>
+          
+        
+          
+          <dd><a href="1.8.2/">1.8.2</a></dd>
+          
+        
+          
+          <dd><a href="1.8.1/">1.8.1</a></dd>
+          
+        
+          
+          <dd><a href="1.8.0/">1.8.0</a></dd>
+          
+        
+          
+          <dd><a href="1.7.1/">1.7.1</a></dd>
+          
+        
+          
+          <dd><a href="1.7.0/">1.7.0</a></dd>
+          
+        
+          
+          <dd><a href="1.6.2/">1.6.2</a></dd>
+          
+        
+          
+          <dd><a href="1.6.1/">1.6.1</a></dd>
+          
+        
+          
+          <dd><a href="1.6.0/">1.6.0</a></dd>
+          
+        
+          
+          <dd><a href="1.5.3/">1.5.3</a></dd>
+          
+        
+          
+          <dd><a href="1.5.2/">1.5.2</a></dd>
+          
+        
+          
+          <dd><a href="1.5.1/">1.5.1</a></dd>
+          
+        
+          
+          <dd><a href="1.5.0/">1.5.0</a></dd>
+          
+        
+          
+          <dd><a href="1.4.2/">1.4.2</a></dd>
+          
+        
+          
+          <dd><a href="1.4.1/">1.4.1</a></dd>
+          
+        
+          
+          <dd><a href="1.4.0/">1.4.0</a></dd>
+          
+        
+          
+          <dd><a href="1.3.0/">1.3.0</a></dd>
+          
+        
+          
+          <dd><a href="1.2.5/">1.2.5</a></dd>
+          
+        
+          
+          <dd><a href="1.2.4/">1.2.4</a></dd>
+          
+        
+          
+          <dd><a href="1.2.3/">1.2.3</a></dd>
+          
+        
+          
+          <dd><a href="1.2.2/">1.2.2</a></dd>
+          
+        
+          
+          <dd><a href="1.2.1/">1.2.1</a></dd>
+          
+        
+          
+          <dd><a href="1.2.0/">1.2.0</a></dd>
+          
+        
+          
+          <dd><a href="1.0.1/">1.0.1</a></dd>
+          
+        
+          
+          <dd><a href="1.0.0/">1.0.0</a></dd>
+          
+        
+          
+          <dd><a href="0.3.0/">0.3.0</a></dd>
+          
+        
+          
+          <dd><a href="0.2.0/">0.2.0</a></dd>
+          
+        
+          
+          <dd><a href="0.1.0/">0.1.0</a></dd>
+          
+        
+      </dl>
+      
+      
+      
+    </div>
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

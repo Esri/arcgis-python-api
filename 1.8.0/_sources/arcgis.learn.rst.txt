@@ -1,0 +1,102 @@
+arcgis.learn module
+====================
+
+.. automodule:: arcgis.learn
+
+detect_objects
+--------------
+.. autofunction:: arcgis.learn.detect_objects
+
+classify_objects
+----------------
+.. autofunction:: arcgis.learn.classify_objects
+    
+classify_pixels
+--------------
+.. autofunction:: arcgis.learn.classify_pixels
+
+
+export_training_data
+---------------
+.. autofunction:: arcgis.learn.export_training_data
+
+export_point_dataset
+---------------
+.. autofunction:: arcgis.learn.export_point_dataset
+
+list_models
+---------------
+.. autofunction:: arcgis.learn.list_models
+
+
+Model
+------
+.. autoclass:: arcgis.learn.Model
+    :members:
+    :undoc-members:
+
+prepare_data
+-----------
+.. autofunction:: arcgis.learn.prepare_data
+
+SingleShotDetector
+------------------
+.. autoclass:: arcgis.learn.SingleShotDetector
+    :members:
+    :inherited-members:
+    :undoc-members:
+
+UnetClassifier
+------------------
+.. autoclass:: arcgis.learn.UnetClassifier
+    :members:
+    :inherited-members:
+    :undoc-members:
+
+FeatureClassifier
+------------------
+.. autoclass:: arcgis.learn.FeatureClassifier
+    :members:
+    :inherited-members:
+    :undoc-members:
+
+RetinaNet
+------------------
+.. autoclass:: arcgis.learn.RetinaNet
+    :members:
+    :inherited-members:
+    :undoc-members:
+
+EntityRecognizer
+------------------
+.. autoclass:: arcgis.learn.EntityRecognizer
+    :members:
+    :undoc-members:
+
+PSPNetClassifier
+------------------
+.. autoclass:: arcgis.learn.PSPNetClassifier
+    :members:
+    :inherited-members:
+    :undoc-members:
+
+MaskRCNN
+------------------
+.. autoclass:: arcgis.learn.MaskRCNN
+    :members:
+    :inherited-members:
+    :undoc-members:
+
+DeepLab
+------------------
+.. autoclass:: arcgis.learn.DeepLab
+    :members:
+    :inherited-members:
+    :undoc-members:
+
+PointCNN
+------------------
+.. autoclass:: arcgis.learn.PointCNN
+    :members:
+    :inherited-members:
+    :undoc-members:

@@ -1,0 +1,58 @@
+arcgis.apps.hub module
+=======================
+
+.. automodule:: arcgis.apps.hub
+
+The :class:`~arcgis.apps.hub.Hub` is the main entry point into the Hub module.
+It can be used as shown in the following code example.
+
+.. code-block:: python
+
+    from arcgis.gis import GIS
+    gis = GIS("https://arcgis.com", "<username>", "<password>")
+    myHub = gis.hub
+    a_Initiative = myHub.initiatives.get(itemId)
+    a_Indicators = a_Initiative.indicators.search()
+    myEvents = myHub.events.search()
+
+Hub
+--------------------------
+.. autoclass:: arcgis.apps.hub.Hub
+    :members:
+    :undoc-members:
+
+Initiative
+--------------------------
+.. autoclass:: arcgis.apps.hub.Initiative
+    :members:
+    :undoc-members:
+
+Indicator
+--------------------------
+.. autoclass:: arcgis.apps.hub.Indicator
+    :members:
+    :undoc-members:
+
+Event
+--------------------------
+.. autoclass:: arcgis.apps.hub.Event
+    :members:
+    :undoc-members:
+
+InitiativeManager
+--------------------------
+.. autoclass:: arcgis.apps.hub.InitiativeManager
+    :members:
+    :undoc-members:
+
+IndicatorManager
+--------------------------
+.. autoclass:: arcgis.apps.hub.IndicatorManager
+    :members:
+    :undoc-members:
+
+EventManager
+--------------------------
+.. autoclass:: arcgis.apps.hub.EventManager
+    :members:
+    :undoc-members:

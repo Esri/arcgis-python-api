@@ -1,0 +1,1402 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <title>arcgis.mapping.forms module &mdash; arcgis 1.9 documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="_static/theme_overrides.css" type="text/css" />
+
+  
+  
+    <link rel="shortcut icon" href="_static/favicon.ico"/>
+  
+
+  
+  
+
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/doctools.js"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="arcgis.realtime module" href="arcgis.realtime.html" />
+    <link rel="prev" title="arcgis.mapping.ogc module" href="arcgis.mapping.ogc.html" />
+<!-- This code block is inserted close near the <head> tag. See http://bit.ly/2BHUQzB -->
+<!-- The point of this code block is to send us google analytics on website views -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-NJGGV5');</script>
+ 
+
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="index.html" class="icon icon-home"> arcgis
+          
+
+          
+            
+            <img src="_static/python_api_logo.png" class="logo" alt="Logo"/>
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1.9
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">arcgis</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="arcgis.gis.toc.html">arcgis.gis module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="arcgis.env.html">arcgis.env module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="arcgis.features.toc.html">arcgis.features module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="arcgis.raster.toc.html">arcgis.raster module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="arcgis.network.toc.html">arcgis.network module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="arcgis.geoanalytics.toc.html">arcgis.geoanalytics module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="arcgis.geocoding.html">arcgis.geocoding module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="arcgis.geoenrichment.html">arcgis.geoenrichment module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="arcgis.geometry.html">arcgis.geometry module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="arcgis.geoprocessing.html">arcgis.geoprocessing module</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="arcgis.mapping.toc.html">arcgis.mapping module</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="arcgis.mapping.toc.html#webmap">WebMap</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.mapping.toc.html#offlinemapareamanager">OfflineMapAreaManager</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.mapping.toc.html#packagingjob">PackagingJob</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.mapping.toc.html#webscene">WebScene</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.mapping.toc.html#mapimagelayer">MapImageLayer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.mapping.toc.html#mapservicelayer">MapServiceLayer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.mapping.toc.html#mapfeaturelayer">MapFeatureLayer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.mapping.toc.html#maprasterlayer">MapRasterLayer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.mapping.toc.html#maptable">MapTable</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.mapping.toc.html#mapimagelayermanager">MapImageLayerManager</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.mapping.toc.html#vectortilelayer">VectorTileLayer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.mapping.toc.html#scenelayer">SceneLayer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.mapping.toc.html#buildinglayer">BuildingLayer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.mapping.toc.html#integratedmeshlayer">IntegratedMeshLayer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.mapping.toc.html#object3dlayer">Object3DLayer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.mapping.toc.html#point3dlayer">Point3DLayer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.mapping.toc.html#pointcloudlayer">PointCloudLayer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.mapping.toc.html#export-map">export_map</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.mapping.toc.html#get-layout-templates">get_layout_templates</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.mapping.toc.html#module-arcgis.mapping.symbol">Symbology</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.mapping.toc.html#renderers">Renderers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.mapping.toc.html#generate-renderer">generate_renderer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.mapping.toc.html#visual-variables">visual_variables</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="arcgis.mapping.toc.html#submodules">Submodules</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="arcgis.mapping.ogc.html">arcgis.mapping.ogc module</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">arcgis.mapping.forms module</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#formcollection">FormCollection</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#forminfo">FormInfo</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#formelement">FormElement</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#formfieldelement">FormFieldElement</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#formgroupelement">FormGroupElement</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#formexpressioninfo">FormExpressionInfo</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="arcgis.realtime.html">arcgis.realtime module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="arcgis.schematics.html">arcgis.schematics module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="arcgis.widgets.html">arcgis.widgets module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="arcgis.apps.html">arcgis.apps module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="arcgis.learn.toc.html">arcgis.learn module</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">arcgis</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="arcgis.mapping.toc.html">arcgis.mapping module</a> &raquo;</li>
+        
+      <li>arcgis.mapping.forms module</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+<!-- This code block is inserted close near the <body> tag. See http://bit.ly/2BHUQzB -->
+<!-- The point of this code block is to send us google analytics on website views -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NJGGV5"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+
+  <div class="section" id="arcgis-mapping-forms-module">
+<h1>arcgis.mapping.forms module<a class="headerlink" href="#arcgis-mapping-forms-module" title="Permalink to this headline">¶</a></h1>
+<span class="target" id="module-arcgis.mapping.forms"></span><p>A module for managing forms in the ArcGIS platform</p>
+<div class="section" id="formcollection">
+<h2>FormCollection<a class="headerlink" href="#formcollection" title="Permalink to this headline">¶</a></h2>
+<dl class="py class">
+<dt id="arcgis.mapping.forms.FormCollection">
+<em class="property"><span class="pre">class</span> </em><code class="sig-prename descclassname"><span class="pre">arcgis.mapping.forms.</span></code><code class="sig-name descname"><span class="pre">FormCollection</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">parent</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.mapping.forms.FormCollection" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>Represents a collection of forms in a webmap or item. A form is the editable counterpart to a popup
+– it controls the appearance and behavior of your data collection experience in ArcGIS Field Maps
+and Map Viewer Beta.  These forms can then be used in the ArcGIS Field Maps mobile app and other applications.
+A form is stored as “formInfo” in the layer JSON on the webmap.
+This class will create a <a class="reference internal" href="#arcgis.mapping.forms.FormInfo" title="arcgis.mapping.forms.FormInfo"><code class="xref py py-class docutils literal notranslate"><span class="pre">arcgis.mapping.forms.FormInfo</span></code></a> object for each layer or table in the webmap/item data and return it
+as a list. You can then modify the <a class="reference internal" href="#arcgis.mapping.forms.FormInfo" title="arcgis.mapping.forms.FormInfo"><code class="xref py py-class docutils literal notranslate"><span class="pre">FormInfo</span></code></a> object to add and edit your form.</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 21%" />
+<col style="width: 79%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><strong>Argument</strong></p></td>
+<td><p><strong>Description</strong></p></td>
+</tr>
+<tr class="row-even"><td><p>parent</p></td>
+<td><p>Required <a class="reference internal" href="arcgis.mapping.toc.html#arcgis.mapping.WebMap" title="arcgis.mapping.WebMap"><code class="xref py py-class docutils literal notranslate"><span class="pre">arcgis.mapping.WebMap</span></code></a> or <a class="reference internal" href="arcgis.gis.toc.html#arcgis.gis.Item" title="arcgis.gis.Item"><code class="xref py py-class docutils literal notranslate"><span class="pre">arcgis.gis.Item</span></code></a>.
+This is the object which contains the layer, either an item of type
+<cite>Feature Layer Collection</cite> or a WebMap, where the forms are located.
+This is needed to save your form changes to the backend.</p></td>
+</tr>
+</tbody>
+</table>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># USAGE EXAMPLE 1: Get Form Collection from WebMap</span>
+<span class="n">wm</span> <span class="o">=</span> <span class="n">arcgis</span><span class="o">.</span><span class="n">mapping</span><span class="o">.</span><span class="n">WebMap</span><span class="p">(</span><span class="n">item</span><span class="p">)</span>
+<span class="n">wm</span><span class="o">.</span><span class="n">add_layer</span><span class="p">(</span><span class="n">manhole_inspection</span><span class="p">)</span>
+
+<span class="c1"># get forms from webmap, get individual form from FormCollection, modify form</span>
+<span class="n">form_collection</span> <span class="o">=</span> <span class="n">wm</span><span class="o">.</span><span class="n">forms</span>
+<span class="n">form_info_2</span> <span class="o">=</span> <span class="n">form_collection</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+<span class="n">form_info</span> <span class="o">=</span> <span class="n">form_collection</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">title</span><span class="o">=</span><span class="s2">&quot;Manhole Inspection&quot;</span><span class="p">)</span>
+<span class="n">form_info</span><span class="o">.</span><span class="n">clear</span><span class="p">()</span>
+<span class="n">form_info</span><span class="o">.</span><span class="n">add_field</span><span class="p">(</span><span class="n">field_name</span><span class="o">=</span><span class="s2">&quot;inspector&quot;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;Inspector&quot;</span><span class="p">,</span> <span class="n">description</span><span class="o">=</span><span class="s2">&quot;This is the inspector&quot;</span><span class="p">)</span>
+<span class="n">form_info</span><span class="o">.</span><span class="n">add_group</span><span class="p">(</span><span class="n">label</span><span class="o">=</span><span class="s2">&quot;Group 1&quot;</span><span class="p">,</span><span class="n">initial_state</span><span class="o">=</span><span class="s2">&quot;collapsed&quot;</span><span class="p">)</span>
+<span class="n">form_info</span><span class="o">.</span><span class="n">update</span><span class="p">()</span>
+
+<span class="c1"># USAGE EXAMPLE 2: Create Form Collection</span>
+
+<span class="kn">from</span> <span class="nn">arcgis.mapping.forms</span> <span class="kn">import</span> <span class="n">FormCollection</span>
+<span class="n">wm</span> <span class="o">=</span> <span class="n">arcgis</span><span class="o">.</span><span class="n">mapping</span><span class="o">.</span><span class="n">WebMap</span><span class="p">(</span><span class="n">item</span><span class="p">)</span>
+<span class="n">form_collection</span> <span class="o">=</span> <span class="n">FormCollection</span><span class="p">(</span><span class="n">wm</span><span class="p">)</span>
+<span class="n">form_info_1</span> <span class="o">=</span> <span class="n">form_collection</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">item_id</span><span class="o">=</span><span class="s2">&quot;232323232323232323&quot;</span><span class="p">)</span>
+<span class="n">form_info_1</span><span class="o">.</span><span class="n">title</span> <span class="o">=</span> <span class="s2">&quot;New Form&quot;</span>
+</pre></div>
+</div>
+<dl class="py method">
+<dt id="arcgis.mapping.forms.FormCollection.get">
+<code class="sig-name descname"><span class="pre">get</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">item_id</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">title</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">layer_id</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.mapping.forms.FormCollection.get" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the form for the first layer with a matching item_id, title, or layer_id in the webmap’s
+operational layers. Pass one of the three parameters into the method to return the form.</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 21%" />
+<col style="width: 79%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><strong>Argument</strong></p></td>
+<td><p><strong>Description</strong></p></td>
+</tr>
+<tr class="row-even"><td><p>item_id</p></td>
+<td><p>Optional <code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code>. Pass the item_id for the layer or table whose
+form you’d like to return.</p></td>
+</tr>
+<tr class="row-odd"><td><p>title</p></td>
+<td><p>Optional <code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code>. Pass the title for the layer or table whose
+form you’d like to return.</p></td>
+</tr>
+<tr class="row-even"><td><p>layer_id</p></td>
+<td><p>Optional <code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code>. Pass the layer_id for the layer whose form
+you’d like to return</p></td>
+</tr>
+</tbody>
+</table>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p><a class="reference internal" href="#arcgis.mapping.forms.FormInfo" title="arcgis.mapping.forms.FormInfo"><code class="xref py py-class docutils literal notranslate"><span class="pre">FormInfo</span></code></a> or <cite>None</cite></p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="forminfo">
+<h2>FormInfo<a class="headerlink" href="#forminfo" title="Permalink to this headline">¶</a></h2>
+<dl class="py class">
+<dt id="arcgis.mapping.forms.FormInfo">
+<em class="property"><span class="pre">class</span> </em><code class="sig-prename descclassname"><span class="pre">arcgis.mapping.forms.</span></code><code class="sig-name descname"><span class="pre">FormInfo</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">layer_data</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">parent</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.mapping.forms.FormInfo" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>Represents a form in ArcGIS Field Maps and other applications. This matches with
+the formInfo property in a webmap’s operational layer.</p>
+<p>For more please see: <a class="reference external" href="https://developers.arcgis.com/web-map-specification/objects/formInfo/">https://developers.arcgis.com/web-map-specification/objects/formInfo/</a></p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 21%" />
+<col style="width: 79%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><strong>Argument</strong></p></td>
+<td><p><strong>Description</strong></p></td>
+</tr>
+<tr class="row-even"><td><p>layer_data</p></td>
+<td><p>Required <code class="xref py py-class docutils literal notranslate"><span class="pre">PropertyMap</span></code> or <code class="xref py py-class docutils literal notranslate"><span class="pre">dict</span></code>. This is the
+operational layer which contains the formInfo dict. It can be
+retrieved from a webmap using <cite>arcgis.mapping.WebMap(item).layers[0]</cite></p></td>
+</tr>
+<tr class="row-odd"><td><p>parent</p></td>
+<td><p>Required <a class="reference internal" href="arcgis.mapping.toc.html#arcgis.mapping.WebMap" title="arcgis.mapping.WebMap"><code class="xref py py-class docutils literal notranslate"><span class="pre">arcgis.mapping.WebMap</span></code></a> or <a class="reference internal" href="arcgis.gis.toc.html#arcgis.gis.Item" title="arcgis.gis.Item"><code class="xref py py-class docutils literal notranslate"><span class="pre">arcgis.gis.Item</span></code></a>.
+This is the object which contains the layer, either an item of type
+<cite>Feature Layer Collection</cite> or a webmap. This is needed to save your
+form changes to the backend.</p></td>
+</tr>
+</tbody>
+</table>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># USAGE EXAMPLE 1: Modify FormInfo</span>
+    <span class="kn">from</span> <span class="nn">arcgis.mapping.forms</span> <span class="kn">import</span> <span class="n">FormFieldElement</span>
+    <span class="n">wm</span> <span class="o">=</span> <span class="n">arcgis</span><span class="o">.</span><span class="n">mapping</span><span class="o">.</span><span class="n">WebMap</span><span class="p">(</span><span class="n">item</span><span class="p">)</span>
+    <span class="n">wm</span><span class="o">.</span><span class="n">add_layer</span><span class="p">(</span><span class="n">manhole_inspection</span><span class="p">)</span>
+    <span class="n">form_collection</span> <span class="o">=</span> <span class="n">wm</span><span class="o">.</span><span class="n">forms</span>
+    <span class="n">form_info</span> <span class="o">=</span> <span class="n">form_collection</span><span class="o">.</span><span class="n">get_form</span><span class="p">(</span><span class="n">title</span><span class="o">=</span><span class="s2">&quot;Manhole Inspection&quot;</span><span class="p">)</span>
+
+    <span class="c1"># edit form properties</span>
+    <span class="n">form_info</span><span class="o">.</span><span class="n">title</span> <span class="o">=</span> <span class="s2">&quot;Manhole Inspection Form&quot;</span>
+    <span class="n">form_info</span><span class="o">.</span><span class="n">description</span> <span class="o">=</span> <span class="s2">&quot;The editable experience in ArcGIS Field Maps for data collection&quot;</span>
+
+    <span class="c1"># get element, add element</span>
+    <span class="n">new_element</span> <span class="o">=</span> <span class="n">FormFieldElement</span><span class="p">(</span><span class="n">label</span><span class="o">=</span><span class="s2">&quot;Inspector Name&quot;</span><span class="p">,</span> <span class="n">field_name</span><span class="o">=</span><span class="s2">&quot;inspectornm&quot;</span><span class="p">,</span>
+                                  <span class="n">editable</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+    <span class="n">form_info</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">element</span><span class="o">=</span><span class="n">new_element</span><span class="p">)</span>
+    <span class="n">same_element</span> <span class="o">=</span> <span class="n">form_info</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">label</span><span class="o">=</span><span class="s2">&quot;Inspector Name&quot;</span><span class="p">)</span>
+
+    <span class="c1"># add group, add second group, add to group</span>
+    <span class="n">form_info</span><span class="o">.</span><span class="n">add_group</span><span class="p">(</span><span class="n">label</span><span class="o">=</span><span class="s2">&quot;Inspector Group&quot;</span><span class="p">,</span><span class="n">description</span><span class="o">=</span><span class="s2">&quot;This is a group for inspectors&quot;</span><span class="p">)</span>
+    <span class="n">new_group</span> <span class="o">=</span> <span class="n">FormGroupElement</span><span class="p">(</span><span class="n">label</span><span class="o">=</span><span class="s2">&quot;Group 1&quot;</span><span class="p">,</span> <span class="n">description</span><span class="o">=</span><span class="s2">&quot;New Group&quot;</span><span class="p">)</span>
+    <span class="n">group</span> <span class="o">=</span> <span class="n">form_info</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">element</span><span class="o">=</span><span class="n">new_group</span><span class="p">)</span>
+    <span class="n">group</span><span class="o">.</span><span class="n">add_field</span><span class="p">(</span><span class="n">field_name</span><span class="o">=</span><span class="s2">&quot;inspection_date&quot;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;Inspection Date&quot;</span><span class="p">)</span>
+
+    <span class="c1"># move element, delete element</span>
+    <span class="n">form_info</span><span class="o">.</span><span class="n">move</span><span class="p">(</span><span class="n">element</span><span class="o">=</span><span class="n">new_group</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+    <span class="n">form_info</span><span class="o">.</span><span class="n">delete</span><span class="p">(</span><span class="n">element</span><span class="o">=</span><span class="n">new_group</span><span class="p">)</span>
+
+    <span class="c1"># save form into backend</span>
+    <span class="n">form_info</span><span class="o">.</span><span class="n">update</span><span class="p">()</span>
+</pre></div>
+</div>
+<dl class="py method">
+<dt id="arcgis.mapping.forms.FormInfo.add">
+<code class="sig-name descname"><span class="pre">add</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">element</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">index</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.mapping.forms.FormInfo.add" title="Permalink to this definition">¶</a></dt>
+<dd><p>Adds a single <a class="reference internal" href="#arcgis.mapping.forms.FormElement" title="arcgis.mapping.forms.FormElement"><code class="xref py py-class docutils literal notranslate"><span class="pre">FormElement</span></code></a> to the form. You can add to the form either by instantiating your
+own <a class="reference internal" href="#arcgis.mapping.forms.FormFieldElement" title="arcgis.mapping.forms.FormFieldElement"><code class="xref py py-class docutils literal notranslate"><span class="pre">FormFieldElement</span></code></a> or <a class="reference internal" href="#arcgis.mapping.forms.FormGroupElement" title="arcgis.mapping.forms.FormGroupElement"><code class="xref py py-class docutils literal notranslate"><span class="pre">FormGroupElement</span></code></a> and passing it into the element parameter here,
+or you can type in a valid field_name in the form’s layer and this function will attempt
+to add it to the form.</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 21%" />
+<col style="width: 79%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><strong>Argument</strong></p></td>
+<td><p><strong>Description</strong></p></td>
+</tr>
+<tr class="row-even"><td><p>element</p></td>
+<td><p>Optional <a class="reference internal" href="#arcgis.mapping.forms.FormFieldElement" title="arcgis.mapping.forms.FormFieldElement"><code class="xref py py-class docutils literal notranslate"><span class="pre">arcgis.mapping.forms.FormFieldElement</span></code></a> or
+<a class="reference internal" href="#arcgis.mapping.forms.FormGroupElement" title="arcgis.mapping.forms.FormGroupElement"><code class="xref py py-class docutils literal notranslate"><span class="pre">arcgis.mapping.forms.FormGroupElement</span></code></a>.</p></td>
+</tr>
+<tr class="row-odd"><td><p>field_name</p></td>
+<td><p>Optional <code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code>.
+An actual field name (not alias) corresponding to a field in the
+form’s feature layer</p></td>
+</tr>
+<tr class="row-even"><td><p>index</p></td>
+<td><p>Optional <code class="xref py py-class docutils literal notranslate"><span class="pre">int</span></code>.
+The index where you’d like the element in the form. If not provided,
+this function will add the new element to the end of the form.</p></td>
+</tr>
+</tbody>
+</table>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>The element that was added - <a class="reference internal" href="#arcgis.mapping.forms.FormFieldElement" title="arcgis.mapping.forms.FormFieldElement"><code class="xref py py-class docutils literal notranslate"><span class="pre">arcgis.mapping.forms.FormFieldElement</span></code></a> or</p>
+</dd>
+</dl>
+<p><a class="reference internal" href="#arcgis.mapping.forms.FormGroupElement" title="arcgis.mapping.forms.FormGroupElement"><code class="xref py py-class docutils literal notranslate"><span class="pre">arcgis.mapping.forms.FormGroupElement</span></code></a></p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="arcgis.mapping.forms.FormInfo.add_all_attributes">
+<code class="sig-name descname"><span class="pre">add_all_attributes</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.mapping.forms.FormInfo.add_all_attributes" title="Permalink to this definition">¶</a></dt>
+<dd><p>Adds all fields which can be valid form elements (string, date, int, double, small) to the form.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="arcgis.mapping.forms.FormInfo.add_field">
+<code class="sig-name descname"><span class="pre">add_field</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">field_name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">label</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">description</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">visibility_expression</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">domain</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">editable</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">hint</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">input_type</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">required_expression</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">index</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.mapping.forms.FormInfo.add_field" title="Permalink to this definition">¶</a></dt>
+<dd><p>Adds a single field <a class="reference internal" href="#arcgis.mapping.forms.FormElement" title="arcgis.mapping.forms.FormElement"><code class="xref py py-class docutils literal notranslate"><span class="pre">FormElement</span></code></a> element to the end of the form.</p>
+<p>For more please see: <a class="reference external" href="https://developers.arcgis.com/web-map-specification/objects/formFieldElement/">https://developers.arcgis.com/web-map-specification/objects/formFieldElement/</a></p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 24%" />
+<col style="width: 76%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><strong>Argument</strong></p></td>
+<td><p><strong>Description</strong></p></td>
+</tr>
+<tr class="row-even"><td><p>field_name</p></td>
+<td><p>Required <code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code>.
+The field name the form element corresponds to (where the data
+will be collected)</p></td>
+</tr>
+<tr class="row-odd"><td><p>label</p></td>
+<td><p>Required <code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code>.
+The label of the form element</p></td>
+</tr>
+<tr class="row-even"><td><p>description</p></td>
+<td><p>Optional <code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code>.
+The description of the form element</p></td>
+</tr>
+<tr class="row-odd"><td><p>visibility_expression</p></td>
+<td><p>Optional <a class="reference internal" href="#arcgis.mapping.forms.FormExpressionInfo" title="arcgis.mapping.forms.FormExpressionInfo"><code class="xref py py-class docutils literal notranslate"><span class="pre">arcgis.mapping.forms.FormExpressionInfo</span></code></a>.
+The conditional visibility Arcade expression determining the
+visibility of the form element during data collection</p></td>
+</tr>
+<tr class="row-even"><td><p>domain</p></td>
+<td><p>Optional <code class="xref py py-class docutils literal notranslate"><span class="pre">dict</span></code>.
+The domain of the form element</p></td>
+</tr>
+<tr class="row-odd"><td><p>editable</p></td>
+<td><p>Optional <code class="xref py py-class docutils literal notranslate"><span class="pre">bool</span></code>.
+Whether or not the form element is editable</p></td>
+</tr>
+<tr class="row-even"><td><p>hint</p></td>
+<td><p>Optional <code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code>.
+The hint for the user filling out the form element</p></td>
+</tr>
+<tr class="row-odd"><td><p>input_type</p></td>
+<td><p>Optional <code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code> or <code class="xref py py-class docutils literal notranslate"><span class="pre">dict</span></code>.
+The input type for the form element in ArcGIS Field Maps.
+Options include: “text-area”, “text-box”, “barcode-scanner”,
+“combo-box”, “radio-buttons”, “datetime-picker”</p></td>
+</tr>
+<tr class="row-even"><td><p>required_expression</p></td>
+<td><p>Optional <a class="reference internal" href="#arcgis.mapping.forms.FormExpressionInfo" title="arcgis.mapping.forms.FormExpressionInfo"><code class="xref py py-class docutils literal notranslate"><span class="pre">arcgis.mapping.forms.FormExpressionInfo</span></code></a>.
+The conditional visibility Arcade expression determining the
+requiredness of the form element during data collection</p></td>
+</tr>
+<tr class="row-odd"><td><p>index</p></td>
+<td><p>Optional <code class="xref py py-class docutils literal notranslate"><span class="pre">int</span></code>.
+The index where you’d like the element in the form. If not provided,
+this function will add the new element to the end of the form.</p></td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="py method">
+<dt id="arcgis.mapping.forms.FormInfo.add_group">
+<code class="sig-name descname"><span class="pre">add_group</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">label</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">description</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">visibility_expression</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">initial_state</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">index</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.mapping.forms.FormInfo.add_group" title="Permalink to this definition">¶</a></dt>
+<dd><p>Adds a single <code class="xref py py-class docutils literal notranslate"><span class="pre">GroupElement</span></code> to the form</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 24%" />
+<col style="width: 76%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><strong>Argument</strong></p></td>
+<td><p><strong>Description</strong></p></td>
+</tr>
+<tr class="row-even"><td><p>label</p></td>
+<td><p>Required <code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code>. The label of the group</p></td>
+</tr>
+<tr class="row-odd"><td><p>description</p></td>
+<td><p>Optional <code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code>. The description of the group</p></td>
+</tr>
+<tr class="row-even"><td><p>visibility_expression</p></td>
+<td><p>Optional <a class="reference internal" href="#arcgis.mapping.forms.FormExpressionInfo" title="arcgis.mapping.forms.FormExpressionInfo"><code class="xref py py-class docutils literal notranslate"><span class="pre">arcgis.mapping.forms.FormExpressionInfo</span></code></a>.
+The conditional visibility Arcade expression determining the
+visibility of the form element during data collection</p></td>
+</tr>
+<tr class="row-odd"><td><p>initial_state</p></td>
+<td><p>Optional <code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code>. The initial state of the group</p></td>
+</tr>
+<tr class="row-even"><td><p>index</p></td>
+<td><p>Optional <code class="xref py py-class docutils literal notranslate"><span class="pre">int</span></code>.
+The index where you’d like the element in the form. If not provided,
+this function will add the new element to the end of the form.</p></td>
+</tr>
+</tbody>
+</table>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>The element that was added - <a class="reference internal" href="#arcgis.mapping.forms.FormGroupElement" title="arcgis.mapping.forms.FormGroupElement"><code class="xref py py-class docutils literal notranslate"><span class="pre">arcgis.mapping.forms.FormGroupElement</span></code></a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="arcgis.mapping.forms.FormInfo.clear">
+<code class="sig-name descname"><span class="pre">clear</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.mapping.forms.FormInfo.clear" title="Permalink to this definition">¶</a></dt>
+<dd><p>Clears the form to an empty state. Deletes all form elements currently in the form.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="arcgis.mapping.forms.FormInfo.delete">
+<code class="sig-name descname"><span class="pre">delete</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">element</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">label</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.mapping.forms.FormInfo.delete" title="Permalink to this definition">¶</a></dt>
+<dd><p>Deletes element from the form. You can use either the element param
+with a form element you get using <cite>FormInfo.get()</cite> or you can pass the label of the
+form element you’d like to move into the label param.</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 21%" />
+<col style="width: 79%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><strong>Argument</strong></p></td>
+<td><p><strong>Description</strong></p></td>
+</tr>
+<tr class="row-even"><td><p>element</p></td>
+<td><p>Optional <a class="reference internal" href="#arcgis.mapping.forms.FormFieldElement" title="arcgis.mapping.forms.FormFieldElement"><code class="xref py py-class docutils literal notranslate"><span class="pre">arcgis.mapping.forms.FormFieldElement</span></code></a> or
+<a class="reference internal" href="#arcgis.mapping.forms.FormGroupElement" title="arcgis.mapping.forms.FormGroupElement"><code class="xref py py-class docutils literal notranslate"><span class="pre">arcgis.mapping.forms.FormGroupElement</span></code></a></p></td>
+</tr>
+<tr class="row-odd"><td><p>label</p></td>
+<td><p>Optional <code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code>.
+An actual field name (not alias) corresponding to a field in the
+form’s feature layer</p></td>
+</tr>
+</tbody>
+</table>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p><a class="reference internal" href="#arcgis.mapping.forms.FormFieldElement" title="arcgis.mapping.forms.FormFieldElement"><code class="xref py py-class docutils literal notranslate"><span class="pre">arcgis.mapping.forms.FormFieldElement</span></code></a> or
+<a class="reference internal" href="#arcgis.mapping.forms.FormGroupElement" title="arcgis.mapping.forms.FormGroupElement"><code class="xref py py-class docutils literal notranslate"><span class="pre">arcgis.mapping.forms.FormGroupElement</span></code></a>
+or <cite>False</cite></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="arcgis.mapping.forms.FormInfo.description">
+<em class="property"><span class="pre">property</span> </em><code class="sig-name descname"><span class="pre">description</span></code><a class="headerlink" href="#arcgis.mapping.forms.FormInfo.description" title="Permalink to this definition">¶</a></dt>
+<dd><p>Gets/sets the description of the form</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="arcgis.mapping.forms.FormInfo.elements">
+<em class="property"><span class="pre">property</span> </em><code class="sig-name descname"><span class="pre">elements</span></code><a class="headerlink" href="#arcgis.mapping.forms.FormInfo.elements" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns elements in the form to the user - a list of <a class="reference internal" href="#arcgis.mapping.forms.FormElement" title="arcgis.mapping.forms.FormElement"><code class="xref py py-class docutils literal notranslate"><span class="pre">arcgis.mapping.forms.FormElement</span></code></a></p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="arcgis.mapping.forms.FormInfo.exists">
+<code class="sig-name descname"><span class="pre">exists</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.mapping.forms.FormInfo.exists" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns whether or not the form exists for that particular layer.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="arcgis.mapping.forms.FormInfo.expressions">
+<em class="property"><span class="pre">property</span> </em><code class="sig-name descname"><span class="pre">expressions</span></code><a class="headerlink" href="#arcgis.mapping.forms.FormInfo.expressions" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns Arcade expressions used in the form to the user - a list of <a class="reference internal" href="#arcgis.mapping.forms.FormExpressionInfo" title="arcgis.mapping.forms.FormExpressionInfo"><code class="xref py py-class docutils literal notranslate"><span class="pre">arcgis.mapping.forms.FormExpressionInfo</span></code></a></p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="arcgis.mapping.forms.FormInfo.feature_layer">
+<code class="sig-name descname"><span class="pre">feature_layer</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.mapping.forms.FormInfo.feature_layer" title="Permalink to this definition">¶</a></dt>
+<dd><p>The feature layer associated with the form</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="arcgis.mapping.forms.FormInfo.get">
+<code class="sig-name descname"><span class="pre">get</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">label</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.mapping.forms.FormInfo.get" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns a matching FormElement given a label</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 21%" />
+<col style="width: 79%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><strong>Argument</strong></p></td>
+<td><p><strong>Description</strong></p></td>
+</tr>
+<tr class="row-even"><td><p>label</p></td>
+<td><p>Optional <code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code>
+The label of the form element you want to return from the list of
+form elements</p></td>
+</tr>
+</tbody>
+</table>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p><a class="reference internal" href="#arcgis.mapping.forms.FormFieldElement" title="arcgis.mapping.forms.FormFieldElement"><code class="xref py py-class docutils literal notranslate"><span class="pre">FormFieldElement</span></code></a> or</p>
+</dd>
+</dl>
+<p><code class="xref py py-class docutils literal notranslate"><span class="pre">FormGroupElement`or</span> <span class="pre">`None</span></code></p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="arcgis.mapping.forms.FormInfo.move">
+<code class="sig-name descname"><span class="pre">move</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">element</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">label</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">destination</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">index</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.mapping.forms.FormInfo.move" title="Permalink to this definition">¶</a></dt>
+<dd><p>Moves a form element in the form to a new location. You can use either the element param
+with a form element you get using <cite>FormInfo.get()</cite> or you can pass the label of the
+form element you’d like to move into the label param.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p><cite>True</cite></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="arcgis.mapping.forms.FormInfo.title">
+<em class="property"><span class="pre">property</span> </em><code class="sig-name descname"><span class="pre">title</span></code><a class="headerlink" href="#arcgis.mapping.forms.FormInfo.title" title="Permalink to this definition">¶</a></dt>
+<dd><p>Gets/sets the title of the form</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="arcgis.mapping.forms.FormInfo.to_dict">
+<code class="sig-name descname"><span class="pre">to_dict</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.mapping.forms.FormInfo.to_dict" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="arcgis.mapping.forms.FormInfo.update">
+<code class="sig-name descname"><span class="pre">update</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.mapping.forms.FormInfo.update" title="Permalink to this definition">¶</a></dt>
+<dd><p>Saves the form to the backend. If the form was derived from an Item, calling this function is required
+to save the form into the item. If the form was derived from a WebMap, you can either call this
+function or WebMap.update(). If form has been cleared, removes formInfo from webmap</p>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="formelement">
+<h2>FormElement<a class="headerlink" href="#formelement" title="Permalink to this headline">¶</a></h2>
+<dl class="py class">
+<dt id="arcgis.mapping.forms.FormElement">
+<em class="property"><span class="pre">class</span> </em><code class="sig-prename descclassname"><span class="pre">arcgis.mapping.forms.</span></code><code class="sig-name descname"><span class="pre">FormElement</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">form</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">element_type</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">description</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">label</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">visibility_expression</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.mapping.forms.FormElement" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>The superclass class for FormFieldElement and FormGroupElement. Contains properties common to
+the two types of field elements. Instantiate a FormFieldElement or FormGroupElement instead of this class.</p>
+<dl class="py method">
+<dt id="arcgis.mapping.forms.FormElement.description">
+<em class="property"><span class="pre">property</span> </em><code class="sig-name descname"><span class="pre">description</span></code><a class="headerlink" href="#arcgis.mapping.forms.FormElement.description" title="Permalink to this definition">¶</a></dt>
+<dd><p>Gets/sets the description of the form element.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="arcgis.mapping.forms.FormElement.element_type">
+<em class="property"><span class="pre">property</span> </em><code class="sig-name descname"><span class="pre">element_type</span></code><a class="headerlink" href="#arcgis.mapping.forms.FormElement.element_type" title="Permalink to this definition">¶</a></dt>
+<dd><p>Gets the element type of the form element.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="arcgis.mapping.forms.FormElement.label">
+<em class="property"><span class="pre">property</span> </em><code class="sig-name descname"><span class="pre">label</span></code><a class="headerlink" href="#arcgis.mapping.forms.FormElement.label" title="Permalink to this definition">¶</a></dt>
+<dd><p>Gets/sets the label of the form element.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="arcgis.mapping.forms.FormElement.to_dict">
+<code class="sig-name descname"><span class="pre">to_dict</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.mapping.forms.FormElement.to_dict" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="arcgis.mapping.forms.FormElement.visibility_expression">
+<em class="property"><span class="pre">property</span> </em><code class="sig-name descname"><span class="pre">visibility_expression</span></code><a class="headerlink" href="#arcgis.mapping.forms.FormElement.visibility_expression" title="Permalink to this definition">¶</a></dt>
+<dd><p>Gets/sets the visibility expression of the form element.</p>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="formfieldelement">
+<h2>FormFieldElement<a class="headerlink" href="#formfieldelement" title="Permalink to this headline">¶</a></h2>
+<dl class="py class">
+<dt id="arcgis.mapping.forms.FormFieldElement">
+<em class="property"><span class="pre">class</span> </em><code class="sig-prename descclassname"><span class="pre">arcgis.mapping.forms.</span></code><code class="sig-name descname"><span class="pre">FormFieldElement</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">form</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">description</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">label</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">visibility_expression</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">domain</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">editable</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">field_name</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">hint</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">input_type</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">required_expression</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.mapping.forms.FormFieldElement" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#arcgis.mapping.forms.FormElement" title="arcgis.mapping.forms.FormElement"><code class="xref py py-class docutils literal notranslate"><span class="pre">arcgis.mapping.forms.FormElement</span></code></a></p>
+<p>Represents a single field (non-group) element in a form. This corresponds with a field
+in the feature layer where you are collecting data. This is a subclass of FormElement, so
+you can modify properties such as label, description, and visibility_expression on these
+objects as well.</p>
+<p>For more please see: <a class="reference external" href="https://developers.arcgis.com/web-map-specification/objects/formFieldElement/">https://developers.arcgis.com/web-map-specification/objects/formFieldElement/</a></p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 24%" />
+<col style="width: 76%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><strong>Argument</strong></p></td>
+<td><p><strong>Description</strong></p></td>
+</tr>
+<tr class="row-even"><td><p>form</p></td>
+<td><p>Optional <a class="reference internal" href="#arcgis.mapping.forms.FormInfo" title="arcgis.mapping.forms.FormInfo"><code class="xref py py-class docutils literal notranslate"><span class="pre">arcgis.mapping.forms.FormInfo</span></code></a>.
+The form which contains this field element.</p></td>
+</tr>
+<tr class="row-odd"><td><p>description</p></td>
+<td><p>Optional <code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code>.
+The description of the form element</p></td>
+</tr>
+<tr class="row-even"><td><p>label</p></td>
+<td><p>Optional <code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code>.
+The label of the form element</p></td>
+</tr>
+<tr class="row-odd"><td><p>visibility_expression</p></td>
+<td><p>Optional <a class="reference internal" href="#arcgis.mapping.forms.FormExpressionInfo" title="arcgis.mapping.forms.FormExpressionInfo"><code class="xref py py-class docutils literal notranslate"><span class="pre">arcgis.mapping.forms.FormExpressionInfo</span></code></a>.
+The conditional visibility Arcade expression determining the
+visibility of the form element during data collection</p></td>
+</tr>
+<tr class="row-even"><td><p>domain</p></td>
+<td><p>Optional <code class="xref py py-class docutils literal notranslate"><span class="pre">dict</span></code>.
+The domain of the form element</p></td>
+</tr>
+<tr class="row-odd"><td><p>editable</p></td>
+<td><p>Optional <code class="xref py py-class docutils literal notranslate"><span class="pre">bool</span></code>.
+Whether or not the form element is editable</p></td>
+</tr>
+<tr class="row-even"><td><p>field_name</p></td>
+<td><p>Optional <code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code>.
+The field name the form element corresponds to (where the data
+will be collected)</p></td>
+</tr>
+<tr class="row-odd"><td><p>hint</p></td>
+<td><p>Optional <code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code>.
+The hint for the user filling out the form element</p></td>
+</tr>
+<tr class="row-even"><td><p>input_type</p></td>
+<td><p>Optional <code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code> or <code class="xref py py-class docutils literal notranslate"><span class="pre">dict</span></code>.
+The input type for the form element in ArcGIS Field Maps.
+Options include: “text-area”, “text-box”, “barcode-scanner”,
+“combo-box”, “radio-buttons”, “datetime-picker”</p></td>
+</tr>
+<tr class="row-odd"><td><p>required_expression</p></td>
+<td><p>Optional <a class="reference internal" href="#arcgis.mapping.forms.FormExpressionInfo" title="arcgis.mapping.forms.FormExpressionInfo"><code class="xref py py-class docutils literal notranslate"><span class="pre">arcgis.mapping.forms.FormExpressionInfo</span></code></a>.
+The conditional visibility Arcade expression determining the
+requiredness of the form element during data collection</p></td>
+</tr>
+</tbody>
+</table>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># USAGE EXAMPLE 1: Edit properties on form element</span>
+<span class="kn">from</span> <span class="nn">arcgis.mapping.forms</span> <span class="kn">import</span> <span class="n">FormExpressionInfo</span>
+<span class="n">wm</span> <span class="o">=</span> <span class="n">arcgis</span><span class="o">.</span><span class="n">mapping</span><span class="o">.</span><span class="n">WebMap</span><span class="p">(</span><span class="n">item</span><span class="p">)</span>
+<span class="n">wm</span><span class="o">.</span><span class="n">add_layer</span><span class="p">(</span><span class="n">manhole_inspection</span><span class="p">)</span>
+<span class="n">form_collection</span> <span class="o">=</span> <span class="n">wm</span><span class="o">.</span><span class="n">forms</span>
+<span class="n">form_info</span> <span class="o">=</span> <span class="n">form_collection</span><span class="o">.</span><span class="n">get_form</span><span class="p">(</span><span class="n">title</span><span class="o">=</span><span class="s2">&quot;Manhole Inspection&quot;</span><span class="p">)</span>
+
+<span class="c1"># edit element properties</span>
+<span class="n">form_element</span> <span class="o">=</span> <span class="n">form_info</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">label</span><span class="o">=</span><span class="s2">&quot;Inspector Name&quot;</span><span class="p">)</span>
+<span class="n">form_element</span><span class="o">.</span><span class="n">label</span> <span class="o">=</span> <span class="s2">&quot;Inspector Name(s)&quot;</span>
+<span class="n">form_element</span><span class="o">.</span><span class="n">description</span> <span class="o">=</span> <span class="s2">&quot;The inspector(s) who completed this manhole inspection&quot;</span><span class="p">)</span>
+
+<span class="c1"># set visibility expression</span>
+<span class="n">el</span> <span class="o">=</span> <span class="n">form_info</span><span class="o">.</span><span class="n">add_field</span><span class="p">(</span><span class="n">field_name</span><span class="o">=</span><span class="s2">&quot;jake_only&quot;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;jake_only&quot;</span><span class="p">)</span>
+<span class="n">expression_info</span> <span class="o">=</span> <span class="n">FormExpressionInfo</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s2">&quot;expr0&quot;</span><span class="p">,</span><span class="n">title</span><span class="o">=</span><span class="s2">&quot;New Expression&quot;</span><span class="p">,</span><span class="n">expression</span><span class="o">=</span><span class="s2">&quot;$feature.inspector == &#39;Jake&#39;&quot;</span><span class="p">)</span>
+<span class="n">el</span><span class="o">.</span><span class="n">visibility_expression</span> <span class="o">=</span> <span class="n">expression_info</span>
+</pre></div>
+</div>
+<dl class="py method">
+<dt id="arcgis.mapping.forms.FormFieldElement.description">
+<em class="property"><span class="pre">property</span> </em><code class="sig-name descname"><span class="pre">description</span></code><a class="headerlink" href="#arcgis.mapping.forms.FormFieldElement.description" title="Permalink to this definition">¶</a></dt>
+<dd><p>Gets/sets the description of the form element.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="arcgis.mapping.forms.FormFieldElement.domain">
+<em class="property"><span class="pre">property</span> </em><code class="sig-name descname"><span class="pre">domain</span></code><a class="headerlink" href="#arcgis.mapping.forms.FormFieldElement.domain" title="Permalink to this definition">¶</a></dt>
+<dd><p>Gets/sets the domain of the form element.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="arcgis.mapping.forms.FormFieldElement.editable">
+<em class="property"><span class="pre">property</span> </em><code class="sig-name descname"><span class="pre">editable</span></code><a class="headerlink" href="#arcgis.mapping.forms.FormFieldElement.editable" title="Permalink to this definition">¶</a></dt>
+<dd><p>Gets/sets the editability of the form element.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="arcgis.mapping.forms.FormFieldElement.element_type">
+<em class="property"><span class="pre">property</span> </em><code class="sig-name descname"><span class="pre">element_type</span></code><a class="headerlink" href="#arcgis.mapping.forms.FormFieldElement.element_type" title="Permalink to this definition">¶</a></dt>
+<dd><p>Gets the element type of the form element.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="arcgis.mapping.forms.FormFieldElement.field_name">
+<em class="property"><span class="pre">property</span> </em><code class="sig-name descname"><span class="pre">field_name</span></code><a class="headerlink" href="#arcgis.mapping.forms.FormFieldElement.field_name" title="Permalink to this definition">¶</a></dt>
+<dd><p>Gets the field name for the form element.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="arcgis.mapping.forms.FormFieldElement.hint">
+<em class="property"><span class="pre">property</span> </em><code class="sig-name descname"><span class="pre">hint</span></code><a class="headerlink" href="#arcgis.mapping.forms.FormFieldElement.hint" title="Permalink to this definition">¶</a></dt>
+<dd><p>Gets/sets the hint of the form element.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="arcgis.mapping.forms.FormFieldElement.input_type">
+<em class="property"><span class="pre">property</span> </em><code class="sig-name descname"><span class="pre">input_type</span></code><a class="headerlink" href="#arcgis.mapping.forms.FormFieldElement.input_type" title="Permalink to this definition">¶</a></dt>
+<dd><p>Gets/sets the input type of the form element.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="arcgis.mapping.forms.FormFieldElement.label">
+<em class="property"><span class="pre">property</span> </em><code class="sig-name descname"><span class="pre">label</span></code><a class="headerlink" href="#arcgis.mapping.forms.FormFieldElement.label" title="Permalink to this definition">¶</a></dt>
+<dd><p>Gets/sets the label of the form element.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="arcgis.mapping.forms.FormFieldElement.required_expression">
+<em class="property"><span class="pre">property</span> </em><code class="sig-name descname"><span class="pre">required_expression</span></code><a class="headerlink" href="#arcgis.mapping.forms.FormFieldElement.required_expression" title="Permalink to this definition">¶</a></dt>
+<dd><p>Gets/sets the required expression of the form element. Takes an object of FormExpressionInfo.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="arcgis.mapping.forms.FormFieldElement.to_dict">
+<code class="sig-name descname"><span class="pre">to_dict</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.mapping.forms.FormFieldElement.to_dict" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="arcgis.mapping.forms.FormFieldElement.visibility_expression">
+<em class="property"><span class="pre">property</span> </em><code class="sig-name descname"><span class="pre">visibility_expression</span></code><a class="headerlink" href="#arcgis.mapping.forms.FormFieldElement.visibility_expression" title="Permalink to this definition">¶</a></dt>
+<dd><p>Gets/sets the visibility expression of the form element.</p>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="formgroupelement">
+<h2>FormGroupElement<a class="headerlink" href="#formgroupelement" title="Permalink to this headline">¶</a></h2>
+<dl class="py class">
+<dt id="arcgis.mapping.forms.FormGroupElement">
+<em class="property"><span class="pre">class</span> </em><code class="sig-prename descclassname"><span class="pre">arcgis.mapping.forms.</span></code><code class="sig-name descname"><span class="pre">FormGroupElement</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">form</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">elements</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">initial_state</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">description</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">label</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">visibility_expression</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.mapping.forms.FormGroupElement" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#arcgis.mapping.forms.FormElement" title="arcgis.mapping.forms.FormElement"><code class="xref py py-class docutils literal notranslate"><span class="pre">arcgis.mapping.forms.FormElement</span></code></a></p>
+<p>Represents a single group element in a form. This is a subclass of FormElement, so
+you can modify properties such as label, description, and visibility_expression on these
+objects as well.</p>
+<p>For more please see: <a class="reference external" href="https://developers.arcgis.com/web-map-specification/objects/formGroupElement/">https://developers.arcgis.com/web-map-specification/objects/formGroupElement/</a></p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 24%" />
+<col style="width: 76%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><strong>Argument</strong></p></td>
+<td><p><strong>Description</strong></p></td>
+</tr>
+<tr class="row-even"><td><p>form</p></td>
+<td><p>Optional <a class="reference internal" href="#arcgis.mapping.forms.FormInfo" title="arcgis.mapping.forms.FormInfo"><code class="xref py py-class docutils literal notranslate"><span class="pre">arcgis.mapping.forms.FormInfo</span></code></a>.
+The form which contains this group element.</p></td>
+</tr>
+<tr class="row-odd"><td><p>description</p></td>
+<td><p>Optional <code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code>.
+The description of the group element</p></td>
+</tr>
+<tr class="row-even"><td><p>label</p></td>
+<td><p>Optional <code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code>.
+The label of the group element</p></td>
+</tr>
+<tr class="row-odd"><td><p>visibility_expression</p></td>
+<td><p>Optional <a class="reference internal" href="#arcgis.mapping.forms.FormExpressionInfo" title="arcgis.mapping.forms.FormExpressionInfo"><code class="xref py py-class docutils literal notranslate"><span class="pre">arcgis.mapping.forms.FormExpressionInfo</span></code></a>.
+The conditional visibility Arcade expression determining the
+visibility of the form element during data collection</p></td>
+</tr>
+<tr class="row-even"><td><p>initial_state</p></td>
+<td><p>Optional <code class="xref py py-class docutils literal notranslate"><span class="pre">dict</span></code>.
+Options are “collapsed” and “expanded”</p></td>
+</tr>
+</tbody>
+</table>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># USAGE EXAMPLE 1: Edit properties on group, add to group</span>
+<span class="kn">from</span> <span class="nn">arcgis.mapping.forms</span> <span class="kn">import</span> <span class="n">FormExpressionInfo</span>
+<span class="n">wm</span> <span class="o">=</span> <span class="n">arcgis</span><span class="o">.</span><span class="n">mapping</span><span class="o">.</span><span class="n">WebMap</span><span class="p">(</span><span class="n">item</span><span class="p">)</span>
+<span class="n">wm</span><span class="o">.</span><span class="n">add_layer</span><span class="p">(</span><span class="n">manhole_inspection</span><span class="p">)</span>
+<span class="n">form_collection</span> <span class="o">=</span> <span class="n">wm</span><span class="o">.</span><span class="n">forms</span>
+<span class="n">form_info</span> <span class="o">=</span> <span class="n">form_collection</span><span class="o">.</span><span class="n">get_form</span><span class="p">(</span><span class="n">title</span><span class="o">=</span><span class="s2">&quot;Manhole Inspection&quot;</span><span class="p">)</span>
+
+<span class="c1"># edit group properties, access elements within group</span>
+<span class="n">group_element</span> <span class="o">=</span> <span class="n">form_info</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">label</span><span class="o">=</span><span class="s2">&quot;Group 1&quot;</span><span class="p">)</span>
+<span class="n">grouped_form_element</span> <span class="o">=</span> <span class="n">group_element</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">label</span><span class="o">=</span><span class="s2">&quot;Inspector Name&quot;</span><span class="p">)</span>
+<span class="n">grouped_form_element</span><span class="o">.</span><span class="n">label</span> <span class="o">=</span> <span class="s2">&quot;Inspector Name(s)</span>
+<span class="n">group_element</span><span class="o">.</span><span class="n">label</span> <span class="o">=</span> <span class="s2">&quot;Inspector Information&quot;</span>
+<span class="n">group_element</span><span class="o">.</span><span class="n">initial_state</span> <span class="o">=</span> <span class="s2">&quot;collapsed&quot;</span>
+
+<span class="c1"># add group, add to group, delete from group, delete group</span>
+<span class="n">new_group</span> <span class="o">=</span> <span class="n">FormGroupElement</span><span class="p">(</span><span class="n">form_info</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;Group 2&quot;</span><span class="p">,</span> <span class="n">initial_state</span><span class="o">=</span><span class="s2">&quot;expanded&quot;</span><span class="p">)</span>
+<span class="n">group</span> <span class="o">=</span> <span class="n">form_info</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">element</span><span class="o">=</span><span class="n">new_group</span><span class="p">)</span>
+<span class="n">grouped_element</span> <span class="o">=</span> <span class="n">group</span><span class="o">.</span><span class="n">add_field</span><span class="p">(</span><span class="n">field_name</span><span class="o">=</span><span class="s2">&quot;inspection_date&quot;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;Inspection Date&quot;</span><span class="p">)</span>
+<span class="n">group</span><span class="o">.</span><span class="n">add_field</span><span class="p">(</span><span class="n">field_name</span><span class="o">=</span><span class="s2">&quot;inspection_city&quot;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;Inspection City&quot;</span><span class="p">)</span>
+<span class="n">grouped_element</span><span class="o">.</span><span class="n">label</span> <span class="o">=</span> <span class="s2">&quot;Inspection Date&quot;</span>
+<span class="n">group</span><span class="o">.</span><span class="n">move</span><span class="p">(</span><span class="n">grouped_element</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">group</span><span class="o">.</span><span class="n">delete</span><span class="p">(</span><span class="n">grouped_element</span><span class="p">)</span>
+<span class="n">form_info</span><span class="o">.</span><span class="n">delete</span><span class="p">(</span><span class="n">group</span><span class="p">)</span>
+</pre></div>
+</div>
+<dl class="py method">
+<dt id="arcgis.mapping.forms.FormGroupElement.add">
+<code class="sig-name descname"><span class="pre">add</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">element</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">index</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.mapping.forms.FormGroupElement.add" title="Permalink to this definition">¶</a></dt>
+<dd><p>Adds a single form element to the group. You can add to the group either by instantiating
+a FormFieldElement and passing it into the element parameter here,
+or you can type in a valid field_name in the form’s layer and this function will attempt
+to add it to the form.</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 21%" />
+<col style="width: 79%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><strong>Argument</strong></p></td>
+<td><p><strong>Description</strong></p></td>
+</tr>
+<tr class="row-even"><td><p>element</p></td>
+<td><p>Optional <a class="reference internal" href="#arcgis.mapping.forms.FormFieldElement" title="arcgis.mapping.forms.FormFieldElement"><code class="xref py py-class docutils literal notranslate"><span class="pre">arcgis.mapping.forms.FormFieldElement</span></code></a></p></td>
+</tr>
+<tr class="row-odd"><td><p>field_name</p></td>
+<td><p>Optional <code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code>
+An actual field name (not alias) corresponding to a field in the
+form’s feature layer</p></td>
+</tr>
+<tr class="row-even"><td><p>index</p></td>
+<td><p>Optional <code class="xref py py-class docutils literal notranslate"><span class="pre">int</span></code>.
+The index where you’d like the element in the group. If not provided,
+this function will add the new element to the end of the group.</p></td>
+</tr>
+</tbody>
+</table>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>The element that was added - <a class="reference internal" href="#arcgis.mapping.forms.FormFieldElement" title="arcgis.mapping.forms.FormFieldElement"><code class="xref py py-class docutils literal notranslate"><span class="pre">arcgis.mapping.forms.FormFieldElement</span></code></a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="arcgis.mapping.forms.FormGroupElement.add_field">
+<code class="sig-name descname"><span class="pre">add_field</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">field_name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">label</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">description</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">visibility_expression</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">domain</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">editable</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">hint</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">input_type</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">required_expression</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">index</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.mapping.forms.FormGroupElement.add_field" title="Permalink to this definition">¶</a></dt>
+<dd><p>Adds a single field <a class="reference internal" href="#arcgis.mapping.forms.FormElement" title="arcgis.mapping.forms.FormElement"><code class="xref py py-class docutils literal notranslate"><span class="pre">FormElement</span></code></a> element to the end of the group.</p>
+<p>For more please see: <a class="reference external" href="https://developers.arcgis.com/web-map-specification/objects/formFieldElement/">https://developers.arcgis.com/web-map-specification/objects/formFieldElement/</a></p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 24%" />
+<col style="width: 76%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><strong>Argument</strong></p></td>
+<td><p><strong>Description</strong></p></td>
+</tr>
+<tr class="row-even"><td><p>field_name</p></td>
+<td><p>Required <code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code>.
+The field name the form element corresponds to (where the data
+will be collected)</p></td>
+</tr>
+<tr class="row-odd"><td><p>label</p></td>
+<td><p>Required <code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code>.
+The label of the form element</p></td>
+</tr>
+<tr class="row-even"><td><p>description</p></td>
+<td><p>Optional <code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code>.
+The description of the form element</p></td>
+</tr>
+<tr class="row-odd"><td><p>visibility_expression</p></td>
+<td><p>Optional <a class="reference internal" href="#arcgis.mapping.forms.FormExpressionInfo" title="arcgis.mapping.forms.FormExpressionInfo"><code class="xref py py-class docutils literal notranslate"><span class="pre">arcgis.mapping.forms.FormExpressionInfo</span></code></a>.
+The conditional visibility Arcade expression determining the
+visibility of the form element during data collection</p></td>
+</tr>
+<tr class="row-even"><td><p>domain</p></td>
+<td><p>Optional <code class="xref py py-class docutils literal notranslate"><span class="pre">dict</span></code>.
+The domain of the form element</p></td>
+</tr>
+<tr class="row-odd"><td><p>editable</p></td>
+<td><p>Optional <code class="xref py py-class docutils literal notranslate"><span class="pre">bool</span></code>.
+Whether or not the form element is editable</p></td>
+</tr>
+<tr class="row-even"><td><p>hint</p></td>
+<td><p>Optional <code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code>.
+The hint for the user filling out the form element</p></td>
+</tr>
+<tr class="row-odd"><td><p>input_type</p></td>
+<td><p>Optional <code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code> or <code class="xref py py-class docutils literal notranslate"><span class="pre">dict</span></code>.
+The input type for the form element in ArcGIS Field Maps.
+Options include: “text-area”, “text-box”, “barcode-scanner”,
+“combo-box”, “radio-buttons”, “datetime-picker”</p></td>
+</tr>
+<tr class="row-even"><td><p>required_expression</p></td>
+<td><p>Optional <a class="reference internal" href="#arcgis.mapping.forms.FormExpressionInfo" title="arcgis.mapping.forms.FormExpressionInfo"><code class="xref py py-class docutils literal notranslate"><span class="pre">arcgis.mapping.forms.FormExpressionInfo</span></code></a>.
+The conditional visibility Arcade expression determining the
+requiredness of the form element during data collection</p></td>
+</tr>
+<tr class="row-odd"><td><p>index</p></td>
+<td><p>Optional <code class="xref py py-class docutils literal notranslate"><span class="pre">int</span></code>.
+The index where you’d like the element in the form. If not provided,
+this function will add the new element to the end of the form.</p></td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="py method">
+<dt id="arcgis.mapping.forms.FormGroupElement.delete">
+<code class="sig-name descname"><span class="pre">delete</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">element</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">label</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.mapping.forms.FormGroupElement.delete" title="Permalink to this definition">¶</a></dt>
+<dd><p>Deletes form element from the group. You can use either the element param
+with a form element you get using <cite>FormInfo.get()</cite> or you can pass the label of the
+form element you’d like to move into the label param.</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 21%" />
+<col style="width: 79%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><strong>Argument</strong></p></td>
+<td><p><strong>Description</strong></p></td>
+</tr>
+<tr class="row-even"><td><p>element</p></td>
+<td><p>Optional <a class="reference internal" href="#arcgis.mapping.forms.FormFieldElement" title="arcgis.mapping.forms.FormFieldElement"><code class="xref py py-class docutils literal notranslate"><span class="pre">arcgis.mapping.forms.FormFieldElement</span></code></a></p></td>
+</tr>
+<tr class="row-odd"><td><p>label</p></td>
+<td><p>Optional <code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code>
+An actual field name (not alias) corresponding to a field in the
+form’s feature layer</p></td>
+</tr>
+</tbody>
+</table>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>The deleted element - <a class="reference internal" href="#arcgis.mapping.forms.FormFieldElement" title="arcgis.mapping.forms.FormFieldElement"><code class="xref py py-class docutils literal notranslate"><span class="pre">arcgis.mapping.forms.FormFieldElement</span></code></a> or or <cite>False</cite></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="arcgis.mapping.forms.FormGroupElement.description">
+<em class="property"><span class="pre">property</span> </em><code class="sig-name descname"><span class="pre">description</span></code><a class="headerlink" href="#arcgis.mapping.forms.FormGroupElement.description" title="Permalink to this definition">¶</a></dt>
+<dd><p>Gets/sets the description of the form element.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="arcgis.mapping.forms.FormGroupElement.element_type">
+<em class="property"><span class="pre">property</span> </em><code class="sig-name descname"><span class="pre">element_type</span></code><a class="headerlink" href="#arcgis.mapping.forms.FormGroupElement.element_type" title="Permalink to this definition">¶</a></dt>
+<dd><p>Gets the element type of the form element.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="arcgis.mapping.forms.FormGroupElement.elements">
+<em class="property"><span class="pre">property</span> </em><code class="sig-name descname"><span class="pre">elements</span></code><a class="headerlink" href="#arcgis.mapping.forms.FormGroupElement.elements" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns elements in the group to the user - a list of <a class="reference internal" href="#arcgis.mapping.forms.FormElement" title="arcgis.mapping.forms.FormElement"><code class="xref py py-class docutils literal notranslate"><span class="pre">arcgis.mapping.forms.FormElement</span></code></a>.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="arcgis.mapping.forms.FormGroupElement.get">
+<code class="sig-name descname"><span class="pre">get</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">label</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.mapping.forms.FormGroupElement.get" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns a matching FormFieldElement in the group given a label</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 21%" />
+<col style="width: 79%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><strong>Argument</strong></p></td>
+<td><p><strong>Description</strong></p></td>
+</tr>
+<tr class="row-even"><td><p>label</p></td>
+<td><p>Optional <code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code>
+The label of the form element you want to return from the list of
+form elements</p></td>
+</tr>
+</tbody>
+</table>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p><a class="reference internal" href="#arcgis.mapping.forms.FormFieldElement" title="arcgis.mapping.forms.FormFieldElement"><code class="xref py py-class docutils literal notranslate"><span class="pre">FormFieldElement</span></code></a> or <cite>None</cite></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="arcgis.mapping.forms.FormGroupElement.initial_state">
+<em class="property"><span class="pre">property</span> </em><code class="sig-name descname"><span class="pre">initial_state</span></code><a class="headerlink" href="#arcgis.mapping.forms.FormGroupElement.initial_state" title="Permalink to this definition">¶</a></dt>
+<dd><p>Gets/sets the initial state of the form element.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="arcgis.mapping.forms.FormGroupElement.label">
+<em class="property"><span class="pre">property</span> </em><code class="sig-name descname"><span class="pre">label</span></code><a class="headerlink" href="#arcgis.mapping.forms.FormGroupElement.label" title="Permalink to this definition">¶</a></dt>
+<dd><p>Gets/sets the label of the form element.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="arcgis.mapping.forms.FormGroupElement.move">
+<code class="sig-name descname"><span class="pre">move</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">element</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">label</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">destination</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">index</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.mapping.forms.FormGroupElement.move" title="Permalink to this definition">¶</a></dt>
+<dd><p>Moves a form element in the group to a new location. You can use either the element param
+with a form element you get using FormGroupElement.get() or you can pass the label
+of the form element you’d like to move into the label param.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>The element that was moved - <a class="reference internal" href="#arcgis.mapping.forms.FormFieldElement" title="arcgis.mapping.forms.FormFieldElement"><code class="xref py py-class docutils literal notranslate"><span class="pre">arcgis.mapping.forms.FormFieldElement</span></code></a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="arcgis.mapping.forms.FormGroupElement.to_dict">
+<code class="sig-name descname"><span class="pre">to_dict</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.mapping.forms.FormGroupElement.to_dict" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="arcgis.mapping.forms.FormGroupElement.visibility_expression">
+<em class="property"><span class="pre">property</span> </em><code class="sig-name descname"><span class="pre">visibility_expression</span></code><a class="headerlink" href="#arcgis.mapping.forms.FormGroupElement.visibility_expression" title="Permalink to this definition">¶</a></dt>
+<dd><p>Gets/sets the visibility expression of the form element.</p>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="formexpressioninfo">
+<h2>FormExpressionInfo<a class="headerlink" href="#formexpressioninfo" title="Permalink to this headline">¶</a></h2>
+<dl class="py class">
+<dt id="arcgis.mapping.forms.FormExpressionInfo">
+<em class="property"><span class="pre">class</span> </em><code class="sig-prename descclassname"><span class="pre">arcgis.mapping.forms.</span></code><code class="sig-name descname"><span class="pre">FormExpressionInfo</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">expression</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">name</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">title</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.mapping.forms.FormExpressionInfo" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>This class corresponds to a single expressionInfo in the expressionInfos list within a form.</p>
+<p>For more please see: <a class="reference external" href="https://developers.arcgis.com/web-map-specification/objects/formExpressionInfo/">https://developers.arcgis.com/web-map-specification/objects/formExpressionInfo/</a></p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 21%" />
+<col style="width: 79%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><strong>Argument</strong></p></td>
+<td><p><strong>Description</strong></p></td>
+</tr>
+<tr class="row-even"><td><p>expression</p></td>
+<td><p>Optional <code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code>
+This is an Arcade expression which you want to evaluate in ArcGIS
+Field Maps on whether or not this form element shows.</p></td>
+</tr>
+<tr class="row-odd"><td><p>name</p></td>
+<td><p>Optional <code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code>
+The unique identifier for the expressionInfo</p></td>
+</tr>
+<tr class="row-even"><td><p>title</p></td>
+<td><p>Optional <code class="xref py py-class docutils literal notranslate"><span class="pre">int</span></code>.
+The user friendly name for the expressionInfo</p></td>
+</tr>
+</tbody>
+</table>
+<dl class="py method">
+<dt id="arcgis.mapping.forms.FormExpressionInfo.expression">
+<em class="property"><span class="pre">property</span> </em><code class="sig-name descname"><span class="pre">expression</span></code><a class="headerlink" href="#arcgis.mapping.forms.FormExpressionInfo.expression" title="Permalink to this definition">¶</a></dt>
+<dd><p>Gets/sets the expression for the expression info.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="arcgis.mapping.forms.FormExpressionInfo.name">
+<em class="property"><span class="pre">property</span> </em><code class="sig-name descname"><span class="pre">name</span></code><a class="headerlink" href="#arcgis.mapping.forms.FormExpressionInfo.name" title="Permalink to this definition">¶</a></dt>
+<dd><p>Gets/sets the name for the expression info.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="arcgis.mapping.forms.FormExpressionInfo.return_type">
+<em class="property"><span class="pre">property</span> </em><code class="sig-name descname"><span class="pre">return_type</span></code><a class="headerlink" href="#arcgis.mapping.forms.FormExpressionInfo.return_type" title="Permalink to this definition">¶</a></dt>
+<dd><p>Gets/sets the return type for the expression info.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="arcgis.mapping.forms.FormExpressionInfo.title">
+<em class="property"><span class="pre">property</span> </em><code class="sig-name descname"><span class="pre">title</span></code><a class="headerlink" href="#arcgis.mapping.forms.FormExpressionInfo.title" title="Permalink to this definition">¶</a></dt>
+<dd><p>Gets/sets the title for the expression info.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="arcgis.mapping.forms.FormExpressionInfo.to_dict">
+<code class="sig-name descname"><span class="pre">to_dict</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.mapping.forms.FormExpressionInfo.to_dict" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</div>
+</div>
+
+
+
+           </div>
+           
+          </div>
+          <footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+        <a href="arcgis.realtime.html" class="btn btn-neutral float-right" title="arcgis.realtime module" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="arcgis.mapping.ogc.html" class="btn btn-neutral float-left" title="arcgis.mapping.ogc module" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &#169; Copyright 2016-2021, Esri.
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+    Options v: 1.9
+
+  <div class="rst-versions" data-toggle="rst-versions" role="note" aria-label="versions">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      <span class="fa fa-book"> Pick an earlier version</span>
+      v: 1.9
+      <span class="fa fa-caret-down"></span>
+    </span>
+    <div class="rst-other-versions">
+      
+      
+      <dl>
+        <dt>Versions</dt>
+        
+          
+          <dd><a href="1.8.4/">1.8.4</a></dd>
+          
+        
+          
+          <dd><a href="1.8.3/">1.8.3</a></dd>
+          
+        
+          
+          <dd><a href="1.8.2/">1.8.2</a></dd>
+          
+        
+          
+          <dd><a href="1.8.1/">1.8.1</a></dd>
+          
+        
+          
+          <dd><a href="1.8.0/">1.8.0</a></dd>
+          
+        
+          
+          <dd><a href="1.7.1/">1.7.1</a></dd>
+          
+        
+          
+          <dd><a href="1.7.0/">1.7.0</a></dd>
+          
+        
+          
+          <dd><a href="1.6.2/">1.6.2</a></dd>
+          
+        
+          
+          <dd><a href="1.6.1/">1.6.1</a></dd>
+          
+        
+          
+          <dd><a href="1.6.0/">1.6.0</a></dd>
+          
+        
+          
+          <dd><a href="1.5.3/">1.5.3</a></dd>
+          
+        
+          
+          <dd><a href="1.5.2/">1.5.2</a></dd>
+          
+        
+          
+          <dd><a href="1.5.1/">1.5.1</a></dd>
+          
+        
+          
+          <dd><a href="1.5.0/">1.5.0</a></dd>
+          
+        
+          
+          <dd><a href="1.4.2/">1.4.2</a></dd>
+          
+        
+          
+          <dd><a href="1.4.1/">1.4.1</a></dd>
+          
+        
+          
+          <dd><a href="1.4.0/">1.4.0</a></dd>
+          
+        
+          
+          <dd><a href="1.3.0/">1.3.0</a></dd>
+          
+        
+          
+          <dd><a href="1.2.5/">1.2.5</a></dd>
+          
+        
+          
+          <dd><a href="1.2.4/">1.2.4</a></dd>
+          
+        
+          
+          <dd><a href="1.2.3/">1.2.3</a></dd>
+          
+        
+          
+          <dd><a href="1.2.2/">1.2.2</a></dd>
+          
+        
+          
+          <dd><a href="1.2.1/">1.2.1</a></dd>
+          
+        
+          
+          <dd><a href="1.2.0/">1.2.0</a></dd>
+          
+        
+          
+          <dd><a href="1.0.1/">1.0.1</a></dd>
+          
+        
+          
+          <dd><a href="1.0.0/">1.0.0</a></dd>
+          
+        
+          
+          <dd><a href="0.3.0/">0.3.0</a></dd>
+          
+        
+          
+          <dd><a href="0.2.0/">0.2.0</a></dd>
+          
+        
+          
+          <dd><a href="0.1.0/">0.1.0</a></dd>
+          
+        
+      </dl>
+      
+      
+      
+    </div>
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

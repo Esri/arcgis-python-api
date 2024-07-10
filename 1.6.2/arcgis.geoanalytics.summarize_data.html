@@ -1,0 +1,805 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>arcgis.geoanalytics.summarize_data module &mdash; arcgis 1.6.2 documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="_static/theme_overrides.css" type="text/css" />
+
+  
+  
+    <link rel="shortcut icon" href="_static/favicon.ico"/>
+  
+  
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/doctools.js"></script>
+        <script src="_static/language_data.js"></script>
+        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="arcgis.geoanalytics.use_proximity module" href="arcgis.geoanalytics.use_proximity.html" />
+    <link rel="prev" title="arcgis.geoanalytics.manage_data module" href="arcgis.geoanalytics.manage_data.html" />
+<!-- This code block is inserted close near the <head> tag. See http://bit.ly/2BHUQzB -->
+<!-- The point of this code block is to send us google analytics on website views -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-NJGGV5');</script>
+ 
+
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="index.html" class="icon icon-home" alt="Documentation Home"> arcgis
+          
+
+          
+            
+            <img src="_static/python_api_logo.png" class="logo" alt="Logo"/>
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1.6.2
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">arcgis</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="arcgis.gis.toc.html">arcgis.gis module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="arcgis.env.html">arcgis.env module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="arcgis.features.toc.html">arcgis.features module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="arcgis.raster.toc.html">arcgis.raster module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="arcgis.network.toc.html">arcgis.network module</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="arcgis.geoanalytics.toc.html">arcgis.geoanalytics module</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="arcgis.geoanalytics.toc.html#define-output-datastore">define_output_datastore</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.geoanalytics.toc.html#get-datastores">get_datastores</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.geoanalytics.toc.html#is-supported">is_supported</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="arcgis.geoanalytics.toc.html#submodules">Submodules</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="arcgis.geoanalytics.analyze_patterns.html">arcgis.geoanalytics.analyze_patterns module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="arcgis.geoanalytics.data_enrichment.html">arcgis.geoanalytics.data_enrichment module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="arcgis.geoanalytics.find_locations.html">arcgis.geoanalytics.find_locations module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="arcgis.geoanalytics.manage_data.html">arcgis.geoanalytics.manage_data module</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">arcgis.geoanalytics.summarize_data module</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#aggregate-points">aggregate_points</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#build-multivariable-grid">build_multivariable_grid</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#describe-dataset">describe_dataset</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#join-features">join_features</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#reconstruct-tracks">reconstruct_tracks</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#summarize-attributes">summarize_attributes</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#summarize-within">summarize_within</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="arcgis.geoanalytics.use_proximity.html">arcgis.geoanalytics.use_proximity module</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="arcgis.geocoding.html">arcgis.geocoding module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="arcgis.geoenrichment.html">arcgis.geoenrichment module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="arcgis.geometry.html">arcgis.geometry module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="arcgis.geoprocessing.html">arcgis.geoprocessing module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="arcgis.mapping.html">arcgis.mapping module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="arcgis.realtime.html">arcgis.realtime module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="arcgis.schematics.html">arcgis.schematics module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="arcgis.widgets.html">arcgis.widgets module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="arcgis.apps.html">arcgis.apps module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="arcgis.learn.html">arcgis.learn module</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">arcgis</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="arcgis.geoanalytics.toc.html">arcgis.geoanalytics module</a> &raquo;</li>
+        
+      <li>arcgis.geoanalytics.summarize_data module</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+<!-- This code block is inserted close near the <body> tag. See http://bit.ly/2BHUQzB -->
+<!-- The point of this code block is to send us google analytics on website views -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NJGGV5"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+
+  <div class="section" id="arcgis-geoanalytics-summarize-data-module">
+<h1>arcgis.geoanalytics.summarize_data module<a class="headerlink" href="#arcgis-geoanalytics-summarize-data-module" title="Permalink to this headline">¶</a></h1>
+<span class="target" id="module-arcgis.geoanalytics.summarize_data"></span><p>The Summarize Data module contains functions that calculate total counts, lengths, areas, and basic descriptive statistics of features and their attributes within areas or near other features.</p>
+<p>aggregate_points calculates statistics about points that fall within specified areas or bins.
+join_features calculates statistics about features that share a spatial, temporal, or attribute relationship with other features.
+reconstruct_tracks calculates statistics about points or polygons that belong to the same track and reconstructs inputs into tracks.
+summarize_attributes calculates statistics about feature or tabular data that share attributes.
+summarize_within calculates statistics for area features and attributes that overlap each other.</p>
+<div class="section" id="aggregate-points">
+<h2>aggregate_points<a class="headerlink" href="#aggregate-points" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt id="arcgis.geoanalytics.summarize_data.aggregate_points">
+<code class="sig-prename descclassname">arcgis.geoanalytics.summarize_data.</code><code class="sig-name descname">aggregate_points</code><span class="sig-paren">(</span><em class="sig-param">point_layer</em>, <em class="sig-param">bin_type: str = None</em>, <em class="sig-param">bin_size: float = None</em>, <em class="sig-param">bin_size_unit: str = None</em>, <em class="sig-param">polygon_layer=None</em>, <em class="sig-param">time_step_interval: int = None</em>, <em class="sig-param">time_step_interval_unit: str = None</em>, <em class="sig-param">time_step_repeat_interval: int = None</em>, <em class="sig-param">time_step_repeat_interval_unit: str = None</em>, <em class="sig-param">time_step_reference: datetime.datetime = None</em>, <em class="sig-param">summary_fields: str = None</em>, <em class="sig-param">output_name: str = None</em>, <em class="sig-param">gis=None</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.geoanalytics.summarize_data.aggregate_points" title="Permalink to this definition">¶</a></dt>
+<dd><p>Using a layer of point features and either a layer of area features or bins defined by a specified distance, this tool determines which points fall within each area or bin and calculates statistics about all the points within each area or bin. You may optionally apply time slicing with this tool.</p>
+<p>For example</p>
+<ul class="simple">
+<li><p>Given point locations of crime incidents, count the number of crimes per county or other administrative district.</p></li>
+<li><p>Find the highest and lowest monthly revenues for franchise locations using 100 km bins.</p></li>
+</ul>
+<p>This tool works with a layer of point features and a layer of areas features. Input area features can be from a polygon layer or they can be square or hexagonal bins calculated when the tool is run. The tool first determines which points fall within each specified area. After determining this point-in-area spatial relationship, statistics about all points in the area are calculated and assigned to the area. The most basic statistic is the count of the number of points within the area, but you can get other statistics as well.</p>
+<p>For example, suppose you have point features of coffee shop locations and area features of counties, and you want to summarize coffee sales by county. Assuming the coffee shops have a TOTAL_SALES attribute, you can get the sum of all TOTAL_SALES within each county, the minimum or maximum TOTAL_SALES within each county, or other statistics such as the count, range, standard deviation, and variance.</p>
+<p>This tool can also work with data that is time-enabled. If time is enabled on the input points, then the time slicing options are available. Time slicing allows you to calculate the point-in-area relationship while looking at a specific slice in time. For example, you could look at hourly intervals, which would result in outputs for each hour.</p>
+<p>For an example with time, suppose you had point features of every transaction made at various coffee shop locations and no area layer. The data has been recorded over a year and each transaction has a location and a time stamp. Assuming each transaction has a TOTAL_SALES attribute, you can get the sum of all TOTAL_SALES within the space and time of interest. If these transactions are for a single city, we could generate areas that are 1-kilometer grids and look at weekly time slices to summarize the transactions in both time and space.</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 27%" />
+<col style="width: 73%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><strong>Argument</strong></p></td>
+<td><p><strong>Description</strong></p></td>
+</tr>
+<tr class="row-even"><td><p>point_layer</p></td>
+<td><p>Required Input Points layer (features).</p></td>
+</tr>
+<tr class="row-odd"><td><p>bin_type</p></td>
+<td><p>Optional string parameter. If polygon_layer is not defined, it is required.
+Choice list:[‘Square’, ‘Hexagon’]</p></td>
+</tr>
+<tr class="row-even"><td><p>bin_size</p></td>
+<td><p>Bin Size (float). Optional parameter.</p></td>
+</tr>
+<tr class="row-odd"><td><p>bin_size_unit</p></td>
+<td><p>Bin Size Unit (str). Optional parameter.
+Choice list:[‘Feet’, ‘Yards’, ‘Miles’, ‘Meters’, ‘Kilometers’, ‘NauticalMiles’]</p></td>
+</tr>
+<tr class="row-even"><td><p>polygon_layer</p></td>
+<td><p>Optional Input Polygons layer (features). If bin_type and bin properties are not defined, it is
+required.</p></td>
+</tr>
+<tr class="row-odd"><td><p>time_step_interval</p></td>
+<td><p>Time Step Interval (int). Optional parameter.</p></td>
+</tr>
+<tr class="row-even"><td><p>time_step_interval_unit</p></td>
+<td><p>Time Step Interval Unit (str). Optional parameter.
+Choice list:[‘Years’, ‘Months’, ‘Weeks’, ‘Days’, ‘Hours’, ‘Minutes’, ‘Seconds’, ‘Milliseconds’]</p></td>
+</tr>
+<tr class="row-odd"><td><p>time_step_repeat_interval</p></td>
+<td><p>Time Step Repeat Interval (int). Optional parameter.</p></td>
+</tr>
+<tr class="row-even"><td><p>time_step_repeat_interval_unit</p></td>
+<td><p>Time Step Repeat Interval Unit (str). Optional parameter.
+Choice list:[‘Years’, ‘Months’, ‘Weeks’, ‘Days’, ‘Hours’, ‘Minutes’, ‘Seconds’, ‘Milliseconds’]</p></td>
+</tr>
+<tr class="row-odd"><td><p>time_step_reference</p></td>
+<td><p>Time Step Reference (datetime). Optional parameter.</p></td>
+</tr>
+<tr class="row-even"><td><p>summary_fields</p></td>
+<td><p>Summary Statistics (str/list). Optional parameter.</p>
+<p>The summary_fields string must enclose a Python list. Each list item must be a Python dictionary
+with two keys. See the Key:Value definitions below.</p>
+<p>See URL 1 below for full details.</p>
+</td>
+</tr>
+<tr class="row-odd"><td><p>output_name</p></td>
+<td><p>Output Features Name (str). Optional parameter.</p></td>
+</tr>
+<tr class="row-even"><td><p>gis</p></td>
+<td><p>Optional, the GIS on which this tool runs. If not specified, the active GIS is used.</p></td>
+</tr>
+</tbody>
+</table>
+<p><em>Key:Value Dictionary Options for Argument summary_fields</em></p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 13%" />
+<col style="width: 87%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><strong>Key</strong></p></td>
+<td><p><strong>Value</strong></p></td>
+</tr>
+<tr class="row-even"><td><p>statisticType</p></td>
+<td><p>Required string. Indicates statistic to summarize. See URL 1 below for full explanation.</p>
+<p>Choice list numeric fields:[‘Count’, ‘Sum’, ‘Mean’, ‘Min’, ‘Max’, ‘Range’, ‘Stddev’, ‘Var’]</p>
+<p>Choice list for string fields:[‘Count’, ‘Any’]</p>
+</td>
+</tr>
+<tr class="row-odd"><td><p>onStatisticField</p></td>
+<td><p>Required string. Provides the field name to summarize.</p>
+<p>See <a class="reference external" href="https://developers.arcgis.com/python/guide/working-with-feature-layers-and-features/#Querying-feature-layers">https://developers.arcgis.com/python/guide/working-with-feature-layers-and-features/#Querying-feature-layers</a>
+for instructions to query a feature layer for field names.</p>
+</td>
+</tr>
+</tbody>
+</table>
+<p>For detailed explanation see:</p>
+<p>URL 1: <a class="reference external" href="http://resources.arcgis.com/en/help/arcgis-rest-api/index.html#/Aggregate_Points/02r3000002rr000000/">http://resources.arcgis.com/en/help/arcgis-rest-api/index.html#/Aggregate_Points/02r3000002rr000000/</a></p>
+<blockquote>
+<div><p><strong>Returns:</strong> Output Features as Item</p>
+</div></blockquote>
+<p><em>Example</em></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Usage Example: Using summary_fields on a layer.</span>
+
+<span class="n">agg_pts_item</span> <span class="o">=</span> <span class="n">aggregate_points</span><span class="p">(</span><span class="n">input_points_layer</span><span class="p">,</span>
+                  <span class="n">bin_size</span><span class="o">=</span><span class="mf">0.5</span><span class="p">,</span>
+                  <span class="n">bin_type</span><span class="o">=</span><span class="s1">&#39;Hexagon&#39;</span><span class="p">,</span>
+                  <span class="n">bin_size_unit</span><span class="o">=</span><span class="s1">&#39;Miles&#39;</span><span class="p">,</span>
+                  <span class="n">summary_fields</span><span class="o">=</span><span class="p">[{</span><span class="s2">&quot;statisticType&quot;</span><span class="p">:</span> <span class="s2">&quot;Count&quot;</span><span class="p">,</span> <span class="s2">&quot;onStatisticField&quot;</span><span class="p">:</span> <span class="s2">&quot;fieldName1&quot;</span><span class="p">},</span> <span class="p">{</span><span class="s2">&quot;statisticType&quot;</span><span class="p">:</span> <span class="s2">&quot;Any&quot;</span><span class="p">,</span> <span class="s2">&quot;onStatisticField&quot;</span><span class="p">:</span> <span class="s2">&quot;fieldName2&quot;</span><span class="p">}]</span>
+                  <span class="p">)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+</div>
+<div class="section" id="build-multivariable-grid">
+<h2>build_multivariable_grid<a class="headerlink" href="#build-multivariable-grid" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt id="arcgis.geoanalytics.summarize_data.build_multivariable_grid">
+<code class="sig-prename descclassname">arcgis.geoanalytics.summarize_data.</code><code class="sig-name descname">build_multivariable_grid</code><span class="sig-paren">(</span><em class="sig-param">input_layers</em>, <em class="sig-param">variable_calculations</em>, <em class="sig-param">bin_size</em>, <em class="sig-param">bin_unit='Meters'</em>, <em class="sig-param">bin_type='Square'</em>, <em class="sig-param">output_name=None</em>, <em class="sig-param">gis=None</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.geoanalytics.summarize_data.build_multivariable_grid" title="Permalink to this definition">¶</a></dt>
+<dd><p>Only available at ArcGIS Enterprise 10.6.1 and later.</p>
+<p>The Build Multi-Variable Grid task works with one or more layers of point, line, or polygon
+features. The task generates a grid of square or hexagonal bins and compiles information about
+each input layer into each bin. For each input layer, this information can include the following
+variables:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>Distance to Nearest - The distance from each bin to the nearest feature.</p></li>
+<li><p>Attribute of Nearest - An attribute value of the feature nearest to each bin.</p></li>
+<li><p>Attribute Summary of Related - A statistical summary of all features within
+search distance of each bin.</p></li>
+</ul>
+</div></blockquote>
+<p>Only variables you specify in variable_calculations will be included in the result layer. These
+variables can help you understand the proximity of your data throughout the extent of your
+analysis. The results can help you answer questions such as the following:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>Given multiple layers of public transportation infrastructure, where in the city is least
+accessible by public transportation?</p></li>
+<li><p>Given layers of lakes and rivers, what is the name of the water body closest to each
+location in the US?</p></li>
+<li><p>Given a layer of household income, where in the US is the variation of income in the
+surrounding 50 miles the largest?</p></li>
+</ul>
+</div></blockquote>
+<p>The result of Build Multi-Variable Grid can also be used in prediction and classification
+workflows. The task allows you to calculate and compile information from many different data
+sources into a single, spatially continuous layer in one step, reducing the amount of effort
+required to build prediction and classification models.</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 26%" />
+<col style="width: 74%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><strong>Arguments</strong></p></td>
+<td><p><strong>Description</strong></p></td>
+</tr>
+<tr class="row-even"><td><p>input_layers</p></td>
+<td><p>Required list of FeatureLayers. A list of input layers that will be
+used in analysis. Each input layer follows the same formatting as
+described in the Feature Input topic. This can be one of the
+following:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>A URL to a feature service layer with an optional filter to
+select specific features</p></li>
+<li><p>A URL to a big data catalog service layer with an optional
+filter to select specific features</p></li>
+<li><p>A feature collection</p></li>
+</ul>
+</div></blockquote>
+</td>
+</tr>
+<tr class="row-odd"><td><p>variable_calculations</p></td>
+<td><p>Required list of dictionaries. A JSON array containing objects that
+describe the input layers and the attributes that will be
+calculated for each layer.</p></td>
+</tr>
+<tr class="row-even"><td><p>bin_size</p></td>
+<td><p>Required float. The distance for the bins of type binType in the
+output polygon layer. Enrichment attributes will be calculated at
+the center of each bin. When generating bins, for Square, the
+number and units specified determine the height and length of the
+square. For Hexagon, the number and units specified determine the
+distance between parallel sides.</p></td>
+</tr>
+<tr class="row-odd"><td><p>bin_unit</p></td>
+<td><p>Optional string. The distance unit for the bins that will be used
+to calculate enrichment attributes.</p>
+<p>Values: Meters (default), Kilometers, Feet, Miles, NauticalMiles,
+or Yards</p>
+</td>
+</tr>
+<tr class="row-even"><td><p>bin_type</p></td>
+<td><p>Optional string. The type of bin that will be generated. Bin
+options are the following:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>Hexagon.</p></li>
+<li><p>Square (default)</p></li>
+</ul>
+</div></blockquote>
+</td>
+</tr>
+<tr class="row-odd"><td><p>output_name</p></td>
+<td><p>Optional string. output name of the layer</p></td>
+</tr>
+<tr class="row-even"><td><p>gis</p></td>
+<td><p>Optional GIS.  The enterprise site that you want to connect to.</p></td>
+</tr>
+</tbody>
+</table>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>Feature Layer</p>
+</dd>
+</dl>
+</dd></dl>
+
+</div>
+<div class="section" id="describe-dataset">
+<h2>describe_dataset<a class="headerlink" href="#describe-dataset" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt id="arcgis.geoanalytics.summarize_data.describe_dataset">
+<code class="sig-prename descclassname">arcgis.geoanalytics.summarize_data.</code><code class="sig-name descname">describe_dataset</code><span class="sig-paren">(</span><em class="sig-param">input_layer</em>, <em class="sig-param">extent_output=False</em>, <em class="sig-param">sample_size=None</em>, <em class="sig-param">output_name=None</em>, <em class="sig-param">gis=None</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.geoanalytics.summarize_data.describe_dataset" title="Permalink to this definition">¶</a></dt>
+<dd><p>The Describe Dataset task provides an overview of your big data. The tool outputs a JSON
+detailing the input layer’s geometry and time settings, schema, and summary statistics for each
+field. Optionally, the tool can output two types of descriptive feature layers: a feature layer
+representing a sample of your input features, and a single polygon feature layer that
+represents the extent of the input features. You can choose to output one or both.</p>
+<blockquote>
+<div><p>Usage Notes:</p>
+<p>Only available at ArcGIS Enterprise 10.7 and later.</p>
+</div></blockquote>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 13%" />
+<col style="width: 87%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><strong>Argument</strong></p></td>
+<td><p><strong>Description</strong></p></td>
+</tr>
+<tr class="row-even"><td><p>input_layer</p></td>
+<td><p>required FeatureLayer. The point, line or polygon features.</p></td>
+</tr>
+<tr class="row-odd"><td><p>extent_output</p></td>
+<td><p>Optional Boolean. The task will output a single rectangle
+feature representing the extent of the input_layer if this value
+is set to true. The default is False.</p></td>
+</tr>
+<tr class="row-even"><td><p>sample_size</p></td>
+<td><p>Optional integer. The task will output a feature layer
+representing a sample of features from the input_layer. Specify
+the number of sample features to return. If the input value is
+0 or empty then no sample layer will be created. The output
+will have the same schema, geometry, and time type as the input
+layer. The default is None.</p></td>
+</tr>
+<tr class="row-odd"><td><p>output_name</p></td>
+<td><p>optional string. The task will create a feature service of the results. You define the name of the service.</p></td>
+</tr>
+<tr class="row-even"><td><p>gis</p></td>
+<td><p>optional GIS. The GIS object where the analysis will take place.</p></td>
+</tr>
+</tbody>
+</table>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>FeatureLayer</p>
+</dd>
+</dl>
+</dd></dl>
+
+</div>
+<div class="section" id="join-features">
+<h2>join_features<a class="headerlink" href="#join-features" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt id="arcgis.geoanalytics.summarize_data.join_features">
+<code class="sig-prename descclassname">arcgis.geoanalytics.summarize_data.</code><code class="sig-name descname">join_features</code><span class="sig-paren">(</span><em class="sig-param">target_layer</em>, <em class="sig-param">join_layer</em>, <em class="sig-param">join_operation: str = 'JoinOneToOne'</em>, <em class="sig-param">join_fields: str = None</em>, <em class="sig-param">summary_fields: str = None</em>, <em class="sig-param">spatial_relationship: str = None</em>, <em class="sig-param">spatial_near_distance: float = None</em>, <em class="sig-param">spatial_near_distance_unit: str = None</em>, <em class="sig-param">temporal_relationship: str = None</em>, <em class="sig-param">temporal_near_distance: int = None</em>, <em class="sig-param">temporal_near_distance_unit: str = None</em>, <em class="sig-param">attribute_relationship: str = None</em>, <em class="sig-param">join_condition: str = None</em>, <em class="sig-param">output_name: str = None</em>, <em class="sig-param">gis=None</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.geoanalytics.summarize_data.join_features" title="Permalink to this definition">¶</a></dt>
+<dd><p>Using either feature layers or tabular data, you can join features and records based on
+specific relationships between the input layers or tables. Joins will be determined by
+spatial, temporal, and attribute relationships, and summary statistics can be optionally
+calculated.</p>
+<p>For example</p>
+<ul class="simple">
+<li><p>Given point locations of crime incidents with a time, join the crime data to itself
+specifying a spatial relationship of crimes within 1 kilometer of each other and that
+occurred within 1 hour of each other to determine if there are a sequence of crimes
+close to each other in space and time.</p></li>
+<li><p>Given a table of ZIP Codes with demographic information and area features representing
+residential buildings, join the demographic information to the residences so each
+residence now has the information.</p></li>
+</ul>
+<p>The Join Features task works with two layers. Join Features joins attributes from one
+feature to another based on spatial, temporal, and attribute relationships or some
+combination of the three. The tool determines all input features that meet the specified
+join conditions and joins the second input layer to the first. You can optionally join
+all features to the matching features or summarize the matching features.</p>
+<p>Join Features can be applied to points, lines, areas, and tables. A temporal join
+requires that your input data is time-enabled, and a spatial join requires that your
+data has a geometry.</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 33%" />
+<col style="width: 67%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><strong>Argument</strong></p></td>
+<td><p><strong>Description</strong></p></td>
+</tr>
+<tr class="row-even"><td><p>target_layer</p></td>
+<td><p>Required FeatureLayer. Target Features (feature input)</p></td>
+</tr>
+<tr class="row-odd"><td><p>join_layer</p></td>
+<td><p>Required FeatureLayer. Join Features (feature input).</p></td>
+</tr>
+<tr class="row-even"><td><p>join_operation</p></td>
+<td><p>Required String. The join operation. Allowed values:
+JoinOneToOne and JoinOneToMany</p></td>
+</tr>
+<tr class="row-odd"><td><p>join_fields</p></td>
+<td><p>Optional String. Join Fields</p></td>
+</tr>
+<tr class="row-even"><td><p>summary_fields</p></td>
+<td><p>Optional String. Summary Statistics</p></td>
+</tr>
+<tr class="row-odd"><td><p>spatial_relationship</p></td>
+<td><p>Optional String. The spatial relationship. Choice list: [‘Equals’,
+‘Intersects’, ‘Contains’, ‘Within’, ‘Crosses’, ‘Touches’,
+‘Overlaps’, ‘Near’, ‘NearGeodesic’]</p></td>
+</tr>
+<tr class="row-even"><td><p>spatial_near_distance</p></td>
+<td><p>Optional Float. Near Spatial Distance. This is required if the
+<cite>spatial_relationship</cite> is defined as <cite>NearGeodesic</cite>.</p></td>
+</tr>
+<tr class="row-odd"><td><p>spatial_near_distance_unit</p></td>
+<td><p>Optional String. Near Spatial Distance Unit. This is required
+if the <cite>spatial_relationship</cite> is defined as <cite>NearGeodesic</cite>.
+Choice list:[‘Feet’, ‘Yards’, ‘Miles’, ‘Meters’, ‘Kilometers’,</p>
+<blockquote>
+<div><p>‘NauticalMiles’]</p>
+</div></blockquote>
+</td>
+</tr>
+<tr class="row-even"><td><p>temporal_relationship</p></td>
+<td><p>Optional String. Temporal Relationship.
+Choice list : [‘Equals’, ‘Intersects’, ‘During’, ‘Contains’,</p>
+<blockquote>
+<div><p>‘Finishes’, ‘FinishedBy’, ‘Meets’, ‘MetBy’,
+‘Overlaps’, ‘OverlappedBy’, ‘Starts’,
+‘StartedBy’, ‘Near’]</p>
+</div></blockquote>
+</td>
+</tr>
+<tr class="row-odd"><td><p>temporal_near_distance</p></td>
+<td><p>Optional Integer. Near Temporal Distance (int)</p></td>
+</tr>
+<tr class="row-even"><td><p>temporal_near_distance_unit</p></td>
+<td><p>Optional String.Near Temporal Distance Unit
+Choice list:[‘Years’, ‘Months’, ‘Weeks’, ‘Days’, ‘Hours’,</p>
+<blockquote>
+<div><p>‘Minutes’, ‘Seconds’, ‘Milliseconds’]</p>
+</div></blockquote>
+</td>
+</tr>
+<tr class="row-odd"><td><p>attribute_relationship</p></td>
+<td><p>Optional String. Attribute Relationships</p></td>
+</tr>
+<tr class="row-even"><td><p>join_condition</p></td>
+<td><p>Optional String. Join Condition</p></td>
+</tr>
+<tr class="row-odd"><td><p>output_name</p></td>
+<td><p>Optional String. The task will create a feature service of the
+results. You define the name of the service.</p></td>
+</tr>
+<tr class="row-even"><td><p>gis</p></td>
+<td><p>Optional GIS. The GIS object where the analysis will take place.</p></td>
+</tr>
+</tbody>
+</table>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>Output Features as Feature Layer Collection Item</p>
+</dd>
+</dl>
+</dd></dl>
+
+</div>
+<div class="section" id="reconstruct-tracks">
+<h2>reconstruct_tracks<a class="headerlink" href="#reconstruct-tracks" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt id="arcgis.geoanalytics.summarize_data.reconstruct_tracks">
+<code class="sig-prename descclassname">arcgis.geoanalytics.summarize_data.</code><code class="sig-name descname">reconstruct_tracks</code><span class="sig-paren">(</span><em class="sig-param">input_layer</em>, <em class="sig-param">track_fields: str</em>, <em class="sig-param">method: str = 'Planar'</em>, <em class="sig-param">buffer_field: str = None</em>, <em class="sig-param">summary_fields: str = None</em>, <em class="sig-param">distance_split=None</em>, <em class="sig-param">distance_split_unit=None</em>, <em class="sig-param">time_boundary_split=None</em>, <em class="sig-param">time_boundary_split_unit=None</em>, <em class="sig-param">time_boundary_reference=None</em>, <em class="sig-param">output_name: str = None</em>, <em class="sig-param">gis=None</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.geoanalytics.summarize_data.reconstruct_tracks" title="Permalink to this definition">¶</a></dt>
+<dd><blockquote>
+<div><blockquote>
+<div><p>Using a time-enabled layer of point or polygon features that represent an instant in time, this tool determines which input features belong in a track and will order the inputs sequentially in time. Statistics are optionally calculated for the input features within each track.</p>
+<p>For example</p>
+<ul>
+<li><p>Given point locations and time of hurricane measurements, calculate the mean wind speed and max wind pressure of the hurricane.</p></li>
+<li><p>Find the highest and lowest monthly revenues for franchise locations using 100 km bins.</p>
+<blockquote>
+<div><p>This tool works with a time-enabled layer of either point or polygon features that represent an instant in time. It first determines which features belong to a track using an identifier. Using the time at each location, the tracks are ordered sequentially and transformed into a line or polygon representing the path of movement over time. Optionally, the input may be buffered by a field, which will create a polygon at each location. These buffered points, or if the inputs are polygons, are then joined sequentially to create a track as a polygon where the width is representative of the attribute of interest. Resulting tracks have a start and end time, which represent temporally the first and last feature in a given track. When the tracks are created, statistics about the input features are calculated and assigned to the output track. The most basic statistic is the count of points within the area, but other statistics can be calculated as well.</p>
+</div></blockquote>
+</li>
+</ul>
+<p>Features in time-enabled layers can be represented in one of two ways:</p>
+<p>Instant-A single moment in time
+Interval-A start and end time
+For example, suppose you have GPS measurements of hurricanes every 10 minutes. Each GPS measurement records the hurricane’s name, location, time of recording, and wind speed. With this information, you could create tracks for each hurricane using the name for track identification, and tracks for each hurricane would be generated. Additionally, you could calculate statistics such as the mean, max, and minimum wind speed of each hurricane, as well as the count of measurements within each track.</p>
+<p>Using the same example, you could buffer your tracks by the wind speed. This would buffer each measurement by the wind speed field at that location, and join the buffered areas together, creating a polygon representative of the track path, as well as the changes in wind speed as the hurricanes progressed.</p>
+<p>Parameters:</p>
+</div></blockquote>
+<p>input_layer: Input Features (feature input). Required parameter.</p>
+<p>track_fields: Track Fields (str). Required parameter.</p>
+<dl class="simple">
+<dt>method: Method (str). Required parameter.</dt><dd><p>Choice list:[‘Geodesic’, ‘Planar’]</p>
+</dd>
+</dl>
+<p>buffer_field: Buffer Distance Field (str). Optional parameter.</p>
+<p>summary_fields: Summary Statistics (str/list). Optional parameter.</p>
+<p>time_boundary_split: Duration Split Threshold (int). Optional parameter.</p>
+<dl class="simple">
+<dt>time_boundary_split_unit: Duration Split Threshold Unit (str). Optional parameter.</dt><dd><p>Choice list:[‘Years’, ‘Months’, ‘Weeks’, ‘Days’, ‘Hours’, ‘Minutes’, ‘Seconds’, ‘Milliseconds’]</p>
+</dd>
+</dl>
+<p>time_boundary_reference: Starting time location (datetime.datetime). Optional parameter.</p>
+<p>distance_split: A distance used to split tracks. Any features in the inputLayer that are in the same track and are greater than this distance apart will be split into a new track. The units of the distance values are supplied by the distance_unit parameter.</p>
+<dl class="simple">
+<dt>distance_split_unit: The distance unit to be used with the distance value specified in distanceSplit.</dt><dd><p>Values: Meters,Kilometers,Feet,Miles,NauticalMiles, or Yards</p>
+</dd>
+</dl>
+<p>output_name: Output Features Name (str). Required parameter.</p>
+<p>gis: Optional, the GIS on which this tool runs. If not specified, the active GIS is used.</p>
+</div></blockquote>
+<dl class="simple">
+<dt>Returns:</dt><dd><p>output - Output Features as a Feature Layer Collection Item</p>
+</dd>
+</dl>
+</dd></dl>
+
+</div>
+<div class="section" id="summarize-attributes">
+<h2>summarize_attributes<a class="headerlink" href="#summarize-attributes" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt id="arcgis.geoanalytics.summarize_data.summarize_attributes">
+<code class="sig-prename descclassname">arcgis.geoanalytics.summarize_data.</code><code class="sig-name descname">summarize_attributes</code><span class="sig-paren">(</span><em class="sig-param">input_layer</em>, <em class="sig-param">fields: str = None</em>, <em class="sig-param">summary_fields: str = None</em>, <em class="sig-param">output_name: str = None</em>, <em class="sig-param">gis=None</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.geoanalytics.summarize_data.summarize_attributes" title="Permalink to this definition">¶</a></dt>
+<dd><blockquote>
+<div><blockquote>
+<div><p>Using either feature or tabular data, this tool summarizes statistics for specified fields.</p>
+<p>For example</p>
+<ul class="simple">
+<li><p>Given locations of grocery stores with a field COMPANY_NAME, summarize the stores by the company name to determine statistics for each company.</p></li>
+<li><p>Given a table of grocery stores with fields COMPANY_NAME and COUNTY, summarize the stores by the company name and county to determine statistics for each company within each county.</p></li>
+</ul>
+<p>This tool summarizes all the matching values in one or more fields and calculates statistics on them. The most basic statistic is the count of features that have been summarized together, but you can calculate more advanced statistics as well.</p>
+<p>For example, suppose you have point features of store locations with a field representing the DISTRICT_MANAGER_NAME and you want to summarize coffee sales by manager. You can specify the field DISTRICT_MANAGER_NAME as the field to dissolve on, and all rows of data representing individual managers will be summarized. This means all store locations that are managed by Manager1 will be summarized into one row with summary statistics calculated. In this instance, statistics like the count of the number of stores and the sum of TOTAL_SALES for all stores that Manager1 manages would be calculated as well as for any other manager listed in the DISTRICT_MANAGER_NAME field.</p>
+<p>Parameters:</p>
+</div></blockquote>
+<p>input_layer: Input Features (feature input). Required parameter.</p>
+<p>fields: Summary Fields (str). Required parameter.</p>
+<p>summary_fields: Summary Statistics (str/list). Optional parameter.</p>
+<p>output_name: Output Features Name (str). Required parameter.</p>
+<p>gis: Optional, the GIS on which this tool runs. If not specified, the active GIS is used.</p>
+</div></blockquote>
+<dl class="simple">
+<dt>Returns:</dt><dd><p>output - Output Features as a _FeatureSet</p>
+</dd>
+</dl>
+</dd></dl>
+
+</div>
+<div class="section" id="summarize-within">
+<h2>summarize_within<a class="headerlink" href="#summarize-within" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt id="arcgis.geoanalytics.summarize_data.summarize_within">
+<code class="sig-prename descclassname">arcgis.geoanalytics.summarize_data.</code><code class="sig-name descname">summarize_within</code><span class="sig-paren">(</span><em class="sig-param">summarized_layer</em>, <em class="sig-param">summary_polygons=None</em>, <em class="sig-param">bin_type: str = None</em>, <em class="sig-param">bin_size: float = None</em>, <em class="sig-param">bin_size_unit: str = None</em>, <em class="sig-param">standard_summary_fields: str = None</em>, <em class="sig-param">weighted_summary_fields: str = None</em>, <em class="sig-param">sum_shape: bool = True</em>, <em class="sig-param">shape_units: str = None</em>, <em class="sig-param">group_by_field: str = None</em>, <em class="sig-param">minority_majority: bool = False</em>, <em class="sig-param">percent_shape: bool = False</em>, <em class="sig-param">output_name: str = None</em>, <em class="sig-param">gis=None</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.geoanalytics.summarize_data.summarize_within" title="Permalink to this definition">¶</a></dt>
+<dd><blockquote>
+<div><blockquote>
+<div><p>Finds areas (and portions of areas) that overlap between two layers and calculates statistics about the overlap.</p>
+<p>For example</p>
+<ul class="simple">
+<li><p>Given a layer of watershed areas and a layer of land-use areas by land-use type, calculate total acreage of land-use type for each watershed.</p></li>
+<li><p>Given a layer of parcels in a county and a layer of city boundaries, summarize the average value of vacant parcels within each city.</p></li>
+</ul>
+</div></blockquote>
+<p>Parameters:</p>
+<p>summarized_layer: Layer To Summarize (feature input). Required parameter.</p>
+<p>summary_polygons: Summary Polygons Layer (feature input). Optional parameter.</p>
+<dl class="simple">
+<dt>bin_type: Output Bin Type (str). Optional parameter.</dt><dd><p>Choice list:[‘Square’, ‘Hexagon’]</p>
+</dd>
+</dl>
+<p>bin_size: Output Bin Size (float). Optional parameter.</p>
+<dl class="simple">
+<dt>bin_size_unit: Output Bin Size Unit (str). Optional parameter.</dt><dd><p>Choice list:[‘Feet’, ‘Yards’, ‘Miles’, ‘Meters’, ‘Kilometers’, ‘NauticalMiles’]</p>
+</dd>
+</dl>
+<p>standard_summary_fields: Unweighted Summary Statistics (str). Optional parameter.</p>
+<p>weighted_summary_fields: Proportional Summary Statistics (str). Optional parameter.</p>
+<p>sum_shape: Summarize Shape (bool). Optional parameter.</p>
+<dl class="simple">
+<dt>shape_units: Shape Measure Output Unit (str). Optional parameter.</dt><dd><p>Choice list:[‘Meters’, ‘Kilometers’, ‘Feet’, ‘Yards’, ‘Miles’, ‘SquareMeters’, ‘SquareKilometers’, ‘Hectares’, ‘SquareFeet’, ‘SquareYards’, ‘SquareMiles’, ‘Acres’]</p>
+</dd>
+</dl>
+<p>group_by_field: This is a field of the summarized_layer features that you can use to calculate statistics separately for each unique attribute value. For example, suppose the sumWithinLayer contains city boundaries and the summaryPolygons features are parcels. One of the fields of the parcels is Status which contains two values: VACANT and OCCUPIED. To calculate the total area of vacant and occupied parcels within the boundaries of cities, use Status as the groupByField field. This parameter is available at ArcGIS Enterprise 10.6.1+.</p>
+<p>minority_majority: This boolean parameter is applicable only when a group_by_field is specified. If true, the minority (least dominant) or the majority (most dominant) attribute values for each group field are calculated. Two new fields are added to the resultLayer prefixed with <a href="#id1"><span class="problematic" id="id2">Majority_</span></a> and <a href="#id3"><span class="problematic" id="id4">Minority_</span></a>. This parameter is available at ArcGIS Enterprise 10.6.1+. The default is false.</p>
+<p>percent_shape: This boolean parameter is applicable only when a group_by_field is specified. If set to true, the percentage of each unique group_by_field value is calculated for each sum within layer polygon. The default is false. This parameter is available at ArcGIS Enterprise 10.6.1+.</p>
+<p>output_name: Output Features Name (str). Required parameter.</p>
+<p>gis: Optional, the GIS on which this tool runs. If not specified, the active GIS is used.</p>
+</div></blockquote>
+<dl class="simple">
+<dt>Returns:</dt><dd><p>output - Output Features as a layer Item</p>
+</dd>
+</dl>
+</dd></dl>
+
+</div>
+</div>
+
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="arcgis.geoanalytics.use_proximity.html" class="btn btn-neutral float-right" title="arcgis.geoanalytics.use_proximity module" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="arcgis.geoanalytics.manage_data.html" class="btn btn-neutral float-left" title="arcgis.geoanalytics.manage_data module" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        
+        &copy; Copyright 2016-2019, Esri
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

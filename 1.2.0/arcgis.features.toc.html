@@ -1,0 +1,2286 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>arcgis.features module &mdash; arcgis 1.2.0 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+        <link rel="index" title="Index"
+              href="genindex.html"/>
+        <link rel="search" title="Search" href="search.html"/>
+    <link rel="top" title="arcgis 1.2.0 documentation" href="index.html"/>
+        <link rel="next" title="arcgis.features.analysis module" href="arcgis.features.analysis.html"/>
+        <link rel="prev" title="arcgis.env module" href="arcgis.env.html"/> 
+
+  
+  <script src="_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="index.html" class="icon icon-home"> arcgis
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1.2.0
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">arcgis</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="arcgis.gis.toc.html">arcgis.gis module</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.gis.toc.html#gis">GIS</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.gis.toc.html#item">Item</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.gis.toc.html#user">User</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.gis.toc.html#group">Group</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.gis.toc.html#datastore">Datastore</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.gis.toc.html#role">Role</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.gis.toc.html#layer">Layer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.gis.toc.html#contentmanager">ContentManager</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.gis.toc.html#usermanager">UserManager</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.gis.toc.html#groupmanager">GroupManager</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.gis.toc.html#datastoremanager">DatastoreManager</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.gis.toc.html#rolemanager">RoleManager</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.gis.toc.html#resourcemanager">ResourceManager</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.gis.toc.html#submodules">Submodules</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="arcgis.gis.admin.html">arcgis.gis.admin module</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.gis.admin.html#agoladminmanager">AGOLAdminManager</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.gis.admin.html#portaladminmanager">PortalAdminManager</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.gis.admin.html#collaborationmanager">CollaborationManager</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.gis.admin.html#collaboration">Collaboration</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.gis.admin.html#creditmanager">CreditManager</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.gis.admin.html#passwordpolicy">PasswordPolicy</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.gis.admin.html#ux">UX</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.gis.admin.html#federation">Federation</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.gis.admin.html#logs">Logs</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.gis.admin.html#machines">Machines</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.gis.admin.html#security">Security</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.gis.admin.html#oauth">OAuth</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.gis.admin.html#sslcertificate">SSLCertificate</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.gis.admin.html#sslcertificates">SSLCertificates</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.gis.admin.html#enterpriseusers">EnterpriseUsers</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.gis.admin.html#enterprisegroups">EnterpriseGroups</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.gis.admin.html#site">Site</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.gis.admin.html#system">System</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.gis.admin.html#licenses">Licenses</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.gis.admin.html#directory">Directory</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.gis.admin.html#webadaptor">WebAdaptor</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.gis.admin.html#webadaptors">WebAdaptors</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="arcgis.gis.server.html">arcgis.gis.server module</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.gis.server.html#server">Server</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.gis.server.html#service">Service</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.gis.server.html#machine">Machine</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.gis.server.html#report">Report</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.gis.server.html#datastore">Datastore</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.gis.server.html#user">User</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.gis.server.html#role">Role</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.gis.server.html#servermanager">ServerManager</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.gis.server.html#servicemanager">ServiceManager</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.gis.server.html#machinemanager">MachineManager</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.gis.server.html#logmanager">LogManager</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.gis.server.html#reportmanager">ReportManager</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.gis.server.html#datastoremanager">DataStoreManager</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.gis.server.html#usermanager">UserManager</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.gis.server.html#rolemanager">RoleManager</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.gis.server.html#systemmanager">SystemManager</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.gis.server.html#sitemanager">SiteManager</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.gis.server.html#directorymanager">DirectoryManager</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="arcgis.env.html">arcgis.env module</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.env.html#active-gis">active_gis</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.env.html#analysis-extent">analysis_extent</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.env.html#out-spatial-reference">out_spatial_reference</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.env.html#process-spatial-reference">process_spatial_reference</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.env.html#return-z">return_z</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.env.html#return-m">return_m</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.env.html#verbose">verbose</a></li>
+</ul>
+</li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">arcgis.features module</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#feature">Feature</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#featurelayer">FeatureLayer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#table">Table</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#featurelayercollection">FeatureLayerCollection</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#featureset">FeatureSet</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#featurecollection">FeatureCollection</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#spatialdataframe">SpatialDataFrame</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#submodules">Submodules</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="arcgis.features.analysis.html">arcgis.features.analysis module</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.features.analysis.html#aggregate-points">aggregate_points</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.features.analysis.html#calculate-density">calculate_density</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.features.analysis.html#connect-origins-to-destinations">connect_origins_to_destinations</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.features.analysis.html#create-buffers">create_buffers</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.features.analysis.html#create-drive-time-areas">create_drive_time_areas</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.features.analysis.html#create-route-layers">create_route_layers</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.features.analysis.html#create-viewshed">create_viewshed</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.features.analysis.html#create-watersheds">create_watersheds</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.features.analysis.html#derive-new-locations">derive_new_locations</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.features.analysis.html#dissolve-boundaries">dissolve_boundaries</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.features.analysis.html#enrich-layer">enrich_layer</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.features.analysis.html#extract-data">extract_data</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.features.analysis.html#find-existing-locations">find_existing_locations</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.features.analysis.html#find-hot-spots">find_hot_spots</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.features.analysis.html#find-nearest">find_nearest</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.features.analysis.html#find-similar-locations">find_similar_locations</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.features.analysis.html#interpolate-points">interpolate_points</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.features.analysis.html#join-features">join_features</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.features.analysis.html#merge-layers">merge_layers</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.features.analysis.html#overlay-layers">overlay_layers</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.features.analysis.html#plan-routes">plan_routes</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.features.analysis.html#summarize-nearby">summarize_nearby</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.features.analysis.html#summarize-within">summarize_within</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.features.analysis.html#trace-downstream">trace_downstream</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="arcgis.features.analyze_patterns.html">arcgis.features.analyze_patterns module</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.features.analyze_patterns.html#calculate-density">calculate_density</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.features.analyze_patterns.html#find-hot-spots">find_hot_spots</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.features.analyze_patterns.html#interpolate-points">interpolate_points</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="arcgis.features.enrich_data.html">arcgis.features.enrich_data module</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.features.enrich_data.html#enrich-layer">enrich_layer</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="arcgis.features.find_locations.html">arcgis.features.find_locations module</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.features.find_locations.html#find-existing-locations">find_existing_locations</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.features.find_locations.html#derive-new-locations">derive_new_locations</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.features.find_locations.html#find-similar-locations">find_similar_locations</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.features.find_locations.html#choose-best-facilities">choose_best_facilities</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.features.find_locations.html#create-viewshed">create_viewshed</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.features.find_locations.html#create-watersheds">create_watersheds</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.features.find_locations.html#trace-downstream">trace_downstream</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="arcgis.features.manage_data.html">arcgis.features.manage_data module</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.features.manage_data.html#dissolve-boundaries">dissolve_boundaries</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.features.manage_data.html#extract-data">extract_data</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.features.manage_data.html#merge-layers">merge_layers</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.features.manage_data.html#overlay-layers">overlay_layers</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="arcgis.features.summarize_data.html">arcgis.features.summarize_data module</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.features.summarize_data.html#aggregate-points">aggregate_points</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.features.summarize_data.html#summarize-nearby">summarize_nearby</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.features.summarize_data.html#summarize-within">summarize_within</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="arcgis.features.use_proximity.html">arcgis.features.use_proximity module</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.features.use_proximity.html#connect-origins-to-destinations">connect_origins_to_destinations</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.features.use_proximity.html#create-buffers">create_buffers</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.features.use_proximity.html#create-drive-time-areas">create_drive_time_areas</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.features.use_proximity.html#find-nearest">find_nearest</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.features.use_proximity.html#plan-routes">plan_routes</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="arcgis.features.elevation.html">arcgis.features.elevation module</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.features.elevation.html#profile">profile</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.features.elevation.html#viewshed">viewshed</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.features.elevation.html#summarize-elevation">summarize_elevation</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="arcgis.features.managers.html">arcgis.features.managers module</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.features.managers.html#attachmentmanager">AttachmentManager</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.features.managers.html#syncmanager">SyncManager</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.features.managers.html#featurelayercollectionmanager">FeatureLayerCollectionManager</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.features.managers.html#featurelayermanager">FeatureLayerManager</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="arcgis.raster.toc.html">arcgis.raster module</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.raster.toc.html#imagerylayer">ImageryLayer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.raster.toc.html#submodules">Submodules</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="arcgis.raster.analytics.html">arcgis.raster.analytics module</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.raster.analytics.html#get-datastores">get_datastores</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.raster.analytics.html#is-supported">is_supported</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.raster.analytics.html#generate-raster">generate_raster</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.raster.analytics.html#interpolate-points">interpolate_points</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.raster.analytics.html#create-viewshed">create_viewshed</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.raster.analytics.html#summarize-raster-within">summarize_raster_within</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.raster.analytics.html#calculate-density">calculate_density</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.raster.analytics.html#classify">classify</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.raster.analytics.html#segment">segment</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.raster.analytics.html#train-classifier">train_classifier</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.raster.analytics.html#convert-feature-to-raster">convert_feature_to_raster</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.raster.analytics.html#convert-raster-to-feature">convert_raster_to_feature</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.raster.analytics.html#copy-raster">copy_raster</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="arcgis.raster.functions.html">arcgis.raster.functions module</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#abs">abs</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#acos">acos</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#acosh">acosh</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#apply">apply</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#arg-max">arg_max</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#arg-median">arg_median</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#arg-min">arg_min</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#arg-statistics">arg_statistics</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#arithmetic">arithmetic</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#asin">asin</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#asinh">asinh</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#aspect">aspect</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#atan">atan</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#atan2">atan2</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#atanh">atanh</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#band-arithmetic">band_arithmetic</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#bitwise-and">bitwise_and</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#bitwise-left-shift">bitwise_left_shift</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#bitwise-not">bitwise_not</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#bitwise-or">bitwise_or</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#bitwise-right-shift">bitwise_right_shift</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#bitwise-xor">bitwise_xor</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#boolean-and">boolean_and</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#boolean-not">boolean_not</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#boolean-or">boolean_or</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#boolean-xor">boolean_xor</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#classify">classify</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#clip">clip</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#colormap">colormap</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#composite-band">composite_band</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#con">con</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#contrast-brightness">contrast_brightness</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#convolution">convolution</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#cos">cos</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#cosh">cosh</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#curvature">curvature</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#divide">divide</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#duration">duration</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#elevation-void-fill">elevation_void_fill</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#equal-to">equal_to</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#exp">exp</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#exp10">exp10</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#exp2">exp2</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#expression">expression</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#extract-band">extract_band</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#float">float</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#float-divide">float_divide</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#floor-divide">floor_divide</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#gemi">gemi</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#geometric">geometric</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#greater-than">greater_than</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#greater-than-equal">greater_than_equal</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#gvitm">gvitm</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#hillshade">hillshade</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#int">int</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#is-null">is_null</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#less-than">less_than</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#less-than-equal">less_than_equal</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#ln">ln</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#local">local</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#log10">log10</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#log2">log2</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#majority">majority</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#mask">mask</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#max">max</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#mean">mean</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#med">med</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#min">min</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#minority">minority</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#minus">minus</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#ml-classify">ml_classify</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#mod">mod</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#mode">mode</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#msavi">msavi</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#multiply">multiply</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#ndvi">ndvi</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#negate">negate</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#not-equal">not_equal</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#plus">plus</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#power">power</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#pvi">pvi</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#range">range</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#remap">remap</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#resample">resample</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#round-down">round_down</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#round-up">round_up</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#savi">savi</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#segment-mean-shift">segment_mean_shift</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#set-null">set_null</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#shaded-relief">shaded_relief</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#sin">sin</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#sinh">sinh</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#slope">slope</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#sqrt">sqrt</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#square">square</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#focal-statistics">focal_statistics</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#std">std</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#stretch">stretch</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#sultan">sultan</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#sum">sum</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#tan">tan</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#tanh">tanh</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#threshold">threshold</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#times">times</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#transpose-bits">transpose_bits</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#tsavi">tsavi</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#unit-conversion">unit_conversion</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#variety">variety</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.raster.functions.html#vector-field-renderer">vector_field_renderer</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="arcgis.network.toc.html">arcgis.network module</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.network.toc.html#networklayer">NetworkLayer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.network.toc.html#routelayer">RouteLayer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.network.toc.html#servicearealayer">ServiceAreaLayer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.network.toc.html#closestfacilitylayer">ClosestFacilityLayer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.network.toc.html#networkdataset">NetworkDataset</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.network.toc.html#submodules">Submodules</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="arcgis.network.analysis.html">arcgis.network.analysis module</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.network.analysis.html#solve-vehicle-routing-problem">solve_vehicle_routing_problem</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.network.analysis.html#find-closest-facilities">find_closest_facilities</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.network.analysis.html#solve-location-allocation">solve_location_allocation</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.network.analysis.html#generate-origin-destination-cost-matrix">generate_origin_destination_cost_matrix</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.network.analysis.html#find-routes">find_routes</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.network.analysis.html#generate-service-areas">generate_service_areas</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.network.analysis.html#get-travel-modes">get_travel_modes</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="arcgis.geoanalytics.toc.html">arcgis.geoanalytics module</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.geoanalytics.toc.html#get-datastores">get_datastores</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.geoanalytics.toc.html#is-supported">is_supported</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.geoanalytics.toc.html#submodules">Submodules</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="arcgis.geoanalytics.analyze_patterns.html">arcgis.geoanalytics.analyze_patterns module</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.geoanalytics.analyze_patterns.html#calculate-density">calculate_density</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.geoanalytics.analyze_patterns.html#find-hot-spots">find_hot_spots</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.geoanalytics.analyze_patterns.html#create-space-time-cube">create_space_time_cube</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="arcgis.geoanalytics.find_locations.html">arcgis.geoanalytics.find_locations module</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.geoanalytics.find_locations.html#find-similar-locations">find_similar_locations</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="arcgis.geoanalytics.manage_data.html">arcgis.geoanalytics.manage_data module</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.geoanalytics.manage_data.html#copy-to-data-store">copy_to_data_store</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="arcgis.geoanalytics.summarize_data.html">arcgis.geoanalytics.summarize_data module</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.geoanalytics.summarize_data.html#aggregate-points">aggregate_points</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.geoanalytics.summarize_data.html#join-features">join_features</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.geoanalytics.summarize_data.html#reconstruct-tracks">reconstruct_tracks</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.geoanalytics.summarize_data.html#summarize-attributes">summarize_attributes</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.geoanalytics.summarize_data.html#summarize-within">summarize_within</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="arcgis.geoanalytics.use_proximity.html">arcgis.geoanalytics.use_proximity module</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.geoanalytics.use_proximity.html#create-buffers">create_buffers</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="arcgis.geocoding.html">arcgis.geocoding module</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.geocoding.html#geocoder">Geocoder</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.geocoding.html#get-geocoders">get_geocoders</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.geocoding.html#geocode">geocode</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.geocoding.html#reverse-geocode">reverse_geocode</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.geocoding.html#batch-geocode">batch_geocode</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.geocoding.html#suggest">suggest</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="arcgis.geometry.html">arcgis.geometry module</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.geometry.html#point">Point</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.geometry.html#multipoint">MultiPoint</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.geometry.html#polyline">Polyline</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.geometry.html#polygon">Polygon</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.geometry.html#envelope">Envelope</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.geometry.html#spatialreference">SpatialReference</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.geometry.html#geometry">Geometry</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.geometry.html#areas-and-lengths">areas_and_lengths</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.geometry.html#auto-complete">auto_complete</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.geometry.html#buffer">buffer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.geometry.html#convex-hull">convex_hull</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.geometry.html#cut">cut</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.geometry.html#density">density</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.geometry.html#difference">difference</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.geometry.html#distance">distance</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.geometry.html#find-transformation">find_transformation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.geometry.html#from-geo-coordinate-string">from_geo_coordinate_string</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.geometry.html#generalize">generalize</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.geometry.html#intersect">intersect</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.geometry.html#label-points">label_points</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.geometry.html#lengths">lengths</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.geometry.html#offset">offset</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.geometry.html#project">project</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.geometry.html#relation">relation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.geometry.html#reshape">reshape</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.geometry.html#to-geo-coordinate-string">to_geo_coordinate_string</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.geometry.html#trim-extend">trim_extend</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.geometry.html#union">union</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.geometry.html#submodules">Submodules</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="arcgis.geometry.filters.html">arcgis.geometry.filters module</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.geometry.filters.html#intersects">intersects</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.geometry.filters.html#contains">contains</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.geometry.filters.html#crosses">crosses</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.geometry.filters.html#envelope-intersects">envelope_intersects</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.geometry.filters.html#index-intersects">index_intersects</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.geometry.filters.html#overlaps">overlaps</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.geometry.filters.html#touches">touches</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcgis.geometry.filters.html#within">within</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="arcgis.geoprocessing.html">arcgis.geoprocessing module</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.geoprocessing.html#import-toolbox">import_toolbox</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.geoprocessing.html#datafile">DataFile</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.geoprocessing.html#linearunit">LinearUnit</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.geoprocessing.html#rasterdata">RasterData</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="arcgis.mapping.html">arcgis.mapping module</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.mapping.html#webmap">WebMap</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.mapping.html#webscene">WebScene</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.mapping.html#mapimagelayer">MapImageLayer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.mapping.html#mapimagelayermanager">MapImageLayerManager</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.mapping.html#vectortilelayer">VectorTileLayer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.mapping.html#export-map">export_map</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.mapping.html#get-layout-templates">get_layout_templates</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="arcgis.realtime.html">arcgis.realtime module</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.realtime.html#streamlayer">StreamLayer</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="arcgis.schematics.html">arcgis.schematics module</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.schematics.html#schematiclayers">SchematicLayers</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="arcgis.widgets.html">arcgis.widgets module</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.widgets.html#mapview">MapView</a></li>
+</ul>
+</li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">arcgis</a>
+        
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html">Docs</a> &raquo;</li>
+        
+      <li>arcgis.features module</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="_sources/arcgis.features.toc.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="module-arcgis.features">
+<span id="arcgis-features-module"></span><h1>arcgis.features module<a class="headerlink" href="#module-arcgis.features" title="Permalink to this headline">¶</a></h1>
+<p>The arcgis.features module contains types and functions for working with features and feature layers in the GIS.</p>
+<p>Entities located in space with a geometrical representation (such as points, lines or polygons) and a set of properties
+can be represented as features. The arcgis.features module is used for working with feature data, feature layers and
+collections of feature layers in the GIS. It also contains the spatial analysis functions which operate against
+feature data.</p>
+<p>In the GIS, entities located in space with a set of properties can be represented as features.  Features are stored as
+feature classes, which represent a set of features located using a single spatial type (point, line, polygon) and a
+common set of properties.  This is the geographic extension of the classic tabular or relational representation for
+entities - a set of entities is modelled as rows in a table.  Tables represent entity classes with uniform
+properties.  In addition to working with entities with location as features, the system can also work with
+non-spatial entities as rows in tables.  The system can also model relationships between entities using properties
+which act as primary and foreign keys.  A collection of feature classes and tables, with the associated
+relationships among the entities, is a feature layer collection. FeatureLayerCollections are one of the dataset types
+contained in a Datastore.  Finally, features are not simply entities in a dataset.  Features have a visual
+representation and user experience - on a map, in a 3D scene, as entities with a property sheet or popups.</p>
+<div class="section" id="feature">
+<h2>Feature<a class="headerlink" href="#feature" title="Permalink to this headline">¶</a></h2>
+<dl class="class">
+<dt id="arcgis.features.Feature">
+<em class="property">class </em><code class="descclassname">arcgis.features.</code><code class="descname">Feature</code><span class="sig-paren">(</span><em>geometry=None</em>, <em>attributes=None</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.features.Feature" title="Permalink to this definition">¶</a></dt>
+<dd><p>Entities located in space with a set of properties can be represented as features.</p>
+<dl class="attribute">
+<dt id="arcgis.features.Feature.as_dict">
+<code class="descname">as_dict</code><a class="headerlink" href="#arcgis.features.Feature.as_dict" title="Permalink to this definition">¶</a></dt>
+<dd><p>returns the feature as a dictionary</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="arcgis.features.Feature.as_row">
+<code class="descname">as_row</code><a class="headerlink" href="#arcgis.features.Feature.as_row" title="Permalink to this definition">¶</a></dt>
+<dd><p>converts a feature to a list for insertion into an insert cursor
+Output:</p>
+<blockquote>
+<div>[row items], [field names]
+returns a list of fields and the row object</div></blockquote>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="arcgis.features.Feature.attributes">
+<code class="descname">attributes</code><a class="headerlink" href="#arcgis.features.Feature.attributes" title="Permalink to this definition">¶</a></dt>
+<dd><p>returns the feature attributes</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="arcgis.features.Feature.fields">
+<code class="descname">fields</code><a class="headerlink" href="#arcgis.features.Feature.fields" title="Permalink to this definition">¶</a></dt>
+<dd><p>returns a list of feature fields</p>
+</dd></dl>
+
+<dl class="classmethod">
+<dt id="arcgis.features.Feature.from_dict">
+<em class="property">classmethod </em><code class="descname">from_dict</code><span class="sig-paren">(</span><em>feature</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.features.Feature.from_dict" title="Permalink to this definition">¶</a></dt>
+<dd><p>returns a feature from a dict</p>
+</dd></dl>
+
+<dl class="classmethod">
+<dt id="arcgis.features.Feature.from_json">
+<em class="property">classmethod </em><code class="descname">from_json</code><span class="sig-paren">(</span><em>json_str</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.features.Feature.from_json" title="Permalink to this definition">¶</a></dt>
+<dd><p>returns a feature from a JSON string</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="arcgis.features.Feature.geometry">
+<code class="descname">geometry</code><a class="headerlink" href="#arcgis.features.Feature.geometry" title="Permalink to this definition">¶</a></dt>
+<dd><p>returns the feature geometry</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="arcgis.features.Feature.geometry_type">
+<code class="descname">geometry_type</code><a class="headerlink" href="#arcgis.features.Feature.geometry_type" title="Permalink to this definition">¶</a></dt>
+<dd><p>returns the feature’s geometry type</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="arcgis.features.Feature.get_value">
+<code class="descname">get_value</code><span class="sig-paren">(</span><em>field_name</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.features.Feature.get_value" title="Permalink to this definition">¶</a></dt>
+<dd><p>returns a value for a given field name</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="arcgis.features.Feature.set_value">
+<code class="descname">set_value</code><span class="sig-paren">(</span><em>field_name</em>, <em>value</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.features.Feature.set_value" title="Permalink to this definition">¶</a></dt>
+<dd><p>sets an attribute value for a given field name</p>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="featurelayer">
+<h2>FeatureLayer<a class="headerlink" href="#featurelayer" title="Permalink to this headline">¶</a></h2>
+<dl class="class">
+<dt id="arcgis.features.FeatureLayer">
+<em class="property">class </em><code class="descclassname">arcgis.features.</code><code class="descname">FeatureLayer</code><span class="sig-paren">(</span><em>url</em>, <em>gis=None</em>, <em>container=None</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.features.FeatureLayer" title="Permalink to this definition">¶</a></dt>
+<dd><p>The feature layer is the primary concept for working with features in a GIS.</p>
+<p>Users create, import, export, analyze, edit, and visualize features, i.e. entities in space as feature layers.</p>
+<p>Feature layers can be added to and visualized using maps. They act as inputs to and outputs from feature analysis
+tools.</p>
+<p>Feature layers are created by publishing feature data to a GIS, and are exposed as a broader resource (Item) in the
+GIS. Feature layer objects can be obtained through the layers attribute on feature layer Items in the GIS.</p>
+<dl class="method">
+<dt id="arcgis.features.FeatureLayer.calculate">
+<code class="descname">calculate</code><span class="sig-paren">(</span><em>where</em>, <em>calc_expression</em>, <em>sql_format=’standard’</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.features.FeatureLayer.calculate" title="Permalink to this definition">¶</a></dt>
+<dd><p>The calculate operation is performed on a feature layer
+resource. It updates the values of one or more fields in an
+existing feature service layer based on SQL expressions or scalar
+values. The calculate operation can only be used if the
+supportsCalculate property of the layer is true.
+Neither the Shape field nor system fields can be updated using
+calculate. System fields include ObjectId and GlobalId.
+See Calculate a field for more information on supported expressions</p>
+<dl class="docutils">
+<dt>Inputs:</dt>
+<dd><dl class="first last docutils">
+<dt>where - A where clause can be used to limit the updated records.</dt>
+<dd>Any legal SQL where clause operating on the fields in
+the layer is allowed.</dd>
+<dt>calcExpression - The array of field/value info objects that</dt>
+<dd><p class="first">contain the field or fields to update and their
+scalar values or SQL expression.  Allowed types
+are dictionary and list.  List must be a list
+of dictionary objects.
+Calculation Format is as follows:</p>
+<blockquote class="last">
+<div>{“field” : “&lt;field name&gt;”,
+“value” : “&lt;value&gt;”}</div></blockquote>
+</dd>
+<dt>sqlFormat - The SQL format for the calcExpression. It can be</dt>
+<dd>either standard SQL92 (standard) or native SQL
+(native). The default is standard.
+Values: standard, native</dd>
+</dl>
+</dd>
+<dt>Output:</dt>
+<dd>JSON as string</dd>
+</dl>
+<p>Usage:
+&gt;&gt;&gt;print(fl.calculate(where=”OBJECTID &lt; 2”,</p>
+<blockquote>
+<div><dl class="docutils">
+<dt>calcExpression={“field”: “ZONE”,</dt>
+<dd>“value” : “R1”}))</dd>
+</dl>
+</div></blockquote>
+<p>{‘updatedFeatureCount’: 1, ‘success’: True}</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="arcgis.features.FeatureLayer.container">
+<code class="descname">container</code><a class="headerlink" href="#arcgis.features.FeatureLayer.container" title="Permalink to this definition">¶</a></dt>
+<dd><p>The feature layer collection to which this layer belongs.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="arcgis.features.FeatureLayer.delete_features">
+<code class="descname">delete_features</code><span class="sig-paren">(</span><em>deletes=None</em>, <em>where=None</em>, <em>geometry_filter=None</em>, <em>gdb_version=None</em>, <em>rollback_on_failure=True</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.features.FeatureLayer.delete_features" title="Permalink to this definition">¶</a></dt>
+<dd><p>This operation deletes features in a feature layer or table
+Inputs:</p>
+<blockquote>
+<div><p>deletes - string of OIDs to remove from service
+where -  A where clause for the query filter.</p>
+<blockquote>
+<div>Any legal SQL where clause operating on the fields in
+the layer is allowed. Features conforming to the specified
+where clause will be deleted.</div></blockquote>
+<dl class="docutils">
+<dt>geometry_filter - spatial filter from arcgis.geometry.filters module to filter results by a</dt>
+<dd>spatial relationship with another geometry</dd>
+</dl>
+<p>gdb_version - Geodatabase version to apply the edits.
+rollback_on_failure - Optional parameter to specify if the</p>
+<blockquote>
+<div>edits should be applied only if all
+submitted edits succeed. If false, the
+server will apply the edits that succeed
+even if some of the submitted edits fail.
+If true, the server will apply the edits
+only if all edits succeed. The default
+value is true.</div></blockquote>
+</div></blockquote>
+<dl class="docutils">
+<dt>Output:</dt>
+<dd>dictionary of messages</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="arcgis.features.FeatureLayer.edit_features">
+<code class="descname">edit_features</code><span class="sig-paren">(</span><em>adds=None</em>, <em>updates=None</em>, <em>deletes=None</em>, <em>gdb_version=None</em>, <em>use_global_ids=False</em>, <em>rollback_on_failure=True</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.features.FeatureLayer.edit_features" title="Permalink to this definition">¶</a></dt>
+<dd><p>This operation adds, updates, and deletes features to the
+associated feature layer or table in a single call.
+Inputs:</p>
+<blockquote>
+<div><p>adds - The array of features to be added.
+updates - The array of features to be updateded.
+deletes - string of OIDs to remove from service
+gdbVersion - Geodatabase version to apply the edits.
+useGlobalIds - instead of referencing the default Object ID</p>
+<blockquote>
+<div>field, the service will look at a GUID field
+to track changes.  This means the GUIDs will
+be passed instead of OIDs for delete,
+update or add features.</div></blockquote>
+<dl class="docutils">
+<dt>rollbackOnFailure - Optional parameter to specify if the</dt>
+<dd>edits should be applied only if all
+submitted edits succeed. If false, the
+server will apply the edits that succeed
+even if some of the submitted edits fail.
+If true, the server will apply the edits
+only if all edits succeed. The default
+value is true.</dd>
+</dl>
+</div></blockquote>
+<dl class="docutils">
+<dt>Output:</dt>
+<dd>dictionary of messages</dd>
+</dl>
+</dd></dl>
+
+<dl class="classmethod">
+<dt id="arcgis.features.FeatureLayer.fromitem">
+<em class="property">classmethod </em><code class="descname">fromitem</code><span class="sig-paren">(</span><em>item</em>, <em>layer_id=0</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.features.FeatureLayer.fromitem" title="Permalink to this definition">¶</a></dt>
+<dd><p>Creates a feature layer from a GIS Item.
+The type of item should be a ‘Feature Service’ that represents a FeatureLayerCollection.
+The layer_id is the id of the layer in feature layer collection (feature service).</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="arcgis.features.FeatureLayer.get_html_popup">
+<code class="descname">get_html_popup</code><span class="sig-paren">(</span><em>oid</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.features.FeatureLayer.get_html_popup" title="Permalink to this definition">¶</a></dt>
+<dd><p>The htmlPopup resource provides details about the HTML pop-up
+authored by the user using ArcGIS for Desktop.
+Input:</p>
+<blockquote>
+<div>oid - object id of the feature where the HTML pop-up</div></blockquote>
+<p>Output:</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="arcgis.features.FeatureLayer.manager">
+<code class="descname">manager</code><a class="headerlink" href="#arcgis.features.FeatureLayer.manager" title="Permalink to this definition">¶</a></dt>
+<dd><p>Helper object to manage the feature layer, update it’s definition, etc</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="arcgis.features.FeatureLayer.properties">
+<code class="descname">properties</code><a class="headerlink" href="#arcgis.features.FeatureLayer.properties" title="Permalink to this definition">¶</a></dt>
+<dd><p>The properties of this object</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="arcgis.features.FeatureLayer.query">
+<code class="descname">query</code><span class="sig-paren">(</span><em>where=‘1=1’</em>, <em>out_fields=’*’</em>, <em>time_filter=None</em>, <em>geometry_filter=None</em>, <em>return_geometry=True</em>, <em>return_count_only=False</em>, <em>return_ids_only=False</em>, <em>return_distinct_values=False</em>, <em>return_extent_only=False</em>, <em>group_by_fields_for_statistics=None</em>, <em>statistic_filter=None</em>, <em>result_offset=None</em>, <em>result_record_count=None</em>, <em>object_ids=None</em>, <em>distance=None</em>, <em>units=None</em>, <em>max_allowable_offset=None</em>, <em>out_sr=None</em>, <em>geometry_precision=None</em>, <em>gdb_version=None</em>, <em>order_by_fields=None</em>, <em>out_statistics=None</em>, <em>return_z=False</em>, <em>return_m=False</em>, <em>multipatch_option=None</em>, <em>quanitization_parameters=None</em>, <em>return_centroid=False</em>, <em>return_all_records=True</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.features.FeatureLayer.query" title="Permalink to this definition">¶</a></dt>
+<dd><p>queries a feature layer based on a sql statement
+Inputs:</p>
+<blockquote>
+<div><blockquote>
+<div><p>where - the selection sql statement
+out_fields - the attribute fields to return
+object_ids -  The object IDs of this layer or table to be</p>
+<blockquote>
+<div>queried.</div></blockquote>
+<dl class="docutils">
+<dt>distance - The buffer distance for the input geometries.</dt>
+<dd>The distance unit is specified by units. For
+example, if the distance is 100, the query
+geometry is a point, units is set to meters, and
+all points within 100 meters of the point are
+returned.</dd>
+<dt>units - The unit for calculating the buffer distance. If</dt>
+<dd>unit is not specified, the unit is derived from the
+geometry spatial reference. If the geometry spatial
+reference is not specified, the unit is derived
+from the feature service data spatial reference.
+This parameter only applies if
+supportsQueryWithDistance is true.
+Values: esriSRUnit_Meter | esriSRUnit_StatuteMile |
+esriSRUnit_Foot | esriSRUnit_Kilometer |
+esriSRUnit_NauticalMile | esriSRUnit_USNauticalMile</dd>
+<dt>time_filter - a TimeFilter object where either the start time</dt>
+<dd>or start and end time are defined to limit the
+search results for a given time.  The values in
+the timeFilter should be as UTC timestampes in
+milliseconds.  No checking occurs to see if they
+are in the right format.</dd>
+<dt>geometry_filter - spatial filter from arcgis.geometry.filters module to filter results by a</dt>
+<dd>spatial relationship with another geometry</dd>
+<dt>maxAllowableOffset - This option can be used to specify the</dt>
+<dd>maxAllowableOffset to be used for
+generalizing geometries returned by
+the query operation.
+The maxAllowableOffset is in the units
+of outSR. If outSR is not specified,
+maxAllowableOffset is assumed to be in
+the unit of the spatial reference of
+the map.</dd>
+</dl>
+<p>outSR - The spatial reference of the returned geometry.
+geometryPrecision -  This option can be used to specify the</p>
+<blockquote>
+<div>number of decimal places in the
+response geometries returned by the
+Query operation.</div></blockquote>
+<p>gdbVersion - Geodatabase version to query
+returnDistinctValues -  If true, it returns distinct values</p>
+<blockquote>
+<div>based on the fields specified in
+outFields. This parameter applies
+only if the
+supportsAdvancedQueries property of
+the layer is true.</div></blockquote>
+<dl class="docutils">
+<dt>returnIdsOnly -  If true, the response only includes an</dt>
+<dd>array of object IDs. Otherwise, the
+response is a feature set. The default is
+false.</dd>
+<dt>returnCountOnly -  If true, the response only includes the</dt>
+<dd>count (number of features/records) that
+would be returned by a query. Otherwise,
+the response is a feature set. The
+default is false. This option supersedes
+the returnIdsOnly parameter. If
+returnCountOnly = true, the response will
+return both the count and the extent.</dd>
+<dt>returnExtentOnly -  If true, the response only includes the</dt>
+<dd>extent of the features that would be
+returned by the query. If
+returnCountOnly=true, the response will
+return both the count and the extent.
+The default is false. This parameter
+applies only if the
+supportsReturningQueryExtent property
+of the layer is true.</dd>
+<dt>orderByFields - One or more field names on which the</dt>
+<dd>features/records need to be ordered. Use
+ASC or DESC for ascending or descending,
+respectively, following every field to
+control the ordering.</dd>
+<dt>groupByFieldsForStatistics - One or more field names on</dt>
+<dd>which the values need to be
+grouped for calculating the
+statistics.</dd>
+<dt>outStatistics - The definitions for one or more field-based</dt>
+<dd>statistics to be calculated.</dd>
+<dt>returnZ -  If true, Z values are included in the results if</dt>
+<dd>the features have Z values. Otherwise, Z values
+are not returned. The default is false.</dd>
+<dt>returnM - If true, M values are included in the results if</dt>
+<dd>the features have M values. Otherwise, M values
+are not returned. The default is false.</dd>
+<dt>multipatchOption - This option dictates how the geometry of</dt>
+<dd>a multipatch feature will be returned.</dd>
+<dt>resultOffset -  This option can be used for fetching query</dt>
+<dd>results by skipping the specified number of
+records and starting from the next record
+(that is, resultOffset + 1th).</dd>
+<dt>resultRecordCount - This option can be used for fetching</dt>
+<dd>query results up to the
+resultRecordCount specified. When
+resultOffset is specified but this
+parameter is not, the map service
+defaults it to maxRecordCount. The
+maximum value for this parameter is the
+value of the layer’s maxRecordCount
+property.</dd>
+<dt>quanitizationParameters - Used to project the geometry onto</dt>
+<dd>a virtual grid, likely
+representing pixels on the screen.</dd>
+<dt>returnCentroid - Used to return the geometry centroid</dt>
+<dd>associated with each feature returned. If
+true, the result includes the geometry
+centroid. The default is false.</dd>
+<dt>return_all_records - When True, the query operation will call</dt>
+<dd>the service until all records that satisfy
+the where_clause are returned. Note: result_offset
+and result_record_count will be ignored
+if return_all_records is True. Also, if
+return_count_only, return_ids_only, or
+return_extent_only are True, this parameter
+will be ignored.</dd>
+</dl>
+</div></blockquote>
+<dl class="docutils">
+<dt>kwargs - optional parameters that can be passed to the Query</dt>
+<dd>function.  This will allow users to pass additional
+parameters not explicitly implemented on the function. A
+complete list of functions available is documented on the
+Query REST API.</dd>
+</dl>
+</div></blockquote>
+<dl class="docutils">
+<dt>Output:</dt>
+<dd>A FeatureSet containing the features matching the query
+unless another return type is specified, such as count</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="arcgis.features.FeatureLayer.query_related_records">
+<code class="descname">query_related_records</code><span class="sig-paren">(</span><em>object_ids</em>, <em>relationship_id</em>, <em>out_fields=’*’</em>, <em>definition_expression=None</em>, <em>return_geometry=True</em>, <em>max_allowable_offset=None</em>, <em>geometry_precision=None</em>, <em>out_wkid=None</em>, <em>gdb_version=None</em>, <em>return_z=False</em>, <em>return_m=False</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.features.FeatureLayer.query_related_records" title="Permalink to this definition">¶</a></dt>
+<dd><p>The Query operation is performed on a feature service layer
+resource. The result of this operation are feature sets grouped
+by source layer/table object IDs. Each feature set contains
+Feature objects including the values for the fields requested by
+the user. For related layers, if you request geometry
+information, the geometry of each feature is also returned in
+the feature set. For related tables, the feature set does not
+include geometries.
+Inputs:</p>
+<blockquote>
+<div><p>objectIds - the object IDs of the table/layer to be queried
+relationshipId - The ID of the relationship to be queried.
+outFields - the list of fields from the related table/layer</p>
+<blockquote>
+<div>to be included in the returned feature set. This
+list is a comma delimited list of field names. If
+you specify the shape field in the list of return
+fields, it is ignored. To request geometry, set
+returnGeometry to true.
+You can also specify the wildcard “*” as the
+value of this parameter. In this case, the result
+s will include all the field values.</div></blockquote>
+<dl class="docutils">
+<dt>definitionExpression - The definition expression to be</dt>
+<dd>applied to the related table/layer.
+From the list of objectIds, only those
+records that conform to this
+expression are queried for related
+records.</dd>
+<dt>returnGeometry - If true, the feature set includes the</dt>
+<dd>geometry associated with each feature. The
+default is true.</dd>
+<dt>maxAllowableOffset - This option can be used to specify the</dt>
+<dd>maxAllowableOffset to be used for
+generalizing geometries returned by the
+query operation. The maxAllowableOffset
+is in the units of the outSR. If outSR
+is not specified, then
+maxAllowableOffset is assumed to be in
+the unit of the spatial reference of the
+map.</dd>
+<dt>geometryPrecision - This option can be used to specify the</dt>
+<dd>number of decimal places in the response
+geometries.</dd>
+</dl>
+<p>outWKID - The spatial reference of the returned geometry.
+gdbVersion - The geodatabase version to query. This parameter</p>
+<blockquote>
+<div>applies only if the isDataVersioned property of
+the layer queried is true.</div></blockquote>
+<dl class="docutils">
+<dt>returnZ - If true, Z values are included in the results if</dt>
+<dd>the features have Z values. Otherwise, Z values are
+not returned. The default is false.</dd>
+<dt>returnM - If true, M values are included in the results if</dt>
+<dd>the features have M values. Otherwise, M values are
+not returned. The default is false.</dd>
+</dl>
+</div></blockquote>
+</dd></dl>
+
+<dl class="method">
+<dt id="arcgis.features.FeatureLayer.validate_sql">
+<code class="descname">validate_sql</code><span class="sig-paren">(</span><em>sql</em>, <em>sql_type=’where’</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.features.FeatureLayer.validate_sql" title="Permalink to this definition">¶</a></dt>
+<dd><p>The validate_sql operation validates an SQL-92 expression or WHERE
+clause.
+The validate_sql operation ensures that an SQL-92 expression, such
+as one written by a user through a user interface, is correct
+before performing another operation that uses the expression. For
+example, validateSQL can be used to validate information that is
+subsequently passed in as part of the where parameter of the
+calculate operation.
+validate_sql also prevents SQL injection. In addition, all table
+and field names used in the SQL expression or WHERE clause are
+validated to ensure they are valid tables and fields.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><table class="first last docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">sql:</th><td class="field-body"><p class="first">the SQL expression of WHERE clause to validate
+Example: “Population &gt; 300000”</p>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">sql_type:</th><td class="field-body"><p class="first">Three SQL types are supported in validate_sql
+- where (default) - Represents the custom WHERE clause the user</p>
+<blockquote>
+<div><p>can compose when querying a layer or using calculate.</p>
+</div></blockquote>
+<ul class="last simple">
+<li>expression - Represents an SQL-92 expression. Currently,
+expression is used as a default value expression when adding a
+new field or using the calculate API.</li>
+<li>statement - Represents the full SQL-92 statement that can be
+passed directly to the database. No current ArcGIS REST API
+resource or operation supports using the full SQL-92 SELECT
+statement directly. It has been added to the validateSQL for
+completeness.
+Values: where | expression | statement</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="table">
+<h2>Table<a class="headerlink" href="#table" title="Permalink to this headline">¶</a></h2>
+<dl class="class">
+<dt id="arcgis.features.Table">
+<em class="property">class </em><code class="descclassname">arcgis.features.</code><code class="descname">Table</code><span class="sig-paren">(</span><em>url</em>, <em>gis=None</em>, <em>container=None</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.features.Table" title="Permalink to this definition">¶</a></dt>
+<dd><p>Tables represent entity classes with uniform properties. In addition to working with “entities with location” as
+features, the GIS can also work with non-spatial entities as rows in tables.</p>
+<p>Working with tables is similar to working with feature layers, except that the rows (Features) in a table do not
+have a geometry, and tables ignore any geometry related operation.</p>
+<dl class="method">
+<dt id="arcgis.features.Table.calculate">
+<code class="descname">calculate</code><span class="sig-paren">(</span><em>where</em>, <em>calc_expression</em>, <em>sql_format=’standard’</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.features.Table.calculate" title="Permalink to this definition">¶</a></dt>
+<dd><p>The calculate operation is performed on a feature layer
+resource. It updates the values of one or more fields in an
+existing feature service layer based on SQL expressions or scalar
+values. The calculate operation can only be used if the
+supportsCalculate property of the layer is true.
+Neither the Shape field nor system fields can be updated using
+calculate. System fields include ObjectId and GlobalId.
+See Calculate a field for more information on supported expressions</p>
+<dl class="docutils">
+<dt>Inputs:</dt>
+<dd><dl class="first last docutils">
+<dt>where - A where clause can be used to limit the updated records.</dt>
+<dd>Any legal SQL where clause operating on the fields in
+the layer is allowed.</dd>
+<dt>calcExpression - The array of field/value info objects that</dt>
+<dd><p class="first">contain the field or fields to update and their
+scalar values or SQL expression.  Allowed types
+are dictionary and list.  List must be a list
+of dictionary objects.
+Calculation Format is as follows:</p>
+<blockquote class="last">
+<div>{“field” : “&lt;field name&gt;”,
+“value” : “&lt;value&gt;”}</div></blockquote>
+</dd>
+<dt>sqlFormat - The SQL format for the calcExpression. It can be</dt>
+<dd>either standard SQL92 (standard) or native SQL
+(native). The default is standard.
+Values: standard, native</dd>
+</dl>
+</dd>
+<dt>Output:</dt>
+<dd>JSON as string</dd>
+</dl>
+<p>Usage:
+&gt;&gt;&gt;print(fl.calculate(where=”OBJECTID &lt; 2”,</p>
+<blockquote>
+<div><dl class="docutils">
+<dt>calcExpression={“field”: “ZONE”,</dt>
+<dd>“value” : “R1”}))</dd>
+</dl>
+</div></blockquote>
+<p>{‘updatedFeatureCount’: 1, ‘success’: True}</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="arcgis.features.Table.container">
+<code class="descname">container</code><a class="headerlink" href="#arcgis.features.Table.container" title="Permalink to this definition">¶</a></dt>
+<dd><p>The feature layer collection to which this layer belongs.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="arcgis.features.Table.delete_features">
+<code class="descname">delete_features</code><span class="sig-paren">(</span><em>deletes=None</em>, <em>where=None</em>, <em>geometry_filter=None</em>, <em>gdb_version=None</em>, <em>rollback_on_failure=True</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.features.Table.delete_features" title="Permalink to this definition">¶</a></dt>
+<dd><p>This operation deletes features in a feature layer or table
+Inputs:</p>
+<blockquote>
+<div><p>deletes - string of OIDs to remove from service
+where -  A where clause for the query filter.</p>
+<blockquote>
+<div>Any legal SQL where clause operating on the fields in
+the layer is allowed. Features conforming to the specified
+where clause will be deleted.</div></blockquote>
+<dl class="docutils">
+<dt>geometry_filter - spatial filter from arcgis.geometry.filters module to filter results by a</dt>
+<dd>spatial relationship with another geometry</dd>
+</dl>
+<p>gdb_version - Geodatabase version to apply the edits.
+rollback_on_failure - Optional parameter to specify if the</p>
+<blockquote>
+<div>edits should be applied only if all
+submitted edits succeed. If false, the
+server will apply the edits that succeed
+even if some of the submitted edits fail.
+If true, the server will apply the edits
+only if all edits succeed. The default
+value is true.</div></blockquote>
+</div></blockquote>
+<dl class="docutils">
+<dt>Output:</dt>
+<dd>dictionary of messages</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="arcgis.features.Table.edit_features">
+<code class="descname">edit_features</code><span class="sig-paren">(</span><em>adds=None</em>, <em>updates=None</em>, <em>deletes=None</em>, <em>gdb_version=None</em>, <em>use_global_ids=False</em>, <em>rollback_on_failure=True</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.features.Table.edit_features" title="Permalink to this definition">¶</a></dt>
+<dd><p>This operation adds, updates, and deletes features to the
+associated feature layer or table in a single call.
+Inputs:</p>
+<blockquote>
+<div><p>adds - The array of features to be added.
+updates - The array of features to be updateded.
+deletes - string of OIDs to remove from service
+gdbVersion - Geodatabase version to apply the edits.
+useGlobalIds - instead of referencing the default Object ID</p>
+<blockquote>
+<div>field, the service will look at a GUID field
+to track changes.  This means the GUIDs will
+be passed instead of OIDs for delete,
+update or add features.</div></blockquote>
+<dl class="docutils">
+<dt>rollbackOnFailure - Optional parameter to specify if the</dt>
+<dd>edits should be applied only if all
+submitted edits succeed. If false, the
+server will apply the edits that succeed
+even if some of the submitted edits fail.
+If true, the server will apply the edits
+only if all edits succeed. The default
+value is true.</dd>
+</dl>
+</div></blockquote>
+<dl class="docutils">
+<dt>Output:</dt>
+<dd>dictionary of messages</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="arcgis.features.Table.fromitem">
+<code class="descname">fromitem</code><span class="sig-paren">(</span><em>item</em>, <em>layer_id=0</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.features.Table.fromitem" title="Permalink to this definition">¶</a></dt>
+<dd><p>Creates a feature layer from a GIS Item.
+The type of item should be a ‘Feature Service’ that represents a FeatureLayerCollection.
+The layer_id is the id of the layer in feature layer collection (feature service).</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="arcgis.features.Table.get_html_popup">
+<code class="descname">get_html_popup</code><span class="sig-paren">(</span><em>oid</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.features.Table.get_html_popup" title="Permalink to this definition">¶</a></dt>
+<dd><p>The htmlPopup resource provides details about the HTML pop-up
+authored by the user using ArcGIS for Desktop.
+Input:</p>
+<blockquote>
+<div>oid - object id of the feature where the HTML pop-up</div></blockquote>
+<p>Output:</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="arcgis.features.Table.manager">
+<code class="descname">manager</code><a class="headerlink" href="#arcgis.features.Table.manager" title="Permalink to this definition">¶</a></dt>
+<dd><p>Helper object to manage the feature layer, update it’s definition, etc</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="arcgis.features.Table.properties">
+<code class="descname">properties</code><a class="headerlink" href="#arcgis.features.Table.properties" title="Permalink to this definition">¶</a></dt>
+<dd><p>The properties of this object</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="arcgis.features.Table.query">
+<code class="descname">query</code><span class="sig-paren">(</span><em>where=‘1=1’</em>, <em>out_fields=’*’</em>, <em>time_filter=None</em>, <em>geometry_filter=None</em>, <em>return_geometry=True</em>, <em>return_count_only=False</em>, <em>return_ids_only=False</em>, <em>return_distinct_values=False</em>, <em>return_extent_only=False</em>, <em>group_by_fields_for_statistics=None</em>, <em>statistic_filter=None</em>, <em>result_offset=None</em>, <em>result_record_count=None</em>, <em>object_ids=None</em>, <em>distance=None</em>, <em>units=None</em>, <em>max_allowable_offset=None</em>, <em>out_sr=None</em>, <em>geometry_precision=None</em>, <em>gdb_version=None</em>, <em>order_by_fields=None</em>, <em>out_statistics=None</em>, <em>return_z=False</em>, <em>return_m=False</em>, <em>multipatch_option=None</em>, <em>quanitization_parameters=None</em>, <em>return_centroid=False</em>, <em>return_all_records=True</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.features.Table.query" title="Permalink to this definition">¶</a></dt>
+<dd><p>queries a feature layer based on a sql statement
+Inputs:</p>
+<blockquote>
+<div><blockquote>
+<div><p>where - the selection sql statement
+out_fields - the attribute fields to return
+object_ids -  The object IDs of this layer or table to be</p>
+<blockquote>
+<div>queried.</div></blockquote>
+<dl class="docutils">
+<dt>distance - The buffer distance for the input geometries.</dt>
+<dd>The distance unit is specified by units. For
+example, if the distance is 100, the query
+geometry is a point, units is set to meters, and
+all points within 100 meters of the point are
+returned.</dd>
+<dt>units - The unit for calculating the buffer distance. If</dt>
+<dd>unit is not specified, the unit is derived from the
+geometry spatial reference. If the geometry spatial
+reference is not specified, the unit is derived
+from the feature service data spatial reference.
+This parameter only applies if
+supportsQueryWithDistance is true.
+Values: esriSRUnit_Meter | esriSRUnit_StatuteMile |
+esriSRUnit_Foot | esriSRUnit_Kilometer |
+esriSRUnit_NauticalMile | esriSRUnit_USNauticalMile</dd>
+<dt>time_filter - a TimeFilter object where either the start time</dt>
+<dd>or start and end time are defined to limit the
+search results for a given time.  The values in
+the timeFilter should be as UTC timestampes in
+milliseconds.  No checking occurs to see if they
+are in the right format.</dd>
+<dt>geometry_filter - spatial filter from arcgis.geometry.filters module to filter results by a</dt>
+<dd>spatial relationship with another geometry</dd>
+<dt>maxAllowableOffset - This option can be used to specify the</dt>
+<dd>maxAllowableOffset to be used for
+generalizing geometries returned by
+the query operation.
+The maxAllowableOffset is in the units
+of outSR. If outSR is not specified,
+maxAllowableOffset is assumed to be in
+the unit of the spatial reference of
+the map.</dd>
+</dl>
+<p>outSR - The spatial reference of the returned geometry.
+geometryPrecision -  This option can be used to specify the</p>
+<blockquote>
+<div>number of decimal places in the
+response geometries returned by the
+Query operation.</div></blockquote>
+<p>gdbVersion - Geodatabase version to query
+returnDistinctValues -  If true, it returns distinct values</p>
+<blockquote>
+<div>based on the fields specified in
+outFields. This parameter applies
+only if the
+supportsAdvancedQueries property of
+the layer is true.</div></blockquote>
+<dl class="docutils">
+<dt>returnIdsOnly -  If true, the response only includes an</dt>
+<dd>array of object IDs. Otherwise, the
+response is a feature set. The default is
+false.</dd>
+<dt>returnCountOnly -  If true, the response only includes the</dt>
+<dd>count (number of features/records) that
+would be returned by a query. Otherwise,
+the response is a feature set. The
+default is false. This option supersedes
+the returnIdsOnly parameter. If
+returnCountOnly = true, the response will
+return both the count and the extent.</dd>
+<dt>returnExtentOnly -  If true, the response only includes the</dt>
+<dd>extent of the features that would be
+returned by the query. If
+returnCountOnly=true, the response will
+return both the count and the extent.
+The default is false. This parameter
+applies only if the
+supportsReturningQueryExtent property
+of the layer is true.</dd>
+<dt>orderByFields - One or more field names on which the</dt>
+<dd>features/records need to be ordered. Use
+ASC or DESC for ascending or descending,
+respectively, following every field to
+control the ordering.</dd>
+<dt>groupByFieldsForStatistics - One or more field names on</dt>
+<dd>which the values need to be
+grouped for calculating the
+statistics.</dd>
+<dt>outStatistics - The definitions for one or more field-based</dt>
+<dd>statistics to be calculated.</dd>
+<dt>returnZ -  If true, Z values are included in the results if</dt>
+<dd>the features have Z values. Otherwise, Z values
+are not returned. The default is false.</dd>
+<dt>returnM - If true, M values are included in the results if</dt>
+<dd>the features have M values. Otherwise, M values
+are not returned. The default is false.</dd>
+<dt>multipatchOption - This option dictates how the geometry of</dt>
+<dd>a multipatch feature will be returned.</dd>
+<dt>resultOffset -  This option can be used for fetching query</dt>
+<dd>results by skipping the specified number of
+records and starting from the next record
+(that is, resultOffset + 1th).</dd>
+<dt>resultRecordCount - This option can be used for fetching</dt>
+<dd>query results up to the
+resultRecordCount specified. When
+resultOffset is specified but this
+parameter is not, the map service
+defaults it to maxRecordCount. The
+maximum value for this parameter is the
+value of the layer’s maxRecordCount
+property.</dd>
+<dt>quanitizationParameters - Used to project the geometry onto</dt>
+<dd>a virtual grid, likely
+representing pixels on the screen.</dd>
+<dt>returnCentroid - Used to return the geometry centroid</dt>
+<dd>associated with each feature returned. If
+true, the result includes the geometry
+centroid. The default is false.</dd>
+<dt>return_all_records - When True, the query operation will call</dt>
+<dd>the service until all records that satisfy
+the where_clause are returned. Note: result_offset
+and result_record_count will be ignored
+if return_all_records is True. Also, if
+return_count_only, return_ids_only, or
+return_extent_only are True, this parameter
+will be ignored.</dd>
+</dl>
+</div></blockquote>
+<dl class="docutils">
+<dt>kwargs - optional parameters that can be passed to the Query</dt>
+<dd>function.  This will allow users to pass additional
+parameters not explicitly implemented on the function. A
+complete list of functions available is documented on the
+Query REST API.</dd>
+</dl>
+</div></blockquote>
+<dl class="docutils">
+<dt>Output:</dt>
+<dd>A FeatureSet containing the features matching the query
+unless another return type is specified, such as count</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="arcgis.features.Table.query_related_records">
+<code class="descname">query_related_records</code><span class="sig-paren">(</span><em>object_ids</em>, <em>relationship_id</em>, <em>out_fields=’*’</em>, <em>definition_expression=None</em>, <em>return_geometry=True</em>, <em>max_allowable_offset=None</em>, <em>geometry_precision=None</em>, <em>out_wkid=None</em>, <em>gdb_version=None</em>, <em>return_z=False</em>, <em>return_m=False</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.features.Table.query_related_records" title="Permalink to this definition">¶</a></dt>
+<dd><p>The Query operation is performed on a feature service layer
+resource. The result of this operation are feature sets grouped
+by source layer/table object IDs. Each feature set contains
+Feature objects including the values for the fields requested by
+the user. For related layers, if you request geometry
+information, the geometry of each feature is also returned in
+the feature set. For related tables, the feature set does not
+include geometries.
+Inputs:</p>
+<blockquote>
+<div><p>objectIds - the object IDs of the table/layer to be queried
+relationshipId - The ID of the relationship to be queried.
+outFields - the list of fields from the related table/layer</p>
+<blockquote>
+<div>to be included in the returned feature set. This
+list is a comma delimited list of field names. If
+you specify the shape field in the list of return
+fields, it is ignored. To request geometry, set
+returnGeometry to true.
+You can also specify the wildcard “*” as the
+value of this parameter. In this case, the result
+s will include all the field values.</div></blockquote>
+<dl class="docutils">
+<dt>definitionExpression - The definition expression to be</dt>
+<dd>applied to the related table/layer.
+From the list of objectIds, only those
+records that conform to this
+expression are queried for related
+records.</dd>
+<dt>returnGeometry - If true, the feature set includes the</dt>
+<dd>geometry associated with each feature. The
+default is true.</dd>
+<dt>maxAllowableOffset - This option can be used to specify the</dt>
+<dd>maxAllowableOffset to be used for
+generalizing geometries returned by the
+query operation. The maxAllowableOffset
+is in the units of the outSR. If outSR
+is not specified, then
+maxAllowableOffset is assumed to be in
+the unit of the spatial reference of the
+map.</dd>
+<dt>geometryPrecision - This option can be used to specify the</dt>
+<dd>number of decimal places in the response
+geometries.</dd>
+</dl>
+<p>outWKID - The spatial reference of the returned geometry.
+gdbVersion - The geodatabase version to query. This parameter</p>
+<blockquote>
+<div>applies only if the isDataVersioned property of
+the layer queried is true.</div></blockquote>
+<dl class="docutils">
+<dt>returnZ - If true, Z values are included in the results if</dt>
+<dd>the features have Z values. Otherwise, Z values are
+not returned. The default is false.</dd>
+<dt>returnM - If true, M values are included in the results if</dt>
+<dd>the features have M values. Otherwise, M values are
+not returned. The default is false.</dd>
+</dl>
+</div></blockquote>
+</dd></dl>
+
+<dl class="method">
+<dt id="arcgis.features.Table.validate_sql">
+<code class="descname">validate_sql</code><span class="sig-paren">(</span><em>sql</em>, <em>sql_type=’where’</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.features.Table.validate_sql" title="Permalink to this definition">¶</a></dt>
+<dd><p>The validate_sql operation validates an SQL-92 expression or WHERE
+clause.
+The validate_sql operation ensures that an SQL-92 expression, such
+as one written by a user through a user interface, is correct
+before performing another operation that uses the expression. For
+example, validateSQL can be used to validate information that is
+subsequently passed in as part of the where parameter of the
+calculate operation.
+validate_sql also prevents SQL injection. In addition, all table
+and field names used in the SQL expression or WHERE clause are
+validated to ensure they are valid tables and fields.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><table class="first last docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">sql:</th><td class="field-body"><p class="first">the SQL expression of WHERE clause to validate
+Example: “Population &gt; 300000”</p>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">sql_type:</th><td class="field-body"><p class="first">Three SQL types are supported in validate_sql
+- where (default) - Represents the custom WHERE clause the user</p>
+<blockquote>
+<div><p>can compose when querying a layer or using calculate.</p>
+</div></blockquote>
+<ul class="last simple">
+<li>expression - Represents an SQL-92 expression. Currently,
+expression is used as a default value expression when adding a
+new field or using the calculate API.</li>
+<li>statement - Represents the full SQL-92 statement that can be
+passed directly to the database. No current ArcGIS REST API
+resource or operation supports using the full SQL-92 SELECT
+statement directly. It has been added to the validateSQL for
+completeness.
+Values: where | expression | statement</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="featurelayercollection">
+<h2>FeatureLayerCollection<a class="headerlink" href="#featurelayercollection" title="Permalink to this headline">¶</a></h2>
+<dl class="class">
+<dt id="arcgis.features.FeatureLayerCollection">
+<em class="property">class </em><code class="descclassname">arcgis.features.</code><code class="descname">FeatureLayerCollection</code><span class="sig-paren">(</span><em>url</em>, <em>gis=None</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.features.FeatureLayerCollection" title="Permalink to this definition">¶</a></dt>
+<dd><p>A FeatureLayerCollection is a collection of feature layers and tables, with the associated relationships among the entities.</p>
+<p>In a web GIS, a feature layer collection is exposed as a feature service with multiple feature layers.</p>
+<p>Instances of FeatureDatasets can be obtained from feature service Items in the GIS using
+<cite>FeatureLayerCollection.fromitem(item)</cite>, from feature service endpoints using the constructor, or by accessing the <cite>dataset</cite>
+attribute of feature layer objects.</p>
+<p>FeatureDatasets can be configured and managed using their <cite>manager</cite> helper object.</p>
+<p>If the dataset supports the sync operation, the <cite>replicas</cite> helper object allows management and synchronization of
+replicas for disconnected editing of the feature layer collection.</p>
+<p>Note: You can use the <cite>layers</cite> and <cite>tables</cite> property to get to the individual layers and tables in this
+feature layer collection.</p>
+<dl class="method">
+<dt id="arcgis.features.FeatureLayerCollection.fromitem">
+<code class="descname">fromitem</code><span class="sig-paren">(</span><em>item</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.features.FeatureLayerCollection.fromitem" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="arcgis.features.FeatureLayerCollection.manager">
+<code class="descname">manager</code><a class="headerlink" href="#arcgis.features.FeatureLayerCollection.manager" title="Permalink to this definition">¶</a></dt>
+<dd><p>helper object to manage the feature layer collection, update it’s definition, etc</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="arcgis.features.FeatureLayerCollection.properties">
+<code class="descname">properties</code><a class="headerlink" href="#arcgis.features.FeatureLayerCollection.properties" title="Permalink to this definition">¶</a></dt>
+<dd><p>The properties of this object</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="arcgis.features.FeatureLayerCollection.query">
+<code class="descname">query</code><span class="sig-paren">(</span><em>layer_defs_filter=None</em>, <em>geometry_filter=None</em>, <em>time_filter=None</em>, <em>return_geometry=True</em>, <em>return_ids_only=False</em>, <em>return_count_only=False</em>, <em>return_z=False</em>, <em>return_m=False</em>, <em>out_sr=None</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.features.FeatureLayerCollection.query" title="Permalink to this definition">¶</a></dt>
+<dd><p>queries the feature layer collection</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="arcgis.features.FeatureLayerCollection.query_related_records">
+<code class="descname">query_related_records</code><span class="sig-paren">(</span><em>object_ids</em>, <em>relationship_id</em>, <em>out_fields=’*’</em>, <em>definition_expression=None</em>, <em>return_geometry=True</em>, <em>max_allowable_offset=None</em>, <em>geometry_precision=None</em>, <em>out_wkid=None</em>, <em>gdb_version=None</em>, <em>return_z=False</em>, <em>return_m=False</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.features.FeatureLayerCollection.query_related_records" title="Permalink to this definition">¶</a></dt>
+<dd><p>The Query operation is performed on a feature service layer
+resource. The result of this operation are feature sets grouped
+by source layer/table object IDs. Each feature set contains
+Feature objects including the values for the fields requested by
+the user. For related layers, if you request geometry
+information, the geometry of each feature is also returned in
+the feature set. For related tables, the feature set does not
+include geometries.
+Inputs:</p>
+<blockquote>
+<div><p>objectIds - the object IDs of the table/layer to be queried
+relationshipId - The ID of the relationship to be queried.
+outFields - the list of fields from the related table/layer</p>
+<blockquote>
+<div>to be included in the returned feature set. This
+list is a comma delimited list of field names. If
+you specify the shape field in the list of return
+fields, it is ignored. To request geometry, set
+returnGeometry to true.
+You can also specify the wildcard “*” as the
+value of this parameter. In this case, the result
+s will include all the field values.</div></blockquote>
+<dl class="docutils">
+<dt>definitionExpression - The definition expression to be</dt>
+<dd>applied to the related table/layer.
+From the list of objectIds, only those
+records that conform to this
+expression are queried for related
+records.</dd>
+<dt>returnGeometry - If true, the feature set includes the</dt>
+<dd>geometry associated with each feature. The
+default is true.</dd>
+<dt>maxAllowableOffset - This option can be used to specify the</dt>
+<dd>maxAllowableOffset to be used for
+generalizing geometries returned by the
+query operation. The maxAllowableOffset
+is in the units of the outSR. If outSR
+is not specified, then
+maxAllowableOffset is assumed to be in
+the unit of the spatial reference of the
+map.</dd>
+<dt>geometryPrecision - This option can be used to specify the</dt>
+<dd>number of decimal places in the response
+geometries.</dd>
+</dl>
+<p>outWKID - The spatial reference of the returned geometry.
+gdbVersion - The geodatabase version to query. This parameter</p>
+<blockquote>
+<div>applies only if the isDataVersioned property of
+the layer queried is true.</div></blockquote>
+<dl class="docutils">
+<dt>returnZ - If true, Z values are included in the results if</dt>
+<dd>the features have Z values. Otherwise, Z values are
+not returned. The default is false.</dd>
+<dt>returnM - If true, M values are included in the results if</dt>
+<dd>the features have M values. Otherwise, M values are
+not returned. The default is false.</dd>
+</dl>
+</div></blockquote>
+</dd></dl>
+
+<dl class="method">
+<dt id="arcgis.features.FeatureLayerCollection.upload">
+<code class="descname">upload</code><span class="sig-paren">(</span><em>path</em>, <em>description=None</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.features.FeatureLayerCollection.upload" title="Permalink to this definition">¶</a></dt>
+<dd><p>Uploads a new item to the server. Once the operation is completed
+successfully, the JSON structure of the uploaded item is returned.</p>
+<dl class="docutils">
+<dt>Parameters:</dt>
+<dd><table class="first last docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">path:</th><td class="field-body">path of the file to upload</td>
+</tr>
+<tr class="field-even field"><th class="field-name">description:</th><td class="field-body">optional descriptive text for the upload item</td>
+</tr>
+</tbody>
+</table>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="featureset">
+<h2>FeatureSet<a class="headerlink" href="#featureset" title="Permalink to this headline">¶</a></h2>
+<dl class="class">
+<dt id="arcgis.features.FeatureSet">
+<em class="property">class </em><code class="descclassname">arcgis.features.</code><code class="descname">FeatureSet</code><span class="sig-paren">(</span><em>features</em>, <em>fields=None</em>, <em>has_z=False</em>, <em>has_m=False</em>, <em>geometry_type=None</em>, <em>spatial_reference=None</em>, <em>display_field_name=None</em>, <em>object_id_field_name=None</em>, <em>global_id_field_name=None</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.features.FeatureSet" title="Permalink to this definition">¶</a></dt>
+<dd><p>A set of features with information about their fields, field aliases, geometry type, spatial reference etc.</p>
+<p>FeatureSets are commonly used as input/output with several Geoprocessing
+Tools, and can be the obtained through the query() methods of feature layers.
+A FeatureSet can be combined with a layer definition to compose a FeatureCollection.</p>
+<p>FeatureSet contains Feature objects, including the values for the
+fields requested by the user. For layers, if you request geometry
+information, the geometry of each feature is also returned in the
+FeatureSet. For tables, the FeatureSet does not include geometries.</p>
+<p>If a Spatial Reference is not specified at the FeatureSet level, the
+FeatureSet will assume the SpatialReference of its first feature. If
+the SpatialReference of the first feature is also not specified, the
+spatial reference will be UnknownCoordinateSystem.</p>
+<dl class="attribute">
+<dt id="arcgis.features.FeatureSet.df">
+<code class="descname">df</code><a class="headerlink" href="#arcgis.features.FeatureSet.df" title="Permalink to this definition">¶</a></dt>
+<dd><p>converts the FeatureSet to a Pandas dataframe. Requires pandas</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="arcgis.features.FeatureSet.display_field_name">
+<code class="descname">display_field_name</code><a class="headerlink" href="#arcgis.features.FeatureSet.display_field_name" title="Permalink to this definition">¶</a></dt>
+<dd><p>gets/sets the displayFieldName</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="arcgis.features.FeatureSet.features">
+<code class="descname">features</code><a class="headerlink" href="#arcgis.features.FeatureSet.features" title="Permalink to this definition">¶</a></dt>
+<dd><p>gets the features in the FeatureSet</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="arcgis.features.FeatureSet.fields">
+<code class="descname">fields</code><a class="headerlink" href="#arcgis.features.FeatureSet.fields" title="Permalink to this definition">¶</a></dt>
+<dd><p>gets the fields in the FeatureSet</p>
+</dd></dl>
+
+<dl class="staticmethod">
+<dt id="arcgis.features.FeatureSet.from_dataframe">
+<em class="property">static </em><code class="descname">from_dataframe</code><span class="sig-paren">(</span><em>df</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.features.FeatureSet.from_dataframe" title="Permalink to this definition">¶</a></dt>
+<dd><p>returns a featureset from a Pandas’ Data or Spatial DataFrame</p>
+</dd></dl>
+
+<dl class="staticmethod">
+<dt id="arcgis.features.FeatureSet.from_dict">
+<em class="property">static </em><code class="descname">from_dict</code><span class="sig-paren">(</span><em>featureset_dict</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.features.FeatureSet.from_dict" title="Permalink to this definition">¶</a></dt>
+<dd><p>returns a featureset from a dict</p>
+</dd></dl>
+
+<dl class="staticmethod">
+<dt id="arcgis.features.FeatureSet.from_json">
+<em class="property">static </em><code class="descname">from_json</code><span class="sig-paren">(</span><em>json_str</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.features.FeatureSet.from_json" title="Permalink to this definition">¶</a></dt>
+<dd><p>returns a featureset from a JSON string</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="arcgis.features.FeatureSet.geometry_type">
+<code class="descname">geometry_type</code><a class="headerlink" href="#arcgis.features.FeatureSet.geometry_type" title="Permalink to this definition">¶</a></dt>
+<dd><p>gets/sets the geometry Type</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="arcgis.features.FeatureSet.global_id_field_name">
+<code class="descname">global_id_field_name</code><a class="headerlink" href="#arcgis.features.FeatureSet.global_id_field_name" title="Permalink to this definition">¶</a></dt>
+<dd><p>gets/sets the globalIdFieldName</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="arcgis.features.FeatureSet.has_m">
+<code class="descname">has_m</code><a class="headerlink" href="#arcgis.features.FeatureSet.has_m" title="Permalink to this definition">¶</a></dt>
+<dd><p>gets/set the M-property</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="arcgis.features.FeatureSet.has_z">
+<code class="descname">has_z</code><a class="headerlink" href="#arcgis.features.FeatureSet.has_z" title="Permalink to this definition">¶</a></dt>
+<dd><p>gets/sets the Z-property</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="arcgis.features.FeatureSet.object_id_field_name">
+<code class="descname">object_id_field_name</code><a class="headerlink" href="#arcgis.features.FeatureSet.object_id_field_name" title="Permalink to this definition">¶</a></dt>
+<dd><p>gets/sets the object id field</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="arcgis.features.FeatureSet.save">
+<code class="descname">save</code><span class="sig-paren">(</span><em>save_location</em>, <em>out_name</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.features.FeatureSet.save" title="Permalink to this definition">¶</a></dt>
+<dd><p>Saves a featureset object to a feature class
+Input:</p>
+<blockquote>
+<div><p>saveLocation - output location of the data
+outName - name of the table the data will be saved to</p>
+<blockquote>
+<div><dl class="docutils">
+<dt>Types:</dt>
+<dd><p class="first"><a href="#id1"><span class="problematic" id="id2">*</span></a>.csv - CSV file returned
+<a href="#id3"><span class="problematic" id="id4">*</span></a>.json - text file with json
+* If no extension, a shapefile if the path is a</p>
+<blockquote class="last">
+<div>folder, a featureclass if the path is a GDB</div></blockquote>
+</dd>
+</dl>
+</div></blockquote>
+</div></blockquote>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="arcgis.features.FeatureSet.spatial_reference">
+<code class="descname">spatial_reference</code><a class="headerlink" href="#arcgis.features.FeatureSet.spatial_reference" title="Permalink to this definition">¶</a></dt>
+<dd><p>gets the featureset’s spatial reference</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="arcgis.features.FeatureSet.to_dict">
+<code class="descname">to_dict</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.features.FeatureSet.to_dict" title="Permalink to this definition">¶</a></dt>
+<dd><p>converts the object to Python dictionary</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="arcgis.features.FeatureSet.to_json">
+<code class="descname">to_json</code><a class="headerlink" href="#arcgis.features.FeatureSet.to_json" title="Permalink to this definition">¶</a></dt>
+<dd><p>converts the object to JSON</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="arcgis.features.FeatureSet.value">
+<code class="descname">value</code><a class="headerlink" href="#arcgis.features.FeatureSet.value" title="Permalink to this definition">¶</a></dt>
+<dd><p>returns object as dictionary</p>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="featurecollection">
+<h2>FeatureCollection<a class="headerlink" href="#featurecollection" title="Permalink to this headline">¶</a></h2>
+<dl class="class">
+<dt id="arcgis.features.FeatureCollection">
+<em class="property">class </em><code class="descclassname">arcgis.features.</code><code class="descname">FeatureCollection</code><span class="sig-paren">(</span><em>dictdata</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.features.FeatureCollection" title="Permalink to this definition">¶</a></dt>
+<dd><p>FeatureCollection is an object with a layer definition and a feature set.</p>
+<p>It is an in-memory collection of features with rendering information.</p>
+<p>Feature Collections can be stored as Items in the GIS, added as layers to a map or scene,
+passed as inputs to feature analysis tools, and returned as results from feature analysis tools
+if an output name for a feature layer is not specified when calling the tool.</p>
+<dl class="method">
+<dt id="arcgis.features.FeatureCollection.query">
+<code class="descname">query</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.features.FeatureCollection.query" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the data in this feature collection as a FeatureSet.
+Filtering by where clause is not supported for feature collections</p>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="spatialdataframe">
+<h2>SpatialDataFrame<a class="headerlink" href="#spatialdataframe" title="Permalink to this headline">¶</a></h2>
+<dl class="class">
+<dt id="arcgis.features.SpatialDataFrame">
+<em class="property">class </em><code class="descclassname">arcgis.features.</code><code class="descname">SpatialDataFrame</code><span class="sig-paren">(</span><em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.features.SpatialDataFrame" title="Permalink to this definition">¶</a></dt>
+<dd><p>A Spatial Dataframe is an object to manipulate, manage and translate
+data into new forms of information for users.</p>
+<dl class="docutils">
+<dt>Required Parameters:</dt>
+<dd>None</dd>
+<dt>Optional:</dt>
+<dd><table class="first last docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">param data:</th><td class="field-body">panda’s dataframe containing attribute information</td>
+</tr>
+<tr class="field-even field"><th class="field-name">param geometry:</th><td class="field-body">list/array/geoseries of arcgis.geometry objects</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">param sr:</th><td class="field-body">spatial reference of the dataframe.  This can be the factory
+code, WKT string, arcpy.SpatialReference object, or
+arcgis.SpatailReference object.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">param gis:</th><td class="field-body">passing a gis.GIS object set to Pro will ensure arcpy is
+installed and a full swatch of functionality is available to
+the end user.</td>
+</tr>
+</tbody>
+</table>
+</dd>
+</dl>
+<dl class="method">
+<dt id="arcgis.features.SpatialDataFrame.copy">
+<code class="descname">copy</code><span class="sig-paren">(</span><em>deep=True</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.features.SpatialDataFrame.copy" title="Permalink to this definition">¶</a></dt>
+<dd><p>Make a copy of this SpatialDataFrame object
+Parameters:</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Deep:</th><td class="field-body">boolean, default True
+Make a deep copy, i.e. also copy data</td>
+</tr>
+</tbody>
+</table>
+<dl class="docutils">
+<dt>Returns:</dt>
+<dd><table class="first last docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">copy:</th><td class="field-body">of SpatialDataFrame</td>
+</tr>
+</tbody>
+</table>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="arcgis.features.SpatialDataFrame.erase">
+<code class="descname">erase</code><span class="sig-paren">(</span><em>other</em>, <em>inplace=False</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.features.SpatialDataFrame.erase" title="Permalink to this definition">¶</a></dt>
+<dd><p>Erases</p>
+</dd></dl>
+
+<dl class="staticmethod">
+<dt id="arcgis.features.SpatialDataFrame.from_featureclass">
+<em class="property">static </em><code class="descname">from_featureclass</code><span class="sig-paren">(</span><em>filename</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.features.SpatialDataFrame.from_featureclass" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns a SpatialDataFrame from a feature class.
+Inputs:</p>
+<blockquote>
+<div>filename: full path to the feature class</div></blockquote>
+<dl class="docutils">
+<dt>Optional Parameters:</dt>
+<dd>sql_clause: sql clause to parse data down
+where_clause: where statement
+sr: spatial reference object</dd>
+</dl>
+</dd></dl>
+
+<dl class="staticmethod">
+<dt id="arcgis.features.SpatialDataFrame.from_hdf">
+<em class="property">static </em><code class="descname">from_hdf</code><span class="sig-paren">(</span><em>path_or_buf</em>, <em>key=None</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.features.SpatialDataFrame.from_hdf" title="Permalink to this definition">¶</a></dt>
+<dd><p>read from the store, close it if we opened it</p>
+<p>Retrieve pandas object stored in file, optionally based on where
+criteria</p>
+<dl class="docutils">
+<dt>path_or_buf <span class="classifier-delimiter">:</span> <span class="classifier">path (string), buffer, or path object (pathlib.Path or</span></dt>
+<dd><p class="first">py._path.local.LocalPath) to read from</p>
+<div class="last versionadded">
+<p><span class="versionmodified">New in version 0.19.0: </span>support for pathlib, py.path.</p>
+</div>
+</dd>
+<dt>key <span class="classifier-delimiter">:</span> <span class="classifier">group identifier in the store. Can be omitted if the HDF file</span></dt>
+<dd>contains a single pandas object.</dd>
+</dl>
+<p>where : list of Term (or convertable) objects, optional
+start : optional, integer (defaults to None), row number to start</p>
+<blockquote>
+<div>selection</div></blockquote>
+<dl class="docutils">
+<dt>stop <span class="classifier-delimiter">:</span> <span class="classifier">optional, integer (defaults to None), row number to stop</span></dt>
+<dd>selection</dd>
+<dt>columns <span class="classifier-delimiter">:</span> <span class="classifier">optional, a list of columns that if not None, will limit the</span></dt>
+<dd>return columns</dd>
+</dl>
+<p>iterator : optional, boolean, return an iterator, default False
+chunksize : optional, nrows to include in iteration, return an iterator</p>
+<p>The selected object</p>
+</dd></dl>
+
+<dl class="staticmethod">
+<dt id="arcgis.features.SpatialDataFrame.from_layer">
+<em class="property">static </em><code class="descname">from_layer</code><span class="sig-paren">(</span><em>layer</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.features.SpatialDataFrame.from_layer" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns a SpatialDataFrame from a FeatureLayer or Table object.
+Inputs:</p>
+<blockquote>
+<div><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">param layer:</th><td class="field-body">FeatureLayer or Table</td>
+</tr>
+<tr class="field-even field"><th class="field-name">param gis:</th><td class="field-body">GIS object</td>
+</tr>
+</tbody>
+</table>
+</div></blockquote>
+<p>Returns a SpatialDataFrame</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="arcgis.features.SpatialDataFrame.geoextent">
+<code class="descname">geoextent</code><a class="headerlink" href="#arcgis.features.SpatialDataFrame.geoextent" title="Permalink to this definition">¶</a></dt>
+<dd><p>returns the extent of the spatial dataframe</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="arcgis.features.SpatialDataFrame.geometry">
+<code class="descname">geometry</code><a class="headerlink" href="#arcgis.features.SpatialDataFrame.geometry" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get/Set the geometry data for SpatialDataFrame</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="arcgis.features.SpatialDataFrame.merge_datasets">
+<code class="descname">merge_datasets</code><span class="sig-paren">(</span><em>other</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.features.SpatialDataFrame.merge_datasets" title="Permalink to this definition">¶</a></dt>
+<dd><p>This operation combines two dataframes into one new DataFrame.
+If the operation is combining two SpatialDataFrames, the
+geometry_type must match.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="arcgis.features.SpatialDataFrame.plot">
+<code class="descname">plot</code><span class="sig-paren">(</span><em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.features.SpatialDataFrame.plot" title="Permalink to this definition">¶</a></dt>
+<dd><p>writes the spatial dataframe to a map</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="arcgis.features.SpatialDataFrame.reproject">
+<code class="descname">reproject</code><span class="sig-paren">(</span><em>spatial_reference</em>, <em>transformation=None</em>, <em>inplace=False</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.features.SpatialDataFrame.reproject" title="Permalink to this definition">¶</a></dt>
+<dd><p>Reprojects a given dataframe into a new coordinate system.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="arcgis.features.SpatialDataFrame.select_by_location">
+<code class="descname">select_by_location</code><span class="sig-paren">(</span><em>other</em>, <em>matches_only=True</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.features.SpatialDataFrame.select_by_location" title="Permalink to this definition">¶</a></dt>
+<dd><p>Selects all rows in a given SpatialDataFrame based on a given geometry</p>
+<dl class="docutils">
+<dt>Inputs:</dt>
+<dd><p class="first">other: arcpy.Geometry object
+matches_only: boolean value, if true, only matched records will be</p>
+<blockquote class="last">
+<div>returned, else a field called ‘select_by_location’ will be added
+to the dataframe with the results of the select by location.</div></blockquote>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="arcgis.features.SpatialDataFrame.set_geometry">
+<code class="descname">set_geometry</code><span class="sig-paren">(</span><em>col</em>, <em>drop=False</em>, <em>inplace=False</em>, <em>sr=None</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.features.SpatialDataFrame.set_geometry" title="Permalink to this definition">¶</a></dt>
+<dd><p>Set the SpatialDataFrame geometry using either an existing column or
+the specified input. By default yields a new object.</p>
+<p>The original geometry column is replaced with the input.</p>
+<p>Parameters:
+keys: column label or array
+drop: boolean, default True</p>
+<blockquote>
+<div>Delete column to be used as the new geometry</div></blockquote>
+<dl class="docutils">
+<dt>inplace: boolean, default False</dt>
+<dd>Modify the SpatialDataFrame in place (do not create a new object)</dd>
+<dt>sr <span class="classifier-delimiter">:</span> <span class="classifier">str/result of fion.get_sr (optional)</span></dt>
+<dd>Coordinate system to use. If passed, overrides both DataFrame and
+col’s sr. Otherwise, tries to get sr from passed col values or
+DataFrame.</dd>
+</dl>
+<p>Returns:
+SpatialDataFrame</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="arcgis.features.SpatialDataFrame.to_featureclass">
+<code class="descname">to_featureclass</code><span class="sig-paren">(</span><em>out_location</em>, <em>out_name</em>, <em>overwrite=True</em>, <em>skip_invalid=True</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.features.SpatialDataFrame.to_featureclass" title="Permalink to this definition">¶</a></dt>
+<dd><p>converts a SpatialDataFrame to a feature class</p>
+<dl class="docutils">
+<dt>Parameters:</dt>
+<dd><table class="first last docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">out_location:</th><td class="field-body">save location workspace</td>
+</tr>
+<tr class="field-even field"><th class="field-name">out_name:</th><td class="field-body">name of the feature class to save as</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">overwrite:</th><td class="field-body">boolean. True means to erase and replace value, false
+means to append</td>
+</tr>
+<tr class="field-even field"><th class="field-name">skip_invalids:</th><td class="field-body">if True, any bad rows will be ignored.</td>
+</tr>
+</tbody>
+</table>
+</dd>
+<dt>Output:</dt>
+<dd>tuple of feature class path and list of bad rows by index number.</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="arcgis.features.SpatialDataFrame.to_featurelayer">
+<code class="descname">to_featurelayer</code><span class="sig-paren">(</span><em>title</em>, <em>gis=None</em>, <em>tags=None</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.features.SpatialDataFrame.to_featurelayer" title="Permalink to this definition">¶</a></dt>
+<dd><p>publishes a spatial dataframe to a new feature layer</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="arcgis.features.SpatialDataFrame.to_featureset">
+<code class="descname">to_featureset</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.features.SpatialDataFrame.to_featureset" title="Permalink to this definition">¶</a></dt>
+<dd><p>Converts a spatial dataframe to a feature set object</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="arcgis.features.SpatialDataFrame.to_hdf">
+<code class="descname">to_hdf</code><span class="sig-paren">(</span><em>path_or_buf</em>, <em>key</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.features.SpatialDataFrame.to_hdf" title="Permalink to this definition">¶</a></dt>
+<dd><p>Write the contained data to an HDF5 file using HDFStore.</p>
+<p>path_or_buf : the path (string) or HDFStore object
+key : string</p>
+<blockquote>
+<div>indentifier for the group in the store</div></blockquote>
+<p>mode : optional, {‘a’, ‘w’, ‘r+’}, default ‘a’</p>
+<blockquote>
+<div><dl class="docutils">
+<dt><code class="docutils literal"><span class="pre">'w'</span></code></dt>
+<dd>Write; a new file is created (an existing file with the same
+name would be deleted).</dd>
+<dt><code class="docutils literal"><span class="pre">'a'</span></code></dt>
+<dd>Append; an existing file is opened for reading and writing,
+and if the file does not exist it is created.</dd>
+<dt><code class="docutils literal"><span class="pre">'r+'</span></code></dt>
+<dd>It is similar to <code class="docutils literal"><span class="pre">'a'</span></code>, but the file must already exist.</dd>
+</dl>
+</div></blockquote>
+<dl class="docutils">
+<dt>format <span class="classifier-delimiter">:</span> <span class="classifier">‘fixed(f)|table(t)’, default is ‘fixed’</span></dt>
+<dd><dl class="first last docutils">
+<dt>fixed(f) <span class="classifier-delimiter">:</span> <span class="classifier">Fixed format</span></dt>
+<dd>Fast writing/reading. Not-appendable, nor searchable</dd>
+<dt>table(t) <span class="classifier-delimiter">:</span> <span class="classifier">Table format</span></dt>
+<dd>Write as a PyTables Table structure which may perform
+worse but allow more flexible operations like searching
+/ selecting subsets of the data</dd>
+</dl>
+</dd>
+<dt>append <span class="classifier-delimiter">:</span> <span class="classifier">boolean, default False</span></dt>
+<dd>For Table formats, append the input data to the existing</dd>
+<dt>data_columns <span class="classifier-delimiter">:</span> <span class="classifier">list of columns, or True, default None</span></dt>
+<dd><p class="first">List of columns to create as indexed data columns for on-disk
+queries, or True to use all columns. By default only the axes
+of the object are indexed. See <a class="reference external" href="http://pandas.pydata.org/pandas-docs/stable/io.html#query-via-data-columns">here</a>.</p>
+<p class="last">Applicable only to format=’table’.</p>
+</dd>
+<dt>complevel <span class="classifier-delimiter">:</span> <span class="classifier">int, 1-9, default 0</span></dt>
+<dd>If a complib is specified compression will be applied
+where possible</dd>
+<dt>complib <span class="classifier-delimiter">:</span> <span class="classifier">{‘zlib’, ‘bzip2’, ‘lzo’, ‘blosc’, None}, default None</span></dt>
+<dd>If complevel is &gt; 0 apply compression to objects written
+in the store wherever possible</dd>
+<dt>fletcher32 <span class="classifier-delimiter">:</span> <span class="classifier">bool, default False</span></dt>
+<dd>If applying compression use the fletcher32 checksum</dd>
+<dt>dropna <span class="classifier-delimiter">:</span> <span class="classifier">boolean, default False.</span></dt>
+<dd>If true, ALL nan rows will not be written to store.</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="submodules">
+<h2>Submodules<a class="headerlink" href="#submodules" title="Permalink to this headline">¶</a></h2>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="arcgis.features.analysis.html">arcgis.features.analysis module</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.features.analysis.html#aggregate-points">aggregate_points</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.features.analysis.html#calculate-density">calculate_density</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.features.analysis.html#connect-origins-to-destinations">connect_origins_to_destinations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.features.analysis.html#create-buffers">create_buffers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.features.analysis.html#create-drive-time-areas">create_drive_time_areas</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.features.analysis.html#create-route-layers">create_route_layers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.features.analysis.html#create-viewshed">create_viewshed</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.features.analysis.html#create-watersheds">create_watersheds</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.features.analysis.html#derive-new-locations">derive_new_locations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.features.analysis.html#dissolve-boundaries">dissolve_boundaries</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.features.analysis.html#enrich-layer">enrich_layer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.features.analysis.html#extract-data">extract_data</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.features.analysis.html#find-existing-locations">find_existing_locations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.features.analysis.html#find-hot-spots">find_hot_spots</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.features.analysis.html#find-nearest">find_nearest</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.features.analysis.html#find-similar-locations">find_similar_locations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.features.analysis.html#interpolate-points">interpolate_points</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.features.analysis.html#join-features">join_features</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.features.analysis.html#merge-layers">merge_layers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.features.analysis.html#overlay-layers">overlay_layers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.features.analysis.html#plan-routes">plan_routes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.features.analysis.html#summarize-nearby">summarize_nearby</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.features.analysis.html#summarize-within">summarize_within</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.features.analysis.html#trace-downstream">trace_downstream</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="arcgis.features.analyze_patterns.html">arcgis.features.analyze_patterns module</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.features.analyze_patterns.html#calculate-density">calculate_density</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.features.analyze_patterns.html#find-hot-spots">find_hot_spots</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.features.analyze_patterns.html#interpolate-points">interpolate_points</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="arcgis.features.enrich_data.html">arcgis.features.enrich_data module</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.features.enrich_data.html#enrich-layer">enrich_layer</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="arcgis.features.find_locations.html">arcgis.features.find_locations module</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.features.find_locations.html#find-existing-locations">find_existing_locations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.features.find_locations.html#derive-new-locations">derive_new_locations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.features.find_locations.html#find-similar-locations">find_similar_locations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.features.find_locations.html#choose-best-facilities">choose_best_facilities</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.features.find_locations.html#create-viewshed">create_viewshed</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.features.find_locations.html#create-watersheds">create_watersheds</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.features.find_locations.html#trace-downstream">trace_downstream</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="arcgis.features.manage_data.html">arcgis.features.manage_data module</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.features.manage_data.html#dissolve-boundaries">dissolve_boundaries</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.features.manage_data.html#extract-data">extract_data</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.features.manage_data.html#merge-layers">merge_layers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.features.manage_data.html#overlay-layers">overlay_layers</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="arcgis.features.summarize_data.html">arcgis.features.summarize_data module</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.features.summarize_data.html#aggregate-points">aggregate_points</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.features.summarize_data.html#summarize-nearby">summarize_nearby</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.features.summarize_data.html#summarize-within">summarize_within</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="arcgis.features.use_proximity.html">arcgis.features.use_proximity module</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.features.use_proximity.html#connect-origins-to-destinations">connect_origins_to_destinations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.features.use_proximity.html#create-buffers">create_buffers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.features.use_proximity.html#create-drive-time-areas">create_drive_time_areas</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.features.use_proximity.html#find-nearest">find_nearest</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.features.use_proximity.html#plan-routes">plan_routes</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="arcgis.features.elevation.html">arcgis.features.elevation module</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.features.elevation.html#profile">profile</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.features.elevation.html#viewshed">viewshed</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.features.elevation.html#summarize-elevation">summarize_elevation</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="arcgis.features.managers.html">arcgis.features.managers module</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.features.managers.html#attachmentmanager">AttachmentManager</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.features.managers.html#syncmanager">SyncManager</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.features.managers.html#featurelayercollectionmanager">FeatureLayerCollectionManager</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.features.managers.html#featurelayermanager">FeatureLayerManager</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+</div>
+
+
+           </div>
+           <div class="articleComments">
+            
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="arcgis.features.analysis.html" class="btn btn-neutral float-right" title="arcgis.features.analysis module" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="arcgis.env.html" class="btn btn-neutral" title="arcgis.env module" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2016-2017, Esri.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'./',
+            VERSION:'1.2.0',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="_static/jquery.js"></script>
+      <script type="text/javascript" src="_static/underscore.js"></script>
+      <script type="text/javascript" src="_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

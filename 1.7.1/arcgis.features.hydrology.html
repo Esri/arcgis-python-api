@@ -1,0 +1,458 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>arcgis.features.hydrology module &mdash; arcgis 1.7.1 documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="_static/theme_overrides.css" type="text/css" />
+
+  
+  
+    <link rel="shortcut icon" href="_static/favicon.ico"/>
+  
+  
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/doctools.js"></script>
+        <script src="_static/language_data.js"></script>
+        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="arcgis.features.manage_data module" href="arcgis.features.manage_data.html" />
+    <link rel="prev" title="arcgis.features.find_locations module" href="arcgis.features.find_locations.html" />
+<!-- This code block is inserted close near the <head> tag. See http://bit.ly/2BHUQzB -->
+<!-- The point of this code block is to send us google analytics on website views -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-NJGGV5');</script>
+ 
+
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="index.html" class="icon icon-home" alt="Documentation Home"> arcgis
+          
+
+          
+            
+            <img src="_static/python_api_logo.png" class="logo" alt="Logo"/>
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1.7.1
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">arcgis</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="arcgis.gis.toc.html">arcgis.gis module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="arcgis.env.html">arcgis.env module</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="arcgis.features.toc.html">arcgis.features module</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="arcgis.features.toc.html#feature">Feature</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.features.toc.html#featurelayer">FeatureLayer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.features.toc.html#table">Table</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.features.toc.html#featurelayercollection">FeatureLayerCollection</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.features.toc.html#featureset">FeatureSet</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.features.toc.html#featurecollection">FeatureCollection</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.features.toc.html#geoaccessor">GeoAccessor</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.features.toc.html#geoseriesaccessor">GeoSeriesAccessor</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.features.toc.html#spatialdataframe">SpatialDataFrame</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="arcgis.features.toc.html#submodules">Submodules</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="arcgis.features.analysis.html">arcgis.features.analysis module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="arcgis.features.analyze_patterns.html">arcgis.features.analyze_patterns module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="arcgis.features.elevation.html">arcgis.features.elevation module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="arcgis.features.enrich_data.html">arcgis.features.enrich_data module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="arcgis.features.find_locations.html">arcgis.features.find_locations module</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">arcgis.features.hydrology module</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#trace-downstream">trace_downstream</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#watershed">watershed</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="arcgis.features.manage_data.html">arcgis.features.manage_data module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="arcgis.features.managers.html">arcgis.features.managers module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="arcgis.features.summarize_data.html">arcgis.features.summarize_data module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="arcgis.features.use_proximity.html">arcgis.features.use_proximity module</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="arcgis.raster.toc.html">arcgis.raster module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="arcgis.network.toc.html">arcgis.network module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="arcgis.geoanalytics.toc.html">arcgis.geoanalytics module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="arcgis.geocoding.html">arcgis.geocoding module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="arcgis.geoenrichment.html">arcgis.geoenrichment module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="arcgis.geometry.html">arcgis.geometry module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="arcgis.geoprocessing.html">arcgis.geoprocessing module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="arcgis.mapping.html">arcgis.mapping module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="arcgis.realtime.html">arcgis.realtime module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="arcgis.schematics.html">arcgis.schematics module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="arcgis.widgets.html">arcgis.widgets module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="arcgis.apps.html">arcgis.apps module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="arcgis.learn.html">arcgis.learn module</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">arcgis</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="arcgis.features.toc.html">arcgis.features module</a> &raquo;</li>
+        
+      <li>arcgis.features.hydrology module</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+<!-- This code block is inserted close near the <body> tag. See http://bit.ly/2BHUQzB -->
+<!-- The point of this code block is to send us google analytics on website views -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NJGGV5"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+
+  <div class="section" id="module-arcgis.features.hydrology">
+<span id="arcgis-features-hydrology-module"></span><h1>arcgis.features.hydrology module<a class="headerlink" href="#module-arcgis.features.hydrology" title="Permalink to this headline">¶</a></h1>
+<p>These functions help you use hydrology analysis.</p>
+<div class="section" id="trace-downstream">
+<h2>trace_downstream<a class="headerlink" href="#trace-downstream" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt id="arcgis.features.hydrology.trace_downstream">
+<code class="sig-prename descclassname">arcgis.features.hydrology.</code><code class="sig-name descname">trace_downstream</code><span class="sig-paren">(</span><em class="sig-param">input_points</em>, <em class="sig-param">point_id_field=None</em>, <em class="sig-param">source_database='Finest'</em>, <em class="sig-param">generalize=False</em>, <em class="sig-param">gis=None</em>, <em class="sig-param">future=False</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.features.hydrology.trace_downstream" title="Permalink to this definition">¶</a></dt>
+<dd><img alt="_images/trace_downstream.png" src="_images/trace_downstream.png" />
+<p>The <code class="docutils literal notranslate"><span class="pre">trace_downstream</span></code> method delineates the downstream path from a specified location.
+Esri-curated elevation data is used to create an output polyline delineating the flow path
+downstream from the specified input location. This method accesses a service using multiple
+source databases which are available for different geographic areas and at different
+spatial scales.</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 15%" />
+<col style="width: 85%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><strong>Argument</strong></p></td>
+<td><p><strong>Description</strong></p></td>
+</tr>
+<tr class="row-even"><td><p>input_points</p></td>
+<td><p>Required FeatureSet or Spatially Enabled DataFrame
+Points delineating the starting location to calculate the downstream
+location from. See <a class="reference internal" href="arcgis.geoanalytics.toc.html#featureinput"><span class="std std-ref">Feature Input</span></a>.</p></td>
+</tr>
+<tr class="row-odd"><td><p>point_id_field</p></td>
+<td><p>Optional string. Field used to identify the feature from the source data. This is
+useful for relating the results back to the original source data.</p></td>
+</tr>
+<tr class="row-even"><td><p>source_database</p></td>
+<td><p>Optional string. Keyword indicating the source data that will be used in the
+analysis. This keyword is an approximation of the spatial resolution
+of the digital elevation model used to build the foundation
+hydrologic  database. Since many elevation sources are distributed
+with units of  arc seconds, this keyword is an approximation in
+meters for easier understanding.</p>
+<ul class="simple">
+<li><p>Finest: Finest resolution available at each location from all
+possible data sources.</p></li>
+<li><p>10m: The hydrologic source was built from 1/3 arc second -
+approximately 10 meter resolution, elevation data.</p></li>
+<li><p>30m: The hydrologic source was built from 1 arc second -
+approximately 30 meter resolution, elevation data.</p></li>
+<li><p>90m: The hydrologic source was built from 3 arc second -
+approximately 90 meter resolution, elevation data.</p></li>
+</ul>
+<p>The default value is ‘Finest’.</p>
+</td>
+</tr>
+<tr class="row-odd"><td><p>generalize</p></td>
+<td><p>Optional boolean. Determines if the output downstream trace lines will be smoothed
+into simpler lines.</p>
+<p>The default value is False.</p>
+</td>
+</tr>
+<tr class="row-even"><td><p>gis</p></td>
+<td><p>Optional GIS Object instance. If not provided as input, a GIS object instance logged into an
+active portal with elevation helper services defined must already
+be created in the active Python session. A GIS object instance can
+also be optionally explicitly passed in through this parameter.</p></td>
+</tr>
+<tr class="row-odd"><td><p>future</p></td>
+<td><p>Optional boolean. If True, the result will be a <cite>GPJob</cite> and results will be returned asynchronously.</p></td>
+</tr>
+</tbody>
+</table>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>FeatureSet</p>
+</dd>
+</dl>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># USAGE EXAMPLE: To trace downstream path from from the outlet points.</span>
+<span class="n">path</span> <span class="o">=</span> <span class="n">trace_downstream</span><span class="p">(</span><span class="n">input_points</span><span class="o">=</span><span class="n">fs</span><span class="p">,</span>
+                        <span class="n">source_database</span><span class="o">=</span><span class="s1">&#39;Finest&#39;</span><span class="p">,</span>
+                        <span class="n">generalize</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+</div>
+<div class="section" id="watershed">
+<h2>watershed<a class="headerlink" href="#watershed" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt id="arcgis.features.hydrology.watershed">
+<code class="sig-prename descclassname">arcgis.features.hydrology.</code><code class="sig-name descname">watershed</code><span class="sig-paren">(</span><em class="sig-param">input_points</em>, <em class="sig-param">point_id_field=None</em>, <em class="sig-param">snap_distance=10</em>, <em class="sig-param">snap_distance_units='Meters'</em>, <em class="sig-param">source_database='Finest'</em>, <em class="sig-param">generalize=False</em>, <em class="sig-param">gis=None</em>, <em class="sig-param">return_snapped_points=True</em>, <em class="sig-param">future=False</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.features.hydrology.watershed" title="Permalink to this definition">¶</a></dt>
+<dd><img alt="_images/create_watersheds.png" src="_images/create_watersheds.png" />
+<p>The <code class="docutils literal notranslate"><span class="pre">watershed</span></code> is used to identify catchment areas based on a particular location you
+provide and ArcGIS Online Elevation data.</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 17%" />
+<col style="width: 83%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><strong>Argument</strong></p></td>
+<td><p><strong>Description</strong></p></td>
+</tr>
+<tr class="row-even"><td><p>input_points</p></td>
+<td><p>Required FeatureSet or Spatially Enabled DataFrame. Points delineating the starting location to calculate the downstream
+location from. See <a class="reference internal" href="arcgis.geoanalytics.toc.html#featureinput"><span class="std std-ref">Feature Input</span></a>.</p></td>
+</tr>
+<tr class="row-odd"><td><p>point_id_field</p></td>
+<td><p>Optional String. Field used to identify the feature from the source data. This is
+useful for relating the results back to the original source data.</p></td>
+</tr>
+<tr class="row-even"><td><p>snap_distance</p></td>
+<td><p>Optional float. The maximum distance to move the location of an input point.</p>
+<p>Interactive input points and documented gage locations may not exactly align with the stream location in the DEM.
+This parameter allows the task to move the point to a nearby location with the largest contributing area.</p>
+<p>The snap distance should always be larger than the source data resolution. By default, the snapping distance
+is calculated as the resolution of the source data multiplied by 5.</p>
+<p>The default value is 10.</p>
+</td>
+</tr>
+<tr class="row-odd"><td><p>snap_distance_units</p></td>
+<td><p>Optional String. The linear units specified for the snap distance.</p>
+<p>Choice list: [‘Meters’, ‘Kilometers’, ‘Feet’, ‘Yards’, ‘Miles’].</p>
+<p>The default value is ‘Meters’.</p>
+</td>
+</tr>
+<tr class="row-even"><td><p>source_database</p></td>
+<td><p>Optional String. Keyword indicating the source data that will be used in the analysis.
+This keyword is an approximation of the spatial resolution of the
+digital elevation model used to build the foundation hydrologic
+database. Since many elevation sources are distributed with units of
+arc seconds, this keyword is an approximation in meters for easier
+understanding.</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">Finest</span></code>: Finest resolution available at each location from all possible data sources.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">10m</span></code>: The hydrologic source was built from 1/3 arc second - approximately 10 meter resolution, elevation data.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">30m</span></code>: The hydrologic source was built from 1 arc second - approximately 30 meter resolution, elevation data.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">90m</span></code>: The hydrologic source was built from 3 arc second - approximately 90 meter resolution, elevation data.</p></li>
+</ul>
+<p>The default value is ‘Finest’.</p>
+</td>
+</tr>
+<tr class="row-odd"><td><p>generalize</p></td>
+<td><p>Optional boolean. Determines if the output downstream trace lines will be smoothed
+into simpler lines.</p>
+<p>The default value is False.</p>
+</td>
+</tr>
+<tr class="row-even"><td><p>gis</p></td>
+<td><p>Optional GIS Object instance. If not provided as input, a GIS object instance logged into an
+active portal with elevation helper services defined must already
+be created in the active Python session. A GIS object instance can
+also be optionally explicitly passed in through this parameter.</p></td>
+</tr>
+<tr class="row-odd"><td><p>return_snapped_points</p></td>
+<td><p>Optional boolean. Determines if a point feature at the watershed’s pour point will be returned.
+If snapping is enabled, this might not be the same as the input point.</p>
+<p>The default value is True.</p>
+</td>
+</tr>
+<tr class="row-even"><td><p>future</p></td>
+<td><p>Optional boolean. If True, the result will be a <cite>GPJob</cite> and results will be returned asynchronously.</p></td>
+</tr>
+</tbody>
+</table>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>Result object comprised of two FeatureSets - one for watershed_area, and another for snapped_points</p>
+</dd>
+</dl>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># USAGE EXAMPLE: To identify catchment areas around Chennai lakes.</span>
+<span class="n">lakes_watershed</span> <span class="o">=</span> <span class="n">watershed</span><span class="p">(</span><span class="n">input_points</span><span class="o">=</span><span class="n">lakes_fs</span><span class="p">,</span>
+                            <span class="n">snap_distance</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span>
+                            <span class="n">snap_distance_units</span><span class="o">=</span><span class="s1">&#39;Meters&#39;</span><span class="p">,</span>
+                            <span class="n">source_database</span><span class="o">=</span><span class="s1">&#39;Finest&#39;</span><span class="p">,</span>
+                            <span class="n">generalize</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+</div>
+</div>
+
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="arcgis.features.manage_data.html" class="btn btn-neutral float-right" title="arcgis.features.manage_data module" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="arcgis.features.find_locations.html" class="btn btn-neutral float-left" title="arcgis.features.find_locations module" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        
+        &copy; Copyright 2016-2019, Esri
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

@@ -1,0 +1,1385 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>arcgis.geocoding module &mdash; arcgis 1.9.1 documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="_static/theme_overrides.css" type="text/css" />
+
+  
+  
+    <link rel="shortcut icon" href="_static/favicon.ico"/>
+  
+  
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/doctools.js"></script>
+        <script src="_static/language_data.js"></script>
+        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="arcgis.geoenrichment module" href="arcgis.geoenrichment.html" />
+    <link rel="prev" title="arcgis.geoanalytics.use_proximity module" href="arcgis.geoanalytics.use_proximity.html" />
+<!-- This code block is inserted close near the <head> tag. See http://bit.ly/2BHUQzB -->
+<!-- The point of this code block is to send us google analytics on website views -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-NJGGV5');</script>
+ 
+
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="index.html" class="icon icon-home" alt="Documentation Home"> arcgis
+          
+
+          
+            
+            <img src="_static/python_api_logo.png" class="logo" alt="Logo"/>
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1.9.1
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">arcgis</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="arcgis.gis.toc.html">arcgis.gis module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="arcgis.env.html">arcgis.env module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="arcgis.features.toc.html">arcgis.features module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="arcgis.raster.toc.html">arcgis.raster module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="arcgis.network.toc.html">arcgis.network module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="arcgis.geoanalytics.toc.html">arcgis.geoanalytics module</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">arcgis.geocoding module</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#geocoder">Geocoder</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#get-geocoders">get_geocoders</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#geocode">geocode</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#geocode-from-items">geocode_from_items</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#analyze-geocode-input">analyze_geocode_input</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#reverse-geocode">reverse_geocode</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#batch-geocode">batch_geocode</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#suggest">suggest</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="arcgis.geoenrichment.html">arcgis.geoenrichment module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="arcgis.geometry.html">arcgis.geometry module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="arcgis.geoprocessing.html">arcgis.geoprocessing module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="arcgis.mapping.toc.html">arcgis.mapping module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="arcgis.realtime.html">arcgis.realtime module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="arcgis.schematics.html">arcgis.schematics module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="arcgis.widgets.html">arcgis.widgets module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="arcgis.apps.html">arcgis.apps module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="arcgis.learn.toc.html">arcgis.learn module</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">arcgis</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
+        
+      <li>arcgis.geocoding module</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+<!-- This code block is inserted close near the <body> tag. See http://bit.ly/2BHUQzB -->
+<!-- The point of this code block is to send us google analytics on website views -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NJGGV5"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+
+  <div class="section" id="module-arcgis.geocoding">
+<span id="arcgis-geocoding-module"></span><h1>arcgis.geocoding module<a class="headerlink" href="#module-arcgis.geocoding" title="Permalink to this headline">¶</a></h1>
+<p>The arcgis.geocoding module provides types and functions for geocoding, batch geocoding and reverse geocoding.</p>
+<p>Geocoders can find point locations of addresses, business names, and so on.
+The output points can be visualized on a map, inserted as stops for a route,
+or loaded as input for spatial analysis. It is also used to generate
+batch results for a set of addresses, as well as for reverse geocoding,
+i.e. determining the address at a particular x/y location.</p>
+<div class="section" id="geocoder">
+<h2>Geocoder<a class="headerlink" href="#geocoder" title="Permalink to this headline">¶</a></h2>
+<dl class="py class">
+<dt id="arcgis.geocoding.Geocoder">
+<em class="property">class </em><code class="sig-prename descclassname">arcgis.geocoding.</code><code class="sig-name descname">Geocoder</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">location</span></em>, <em class="sig-param"><span class="n">gis</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.geocoding.Geocoder" title="Permalink to this definition">¶</a></dt>
+<dd><p>The <code class="docutils literal notranslate"><span class="pre">Geocoder</span></code> class represents Geocoder objects.
+<code class="docutils literal notranslate"><span class="pre">Geocoder</span></code> objects can find point locations of addresses, business names, and so on.
+The output points can be visualized on a map, inserted as stops for a route,
+or loaded as input for spatial analysis. It is also used to generate
+batch results for a set of addresses, as well as for reverse geocoding,
+i.e. determining the address at a particular x/y location.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>A <a class="reference internal" href="arcgis.gis.toc.html#arcgis.gis.GIS" title="arcgis.gis.GIS"><code class="xref py py-class docutils literal notranslate"><span class="pre">GIS</span></code></a> includes one or more geocoders, which can be queried using <cite>get_geocoders(gis)</cite>.</p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p><code class="docutils literal notranslate"><span class="pre">Geocoders</span></code> shared as <a class="reference internal" href="arcgis.gis.toc.html#arcgis.gis.Item" title="arcgis.gis.Item"><code class="xref py py-class docutils literal notranslate"><span class="pre">Item</span></code></a> objects in the GIS can be obtained using
+<cite>Geocoder.fromitem(item)</cite>.</p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p><code class="docutils literal notranslate"><span class="pre">Geocoder</span></code> objects may also be created using the constructor by passing in their location, such as
+a url to a <code class="docutils literal notranslate"><span class="pre">Geocoding</span> <span class="pre">Service</span></code>.</p>
+</div>
+<dl class="py method">
+<dt id="arcgis.geocoding.Geocoder.fromitem">
+<em class="property">classmethod </em><code class="sig-name descname">fromitem</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">item</span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.geocoding.Geocoder.fromitem" title="Permalink to this definition">¶</a></dt>
+<dd><p>The <code class="docutils literal notranslate"><span class="pre">fromitem</span></code> method creates a <code class="docutils literal notranslate"><span class="pre">Geocoder</span></code> from an <a class="reference internal" href="arcgis.gis.toc.html#arcgis.gis.Item" title="arcgis.gis.Item"><code class="xref py py-class docutils literal notranslate"><span class="pre">Item</span></code></a> in the
+class:<cite>~arcgis.gis.GIS</cite> instance.</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 27%" />
+<col style="width: 73%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><strong>Argument</strong></p></td>
+<td><p><strong>Description</strong></p></td>
+</tr>
+<tr class="row-even"><td><p>item</p></td>
+<td><p>A required <a class="reference internal" href="arcgis.gis.toc.html#arcgis.gis.Item" title="arcgis.gis.Item"><code class="xref py py-class docutils literal notranslate"><span class="pre">Item</span></code></a> object. The
+<code class="docutils literal notranslate"><span class="pre">Item</span></code> to convert to a <code class="docutils literal notranslate"><span class="pre">Geocoder</span></code> object.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The <a class="reference internal" href="arcgis.gis.toc.html#arcgis.gis.Item" title="arcgis.gis.Item"><code class="xref py py-class docutils literal notranslate"><span class="pre">Item</span></code></a> must be of type
+<code class="docutils literal notranslate"><span class="pre">Geocoding</span> <span class="pre">Service</span></code>.</p>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>A <a class="reference internal" href="#arcgis.geocoding.Geocoder" title="arcgis.geocoding.Geocoder"><code class="xref py py-class docutils literal notranslate"><span class="pre">Geocoder</span></code></a> object.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="arcgis.geocoding.Geocoder.properties">
+<em class="property">property </em><code class="sig-name descname">properties</code><a class="headerlink" href="#arcgis.geocoding.Geocoder.properties" title="Permalink to this definition">¶</a></dt>
+<dd><p>The <code class="docutils literal notranslate"><span class="pre">properties</span></code> property retrieves and set properties of this object.</p>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="get-geocoders">
+<h2>get_geocoders<a class="headerlink" href="#get-geocoders" title="Permalink to this headline">¶</a></h2>
+<dl class="py function">
+<dt id="arcgis.geocoding.get_geocoders">
+<code class="sig-prename descclassname">arcgis.geocoding.</code><code class="sig-name descname">get_geocoders</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">gis</span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.geocoding.get_geocoders" title="Permalink to this definition">¶</a></dt>
+<dd><p>The <code class="docutils literal notranslate"><span class="pre">get_geocoders</span></code> method is used to query the list of geocoders registered with the <a class="reference internal" href="arcgis.gis.toc.html#arcgis.gis.GIS" title="arcgis.gis.GIS"><code class="xref py py-class docutils literal notranslate"><span class="pre">GIS</span></code></a>.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>A <code class="docutils literal notranslate"><span class="pre">GIS</span></code> includes one or more <a class="reference internal" href="#arcgis.geocoding.Geocoder" title="arcgis.geocoding.Geocoder"><code class="xref py py-class docutils literal notranslate"><span class="pre">Geocoder</span></code></a> objects.</p>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>gis</strong> – the GIS whose registered geocoders are to be queried</p>
+</dd>
+</dl>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 27%" />
+<col style="width: 73%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><strong>Argument</strong></p></td>
+<td><p><strong>Description</strong></p></td>
+</tr>
+<tr class="row-even"><td><p>gis</p></td>
+<td><p>A required <code class="xref py py-class docutils literal notranslate"><span class="pre">Gis</span></code> object. The
+<code class="docutils literal notranslate"><span class="pre">GIS</span></code> whose registered <code class="docutils literal notranslate"><span class="pre">geocoders</span></code> are to be
+queried.</p></td>
+</tr>
+</tbody>
+</table>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>A list of <a class="reference internal" href="#arcgis.geocoding.Geocoder" title="arcgis.geocoding.Geocoder"><code class="xref py py-class docutils literal notranslate"><span class="pre">Geocoder</span></code></a> objects registered with the <code class="docutils literal notranslate"><span class="pre">GIS</span></code>.</p>
+</dd>
+</dl>
+</dd></dl>
+
+</div>
+<div class="section" id="geocode">
+<h2>geocode<a class="headerlink" href="#geocode" title="Permalink to this headline">¶</a></h2>
+<dl class="py method">
+<dt id="arcgis.geocoding.geocode">
+<code class="sig-prename descclassname">geocoding.</code><code class="sig-name descname">geocode</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">search_extent</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">location</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">distance</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">out_sr</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">category</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">out_fields</span><span class="o">=</span><span class="default_value">'*'</span></em>, <em class="sig-param"><span class="n">max_locations</span><span class="o">=</span><span class="default_value">20</span></em>, <em class="sig-param"><span class="n">magic_key</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">for_storage</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="n">geocoder</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">as_featureset</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="n">match_out_of_range</span><span class="o">=</span><span class="default_value">True</span></em>, <em class="sig-param"><span class="n">location_type</span><span class="o">=</span><span class="default_value">'street'</span></em>, <em class="sig-param"><span class="n">lang_code</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">source_country</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.geocoding.geocode" title="Permalink to this definition">¶</a></dt>
+<dd><p>The <code class="docutils literal notranslate"><span class="pre">geocode</span></code> function geocodes one location per request.</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 27%" />
+<col style="width: 73%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><strong>Argument</strong></p></td>
+<td><p><strong>Description</strong></p></td>
+</tr>
+<tr class="row-even"><td><p>address</p></td>
+<td><p>Required list of strings or dictionaries.
+Specifies the location to be geocoded. This can be
+a string containing the street address, place name,
+postal code, or POI.</p>
+<p>Alternatively, this can be a dictionary containing
+the various address fields accepted by the
+corresponding geocoder. These fields are listed in
+the addressFields property of the associated
+geocoder. For example, if the address_fields of a
+geocoder includes fields with the following names:
+Street, City, State and Zone, then the address
+argument is of the form:</p>
+<dl class="simple">
+<dt>{</dt><dd><p>Street: “1234 W Main St”,
+City: “Small Town”,
+State: “WA”,
+Zone: “99027”</p>
+</dd>
+</dl>
+<p>}</p>
+</td>
+</tr>
+<tr class="row-odd"><td><p>search_extent</p></td>
+<td><p>Optional string, A set of bounding box coordinates
+that limit the search area to a specific region.
+This is especially useful for applications in which
+a user will search for places and addresses only
+within the current map extent.</p></td>
+</tr>
+<tr class="row-even"><td><p>location</p></td>
+<td><p>Optional [x,y], Defines an origin point location that
+is used with the distance parameter to sort
+geocoding candidates based upon their proximity to
+the location.</p></td>
+</tr>
+<tr class="row-odd"><td><p>distance</p></td>
+<td><p>Optional float, Specifies the radius of an area
+around a point location which is used to boost the
+rank of geocoding candidates so that candidates
+closest to the location are returned first. The
+distance value is in meters.</p></td>
+</tr>
+<tr class="row-even"><td><p>out_sr</p></td>
+<td><p>Optional dictionary, The spatial reference of the
+x/y coordinates returned by a geocode request. This
+is useful for applications using a map with a spatial
+reference different than that of the geocode service.</p></td>
+</tr>
+<tr class="row-odd"><td><p>category</p></td>
+<td><p>Optional string, A place or address type which can
+be used to filter find results. The parameter
+supports input of single category values or multiple
+comma-separated values. The category parameter can be
+passed in a request with or without the text
+parameter.</p></td>
+</tr>
+<tr class="row-even"><td><p>out_fields</p></td>
+<td><p>Optional string, name of all the fields to include.
+The default is “*” which means all fields.</p></td>
+</tr>
+<tr class="row-odd"><td><p>max_location</p></td>
+<td><p>Optional integer, The number of locations to be
+returned from the service. The default is 20.</p></td>
+</tr>
+<tr class="row-even"><td><p>magic_key</p></td>
+<td><p>Optional string. The find operation retrieves
+results quicker when you pass a valid text and
+<cite>magic_key</cite> value.</p></td>
+</tr>
+<tr class="row-odd"><td><p>for_storage</p></td>
+<td><p>Optional Boolean. Specifies whether the results of
+the operation will
+be persisted. The default value is false, which
+indicates the results of the operation can’t be
+stored, but they can be temporarily displayed on a
+map for instance.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>If you store the results, in a
+database for example, you need to set this parameter
+to <code class="docutils literal notranslate"><span class="pre">True</span></code>.</p>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td><p>geocoder</p></td>
+<td><p>Optional, the <a class="reference internal" href="#arcgis.geocoding.Geocoder" title="arcgis.geocoding.Geocoder"><code class="xref py py-class docutils literal notranslate"><span class="pre">Geocoder</span></code></a> to
+be used.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>If not specified, the active
+<a class="reference internal" href="arcgis.gis.toc.html#arcgis.gis.GIS" title="arcgis.gis.GIS"><code class="xref py py-class docutils literal notranslate"><span class="pre">GIS</span></code></a> object’s
+first geocoder is used.</p>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td><p>as_featureset</p></td>
+<td><p>Optional boolean, If <code class="docutils literal notranslate"><span class="pre">True</span></code>, the result set is
+returned as a <a class="reference internal" href="arcgis.features.toc.html#arcgis.features.FeatureSet" title="arcgis.features.FeatureSet"><code class="xref py py-class docutils literal notranslate"><span class="pre">FeatureSet</span></code></a>
+object, else it is a dictionary.</p></td>
+</tr>
+<tr class="row-even"><td><p>match_out_of_range</p></td>
+<td><p>Optional Boolean. Provides better spatial accuracy
+for inexact street addresses by specifying whether
+matches will be returned when the input number is
+outside of the house range defined for the input
+street. Out of range matches will be defined as
+Addr_type=StreetAddressExt. Input house numbers
+that exceed the range on a street segment by more
+than 100 will not result in <cite>StreetAddressExt</cite>
+matches. The default value of this parameter is
+True.</p></td>
+</tr>
+<tr class="row-odd"><td><p>location_type</p></td>
+<td><p>Optional Str. Specifies whether the rooftop point or
+street entrance is used as the output geometry of
+PointAddress matches. By default, street is used,
+which is useful in routing scenarios, as the rooftop
+location of some addresses may be offset from a
+street by a large distance. However, for map display
+purposes, you may want to use rooftop instead,
+especially when large buildings or landmarks are
+geocoded. The <cite>location_type</cite> parameter only affects
+the location object in the JSON response and does
+not change the x,y or DisplayX/DisplayY attribute
+values.</p>
+<p>Values: <cite>street</cite> or <cite>rooftop</cite></p>
+</td>
+</tr>
+<tr class="row-even"><td><p>lang_code</p></td>
+<td><p>Optional str. Sets the language in which geocode
+results are returned.</p></td>
+</tr>
+<tr class="row-odd"><td><p>source_country</p></td>
+<td><p>Optional str. Limits the returned candidates to the
+specified country or countries for either single-field
+or multifield requests. Acceptable values include
+the 3-character country code.</p></td>
+</tr>
+</tbody>
+</table>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span># Usage Example
+&gt;&gt;&gt; geocoded = geocode(addresses = {
+                                            Street: &quot;1234 W Main St&quot;,
+                                            City: &quot;Small Town&quot;,
+                                            State: &quot;WA&quot;,
+                                            Zone: &quot;99027&quot;
+                                            },
+                                    distance = 1000,
+                                    max_locations = 50,
+                                    as_featureset = True,
+                                    match_out_of_range = True,
+                                    location_type = &quot;Street&quot;
+                                    )
+&gt;&gt;&gt; type(geocoded)
+&lt;:class:`~arcgis.features.FeatureSet&gt;
+</pre></div>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>A dictionary or <a class="reference internal" href="arcgis.features.toc.html#arcgis.features.FeatureSet" title="arcgis.features.FeatureSet"><code class="xref py py-class docutils literal notranslate"><span class="pre">FeatureSet</span></code></a> object.</p>
+</dd>
+</dl>
+</dd></dl>
+
+</div>
+<div class="section" id="geocode-from-items">
+<h2>geocode_from_items<a class="headerlink" href="#geocode-from-items" title="Permalink to this headline">¶</a></h2>
+<dl class="py function">
+<dt id="arcgis.geocoding.geocode_from_items">
+<code class="sig-prename descclassname">arcgis.geocoding.</code><code class="sig-name descname">geocode_from_items</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">input_data</span></em>, <em class="sig-param"><span class="n">output_type</span><span class="o">=</span><span class="default_value">'Feature Layer'</span></em>, <em class="sig-param"><span class="n">geocode_service_url</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">geocode_parameters</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">country</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">output_fields</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">header_rows_to_skip</span><span class="o">=</span><span class="default_value">1</span></em>, <em class="sig-param"><span class="n">output_name</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">category</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">context</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">gis</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.geocoding.geocode_from_items" title="Permalink to this definition">¶</a></dt>
+<dd><p>The <code class="docutils literal notranslate"><span class="pre">geocode_from_items</span></code> method creates <a class="reference internal" href="#arcgis.geocoding.Geocoder" title="arcgis.geocoding.Geocoder"><code class="xref py py-class docutils literal notranslate"><span class="pre">Geocoder</span></code></a> objects from an
+<a class="reference internal" href="arcgis.gis.toc.html#arcgis.gis.Item" title="arcgis.gis.Item"><code class="xref py py-class docutils literal notranslate"><span class="pre">Item</span></code></a> or <code class="docutils literal notranslate"><span class="pre">Layer</span></code> objects.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p><code class="docutils literal notranslate"><span class="pre">geocode_from_items</span></code> geocodes the entire file regardless of size.</p>
+</div>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 23%" />
+<col style="width: 77%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><strong>Argument</strong></p></td>
+<td><p><strong>Description</strong></p></td>
+</tr>
+<tr class="row-even"><td><p>input_data</p></td>
+<td><p>required Item, string, Layer. Data to geocode.</p></td>
+</tr>
+<tr class="row-odd"><td><p>output_type</p></td>
+<td><p>optional string.  Export item types.  Allowed values are “CSV”,
+“XLS”, or “FeatureLayer”.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The default for <code class="docutils literal notranslate"><span class="pre">output_type</span></code> is “FeatureLayer”.</p>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td><p>geocode_service_url</p></td>
+<td><p>optional string of Geocoder. Optional
+<a class="reference internal" href="#arcgis.geocoding.Geocoder" title="arcgis.geocoding.Geocoder"><code class="xref py py-class docutils literal notranslate"><span class="pre">Geocoder</span></code></a> to use to
+spatially enable the dataset.</p></td>
+</tr>
+<tr class="row-odd"><td><p>geocode_parameters</p></td>
+<td><p>optional dictionary.  This includes parameters that help parse
+the input data, as well the field lengths and a field mapping.
+This value is the output from the <code class="docutils literal notranslate"><span class="pre">analyze_geocode_input</span></code>
+available on your server designated to geocode. It is important
+to inspect the field mapping closely and adjust them accordingly
+before submitting your job, otherwise your geocoding results may
+not be accurate. It is recommended to use the output from
+<code class="docutils literal notranslate"><span class="pre">analyze_geocode_input</span></code> and modify the field mapping instead of
+constructing this dictionary by hand.</p>
+<p><strong>Values</strong></p>
+<p><code class="docutils literal notranslate"><span class="pre">field_info</span></code> - A list of triples with the field names of your input
+data, the field type (usually TEXT), and the allowed length
+(usually 255).</p>
+<dl class="simple">
+<dt>Example: [[‘ObjectID’, ‘TEXT’, 255], [‘Address’, ‘TEXT’, 255],</dt><dd><p>[‘Region’, ‘TEXT’, 255], [‘Postal’, ‘TEXT’, 255]]</p>
+</dd>
+</dl>
+<p><code class="docutils literal notranslate"><span class="pre">header_row_exists</span></code> - Enter true or false.</p>
+<p><code class="docutils literal notranslate"><span class="pre">column_names</span></code> - Submit the column names of your data if your data
+does not have a header row.</p>
+<p><code class="docutils literal notranslate"><span class="pre">field_mapping</span></code> - Field mapping between each input field and
+candidate fields on the geocoding service.
+Example: [[‘ObjectID’, ‘OBJECTID’], [‘Address’, ‘Address’],</p>
+<blockquote>
+<div><p>[‘Region’, ‘Region’], [‘Postal’, ‘Postal’]]</p>
+</div></blockquote>
+</td>
+</tr>
+<tr class="row-even"><td><p>country</p></td>
+<td><p>optional string.  If all your data is in one country, this helps
+improve performance for locators that accept that variable.</p></td>
+</tr>
+<tr class="row-odd"><td><p>output_fields</p></td>
+<td><p>optional string. Enter the output fields from the geocoding
+service that you want returned in the results, separated by
+commas. To output all available outputFields, leave this
+parameter blank.</p>
+<p>Example: score,match_addr,x,y</p>
+</td>
+</tr>
+<tr class="row-even"><td><p>header_rows_to_skip</p></td>
+<td><p>optional integer. Describes on which row your data begins in
+your file or table. The default is 1 (since the first row
+contains the headers). The default is 1.</p></td>
+</tr>
+<tr class="row-odd"><td><p>output_name</p></td>
+<td><p>optional string, The task will create a feature service of the
+results. You define the name of the service.</p></td>
+</tr>
+<tr class="row-even"><td><p>category</p></td>
+<td><p>optional string. Enter a category for more precise geocoding
+results, if applicable. Some geocoding services do not support
+category, and the available options depend on your geocode service.</p></td>
+</tr>
+<tr class="row-odd"><td><p>context</p></td>
+<td><p>optional dictionary. Context contains additional settings that
+affect task execution. Batch Geocode has the following two
+settings:</p>
+<ol class="arabic simple">
+<li><p>Extent (extent) - A bounding box that defines the analysis
+area. Only those points in inputLayer that intersect the
+bounding box are analyzed.</p></li>
+<li><p>Output Spatial Reference (outSR) - The output features are
+projected into the output spatial reference.</p></li>
+</ol>
+<p>Syntax:
+{
+“extent” : {extent}
+“outSR” : {spatial reference}
+}</p>
+</td>
+</tr>
+<tr class="row-even"><td><p>gis</p></td>
+<td><p>optional <code class="docutils literal notranslate"><span class="pre">GIS</span></code>, the <a class="reference internal" href="arcgis.gis.toc.html#arcgis.gis.GIS" title="arcgis.gis.GIS"><code class="xref py py-class docutils literal notranslate"><span class="pre">GIS</span></code></a> on which this
+tool runs.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>If not specified, the active <code class="docutils literal notranslate"><span class="pre">GIS</span></code> is used.</p>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span># Usage Example
+&gt;&gt;&gt; fl_item = geocode_from_items(csv_item, output_type=&#39;Feature Layer&#39;,
+                     geocode_parameters={&quot;field_info&quot;: [&#39;Addresses&#39;, &#39;TEXT&#39;, 255],
+                                         &quot;column_names&quot;: [&quot;Addresses&quot;],
+                                         &quot;field_mapping&quot;: [&#39;Addresses&#39;, &#39;Address&#39;]
+                                         },
+                     output_name=&quot;address_file_matching&quot;,
+                     gis=gis)
+&gt;&gt;&gt; type(fl_item)
+&lt;:class:`~arcgis.gis.Item`&gt;
+</pre></div>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>A <a class="reference internal" href="arcgis.gis.toc.html#arcgis.gis.Item" title="arcgis.gis.Item"><code class="xref py py-class docutils literal notranslate"><span class="pre">Item</span></code></a> object.</p>
+</dd>
+</dl>
+</dd></dl>
+
+</div>
+<div class="section" id="analyze-geocode-input">
+<h2>analyze_geocode_input<a class="headerlink" href="#analyze-geocode-input" title="Permalink to this headline">¶</a></h2>
+<dl class="py function">
+<dt id="arcgis.geocoding.analyze_geocode_input">
+<code class="sig-prename descclassname">arcgis.geocoding.</code><code class="sig-name descname">analyze_geocode_input</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">input_table_or_item</span></em>, <em class="sig-param"><span class="n">geocode_service_url</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">column_names</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">input_file_parameters</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">locale</span><span class="o">=</span><span class="default_value">'en'</span></em>, <em class="sig-param"><span class="n">context</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">gis</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.geocoding.analyze_geocode_input" title="Permalink to this definition">¶</a></dt>
+<dd><p>The <code class="docutils literal notranslate"><span class="pre">analyze_geocode_input</span></code> function takes in a geocode input (either a table or file of
+addresses) and returns an output dictionary that includes a suggested field mapping. It supports CSV,
+XLS, or table input. The table can be from a big data file share or from a feature service. The
+task generates a suggested field mapping based on the input fields and the geocoding service
+candidate fields and returns it in a <code class="docutils literal notranslate"><span class="pre">geocode_parameters</span></code> dictionary. This <code class="docutils literal notranslate"><span class="pre">geocode_parameters</span></code>
+dictionary output is the an input to the <code class="docutils literal notranslate"><span class="pre">Batch</span> <span class="pre">Geocode</span></code> tool. The output <code class="docutils literal notranslate"><span class="pre">geocode_parameters</span></code>
+dictionary also includes field info (name, length, and type) as well as additional information
+that helps the geocode tool parse the input file or table.</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 24%" />
+<col style="width: 76%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><strong>Argument</strong></p></td>
+<td><p><strong>Description</strong></p></td>
+</tr>
+<tr class="row-even"><td><p>input_table_or_item</p></td>
+<td><p>required <a class="reference internal" href="arcgis.gis.toc.html#arcgis.gis.Item" title="arcgis.gis.Item"><code class="xref py py-class docutils literal notranslate"><span class="pre">Item</span></code></a>, string or dictionary.
+The input to analyze for geocoding.</p>
+<p>For tables:</p>
+<blockquote>
+<div><p>The input table specification must include the following:</p>
+<ul class="simple">
+<li><p>A URL to an input table</p></li>
+<li><p>A service token to access the table</p></li>
+</ul>
+<p>Note that if the table is a hosted table on the same portal,
+serviceToken is not required.</p>
+<p>Example: {“url”:”&lt;table url&gt;”,”serviceToken”:”&lt;token&gt;”}</p>
+</div></blockquote>
+<p>For File Items:</p>
+<p>The input file should be a portal item. Input the itemid of
+the item in the portal. The format of the item in the portal
+can be in one of the following formats:</p>
+<ul class="simple">
+<li><p>CSV</p></li>
+<li><p>Microsoft Excel spreadsheet (XLSX)</p></li>
+</ul>
+<p>Example: {“itemid”: “&lt;itemid of file&gt;” }</p>
+</td>
+</tr>
+<tr class="row-odd"><td><p>geocode_service_url</p></td>
+<td><p>Optional string or <code class="docutils literal notranslate"><span class="pre">Geocoder</span></code> object.  The geocode service
+that you want to geocode your addresses against.</p></td>
+</tr>
+<tr class="row-even"><td><p>column_names</p></td>
+<td><p>Optional string.  Only used when input table or <code class="docutils literal notranslate"><span class="pre">Item</span></code> has no
+header row.
+Example: address,city,state,zip</p></td>
+</tr>
+<tr class="row-odd"><td><p>input_file_parameters</p></td>
+<td><p>Optional dictionary. Enter information about how to parse the
+file. If you are using an input table instead of an Item as
+input, this parameter can be left blank.
+Any of the key values in the dictionary can be left blank using
+the “”.</p>
+<p>Values:</p>
+<p><code class="docutils literal notranslate"><span class="pre">fileType</span></code> - Enter CSV or XLS for the file format of file
+Item.
+<code class="docutils literal notranslate"><span class="pre">headerRowExists</span></code> - Enter true if your file has a header row,</p>
+<blockquote>
+<div><p>false if it does not.</p>
+</div></blockquote>
+<p><code class="docutils literal notranslate"><span class="pre">columnDelimiter</span></code> - Enter SPACE, TAB, COMMA, PIPE, or SEMICOLON.
+<code class="docutils literal notranslate"><span class="pre">textQualifier</span></code> - Enter either SINGLE_QUOTE or DOUBLE_QUOTE.</p>
+<dl class="simple">
+<dt>Example: {“fileType”:”xlsx”,”headerRowExists”:”true”,</dt><dd><p>“columnDelimiter”:””,”textQualifier”:””}</p>
+</dd>
+</dl>
+</td>
+</tr>
+<tr class="row-even"><td><p>locale</p></td>
+<td><p>Optional string. Enter the 2-letter (“en”) or 4-letter (“ar-il”)
+specific locale if geocodeInput is in a language other than
+English.</p></td>
+</tr>
+<tr class="row-odd"><td><p>context</p></td>
+<td><p>Optional dictionary.
+Context contains additional settings that affect task execution.
+<code class="docutils literal notranslate"><span class="pre">analyze_geocode_input</span></code> has the following two settings:
+1. Extent (extent) - A bounding box that defines the analysis</p>
+<blockquote>
+<div><p>area. Only those points in inputLayer that intersect the
+bounding box are analyzed.</p>
+</div></blockquote>
+<ol class="arabic simple" start="2">
+<li><p>Output Spatial Reference (outSR) - The output features are
+projected into the output spatial reference.</p></li>
+</ol>
+</td>
+</tr>
+<tr class="row-even"><td><p>gis</p></td>
+<td><p>Optional <code class="docutils literal notranslate"><span class="pre">GIS</span></code>. Connection to the site. If None is given, the
+active <code class="docutils literal notranslate"><span class="pre">GIS</span></code> is used.</p></td>
+</tr>
+</tbody>
+</table>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>A dictionary</p>
+</dd>
+</dl>
+</dd></dl>
+
+</div>
+<div class="section" id="reverse-geocode">
+<h2>reverse_geocode<a class="headerlink" href="#reverse-geocode" title="Permalink to this headline">¶</a></h2>
+<dl class="py function">
+<dt id="arcgis.geocoding.reverse_geocode">
+<code class="sig-prename descclassname">arcgis.geocoding.</code><code class="sig-name descname">reverse_geocode</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">location</span></em>, <em class="sig-param"><span class="n">distance</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">out_sr</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">lang_code</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">return_intersection</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="n">for_storage</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="n">geocoder</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">feature_types</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">roof_top</span><span class="o">=</span><span class="default_value">'street'</span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.geocoding.reverse_geocode" title="Permalink to this definition">¶</a></dt>
+<dd><p>The <code class="docutils literal notranslate"><span class="pre">reverse_geocode</span></code> operation determines the address at a particular
+x/y location. You pass the coordinates of a point location to the
+geocoding service, and the service returns the address that is
+closest to the location.</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 21%" />
+<col style="width: 79%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><strong>Argument</strong></p></td>
+<td><p><strong>Description</strong></p></td>
+</tr>
+<tr class="row-even"><td><p>location</p></td>
+<td><p>Required location input as list, dict (with or without SpatialReference),
+or <a class="reference internal" href="arcgis.geometry.html#arcgis.geometry.Point" title="arcgis.geometry.Point"><code class="xref py py-class docutils literal notranslate"><span class="pre">Point</span></code></a> object.</p></td>
+</tr>
+<tr class="row-odd"><td><p>distance</p></td>
+<td><p>optional float, radial distance in meters to
+search for an address.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The default for <code class="docutils literal notranslate"><span class="pre">distance</span></code> is 100 meters.</p>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td><p>out_sr</p></td>
+<td><p>optional integer or
+<a class="reference internal" href="arcgis.geometry.html#arcgis.geometry.SpatialReference" title="arcgis.geometry.SpatialReference"><code class="xref py py-class docutils literal notranslate"><span class="pre">SpatialReference</span></code></a> of the
+x/y coordinate returned.</p></td>
+</tr>
+<tr class="row-odd"><td><p>lang_code</p></td>
+<td><p>optional string. Sets the language in which geocode
+results are returned. This is useful for ensuring
+that results are returned in the expected language.
+If the lang_code parameter isn’t included in a
+request, or if it is included but there are no
+matching features with the input language code, the
+resultant match is returned in the language code of
+the primary matched components from the input search
+string.</p></td>
+</tr>
+<tr class="row-even"><td><p>return_intersection</p></td>
+<td><p>optional Boolean, which specifies whether the
+service should return the nearest street
+intersection or the nearest address to the input
+location</p></td>
+</tr>
+<tr class="row-odd"><td><p>for_storage</p></td>
+<td><p>optional boolean, specifies whether the results of
+the operation will be persisted</p></td>
+</tr>
+<tr class="row-even"><td><p>geocoder</p></td>
+<td><p>optional <a class="reference internal" href="#arcgis.geocoding.Geocoder" title="arcgis.geocoding.Geocoder"><code class="xref py py-class docutils literal notranslate"><span class="pre">Geocoder</span></code></a>,
+the geocoder to be used.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>If not specified, the active <code class="docutils literal notranslate"><span class="pre">GIS</span></code> instances
+first <code class="docutils literal notranslate"><span class="pre">Geocoder</span></code> is used.</p>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td><p>feature_types</p></td>
+<td><p>Optional String. Limits the possible match types
+performed by the <cite>reverse_geocode</cite> method. If a
+single value is included, the search tolerance for
+the input feature type is 500 meters. If multiple
+values (separated by a comma, with no spaces) are
+included, the default search distances specified in
+the feature type hierarchy table are applied.</p>
+<dl class="simple">
+<dt>Values: <a href="#id1"><span class="problematic" id="id2">`</span></a>StreetInt, DistanceMarker, StreetAddress,</dt><dd><p>StreetName, POI, PointAddress, Postal, and
+Locality`</p>
+</dd>
+</dl>
+</td>
+</tr>
+<tr class="row-even"><td><p>location_type</p></td>
+<td><p>Optional string. Specifies whether the rooftop point
+or street entrance is used as the output geometry of
+point address matches. By default,
+<code class="docutils literal notranslate"><span class="pre">street</span></code> is used,
+which is useful in routing scenarios, as the rooftop
+location of some addresses may be offset from a
+street by a large distance. However, for map display
+purposes, you may want to use <code class="docutils literal notranslate"><span class="pre">rooftop</span></code> instead,
+especially when large buildings or landmarks are
+geocoded. The <code class="docutils literal notranslate"><span class="pre">location_type</span></code> parameter only
+affects the location object in the JSON response
+and does not change the x,y or
+<code class="docutils literal notranslate"><span class="pre">DisplayX/DisplayY</span></code> attribute values.</p>
+<p>Values: <code class="docutils literal notranslate"><span class="pre">street</span></code>, <code class="docutils literal notranslate"><span class="pre">rooftop</span></code></p>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Usage Example</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="nb">reversed</span> <span class="o">=</span> <span class="n">Geocoder</span><span class="o">.</span><span class="n">reverse_geocode</span><span class="p">(</span><span class="n">location</span> <span class="o">=</span> <span class="n">point1</span><span class="p">,</span>
+                                        <span class="n">distance</span> <span class="o">=</span> <span class="mi">50</span><span class="p">,</span>
+                                        <span class="n">for_storage</span> <span class="o">=</span> <span class="kc">True</span><span class="p">,</span>
+                                        <span class="n">feature_types</span> <span class="o">=</span> <span class="s2">&quot;StreetName&quot;</span><span class="p">,</span>
+                                        <span class="n">location_type</span> <span class="o">=</span> <span class="s2">&quot;street&quot;</span><span class="p">)</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="nb">type</span><span class="p">(</span><span class="nb">reversed</span><span class="p">)</span>
+<span class="o">&lt;</span><span class="n">Dictionary</span><span class="o">&gt;</span>
+</pre></div>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>A dictionary</p>
+</dd>
+</dl>
+</dd></dl>
+
+</div>
+<div class="section" id="batch-geocode">
+<h2>batch_geocode<a class="headerlink" href="#batch-geocode" title="Permalink to this headline">¶</a></h2>
+<dl class="py function">
+<dt id="arcgis.geocoding.batch_geocode">
+<code class="sig-prename descclassname">arcgis.geocoding.</code><code class="sig-name descname">batch_geocode</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">addresses</span></em>, <em class="sig-param"><span class="n">source_country</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">category</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">out_sr</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">geocoder</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">as_featureset</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="n">match_out_of_range</span><span class="o">=</span><span class="default_value">True</span></em>, <em class="sig-param"><span class="n">location_type</span><span class="o">=</span><span class="default_value">'street'</span></em>, <em class="sig-param"><span class="n">search_extent</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">lang_code</span><span class="o">=</span><span class="default_value">'EN'</span></em>, <em class="sig-param"><span class="n">preferred_label_values</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.geocoding.batch_geocode" title="Permalink to this definition">¶</a></dt>
+<dd><p>The <code class="docutils literal notranslate"><span class="pre">batch_geocode</span></code> function geocodes an entire list of addresses.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Geocoding many addresses at once is also known as bulk geocoding.</p>
+</div>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 26%" />
+<col style="width: 74%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><strong>Argument</strong></p></td>
+<td><p><strong>Description</strong></p></td>
+</tr>
+<tr class="row-even"><td><p>addresses</p></td>
+<td><p>required list of strings or dictionaries.
+A list of addresses to be geocoded.
+For passing in the location name as a single line of text -
+single field batch geocoding - use a string.
+For passing in the location name as multiple lines of text
+multifield batch geocoding - use the address fields described
+in the Geocoder documentation.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The maximum number of addresses that can be geocoded in a
+single request is limited to the SuggestedBatchSize property of
+the locator.</p>
+</div>
+<p>Syntax:
+addresses = [“380 New York St, Redlands, CA”,</p>
+<blockquote>
+<div><p>“1 World Way, Los Angeles, CA”,
+“1200 Getty Center Drive, Los Angeles, CA”,
+“5905 Wilshire Boulevard, Los Angeles, CA”,
+“100 Universal City Plaza, Universal City, CA 91608”,
+“4800 Oak Grove Dr, Pasadena, CA 91109”]</p>
+</div></blockquote>
+<p>OR</p>
+<dl>
+<dt>addresses= [{</dt><dd><blockquote>
+<div><p>“Address”: “380 New York St.”,
+“City”: “Redlands”,
+“Region”: “CA”,
+“Postal”: “92373”</p>
+</div></blockquote>
+<dl class="simple">
+<dt>},{</dt><dd><p>“Address”: “1 World Way”,
+“City”: “Los Angeles”,
+“Region”: “CA”,
+“Postal”: “90045”</p>
+</dd>
+</dl>
+<p>}]</p>
+</dd>
+</dl>
+</td>
+</tr>
+<tr class="row-odd"><td><p>source_country</p></td>
+<td><p>optional string, The <code class="docutils literal notranslate"><span class="pre">source_country</span></code> parameter is
+only supported by geocoders published using StreetMap
+Premium locators.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Added at 10.3 and only supported by geocoders published
+with ArcGIS 10.3 for Server and later versions.</p>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td><p>category</p></td>
+<td><p>The <code class="docutils literal notranslate"><span class="pre">category</span></code> parameter is only supported by geocode
+services published using StreetMap Premium locators.</p></td>
+</tr>
+<tr class="row-odd"><td><p>out_sr</p></td>
+<td><p>optional dictionary, The spatial reference of the
+x/y coordinates returned by a geocode request. This
+is useful for applications using a map with a spatial
+reference different than that of the geocode service.</p></td>
+</tr>
+<tr class="row-even"><td><p>as_featureset</p></td>
+<td><p>optional boolean, if True, the result set is
+returned as a FeatureSet object, else it is a
+dictionary.</p></td>
+</tr>
+<tr class="row-odd"><td><p>geocoder</p></td>
+<td><p>optional <a class="reference internal" href="#arcgis.geocoding.Geocoder" title="arcgis.geocoding.Geocoder"><code class="xref py py-class docutils literal notranslate"><span class="pre">Geocoder</span></code></a>,
+the geocoder to be used.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>If not specified, the active <code class="docutils literal notranslate"><span class="pre">GIS</span></code> instances
+first <code class="docutils literal notranslate"><span class="pre">Geocoder</span></code> is used.</p>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td><p>match_out_of_range</p></td>
+<td><p>Optional, A Boolean which specifies if StreetAddress matches should
+be returned even when the input house number is outside of the house
+number range defined for the input street.</p></td>
+</tr>
+<tr class="row-odd"><td><p>location_type</p></td>
+<td><p>Optional, Specifies if the output geometry of PointAddress matches
+should be the rooftop point or street entrance location. Valid values
+are rooftop and street.</p></td>
+</tr>
+<tr class="row-even"><td><p>search_extent</p></td>
+<td><p>Optional, a set of bounding box coordinates that limit the search
+area to a specific region. The input can either be a comma-separated
+list of coordinates defining the bounding box or a JSON envelope
+object.</p></td>
+</tr>
+<tr class="row-odd"><td><p>lang_code</p></td>
+<td><p>Optional, sets the language in which geocode results are returned.
+See the table of supported countries for valid language code values
+in each country.</p></td>
+</tr>
+<tr class="row-even"><td><p>preferred_label_values</p></td>
+<td><p>Optional, allows simple configuration of output fields returned
+in a response from the World Geocoding Service by specifying which
+address component values should be included in output fields. Supports
+a single value or a comma-delimited collection of values as input.
+e.g. =’matchedCity,primaryStreet’</p></td>
+</tr>
+</tbody>
+</table>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span># Usage Example
+&gt;&gt;&gt; batched = batch_geocode(addresses = [&quot;380 New York St, Redlands, CA&quot;,
+                                                    &quot;1 World Way, Los Angeles, CA&quot;,
+                                                    &quot;1200 Getty Center Drive, Los Angeles, CA&quot;,
+                                                    &quot;5905 Wilshire Boulevard, Los Angeles, CA&quot;,
+                                                    &quot;100 Universal City Plaza, Universal City, CA 91608&quot;,
+                                                    &quot;4800 Oak Grove Dr, Pasadena, CA 91109&quot;]
+                                    as_featureset = True,
+                                    match_out_of_range = True,
+                                    )
+&gt;&gt;&gt; type(batched)
+&lt;:class:`~arcgis.features.FeatureSet&gt;
+</pre></div>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>A dictionary or <a class="reference internal" href="arcgis.features.toc.html#arcgis.features.FeatureSet" title="arcgis.features.FeatureSet"><code class="xref py py-class docutils literal notranslate"><span class="pre">FeatureSet</span></code></a></p>
+</dd>
+</dl>
+</dd></dl>
+
+</div>
+<div class="section" id="suggest">
+<h2>suggest<a class="headerlink" href="#suggest" title="Permalink to this headline">¶</a></h2>
+<dl class="py function">
+<dt id="arcgis.geocoding.suggest">
+<code class="sig-prename descclassname">arcgis.geocoding.</code><code class="sig-name descname">suggest</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">text</span></em>, <em class="sig-param"><span class="n">location</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">distance</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">category</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">geocoder</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">search_extent</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">max_suggestions</span><span class="o">=</span><span class="default_value">5</span></em>, <em class="sig-param"><span class="n">country_code</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.geocoding.suggest" title="Permalink to this definition">¶</a></dt>
+<dd><p>The <code class="docutils literal notranslate"><span class="pre">suggest</span></code> method retrieves a resource representing a list of
+suggested matches for the input text. This resource provides the
+matching text as well as a unique ID value, which links a
+suggestion to a specific place or address.
+A geocoder must meet the following requirements to support
+the suggest operation:</p>
+<ol class="arabic simple">
+<li><p>The address locator from which the geocoder was published</p></li>
+</ol>
+<blockquote>
+<div><p>must support suggestions.</p>
+</div></blockquote>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Only address locators created using
+ArcGIS 10.3 for Desktop and later can support suggestions. See
+the Create Address Locator geoprocessing tool help topic for more
+information.</p>
+</div>
+<ol class="arabic simple" start="2">
+<li><p>The geocoder must have the Suggest capability enabled.</p></li>
+</ol>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<blockquote>
+<div><p>Only <code class="docutils literal notranslate"><span class="pre">geocoders</span></code> published using ArcGIS 10.3 for Server or</p>
+</div></blockquote>
+<p>later support the Suggest capability.</p>
+</div>
+<p>The <code class="docutils literal notranslate"><span class="pre">suggest</span></code> operation allows character-by-character auto-complete
+suggestions to be generated for user input in a client application.
+This capability facilitates the interactive search user experience
+by reducing the number of characters that need to be typed before
+a suggested match is obtained. A client application can provide a
+list of suggestions that is updated with each character typed by a
+user until the address they are looking for appears in the list.</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 18%" />
+<col style="width: 82%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><strong>Argument</strong></p></td>
+<td><p><strong>Description</strong></p></td>
+</tr>
+<tr class="row-even"><td><p>text</p></td>
+<td><p>The input text provided by a user that is used by the
+suggest operation to generate a list of possible
+matches. This is a required parameter.</p></td>
+</tr>
+<tr class="row-odd"><td><p>location</p></td>
+<td><p>Optional x/y dictionary. Defines an origin point location that is used
+with the distance parameter to sort suggested candidates
+based on their proximity to the location. The
+distance parameter specifies the radial distance from
+the location in meters. The priority of candidates
+within this radius is boosted relative to those
+outside the radius.
+This is useful in mobile applications where a user
+wants to search for places in the vicinity of their
+current GPS location. It is also useful for web
+mapping applications where a user wants to find
+places within or near the map extent.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">location</span></code> parameter can be specified without
+specifying a <code class="docutils literal notranslate"><span class="pre">distance</span></code>. If distance is not specified,
+it defaults to 2000 meters.</p>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td><p>distance</p></td>
+<td><p>Optional float. Specifies the radius around the point defined in the
+location parameter to create an area, which is used to boost
+the rank of suggested candidates so that candidates closest to
+the location are returned first. The distance value is in
+meters.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>If the <code class="docutils literal notranslate"><span class="pre">distance</span></code> parameter is specified, the <code class="docutils literal notranslate"><span class="pre">location</span></code>
+parameter must be specified as well.</p>
+</div>
+<p>It is important to note that the <code class="docutils literal notranslate"><span class="pre">location</span></code> and <code class="docutils literal notranslate"><span class="pre">distance</span></code>
+parameters allow searches to extend beyond the specified search
+radius. They are not used to filter results, but rather to rank
+resulting candidates based on their distance from a location.</p>
+</td>
+</tr>
+<tr class="row-odd"><td><p>category</p></td>
+<td><p>The category parameter is only supported by geocode
+services published using StreetMap Premium locators.</p></td>
+</tr>
+<tr class="row-even"><td><p>geocoder</p></td>
+<td><p>Optional <a class="reference internal" href="#arcgis.geocoding.Geocoder" title="arcgis.geocoding.Geocoder"><code class="xref py py-class docutils literal notranslate"><span class="pre">Geocoder</span></code></a> - the geocoder to
+be used. If not specified, the active
+<a class="reference internal" href="arcgis.gis.toc.html#arcgis.gis.GIS" title="arcgis.gis.GIS"><code class="xref py py-class docutils literal notranslate"><span class="pre">GIS</span></code></a> object’s first geocoder is used.</p></td>
+</tr>
+<tr class="row-odd"><td><p>search_extent</p></td>
+<td><p>Optional String/Dict. A set of bounding box coordinates that
+limit the search area to a specific region. You can specify the
+spatial reference of the <cite>search_extent</cite> coordinates, which is
+necessary if the map spatial reference is different than that of
+the geocoding service; otherwise, the spatial reference of the
+map coordinates is assumed to be the same as that of the
+geocoding service. The input can either be a comma-separated list
+of coordinates defining the bounding box or a JSON envelope
+object.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">search_extent</span></code> coordinates should always use a
+period as the decimal separator, even in countries where
+traditionally a comma is used.</p>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td><p>max_suggestions</p></td>
+<td><p>Optional Int.  The maximum number of suggestions returned by the
+suggest operation, up to the maximum number allowed by the
+service.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>If <code class="docutils literal notranslate"><span class="pre">maxSuggestions</span></code> is not included in the suggest
+request, the default value is 5. The maximum suggestions value
+can be modified in the source address locator.</p>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td><p>country_code</p></td>
+<td><p>Optional Str. Limits the returned suggestions to values in a
+particular country. Valid two- and three-character country code
+values for each country are available in geocode coverage.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>When the <code class="docutils literal notranslate"><span class="pre">country_code</span></code> parameter is specified in a
+suggest request, the corresponding <code class="docutils literal notranslate"><span class="pre">geocode</span></code> call must
+also include the <code class="docutils literal notranslate"><span class="pre">country_code</span></code> parameter with the
+same value.</p>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Usage Example</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">suggested</span> <span class="o">=</span> <span class="n">suggest</span><span class="p">(</span><span class="n">text</span> <span class="o">=</span> <span class="s2">&quot;geocoding_text&quot;</span>
+                                <span class="n">location</span> <span class="o">=</span> <span class="n">point1</span><span class="p">,</span>
+                                <span class="n">distance</span> <span class="o">=</span> <span class="mi">5000</span><span class="p">,</span>
+                                <span class="n">max_suggestions</span> <span class="o">=</span> <span class="mi">10</span>
+                                <span class="p">)</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="nb">type</span><span class="p">(</span><span class="n">suggested</span><span class="p">)</span>
+<span class="o">&lt;</span><span class="n">Dictionary</span><span class="o">&gt;</span>
+</pre></div>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>A dictionary</p>
+</dd>
+</dl>
+</dd></dl>
+
+</div>
+</div>
+
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="arcgis.geoenrichment.html" class="btn btn-neutral float-right" title="arcgis.geoenrichment module" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="arcgis.geoanalytics.use_proximity.html" class="btn btn-neutral float-left" title="arcgis.geoanalytics.use_proximity module" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        
+        &copy; Copyright 2016-2021, Esri
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+    Options v: 1.9.1
+
+  <div class="rst-versions" data-toggle="rst-versions" role="note" aria-label="versions">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      <span class="fa fa-book"> Pick an earlier version</span>
+      v: 1.9.1
+      <span class="fa fa-caret-down"></span>
+    </span>
+    <div class="rst-other-versions">
+      
+      
+      <dl>
+        <dt>Versions</dt>
+        
+          
+          <dd><a href="1.9.0/">1.9.0</a></dd>
+          
+        
+          
+          <dd><a href="1.8.5/">1.8.5</a></dd>
+          
+        
+          
+          <dd><a href="1.8.4/">1.8.4</a></dd>
+          
+        
+          
+          <dd><a href="1.8.3/">1.8.3</a></dd>
+          
+        
+          
+          <dd><a href="1.8.2/">1.8.2</a></dd>
+          
+        
+          
+          <dd><a href="1.8.1/">1.8.1</a></dd>
+          
+        
+          
+          <dd><a href="1.8.0/">1.8.0</a></dd>
+          
+        
+          
+          <dd><a href="1.7.1/">1.7.1</a></dd>
+          
+        
+          
+          <dd><a href="1.7.0/">1.7.0</a></dd>
+          
+        
+          
+          <dd><a href="1.6.2/">1.6.2</a></dd>
+          
+        
+          
+          <dd><a href="1.6.1/">1.6.1</a></dd>
+          
+        
+          
+          <dd><a href="1.6.0/">1.6.0</a></dd>
+          
+        
+          
+          <dd><a href="1.5.2/">1.5.2</a></dd>
+          
+        
+          
+          <dd><a href="1.5.1/">1.5.1</a></dd>
+          
+        
+          
+          <dd><a href="1.5.0/">1.5.0</a></dd>
+          
+        
+          
+          <dd><a href="1.4.2/">1.4.2</a></dd>
+          
+        
+          
+          <dd><a href="1.4.1/">1.4.1</a></dd>
+          
+        
+          
+          <dd><a href="1.4.0/">1.4.0</a></dd>
+          
+        
+          
+          <dd><a href="1.3.0/">1.3.0</a></dd>
+          
+        
+          
+          <dd><a href="1.2.5/">1.2.5</a></dd>
+          
+        
+          
+          <dd><a href="1.2.4/">1.2.4</a></dd>
+          
+        
+          
+          <dd><a href="1.2.3/">1.2.3</a></dd>
+          
+        
+          
+          <dd><a href="1.2.2/">1.2.2</a></dd>
+          
+        
+          
+          <dd><a href="1.2.1/">1.2.1</a></dd>
+          
+        
+          
+          <dd><a href="1.2.0/">1.2.0</a></dd>
+          
+        
+          
+          <dd><a href="1.1.0/">1.1.0</a></dd>
+          
+        
+          
+          <dd><a href="1.0.1/">1.0.1</a></dd>
+          
+        
+          
+          <dd><a href="1.0.0/">1.0.0</a></dd>
+          
+        
+          
+          <dd><a href="0.3.0/">0.3.0</a></dd>
+          
+        
+          
+          <dd><a href="0.2.0/">0.2.0</a></dd>
+          
+        
+          
+          <dd><a href="0.1.0/">0.1.0</a></dd>
+          
+        
+      </dl>
+      
+      
+      
+    </div>
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

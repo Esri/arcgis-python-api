@@ -1,0 +1,2232 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <title>arcgis.apps.hub module &mdash; arcgis 2.1.0.3 documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="_static/theme_overrides.css" type="text/css" />
+
+  
+  
+    <link rel="shortcut icon" href="_static/favicon.ico"/>
+  
+
+  
+  
+
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/doctools.js"></script>
+        <script src="_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="arcgis.apps.dashboard module" href="arcgis.apps.dashboard.html" />
+    <link rel="prev" title="arcgis.apps module" href="arcgis.apps.html" />
+<!-- This code block is inserted close near the <head> tag. See http://bit.ly/2BHUQzB -->
+<!-- The point of this code block is to send us google analytics on website views -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-NJGGV5');</script>
+ 
+
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="index.html" class="icon icon-home"> arcgis
+          
+
+          
+            
+            <img src="_static/python_api_logo.png" class="logo" alt="Logo"/>
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                2.1.0.3
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">arcgis</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="arcgis.gis.toc.html">arcgis.gis module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="arcgis.env.html">arcgis.env module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="arcgis.features.toc.html">arcgis.features module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="arcgis.raster.toc.html">arcgis.raster module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="arcgis.network.toc.html">arcgis.network module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="arcgis.notebook.html">arcgis.notebook module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="arcgis.geoanalytics.toc.html">arcgis.geoanalytics module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="arcgis.geocoding.html">arcgis.geocoding module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="arcgis.geoenrichment.html">arcgis.geoenrichment module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="arcgis.geometry.html">arcgis.geometry module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="arcgis.geoprocessing.html">arcgis.geoprocessing module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="arcgis.graph.html">arcgis.graph module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="arcgis.mapping.toc.html">arcgis.mapping module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="arcgis.realtime.html">arcgis.realtime module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="arcgis.schematics.html">arcgis.schematics module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="arcgis.widgets.html">arcgis.widgets module</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="arcgis.apps.html">arcgis.apps module</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="arcgis.apps.html#build-collector-url">build_collector_url</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.apps.html#build-explorer-url">build_explorer_url</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.apps.html#build-field-maps-url">build_field_maps_url</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.apps.html#build-navigator-url">build_navigator_url</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.apps.html#build-survey123-url">build_survey123_url</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.apps.html#build-tracker-url">build_tracker_url</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.apps.html#build-workforce-url">build_workforce_url</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="arcgis.apps.html#submodules">Submodules</a><ul class="current">
+<li class="toctree-l3 current"><a class="current reference internal" href="#">arcgis.apps.hub module</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#hub">Hub</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#initiative">Initiative</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#site">Site</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#page">Page</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#event">Event</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#initiativemanager">InitiativeManager</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#sitemanager">SiteManager</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#pagemanager">PageManager</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#eventmanager">EventManager</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="arcgis.apps.dashboard.html">arcgis.apps.dashboard module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="arcgis.apps.workforce.html">arcgis.apps.workforce module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="arcgis.apps.storymap.html">arcgis.apps.storymap module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="arcgis.apps.survey123.html">arcgis.apps.survey123 module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="arcgis.apps.tracker.html">arcgis.apps.tracker module</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="arcgis.learn.toc.html">arcgis.learn module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="arcgis.auth.html">arcgis.auth package</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">arcgis</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="arcgis.apps.html">arcgis.apps module</a> &raquo;</li>
+        
+      <li>arcgis.apps.hub module</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+<!-- This code block is inserted close near the <body> tag. See http://bit.ly/2BHUQzB -->
+<!-- The point of this code block is to send us google analytics on website views -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NJGGV5"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+
+  <div class="section" id="module-arcgis.apps.hub">
+<span id="arcgis-apps-hub-module"></span><h1>arcgis.apps.hub module<a class="headerlink" href="#module-arcgis.apps.hub" title="Permalink to this headline">¶</a></h1>
+<p>The <code class="xref py py-class docutils literal notranslate"><span class="pre">Hub</span></code> is the main entry point into the Hub module.
+It can be used as shown in the following code example.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">arcgis.gis</span> <span class="kn">import</span> <span class="n">GIS</span>
+<span class="n">gis</span> <span class="o">=</span> <span class="n">GIS</span><span class="p">(</span><span class="s2">&quot;https://arcgis.com&quot;</span><span class="p">,</span> <span class="s2">&quot;&lt;username&gt;&quot;</span><span class="p">,</span> <span class="s2">&quot;&lt;password&gt;&quot;</span><span class="p">)</span>
+<span class="n">myHub</span> <span class="o">=</span> <span class="n">gis</span><span class="o">.</span><span class="n">hub</span>
+<span class="n">a_Initiative</span> <span class="o">=</span> <span class="n">myHub</span><span class="o">.</span><span class="n">initiatives</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">itemId</span><span class="p">)</span>
+<span class="n">a_Site</span> <span class="o">=</span> <span class="n">myHub</span><span class="o">.</span><span class="n">sites</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">a_Initiative</span><span class="o">.</span><span class="n">site_id</span><span class="p">)</span>
+<span class="n">b_Site</span> <span class="o">=</span> <span class="n">myHub</span><span class="o">.</span><span class="n">sites</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">itemId</span><span class="p">)</span>
+<span class="n">c_Page</span> <span class="o">=</span> <span class="n">myHub</span><span class="o">.</span><span class="n">pages</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">itemId</span><span class="p">)</span>
+<span class="n">myEvents</span> <span class="o">=</span> <span class="n">myHub</span><span class="o">.</span><span class="n">events</span><span class="o">.</span><span class="n">search</span><span class="p">()</span>
+</pre></div>
+</div>
+<div class="section" id="hub">
+<h2>Hub<a class="headerlink" href="#hub" title="Permalink to this headline">¶</a></h2>
+<dl class="py class">
+<dt id="arcgis.apps.hub.hub.Hub">
+<em class="property">class </em><code class="sig-prename descclassname">arcgis.apps.hub.hub.</code><code class="sig-name descname">Hub</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">gis</span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.apps.hub.hub.Hub" title="Permalink to this definition">¶</a></dt>
+<dd><p>Entry point into the Hub module. Lets you access an individual hub and its components.</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 18%" />
+<col style="width: 82%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><strong>Parameter</strong></p></td>
+<td><p><strong>Description</strong></p></td>
+</tr>
+<tr class="row-even"><td><p>url</p></td>
+<td><p>Required string. If no URL is provided by user while connecting
+to the GIS, then the URL will be ArcGIS Online.</p></td>
+</tr>
+<tr class="row-odd"><td><p>username</p></td>
+<td><p>Optional string as entered while connecting to GIS. The login user name
+(case-sensitive).</p></td>
+</tr>
+<tr class="row-even"><td><p>password</p></td>
+<td><p>Optional string as entered while connecting to GIS. If a username is
+provided, a password is expected.  This is case-sensitive. If the password
+is not provided, the user is prompted in the interactive dialog.</p></td>
+</tr>
+</tbody>
+</table>
+<dl class="py method">
+<dt id="arcgis.apps.hub.hub.Hub.community_org_id">
+<em class="property">property </em><code class="sig-name descname">community_org_id</code><a class="headerlink" href="#arcgis.apps.hub.hub.Hub.community_org_id" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the AGOL org id of the Community Organization associated with this Premium Hub.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="arcgis.apps.hub.hub.Hub.community_org_url">
+<em class="property">property </em><code class="sig-name descname">community_org_url</code><a class="headerlink" href="#arcgis.apps.hub.hub.Hub.community_org_url" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the AGOL org id of the Community Organization associated with this Premium Hub.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="arcgis.apps.hub.hub.Hub.enterprise_org_id">
+<em class="property">property </em><code class="sig-name descname">enterprise_org_id</code><a class="headerlink" href="#arcgis.apps.hub.hub.Hub.enterprise_org_id" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the AGOL org id of the Enterprise Organization associated with this Premium Hub.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="arcgis.apps.hub.hub.Hub.enterprise_org_url">
+<em class="property">property </em><code class="sig-name descname">enterprise_org_url</code><a class="headerlink" href="#arcgis.apps.hub.hub.Hub.enterprise_org_url" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the AGOL org url of the Enterprise Organization associated with this Premium Hub.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="arcgis.apps.hub.hub.Hub.events">
+<em class="property">property </em><code class="sig-name descname">events</code><a class="headerlink" href="#arcgis.apps.hub.hub.Hub.events" title="Permalink to this definition">¶</a></dt>
+<dd><p>The resource manager for Hub events. See <code class="xref py py-class docutils literal notranslate"><span class="pre">EventManager</span></code>.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="arcgis.apps.hub.hub.Hub.initiatives">
+<em class="property">property </em><code class="sig-name descname">initiatives</code><a class="headerlink" href="#arcgis.apps.hub.hub.Hub.initiatives" title="Permalink to this definition">¶</a></dt>
+<dd><p>The resource manager for Hub initiatives. See <code class="xref py py-class docutils literal notranslate"><span class="pre">InitiativeManager</span></code>.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="arcgis.apps.hub.hub.Hub.pages">
+<em class="property">property </em><code class="sig-name descname">pages</code><a class="headerlink" href="#arcgis.apps.hub.hub.Hub.pages" title="Permalink to this definition">¶</a></dt>
+<dd><p>The resource manager for Hub pages. See <code class="xref py py-class docutils literal notranslate"><span class="pre">PageManager</span></code>.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="arcgis.apps.hub.hub.Hub.sites">
+<em class="property">property </em><code class="sig-name descname">sites</code><a class="headerlink" href="#arcgis.apps.hub.hub.Hub.sites" title="Permalink to this definition">¶</a></dt>
+<dd><p>The resource manager for Hub sites. See <code class="xref py py-class docutils literal notranslate"><span class="pre">SiteManager</span></code>.</p>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="initiative">
+<h2>Initiative<a class="headerlink" href="#initiative" title="Permalink to this headline">¶</a></h2>
+<dl class="py class">
+<dt id="arcgis.apps.hub.initiatives.Initiative">
+<em class="property">class </em><code class="sig-prename descclassname">arcgis.apps.hub.initiatives.</code><code class="sig-name descname">Initiative</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">gis</span></em>, <em class="sig-param"><span class="n">initiativeItem</span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.apps.hub.initiatives.Initiative" title="Permalink to this definition">¶</a></dt>
+<dd><p>Represents an initiative within a Hub. An Initiative supports
+policy- or activity-oriented goals through workflows, tools and team collaboration.</p>
+<dl class="py method">
+<dt id="arcgis.apps.hub.initiatives.Initiative.add_content">
+<code class="sig-name descname">add_content</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">items_list</span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.apps.hub.initiatives.Initiative.add_content" title="Permalink to this definition">¶</a></dt>
+<dd><p>Adds a batch of items to the initiative content library.</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 24%" />
+<col style="width: 76%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><strong>Parameter</strong></p></td>
+<td><p><strong>Description</strong></p></td>
+</tr>
+<tr class="row-even"><td><p>items_list</p></td>
+<td><p>Required list. A list of Item or item ids to add to the initiative.</p></td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="py method">
+<dt id="arcgis.apps.hub.initiatives.Initiative.all_events">
+<em class="property">property </em><code class="sig-name descname">all_events</code><a class="headerlink" href="#arcgis.apps.hub.initiatives.Initiative.all_events" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="arcgis.apps.hub.initiatives.Initiative.collab_group_id">
+<em class="property">property </em><code class="sig-name descname">collab_group_id</code><a class="headerlink" href="#arcgis.apps.hub.initiatives.Initiative.collab_group_id" title="Permalink to this definition">¶</a></dt>
+<dd><p>Getter/Setter for the group id for the collaboration group</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="arcgis.apps.hub.initiatives.Initiative.content_group_id">
+<em class="property">property </em><code class="sig-name descname">content_group_id</code><a class="headerlink" href="#arcgis.apps.hub.initiatives.Initiative.content_group_id" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the group id for the content group</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="arcgis.apps.hub.initiatives.Initiative.delete">
+<code class="sig-name descname">delete</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.apps.hub.initiatives.Initiative.delete" title="Permalink to this definition">¶</a></dt>
+<dd><p>Deletes the initiative, its site and associated groups.
+If unable to delete, raises a RuntimeException.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>A bool containing True (for success) or False (for failure).</p>
+</dd>
+</dl>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">USAGE</span> <span class="n">EXAMPLE</span><span class="p">:</span> <span class="n">Delete</span> <span class="n">an</span> <span class="n">initiative</span> <span class="n">successfully</span>
+
+<span class="n">initiative1</span> <span class="o">=</span> <span class="n">myHub</span><span class="o">.</span><span class="n">initiatives</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;itemId12345&#39;</span><span class="p">)</span>
+<span class="n">initiative1</span><span class="o">.</span><span class="n">delete</span><span class="p">()</span>
+
+<span class="o">&gt;&gt;</span> <span class="kc">True</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt id="arcgis.apps.hub.initiatives.Initiative.description">
+<em class="property">property </em><code class="sig-name descname">description</code><a class="headerlink" href="#arcgis.apps.hub.initiatives.Initiative.description" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the initiative description</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="arcgis.apps.hub.initiatives.Initiative.followers">
+<em class="property">property </em><code class="sig-name descname">followers</code><a class="headerlink" href="#arcgis.apps.hub.initiatives.Initiative.followers" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="arcgis.apps.hub.initiatives.Initiative.followers_group_id">
+<em class="property">property </em><code class="sig-name descname">followers_group_id</code><a class="headerlink" href="#arcgis.apps.hub.initiatives.Initiative.followers_group_id" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the group id for the followers group</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="arcgis.apps.hub.initiatives.Initiative.itemid">
+<em class="property">property </em><code class="sig-name descname">itemid</code><a class="headerlink" href="#arcgis.apps.hub.initiatives.Initiative.itemid" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the item id of the initiative item</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="arcgis.apps.hub.initiatives.Initiative.owner">
+<em class="property">property </em><code class="sig-name descname">owner</code><a class="headerlink" href="#arcgis.apps.hub.initiatives.Initiative.owner" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the owner of the initiative item</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="arcgis.apps.hub.initiatives.Initiative.reassign_to">
+<code class="sig-name descname">reassign_to</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">target_owner</span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.apps.hub.initiatives.Initiative.reassign_to" title="Permalink to this definition">¶</a></dt>
+<dd><p>Allows the administrator to reassign the initiative object from one
+user to another.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>This will transfer ownership of all items (site, pages, content) and groups that
+belong to this initiative to the new target_owner.</p>
+</div>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 24%" />
+<col style="width: 76%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><strong>Parameter</strong></p></td>
+<td><p><strong>Description</strong></p></td>
+</tr>
+<tr class="row-even"><td><p>target_owner</p></td>
+<td><p>Required string. The new desired owner of the initiative.</p></td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="py method">
+<dt id="arcgis.apps.hub.initiatives.Initiative.share">
+<code class="sig-name descname">share</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">everyone</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="n">org</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="n">groups</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">allow_members_to_edit</span><span class="o">=</span><span class="default_value">False</span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.apps.hub.initiatives.Initiative.share" title="Permalink to this definition">¶</a></dt>
+<dd><p>Shares an initiative and associated site with the specified list of groups.</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 28%" />
+<col style="width: 72%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><strong>Parameter</strong></p></td>
+<td><p><strong>Description</strong></p></td>
+</tr>
+<tr class="row-even"><td><p>everyone</p></td>
+<td><p>Optional boolean. Default is False, don’t share with
+everyone.</p></td>
+</tr>
+<tr class="row-odd"><td><p>org</p></td>
+<td><p>Optional boolean. Default is False, don’t share with
+the organization.</p></td>
+</tr>
+<tr class="row-even"><td><p>groups</p></td>
+<td><p>Optional list of group ids as strings, or a list of
+arcgis.gis.Group objects, or a comma-separated list of
+group IDs.</p></td>
+</tr>
+<tr class="row-odd"><td><p>allow_members_to_edit</p></td>
+<td><p>Optional boolean. Default is False, to allow item to be
+shared with groups that allow shared update</p></td>
+</tr>
+</tbody>
+</table>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>A dictionary with key “notSharedWith” containing array of groups with which the items could not be shared.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="arcgis.apps.hub.initiatives.Initiative.site_id">
+<em class="property">property </em><code class="sig-name descname">site_id</code><a class="headerlink" href="#arcgis.apps.hub.initiatives.Initiative.site_id" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the item id of the initiative site</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="arcgis.apps.hub.initiatives.Initiative.site_url">
+<em class="property">property </em><code class="sig-name descname">site_url</code><a class="headerlink" href="#arcgis.apps.hub.initiatives.Initiative.site_url" title="Permalink to this definition">¶</a></dt>
+<dd><p>Getter/Setter for the url of the initiative site</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="arcgis.apps.hub.initiatives.Initiative.sites">
+<em class="property">property </em><code class="sig-name descname">sites</code><a class="headerlink" href="#arcgis.apps.hub.initiatives.Initiative.sites" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="arcgis.apps.hub.initiatives.Initiative.snippet">
+<em class="property">property </em><code class="sig-name descname">snippet</code><a class="headerlink" href="#arcgis.apps.hub.initiatives.Initiative.snippet" title="Permalink to this definition">¶</a></dt>
+<dd><p>Getter/Setter for the initiative snippet</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="arcgis.apps.hub.initiatives.Initiative.tags">
+<em class="property">property </em><code class="sig-name descname">tags</code><a class="headerlink" href="#arcgis.apps.hub.initiatives.Initiative.tags" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the tags of the initiative item</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="arcgis.apps.hub.initiatives.Initiative.title">
+<em class="property">property </em><code class="sig-name descname">title</code><a class="headerlink" href="#arcgis.apps.hub.initiatives.Initiative.title" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the title of the initiative item</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="arcgis.apps.hub.initiatives.Initiative.unshare">
+<code class="sig-name descname">unshare</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">groups</span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.apps.hub.initiatives.Initiative.unshare" title="Permalink to this definition">¶</a></dt>
+<dd><p>Stops sharing of the initiative and its associated site with the specified list of groups.</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 15%" />
+<col style="width: 85%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><strong>Parameter</strong></p></td>
+<td><p><strong>Description</strong></p></td>
+</tr>
+<tr class="row-even"><td><p>groups</p></td>
+<td><p>Required list of group names as strings, or a list of arcgis.gis.Group objects,
+or a comma-separated list of group IDs.</p></td>
+</tr>
+</tbody>
+</table>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>Dictionary with key “notUnsharedFrom” containing array of groups from which the items could not be unshared.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="arcgis.apps.hub.initiatives.Initiative.update">
+<code class="sig-name descname">update</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">initiative_properties</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.apps.hub.initiatives.Initiative.update" title="Permalink to this definition">¶</a></dt>
+<dd><p>Updates the initiative.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>For initiative_properties, pass in arguments for only the properties you want to be updated.
+All other properties will be untouched.  For example, if you want to update only the
+initiative’s description, then only provide the description argument in initiative_properties.</p>
+</div>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 24%" />
+<col style="width: 76%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><strong>Parameter</strong></p></td>
+<td><p><strong>Description</strong></p></td>
+</tr>
+<tr class="row-even"><td><p>initiative_properties</p></td>
+<td><p>Required dictionary. See URL below for the keys and values.</p></td>
+</tr>
+</tbody>
+</table>
+<p>To find the list of applicable options for argument initiative_properties -
+<a class="reference external" href="https://esri.github.io/arcgis-python-api/apidoc/html/arcgis.gis.toc.html#arcgis.gis.Item.update">https://esri.github.io/arcgis-python-api/apidoc/html/arcgis.gis.toc.html#arcgis.gis.Item.update</a></p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>A boolean indicating success (True) or failure (False).</p>
+</dd>
+</dl>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">USAGE</span> <span class="n">EXAMPLE</span><span class="p">:</span> <span class="n">Update</span> <span class="n">an</span> <span class="n">initiative</span> <span class="n">successfully</span>
+
+<span class="n">initiative1</span> <span class="o">=</span> <span class="n">myHub</span><span class="o">.</span><span class="n">initiatives</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;itemId12345&#39;</span><span class="p">)</span>
+<span class="n">initiative1</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">initiative_properties</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;description&#39;</span><span class="p">:</span><span class="s1">&#39;Create your own initiative to organize people around a shared goal.&#39;</span><span class="p">})</span>
+
+<span class="o">&gt;&gt;</span> <span class="kc">True</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt id="arcgis.apps.hub.initiatives.Initiative.url">
+<em class="property">property </em><code class="sig-name descname">url</code><a class="headerlink" href="#arcgis.apps.hub.initiatives.Initiative.url" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the url of the initiative site</p>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="site">
+<h2>Site<a class="headerlink" href="#site" title="Permalink to this headline">¶</a></h2>
+<dl class="py class">
+<dt id="arcgis.apps.hub.sites.Site">
+<em class="property">class </em><code class="sig-prename descclassname">arcgis.apps.hub.sites.</code><code class="sig-name descname">Site</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">gis</span></em>, <em class="sig-param"><span class="n">site_item</span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.apps.hub.sites.Site" title="Permalink to this definition">¶</a></dt>
+<dd><p>Represents a site within a Hub. A site is a container for
+web accessible content.</p>
+<dl class="py method">
+<dt id="arcgis.apps.hub.sites.Site.add_catalog_group">
+<code class="sig-name descname">add_catalog_group</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">group_id</span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.apps.hub.sites.Site.add_catalog_group" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils align-default">
+<colgroup>
+<col style="width: 18%" />
+<col style="width: 82%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><strong>Parameter</strong></p></td>
+<td><p><strong>Description</strong></p></td>
+</tr>
+<tr class="row-even"><td><p>group_id</p></td>
+<td><p>Group id to be added to site catalog</p></td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="py method">
+<dt id="arcgis.apps.hub.sites.Site.add_content">
+<code class="sig-name descname">add_content</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">items_list</span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.apps.hub.sites.Site.add_content" title="Permalink to this definition">¶</a></dt>
+<dd><p>Adds a batch of items to the site content library.</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 24%" />
+<col style="width: 76%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><strong>Parameter</strong></p></td>
+<td><p><strong>Description</strong></p></td>
+</tr>
+<tr class="row-even"><td><p>items_list</p></td>
+<td><p>Required list. A list of Item or item ids to add to the site.</p></td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="py method">
+<dt id="arcgis.apps.hub.sites.Site.catalog_groups">
+<em class="property">property </em><code class="sig-name descname">catalog_groups</code><a class="headerlink" href="#arcgis.apps.hub.sites.Site.catalog_groups" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return Site catalog groups</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="arcgis.apps.hub.sites.Site.collab_group_id">
+<em class="property">property </em><code class="sig-name descname">collab_group_id</code><a class="headerlink" href="#arcgis.apps.hub.sites.Site.collab_group_id" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the groupId for the collaboration group</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="arcgis.apps.hub.sites.Site.content_group_id">
+<em class="property">property </em><code class="sig-name descname">content_group_id</code><a class="headerlink" href="#arcgis.apps.hub.sites.Site.content_group_id" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the groupId for the content group</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="arcgis.apps.hub.sites.Site.delete">
+<code class="sig-name descname">delete</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.apps.hub.sites.Site.delete" title="Permalink to this definition">¶</a></dt>
+<dd><p>Deletes the Enterprise site. If unable to delete, raises a RuntimeException.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>A bool containing True (for success) or False (for failure).</p>
+</dd>
+</dl>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Deleting the <cite>site</cite> object (instead of the <cite>Item</cite> object) for the site is encouraged,
+to also delete the groups associated with the site.</p>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">USAGE</span> <span class="n">EXAMPLE</span><span class="p">:</span> <span class="n">Delete</span> <span class="n">a</span> <span class="n">site</span> <span class="n">successfully</span>
+
+<span class="n">site1</span> <span class="o">=</span> <span class="n">gis</span><span class="o">.</span><span class="n">sites</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;itemId12345&#39;</span><span class="p">)</span>
+<span class="n">site1</span><span class="o">.</span><span class="n">delete</span><span class="p">()</span>
+
+<span class="o">&gt;&gt;</span> <span class="kc">True</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt id="arcgis.apps.hub.sites.Site.delete_catalog_group">
+<code class="sig-name descname">delete_catalog_group</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">group_id</span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.apps.hub.sites.Site.delete_catalog_group" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils align-default">
+<colgroup>
+<col style="width: 18%" />
+<col style="width: 82%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><strong>Parameter</strong></p></td>
+<td><p><strong>Description</strong></p></td>
+</tr>
+<tr class="row-even"><td><p>group_id</p></td>
+<td><p>Group id to be added to site catalog</p></td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="py method">
+<dt id="arcgis.apps.hub.sites.Site.description">
+<em class="property">property </em><code class="sig-name descname">description</code><a class="headerlink" href="#arcgis.apps.hub.sites.Site.description" title="Permalink to this definition">¶</a></dt>
+<dd><p>Getter/Setter for the site description</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="arcgis.apps.hub.sites.Site.initiative">
+<em class="property">property </em><code class="sig-name descname">initiative</code><a class="headerlink" href="#arcgis.apps.hub.sites.Site.initiative" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the initiative object (if available) for the site</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="arcgis.apps.hub.sites.Site.initiative_id">
+<em class="property">property </em><code class="sig-name descname">initiative_id</code><a class="headerlink" href="#arcgis.apps.hub.sites.Site.initiative_id" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the initiative id (if available) of the site</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="arcgis.apps.hub.sites.Site.itemid">
+<em class="property">property </em><code class="sig-name descname">itemid</code><a class="headerlink" href="#arcgis.apps.hub.sites.Site.itemid" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the item id of the site item</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="arcgis.apps.hub.sites.Site.layout">
+<em class="property">property </em><code class="sig-name descname">layout</code><a class="headerlink" href="#arcgis.apps.hub.sites.Site.layout" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return layout of a site</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="arcgis.apps.hub.sites.Site.owner">
+<em class="property">property </em><code class="sig-name descname">owner</code><a class="headerlink" href="#arcgis.apps.hub.sites.Site.owner" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the owner of the site item</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="arcgis.apps.hub.sites.Site.pages">
+<em class="property">property </em><code class="sig-name descname">pages</code><a class="headerlink" href="#arcgis.apps.hub.sites.Site.pages" title="Permalink to this definition">¶</a></dt>
+<dd><p>The resource manager for an Initiative’s indicators.
+See <code class="xref py py-class docutils literal notranslate"><span class="pre">PageManager</span></code>.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="arcgis.apps.hub.sites.Site.reassign_to">
+<code class="sig-name descname">reassign_to</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">target_owner</span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.apps.hub.sites.Site.reassign_to" title="Permalink to this definition">¶</a></dt>
+<dd><p>Allows the administrator to reassign the Enterprise site object from one
+user to another.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>This will transfer ownership of all items (site, pages, content) and groups to the new target_owner.</p>
+</div>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 24%" />
+<col style="width: 76%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><strong>Parameter</strong></p></td>
+<td><p><strong>Description</strong></p></td>
+</tr>
+<tr class="row-even"><td><p>target_owner</p></td>
+<td><p>Required string. The new desired owner of the site.</p></td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="py method">
+<dt id="arcgis.apps.hub.sites.Site.search">
+<code class="sig-name descname">search</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">query</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">item_type</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.apps.hub.sites.Site.search" title="Permalink to this definition">¶</a></dt>
+<dd><p>Search and filter content for a site.</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 24%" />
+<col style="width: 76%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><strong>Parameter</strong></p></td>
+<td><p><strong>Description</strong></p></td>
+</tr>
+<tr class="row-even"><td><p>query</p></td>
+<td><p>Optional string. Filters items by presence of search query in title.</p></td>
+</tr>
+<tr class="row-odd"><td><p>item_type</p></td>
+<td><p>Optional list. Returns items of particular type.</p></td>
+</tr>
+</tbody>
+</table>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>List of items shared with this site.</p>
+</dd>
+</dl>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">USAGE</span> <span class="n">EXAMPLE</span><span class="p">:</span> <span class="n">Succcessfully</span> <span class="n">fetch</span> <span class="n">items</span> <span class="n">of</span> <span class="n">item_type</span> <span class="s1">&#39;Web Mapping Application&#39;</span>
+<span class="k">for</span> <span class="n">particular</span> <span class="n">query</span> <span class="s1">&#39;school&#39;</span> <span class="k">for</span> <span class="n">site</span>
+
+<span class="n">site1</span> <span class="o">=</span> <span class="n">myHub</span><span class="o">.</span><span class="n">sites</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;itemId12345&#39;</span><span class="p">)</span>
+<span class="n">site_apps</span> <span class="o">=</span> <span class="n">site1</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="n">query</span><span class="o">=</span><span class="s1">&#39;school&#39;</span><span class="p">,</span> <span class="n">item_type</span><span class="o">=</span><span class="s1">&#39;Web Map&#39;</span><span class="p">)</span>
+<span class="n">site_apps</span>
+
+<span class="o">&gt;&gt;</span> <span class="n">List</span> <span class="n">of</span> <span class="n">relevant</span> <span class="n">items</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt id="arcgis.apps.hub.sites.Site.tags">
+<em class="property">property </em><code class="sig-name descname">tags</code><a class="headerlink" href="#arcgis.apps.hub.sites.Site.tags" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the tags of the site item</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="arcgis.apps.hub.sites.Site.theme">
+<em class="property">property </em><code class="sig-name descname">theme</code><a class="headerlink" href="#arcgis.apps.hub.sites.Site.theme" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return theme of a site</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="arcgis.apps.hub.sites.Site.title">
+<em class="property">property </em><code class="sig-name descname">title</code><a class="headerlink" href="#arcgis.apps.hub.sites.Site.title" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the title of the site item</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="arcgis.apps.hub.sites.Site.update">
+<code class="sig-name descname">update</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">site_properties</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">subdomain</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.apps.hub.sites.Site.update" title="Permalink to this definition">¶</a></dt>
+<dd><p>Updates the site.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>For site_properties, pass in arguments for only the properties you want to be updated.
+All other properties will be untouched.  For example, if you want to update only the
+site’s description, then only provide the description argument in site_properties.</p>
+</div>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 24%" />
+<col style="width: 76%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><strong>Parameter</strong></p></td>
+<td><p><strong>Description</strong></p></td>
+</tr>
+<tr class="row-even"><td><p>site_properties</p></td>
+<td><p>Required dictionary. See URL below for the keys and values.</p></td>
+</tr>
+<tr class="row-odd"><td><p>subdomain</p></td>
+<td><p>Optional string. New subdomain for the site.</p></td>
+</tr>
+</tbody>
+</table>
+<p>To find the list of applicable options for argument site_properties -
+<a class="reference external" href="https://esri.github.io/arcgis-python-api/apidoc/html/arcgis.gis.toc.html#arcgis.gis.Item.update">https://esri.github.io/arcgis-python-api/apidoc/html/arcgis.gis.toc.html#arcgis.gis.Item.update</a></p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>A boolean indicating success (True) or failure (False).</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="arcgis.apps.hub.sites.Site.update_layout">
+<code class="sig-name descname">update_layout</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">layout</span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.apps.hub.sites.Site.update_layout" title="Permalink to this definition">¶</a></dt>
+<dd><p>Updates the layout of the site.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>This operation can only be performed by the owner of the site or by an org administrator.</p>
+</div>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 23%" />
+<col style="width: 77%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><strong>Parameter</strong></p></td>
+<td><p><strong>Description</strong></p></td>
+</tr>
+<tr class="row-even"><td><p>layout</p></td>
+<td><p>Required dictionary. The new layout dictionary to update to the site.</p></td>
+</tr>
+</tbody>
+</table>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>A boolean indicating success (True) or failure (False).</p>
+</dd>
+</dl>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">USAGE</span> <span class="n">EXAMPLE</span><span class="p">:</span> <span class="n">Update</span> <span class="n">a</span> <span class="n">site</span> <span class="n">successfully</span>
+
+<span class="n">site1</span> <span class="o">=</span> <span class="n">myHub</span><span class="o">.</span><span class="n">sites</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;itemId12345&#39;</span><span class="p">)</span>
+<span class="n">site_layout</span> <span class="o">=</span> <span class="n">site1</span><span class="o">.</span><span class="n">layout</span>
+<span class="n">site_layout</span><span class="o">.</span><span class="n">sections</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">rows</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">cards</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+<span class="n">site1</span><span class="o">.</span><span class="n">update_layout</span><span class="p">(</span><span class="n">layout</span> <span class="o">=</span> <span class="n">site_layout</span><span class="p">)</span>
+
+<span class="o">&gt;&gt;</span> <span class="kc">True</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt id="arcgis.apps.hub.sites.Site.update_theme">
+<code class="sig-name descname">update_theme</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">theme</span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.apps.hub.sites.Site.update_theme" title="Permalink to this definition">¶</a></dt>
+<dd><p>Updates the theme of the site.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>This operation can only be performed by the owner of the site or by an org administrator.</p>
+</div>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 24%" />
+<col style="width: 76%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><strong>Parameter</strong></p></td>
+<td><p><strong>Description</strong></p></td>
+</tr>
+<tr class="row-even"><td><p>theme</p></td>
+<td><p>Required dictionary. The new theme dictionary to update to the site.</p></td>
+</tr>
+</tbody>
+</table>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>A boolean indicating success (True) or failure (False).</p>
+</dd>
+</dl>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">USAGE</span> <span class="n">EXAMPLE</span><span class="p">:</span> <span class="n">Update</span> <span class="n">a</span> <span class="n">site</span> <span class="n">successfully</span>
+
+<span class="n">site1</span> <span class="o">=</span> <span class="n">myHub</span><span class="o">.</span><span class="n">sites</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;itemId12345&#39;</span><span class="p">)</span>
+<span class="n">site_theme</span> <span class="o">=</span> <span class="n">site1</span><span class="o">.</span><span class="n">theme</span>
+<span class="n">site_theme</span><span class="o">.</span><span class="n">body</span><span class="o">.</span><span class="n">background</span> <span class="o">=</span> <span class="s1">&#39;#ffffff&#39;</span>
+<span class="n">site1</span><span class="o">.</span><span class="n">update_theme</span><span class="p">(</span><span class="n">theme</span> <span class="o">=</span> <span class="n">site_theme</span><span class="p">)</span>
+
+<span class="o">&gt;&gt;</span> <span class="kc">True</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt id="arcgis.apps.hub.sites.Site.url">
+<em class="property">property </em><code class="sig-name descname">url</code><a class="headerlink" href="#arcgis.apps.hub.sites.Site.url" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the url of the site</p>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="page">
+<h2>Page<a class="headerlink" href="#page" title="Permalink to this headline">¶</a></h2>
+<dl class="py class">
+<dt id="arcgis.apps.hub.sites.Page">
+<em class="property">class </em><code class="sig-prename descclassname">arcgis.apps.hub.sites.</code><code class="sig-name descname">Page</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">gis</span></em>, <em class="sig-param"><span class="n">page_item</span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.apps.hub.sites.Page" title="Permalink to this definition">¶</a></dt>
+<dd><p>Represents a page belonging to a site in Hub. A Page is a layout of
+content that can be rendered within the context of a Site</p>
+<dl class="py method">
+<dt id="arcgis.apps.hub.sites.Page.delete">
+<code class="sig-name descname">delete</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.apps.hub.sites.Page.delete" title="Permalink to this definition">¶</a></dt>
+<dd><p>Deletes the page. If unable to delete, raises a RuntimeException.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>A bool containing True (for success) or False (for failure).</p>
+</dd>
+</dl>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">USAGE</span> <span class="n">EXAMPLE</span><span class="p">:</span> <span class="n">Delete</span> <span class="n">a</span> <span class="n">page</span> <span class="n">successfully</span>
+
+<span class="n">page1</span> <span class="o">=</span> <span class="n">myHub</span><span class="o">.</span><span class="n">pages</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;itemId12345&#39;</span><span class="p">)</span>
+<span class="n">page1</span><span class="o">.</span><span class="n">delete</span><span class="p">()</span>
+
+<span class="o">&gt;&gt;</span> <span class="kc">True</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt id="arcgis.apps.hub.sites.Page.description">
+<em class="property">property </em><code class="sig-name descname">description</code><a class="headerlink" href="#arcgis.apps.hub.sites.Page.description" title="Permalink to this definition">¶</a></dt>
+<dd><p>Getter/Setter for the page description</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="arcgis.apps.hub.sites.Page.itemid">
+<em class="property">property </em><code class="sig-name descname">itemid</code><a class="headerlink" href="#arcgis.apps.hub.sites.Page.itemid" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the item id of the page item</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="arcgis.apps.hub.sites.Page.layout">
+<em class="property">property </em><code class="sig-name descname">layout</code><a class="headerlink" href="#arcgis.apps.hub.sites.Page.layout" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return layout of a page</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="arcgis.apps.hub.sites.Page.owner">
+<em class="property">property </em><code class="sig-name descname">owner</code><a class="headerlink" href="#arcgis.apps.hub.sites.Page.owner" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the owner of the page item</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="arcgis.apps.hub.sites.Page.slug">
+<em class="property">property </em><code class="sig-name descname">slug</code><a class="headerlink" href="#arcgis.apps.hub.sites.Page.slug" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the page slug</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="arcgis.apps.hub.sites.Page.tags">
+<em class="property">property </em><code class="sig-name descname">tags</code><a class="headerlink" href="#arcgis.apps.hub.sites.Page.tags" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the tags of the page item</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="arcgis.apps.hub.sites.Page.title">
+<em class="property">property </em><code class="sig-name descname">title</code><a class="headerlink" href="#arcgis.apps.hub.sites.Page.title" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the title of the page item</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="arcgis.apps.hub.sites.Page.update">
+<code class="sig-name descname">update</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">page_properties</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">slug</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.apps.hub.sites.Page.update" title="Permalink to this definition">¶</a></dt>
+<dd><p>Updates the page.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>For page_properties, pass in arguments for only the properties you want to be updated.
+All other properties will be untouched.  For example, if you want to update only the
+page’s description, then only provide the description argument in page_properties.</p>
+</div>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 24%" />
+<col style="width: 76%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><strong>Parameter</strong></p></td>
+<td><p><strong>Description</strong></p></td>
+</tr>
+<tr class="row-even"><td><p>page_properties</p></td>
+<td><p>Required dictionary. See URL below for the keys and values.</p></td>
+</tr>
+<tr class="row-odd"><td><p>slug</p></td>
+<td><p>Optional string. The slug or subdomain for the page.</p></td>
+</tr>
+</tbody>
+</table>
+<p>To find the list of applicable options for argument page_properties -
+<a class="reference external" href="https://esri.github.io/arcgis-python-api/apidoc/html/arcgis.gis.toc.html#arcgis.gis.Item.update">https://esri.github.io/arcgis-python-api/apidoc/html/arcgis.gis.toc.html#arcgis.gis.Item.update</a></p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>A boolean indicating success (True) or failure (False).</p>
+</dd>
+</dl>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">USAGE</span> <span class="n">EXAMPLE</span><span class="p">:</span> <span class="n">Update</span> <span class="n">a</span> <span class="n">page</span> <span class="n">successfully</span>
+
+<span class="n">page1</span> <span class="o">=</span> <span class="n">mySite</span><span class="o">.</span><span class="n">pages</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;itemId12345&#39;</span><span class="p">)</span>
+<span class="n">page1</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">page_properties</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;description&#39;</span><span class="p">:</span><span class="s1">&#39;Description for page.&#39;</span><span class="p">})</span>
+
+<span class="o">&gt;&gt;</span> <span class="kc">True</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt id="arcgis.apps.hub.sites.Page.update_layout">
+<code class="sig-name descname">update_layout</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">layout</span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.apps.hub.sites.Page.update_layout" title="Permalink to this definition">¶</a></dt>
+<dd><p>Updates the layout of the page.</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 23%" />
+<col style="width: 77%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><strong>Parameter</strong></p></td>
+<td><p><strong>Description</strong></p></td>
+</tr>
+<tr class="row-even"><td><p>layout</p></td>
+<td><p>Required dictionary. The new layout dictionary to update to the page.</p></td>
+</tr>
+</tbody>
+</table>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>A boolean indicating success (True) or failure (False).</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="event">
+<h2>Event<a class="headerlink" href="#event" title="Permalink to this headline">¶</a></h2>
+<dl class="py class">
+<dt id="arcgis.apps.hub.Event">
+<em class="property">class </em><code class="sig-prename descclassname">arcgis.apps.hub.</code><code class="sig-name descname">Event</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">gis</span></em>, <em class="sig-param"><span class="n">event_object</span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.apps.hub.Event" title="Permalink to this definition">¶</a></dt>
+<dd><p>Represents an event in a Hub. A Hub has many Events that can be associated with an Initiative.
+Events are meetings for people to support an Initiative. Events are scheduled by an organizer
+and have many attendees. An Event has a Group so that they can include content for preparation
+as well as gather and archive content during the event for later retrieval or analysis.</p>
+<dl class="py method">
+<dt id="arcgis.apps.hub.Event.access">
+<em class="property">property </em><code class="sig-name descname">access</code><a class="headerlink" href="#arcgis.apps.hub.Event.access" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns access permissions of the event</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="arcgis.apps.hub.Event.address">
+<em class="property">property </em><code class="sig-name descname">address</code><a class="headerlink" href="#arcgis.apps.hub.Event.address" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the street address for the venue of the event</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="arcgis.apps.hub.Event.attendance">
+<em class="property">property </em><code class="sig-name descname">attendance</code><a class="headerlink" href="#arcgis.apps.hub.Event.attendance" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns attendance count for a past event</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="arcgis.apps.hub.Event.capacity">
+<em class="property">property </em><code class="sig-name descname">capacity</code><a class="headerlink" href="#arcgis.apps.hub.Event.capacity" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns attendance capacity for attendees of the event</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="arcgis.apps.hub.Event.creator">
+<em class="property">property </em><code class="sig-name descname">creator</code><a class="headerlink" href="#arcgis.apps.hub.Event.creator" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns creator of the event</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="arcgis.apps.hub.Event.delete">
+<code class="sig-name descname">delete</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.apps.hub.Event.delete" title="Permalink to this definition">¶</a></dt>
+<dd><p>Deletes an event</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>A bool containing True (for success) or False (for failure).</p>
+</dd>
+</dl>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">USAGE</span> <span class="n">EXAMPLE</span><span class="p">:</span> <span class="n">Delete</span> <span class="n">an</span> <span class="n">event</span> <span class="n">successfully</span>
+
+<span class="n">event1</span> <span class="o">=</span> <span class="n">myhub</span><span class="o">.</span><span class="n">events</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="mi">24</span><span class="p">)</span>
+<span class="n">event1</span><span class="o">.</span><span class="n">delete</span><span class="p">()</span>
+
+<span class="o">&gt;&gt;</span> <span class="kc">True</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt id="arcgis.apps.hub.Event.description">
+<em class="property">property </em><code class="sig-name descname">description</code><a class="headerlink" href="#arcgis.apps.hub.Event.description" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns description of the event</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="arcgis.apps.hub.Event.end_date">
+<em class="property">property </em><code class="sig-name descname">end_date</code><a class="headerlink" href="#arcgis.apps.hub.Event.end_date" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns end date of the event in milliseconds since UNIX epoch</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="arcgis.apps.hub.Event.event_id">
+<em class="property">property </em><code class="sig-name descname">event_id</code><a class="headerlink" href="#arcgis.apps.hub.Event.event_id" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the unique identifier of the event</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="arcgis.apps.hub.Event.geometry">
+<em class="property">property </em><code class="sig-name descname">geometry</code><a class="headerlink" href="#arcgis.apps.hub.Event.geometry" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns co-ordinates of the event location</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="arcgis.apps.hub.Event.group_id">
+<em class="property">property </em><code class="sig-name descname">group_id</code><a class="headerlink" href="#arcgis.apps.hub.Event.group_id" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns groupId for the event</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="arcgis.apps.hub.Event.initiative_id">
+<em class="property">property </em><code class="sig-name descname">initiative_id</code><a class="headerlink" href="#arcgis.apps.hub.Event.initiative_id" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the initiative id of the initiative the event belongs to</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="arcgis.apps.hub.Event.is_cancelled">
+<em class="property">property </em><code class="sig-name descname">is_cancelled</code><a class="headerlink" href="#arcgis.apps.hub.Event.is_cancelled" title="Permalink to this definition">¶</a></dt>
+<dd><p>Check if event is Cancelled</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="arcgis.apps.hub.Event.organizers">
+<em class="property">property </em><code class="sig-name descname">organizers</code><a class="headerlink" href="#arcgis.apps.hub.Event.organizers" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the name and email of the event organizers</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="arcgis.apps.hub.Event.start_date">
+<em class="property">property </em><code class="sig-name descname">start_date</code><a class="headerlink" href="#arcgis.apps.hub.Event.start_date" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns start date of the event in milliseconds since UNIX epoch</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="arcgis.apps.hub.Event.title">
+<em class="property">property </em><code class="sig-name descname">title</code><a class="headerlink" href="#arcgis.apps.hub.Event.title" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the title of the event</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="arcgis.apps.hub.Event.update">
+<code class="sig-name descname">update</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">event_properties</span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.apps.hub.Event.update" title="Permalink to this definition">¶</a></dt>
+<dd><p>Updates properties of an event</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>A bool containing True (for success) or False (for failure).</p>
+</dd>
+</dl>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">USAGE</span> <span class="n">EXAMPLE</span><span class="p">:</span> <span class="n">Update</span> <span class="n">an</span> <span class="n">event</span> <span class="n">successfully</span>
+
+<span class="n">event1</span> <span class="o">=</span> <span class="n">myhub</span><span class="o">.</span><span class="n">events</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="nb">id</span><span class="p">)</span>
+<span class="n">event_properties</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;status&#39;</span><span class="p">:</span> <span class="s1">&#39;planned&#39;</span><span class="p">,</span> <span class="n">description</span><span class="p">:</span> <span class="s1">&#39;Test&#39;</span><span class="p">}</span>
+<span class="n">event1</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">event_properties</span><span class="p">)</span>
+
+<span class="o">&gt;&gt;</span> <span class="kc">True</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt id="arcgis.apps.hub.Event.venue">
+<em class="property">property </em><code class="sig-name descname">venue</code><a class="headerlink" href="#arcgis.apps.hub.Event.venue" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the location of the event</p>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="initiativemanager">
+<h2>InitiativeManager<a class="headerlink" href="#initiativemanager" title="Permalink to this headline">¶</a></h2>
+<dl class="py class">
+<dt id="arcgis.apps.hub.initiatives.InitiativeManager">
+<em class="property">class </em><code class="sig-prename descclassname">arcgis.apps.hub.initiatives.</code><code class="sig-name descname">InitiativeManager</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">hub</span></em>, <em class="sig-param"><span class="n">initiative</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.apps.hub.initiatives.InitiativeManager" title="Permalink to this definition">¶</a></dt>
+<dd><p>Helper class for managing initiatives within a Hub. This class is not created by users directly.
+An instance of this class, called ‘initiatives’, is available as a property of the Hub object. Users
+call methods on this ‘initiatives’ object to manipulate (add, get, search, etc) initiatives.</p>
+<dl class="py method">
+<dt id="arcgis.apps.hub.initiatives.InitiativeManager.add">
+<code class="sig-name descname">add</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">title</span></em>, <em class="sig-param"><span class="n">description</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">site</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.apps.hub.initiatives.InitiativeManager.add" title="Permalink to this definition">¶</a></dt>
+<dd><p>Adds a new initiative to the Hub.</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 20%" />
+<col style="width: 80%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><strong>Parameter</strong></p></td>
+<td><p><strong>Description</strong></p></td>
+</tr>
+<tr class="row-even"><td><p>title</p></td>
+<td><p>Required string.</p></td>
+</tr>
+<tr class="row-odd"><td><p>description</p></td>
+<td><p>Optional string.</p></td>
+</tr>
+<tr class="row-even"><td><p>site</p></td>
+<td><p>Optional Site object.</p></td>
+</tr>
+</tbody>
+</table>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>The <code class="xref py py-class docutils literal notranslate"><span class="pre">Initiative</span></code> object if successfully added, None if unsuccessful.</p>
+</dd>
+</dl>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">USAGE</span> <span class="n">EXAMPLE</span><span class="p">:</span> <span class="n">Add</span> <span class="n">an</span> <span class="n">initiative</span> <span class="n">successfully</span>
+
+<span class="n">initiative1</span> <span class="o">=</span> <span class="n">myHub</span><span class="o">.</span><span class="n">initiatives</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">title</span><span class="o">=</span><span class="s1">&#39;Vision Zero Analysis&#39;</span><span class="p">)</span>
+<span class="n">initiative1</span><span class="o">.</span><span class="n">item</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt id="arcgis.apps.hub.initiatives.InitiativeManager.clone">
+<code class="sig-name descname">clone</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">initiative</span></em>, <em class="sig-param"><span class="n">origin_hub</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">title</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.apps.hub.initiatives.InitiativeManager.clone" title="Permalink to this definition">¶</a></dt>
+<dd><p>Clone allows for the creation of an initiative that is derived from the current initiative.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>If both your <cite>origin_hub</cite> and <cite>destination_hub</cite> are Hub Basic organizations, please use the
+<cite>clone</cite> method supported under the <cite>~arcgis.apps.sites.SiteManager</cite> class.</p>
+</div>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 14%" />
+<col style="width: 86%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><strong>Parameter</strong></p></td>
+<td><p><strong>Description</strong></p></td>
+</tr>
+<tr class="row-even"><td><p>initiative</p></td>
+<td><p>Required <code class="xref py py-class docutils literal notranslate"><span class="pre">Initiative</span></code> object of initiative to be cloned.</p></td>
+</tr>
+<tr class="row-odd"><td><p>origin_hub</p></td>
+<td><p>Optional <code class="xref py py-class docutils literal notranslate"><span class="pre">Hub</span></code> object. Required only for cross-org clones where the
+initiative being cloned is not an item with public access.</p></td>
+</tr>
+<tr class="row-even"><td><p>title</p></td>
+<td><p>Optional String.</p></td>
+</tr>
+</tbody>
+</table>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p><code class="xref py py-class docutils literal notranslate"><span class="pre">Initiative</span></code> object</p>
+</dd>
+</dl>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">USAGE</span> <span class="n">EXAMPLE</span><span class="p">:</span> <span class="n">Clone</span> <span class="n">an</span> <span class="n">initiative</span> <span class="ow">in</span> <span class="n">another</span> <span class="n">organization</span>
+
+<span class="c1">#Connect to Hub</span>
+<span class="n">hub_origin</span> <span class="o">=</span> <span class="n">gis1</span><span class="o">.</span><span class="n">hub</span>
+<span class="n">hub_destination</span> <span class="o">=</span> <span class="n">gis2</span><span class="o">.</span><span class="n">hub</span>
+<span class="c1">#Fetch initiative</span>
+<span class="n">initiative1</span> <span class="o">=</span> <span class="n">hub_origin</span><span class="o">.</span><span class="n">initiatives</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;itemid12345&#39;</span><span class="p">)</span>
+<span class="c1">#Clone in another Hub</span>
+<span class="n">initiative_cloned</span> <span class="o">=</span> <span class="n">hub_destination</span><span class="o">.</span><span class="n">initiatives</span><span class="o">.</span><span class="n">clone</span><span class="p">(</span><span class="n">initiative1</span><span class="p">,</span> <span class="n">origin_hub</span><span class="o">=</span><span class="n">hub_origin</span><span class="p">)</span>
+<span class="n">initiative_cloned</span><span class="o">.</span><span class="n">item</span>
+
+
+<span class="n">USAGE</span> <span class="n">EXAMPLE</span><span class="p">:</span> <span class="n">Clone</span> <span class="n">initiative</span> <span class="ow">in</span> <span class="n">the</span> <span class="n">same</span> <span class="n">organization</span>
+
+<span class="n">myhub</span> <span class="o">=</span> <span class="n">gis</span><span class="o">.</span><span class="n">hub</span>
+<span class="n">initiative1</span> <span class="o">=</span> <span class="n">myhub</span><span class="o">.</span><span class="n">initiatives</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;itemid12345&#39;</span><span class="p">)</span>
+<span class="n">initiative2</span> <span class="o">=</span> <span class="n">myhub</span><span class="o">.</span><span class="n">initiatives</span><span class="o">.</span><span class="n">clone</span><span class="p">(</span><span class="n">initiative1</span><span class="p">,</span> <span class="n">title</span><span class="o">=</span><span class="s1">&#39;New Initiative&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt id="arcgis.apps.hub.initiatives.InitiativeManager.get">
+<code class="sig-name descname">get</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">initiative_id</span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.apps.hub.initiatives.InitiativeManager.get" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the initiative object for the specified initiative_id.</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 27%" />
+<col style="width: 73%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><strong>Parameter</strong></p></td>
+<td><p><strong>Description</strong></p></td>
+</tr>
+<tr class="row-even"><td><p>initiative_id</p></td>
+<td><p>Required string. The initiative itemid.</p></td>
+</tr>
+</tbody>
+</table>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>The <code class="xref py py-class docutils literal notranslate"><span class="pre">Initiative</span></code> object if the item is found, None if the item is not found.</p>
+</dd>
+</dl>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">USAGE</span> <span class="n">EXAMPLE</span><span class="p">:</span> <span class="n">Fetch</span> <span class="n">an</span> <span class="n">initiative</span> <span class="n">successfully</span>
+
+<span class="n">initiative1</span> <span class="o">=</span> <span class="n">myHub</span><span class="o">.</span><span class="n">initiatives</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;itemId12345&#39;</span><span class="p">)</span>
+<span class="n">initiative1</span><span class="o">.</span><span class="n">item</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt id="arcgis.apps.hub.initiatives.InitiativeManager.search">
+<code class="sig-name descname">search</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">title</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">owner</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">created</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">modified</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">tags</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.apps.hub.initiatives.InitiativeManager.search" title="Permalink to this definition">¶</a></dt>
+<dd><p>Searches for initiatives.</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 18%" />
+<col style="width: 82%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><strong>Parameter</strong></p></td>
+<td><p><strong>Description</strong></p></td>
+</tr>
+<tr class="row-even"><td><p>title</p></td>
+<td><p>Optional string. Return initiatives with provided string in title.</p></td>
+</tr>
+<tr class="row-odd"><td><p>owner</p></td>
+<td><p>Optional string. Return initiatives owned by a username.</p></td>
+</tr>
+<tr class="row-even"><td><p>created</p></td>
+<td><p>Optional string. Date the initiative was created.
+Shown in milliseconds since UNIX epoch.</p></td>
+</tr>
+<tr class="row-odd"><td><p>modified</p></td>
+<td><p>Optional string. Date the initiative was last modified.
+Shown in milliseconds since UNIX epoch</p></td>
+</tr>
+<tr class="row-even"><td><p>tags</p></td>
+<td><p>Optional string. User-defined tags that describe the initiative.</p></td>
+</tr>
+</tbody>
+</table>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>A list of matching <code class="xref py py-class docutils literal notranslate"><span class="pre">Initiative</span></code> objects.</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="sitemanager">
+<h2>SiteManager<a class="headerlink" href="#sitemanager" title="Permalink to this headline">¶</a></h2>
+<dl class="py class">
+<dt id="arcgis.apps.hub.sites.SiteManager">
+<em class="property">class </em><code class="sig-prename descclassname">arcgis.apps.hub.sites.</code><code class="sig-name descname">SiteManager</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">gis</span></em>, <em class="sig-param"><span class="n">initiative</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.apps.hub.sites.SiteManager" title="Permalink to this definition">¶</a></dt>
+<dd><p>Helper class for managing sites within a Hub. This class is not created by users directly.
+An instance of this class, called ‘sites’, is available as a property of the Hub object. Users
+call methods on this ‘sites’ object to manipulate (add, get, search, etc) sites.</p>
+<dl class="py method">
+<dt id="arcgis.apps.hub.sites.SiteManager.add">
+<code class="sig-name descname">add</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">title</span></em>, <em class="sig-param"><span class="n">subdomain</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.apps.hub.sites.SiteManager.add" title="Permalink to this definition">¶</a></dt>
+<dd><p>Adds a new site.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Unicode characters are not allowed in the title of the site.</p>
+</div>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 18%" />
+<col style="width: 82%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><strong>Parameter</strong></p></td>
+<td><p><strong>Description</strong></p></td>
+</tr>
+<tr class="row-even"><td><p>title</p></td>
+<td><p>Required string.</p></td>
+</tr>
+<tr class="row-odd"><td><p>subdomain</p></td>
+<td><p>Optional string. Available ONLY with Enterprise Sites.</p></td>
+</tr>
+</tbody>
+</table>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>The site if successfully added, None if unsuccessful.</p>
+</dd>
+</dl>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">USAGE</span> <span class="n">EXAMPLE</span><span class="p">:</span> <span class="n">Add</span> <span class="n">an</span> <span class="nb">open</span> <span class="n">data</span> <span class="n">site</span> <span class="ow">in</span> <span class="n">Hub</span> <span class="n">successfully</span>
+
+<span class="n">site1</span> <span class="o">=</span> <span class="n">myHub</span><span class="o">.</span><span class="n">sites</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">title</span><span class="o">=</span><span class="s1">&#39;My first site&#39;</span><span class="p">)</span>
+<span class="n">site1</span><span class="o">.</span><span class="n">item</span>
+</pre></div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">USAGE</span> <span class="n">EXAMPLE</span><span class="p">:</span> <span class="n">Add</span> <span class="n">an</span> <span class="n">initiative</span> <span class="n">site</span> <span class="n">successfully</span>
+
+<span class="n">initiative_site</span> <span class="o">=</span> <span class="n">initiative1</span><span class="o">.</span><span class="n">sites</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">title</span><span class="o">=</span><span class="n">title</span><span class="p">)</span>
+<span class="n">site1</span><span class="o">.</span><span class="n">item</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt id="arcgis.apps.hub.sites.SiteManager.clone">
+<code class="sig-name descname">clone</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">site</span></em>, <em class="sig-param"><span class="n">pages</span><span class="o">=</span><span class="default_value">True</span></em>, <em class="sig-param"><span class="n">title</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.apps.hub.sites.SiteManager.clone" title="Permalink to this definition">¶</a></dt>
+<dd><p>Clone allows for the creation of a site that is derived from the current site.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Use this method if you are cloning a Site object from a Hub Basic or Enterprise environment.
+To clone from Hub Premium environments, please use the <cite>initiatives.clone</cite> method.</p>
+</div>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 18%" />
+<col style="width: 82%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><strong>Parameter</strong></p></td>
+<td><p><strong>Description</strong></p></td>
+</tr>
+<tr class="row-even"><td><p>site</p></td>
+<td><p>Required Site object of site to be cloned.</p></td>
+</tr>
+<tr class="row-odd"><td><p>pages</p></td>
+<td><p>Optional Boolean. Decides if pages will be copied. Default is True.</p></td>
+</tr>
+<tr class="row-even"><td><p>title</p></td>
+<td><p>Optional String.</p></td>
+</tr>
+</tbody>
+</table>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>Site.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="arcgis.apps.hub.sites.SiteManager.get">
+<code class="sig-name descname">get</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">site_id</span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.apps.hub.sites.SiteManager.get" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the site object for the specified site_id.</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 27%" />
+<col style="width: 73%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><strong>Parameter</strong></p></td>
+<td><p><strong>Description</strong></p></td>
+</tr>
+<tr class="row-even"><td><p>site_id</p></td>
+<td><p>Required string. The site itemid.</p></td>
+</tr>
+</tbody>
+</table>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>The site object if the item is found, None if the item is not found.</p>
+</dd>
+</dl>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">USAGE</span> <span class="n">EXAMPLE</span><span class="p">:</span> <span class="n">Fetch</span> <span class="n">a</span> <span class="n">site</span> <span class="n">successfully</span>
+
+<span class="n">site1</span> <span class="o">=</span> <span class="n">myHub</span><span class="o">.</span><span class="n">sites</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;itemId12345&#39;</span><span class="p">)</span>
+<span class="n">site1</span><span class="o">.</span><span class="n">item</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt id="arcgis.apps.hub.sites.SiteManager.get_by_domain">
+<code class="sig-name descname">get_by_domain</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">domain_url</span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.apps.hub.sites.SiteManager.get_by_domain" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the site object for the specified domain url.</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 27%" />
+<col style="width: 73%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><strong>Parameter</strong></p></td>
+<td><p><strong>Description</strong></p></td>
+</tr>
+<tr class="row-even"><td><p>domain_url</p></td>
+<td><p>Required string. The site url.</p></td>
+</tr>
+</tbody>
+</table>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>The site object if the item is found, None if the item is not found.</p>
+</dd>
+</dl>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>You may only fetch sites by domain local to your environment.
+E.g. If your Hub instance is an ArcGIS Online instance, then you can
+fetch ArcGIS Online sites by url, and if you have signed into an ArcGIS
+Enterprise Instance, only sites on premise will be available.</p>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">USAGE</span> <span class="n">EXAMPLE</span><span class="p">:</span> <span class="n">Fetch</span> <span class="n">a</span> <span class="n">site</span> <span class="n">successfully</span>
+
+<span class="n">site1</span> <span class="o">=</span> <span class="n">myHub</span><span class="o">.</span><span class="n">sites</span><span class="o">.</span><span class="n">get_by_domain</span><span class="p">(</span><span class="s1">&#39;opendata.dc.gov&#39;</span><span class="p">)</span>
+<span class="n">site1</span><span class="o">.</span><span class="n">item</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt id="arcgis.apps.hub.sites.SiteManager.search">
+<code class="sig-name descname">search</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">title</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">owner</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">created</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">modified</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">tags</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.apps.hub.sites.SiteManager.search" title="Permalink to this definition">¶</a></dt>
+<dd><p>Searches for sites.</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 18%" />
+<col style="width: 82%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><strong>Parameter</strong></p></td>
+<td><p><strong>Description</strong></p></td>
+</tr>
+<tr class="row-even"><td><p>title</p></td>
+<td><p>Optional string. Return sites with provided string in title.</p></td>
+</tr>
+<tr class="row-odd"><td><p>owner</p></td>
+<td><p>Optional string. Return sites owned by a username.</p></td>
+</tr>
+<tr class="row-even"><td><p>created</p></td>
+<td><p>Optional string. Date the site was created.
+Shown in milliseconds since UNIX epoch.</p></td>
+</tr>
+<tr class="row-odd"><td><p>modified</p></td>
+<td><p>Optional string. Date the site was last modified.
+Shown in milliseconds since UNIX epoch</p></td>
+</tr>
+<tr class="row-even"><td><p>tags</p></td>
+<td><p>Optional string. User-defined tags that describe the site.</p></td>
+</tr>
+</tbody>
+</table>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>A list of matching sites.</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="pagemanager">
+<h2>PageManager<a class="headerlink" href="#pagemanager" title="Permalink to this headline">¶</a></h2>
+<dl class="py class">
+<dt id="arcgis.apps.hub.sites.PageManager">
+<em class="property">class </em><code class="sig-prename descclassname">arcgis.apps.hub.sites.</code><code class="sig-name descname">PageManager</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">gis</span></em>, <em class="sig-param"><span class="n">site</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.apps.hub.sites.PageManager" title="Permalink to this definition">¶</a></dt>
+<dd><p>Helper class for managing pages within a Hub. This class is not created by users directly.
+An instance of this class, called ‘pages’, is available as a property of the Site object. Users
+call methods on this ‘pages’ object to manipulate (add, get, search, etc) pages for a site.</p>
+<dl class="py method">
+<dt id="arcgis.apps.hub.sites.PageManager.add">
+<code class="sig-name descname">add</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">title</span></em>, <em class="sig-param"><span class="n">site</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.apps.hub.sites.PageManager.add" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the pages linked to the specific site.</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 27%" />
+<col style="width: 73%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><strong>Parameter</strong></p></td>
+<td><p><strong>Description</strong></p></td>
+</tr>
+<tr class="row-even"><td><p>title</p></td>
+<td><p>Required string. The title of the new page.</p></td>
+</tr>
+<tr class="row-odd"><td><p>site</p></td>
+<td><p>Optional Site. The site object to add the page to.</p></td>
+</tr>
+</tbody>
+</table>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>The page if successfully added, None if unsuccessful.</p>
+</dd>
+</dl>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">USAGE</span> <span class="n">EXAMPLE</span><span class="p">:</span> <span class="n">Add</span> <span class="n">a</span> <span class="n">page</span> <span class="n">to</span> <span class="n">a</span> <span class="n">site</span> <span class="n">successfully</span>
+
+<span class="n">page1</span> <span class="o">=</span> <span class="n">mySite</span><span class="o">.</span><span class="n">pages</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">title</span><span class="o">=</span><span class="s1">&#39;My first page&#39;</span><span class="p">)</span>
+<span class="n">page1</span><span class="o">.</span><span class="n">item</span>
+</pre></div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">USAGE</span> <span class="n">EXAMPLE</span><span class="p">:</span> <span class="n">Add</span> <span class="n">a</span> <span class="n">page</span> <span class="n">successfully</span>
+
+<span class="n">page2</span> <span class="o">=</span> <span class="n">myHub</span><span class="o">.</span><span class="n">pages</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">title</span><span class="o">=</span><span class="s1">&#39;My second page&#39;</span><span class="p">,</span> <span class="n">site</span><span class="o">=</span><span class="n">mySite</span><span class="p">)</span>
+<span class="n">page2</span><span class="o">.</span><span class="n">item</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt id="arcgis.apps.hub.sites.PageManager.clone">
+<code class="sig-name descname">clone</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">page</span></em>, <em class="sig-param"><span class="n">site</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.apps.hub.sites.PageManager.clone" title="Permalink to this definition">¶</a></dt>
+<dd><p>Clone allows for the creation of a page that is derived from the current page.</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 18%" />
+<col style="width: 82%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><strong>Parameter</strong></p></td>
+<td><p><strong>Description</strong></p></td>
+</tr>
+<tr class="row-even"><td><p>page</p></td>
+<td><p>Required Page object of page to be cloned.</p></td>
+</tr>
+<tr class="row-odd"><td><p>site</p></td>
+<td><p>Optional Site object.</p></td>
+</tr>
+</tbody>
+</table>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>Page.</p>
+</dd>
+</dl>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">USAGE</span> <span class="n">EXAMPLE</span><span class="p">:</span> <span class="n">Clone</span> <span class="n">a</span> <span class="n">page</span> <span class="n">to</span> <span class="n">a</span> <span class="n">site</span> <span class="n">successfully</span>
+
+<span class="c1">#Fetch page</span>
+<span class="n">page1</span> <span class="o">=</span> <span class="n">myhub</span><span class="o">.</span><span class="n">pages</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;itemId12345&#39;</span><span class="p">)</span>
+<span class="n">page1</span><span class="o">.</span><span class="n">item</span>
+
+<span class="c1">#Clone it</span>
+<span class="n">page2</span> <span class="o">=</span> <span class="n">mySite</span><span class="o">.</span><span class="n">pages</span><span class="o">.</span><span class="n">clone</span><span class="p">(</span><span class="n">page1</span><span class="p">)</span>
+<span class="n">page2</span><span class="o">.</span><span class="n">item</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt id="arcgis.apps.hub.sites.PageManager.get">
+<code class="sig-name descname">get</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">page_id</span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.apps.hub.sites.PageManager.get" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the page object for the specified page_id.</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 27%" />
+<col style="width: 73%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><strong>Parameter</strong></p></td>
+<td><p><strong>Description</strong></p></td>
+</tr>
+<tr class="row-even"><td><p>page_id</p></td>
+<td><p>Required string. The page itemid.</p></td>
+</tr>
+</tbody>
+</table>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>The page object if the item is found, None if the item is not found.</p>
+</dd>
+</dl>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">USAGE</span> <span class="n">EXAMPLE</span><span class="p">:</span> <span class="n">Fetch</span> <span class="n">a</span> <span class="n">page</span> <span class="n">successfully</span>
+<span class="n">page1</span> <span class="o">=</span> <span class="n">myHub</span><span class="o">.</span><span class="n">pages</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;itemId12345&#39;</span><span class="p">)</span>
+<span class="n">page1</span><span class="o">.</span><span class="n">item</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt id="arcgis.apps.hub.sites.PageManager.link">
+<code class="sig-name descname">link</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">page</span></em>, <em class="sig-param"><span class="n">site</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">slug</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.apps.hub.sites.PageManager.link" title="Permalink to this definition">¶</a></dt>
+<dd><p>Links the page to the specific site.</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 27%" />
+<col style="width: 73%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><strong>Parameter</strong></p></td>
+<td><p><strong>Description</strong></p></td>
+</tr>
+<tr class="row-even"><td><p>page</p></td>
+<td><p>Required string. The page object to link.</p></td>
+</tr>
+<tr class="row-odd"><td><p>site</p></td>
+<td><p>Optional Site. The site object to link page to.</p></td>
+</tr>
+<tr class="row-even"><td><p>slug</p></td>
+<td><p>Optional string. The slug reference of the page in this site.</p></td>
+</tr>
+</tbody>
+</table>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>A bool containing True (for success) or False (for failure).</p>
+</dd>
+</dl>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">USAGE</span> <span class="n">EXAMPLE</span><span class="p">:</span> <span class="n">Link</span> <span class="n">a</span> <span class="n">page</span> <span class="n">successfully</span> <span class="k">for</span> <span class="n">specific</span> <span class="n">site</span>
+<span class="n">mySite</span><span class="o">.</span><span class="n">pages</span><span class="o">.</span><span class="n">link</span><span class="p">(</span><span class="n">page_id</span><span class="o">=</span><span class="s1">&#39;itemId12345&#39;</span><span class="p">)</span>
+
+<span class="o">&gt;&gt;</span> <span class="kc">True</span>
+</pre></div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">USAGE</span> <span class="n">EXAMPLE</span><span class="p">:</span> <span class="n">Link</span> <span class="n">a</span> <span class="n">page</span> <span class="n">successfully</span> <span class="k">for</span> <span class="n">site</span> <span class="nb">object</span> <span class="n">passed</span> <span class="k">as</span> <span class="n">param</span>
+<span class="n">myHub</span><span class="o">.</span><span class="n">pages</span><span class="o">.</span><span class="n">link</span><span class="p">(</span><span class="n">page_id</span><span class="o">=</span><span class="s1">&#39;itemId12345&#39;</span><span class="p">,</span> <span class="n">site</span><span class="o">=</span><span class="n">mySite</span><span class="p">)</span>
+
+<span class="o">&gt;&gt;</span> <span class="kc">True</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt id="arcgis.apps.hub.sites.PageManager.search">
+<code class="sig-name descname">search</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">title</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">owner</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">created</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">modified</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">tags</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.apps.hub.sites.PageManager.search" title="Permalink to this definition">¶</a></dt>
+<dd><p>Searches for pages.</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 18%" />
+<col style="width: 82%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><strong>Parameter</strong></p></td>
+<td><p><strong>Description</strong></p></td>
+</tr>
+<tr class="row-even"><td><p>title</p></td>
+<td><p>Optional string. Return pages with provided string in title.</p></td>
+</tr>
+<tr class="row-odd"><td><p>owner</p></td>
+<td><p>Optional string. Return pages owned by a username.</p></td>
+</tr>
+<tr class="row-even"><td><p>created</p></td>
+<td><p>Optional string. Date the page was created.
+Shown in milliseconds since UNIX epoch.</p></td>
+</tr>
+<tr class="row-odd"><td><p>modified</p></td>
+<td><p>Optional string. Date the page was last modified.
+Shown in milliseconds since UNIX epoch</p></td>
+</tr>
+<tr class="row-even"><td><p>tags</p></td>
+<td><p>Optional string. User-defined tags that describe the page.</p></td>
+</tr>
+</tbody>
+</table>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>A list of matching pages.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="arcgis.apps.hub.sites.PageManager.unlink">
+<code class="sig-name descname">unlink</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">page</span></em>, <em class="sig-param"><span class="n">site</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.apps.hub.sites.PageManager.unlink" title="Permalink to this definition">¶</a></dt>
+<dd><p>Unlinks the page from the specific site.</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 27%" />
+<col style="width: 73%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><strong>Parameter</strong></p></td>
+<td><p><strong>Description</strong></p></td>
+</tr>
+<tr class="row-even"><td><p>page</p></td>
+<td><p>Required Page. The page object to unlink.</p></td>
+</tr>
+<tr class="row-odd"><td><p>site</p></td>
+<td><p>Optional Site. The site object to unlink page from.</p></td>
+</tr>
+</tbody>
+</table>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>A bool containing True (for success) or False (for failure).</p>
+</dd>
+</dl>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">USAGE</span> <span class="n">EXAMPLE</span><span class="p">:</span> <span class="n">Unlink</span> <span class="n">a</span> <span class="n">page</span> <span class="n">successfully</span> <span class="kn">from</span> <span class="nn">specific</span> <span class="n">site</span>
+
+<span class="n">mySite</span><span class="o">.</span><span class="n">pages</span><span class="o">.</span><span class="n">unlink</span><span class="p">(</span><span class="n">page_id</span><span class="o">=</span><span class="s1">&#39;itemId12345&#39;</span><span class="p">)</span>
+
+<span class="o">&gt;&gt;</span> <span class="kc">True</span>
+</pre></div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">USAGE</span> <span class="n">EXAMPLE</span><span class="p">:</span> <span class="n">Unlink</span> <span class="n">a</span> <span class="n">page</span> <span class="n">successfully</span> <span class="kn">from</span> <span class="nn">site</span> <span class="nb">object</span> <span class="n">passed</span> <span class="k">as</span> <span class="n">param</span>
+
+<span class="n">myHub</span><span class="o">.</span><span class="n">pages</span><span class="o">.</span><span class="n">unlink</span><span class="p">(</span><span class="n">page_id</span><span class="o">=</span><span class="s1">&#39;itemId12345&#39;</span><span class="p">,</span> <span class="n">site</span><span class="o">=</span><span class="n">mySite</span><span class="p">)</span>
+
+<span class="o">&gt;&gt;</span> <span class="kc">True</span>
+</pre></div>
+</div>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="eventmanager">
+<h2>EventManager<a class="headerlink" href="#eventmanager" title="Permalink to this headline">¶</a></h2>
+<dl class="py class">
+<dt id="arcgis.apps.hub.events.EventManager">
+<em class="property">class </em><code class="sig-prename descclassname">arcgis.apps.hub.events.</code><code class="sig-name descname">EventManager</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">hub</span></em>, <em class="sig-param"><span class="n">event</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.apps.hub.events.EventManager" title="Permalink to this definition">¶</a></dt>
+<dd><p>Helper class for managing events within a Hub. This class is not created by users directly.
+An instance of this class, called ‘events’, is available as a property of the Hub object. Users
+call methods on this ‘events’ object to manipulate (add, search, get_map etc) events
+of a particular Hub.</p>
+<dl class="py method">
+<dt id="arcgis.apps.hub.events.EventManager.add">
+<code class="sig-name descname">add</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">event_properties</span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.apps.hub.events.EventManager.add" title="Permalink to this definition">¶</a></dt>
+<dd><p>Adds an event for an initiative.</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 20%" />
+<col style="width: 80%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><strong>Parameter</strong></p></td>
+<td><p><strong>Description</strong></p></td>
+</tr>
+<tr class="row-even"><td><p>event_properties</p></td>
+<td><p>Required dictionary. See table below for the keys and values.</p></td>
+</tr>
+</tbody>
+</table>
+<p><em>Key:Value Dictionary Options for Argument event_properties</em></p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 18%" />
+<col style="width: 82%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><strong>Key</strong></p></td>
+<td><p><strong>Value</strong></p></td>
+</tr>
+<tr class="row-even"><td><p>title</p></td>
+<td><p>Required string. Name of event.</p></td>
+</tr>
+<tr class="row-odd"><td><p>description</p></td>
+<td><p>Required string. Description of the event.</p></td>
+</tr>
+<tr class="row-even"><td><p>initiaitve_id</p></td>
+<td><p>Required string. Name label of the item.</p></td>
+</tr>
+<tr class="row-odd"><td><p>venue</p></td>
+<td><p>Required string. Venue name for the event.</p></td>
+</tr>
+<tr class="row-even"><td><p>address1</p></td>
+<td><p>Required string. Street address for the venue.</p></td>
+</tr>
+<tr class="row-odd"><td><p>status</p></td>
+<td><p>Required string. Access of event. Valid values are private, planned,
+public, draft.</p></td>
+</tr>
+<tr class="row-even"><td><p>startDate</p></td>
+<td><p>Required start date of the event in milliseconds since UNIX epoch.</p></td>
+</tr>
+<tr class="row-odd"><td><p>endDate</p></td>
+<td><p>Required end date of the event in milliseconds since UNIX epoch.</p></td>
+</tr>
+<tr class="row-even"><td><p>isAllDay</p></td>
+<td><p>Required boolean. Indicates if the event is a day long event.</p></td>
+</tr>
+<tr class="row-odd"><td><p>capacity</p></td>
+<td><p>Optional integer. The attendance capacity of the event venue.</p></td>
+</tr>
+<tr class="row-even"><td><p>address2</p></td>
+<td><p>Optional string.  Additional information about event venue street address.</p></td>
+</tr>
+<tr class="row-odd"><td><p>onlineLocation</p></td>
+<td><p>Optional string. Web URL or other details for online event.</p></td>
+</tr>
+<tr class="row-even"><td><p>organizers</p></td>
+<td><p>Optional list of dictionary of keys <cite>name</cite> and <cite>contact</cite> for each organizer’s
+name and email. Default values are name, email, username of event creator.</p></td>
+</tr>
+<tr class="row-odd"><td><p>sponsors</p></td>
+<td><p>Optional list of dictionary of keys <cite>name</cite> and <cite>contact</cite> for each sponsor’s
+name and contact.</p></td>
+</tr>
+</tbody>
+</table>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>Event if successfully added.</p>
+</dd>
+</dl>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">USAGE</span> <span class="n">EXAMPLE</span><span class="p">:</span> <span class="n">Add</span> <span class="n">an</span> <span class="n">event</span> <span class="n">successfully</span>
+
+<span class="n">event_properties</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s1">&#39;title&#39;</span><span class="p">:</span><span class="s1">&#39;Test Event&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;description&#39;</span><span class="p">:</span> <span class="s1">&#39;Testing with python&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;initiativeId&#39;</span><span class="p">:</span> <span class="s1">&#39;43f..&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;venue&#39;</span><span class="p">:</span> <span class="s1">&#39;Washington Monument&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;address1&#39;</span><span class="p">:</span> <span class="s1">&#39;2 15th St NW, Washington, District of Columbia, 20024&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;status&#39;</span><span class="p">:</span> <span class="s1">&#39;planned&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;startDate&#39;</span><span class="p">:</span> <span class="mi">1562803200</span><span class="p">,</span>
+    <span class="s1">&#39;endDate&#39;</span><span class="p">:</span> <span class="mi">1562889600</span><span class="p">,</span>
+    <span class="s1">&#39;isAllDay&#39;</span><span class="p">:</span> <span class="mi">1</span>
+<span class="p">}</span>
+
+<span class="n">new_event</span> <span class="o">=</span> <span class="n">myhub</span><span class="o">.</span><span class="n">events</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">event_properties</span><span class="p">)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt id="arcgis.apps.hub.events.EventManager.get">
+<code class="sig-name descname">get</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">event_id</span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.apps.hub.events.EventManager.get" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get the event for the specified event_id.</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 27%" />
+<col style="width: 73%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><strong>Parameter</strong></p></td>
+<td><p><strong>Description</strong></p></td>
+</tr>
+<tr class="row-even"><td><p>event_id</p></td>
+<td><p>Required integer. The event identifier.</p></td>
+</tr>
+</tbody>
+</table>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>The <a class="reference internal" href="#arcgis.apps.hub.Event" title="arcgis.apps.hub.Event"><code class="xref py py-class docutils literal notranslate"><span class="pre">Event</span></code></a> object.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="arcgis.apps.hub.events.EventManager.search">
+<code class="sig-name descname">search</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">initiative_id</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">title</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">venue</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">organizer_name</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.apps.hub.events.EventManager.search" title="Permalink to this definition">¶</a></dt>
+<dd><p>Searches for events within a Hub.</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 18%" />
+<col style="width: 82%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><strong>Parameter</strong></p></td>
+<td><p><strong>Description</strong></p></td>
+</tr>
+<tr class="row-even"><td><p>initiative_id</p></td>
+<td><p>Optional string. Initiative itemid.</p></td>
+</tr>
+<tr class="row-odd"><td><p>title</p></td>
+<td><p>Optional string. Title of the event.</p></td>
+</tr>
+<tr class="row-even"><td><p>venue</p></td>
+<td><p>Optional string. Venue where event is held.</p></td>
+</tr>
+<tr class="row-odd"><td><p>organizer_name</p></td>
+<td><p>Optional string. Name of the organizer of the event.</p></td>
+</tr>
+</tbody>
+</table>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>A list of matching indicators.</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+</div>
+
+
+
+           </div>
+           
+          </div>
+          <footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+        <a href="arcgis.apps.dashboard.html" class="btn btn-neutral float-right" title="arcgis.apps.dashboard module" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="arcgis.apps.html" class="btn btn-neutral float-left" title="arcgis.apps module" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &#169; Copyright 2016-2023, Esri.
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+    Options v: 2.1.0.3
+
+  <div class="rst-versions" data-toggle="rst-versions" role="note" aria-label="versions">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      <span class="fa fa-book"> Pick an earlier version</span>
+      v: 2.1.0.3
+      <span class="fa fa-caret-down"></span>
+    </span>
+    <div class="rst-other-versions">
+      
+      
+      <dl>
+        <dt>Versions</dt>
+        
+          
+          <dd><a href="2.1.0.2/">2.1.0.2</a></dd>
+          
+        
+          
+          <dd><a href="2.0.1/">2.0.1</a></dd>
+          
+        
+          
+          <dd><a href="2.0.0/">2.0.0</a></dd>
+          
+        
+          
+          <dd><a href="1.9.1/">1.9.1</a></dd>
+          
+        
+          
+          <dd><a href="1.9.0/">1.9.0</a></dd>
+          
+        
+          
+          <dd><a href="1.8.5/">1.8.5</a></dd>
+          
+        
+          
+          <dd><a href="1.8.4/">1.8.4</a></dd>
+          
+        
+          
+          <dd><a href="1.8.3/">1.8.3</a></dd>
+          
+        
+          
+          <dd><a href="1.8.2/">1.8.2</a></dd>
+          
+        
+          
+          <dd><a href="1.8.1/">1.8.1</a></dd>
+          
+        
+          
+          <dd><a href="1.8.0/">1.8.0</a></dd>
+          
+        
+          
+          <dd><a href="1.7.1/">1.7.1</a></dd>
+          
+        
+          
+          <dd><a href="1.7.0/">1.7.0</a></dd>
+          
+        
+          
+          <dd><a href="1.6.2/">1.6.2</a></dd>
+          
+        
+          
+          <dd><a href="1.6.1/">1.6.1</a></dd>
+          
+        
+          
+          <dd><a href="1.6.0/">1.6.0</a></dd>
+          
+        
+          
+          <dd><a href="1.5.2/">1.5.2</a></dd>
+          
+        
+          
+          <dd><a href="1.5.1/">1.5.1</a></dd>
+          
+        
+          
+          <dd><a href="1.5.0/">1.5.0</a></dd>
+          
+        
+          
+          <dd><a href="1.4.2/">1.4.2</a></dd>
+          
+        
+          
+          <dd><a href="1.4.1/">1.4.1</a></dd>
+          
+        
+          
+          <dd><a href="1.4.0/">1.4.0</a></dd>
+          
+        
+          
+          <dd><a href="1.3.0/">1.3.0</a></dd>
+          
+        
+          
+          <dd><a href="1.2.5/">1.2.5</a></dd>
+          
+        
+          
+          <dd><a href="1.2.4/">1.2.4</a></dd>
+          
+        
+          
+          <dd><a href="1.2.3/">1.2.3</a></dd>
+          
+        
+          
+          <dd><a href="1.2.2/">1.2.2</a></dd>
+          
+        
+          
+          <dd><a href="1.2.1/">1.2.1</a></dd>
+          
+        
+          
+          <dd><a href="1.2.0/">1.2.0</a></dd>
+          
+        
+          
+          <dd><a href="1.1.0/">1.1.0</a></dd>
+          
+        
+          
+          <dd><a href="1.0.1/">1.0.1</a></dd>
+          
+        
+          
+          <dd><a href="1.0.0/">1.0.0</a></dd>
+          
+        
+          
+          <dd><a href="0.3.0/">0.3.0</a></dd>
+          
+        
+          
+          <dd><a href="0.2.0/">0.2.0</a></dd>
+          
+        
+          
+          <dd><a href="0.1.0/">0.1.0</a></dd>
+          
+        
+      </dl>
+      
+      
+      
+    </div>
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

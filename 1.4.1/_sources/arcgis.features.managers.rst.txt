@@ -1,0 +1,30 @@
+arcgis.features.managers module
+===============================
+
+.. automodule:: arcgis.features.managers
+
+AttachmentManager
+--------------
+.. autoclass:: arcgis.features.managers.AttachmentManager
+    :members:
+    :undoc-members:
+
+SyncManager
+--------------
+.. autoclass:: arcgis.features.managers.SyncManager
+    :members:
+    :undoc-members:
+
+FeatureLayerCollectionManager
+--------------
+.. autoclass:: arcgis.features.managers.FeatureLayerCollectionManager
+    :inherited-members:
+    :members:
+    :undoc-members:
+
+FeatureLayerManager
+--------------
+.. autoclass:: arcgis.features.managers.FeatureLayerManager
+    :inherited-members:
+    :members:
+    :undoc-members:

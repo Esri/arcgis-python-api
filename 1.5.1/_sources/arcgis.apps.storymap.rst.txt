@@ -1,0 +1,11 @@
+arcgis\.apps\.storymap module
+==============================
+
+.. automodule:: arcgis.apps.storymap
+
+JournalStoryMap
+----------------
+.. autoclass:: arcgis.apps.storymap.JournalStoryMap
+    :members:
+    :undoc-members:
+    :show-inheritance:

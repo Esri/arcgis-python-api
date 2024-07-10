@@ -1,0 +1,2100 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>arcgis.gis.workflowmanager module &mdash; arcgis 1.9.1 documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="_static/theme_overrides.css" type="text/css" />
+
+  
+  
+    <link rel="shortcut icon" href="_static/favicon.ico"/>
+  
+  
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/doctools.js"></script>
+        <script src="_static/language_data.js"></script>
+        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="arcgis.gis.tasks module" href="arcgis.gis.tasks.html" />
+    <link rel="prev" title="arcgis.gis.nb module" href="arcgis.gis.nb.html" />
+<!-- This code block is inserted close near the <head> tag. See http://bit.ly/2BHUQzB -->
+<!-- The point of this code block is to send us google analytics on website views -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-NJGGV5');</script>
+ 
+
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="index.html" class="icon icon-home" alt="Documentation Home"> arcgis
+          
+
+          
+            
+            <img src="_static/python_api_logo.png" class="logo" alt="Logo"/>
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1.9.1
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">arcgis</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="arcgis.gis.toc.html">arcgis.gis module</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="arcgis.gis.toc.html#gis">GIS</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.gis.toc.html#item">Item</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.gis.toc.html#user">User</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.gis.toc.html#group">Group</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.gis.toc.html#datastore">Datastore</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.gis.toc.html#role">Role</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.gis.toc.html#layer">Layer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.gis.toc.html#groupapplication">GroupApplication</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.gis.toc.html#categoryschemamanager">CategorySchemaManager</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.gis.toc.html#contentmanager">ContentManager</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.gis.toc.html#usermanager">UserManager</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.gis.toc.html#groupmanager">GroupManager</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.gis.toc.html#groupmigrationmanager">GroupMigrationManager</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.gis.toc.html#datastoremanager">DatastoreManager</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.gis.toc.html#rolemanager">RoleManager</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.gis.toc.html#resourcemanager">ResourceManager</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.gis.toc.html#apikeymanager">APIKeyManager</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.gis.toc.html#apikey">APIKey</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.gis.toc.html#profilemanager">ProfileManager</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.gis.toc.html#invitationmanager">InvitationManager</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.gis.toc.html#certificatemanager">CertificateManager</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.gis.toc.html#portaldatastore">PortalDataStore</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="arcgis.gis.toc.html#submodules">Submodules</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="arcgis.gis.admin.html">arcgis.gis.admin module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="arcgis.gis.server.html">arcgis.gis.server module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="arcgis.gis.mission.html">arcgis.gis.mission module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="arcgis.gis.nb.html">arcgis.gis.nb module</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">arcgis.gis.workflowmanager module</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#workflowmanager">WorkflowManager</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#workflowmanageradmin">WorkflowManagerAdmin</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#jobmanager">JobManager</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#job">Job</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#jobdiagram">JobDiagram</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#joblocation">JobLocation</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#jobtemplate">JobTemplate</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#group">Group</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#savedsearchesmanager">SavedSearchesManager</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#wmrole">WMRole</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="arcgis.gis.tasks.html">arcgis.gis.tasks module</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="arcgis.env.html">arcgis.env module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="arcgis.features.toc.html">arcgis.features module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="arcgis.raster.toc.html">arcgis.raster module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="arcgis.network.toc.html">arcgis.network module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="arcgis.geoanalytics.toc.html">arcgis.geoanalytics module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="arcgis.geocoding.html">arcgis.geocoding module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="arcgis.geoenrichment.html">arcgis.geoenrichment module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="arcgis.geometry.html">arcgis.geometry module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="arcgis.geoprocessing.html">arcgis.geoprocessing module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="arcgis.mapping.toc.html">arcgis.mapping module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="arcgis.realtime.html">arcgis.realtime module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="arcgis.schematics.html">arcgis.schematics module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="arcgis.widgets.html">arcgis.widgets module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="arcgis.apps.html">arcgis.apps module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="arcgis.learn.toc.html">arcgis.learn module</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">arcgis</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="arcgis.gis.toc.html">arcgis.gis module</a> &raquo;</li>
+        
+      <li>arcgis.gis.workflowmanager module</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+<!-- This code block is inserted close near the <body> tag. See http://bit.ly/2BHUQzB -->
+<!-- The point of this code block is to send us google analytics on website views -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NJGGV5"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+
+  <div class="section" id="module-arcgis.gis.workflowmanager">
+<span id="arcgis-gis-workflowmanager-module"></span><h1>arcgis.gis.workflowmanager module<a class="headerlink" href="#module-arcgis.gis.workflowmanager" title="Permalink to this headline">¶</a></h1>
+<p>The arcgis.workflowmanager module contains classes and functions for working with a Workflow Manager installation.
+Workflow diagrams, job templates and jobs can be created, modified, or deleted. Information such as location,
+assignment, history and attachments for individual jobs can be accessed. Additionally, information about the various
+roles, users, groups, and searches can be view, modified or created.</p>
+<div class="section" id="workflowmanager">
+<h2>WorkflowManager<a class="headerlink" href="#workflowmanager" title="Permalink to this headline">¶</a></h2>
+<dl class="py class">
+<dt id="arcgis.gis.workflowmanager.WorkflowManager">
+<em class="property">class </em><code class="sig-prename descclassname">arcgis.gis.workflowmanager.</code><code class="sig-name descname">WorkflowManager</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">item</span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.gis.workflowmanager.WorkflowManager" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>Represents a connection to a Workflow Manager instance or item.</p>
+<p>Users create, update, delete workflow diagrams, job templates and jobs
+or the various other properties with a workflow item.</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 18%" />
+<col style="width: 82%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><strong>Argument</strong></p></td>
+<td><p><strong>Description</strong></p></td>
+</tr>
+<tr class="row-even"><td><p>item</p></td>
+<td><p>Required string. The Workflow Manager Item</p></td>
+</tr>
+</tbody>
+</table>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># USAGE EXAMPLE: Creating a WorkflowManager object from a workflow item</span>
+
+<span class="kn">from</span> <span class="nn">arcgis.workflow</span> <span class="kn">import</span> <span class="n">WorkflowManager</span>
+<span class="kn">from</span> <span class="nn">arcgis.gis</span> <span class="kn">import</span> <span class="n">GIS</span>
+
+<span class="c1"># connect to your GIS and get the web map item</span>
+<span class="n">gis</span> <span class="o">=</span> <span class="n">GIS</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="n">username</span><span class="p">,</span> <span class="n">password</span><span class="p">)</span>
+<span class="n">wf_item</span> <span class="o">=</span> <span class="n">gis</span><span class="o">.</span><span class="n">content</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;1234abcd_workflow item id&#39;</span><span class="p">)</span>
+
+<span class="c1"># create a WorkflowManager object from the workflow item</span>
+<span class="n">wm</span> <span class="o">=</span> <span class="n">WorkflowManager</span><span class="p">(</span><span class="n">wf_item</span><span class="p">)</span>
+<span class="nb">type</span><span class="p">(</span><span class="n">wm</span><span class="p">)</span>
+<span class="o">&gt;&gt;</span> <span class="n">arcgis</span><span class="o">.</span><span class="n">workflowmanager</span><span class="o">.</span><span class="n">WorkflowManager</span>
+
+<span class="c1"># explore the users in this workflow using the &#39;users&#39; property</span>
+<span class="n">wm</span><span class="o">.</span><span class="n">users</span>
+<span class="o">&gt;&gt;</span> <span class="p">[{}</span><span class="o">...</span><span class="p">{}]</span>  <span class="c1"># returns a list of dictionaries representing each user</span>
+</pre></div>
+</div>
+<dl class="py method">
+<dt id="arcgis.gis.workflowmanager.WorkflowManager.assignable_groups">
+<em class="property">property </em><code class="sig-name descname">assignable_groups</code><a class="headerlink" href="#arcgis.gis.workflowmanager.WorkflowManager.assignable_groups" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get portal groups associated with Workflow Manager roles, to which the current user
+can assign work based on their Workflow Manager assignment privileges.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>A <a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#list">list</a> of
+the assignable <a class="reference internal" href="#arcgis.gis.workflowmanager.Group" title="arcgis.gis.workflowmanager.Group"><code class="xref py py-class docutils literal notranslate"><span class="pre">Group</span></code></a> objects</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="arcgis.gis.workflowmanager.WorkflowManager.assignable_users">
+<em class="property">property </em><code class="sig-name descname">assignable_users</code><a class="headerlink" href="#arcgis.gis.workflowmanager.WorkflowManager.assignable_users" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get all assignable users for a user in the workflow system</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p><p>A <a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#list">list</a> of the assignable <code class="xref py py-attr docutils literal notranslate"><span class="pre">user</span></code> objects</p>
+</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="arcgis.gis.workflowmanager.WorkflowManager.create_diagram">
+<code class="sig-name descname">create_diagram</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">name</span></em>, <em class="sig-param"><span class="n">steps</span></em>, <em class="sig-param"><span class="n">display_grid</span></em>, <em class="sig-param"><span class="n">description</span><span class="o">=</span><span class="default_value">''</span></em>, <em class="sig-param"><span class="n">active</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="n">annotations</span><span class="o">=</span><span class="default_value">[]</span></em>, <em class="sig-param"><span class="n">data_sources</span><span class="o">=</span><span class="default_value">[]</span></em>, <em class="sig-param"><span class="n">diagram_id</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.gis.workflowmanager.WorkflowManager.create_diagram" title="Permalink to this definition">¶</a></dt>
+<dd><p>Adds a diagram to the Workflow Manager instance given a user-defined name and array of steps</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 15%" />
+<col style="width: 85%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><strong>Argument</strong></p></td>
+<td><p><strong>Description</strong></p></td>
+</tr>
+<tr class="row-even"><td><p>name</p></td>
+<td><p>Required string. Diagram Name</p></td>
+</tr>
+<tr class="row-odd"><td><p>steps</p></td>
+<td><p>Required list. List of Step objects associated with the Diagram</p></td>
+</tr>
+<tr class="row-even"><td><p>display_grid</p></td>
+<td><p>Required boolean. Boolean indicating whether the grid will be displayed in the Diagram</p></td>
+</tr>
+<tr class="row-odd"><td><p>description</p></td>
+<td><p>Optional string. Diagram description</p></td>
+</tr>
+<tr class="row-even"><td><p>active</p></td>
+<td><p>Optional Boolean. Indicates whether the Diagram is active</p></td>
+</tr>
+<tr class="row-odd"><td><p>annotations</p></td>
+<td><p>Optinal list. List of Annotation objects associated with the Diagram</p></td>
+</tr>
+<tr class="row-even"><td><p>data_sources</p></td>
+<td><p>Optional list. List of Data Source objects associated with the Diagram</p></td>
+</tr>
+<tr class="row-odd"><td><p>diagram_id</p></td>
+<td><p>Optional string. The unique ID of the diagram to be created.</p></td>
+</tr>
+</tbody>
+</table>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p><a class="reference internal" href="#arcgis.gis.workflowmanager.JobDiagram" title="arcgis.gis.workflowmanager.JobDiagram"><code class="xref py py-class docutils literal notranslate"><span class="pre">Workflow</span> <span class="pre">Manager</span> <span class="pre">Diagram</span></code></a> ID</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="arcgis.gis.workflowmanager.WorkflowManager.create_job_template">
+<code class="sig-name descname">create_job_template</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">name</span></em>, <em class="sig-param"><span class="n">priority</span></em>, <em class="sig-param"><span class="n">id</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">category</span><span class="o">=</span><span class="default_value">''</span></em>, <em class="sig-param"><span class="n">job_duration</span><span class="o">=</span><span class="default_value">0</span></em>, <em class="sig-param"><span class="n">assigned_to</span><span class="o">=</span><span class="default_value">''</span></em>, <em class="sig-param"><span class="n">default_due_date</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">default_start_date</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">start_date_type</span><span class="o">=</span><span class="default_value">'CreationDate'</span></em>, <em class="sig-param"><span class="n">diagram_id</span><span class="o">=</span><span class="default_value">''</span></em>, <em class="sig-param"><span class="n">diagram_name</span><span class="o">=</span><span class="default_value">''</span></em>, <em class="sig-param"><span class="n">assigned_type</span><span class="o">=</span><span class="default_value">'Unassigned'</span></em>, <em class="sig-param"><span class="n">description</span><span class="o">=</span><span class="default_value">''</span></em>, <em class="sig-param"><span class="n">default_description</span><span class="o">=</span><span class="default_value">''</span></em>, <em class="sig-param"><span class="n">state</span><span class="o">=</span><span class="default_value">'Draft'</span></em>, <em class="sig-param"><span class="n">last_updated_by</span><span class="o">=</span><span class="default_value">''</span></em>, <em class="sig-param"><span class="n">last_updated_date</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">extended_property_table_definitions</span><span class="o">=</span><span class="default_value">[]</span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.gis.workflowmanager.WorkflowManager.create_job_template" title="Permalink to this definition">¶</a></dt>
+<dd><p>Adds a job template to the Workflow Manager instance given a user-defined name and default priority level</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 35%" />
+<col style="width: 65%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><strong>Argument</strong></p></td>
+<td><p><strong>Description</strong></p></td>
+</tr>
+<tr class="row-even"><td><p>name</p></td>
+<td><p>Required string. Job Template Name</p></td>
+</tr>
+<tr class="row-odd"><td><p>priority</p></td>
+<td><p>Required string. Default Job Template Priority Level</p></td>
+</tr>
+<tr class="row-even"><td><p>id</p></td>
+<td><p>Optional string. Job Template ID</p></td>
+</tr>
+<tr class="row-odd"><td><p>category</p></td>
+<td><p>Optional string. Job Template Category</p></td>
+</tr>
+<tr class="row-even"><td><p>job_duration</p></td>
+<td><p>Optional string. Default Job Template Duration</p></td>
+</tr>
+<tr class="row-odd"><td><p>assigned_to</p></td>
+<td><p>Optional string. Job Owner</p></td>
+</tr>
+<tr class="row-even"><td><p>default_due_date</p></td>
+<td><p>Optional string. Due Date for Job Template</p></td>
+</tr>
+<tr class="row-odd"><td><p>default_start_date</p></td>
+<td><p>Optional string. Start Date for Job Template</p></td>
+</tr>
+<tr class="row-even"><td><p>start_date_type</p></td>
+<td><p>Optional string. Type of Start Date (e.g. creationDate)</p></td>
+</tr>
+<tr class="row-odd"><td><p>diagram_id</p></td>
+<td><p>Optional string. Job Template Diagram ID</p></td>
+</tr>
+<tr class="row-even"><td><p>diagram_name</p></td>
+<td><p>Optional string. Job Template Diagram Name</p></td>
+</tr>
+<tr class="row-odd"><td><p>assigned_type</p></td>
+<td><p>Optional string. Type of Job Template Assignment</p></td>
+</tr>
+<tr class="row-even"><td><p>description</p></td>
+<td><p>Optional string. Job Template Description</p></td>
+</tr>
+<tr class="row-odd"><td><p>default_description</p></td>
+<td><p>Optional string. Default Job Template Description</p></td>
+</tr>
+<tr class="row-even"><td><p>state</p></td>
+<td><p>Optional string. Default Job Template State</p></td>
+</tr>
+<tr class="row-odd"><td><p>last_updated_by</p></td>
+<td><p>Optional string. User Who Last Updated Job Template</p></td>
+</tr>
+<tr class="row-even"><td><p>last_updated_date</p></td>
+<td><p>Optional string. Date of Last Job Template Update</p></td>
+</tr>
+<tr class="row-odd"><td><p>extended_property_table_definitions</p></td>
+<td><p>Optional list. List of Extended Properties for Job Template</p></td>
+</tr>
+</tbody>
+</table>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>Workflow Manager <a class="reference internal" href="#arcgis.gis.workflowmanager.JobTemplate" title="arcgis.gis.workflowmanager.JobTemplate"><code class="xref py py-class docutils literal notranslate"><span class="pre">JobTemplate</span></code></a> ID</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="arcgis.gis.workflowmanager.WorkflowManager.create_wm_role">
+<code class="sig-name descname">create_wm_role</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">name</span></em>, <em class="sig-param"><span class="n">description</span><span class="o">=</span><span class="default_value">''</span></em>, <em class="sig-param"><span class="n">privileges</span><span class="o">=</span><span class="default_value">[]</span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.gis.workflowmanager.WorkflowManager.create_wm_role" title="Permalink to this definition">¶</a></dt>
+<dd><p>Adds a role to the Workflow Manager instance given a user-defined name</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 18%" />
+<col style="width: 82%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><strong>Argument</strong></p></td>
+<td><p><strong>Description</strong></p></td>
+</tr>
+<tr class="row-even"><td><p>name</p></td>
+<td><p>Required string. Role Name (required)</p></td>
+</tr>
+<tr class="row-odd"><td><p>description</p></td>
+<td><p>Required string. Role Description</p></td>
+</tr>
+<tr class="row-even"><td><p>privileges</p></td>
+<td><p>Required list. List of privileges associated with the role</p></td>
+</tr>
+</tbody>
+</table>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>Workflow Manager <a class="reference internal" href="#arcgis.gis.workflowmanager.WMRole" title="arcgis.gis.workflowmanager.WMRole"><code class="xref py py-class docutils literal notranslate"><span class="pre">Role</span></code></a> Object</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="arcgis.gis.workflowmanager.WorkflowManager.delete_diagram">
+<code class="sig-name descname">delete_diagram</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">id</span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.gis.workflowmanager.WorkflowManager.delete_diagram" title="Permalink to this definition">¶</a></dt>
+<dd><p>Deletes a diagram object by ID</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 18%" />
+<col style="width: 82%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><strong>Argument</strong></p></td>
+<td><p><strong>Description</strong></p></td>
+</tr>
+<tr class="row-even"><td><p>id</p></td>
+<td><p>Required string. Diagram id</p></td>
+</tr>
+</tbody>
+</table>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p><a class="reference internal" href="#arcgis.gis.workflowmanager.JobDiagram" title="arcgis.gis.workflowmanager.JobDiagram"><code class="xref py py-class docutils literal notranslate"><span class="pre">Workflow</span> <span class="pre">Manager</span> <span class="pre">Diagram</span></code></a> ID</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="arcgis.gis.workflowmanager.WorkflowManager.delete_job_template">
+<code class="sig-name descname">delete_job_template</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">id</span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.gis.workflowmanager.WorkflowManager.delete_job_template" title="Permalink to this definition">¶</a></dt>
+<dd><p>Deletes a job template with the given ID</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 18%" />
+<col style="width: 82%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><strong>Argument</strong></p></td>
+<td><p><strong>Description</strong></p></td>
+</tr>
+<tr class="row-even"><td><p>id</p></td>
+<td><p>Required string. Job Template ID</p></td>
+</tr>
+</tbody>
+</table>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>status code</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="arcgis.gis.workflowmanager.WorkflowManager.diagram">
+<code class="sig-name descname">diagram</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">id</span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.gis.workflowmanager.WorkflowManager.diagram" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the <a class="reference internal" href="#arcgis.gis.workflowmanager.JobDiagram" title="arcgis.gis.workflowmanager.JobDiagram"><code class="xref py py-class docutils literal notranslate"><span class="pre">diagram</span></code></a> with the given ID</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 18%" />
+<col style="width: 82%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><strong>Argument</strong></p></td>
+<td><p><strong>Description</strong></p></td>
+</tr>
+<tr class="row-even"><td><p>id</p></td>
+<td><p>Required string. Diagram ID</p></td>
+</tr>
+</tbody>
+</table>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>Workflow Manager <a class="reference internal" href="#arcgis.gis.workflowmanager.JobDiagram" title="arcgis.gis.workflowmanager.JobDiagram"><code class="xref py py-class docutils literal notranslate"><span class="pre">JobDiagram</span></code></a> Object</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="arcgis.gis.workflowmanager.WorkflowManager.diagrams">
+<em class="property">property </em><code class="sig-name descname">diagrams</code><a class="headerlink" href="#arcgis.gis.workflowmanager.WorkflowManager.diagrams" title="Permalink to this definition">¶</a></dt>
+<dd><p>Gets the workflow diagrams within the workflow item.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p><p><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#list">List</a> of all current
+<a class="reference internal" href="#arcgis.gis.workflowmanager.JobDiagram" title="arcgis.gis.workflowmanager.JobDiagram"><code class="xref py py-class docutils literal notranslate"><span class="pre">diagrams</span></code></a> in the Workflow Manager</p>
+</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="arcgis.gis.workflowmanager.WorkflowManager.evaluate_arcade">
+<code class="sig-name descname">evaluate_arcade</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">expression</span></em>, <em class="sig-param"><span class="n">context</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">context_type</span><span class="o">=</span><span class="default_value">'BaseContext'</span></em>, <em class="sig-param"><span class="n">mode</span><span class="o">=</span><span class="default_value">'Standard'</span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.gis.workflowmanager.WorkflowManager.evaluate_arcade" title="Permalink to this definition">¶</a></dt>
+<dd><p>Evaluates an arcade expression</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 26%" />
+<col style="width: 74%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><strong>Argument</strong></p></td>
+<td><p><strong>Description</strong></p></td>
+</tr>
+<tr class="row-even"><td><p>expression</p></td>
+<td><p>Required String.</p></td>
+</tr>
+<tr class="row-odd"><td><p>context</p></td>
+<td><p>Optional String.</p></td>
+</tr>
+<tr class="row-even"><td><p>context_type</p></td>
+<td><p>Optional String.</p></td>
+</tr>
+<tr class="row-odd"><td><p>mode</p></td>
+<td><p>Optional String.</p></td>
+</tr>
+</tbody>
+</table>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>String</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="arcgis.gis.workflowmanager.WorkflowManager.group">
+<code class="sig-name descname">group</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">group_id</span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.gis.workflowmanager.WorkflowManager.group" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns group information with the given group ID</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 18%" />
+<col style="width: 82%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><strong>Argument</strong></p></td>
+<td><p><strong>Description</strong></p></td>
+</tr>
+<tr class="row-even"><td><p>group_id</p></td>
+<td><p>Required string. Workflow Manager Group ID</p></td>
+</tr>
+</tbody>
+</table>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>Workflow Manager <a class="reference internal" href="#arcgis.gis.workflowmanager.Group" title="arcgis.gis.workflowmanager.Group"><code class="xref py py-class docutils literal notranslate"><span class="pre">Group</span></code></a> Object</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="arcgis.gis.workflowmanager.WorkflowManager.groups">
+<em class="property">property </em><code class="sig-name descname">groups</code><a class="headerlink" href="#arcgis.gis.workflowmanager.WorkflowManager.groups" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns an list of all user <a class="reference internal" href="#arcgis.gis.workflowmanager.Group" title="arcgis.gis.workflowmanager.Group"><code class="xref py py-class docutils literal notranslate"><span class="pre">groups</span></code></a>
+stored in Workflow Manager</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p><p><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#list">List</a></p>
+</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="arcgis.gis.workflowmanager.WorkflowManager.job_template">
+<code class="sig-name descname">job_template</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">id</span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.gis.workflowmanager.WorkflowManager.job_template" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns a job template with the given ID</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 18%" />
+<col style="width: 82%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><strong>Argument</strong></p></td>
+<td><p><strong>Description</strong></p></td>
+</tr>
+<tr class="row-even"><td><p>id</p></td>
+<td><p>Required string. Job Template ID</p></td>
+</tr>
+</tbody>
+</table>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>Workflow Manager <a class="reference internal" href="#arcgis.gis.workflowmanager.JobTemplate" title="arcgis.gis.workflowmanager.JobTemplate"><code class="xref py py-class docutils literal notranslate"><span class="pre">JobTemplate</span></code></a> Object</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="arcgis.gis.workflowmanager.WorkflowManager.job_templates">
+<em class="property">property </em><code class="sig-name descname">job_templates</code><a class="headerlink" href="#arcgis.gis.workflowmanager.WorkflowManager.job_templates" title="Permalink to this definition">¶</a></dt>
+<dd><p>Gets all the job templates in a workflow item.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>List of all current <a class="reference internal" href="#arcgis.gis.workflowmanager.JobTemplate" title="arcgis.gis.workflowmanager.JobTemplate"><code class="xref py py-class docutils literal notranslate"><span class="pre">job</span> <span class="pre">templates</span></code></a>
+in the Workflow Manager (required information for create_job call).</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="arcgis.gis.workflowmanager.WorkflowManager.jobs">
+<em class="property">property </em><code class="sig-name descname">jobs</code><a class="headerlink" href="#arcgis.gis.workflowmanager.WorkflowManager.jobs" title="Permalink to this definition">¶</a></dt>
+<dd><p>The job manager for a workflow item.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p><a class="reference internal" href="#arcgis.gis.workflowmanager.JobManager" title="arcgis.gis.workflowmanager.JobManager"><code class="xref py py-class docutils literal notranslate"><span class="pre">JobManager</span></code></a> object</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="arcgis.gis.workflowmanager.WorkflowManager.saved_searches">
+<em class="property">property </em><code class="sig-name descname">saved_searches</code><a class="headerlink" href="#arcgis.gis.workflowmanager.WorkflowManager.saved_searches" title="Permalink to this definition">¶</a></dt>
+<dd><p>The Saved Searches manager for a workflow item.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p><a class="reference internal" href="#arcgis.gis.workflowmanager.SavedSearchesManager" title="arcgis.gis.workflowmanager.SavedSearchesManager"><code class="xref py py-class docutils literal notranslate"><span class="pre">SavedSearchesManager</span></code></a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="arcgis.gis.workflowmanager.WorkflowManager.searches">
+<code class="sig-name descname">searches</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">search_type</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.gis.workflowmanager.WorkflowManager.searches" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns a list of all saved searches.</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 18%" />
+<col style="width: 82%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><strong>Argument</strong></p></td>
+<td><p><strong>Description</strong></p></td>
+</tr>
+<tr class="row-even"><td><p>search_type</p></td>
+<td><p>Optional string. The search type for returned saved searches.
+The accepted values are <cite>Standard</cite>, <cite>Chart</cite>, and <cite>All</cite>. If not
+defined, the Standard searches are returned.</p></td>
+</tr>
+</tbody>
+</table>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p><p><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#list">List</a></p>
+</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="arcgis.gis.workflowmanager.WorkflowManager.settings">
+<em class="property">property </em><code class="sig-name descname">settings</code><a class="headerlink" href="#arcgis.gis.workflowmanager.WorkflowManager.settings" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns a list of all settings for the Workflow Manager instance</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p><p><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#list">List</a></p>
+</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="arcgis.gis.workflowmanager.WorkflowManager.table_definitions">
+<em class="property">property </em><code class="sig-name descname">table_definitions</code><a class="headerlink" href="#arcgis.gis.workflowmanager.WorkflowManager.table_definitions" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get the definitions of each extended properties table in a workflow item. The response will consist of a list
+of table definitions. If the extended properties table is a feature service, its definition will include a
+dictionary of feature service properties. Each table definition will also include definitions of the properties
+it contains and list the associated job templates. This requires the adminBasic or adminAdvanced privileges.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p><p><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#list">list</a></p>
+</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="arcgis.gis.workflowmanager.WorkflowManager.update_diagram">
+<code class="sig-name descname">update_diagram</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">body</span></em>, <em class="sig-param"><span class="n">delete_draft</span><span class="o">=</span><span class="default_value">True</span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.gis.workflowmanager.WorkflowManager.update_diagram" title="Permalink to this definition">¶</a></dt>
+<dd><p>Updates a diagram object by ID</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 15%" />
+<col style="width: 85%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><strong>Argument</strong></p></td>
+<td><p><strong>Description</strong></p></td>
+</tr>
+<tr class="row-even"><td><p>body</p></td>
+<td><p>Required object. Diagram body - existing Diagram object that inherits required/optional
+fields.</p></td>
+</tr>
+<tr class="row-odd"><td><p>delete_draft</p></td>
+<td><p>Optional Boolean - option to delete the Diagram draft (optional)</p></td>
+</tr>
+</tbody>
+</table>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>success object</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="arcgis.gis.workflowmanager.WorkflowManager.update_group">
+<code class="sig-name descname">update_group</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">group_id</span></em>, <em class="sig-param"><span class="n">update_object</span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.gis.workflowmanager.WorkflowManager.update_group" title="Permalink to this definition">¶</a></dt>
+<dd><p>Update the information to the portal group. The adminAdvanced privilege is required.
+New roles can be added to the portal group. Existing roles can be deleted from the portal group.</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 12%" />
+<col style="width: 88%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><strong>Argument</strong></p></td>
+<td><p><strong>Description</strong></p></td>
+</tr>
+<tr class="row-even"><td><p>group_id</p></td>
+<td><p>Required string. <a class="reference internal" href="#arcgis.gis.workflowmanager.Group" title="arcgis.gis.workflowmanager.Group"><code class="xref py py-class docutils literal notranslate"><span class="pre">Workflow</span> <span class="pre">Manager</span> <span class="pre">Group</span></code></a> ID</p></td>
+</tr>
+<tr class="row-odd"><td><p>update_object</p></td>
+<td><p>Required object. Object containing the updated actions of the information to be taken to the portal group.</p></td>
+</tr>
+</tbody>
+</table>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>boolean</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="arcgis.gis.workflowmanager.WorkflowManager.update_job_template">
+<code class="sig-name descname">update_job_template</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">template</span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.gis.workflowmanager.WorkflowManager.update_job_template" title="Permalink to this definition">¶</a></dt>
+<dd><p>Updates a job template object by ID</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 16%" />
+<col style="width: 84%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><strong>Argument</strong></p></td>
+<td><p><strong>Description</strong></p></td>
+</tr>
+<tr class="row-even"><td><p>body</p></td>
+<td><p>Required object. <code class="xref py py-class docutils literal notranslate"><span class="pre">Job</span> <span class="pre">Template</span></code>
+body. Existing Job Template object that inherits required/optional fields.</p></td>
+</tr>
+</tbody>
+</table>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>success object</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="arcgis.gis.workflowmanager.WorkflowManager.update_settings">
+<code class="sig-name descname">update_settings</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">props</span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.gis.workflowmanager.WorkflowManager.update_settings" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns an active job with the given ID</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 18%" />
+<col style="width: 82%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><strong>Argument</strong></p></td>
+<td><p><strong>Description</strong></p></td>
+</tr>
+<tr class="row-even"><td><p>props</p></td>
+<td><p>Reuqired list. A list of Props objects to update
+(Prop object example: {‘propName’: ‘string’, ‘value’: ‘string’})</p></td>
+</tr>
+</tbody>
+</table>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>success object</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="arcgis.gis.workflowmanager.WorkflowManager.user">
+<code class="sig-name descname">user</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">username</span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.gis.workflowmanager.WorkflowManager.user" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns a user profile with the given username</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 18%" />
+<col style="width: 82%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><strong>Argument</strong></p></td>
+<td><p><strong>Description</strong></p></td>
+</tr>
+<tr class="row-even"><td><p>username</p></td>
+<td><p>Required string. Workflow Manager Username</p></td>
+</tr>
+</tbody>
+</table>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>Workflow Manager user profile</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="arcgis.gis.workflowmanager.WorkflowManager.users">
+<em class="property">property </em><code class="sig-name descname">users</code><a class="headerlink" href="#arcgis.gis.workflowmanager.WorkflowManager.users" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns an list of all user profiles stored in Workflow Manager</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>List of <a class="reference internal" href="#arcgis.gis.workflowmanager.WorkflowManager.user" title="arcgis.gis.workflowmanager.WorkflowManager.user"><code class="xref py py-attr docutils literal notranslate"><span class="pre">user</span></code></a> profiles</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="arcgis.gis.workflowmanager.WorkflowManager.wm_role">
+<code class="sig-name descname">wm_role</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">name</span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.gis.workflowmanager.WorkflowManager.wm_role" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns an active role with the given name</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 18%" />
+<col style="width: 82%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><strong>Argument</strong></p></td>
+<td><p><strong>Description</strong></p></td>
+</tr>
+<tr class="row-even"><td><p>name</p></td>
+<td><p>Required string. Role Name</p></td>
+</tr>
+</tbody>
+</table>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>Workflow Manager <a class="reference internal" href="#arcgis.gis.workflowmanager.WMRole" title="arcgis.gis.workflowmanager.WMRole"><code class="xref py py-class docutils literal notranslate"><span class="pre">Role</span></code></a> Object</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="arcgis.gis.workflowmanager.WorkflowManager.wm_roles">
+<em class="property">property </em><code class="sig-name descname">wm_roles</code><a class="headerlink" href="#arcgis.gis.workflowmanager.WorkflowManager.wm_roles" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns a list of user <a class="reference internal" href="#arcgis.gis.workflowmanager.WMRole" title="arcgis.gis.workflowmanager.WMRole"><code class="xref py py-class docutils literal notranslate"><span class="pre">roles</span></code></a> available
+in the local Workflow Manager instance.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>list</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="workflowmanageradmin">
+<h2>WorkflowManagerAdmin<a class="headerlink" href="#workflowmanageradmin" title="Permalink to this headline">¶</a></h2>
+<dl class="py class">
+<dt id="arcgis.gis.workflowmanager.WorkflowManagerAdmin">
+<em class="property">class </em><code class="sig-prename descclassname">arcgis.gis.workflowmanager.</code><code class="sig-name descname">WorkflowManagerAdmin</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">gis</span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.gis.workflowmanager.WorkflowManagerAdmin" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>Represents a series of CRUD functions for Workflow Manager Items</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 18%" />
+<col style="width: 82%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><strong>Argument</strong></p></td>
+<td><p><strong>Description</strong></p></td>
+</tr>
+<tr class="row-even"><td><p>gis</p></td>
+<td><p>Optional GIS. The connection to the Enterprise.</p></td>
+</tr>
+</tbody>
+</table>
+<dl class="py method">
+<dt id="arcgis.gis.workflowmanager.WorkflowManagerAdmin.create_item">
+<code class="sig-name descname">create_item</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">name</span></em><span class="sig-paren">)</span> &#x2192; tuple<a class="headerlink" href="#arcgis.gis.workflowmanager.WorkflowManagerAdmin.create_item" title="Permalink to this definition">¶</a></dt>
+<dd><p>Creates a <cite>Workflow Manager</cite> schema that stores all the configuration
+information and location data in the data store on Portal. This can
+be run by any user assigned to the administrator role in Portal.</p>
+<p>For users that do not belong to the administrator role, the
+following privileges are required to run Create Workflow Item:</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 24%" />
+<col style="width: 76%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><strong>Argument</strong></p></td>
+<td><p><strong>Description</strong></p></td>
+</tr>
+<tr class="row-even"><td><p>name</p></td>
+<td><p>Required String. The name of the new schema.</p></td>
+</tr>
+</tbody>
+</table>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>string (item_id)</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="arcgis.gis.workflowmanager.WorkflowManagerAdmin.delete_item">
+<code class="sig-name descname">delete_item</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">item</span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.gis.workflowmanager.WorkflowManagerAdmin.delete_item" title="Permalink to this definition">¶</a></dt>
+<dd><p>Delete a Workflow Manager schema. Does not delete the Workflow Manager Admin group.
+Requires the administrator or publisher role. If the user has the publisher role,
+the user must also be the owner of the item to delete.</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 18%" />
+<col style="width: 82%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><strong>Argument</strong></p></td>
+<td><p><strong>Description</strong></p></td>
+</tr>
+<tr class="row-even"><td><p>id</p></td>
+<td><p>Required Item. The Workflow Manager Item to be deleted</p></td>
+</tr>
+</tbody>
+</table>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>success object</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="arcgis.gis.workflowmanager.WorkflowManagerAdmin.server_status">
+<em class="property">property </em><code class="sig-name descname">server_status</code><a class="headerlink" href="#arcgis.gis.workflowmanager.WorkflowManagerAdmin.server_status" title="Permalink to this definition">¶</a></dt>
+<dd><p>Gets the current status of the Workflow Manager Server</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>boolean</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="arcgis.gis.workflowmanager.WorkflowManagerAdmin.upgrade_item">
+<code class="sig-name descname">upgrade_item</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">item</span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.gis.workflowmanager.WorkflowManagerAdmin.upgrade_item" title="Permalink to this definition">¶</a></dt>
+<dd><p>Upgrades an outdated Workflow Manager schema. Requires the Workflow Manager
+Advanced Administrator privilege or the Portal Admin Update Content privilege.</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 24%" />
+<col style="width: 76%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><strong>Argument</strong></p></td>
+<td><p><strong>Description</strong></p></td>
+</tr>
+<tr class="row-even"><td><p>item</p></td>
+<td><p>Required Item. The Workflow Manager Item to be upgraded</p></td>
+</tr>
+</tbody>
+</table>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>success object</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="jobmanager">
+<h2>JobManager<a class="headerlink" href="#jobmanager" title="Permalink to this headline">¶</a></h2>
+<dl class="py class">
+<dt id="arcgis.gis.workflowmanager.JobManager">
+<em class="property">class </em><code class="sig-prename descclassname">arcgis.gis.workflowmanager.</code><code class="sig-name descname">JobManager</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">item</span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.gis.workflowmanager.JobManager" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>Represents a helper class for workflow manager jobs. Accessible as the
+<a class="reference internal" href="#arcgis.gis.workflowmanager.WorkflowManager.jobs" title="arcgis.gis.workflowmanager.WorkflowManager.jobs"><code class="xref py py-attr docutils literal notranslate"><span class="pre">jobs</span></code></a> property of the
+<a class="reference internal" href="#arcgis.gis.workflowmanager.WorkflowManager" title="arcgis.gis.workflowmanager.WorkflowManager"><code class="xref py py-class docutils literal notranslate"><span class="pre">WorkflowManager</span></code></a>.</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 18%" />
+<col style="width: 82%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><strong>Argument</strong></p></td>
+<td><p><strong>Description</strong></p></td>
+</tr>
+<tr class="row-even"><td><p>item</p></td>
+<td><p>The Workflow Manager Item</p></td>
+</tr>
+</tbody>
+</table>
+<dl class="py method">
+<dt id="arcgis.gis.workflowmanager.JobManager.close">
+<code class="sig-name descname">close</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">job_ids</span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.gis.workflowmanager.JobManager.close" title="Permalink to this definition">¶</a></dt>
+<dd><p>Closes a single or multiple jobs with specific Job IDs</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 18%" />
+<col style="width: 82%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><strong>Argument</strong></p></td>
+<td><p><strong>Description</strong></p></td>
+</tr>
+<tr class="row-even"><td><p>job_ids</p></td>
+<td><p>Required list of job ID strings</p></td>
+</tr>
+</tbody>
+</table>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>success object</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="arcgis.gis.workflowmanager.JobManager.create">
+<code class="sig-name descname">create</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">template</span></em>, <em class="sig-param"><span class="n">count</span><span class="o">=</span><span class="default_value">1</span></em>, <em class="sig-param"><span class="n">name</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">start</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">end</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">priority</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">description</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">owner</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">group</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">assigned</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">complete</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">notes</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">parent</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">location</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">extended_properties</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">related_properties</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">job_id</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.gis.workflowmanager.JobManager.create" title="Permalink to this definition">¶</a></dt>
+<dd><p>Adds a job to the Workflow Manager instance given a user-defined template</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 22%" />
+<col style="width: 78%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><strong>Argument</strong></p></td>
+<td><p><strong>Description</strong></p></td>
+</tr>
+<tr class="row-even"><td><p>template</p></td>
+<td><p>Required object. Workflow Manager Job Template ID</p></td>
+</tr>
+<tr class="row-odd"><td><p>count</p></td>
+<td><p>Optional Integer Number of jobs to create</p></td>
+</tr>
+<tr class="row-even"><td><p>name</p></td>
+<td><p>Optional string. Job Name</p></td>
+</tr>
+<tr class="row-odd"><td><p>start</p></td>
+<td><p>Optional string. Job Start Date</p></td>
+</tr>
+<tr class="row-even"><td><p>end</p></td>
+<td><p>Optional string. Job End Date</p></td>
+</tr>
+<tr class="row-odd"><td><p>priority</p></td>
+<td><p>Optional string. Job Priority Level</p></td>
+</tr>
+<tr class="row-even"><td><p>description</p></td>
+<td><p>Optional string. Job Description</p></td>
+</tr>
+<tr class="row-odd"><td><p>owner</p></td>
+<td><p>Optional string. Job Owner</p></td>
+</tr>
+<tr class="row-even"><td><p>group</p></td>
+<td><p>Optional string Job Group</p></td>
+</tr>
+<tr class="row-odd"><td><p>assigned</p></td>
+<td><p>Optional string. Initial Job Assignee</p></td>
+</tr>
+<tr class="row-even"><td><p>complete</p></td>
+<td><p>Optional Integer Percentage Complete</p></td>
+</tr>
+<tr class="row-odd"><td><p>notes</p></td>
+<td><p>Optional string. Job Notes</p></td>
+</tr>
+<tr class="row-even"><td><p>parent</p></td>
+<td><p>Optional string Parent Job</p></td>
+</tr>
+<tr class="row-odd"><td><p>location</p></td>
+<td><p>Optional Geometry. Define an area of location for your job.</p></td>
+</tr>
+<tr class="row-even"><td><p>extended_properties</p></td>
+<td><p>Optional Dict. Define additional properties on a job template
+specific to your business needs.</p></td>
+</tr>
+<tr class="row-odd"><td><p>related_properties</p></td>
+<td><p>Optional Dict. Define additional 1-M properties on a job template
+specific to your business needs.</p></td>
+</tr>
+<tr class="row-even"><td><p>job_id</p></td>
+<td><p>Optional string. Define the unique jobId of the job to be created.
+Once defined, only one job can be created.</p></td>
+</tr>
+</tbody>
+</table>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>Workflow Manager <a class="reference internal" href="#arcgis.gis.workflowmanager.Job" title="arcgis.gis.workflowmanager.Job"><code class="xref py py-class docutils literal notranslate"><span class="pre">Job</span></code></a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="arcgis.gis.workflowmanager.JobManager.delete">
+<code class="sig-name descname">delete</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">job_ids</span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.gis.workflowmanager.JobManager.delete" title="Permalink to this definition">¶</a></dt>
+<dd><p>Deletes a single or multiple jobs with specific JobIDs</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 18%" />
+<col style="width: 82%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><strong>Argument</strong></p></td>
+<td><p><strong>Description</strong></p></td>
+</tr>
+<tr class="row-even"><td><p>job_ids</p></td>
+<td><p>Required list. A list of job ID strings</p></td>
+</tr>
+</tbody>
+</table>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>success object</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="arcgis.gis.workflowmanager.JobManager.delete_attachment">
+<code class="sig-name descname">delete_attachment</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">job_id</span></em>, <em class="sig-param"><span class="n">attachment_id</span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.gis.workflowmanager.JobManager.delete_attachment" title="Permalink to this definition">¶</a></dt>
+<dd><p>Deletes a job attachment given a job ID and attachment ID</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 18%" />
+<col style="width: 82%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><strong>Argument</strong></p></td>
+<td><p><strong>Description</strong></p></td>
+</tr>
+<tr class="row-even"><td><p>job_id</p></td>
+<td><p>Required string. Job ID</p></td>
+</tr>
+<tr class="row-odd"><td><p>attachment_id</p></td>
+<td><p>Required string. Attachment ID</p></td>
+</tr>
+</tbody>
+</table>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>status code</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="arcgis.gis.workflowmanager.JobManager.diagram">
+<code class="sig-name descname">diagram</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">id</span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.gis.workflowmanager.JobManager.diagram" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the job diagram for the user-defined job</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 18%" />
+<col style="width: 82%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><strong>Argument</strong></p></td>
+<td><p><strong>Description</strong></p></td>
+</tr>
+<tr class="row-even"><td><p>id</p></td>
+<td><p>Required string. Job ID</p></td>
+</tr>
+</tbody>
+</table>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>Workflow Manager <a class="reference internal" href="#arcgis.gis.workflowmanager.JobDiagram" title="arcgis.gis.workflowmanager.JobDiagram"><code class="xref py py-class docutils literal notranslate"><span class="pre">Job</span> <span class="pre">Diagram</span></code></a> object</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="arcgis.gis.workflowmanager.JobManager.get">
+<code class="sig-name descname">get</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">id</span></em>, <em class="sig-param"><span class="n">get_ext_props</span><span class="o">=</span><span class="default_value">True</span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.gis.workflowmanager.JobManager.get" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns an active job with the given ID</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 17%" />
+<col style="width: 83%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><strong>Argument</strong></p></td>
+<td><p><strong>Description</strong></p></td>
+</tr>
+<tr class="row-even"><td><p>id</p></td>
+<td><p>Required string. Job ID</p></td>
+</tr>
+<tr class="row-odd"><td><p>get_ext_props</p></td>
+<td><p>Optional Boolean. If set to true will show the jobs extended properties.</p></td>
+</tr>
+</tbody>
+</table>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>Workflow Manager <a class="reference internal" href="#arcgis.gis.workflowmanager.Job" title="arcgis.gis.workflowmanager.Job"><code class="xref py py-class docutils literal notranslate"><span class="pre">Job</span></code></a> Object</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="arcgis.gis.workflowmanager.JobManager.search">
+<code class="sig-name descname">search</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">query</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">search_string</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">fields</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">display_names</span><span class="o">=</span><span class="default_value">[]</span></em>, <em class="sig-param"><span class="n">sort_by</span><span class="o">=</span><span class="default_value">[]</span></em>, <em class="sig-param"><span class="n">num</span><span class="o">=</span><span class="default_value">10</span></em>, <em class="sig-param"><span class="n">start_num</span><span class="o">=</span><span class="default_value">0</span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.gis.workflowmanager.JobManager.search" title="Permalink to this definition">¶</a></dt>
+<dd><p>Runs a search against the jobs stored inside the Workflow Manager instance</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 15%" />
+<col style="width: 85%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><strong>Argument</strong></p></td>
+<td><p><strong>Description</strong></p></td>
+</tr>
+<tr class="row-even"><td><p>query</p></td>
+<td><p>Required string. SQL query to search against (e.g. “priority=’High’”)</p></td>
+</tr>
+<tr class="row-odd"><td><p>search_str</p></td>
+<td><p>Optional string. Search string to search against (e.g. “High”)</p></td>
+</tr>
+<tr class="row-even"><td><p>fields</p></td>
+<td><p>Optional string. Field list to return</p></td>
+</tr>
+<tr class="row-odd"><td><p>display_names</p></td>
+<td><p>Optional string. Display names for the return fields</p></td>
+</tr>
+<tr class="row-even"><td><p>sort_by</p></td>
+<td><p>Optional string. Field to sort by (e.g. {‘field’: ‘priority’, ‘sortOrder’: ‘Asc’})</p></td>
+</tr>
+<tr class="row-odd"><td><p>num</p></td>
+<td><p>Optional Integer. Number of return results</p></td>
+</tr>
+<tr class="row-even"><td><p>start_num</p></td>
+<td><p>Optional string. Index of first return value</p></td>
+</tr>
+</tbody>
+</table>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p><p><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#list">List</a> of search results</p>
+</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="arcgis.gis.workflowmanager.JobManager.set_job_location">
+<code class="sig-name descname">set_job_location</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">job_id</span></em>, <em class="sig-param"><span class="n">geometry</span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.gis.workflowmanager.JobManager.set_job_location" title="Permalink to this definition">¶</a></dt>
+<dd><p>Set a location of work for an existing job. jobUpdateLocation privilege is required to set a location on a job.</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 18%" />
+<col style="width: 82%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><strong>Arguments</strong></p></td>
+<td><p><strong>Description</strong></p></td>
+</tr>
+<tr class="row-even"><td><p>job_id</p></td>
+<td><p>Required string. ID for the job to update</p></td>
+</tr>
+<tr class="row-odd"><td><p>geometry</p></td>
+<td><p>Required ArcGIS.Geometry.Geometry that describes a Job’s Location.
+Must be a Polygon, Polyline, or Multipoint geometry type</p></td>
+</tr>
+</tbody>
+</table>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>success object</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="arcgis.gis.workflowmanager.JobManager.update">
+<code class="sig-name descname">update</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">job_id</span></em>, <em class="sig-param"><span class="n">update_object</span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.gis.workflowmanager.JobManager.update" title="Permalink to this definition">¶</a></dt>
+<dd><p>Updates a job object by ID</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 16%" />
+<col style="width: 84%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><strong>Argument</strong></p></td>
+<td><p><strong>Description</strong></p></td>
+</tr>
+<tr class="row-even"><td><p>job_id</p></td>
+<td><p>Required string. ID for the job to update</p></td>
+</tr>
+<tr class="row-odd"><td><p>update_object</p></td>
+<td><p>Required object. An object containing the fields and new values to add to the job</p></td>
+</tr>
+</tbody>
+</table>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>success object</p>
+</dd>
+</dl>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># USAGE EXAMPLE: Updating a Job&#39;s properties</span>
+
+<span class="c1"># create a WorkflowManager object from the workflow item</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">workflow_manager</span> <span class="o">=</span> <span class="n">WorkflowManager</span><span class="p">(</span><span class="n">wf_item</span><span class="p">)</span>
+
+<span class="o">&gt;&gt;&gt;</span> <span class="n">job</span> <span class="o">=</span> <span class="n">workflow_manager</span><span class="o">.</span><span class="n">jobs</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">job_id</span><span class="p">)</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">job</span><span class="o">.</span><span class="n">priority</span> <span class="o">=</span> <span class="s1">&#39;Updated&#39;</span>
+
+<span class="o">&gt;&gt;&gt;</span> <span class="n">table_name</span> <span class="o">=</span> <span class="n">job</span><span class="o">.</span><span class="n">extended_properties</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="s2">&quot;tableName&quot;</span><span class="p">]</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">job</span><span class="o">.</span><span class="n">extended_properties</span> <span class="o">=</span> <span class="p">[</span>
+        <span class="p">{</span>
+            <span class="s2">&quot;identifier&quot;</span><span class="p">:</span> <span class="n">table_name</span> <span class="o">+</span> <span class="s2">&quot;.prop1&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;value&quot;</span><span class="p">:</span> <span class="s2">&quot;updated_123&quot;</span>
+        <span class="p">},</span>
+        <span class="p">{</span>
+            <span class="s2">&quot;identifier&quot;</span><span class="p">:</span> <span class="n">table_name</span> <span class="o">+</span> <span class="s2">&quot;.prop2&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;value&quot;</span><span class="p">:</span> <span class="s2">&quot;updated_456&quot;</span>
+        <span class="p">},</span>
+    <span class="p">]</span>
+</pre></div>
+</div>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">workflow_manager</span><span class="o">.</span><span class="n">jobs</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">job_id</span><span class="p">,</span> <span class="nb">vars</span><span class="p">(</span><span class="n">job</span><span class="p">))</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt id="arcgis.gis.workflowmanager.JobManager.upgrade">
+<code class="sig-name descname">upgrade</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">job_ids</span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.gis.workflowmanager.JobManager.upgrade" title="Permalink to this definition">¶</a></dt>
+<dd><p>Upgrades a single or multiple jobs with specific JobIDs</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 18%" />
+<col style="width: 82%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><strong>Argument</strong></p></td>
+<td><p><strong>Description</strong></p></td>
+</tr>
+<tr class="row-even"><td><p>job_ids</p></td>
+<td><p>Required list. A list of job ID strings</p></td>
+</tr>
+</tbody>
+</table>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>success object</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="job">
+<h2>Job<a class="headerlink" href="#job" title="Permalink to this headline">¶</a></h2>
+<dl class="py class">
+<dt id="arcgis.gis.workflowmanager.Job">
+<em class="property">class </em><code class="sig-prename descclassname">arcgis.gis.workflowmanager.</code><code class="sig-name descname">Job</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">init_data</span></em>, <em class="sig-param"><span class="n">gis</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">url</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.gis.workflowmanager.Job" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>Helper class for managing Workflow Manager jobs in a workflow item. This class is
+not created by users directly. An instance of this class, can be created by calling
+the <a class="reference internal" href="#arcgis.gis.workflowmanager.JobManager.get" title="arcgis.gis.workflowmanager.JobManager.get"><code class="xref py py-meth docutils literal notranslate"><span class="pre">get</span></code></a> method of the
+<code class="docutils literal notranslate"><span class="pre">Job</span> <span class="pre">Manager</span></code> with the appropriate job ID. The
+<a class="reference internal" href="#arcgis.gis.workflowmanager.JobManager" title="arcgis.gis.workflowmanager.JobManager"><code class="xref py py-class docutils literal notranslate"><span class="pre">JobManager</span></code></a> is accessible as the
+<a class="reference internal" href="#arcgis.gis.workflowmanager.WorkflowManager.jobs" title="arcgis.gis.workflowmanager.WorkflowManager.jobs"><code class="xref py py-attr docutils literal notranslate"><span class="pre">jobs</span></code></a> property of the
+<a class="reference internal" href="#arcgis.gis.workflowmanager.WorkflowManager" title="arcgis.gis.workflowmanager.WorkflowManager"><code class="xref py py-class docutils literal notranslate"><span class="pre">WorkflowManager</span></code></a>.</p>
+<dl class="py method">
+<dt id="arcgis.gis.workflowmanager.Job.add_attachment">
+<code class="sig-name descname">add_attachment</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">attachment</span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.gis.workflowmanager.Job.add_attachment" title="Permalink to this definition">¶</a></dt>
+<dd><p>Adds an attachment to the job</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 18%" />
+<col style="width: 82%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><strong>Argument</strong></p></td>
+<td><p><strong>Description</strong></p></td>
+</tr>
+<tr class="row-even"><td><p>attachment</p></td>
+<td><p>Filepath to attachment</p></td>
+</tr>
+</tbody>
+</table>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>Job Attachment</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="arcgis.gis.workflowmanager.Job.add_linked_attachment">
+<code class="sig-name descname">add_linked_attachment</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">attachments</span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.gis.workflowmanager.Job.add_linked_attachment" title="Permalink to this definition">¶</a></dt>
+<dd><p>Add linked attachments to a job to provide additional or support information related to the job.
+Linked attachments can be links to a file on a local or shared file system or a URL.
+jobUpdateAttachments privilege is required to add an attachment to a job.</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 18%" />
+<col style="width: 82%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><strong>Argument</strong></p></td>
+<td><p><strong>Description</strong></p></td>
+</tr>
+<tr class="row-even"><td><p>attachments</p></td>
+<td><p>List of linked attachments to associate with the job.
+Each attachment should define the url, alias and folder</p></td>
+</tr>
+</tbody>
+</table>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p><p><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#list">List</a> list of job attachments</p>
+</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="arcgis.gis.workflowmanager.Job.attachments">
+<em class="property">property </em><code class="sig-name descname">attachments</code><a class="headerlink" href="#arcgis.gis.workflowmanager.Job.attachments" title="Permalink to this definition">¶</a></dt>
+<dd><p>Gets the attachments of a job given job ID</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p><p><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#list">list</a> of attachments</p>
+</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="arcgis.gis.workflowmanager.Job.get_attachment">
+<code class="sig-name descname">get_attachment</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">attachment_id</span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.gis.workflowmanager.Job.get_attachment" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns an embedded job attachment given an attachment ID</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 18%" />
+<col style="width: 82%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><strong>Argument</strong></p></td>
+<td><p><strong>Description</strong></p></td>
+</tr>
+<tr class="row-even"><td><p>attachment_id</p></td>
+<td><p>Attachment ID</p></td>
+</tr>
+</tbody>
+</table>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>Job Attachment</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="arcgis.gis.workflowmanager.Job.history">
+<em class="property">property </em><code class="sig-name descname">history</code><a class="headerlink" href="#arcgis.gis.workflowmanager.Job.history" title="Permalink to this definition">¶</a></dt>
+<dd><p>Gets the history of a job given job ID</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>success object</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="arcgis.gis.workflowmanager.Job.location">
+<em class="property">property </em><code class="sig-name descname">location</code><a class="headerlink" href="#arcgis.gis.workflowmanager.Job.location" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get/Set the job location for the user-defined job</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>Workflow Manager <a class="reference internal" href="#arcgis.gis.workflowmanager.JobLocation" title="arcgis.gis.workflowmanager.JobLocation"><code class="xref py py-class docutils literal notranslate"><span class="pre">JobLocation</span></code></a> object</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="arcgis.gis.workflowmanager.Job.set_current_step">
+<code class="sig-name descname">set_current_step</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">step_id</span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.gis.workflowmanager.Job.set_current_step" title="Permalink to this definition">¶</a></dt>
+<dd><p>Sets a single step to be the active step on the job. The ability to set a step as current is controlled by the <strong>workflowSetStepCurrent</strong> privilege.</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 18%" />
+<col style="width: 82%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><strong>Argument</strong></p></td>
+<td><p><strong>Description</strong></p></td>
+</tr>
+<tr class="row-even"><td><p>step_id</p></td>
+<td><p>Active Step ID</p></td>
+</tr>
+</tbody>
+</table>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>success object</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="arcgis.gis.workflowmanager.Job.update_attachment">
+<code class="sig-name descname">update_attachment</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">attachment_id</span></em>, <em class="sig-param"><span class="n">alias</span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.gis.workflowmanager.Job.update_attachment" title="Permalink to this definition">¶</a></dt>
+<dd><p>Updates an attachment alias given a Job ID and attachment ID</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 18%" />
+<col style="width: 82%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><strong>Argument</strong></p></td>
+<td><p><strong>Description</strong></p></td>
+</tr>
+<tr class="row-even"><td><p>attachment_id</p></td>
+<td><p>Attachment ID</p></td>
+</tr>
+<tr class="row-odd"><td><p>alias</p></td>
+<td><p>Alias</p></td>
+</tr>
+</tbody>
+</table>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>success</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="arcgis.gis.workflowmanager.Job.update_step">
+<code class="sig-name descname">update_step</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">step_id</span></em>, <em class="sig-param"><span class="n">assigned_type</span></em>, <em class="sig-param"><span class="n">assigned_to</span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.gis.workflowmanager.Job.update_step" title="Permalink to this definition">¶</a></dt>
+<dd><p>Update the assignment of the current step in a job based on the current user’s Workflow Manager assignment privileges</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 17%" />
+<col style="width: 83%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><strong>Argument</strong></p></td>
+<td><p><strong>Description</strong></p></td>
+</tr>
+<tr class="row-even"><td><p>step_id</p></td>
+<td><p>Active Step ID</p></td>
+</tr>
+<tr class="row-odd"><td><p>assigned_type</p></td>
+<td><p>Type of assignment designated (NOTE: Must be User, Group or Unassigned)</p></td>
+</tr>
+<tr class="row-even"><td><p>assigned_to</p></td>
+<td><p>User to which the active step is assigned</p></td>
+</tr>
+</tbody>
+</table>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>success object</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="jobdiagram">
+<h2>JobDiagram<a class="headerlink" href="#jobdiagram" title="Permalink to this headline">¶</a></h2>
+<dl class="py class">
+<dt id="arcgis.gis.workflowmanager.JobDiagram">
+<em class="property">class </em><code class="sig-prename descclassname">arcgis.gis.workflowmanager.</code><code class="sig-name descname">JobDiagram</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">init_data</span></em>, <em class="sig-param"><span class="n">gis</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">url</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.gis.workflowmanager.JobDiagram" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>Helper class for managing Workflow Manager <a class="reference internal" href="#arcgis.gis.workflowmanager.JobDiagram" title="arcgis.gis.workflowmanager.JobDiagram"><code class="xref py py-class docutils literal notranslate"><span class="pre">job</span> <span class="pre">diagrams</span></code></a>
+in a workflow <a class="reference internal" href="arcgis.gis.toc.html#arcgis.gis.Item" title="arcgis.gis.Item"><code class="xref py py-class docutils literal notranslate"><span class="pre">item</span></code></a>. This class is not created directly. An instance
+can be created by calling the <a class="reference internal" href="#arcgis.gis.workflowmanager.WorkflowManager.diagrams" title="arcgis.gis.workflowmanager.WorkflowManager.diagrams"><code class="xref py py-attr docutils literal notranslate"><span class="pre">diagrams</span></code></a> property
+of the <a class="reference internal" href="#arcgis.gis.workflowmanager.WorkflowManager" title="arcgis.gis.workflowmanager.WorkflowManager"><code class="xref py py-class docutils literal notranslate"><span class="pre">WorkflowManager</span></code></a> to retrieve a list of diagrams. Then
+the <a class="reference internal" href="#arcgis.gis.workflowmanager.WorkflowManager.diagram" title="arcgis.gis.workflowmanager.WorkflowManager.diagram"><code class="xref py py-meth docutils literal notranslate"><span class="pre">diagram()</span></code></a> method can be used with the appropriate
+ID of the digram to retrieve the <a class="reference internal" href="#arcgis.gis.workflowmanager.JobDiagram" title="arcgis.gis.workflowmanager.JobDiagram"><code class="xref py py-class docutils literal notranslate"><span class="pre">job</span> <span class="pre">diagram</span></code></a>.</p>
+</dd></dl>
+
+</div>
+<div class="section" id="joblocation">
+<h2>JobLocation<a class="headerlink" href="#joblocation" title="Permalink to this headline">¶</a></h2>
+<dl class="py class">
+<dt id="arcgis.gis.workflowmanager.JobLocation">
+<em class="property">class </em><code class="sig-prename descclassname">arcgis.gis.workflowmanager.</code><code class="sig-name descname">JobLocation</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">init_data</span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.gis.workflowmanager.JobLocation" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>Represents a Workflow Manager Job Location object with accompanying GET, POST, and DELETE methods</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 18%" />
+<col style="width: 82%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><strong>Argument</strong></p></td>
+<td><p><strong>Description</strong></p></td>
+</tr>
+<tr class="row-even"><td><p>init_data</p></td>
+<td><p>Required object. Represents. relevant parameters for GET or POST calls</p></td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</div>
+<div class="section" id="jobtemplate">
+<h2>JobTemplate<a class="headerlink" href="#jobtemplate" title="Permalink to this headline">¶</a></h2>
+<dl class="py class">
+<dt id="arcgis.gis.workflowmanager.JobTemplate">
+<em class="property">class </em><code class="sig-prename descclassname">arcgis.gis.workflowmanager.</code><code class="sig-name descname">JobTemplate</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">init_data</span></em>, <em class="sig-param"><span class="n">gis</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">url</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.gis.workflowmanager.JobTemplate" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>Represents a Workflow Manager Job Template object with accompanying GET, POST, and DELETE methods</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 18%" />
+<col style="width: 82%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><strong>Argument</strong></p></td>
+<td><p><strong>Description</strong></p></td>
+</tr>
+<tr class="row-even"><td><p>init_data</p></td>
+<td><p>data object representing relevant parameters for GET or POST calls</p></td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</div>
+<div class="section" id="group">
+<h2>Group<a class="headerlink" href="#group" title="Permalink to this headline">¶</a></h2>
+<dl class="py class">
+<dt id="arcgis.gis.workflowmanager.Group">
+<em class="property">class </em><code class="sig-prename descclassname">arcgis.gis.workflowmanager.</code><code class="sig-name descname">Group</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">init_data</span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.gis.workflowmanager.Group" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>Represents a Workflow Manager Group object with accompanying GET, POST, and DELETE methods</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 18%" />
+<col style="width: 82%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><strong>Argument</strong></p></td>
+<td><p><strong>Description</strong></p></td>
+</tr>
+<tr class="row-even"><td><p>init_data</p></td>
+<td><p>data object representing relevant parameters for GET or POST calls</p></td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</div>
+<div class="section" id="savedsearchesmanager">
+<h2>SavedSearchesManager<a class="headerlink" href="#savedsearchesmanager" title="Permalink to this headline">¶</a></h2>
+<dl class="py class">
+<dt id="arcgis.gis.workflowmanager.SavedSearchesManager">
+<em class="property">class </em><code class="sig-prename descclassname">arcgis.gis.workflowmanager.</code><code class="sig-name descname">SavedSearchesManager</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">item</span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.gis.workflowmanager.SavedSearchesManager" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>Represents a helper class for workflow manager saved searches. Accessible as the
+<a class="reference internal" href="#arcgis.gis.workflowmanager.WorkflowManager.saved_searches" title="arcgis.gis.workflowmanager.WorkflowManager.saved_searches"><code class="xref py py-attr docutils literal notranslate"><span class="pre">saved_searches</span></code></a> property.</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 18%" />
+<col style="width: 82%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><strong>Argument</strong></p></td>
+<td><p><strong>Description</strong></p></td>
+</tr>
+<tr class="row-even"><td><p>item</p></td>
+<td><p>The Workflow Manager Item</p></td>
+</tr>
+</tbody>
+</table>
+<dl class="py method">
+<dt id="arcgis.gis.workflowmanager.SavedSearchesManager.create">
+<code class="sig-name descname">create</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">name</span></em>, <em class="sig-param"><span class="n">search_type</span></em>, <em class="sig-param"><span class="n">folder</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">definition</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">color_ramp</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">sort_index</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">search_id</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.gis.workflowmanager.SavedSearchesManager.create" title="Permalink to this definition">¶</a></dt>
+<dd><p>Create a saved search or chart by specifying the search parameters in the json body.
+All search properties except for optional properties must be passed in the body to save the search or chart.
+The adminAdvanced or adminBasic privilege is required.</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 13%" />
+<col style="width: 88%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><strong>Argument</strong></p></td>
+<td><p><strong>Description</strong></p></td>
+</tr>
+<tr class="row-even"><td><p>name</p></td>
+<td><p>Required string. The display name for the saved search or chart.</p></td>
+</tr>
+<tr class="row-odd"><td><p>search_type</p></td>
+<td><p>Required string. The type for the saved search or chart. The accepted values are Standard, Chart and All.</p></td>
+</tr>
+<tr class="row-even"><td><p>folder</p></td>
+<td><p>Optional string. The folder the saved search or chart will be categorized under.</p></td>
+</tr>
+<tr class="row-odd"><td><p>definition</p></td>
+<td><p>Required string. if the searchType is Standard. The search definition to be saved.</p></td>
+</tr>
+<tr class="row-even"><td><p>color_ramp</p></td>
+<td><p>Required string. if the searchType is Chart. The color ramp for the saved chart.</p></td>
+</tr>
+<tr class="row-odd"><td><p>sort_index</p></td>
+<td><p>Optional string. The sorting order for the saved search or chart.</p></td>
+</tr>
+<tr class="row-even"><td><p>search_id</p></td>
+<td><p>Optional string. The unique ID of the search or chart to be created.</p></td>
+</tr>
+</tbody>
+</table>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>Saved Search ID</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="arcgis.gis.workflowmanager.SavedSearchesManager.delete">
+<code class="sig-name descname">delete</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">id</span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.gis.workflowmanager.SavedSearchesManager.delete" title="Permalink to this definition">¶</a></dt>
+<dd><p>Deletes a saved search by ID</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 18%" />
+<col style="width: 82%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><strong>Argument</strong></p></td>
+<td><p><strong>Description</strong></p></td>
+</tr>
+<tr class="row-even"><td><p>id</p></td>
+<td><p>Required string. Saved Search id</p></td>
+</tr>
+</tbody>
+</table>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>boolean</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="arcgis.gis.workflowmanager.SavedSearchesManager.update">
+<code class="sig-name descname">update</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">search</span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.gis.workflowmanager.SavedSearchesManager.update" title="Permalink to this definition">¶</a></dt>
+<dd><p>Update a saved search or chart by specifying the update values in the json body.
+All the properties except for optional properties must be passed in the body
+to update the search or chart. The searchId cannot be updated once it is created.
+The adminAdvanced or adminBasic privilege is required.</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 16%" />
+<col style="width: 84%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><strong>Arguments</strong></p></td>
+<td><p><strong>Description</strong></p></td>
+</tr>
+<tr class="row-even"><td><p>search</p></td>
+<td><p>Required object. An object defining the properties of the search to be updated.</p></td>
+</tr>
+</tbody>
+</table>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>success object</p>
+</dd>
+</dl>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># USAGE EXAMPLE: Updating a Job&#39;s properties</span>
+
+<span class="c1"># create a WorkflowManager object from the workflow item</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">workflow_manager</span> <span class="o">=</span> <span class="n">WorkflowManager</span><span class="p">(</span><span class="n">wf_item</span><span class="p">)</span>
+
+<span class="o">&gt;&gt;&gt;</span> <span class="n">workflow_manager</span><span class="o">.</span><span class="n">create_saved_search</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s2">&quot;name&quot;</span><span class="p">,</span>
+                                        <span class="n">definition</span><span class="o">=</span><span class="p">{</span>
+                                            <span class="s2">&quot;start&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+                                            <span class="s2">&quot;fields&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;job_status&quot;</span><span class="p">],</span>
+                                            <span class="s2">&quot;displayNames&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;Status&quot;</span>  <span class="p">],</span>
+                                            <span class="s2">&quot;sortFields&quot;</span><span class="p">:</span> <span class="p">[{</span><span class="s2">&quot;field&quot;</span><span class="p">:</span> <span class="s2">&quot;job_status&quot;</span><span class="p">,</span>
+                                                            <span class="s2">&quot;sortOrder&quot;</span><span class="p">:</span> <span class="s2">&quot;Asc:}]</span>
+                                                    <span class="p">},</span>
+                                        <span class="n">search_type</span><span class="o">=</span><span class="s1">&#39;Chart&#39;</span><span class="p">,</span>
+                                        <span class="n">color_ramp</span><span class="o">=</span><span class="s1">&#39;Flower Field Inverse&#39;</span><span class="p">,</span>
+                                        <span class="n">sort_index</span><span class="o">=</span><span class="mi">2000</span><span class="p">)</span>
+
+<span class="o">&gt;&gt;&gt;</span> <span class="n">search_lst</span> <span class="o">=</span> <span class="n">workflow_manager</span><span class="o">.</span><span class="n">searches</span><span class="p">(</span><span class="s2">&quot;All&quot;</span><span class="p">)</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">search</span> <span class="o">=</span> <span class="p">[</span><span class="n">x</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">search_lst</span> <span class="k">if</span> <span class="n">x</span><span class="p">[</span><span class="s2">&quot;searchId&quot;</span><span class="p">]</span> <span class="o">==</span> <span class="n">searchid</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span>
+
+<span class="o">&gt;&gt;&gt;</span> <span class="n">search</span><span class="p">[</span><span class="s2">&quot;colorRamp&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;Default&quot;</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">search</span><span class="p">[</span><span class="s2">&quot;name&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;Updated search&quot;</span>
+
+<span class="o">&gt;&gt;&gt;</span> <span class="n">actual</span> <span class="o">=</span> <span class="n">workflow_manager</span><span class="o">.</span><span class="n">update_saved_search</span><span class="p">(</span><span class="n">search</span><span class="p">)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="wmrole">
+<h2>WMRole<a class="headerlink" href="#wmrole" title="Permalink to this headline">¶</a></h2>
+<dl class="py class">
+<dt id="arcgis.gis.workflowmanager.WMRole">
+<em class="property">class </em><code class="sig-prename descclassname">arcgis.gis.workflowmanager.</code><code class="sig-name descname">WMRole</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">init_data</span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.gis.workflowmanager.WMRole" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>Represents a Workflow Manager Role object with accompanying GET, POST, and DELETE methods</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 18%" />
+<col style="width: 82%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><strong>Argument</strong></p></td>
+<td><p><strong>Description</strong></p></td>
+</tr>
+<tr class="row-even"><td><p>init_data</p></td>
+<td><p>data object representing relevant parameters for GET or POST calls</p></td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</div>
+</div>
+
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="arcgis.gis.tasks.html" class="btn btn-neutral float-right" title="arcgis.gis.tasks module" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="arcgis.gis.nb.html" class="btn btn-neutral float-left" title="arcgis.gis.nb module" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        
+        &copy; Copyright 2016-2021, Esri
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+    Options v: 1.9.1
+
+  <div class="rst-versions" data-toggle="rst-versions" role="note" aria-label="versions">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      <span class="fa fa-book"> Pick an earlier version</span>
+      v: 1.9.1
+      <span class="fa fa-caret-down"></span>
+    </span>
+    <div class="rst-other-versions">
+      
+      
+      <dl>
+        <dt>Versions</dt>
+        
+          
+          <dd><a href="1.9.0/">1.9.0</a></dd>
+          
+        
+          
+          <dd><a href="1.8.5/">1.8.5</a></dd>
+          
+        
+          
+          <dd><a href="1.8.4/">1.8.4</a></dd>
+          
+        
+          
+          <dd><a href="1.8.3/">1.8.3</a></dd>
+          
+        
+          
+          <dd><a href="1.8.2/">1.8.2</a></dd>
+          
+        
+          
+          <dd><a href="1.8.1/">1.8.1</a></dd>
+          
+        
+          
+          <dd><a href="1.8.0/">1.8.0</a></dd>
+          
+        
+          
+          <dd><a href="1.7.1/">1.7.1</a></dd>
+          
+        
+          
+          <dd><a href="1.7.0/">1.7.0</a></dd>
+          
+        
+          
+          <dd><a href="1.6.2/">1.6.2</a></dd>
+          
+        
+          
+          <dd><a href="1.6.1/">1.6.1</a></dd>
+          
+        
+          
+          <dd><a href="1.6.0/">1.6.0</a></dd>
+          
+        
+          
+          <dd><a href="1.5.2/">1.5.2</a></dd>
+          
+        
+          
+          <dd><a href="1.5.1/">1.5.1</a></dd>
+          
+        
+          
+          <dd><a href="1.5.0/">1.5.0</a></dd>
+          
+        
+          
+          <dd><a href="1.4.2/">1.4.2</a></dd>
+          
+        
+          
+          <dd><a href="1.4.1/">1.4.1</a></dd>
+          
+        
+          
+          <dd><a href="1.4.0/">1.4.0</a></dd>
+          
+        
+          
+          <dd><a href="1.3.0/">1.3.0</a></dd>
+          
+        
+          
+          <dd><a href="1.2.5/">1.2.5</a></dd>
+          
+        
+          
+          <dd><a href="1.2.4/">1.2.4</a></dd>
+          
+        
+          
+          <dd><a href="1.2.3/">1.2.3</a></dd>
+          
+        
+          
+          <dd><a href="1.2.2/">1.2.2</a></dd>
+          
+        
+          
+          <dd><a href="1.2.1/">1.2.1</a></dd>
+          
+        
+          
+          <dd><a href="1.2.0/">1.2.0</a></dd>
+          
+        
+          
+          <dd><a href="1.1.0/">1.1.0</a></dd>
+          
+        
+          
+          <dd><a href="1.0.1/">1.0.1</a></dd>
+          
+        
+          
+          <dd><a href="1.0.0/">1.0.0</a></dd>
+          
+        
+          
+          <dd><a href="0.3.0/">0.3.0</a></dd>
+          
+        
+          
+          <dd><a href="0.2.0/">0.2.0</a></dd>
+          
+        
+          
+          <dd><a href="0.1.0/">0.1.0</a></dd>
+          
+        
+      </dl>
+      
+      
+      
+    </div>
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

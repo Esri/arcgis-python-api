@@ -1,0 +1,1248 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <title>arcgis.graph module &mdash; arcgis 2.3.1 documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="_static/theme_overrides.css" type="text/css" />
+
+  
+  
+    <link rel="shortcut icon" href="_static/favicon.ico"/>
+  
+
+  
+  
+
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/doctools.js"></script>
+        <script src="_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="arcgis.mapping module" href="arcgis.mapping.toc.html" />
+    <link rel="prev" title="arcgis.geoprocessing module" href="arcgis.geoprocessing.html" />
+<!-- This code block is inserted close near the <head> tag. See http://bit.ly/2BHUQzB -->
+<!-- The point of this code block is to send us google analytics on website views -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-NJGGV5');</script>
+ 
+
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="index.html" class="icon icon-home"> arcgis
+          
+
+          
+            
+            <img src="_static/python_api_logo.png" class="logo" alt="Logo"/>
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                2.3.1
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">arcgis</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="arcgis.gis.toc.html">arcgis.gis module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="arcgis.env.html">arcgis.env module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="arcgis.features.toc.html">arcgis.features module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="arcgis.raster.toc.html">arcgis.raster module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="arcgis.network.toc.html">arcgis.network module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="arcgis.notebook.html">arcgis.notebook module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="arcgis.geoanalytics.toc.html">arcgis.geoanalytics module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="arcgis.geocoding.html">arcgis.geocoding module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="arcgis.geoenrichment.html">arcgis.geoenrichment module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="arcgis.geometry.html">arcgis.geometry module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="arcgis.geoprocessing.html">arcgis.geoprocessing module</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">arcgis.graph module</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#knowledgegraph">KnowledgeGraph</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="arcgis.mapping.toc.html">arcgis.mapping module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="arcgis.realtime.html">arcgis.realtime module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="arcgis.schematics.html">arcgis.schematics module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="arcgis.widgets.html">arcgis.widgets module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="arcgis.apps.html">arcgis.apps module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="arcgis.learn.toc.html">arcgis.learn module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="arcgis.auth.html">arcgis.auth package</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">arcgis</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
+        
+      <li>arcgis.graph module</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+<!-- This code block is inserted close near the <body> tag. See http://bit.ly/2BHUQzB -->
+<!-- The point of this code block is to send us google analytics on website views -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NJGGV5"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+
+  <div class="section" id="module-arcgis.graph">
+<span id="arcgis-graph-module"></span><h1>arcgis.graph module<a class="headerlink" href="#module-arcgis.graph" title="Permalink to this headline">¶</a></h1>
+<p>The <code class="docutils literal notranslate"><span class="pre">arcgis.graph</span></code> module contains classes and functions for working with ArcGIS Knowledge graphs. The available 
+functions allow for searching and querying the graph data, and viewing the data model of the graph database.</p>
+<p>Knowledge graphs consist of entities and the relationships between them, each of which can contain properties which describe 
+their attributes. The data model of the knowledge graph can show you which entities, relationships, and properties are in 
+your database, along with other information about the graph. Performing a search or openCypher query on the graph will 
+return results from the database based on the search or query terms provided.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Applications based on ArcGIS API for Python version 2.0.1 can only communicate with knowledge graphs in an ArcGIS Enterprise 
+10.9.1 or 11.0 deployment. ArcGIS Enterprise 11.1 includes breaking changes for knowledge graphs. Only applications based on 
+ArcGIS API for Python version 2.1.0 or later will be able to communicate with knowledge graphs in an Enterprise 11.1 deployment. 
+See the ArcGIS Enterprise Knowledge Server documentation for more details.</p>
+</div>
+<div class="section" id="knowledgegraph">
+<h2>KnowledgeGraph<a class="headerlink" href="#knowledgegraph" title="Permalink to this headline">¶</a></h2>
+<dl class="py class">
+<dt id="arcgis.graph.KnowledgeGraph">
+<em class="property">class </em><code class="sig-prename descclassname">arcgis.graph.</code><code class="sig-name descname">KnowledgeGraph</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">url</span></em>, <em class="sig-param"><span class="o">*</span></em>, <em class="sig-param"><span class="n">gis</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.graph.KnowledgeGraph" title="Permalink to this definition">¶</a></dt>
+<dd><p>Provides access to the Knowledge Graph service data model and properties, as well as
+methods to search and query the graph.</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 21%" />
+<col style="width: 79%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><strong>Parameter</strong></p></td>
+<td><p><strong>Description</strong></p></td>
+</tr>
+<tr class="row-even"><td><p>url</p></td>
+<td><p>Knowledge Graph service URL</p></td>
+</tr>
+<tr class="row-odd"><td><p>gis</p></td>
+<td><p>an authenticated <a class="reference internal" href="arcgis.gis.toc.html#arcgis.gis.GIS" title="arcgis.gis.GIS"><code class="xref py py-class docutils literal notranslate"><span class="pre">arcgis.gis.GIS</span></code></a> object.</p></td>
+</tr>
+</tbody>
+</table>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Connect to a Knowledge Graph service:</span>
+
+<span class="n">gis</span> <span class="o">=</span> <span class="n">GIS</span><span class="p">(</span><span class="n">url</span><span class="o">=</span><span class="s2">&quot;url&quot;</span><span class="p">,</span><span class="n">username</span><span class="o">=</span><span class="s2">&quot;username&quot;</span><span class="p">,</span><span class="n">password</span><span class="o">=</span><span class="s2">&quot;password&quot;</span><span class="p">)</span>
+
+<span class="n">knowledge_graph</span> <span class="o">=</span> <span class="n">KnowledgeGraph</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="n">gis</span><span class="o">=</span><span class="n">gis</span><span class="p">)</span>
+</pre></div>
+</div>
+<dl class="py method">
+<dt id="arcgis.graph.KnowledgeGraph.apply_edits">
+<code class="sig-name descname">apply_edits</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">adds</span><span class="o">=</span><span class="default_value">[]</span></em>, <em class="sig-param"><span class="n">updates</span><span class="o">=</span><span class="default_value">[]</span></em>, <em class="sig-param"><span class="n">deletes</span><span class="o">=</span><span class="default_value">[]</span></em>, <em class="sig-param"><span class="n">input_transform</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">cascade_delete</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="n">cascade_delete_provenance</span><span class="o">=</span><span class="default_value">False</span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.graph.KnowledgeGraph.apply_edits" title="Permalink to this definition">¶</a></dt>
+<dd><p>Allows users to add new graph entities/relationships, update existing
+entities/relationships, or delete existing entities/relationships. For details on how the
+dictionaries for each of these operations should be structured, please refer to the samples
+further below.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>objectid values are not supported in dictionaries for apply_edits</p>
+</div>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 28%" />
+<col style="width: 72%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><strong>Parameter</strong></p></td>
+<td><p><strong>Description</strong></p></td>
+</tr>
+<tr class="row-even"><td><p>adds</p></td>
+<td><p>Optional list of dicts. The list of objects to add to the
+graph, represented in dictionary format.</p></td>
+</tr>
+<tr class="row-odd"><td><p>updates</p></td>
+<td><p>Optional list of dicts. The list of existent graph objects that
+are to be updated, represented in dictionary format.</p></td>
+</tr>
+<tr class="row-even"><td><p>deletes</p></td>
+<td><p>Optional list of dicts. The list of existent objects to remove
+from the graph, represented in dictionary format.</p></td>
+</tr>
+<tr class="row-odd"><td><p>input_transform</p></td>
+<td><p>Optional dict. Allows a user to specify custom quantization
+parameters for input geometry, which dictate how geometries are
+compressed and transferred to the server. Defaults to lossless
+WGS84 quantization.</p></td>
+</tr>
+<tr class="row-even"><td><p>cascade_delete</p></td>
+<td><p>Optional boolean. When <cite>True</cite>, relationships connected to
+entities that are being deleted will automatically be deleted
+as well. When <cite>False</cite>, these relationships must be deleted
+manually first. Defaults to <cite>False</cite>.</p></td>
+</tr>
+<tr class="row-odd"><td><p>cascade_delete_provenance</p></td>
+<td><p>Optional boolean. When <cite>True</cite>, deleting entities/relationships
+or setting their property values to null will result in
+automatic deletion of associated provenance records. When
+<cite>False</cite>, <cite>apply_edits()</cite> will fail if there are provenance
+records connected to entities/relationships intended for
+deletion or having their properties set to null.</p></td>
+</tr>
+</tbody>
+</table>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># example of an add dictionary- include all properties</span>
+<span class="p">{</span>
+    <span class="s2">&quot;_objectType&quot;</span><span class="p">:</span> <span class="s2">&quot;entity&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;_typeName&quot;</span><span class="p">:</span> <span class="s2">&quot;Person&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;_id&quot;</span><span class="p">:</span> <span class="s2">&quot;{XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXXX}&quot;</span>
+    <span class="s2">&quot;_properties&quot;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="s2">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;PythonAPILover&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;hometown&quot;</span><span class="p">:</span> <span class="s2">&quot;Redlands&quot;</span><span class="p">,</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="c1"># update dictionary- include only properties being changed</span>
+<span class="p">{</span>
+    <span class="s2">&quot;_objectType&quot;</span><span class="p">:</span> <span class="s2">&quot;entity&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;_typeName&quot;</span><span class="p">:</span> <span class="s2">&quot;Person&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;_id&quot;</span><span class="p">:</span> <span class="s2">&quot;{XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXXX}&quot;</span>
+    <span class="s2">&quot;_properties&quot;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="s2">&quot;hometown&quot;</span><span class="p">:</span> <span class="s2">&quot;Lisbon&quot;</span><span class="p">,</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="c1"># delete dictionary- pass a list of id&#39;s to be deleted</span>
+<span class="p">{</span>
+    <span class="s2">&quot;_objectType&quot;</span><span class="p">:</span> <span class="s2">&quot;entity&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;_typeName&quot;</span><span class="p">:</span> <span class="s2">&quot;Person&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;_ids&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;{XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXXX}&quot;</span><span class="p">]</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>A <cite>dict</cite> showing the results of the edits.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="arcgis.graph.KnowledgeGraph.constraint_rule_adds">
+<code class="sig-name descname">constraint_rule_adds</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">rules</span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.graph.KnowledgeGraph.constraint_rule_adds" title="Permalink to this definition">¶</a></dt>
+<dd><p>Adds constraint rules for entities &amp; relationships to the data model.</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 20%" />
+<col style="width: 80%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><strong>Parameter</strong></p></td>
+<td><p><strong>Description</strong></p></td>
+</tr>
+<tr class="row-even"><td><p>rules</p></td>
+<td><p>Required list of dicts. The dictionaries defining the
+constraint rules to be added. See below for an example of the
+structure.</p></td>
+</tr>
+</tbody>
+</table>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Create a constraint rule and add it to the Knowledge Graph&#39;s data model.</span>
+<span class="n">person</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;set&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;Person&quot;</span><span class="p">]}</span>
+
+<span class="n">works_at</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;set&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;WorksAt&quot;</span><span class="p">]}</span>
+
+<span class="n">company</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;set_complement&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;Company&quot;</span><span class="p">]}</span>
+
+<span class="n">relationship_exclusion_rule</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s2">&quot;origin_entity_types&quot;</span><span class="p">:</span> <span class="n">person</span><span class="p">,</span>
+    <span class="s2">&quot;relationship_types&quot;</span><span class="p">:</span> <span class="n">works_at</span><span class="p">,</span>
+    <span class="s2">&quot;destination_entity_types&quot;</span><span class="p">:</span> <span class="n">company</span>
+<span class="p">}</span>
+
+<span class="n">constraint_rule</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s2">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;PersonCS&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;alias&quot;</span><span class="p">:</span> <span class="s2">&quot;officespace&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;disabled&quot;</span><span class="p">:</span> <span class="kc">False</span><span class="p">,</span>
+    <span class="s2">&quot;relationship_exclusion_rule&quot;</span><span class="p">:</span> <span class="n">relationship_exclusion_rule</span>
+<span class="p">}</span>
+
+<span class="n">knowledge_graph</span><span class="o">.</span><span class="n">constraint_rule_adds</span><span class="p">([</span><span class="n">constraint_rule</span><span class="p">])</span>
+</pre></div>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>A <cite>dict</cite> showing the results of adding the rule(s).</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="arcgis.graph.KnowledgeGraph.constraint_rule_deletes">
+<code class="sig-name descname">constraint_rule_deletes</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">rule_names</span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.graph.KnowledgeGraph.constraint_rule_deletes" title="Permalink to this definition">¶</a></dt>
+<dd><p>Deletes existing constraint rules for entities &amp; relationships from the data model.</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 20%" />
+<col style="width: 80%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><strong>Parameter</strong></p></td>
+<td><p><strong>Description</strong></p></td>
+</tr>
+<tr class="row-even"><td><p>rule_names</p></td>
+<td><p>Required list of strings. The names of the constraint rules to
+be deleted, as defined in a rule’s ‘name’ attribute.</p></td>
+</tr>
+</tbody>
+</table>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Delete a constraint rule from the Knowledge Graph&#39;s data model.</span>
+<span class="n">knowledge_graph</span><span class="o">.</span><span class="n">constraint_rule_deletes</span><span class="p">([</span><span class="s2">&quot;constraint_rule_1&quot;</span><span class="p">])</span>
+</pre></div>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>A <cite>dict</cite> showing the results of deleting the rule(s).</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="arcgis.graph.KnowledgeGraph.datamodel">
+<em class="property">property </em><code class="sig-name descname">datamodel</code><a class="headerlink" href="#arcgis.graph.KnowledgeGraph.datamodel" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the datamodel for the Knowledge Graph service</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="arcgis.graph.KnowledgeGraph.fromitem">
+<em class="property">classmethod </em><code class="sig-name descname">fromitem</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">item</span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.graph.KnowledgeGraph.fromitem" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the Knowledge Graph service from an Item</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="arcgis.graph.KnowledgeGraph.graph_property_adds">
+<code class="sig-name descname">graph_property_adds</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">type_name</span></em>, <em class="sig-param"><span class="n">graph_properties</span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.graph.KnowledgeGraph.graph_property_adds" title="Permalink to this definition">¶</a></dt>
+<dd><p>Adds properties to a named type in the data model</p>
+<p><a class="reference external" href="https://developers.arcgis.com/rest/services-reference/enterprise/kgs-datamodel-edit-namedtypes-type-fields-add.htm">Learn more about adding properties in a knowledge graph</a></p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 20%" />
+<col style="width: 80%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><strong>Parameter</strong></p></td>
+<td><p><strong>Description</strong></p></td>
+</tr>
+<tr class="row-even"><td><p>type_name</p></td>
+<td><p>Required string. The entity or relationship type to which the
+properties will be added.</p></td>
+</tr>
+<tr class="row-odd"><td><p>graph_properties</p></td>
+<td><p>Required list of dicts. The list of properties to add
+to the named type, represented in dictionary format.</p></td>
+</tr>
+</tbody>
+</table>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># example of a shape property to be added to a named type</span>
+<span class="p">{</span>
+    <span class="s2">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;MyPointGeometry&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;alias&quot;</span><span class="p">:</span> <span class="s2">&quot;MyPointGeometry&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;fieldType&quot;</span><span class="p">:</span> <span class="s2">&quot;esriFieldTypeGeometry&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;geometryType&quot;</span><span class="p">:</span> <span class="s2">&quot;esriGeometryPoint&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;hasZ&quot;</span><span class="p">:</span> <span class="kc">False</span><span class="p">,</span>
+    <span class="s2">&quot;hasM&quot;</span><span class="p">:</span> <span class="kc">False</span><span class="p">,</span>
+    <span class="s2">&quot;nullable&quot;</span><span class="p">:</span> <span class="kc">True</span><span class="p">,</span>
+    <span class="s2">&quot;editable&quot;</span><span class="p">:</span> <span class="kc">True</span><span class="p">,</span>
+    <span class="s2">&quot;visible&quot;</span><span class="p">:</span> <span class="kc">True</span><span class="p">,</span>
+    <span class="s2">&quot;required&quot;</span><span class="p">:</span> <span class="kc">False</span><span class="p">,</span>
+    <span class="s2">&quot;isSystemMaintained&quot;</span><span class="p">:</span> <span class="kc">False</span><span class="p">,</span>
+    <span class="s2">&quot;role&quot;</span><span class="p">:</span> <span class="s2">&quot;esriGraphPropertyRegular&quot;</span>
+<span class="p">}</span>
+
+<span class="c1"># example of an integer property to be added to a named type</span>
+<span class="p">{</span>
+    <span class="s2">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;MyInt&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;alias&quot;</span><span class="p">:</span> <span class="s2">&quot;MyInt&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;fieldType&quot;</span><span class="p">:</span> <span class="s2">&quot;esriFieldTypeInteger&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;nullable&quot;</span><span class="p">:</span> <span class="kc">True</span><span class="p">,</span>
+    <span class="s2">&quot;editable&quot;</span><span class="p">:</span> <span class="kc">True</span><span class="p">,</span>
+    <span class="s2">&quot;defaultValue&quot;</span><span class="p">:</span> <span class="mi">123</span><span class="p">,</span>
+    <span class="s2">&quot;visible&quot;</span><span class="p">:</span> <span class="kc">True</span><span class="p">,</span>
+    <span class="s2">&quot;required&quot;</span><span class="p">:</span> <span class="kc">False</span><span class="p">,</span>
+    <span class="s2">&quot;isSystemMaintained&quot;</span><span class="p">:</span> <span class="kc">False</span><span class="p">,</span>
+    <span class="s2">&quot;role&quot;</span><span class="p">:</span> <span class="s2">&quot;esriGraphPropertyRegular&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;domain&quot;</span><span class="p">:</span> <span class="s2">&quot;MyIntegerDomain&quot;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>A <cite>dict</cite> showing the results of the property adds.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="arcgis.graph.KnowledgeGraph.graph_property_delete">
+<code class="sig-name descname">graph_property_delete</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">type_name</span></em>, <em class="sig-param"><span class="n">property_name</span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.graph.KnowledgeGraph.graph_property_delete" title="Permalink to this definition">¶</a></dt>
+<dd><p>Delete a property for a named type in the data model</p>
+<p><a class="reference external" href="https://developers.arcgis.com/rest/services-reference/enterprise/kgs-datamodel-edit-namedtypes-type-fields-delete.htm">Learn more about deleting properties in a knowledge graph</a></p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 20%" />
+<col style="width: 80%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><strong>Parameter</strong></p></td>
+<td><p><strong>Description</strong></p></td>
+</tr>
+<tr class="row-even"><td><p>type_name</p></td>
+<td><p>Required string. The entity or relationship type containing
+the property to be deleted.</p></td>
+</tr>
+<tr class="row-odd"><td><p>property_name</p></td>
+<td><p>Required string. The property to be deleted.</p></td>
+</tr>
+</tbody>
+</table>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Delete a named type&#39;s property in the data model</span>
+<span class="n">delete_result</span> <span class="o">=</span> <span class="n">knowledge_graph</span><span class="o">.</span><span class="n">graph_property_delete</span><span class="p">(</span><span class="s2">&quot;Person&quot;</span><span class="p">,</span> <span class="s2">&quot;Address&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>A <cite>dict</cite> showing the results of the property delete.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="arcgis.graph.KnowledgeGraph.graph_property_index_adds">
+<code class="sig-name descname">graph_property_index_adds</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">type_name</span></em>, <em class="sig-param"><span class="n">field_indexes</span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.graph.KnowledgeGraph.graph_property_index_adds" title="Permalink to this definition">¶</a></dt>
+<dd><p>Adds indexes to a field or multiple fields associated with a named type in the data model.</p>
+<p><a class="reference external" href="https://developers.arcgis.com/rest/services-reference/enterprise/kgs-datamodel-edit-namedtypes-type-indexes-add.htm">Learn more about adding graph property indexes in a knowledge graph</a></p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 20%" />
+<col style="width: 80%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><strong>Parameter</strong></p></td>
+<td><p><strong>Description</strong></p></td>
+</tr>
+<tr class="row-even"><td><p>type_name</p></td>
+<td><p>Required string. The entity or relationship type to add the
+indexes to.</p></td>
+</tr>
+<tr class="row-odd"><td><p>field_indexes</p></td>
+<td><p>Required list of dicts. The indexes to add for the type.
+See below for an example of the structure.</p></td>
+</tr>
+</tbody>
+</table>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Add a list of index dicts to fields for a Knowledge Graph type</span>
+<span class="n">add_result</span> <span class="o">=</span> <span class="n">knowledge_graph</span><span class="o">.</span><span class="n">graph_property_index_adds</span><span class="p">(</span>
+    <span class="s2">&quot;Project&quot;</span><span class="p">,</span> <span class="p">[</span>
+        <span class="p">{</span>
+            <span class="s2">&quot;name&quot;</span> <span class="p">:</span> <span class="s2">&quot;title&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;isAscending&quot;</span><span class="p">:</span> <span class="kc">True</span><span class="p">,</span>
+            <span class="s2">&quot;isUnique&quot;</span><span class="p">:</span> <span class="kc">True</span><span class="p">,</span>
+            <span class="s2">&quot;fields&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;title&quot;</span><span class="p">]</span>
+        <span class="p">}</span>
+    <span class="p">]</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>A <cite>dict</cite> showing the results of adding the indexes.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="arcgis.graph.KnowledgeGraph.graph_property_index_deletes">
+<code class="sig-name descname">graph_property_index_deletes</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">type_name</span></em>, <em class="sig-param"><span class="n">field_indexes</span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.graph.KnowledgeGraph.graph_property_index_deletes" title="Permalink to this definition">¶</a></dt>
+<dd><p>Deletes indexes from fields associated with a named type in the data model.</p>
+<p><a class="reference external" href="https://developers.arcgis.com/rest/services-reference/enterprise/kgs-datamodel-edit-namedtypes-type-indexes-delete.htm">Learn more about deleting graph property indexes from a knowledge graph</a></p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 20%" />
+<col style="width: 80%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><strong>Parameter</strong></p></td>
+<td><p><strong>Description</strong></p></td>
+</tr>
+<tr class="row-even"><td><p>type_name</p></td>
+<td><p>Required string. The entity or relationship type to delete the
+field indexes from.</p></td>
+</tr>
+<tr class="row-odd"><td><p>field_indexes</p></td>
+<td><p>Required list of strings. The field indexes to delete from the
+type. See below for an example of the structure.</p></td>
+</tr>
+</tbody>
+</table>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Delete a list of field index dicts from a Knowledge Graph type</span>
+<span class="n">delete_result</span> <span class="o">=</span> <span class="n">knowledge_graph</span><span class="o">.</span><span class="n">graph_property_index_deletes</span><span class="p">(</span><span class="s2">&quot;Project&quot;</span><span class="p">,</span> <span class="p">[</span><span class="s2">&quot;title&quot;</span><span class="p">])</span>
+</pre></div>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>A <cite>dict</cite> showing the results of deleting the indexes.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="arcgis.graph.KnowledgeGraph.graph_property_update">
+<code class="sig-name descname">graph_property_update</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">type_name</span></em>, <em class="sig-param"><span class="n">property_name</span></em>, <em class="sig-param"><span class="n">graph_property</span></em>, <em class="sig-param"><span class="n">mask</span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.graph.KnowledgeGraph.graph_property_update" title="Permalink to this definition">¶</a></dt>
+<dd><p>Updates a property for a named type in the data model</p>
+<p><a class="reference external" href="https://developers.arcgis.com/rest/services-reference/enterprise/kgs-datamodel-edit-namedtypes-type-fields-update.htm">Learn more about updating properties in a knowledge graph</a></p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 20%" />
+<col style="width: 80%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><strong>Parameter</strong></p></td>
+<td><p><strong>Description</strong></p></td>
+</tr>
+<tr class="row-even"><td><p>type_name</p></td>
+<td><p>Required string. The entity or relationship type containing
+the property to be updated.</p></td>
+</tr>
+<tr class="row-odd"><td><p>property_name</p></td>
+<td><p>Required string. The property to be updated.</p></td>
+</tr>
+<tr class="row-even"><td><p>graph_property</p></td>
+<td><p>Required dict. The graph property to be updated,
+represented in dictionary format.</p></td>
+</tr>
+<tr class="row-odd"><td><p>mask</p></td>
+<td><p>Required dict. A dictionary representing the properties of the
+field to be updated.</p></td>
+</tr>
+</tbody>
+</table>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># example of a shape property to be updated</span>
+<span class="p">{</span>
+    <span class="s2">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;MyPointGeometry&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;alias&quot;</span><span class="p">:</span> <span class="s2">&quot;MyPointGeometry&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;fieldType&quot;</span><span class="p">:</span> <span class="s2">&quot;esriFieldTypeGeometry&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;geometryType&quot;</span><span class="p">:</span> <span class="s2">&quot;esriGeometryPoint&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;hasZ&quot;</span><span class="p">:</span> <span class="kc">False</span><span class="p">,</span>
+    <span class="s2">&quot;hasM&quot;</span><span class="p">:</span> <span class="kc">False</span><span class="p">,</span>
+    <span class="s2">&quot;nullable&quot;</span><span class="p">:</span> <span class="kc">True</span><span class="p">,</span>
+    <span class="s2">&quot;editable&quot;</span><span class="p">:</span> <span class="kc">True</span><span class="p">,</span>
+    <span class="s2">&quot;visible&quot;</span><span class="p">:</span> <span class="kc">True</span><span class="p">,</span>
+    <span class="s2">&quot;required&quot;</span><span class="p">:</span> <span class="kc">False</span><span class="p">,</span>
+    <span class="s2">&quot;isSystemMaintained&quot;</span><span class="p">:</span> <span class="kc">False</span><span class="p">,</span>
+    <span class="s2">&quot;role&quot;</span><span class="p">:</span> <span class="s2">&quot;esriGraphPropertyRegular&quot;</span>
+<span class="p">}</span>
+
+<span class="c1"># example: update the property&#39;s alias</span>
+<span class="p">{</span>
+    <span class="s2">&quot;update_alias&quot;</span><span class="p">:</span> <span class="kc">True</span>
+<span class="p">}</span>
+<span class="c1"># OR</span>
+<span class="p">{</span>
+    <span class="s2">&quot;update_name&quot;</span><span class="p">:</span> <span class="kc">False</span><span class="p">,</span>
+    <span class="s2">&quot;update_alias&quot;</span><span class="p">:</span> <span class="kc">True</span><span class="p">,</span>
+    <span class="s2">&quot;update_field_type&quot;</span><span class="p">:</span> <span class="kc">False</span><span class="p">,</span>
+    <span class="s2">&quot;update_geometry_type&quot;</span><span class="p">:</span> <span class="kc">False</span><span class="p">,</span>
+    <span class="s2">&quot;update_default_value&quot;</span><span class="p">:</span> <span class="kc">False</span><span class="p">,</span>
+    <span class="s2">&quot;update_nullable&quot;</span><span class="p">:</span> <span class="kc">False</span><span class="p">,</span>
+    <span class="s2">&quot;update_editable&quot;</span><span class="p">:</span> <span class="kc">False</span><span class="p">,</span>
+    <span class="s2">&quot;update_visible&quot;</span><span class="p">:</span> <span class="kc">False</span><span class="p">,</span>
+    <span class="s2">&quot;update_required&quot;</span><span class="p">:</span> <span class="kc">False</span><span class="p">,</span>
+    <span class="s2">&quot;update_has_z&quot;</span><span class="p">:</span> <span class="kc">False</span><span class="p">,</span>
+    <span class="s2">&quot;update_has_m&quot;</span><span class="p">:</span> <span class="kc">False</span><span class="p">,</span>
+    <span class="s2">&quot;update_domain:&quot;</span> <span class="kc">False</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>A <cite>dict</cite> showing the results of the property update.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="arcgis.graph.KnowledgeGraph.named_object_type_adds">
+<code class="sig-name descname">named_object_type_adds</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">entity_types</span><span class="o">=</span><span class="default_value">[]</span></em>, <em class="sig-param"><span class="n">relationship_types</span><span class="o">=</span><span class="default_value">[]</span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.graph.KnowledgeGraph.named_object_type_adds" title="Permalink to this definition">¶</a></dt>
+<dd><p>Adds entity and relationship types to the data model</p>
+<p><a class="reference external" href="https://developers.arcgis.com/rest/services-reference/enterprise/kgs-datamodel-edit-namedtypes-add.htm">Learn more about adding named types to a knowledge graph</a></p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 22%" />
+<col style="width: 78%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><strong>Parameter</strong></p></td>
+<td><p><strong>Description</strong></p></td>
+</tr>
+<tr class="row-even"><td><p>entity_types</p></td>
+<td><p>Optional list of dicts. The list of entity types to add to the
+data model, represented in dictionary format.</p></td>
+</tr>
+<tr class="row-odd"><td><p>relationship_types</p></td>
+<td><p>Optional list of dicts. The list of relationship types to add
+to the data model, represented in dictionary format.</p></td>
+</tr>
+</tbody>
+</table>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># example of a named type to be added to the data model</span>
+<span class="p">{</span>
+    <span class="s2">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;Person&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;alias&quot;</span><span class="p">:</span> <span class="s2">&quot;Person&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;role&quot;</span><span class="p">:</span> <span class="s2">&quot;esriGraphNamedObjectRegular&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;strict&quot;</span><span class="p">:</span> <span class="kc">False</span><span class="p">,</span>
+    <span class="s2">&quot;properties&quot;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="s2">&quot;Name&quot;</span><span class="p">:</span> <span class="p">{</span>
+            <span class="s2">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;Name&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;alias&quot;</span><span class="p">:</span> <span class="s2">&quot;Name&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;fieldType&quot;</span><span class="p">:</span> <span class="s2">&quot;esriFieldTypeString&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;editable&quot;</span><span class="p">:</span> <span class="kc">True</span><span class="p">,</span>
+            <span class="s2">&quot;visible&quot;</span><span class="p">:</span> <span class="kc">True</span><span class="p">,</span>
+            <span class="s2">&quot;required&quot;</span><span class="p">:</span> <span class="kc">False</span><span class="p">,</span>
+            <span class="s2">&quot;isSystemMaintained&quot;</span><span class="p">:</span> <span class="kc">False</span><span class="p">,</span>
+            <span class="s2">&quot;role&quot;</span><span class="p">:</span> <span class="s2">&quot;esriGraphPropertyRegular&quot;</span>
+        <span class="p">},</span>
+        <span class="s2">&quot;Nickname&quot;</span><span class="p">:</span> <span class="p">{</span>
+            <span class="s2">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;Nickname&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;alias&quot;</span><span class="p">:</span> <span class="s2">&quot;Nickname&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;fieldType&quot;</span><span class="p">:</span> <span class="s2">&quot;esriFieldTypeString&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;editable&quot;</span><span class="p">:</span> <span class="kc">True</span><span class="p">,</span>
+            <span class="s2">&quot;visible&quot;</span><span class="p">:</span> <span class="kc">True</span><span class="p">,</span>
+            <span class="s2">&quot;required&quot;</span><span class="p">:</span> <span class="kc">False</span><span class="p">,</span>
+            <span class="s2">&quot;isSystemMaintained&quot;</span><span class="p">:</span> <span class="kc">False</span><span class="p">,</span>
+            <span class="s2">&quot;role&quot;</span><span class="p">:</span> <span class="s2">&quot;esriGraphPropertyRegular&quot;</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>A <cite>dict</cite> showing the results of the named type adds.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="arcgis.graph.KnowledgeGraph.named_object_type_delete">
+<code class="sig-name descname">named_object_type_delete</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">type_name</span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.graph.KnowledgeGraph.named_object_type_delete" title="Permalink to this definition">¶</a></dt>
+<dd><p>Deletes an entity or relationship type in the data model</p>
+<p><a class="reference external" href="https://developers.arcgis.com/rest/services-reference/enterprise/kgs-datamodel-edit-namedtypes-type-delete.htm">Learn more about deleting named types in a knowledge graph</a></p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 20%" />
+<col style="width: 80%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><strong>Parameter</strong></p></td>
+<td><p><strong>Description</strong></p></td>
+</tr>
+<tr class="row-even"><td><p>type_name</p></td>
+<td><p>Required string. The named type to be deleted.</p></td>
+</tr>
+</tbody>
+</table>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Delete a named type in the data model</span>
+<span class="n">delete_result</span> <span class="o">=</span> <span class="n">knowledge_graph</span><span class="o">.</span><span class="n">named_object_type_delete</span><span class="p">(</span><span class="s2">&quot;Person&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>A <cite>dict</cite> showing the results of the named type delete.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="arcgis.graph.KnowledgeGraph.named_object_type_update">
+<code class="sig-name descname">named_object_type_update</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">type_name</span></em>, <em class="sig-param"><span class="n">named_type_update</span></em>, <em class="sig-param"><span class="n">mask</span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.graph.KnowledgeGraph.named_object_type_update" title="Permalink to this definition">¶</a></dt>
+<dd><p>Updates an entity or relationship type in the data model</p>
+<p><a class="reference external" href="https://developers.arcgis.com/rest/services-reference/enterprise/kgs-datamodel-edit-namedtypes-type-update.htm">Learn more about updating named types in a knowledge graph</a></p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 21%" />
+<col style="width: 79%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><strong>Parameter</strong></p></td>
+<td><p><strong>Description</strong></p></td>
+</tr>
+<tr class="row-even"><td><p>type_name</p></td>
+<td><p>Required string. The named type to be updated.</p></td>
+</tr>
+<tr class="row-odd"><td><p>named_type_update</p></td>
+<td><p>Required dict. The entity or relationship type to be updated,
+represented in dictionary format.</p></td>
+</tr>
+<tr class="row-even"><td><p>mask</p></td>
+<td><p>Required dict. A dictionary representing the properties of the
+named type to be updated.</p></td>
+</tr>
+</tbody>
+</table>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># example of a named type to be updated</span>
+<span class="p">{</span>
+    <span class="s2">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;Person&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;alias&quot;</span><span class="p">:</span> <span class="s2">&quot;Person&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;role&quot;</span><span class="p">:</span> <span class="s2">&quot;esriGraphNamedObjectRegular&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;strict&quot;</span><span class="p">:</span> <span class="kc">False</span>
+<span class="p">}</span>
+
+<span class="c1"># update the named type&#39;s alias:</span>
+<span class="p">{</span>
+    <span class="s2">&quot;update_alias&quot;</span><span class="p">:</span> <span class="kc">True</span>
+<span class="p">}</span>
+<span class="c1"># OR</span>
+<span class="p">{</span>
+    <span class="s2">&quot;update_name&quot;</span><span class="p">:</span> <span class="kc">False</span><span class="p">,</span>
+    <span class="s2">&quot;update_alias&quot;</span><span class="p">:</span> <span class="kc">True</span><span class="p">,</span>
+    <span class="s2">&quot;update_role&quot;</span><span class="p">:</span> <span class="kc">False</span><span class="p">,</span>
+    <span class="s2">&quot;update_strict&quot;</span><span class="p">:</span> <span class="kc">False</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>A <cite>dict</cite> showing the results of the named type update.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="arcgis.graph.KnowledgeGraph.properties">
+<em class="property">property </em><code class="sig-name descname">properties</code><a class="headerlink" href="#arcgis.graph.KnowledgeGraph.properties" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the properties of the Knowledge Graph service</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="arcgis.graph.KnowledgeGraph.query">
+<code class="sig-name descname">query</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">query</span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.graph.KnowledgeGraph.query" title="Permalink to this definition">¶</a></dt>
+<dd><p>Queries the Knowledge Graph using openCypher</p>
+<p><a class="reference external" href="https://developers.arcgis.com/rest/services-reference/enterprise/kgs-graph-query.htm">Learn more about querying a knowledge graph</a></p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 20%" />
+<col style="width: 80%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><strong>Parameter</strong></p></td>
+<td><p><strong>Description</strong></p></td>
+</tr>
+<tr class="row-even"><td><p>query</p></td>
+<td><p>Required String. Allows you to return the entities and
+relationships in a graph, as well as the properties of those
+entities and relationships, by providing an openCypher query.</p></td>
+</tr>
+</tbody>
+</table>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Perform an openCypher query on the knowledge graph</span>
+<span class="n">query_result</span> <span class="o">=</span> <span class="n">knowledge_graph</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="s2">&quot;MATCH path = (n)-[r]-(n2) RETURN path LIMIT 5&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>List[list]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="arcgis.graph.KnowledgeGraph.query_streaming">
+<code class="sig-name descname">query_streaming</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">query</span></em>, <em class="sig-param"><span class="n">input_transform</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">bind_param</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">include_provenance</span><span class="o">=</span><span class="default_value">False</span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.graph.KnowledgeGraph.query_streaming" title="Permalink to this definition">¶</a></dt>
+<dd><p>Query the graph using an openCypher query. Allows for more customization than the base
+<cite>query()</cite> function. Creates a generator of the query results, from which users can
+access each row or add them to a list. See below for example usage.</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 23%" />
+<col style="width: 77%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><strong>Parameter</strong></p></td>
+<td><p><strong>Description</strong></p></td>
+</tr>
+<tr class="row-even"><td><p>query</p></td>
+<td><p>Required String. Allows you to return the entities and
+relationships in a graph, as well as the properties of those
+entities and relationships, by providing an openCypher query.</p></td>
+</tr>
+<tr class="row-odd"><td><p>input_transform</p></td>
+<td><p>Optional dict. Allows a user to specify custom quantization
+parameters for input geometry, which dictate how geometries are
+compressed and transferred to the server. Defaults to lossless
+WGS84 quantization.</p></td>
+</tr>
+<tr class="row-even"><td><p>bind_param</p></td>
+<td><p>Optional dict. The bind parameters used to filter
+query results. Key of each pair is the string name for it,
+which is how the parameter can be referenced in the query. The
+value can be any “primitive” type value that may be found as
+an attribute of an entity or relationship (e.g., string,
+double, boolean, etc.), a list, an anonymous object (a dict),
+or a geometry.</p>
+<p>Anonymous objects and geometries can be passed
+in as either their normal Python forms, or following the
+format found in Knowledge Graph entries (containing an
+“_objectType” key, and “_properties” for anonymous objects).</p>
+<p>Note: Including bind parameters not used in the query will
+cause queries to yield nothing on ArangoDB based services,
+while Neo4j based services will still produce results.</p>
+</td>
+</tr>
+<tr class="row-odd"><td><p>include_provenance</p></td>
+<td><p>Optional boolean. When <cite>True</cite>, provenance entities (metadata)
+will be included in the query results. Defaults to <cite>False</cite>.</p></td>
+</tr>
+</tbody>
+</table>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Get a list of all query results</span>
+<span class="n">query_gen</span> <span class="o">=</span> <span class="n">knowledge_graph</span><span class="o">.</span><span class="n">query_streaming</span><span class="p">(</span><span class="s2">&quot;MATCH path = (n)-[r]-(n2) RETURN path LIMIT 5&quot;</span><span class="p">)</span>
+<span class="n">results</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">gen</span><span class="p">)</span>
+
+<span class="c1"># Grab one result at a time</span>
+<span class="n">query_gen</span> <span class="o">=</span> <span class="n">knowledge_graph</span><span class="o">.</span><span class="n">query_streaming</span><span class="p">(</span><span class="s2">&quot;MATCH path = (n)-[r]-(n2) RETURN path LIMIT 5&quot;</span><span class="p">)</span>
+<span class="n">first_result</span> <span class="o">=</span> <span class="nb">next</span><span class="p">(</span><span class="n">query_gen</span><span class="p">)</span>
+<span class="n">second_result</span> <span class="o">=</span> <span class="nb">next</span><span class="p">(</span><span class="n">query_gen</span><span class="p">)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt id="arcgis.graph.KnowledgeGraph.search">
+<code class="sig-name descname">search</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">search</span></em>, <em class="sig-param"><span class="n">category</span><span class="o">=</span><span class="default_value">'both'</span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.graph.KnowledgeGraph.search" title="Permalink to this definition">¶</a></dt>
+<dd><p>Allows for the searching of the properties of entities,
+relationships, or both in the graph using a full-text index.</p>
+<p><a class="reference external" href="https://developers.arcgis.com/rest/services-reference/enterprise/kgs-graph-search.htm">Learn more about searching a knowledge graph</a></p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 20%" />
+<col style="width: 80%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><strong>Parameter</strong></p></td>
+<td><p><strong>Description</strong></p></td>
+</tr>
+<tr class="row-even"><td><p>search</p></td>
+<td><p>Required String. The search to perform on the Knowledge Graph.</p></td>
+</tr>
+<tr class="row-odd"><td><p>category</p></td>
+<td><p>Optional String.  The category is the location of the full
+text search.  This can be isolated to either the <cite>entities</cite> or
+the <cite>relationships</cite>.  The default is to look in <cite>both</cite>.</p>
+<p>The allowed values are: both, entities, relationships,
+both_entity_relationship, and meta_entity_provenance. Both and
+both_entity_relationship are functionally the same.</p>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Check the <a class="reference external" href="https://developers.arcgis.com/rest/services-reference/enterprise/kgs-hosted-server.htm">service definition for the Knowledge Graph service</a>
+for valid values of category. Not all services support both and both_entity_relationship.</p>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1">#Perform a search on the knowledge graph</span>
+<span class="n">search_result</span> <span class="o">=</span> <span class="n">knowledge_graph</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="s2">&quot;cat&quot;</span><span class="p">)</span>
+
+<span class="c1"># Perform a search on only entities in the knowledge graph</span>
+<span class="n">searchentities_result</span> <span class="o">=</span> <span class="n">knowledge_graph</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="s2">&quot;cat&quot;</span><span class="p">,</span> <span class="s2">&quot;entities&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>List[list]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="arcgis.graph.KnowledgeGraph.sync_data_model">
+<code class="sig-name descname">sync_data_model</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.graph.KnowledgeGraph.sync_data_model" title="Permalink to this definition">¶</a></dt>
+<dd><p>Synchronizes the Knowledge Graph Service’s data model with any changes made
+in the database. Will return any errors or warnings from the sync.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Synchronize the data model</span>
+<span class="n">sync_result</span> <span class="o">=</span> <span class="n">knowledge_graph</span><span class="o">.</span><span class="n">sync_data_model</span><span class="p">()</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt id="arcgis.graph.KnowledgeGraph.update_search_index">
+<code class="sig-name descname">update_search_index</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">adds</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">deletes</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.graph.KnowledgeGraph.update_search_index" title="Permalink to this definition">¶</a></dt>
+<dd><p>Allows users to add or delete search index properties for different entities and
+relationships from the graph’s data model. Can only be existent properties for a given
+entity/relationship. Note that an empty dictionary result indicates success.</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 28%" />
+<col style="width: 72%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><strong>Parameter</strong></p></td>
+<td><p><strong>Description</strong></p></td>
+</tr>
+<tr class="row-even"><td><p>adds</p></td>
+<td><p>Optional dict. See below for structure. The properties to add
+to the search index, specified by entity/relationship.</p></td>
+</tr>
+<tr class="row-odd"><td><p>deletes</p></td>
+<td><p>Optional dict. See below for structure. The properties to
+delete from the search index, specified by entity/relationship.</p></td>
+</tr>
+</tbody>
+</table>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># example of an adds or deletes dictionary</span>
+<span class="p">{</span>
+    <span class="s2">&quot;Entity1&quot;</span> <span class="p">:</span> <span class="p">{</span> <span class="s2">&quot;property_names&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;prop1&quot;</span><span class="p">,</span> <span class="s2">&quot;prop2&quot;</span><span class="p">]},</span>
+    <span class="s2">&quot;Entity2&quot;</span> <span class="p">:</span> <span class="p">{</span><span class="s2">&quot;property_names&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;prop1&quot;</span><span class="p">]},</span>
+    <span class="s2">&quot;RelationshipType1&quot;</span> <span class="p">:</span> <span class="p">{</span> <span class="s2">&quot;property_names&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;prop1&quot;</span><span class="p">,</span> <span class="s2">&quot;prop2&quot;</span><span class="p">]},</span>
+    <span class="s2">&quot;RelationshipType2&quot;</span> <span class="p">:</span> <span class="p">{</span><span class="s2">&quot;property_names&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;prop1&quot;</span><span class="p">]},</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>A <cite>dict</cite>. Empty dict indicates success, errors will be returned in the dict.</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+</div>
+
+
+
+           </div>
+           
+          </div>
+          <footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+        <a href="arcgis.mapping.toc.html" class="btn btn-neutral float-right" title="arcgis.mapping module" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="arcgis.geoprocessing.html" class="btn btn-neutral float-left" title="arcgis.geoprocessing module" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &#169; Copyright 2016-2023, Esri.
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+    Options v: 2.3.1
+
+  <div class="rst-versions" data-toggle="rst-versions" role="note" aria-label="versions">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      <span class="fa fa-book"> Pick an earlier version</span>
+      v: 2.3.1
+      <span class="fa fa-caret-down"></span>
+    </span>
+    <div class="rst-other-versions">
+      
+      
+      <dl>
+        <dt>Versions</dt>
+        
+          
+          <dd><a href="2.3.0/">2.3.0</a></dd>
+          
+        
+          
+          <dd><a href="2.2.0/">2.2.0</a></dd>
+          
+        
+          
+          <dd><a href="2.1.0/">2.1.0</a></dd>
+          
+        
+          
+          <dd><a href="2.0.1/">2.0.1</a></dd>
+          
+        
+          
+          <dd><a href="2.0.0/">2.0.0</a></dd>
+          
+        
+          
+          <dd><a href="1.9.1/">1.9.1</a></dd>
+          
+        
+          
+          <dd><a href="1.9.0/">1.9.0</a></dd>
+          
+        
+          
+          <dd><a href="1.8.5/">1.8.5</a></dd>
+          
+        
+          
+          <dd><a href="1.8.4/">1.8.4</a></dd>
+          
+        
+          
+          <dd><a href="1.8.3/">1.8.3</a></dd>
+          
+        
+          
+          <dd><a href="1.8.2/">1.8.2</a></dd>
+          
+        
+          
+          <dd><a href="1.8.1/">1.8.1</a></dd>
+          
+        
+          
+          <dd><a href="1.8.0/">1.8.0</a></dd>
+          
+        
+          
+          <dd><a href="1.7.1/">1.7.1</a></dd>
+          
+        
+          
+          <dd><a href="1.7.0/">1.7.0</a></dd>
+          
+        
+          
+          <dd><a href="1.6.2/">1.6.2</a></dd>
+          
+        
+          
+          <dd><a href="1.6.1/">1.6.1</a></dd>
+          
+        
+          
+          <dd><a href="1.6.0/">1.6.0</a></dd>
+          
+        
+          
+          <dd><a href="1.5.2/">1.5.2</a></dd>
+          
+        
+          
+          <dd><a href="1.5.1/">1.5.1</a></dd>
+          
+        
+          
+          <dd><a href="1.5.0/">1.5.0</a></dd>
+          
+        
+          
+          <dd><a href="1.4.2/">1.4.2</a></dd>
+          
+        
+          
+          <dd><a href="1.4.1/">1.4.1</a></dd>
+          
+        
+          
+          <dd><a href="1.4.0/">1.4.0</a></dd>
+          
+        
+          
+          <dd><a href="1.3.0/">1.3.0</a></dd>
+          
+        
+          
+          <dd><a href="1.2.5/">1.2.5</a></dd>
+          
+        
+          
+          <dd><a href="1.2.4/">1.2.4</a></dd>
+          
+        
+          
+          <dd><a href="1.2.3/">1.2.3</a></dd>
+          
+        
+          
+          <dd><a href="1.2.2/">1.2.2</a></dd>
+          
+        
+          
+          <dd><a href="1.2.1/">1.2.1</a></dd>
+          
+        
+          
+          <dd><a href="1.2.0/">1.2.0</a></dd>
+          
+        
+          
+          <dd><a href="1.1.0/">1.1.0</a></dd>
+          
+        
+          
+          <dd><a href="1.0.1/">1.0.1</a></dd>
+          
+        
+          
+          <dd><a href="1.0.0/">1.0.0</a></dd>
+          
+        
+          
+          <dd><a href="0.3.0/">0.3.0</a></dd>
+          
+        
+          
+          <dd><a href="0.2.0/">0.2.0</a></dd>
+          
+        
+          
+          <dd><a href="0.1.0/">0.1.0</a></dd>
+          
+        
+      </dl>
+      
+      
+      
+    </div>
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

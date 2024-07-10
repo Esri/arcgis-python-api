@@ -1,0 +1,473 @@
+arcgis.raster.functions module
+==============================
+
+.. automodule:: arcgis.raster.functions
+
+abs
+___
+.. automethod:: arcgis.raster.functions.abs
+
+acos
+____
+.. automethod:: arcgis.raster.functions.acos
+
+acosh
+_____
+.. automethod:: arcgis.raster.functions.acosh
+
+apply
+_____
+.. automethod:: arcgis.raster.functions.apply
+
+arg_max
+_______
+.. automethod:: arcgis.raster.functions.arg_max
+
+arg_median
+__________
+.. automethod:: arcgis.raster.functions.arg_median
+
+arg_min
+_______
+.. automethod:: arcgis.raster.functions.arg_min
+
+arg_statistics
+______________
+.. automethod:: arcgis.raster.functions.arg_statistics
+
+arithmetic
+__________
+.. automethod:: arcgis.raster.functions.arithmetic
+
+asin
+____
+.. automethod:: arcgis.raster.functions.asin
+
+asinh
+_____
+.. automethod:: arcgis.raster.functions.asinh
+
+aspect
+______
+.. automethod:: arcgis.raster.functions.aspect
+
+atan
+____
+.. automethod:: arcgis.raster.functions.atan
+
+atan2
+_____
+.. automethod:: arcgis.raster.functions.atan2
+
+atanh
+_____
+.. automethod:: arcgis.raster.functions.atanh
+
+band_arithmetic
+_______________
+.. automethod:: arcgis.raster.functions.band_arithmetic
+
+bitwise_and
+___________
+.. automethod:: arcgis.raster.functions.bitwise_and
+
+bitwise_left_shift
+__________________
+.. automethod:: arcgis.raster.functions.bitwise_left_shift
+
+bitwise_not
+___________
+.. automethod:: arcgis.raster.functions.bitwise_not
+
+bitwise_or
+__________
+.. automethod:: arcgis.raster.functions.bitwise_or
+
+bitwise_right_shift
+___________________
+.. automethod:: arcgis.raster.functions.bitwise_right_shift
+
+bitwise_xor
+___________
+.. automethod:: arcgis.raster.functions.bitwise_xor
+
+boolean_and
+___________
+.. automethod:: arcgis.raster.functions.boolean_and
+
+boolean_not
+___________
+.. automethod:: arcgis.raster.functions.boolean_not
+
+boolean_or
+__________
+.. automethod:: arcgis.raster.functions.boolean_or
+
+boolean_xor
+___________
+.. automethod:: arcgis.raster.functions.boolean_xor
+
+classify
+________
+.. automethod:: arcgis.raster.functions.classify
+
+clip
+____
+.. automethod:: arcgis.raster.functions.clip
+
+colormap
+________
+.. automethod:: arcgis.raster.functions.colormap
+
+colormap_to_rgb
+_______________
+.. automethod:: arcgis.raster.functions.colormap_to_rgb
+
+colormap_to_rgb
+_______________
+.. automethod:: arcgis.raster.functions.colormap_to_rgb
+
+colorspace_conversion
+______________
+.. automethod:: arcgis.raster.functions.colorspace_conversion
+
+composite_band
+______________
+.. automethod:: arcgis.raster.functions.composite_band
+
+con
+___
+.. automethod:: arcgis.raster.functions.con
+
+contrast_brightness
+___________________
+.. automethod:: arcgis.raster.functions.contrast_brightness
+
+convolution
+___________
+.. automethod:: arcgis.raster.functions.convolution
+
+cos
+___
+.. automethod:: arcgis.raster.functions.cos
+
+cosh
+____
+.. automethod:: arcgis.raster.functions.cosh
+
+curvature
+_________
+.. automethod:: arcgis.raster.functions.curvature
+
+divide
+______
+.. automethod:: arcgis.raster.functions.divide
+
+duration
+________
+.. automethod:: arcgis.raster.functions.duration
+
+elevation_void_fill
+___________________
+.. automethod:: arcgis.raster.functions.elevation_void_fill
+
+equal_to
+________
+.. automethod:: arcgis.raster.functions.equal_to
+
+exp
+___
+.. automethod:: arcgis.raster.functions.exp
+
+exp10
+_____
+.. automethod:: arcgis.raster.functions.exp10
+
+exp2
+____
+.. automethod:: arcgis.raster.functions.exp2
+
+expression
+__________
+.. automethod:: arcgis.raster.functions.expression
+
+extract_band
+____________
+.. automethod:: arcgis.raster.functions.extract_band
+
+FLOAT
+_____
+.. automethod:: arcgis.raster.functions.FLOAT
+
+float_divide
+____________
+.. automethod:: arcgis.raster.functions.float_divide
+
+floor_divide
+____________
+.. automethod:: arcgis.raster.functions.floor_divide
+
+gemi
+____
+.. automethod:: arcgis.raster.functions.gemi
+
+geometric
+_________
+.. automethod:: arcgis.raster.functions.geometric
+
+greater_than
+____________
+.. automethod:: arcgis.raster.functions.greater_than
+
+greater_than_equal
+__________________
+.. automethod:: arcgis.raster.functions.greater_than_equal
+
+gvitm
+_____
+.. automethod:: arcgis.raster.functions.gvitm
+
+hillshade
+_________
+.. automethod:: arcgis.raster.functions.hillshade
+
+identity
+________
+.. automethod:: arcgis.raster.functions.identity
+
+INT
+___
+.. automethod:: arcgis.raster.functions.INT
+
+is_null
+_______
+.. automethod:: arcgis.raster.functions.is_null
+
+less_than
+_________
+.. automethod:: arcgis.raster.functions.less_than
+
+less_than_equal
+_______________
+.. automethod:: arcgis.raster.functions.less_than_equal
+
+ln
+__
+.. automethod:: arcgis.raster.functions.ln
+
+local
+_____
+.. automethod:: arcgis.raster.functions.local
+
+log10
+_____
+.. automethod:: arcgis.raster.functions.log10
+
+log2
+____
+.. automethod:: arcgis.raster.functions.log2
+
+majority
+________
+.. automethod:: arcgis.raster.functions.majority
+
+mask
+____
+.. automethod:: arcgis.raster.functions.mask
+
+max
+___
+.. automethod:: arcgis.raster.functions.max
+
+mean
+____
+.. automethod:: arcgis.raster.functions.mean
+
+med
+___
+.. automethod:: arcgis.raster.functions.med
+
+min
+___
+.. automethod:: arcgis.raster.functions.min
+
+minority
+________
+.. automethod:: arcgis.raster.functions.minority
+minus
+_____
+.. automethod:: arcgis.raster.functions.minus
+
+ml_classify
+___________
+.. automethod:: arcgis.raster.functions.ml_classify
+
+mod
+___
+.. automethod:: arcgis.raster.functions.mod
+
+mode
+____
+.. automethod:: arcgis.raster.functions.mode
+
+msavi
+_____
+.. automethod:: arcgis.raster.functions.msavi
+
+MULTIPLY
+________
+.. automethod:: arcgis.raster.functions.MULTIPLY
+
+ndvi
+____
+.. automethod:: arcgis.raster.functions.ndvi
+
+negate
+______
+.. automethod:: arcgis.raster.functions.negate
+
+not_equal
+_________
+.. automethod:: arcgis.raster.functions.not_equal
+
+pansharpen
+__________
+.. automethod:: arcgis.raster.functions.pansharpen
+
+plus
+____
+.. automethod:: arcgis.raster.functions.plus
+
+power
+_____
+.. automethod:: arcgis.raster.functions.power
+
+pvi
+___
+.. automethod:: arcgis.raster.functions.pvi
+
+cellstats_range
+_______________
+.. automethod:: arcgis.raster.functions.cellstats_range
+
+remap
+_____
+.. automethod:: arcgis.raster.functions.remap
+
+resample
+________
+.. automethod:: arcgis.raster.functions.resample
+
+round_down
+__________
+.. automethod:: arcgis.raster.functions.round_down
+
+round_up
+________
+.. automethod:: arcgis.raster.functions.round_up
+
+savi
+____
+.. automethod:: arcgis.raster.functions.savi
+
+segment_mean_shift
+__________________
+.. automethod:: arcgis.raster.functions.segment_mean_shift
+
+set_null
+________
+.. automethod:: arcgis.raster.functions.set_null
+
+shaded_relief
+_____________
+.. automethod:: arcgis.raster.functions.shaded_relief
+
+sin
+___
+.. automethod:: arcgis.raster.functions.sin
+
+sinh
+____
+.. automethod:: arcgis.raster.functions.sinh
+
+slope
+_____
+.. automethod:: arcgis.raster.functions.slope
+
+sqrt
+____
+.. automethod:: arcgis.raster.functions.sqrt
+
+square
+______
+.. automethod:: arcgis.raster.functions.square
+
+focal_statistics
+__________
+.. automethod:: arcgis.raster.functions.focal_statistics
+
+statistics_histogram
+____________________
+.. automethod:: arcgis.raster.functions.statistics_histogram
+
+
+std
+___
+.. automethod:: arcgis.raster.functions.std
+
+stretch
+_______
+.. automethod:: arcgis.raster.functions.stretch
+
+sultan
+______
+.. automethod:: arcgis.raster.functions.sultan
+
+sum
+___
+.. automethod:: arcgis.raster.functions.sum
+
+tan
+___
+.. automethod:: arcgis.raster.functions.tan
+
+tanh
+____
+.. automethod:: arcgis.raster.functions.tanh
+
+tasseled_cap
+____________
+.. automethod:: arcgis.raster.functions.tasseled_cap
+
+threshold
+_________
+.. automethod:: arcgis.raster.functions.threshold
+
+times
+_____
+.. automethod:: arcgis.raster.functions.times
+
+transpose_bits
+______________
+.. automethod:: arcgis.raster.functions.transpose_bits
+
+tsavi
+_____
+.. automethod:: arcgis.raster.functions.tsavi
+
+unit_conversion
+_______________
+.. automethod:: arcgis.raster.functions.unit_conversion
+
+variety
+_______
+.. automethod:: arcgis.raster.functions.variety
+
+vector_field
+_____________________
+.. automethod:: arcgis.raster.functions.vector_field
+
+vector_field_renderer
+_____________________
+.. automethod:: arcgis.raster.functions.vector_field_renderer
+

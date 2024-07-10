@@ -1,0 +1,32 @@
+arcgis.features.find_locations module
+=====================================
+
+.. automodule:: arcgis.features.find_locations
+
+find_existing_locations
+--------------
+.. automethod:: arcgis.features.find_locations.find_existing_locations
+
+derive_new_locations
+--------------
+.. automethod:: arcgis.features.find_locations.derive_new_locations
+
+find_similar_locations
+--------------
+.. automethod:: arcgis.features.find_locations.find_similar_locations
+
+choose_best_facilities
+--------------
+.. automethod:: arcgis.features.find_locations.choose_best_facilities
+
+create_viewshed
+--------------
+.. automethod:: arcgis.features.find_locations.create_viewshed
+
+create_watersheds
+--------------
+.. automethod:: arcgis.features.find_locations.create_watersheds
+
+trace_downstream
+--------------
+.. automethod:: arcgis.features.find_locations.trace_downstream

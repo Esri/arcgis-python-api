@@ -1,0 +1,1579 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>arcgis.features.find_locations module &mdash; arcgis 1.8.4 documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="_static/theme_overrides.css" type="text/css" />
+
+  
+  
+    <link rel="shortcut icon" href="_static/favicon.ico"/>
+  
+  
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/doctools.js"></script>
+        <script src="_static/language_data.js"></script>
+        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="arcgis.features.hydrology module" href="arcgis.features.hydrology.html" />
+    <link rel="prev" title="arcgis.features.enrich_data module" href="arcgis.features.enrich_data.html" />
+<!-- This code block is inserted close near the <head> tag. See http://bit.ly/2BHUQzB -->
+<!-- The point of this code block is to send us google analytics on website views -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-NJGGV5');</script>
+ 
+
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="index.html" class="icon icon-home" alt="Documentation Home"> arcgis
+          
+
+          
+            
+            <img src="_static/python_api_logo.png" class="logo" alt="Logo"/>
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1.8.4
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">arcgis</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="arcgis.gis.toc.html">arcgis.gis module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="arcgis.env.html">arcgis.env module</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="arcgis.features.toc.html">arcgis.features module</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="arcgis.features.toc.html#feature">Feature</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.features.toc.html#featurelayer">FeatureLayer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.features.toc.html#table">Table</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.features.toc.html#featurelayercollection">FeatureLayerCollection</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.features.toc.html#featureset">FeatureSet</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.features.toc.html#featurecollection">FeatureCollection</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.features.toc.html#geoaccessor">GeoAccessor</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.features.toc.html#geoseriesaccessor">GeoSeriesAccessor</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.features.toc.html#spatialdataframe">SpatialDataFrame</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="arcgis.features.toc.html#submodules">Submodules</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="arcgis.features.analysis.html">arcgis.features.analysis module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="arcgis.features.analyze_patterns.html">arcgis.features.analyze_patterns module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="arcgis.features.elevation.html">arcgis.features.elevation module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="arcgis.features.enrich_data.html">arcgis.features.enrich_data module</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">arcgis.features.find_locations module</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#find-existing-locations">find_existing_locations</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#derive-new-locations">derive_new_locations</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#find-similar-locations">find_similar_locations</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#find-centroids">find_centroids</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#choose-best-facilities">choose_best_facilities</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#create-viewshed">create_viewshed</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#create-watersheds">create_watersheds</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#trace-downstream">trace_downstream</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="arcgis.features.hydrology.html">arcgis.features.hydrology module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="arcgis.features.manage_data.html">arcgis.features.manage_data module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="arcgis.features.managers.html">arcgis.features.managers module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="arcgis.features.summarize_data.html">arcgis.features.summarize_data module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="arcgis.features.use_proximity.html">arcgis.features.use_proximity module</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="arcgis.raster.toc.html">arcgis.raster module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="arcgis.network.toc.html">arcgis.network module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="arcgis.geoanalytics.toc.html">arcgis.geoanalytics module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="arcgis.geocoding.html">arcgis.geocoding module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="arcgis.geoenrichment.html">arcgis.geoenrichment module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="arcgis.geometry.html">arcgis.geometry module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="arcgis.geoprocessing.html">arcgis.geoprocessing module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="arcgis.mapping.toc.html">arcgis.mapping module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="arcgis.realtime.html">arcgis.realtime module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="arcgis.schematics.html">arcgis.schematics module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="arcgis.widgets.html">arcgis.widgets module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="arcgis.apps.html">arcgis.apps module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="arcgis.learn.toc.html">arcgis.learn module</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">arcgis</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="arcgis.features.toc.html">arcgis.features module</a> &raquo;</li>
+        
+      <li>arcgis.features.find_locations module</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+<!-- This code block is inserted close near the <body> tag. See http://bit.ly/2BHUQzB -->
+<!-- The point of this code block is to send us google analytics on website views -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NJGGV5"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+
+  <div class="section" id="module-arcgis.features.find_locations">
+<span id="arcgis-features-find-locations-module"></span><h1>arcgis.features.find_locations module<a class="headerlink" href="#module-arcgis.features.find_locations" title="Permalink to this headline">¶</a></h1>
+<p>These functions are used to identify areas that meet a number of different criteria you specify. These criteria can be based
+upon attribute queries (for example, parcels that are vacant) and spatial queries (for example, within 1 kilometer of a
+river). The areas that are found can be selected from existing features (such as existing land parcels) or new features
+can be created where all the requirements are met.</p>
+<p>find_existing_locations searches for existing areas in a layer that meet a series of criteria.
+derive_new_locations creates new areas from locations in your study area that meet a series of criteria.
+find_similar_locations finds locations most similar to one or more reference locations based on criteria you specify.
+find_centroids finds and generates points from the representative center (centroid) of each input multipoint, line, or area feature.
+choose_best_facilities choose the best locations for facilities by allocating locations that have demand for these
+facilities in a way that satisfies a given goal.
+create_viewshed creates areas that are visible based on locations you specify.
+create_watersheds creates catchment areas based on locations you specify.
+trace_downstream determines the flow paths in a downstream direction from the locations you specify</p>
+<div class="section" id="find-existing-locations">
+<h2>find_existing_locations<a class="headerlink" href="#find-existing-locations" title="Permalink to this headline">¶</a></h2>
+<dl class="py function">
+<dt id="arcgis.features.find_locations.find_existing_locations">
+<code class="sig-prename descclassname">arcgis.features.find_locations.</code><code class="sig-name descname">find_existing_locations</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">input_layers</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">expressions</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">output_name</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">context</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">gis</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">estimate</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="n">future</span><span class="o">=</span><span class="default_value">False</span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.features.find_locations.find_existing_locations" title="Permalink to this definition">¶</a></dt>
+<dd><img alt="_images/find_existing_locations.png" src="_images/find_existing_locations.png" />
+<p>The <code class="docutils literal notranslate"><span class="pre">find_existing_locations</span></code> method selects features in the input layer that meet a query you specify.
+A query is made up of one or more expressions. There are two types of expressions: attribute and spatial.
+An example of an attribute expression is that a parcel must be vacant, which is an attribute of the Parcels layer (where STATUS = ‘VACANT’).
+An example of a spatial expression is that the parcel must also be within a certain distance of a river (Parcels within a distance of 0.75 Miles from Rivers).</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 19%" />
+<col style="width: 81%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><strong>Argument</strong></p></td>
+<td><p><strong>Description</strong></p></td>
+</tr>
+<tr class="row-even"><td><p>input_layers</p></td>
+<td><p>Required list of feature layers. A list of layers that will be used in the expressions parameter.
+Each layer in the list can be:</p>
+<ul class="simple">
+<li><p>a feature service layer with an optional filter to select specific features, or</p></li>
+<li><p>a feature collection</p></li>
+</ul>
+<p>See <a class="reference internal" href="arcgis.features.analysis.html#featureinput"><span class="std std-ref">Feature Input</span></a>.</p>
+</td>
+</tr>
+<tr class="row-odd"><td><p>expressions</p></td>
+<td><p>Required dict. There are two types of expressions, attribute and spatial.</p>
+<p>Example attribute expression:</p>
+<dl class="simple">
+<dt>{</dt><dd><p>“operator”: “and”,
+“layer”: 0,
+“where”: “STATUS = ‘VACANT’”</p>
+</dd>
+</dl>
+<p>}</p>
+<p><strong>Note</strong></p>
+<ul class="simple">
+<li><p>operator can be either <code class="docutils literal notranslate"><span class="pre">and</span></code> or <code class="docutils literal notranslate"><span class="pre">or</span></code></p></li>
+<li><p>layer is the index of the layer in the <code class="docutils literal notranslate"><span class="pre">input_layers</span></code> parameter.</p></li>
+<li><p>The where clause must be surrounded by double quotes.</p></li>
+<li><p>When dealing with text fields, values must be single-quoted (‘VACANT’).</p></li>
+<li><p>Date fields support all queries except LIKE. Dates are strings in YYYY:MM:DD hh:mm:ss format.</p></li>
+</ul>
+<blockquote>
+<div><p>Here’s an example using the date field ObsDate:</p>
+<p>“where”: “ObsDate &gt;= ‘1998-04-30 13:30:00’ “</p>
+</div></blockquote>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 13%" />
+<col style="width: 87%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p>=</p></td>
+<td><p>Equal</p></td>
+</tr>
+<tr class="row-even"><td><p>&gt;</p></td>
+<td><p>Greater than</p></td>
+</tr>
+<tr class="row-odd"><td><p>&lt;</p></td>
+<td><p>Less than</p></td>
+</tr>
+<tr class="row-even"><td><p>&gt;=</p></td>
+<td><p>Greater than or equal to</p></td>
+</tr>
+<tr class="row-odd"><td><p>&lt;=</p></td>
+<td><p>Less than or equal to</p></td>
+</tr>
+<tr class="row-even"><td><p>&lt;&gt;</p></td>
+<td><p>Not equal</p></td>
+</tr>
+<tr class="row-odd"><td><p>LIKE ‘%
+&lt;string&gt;’</p></td>
+<td><p>A percent symbol (%) signifies a wildcard, meaning that
+anything is acceptable in its place-one character, a
+hundred characters, or no character. This expression
+would select Mississippi and Missouri among USA
+state names: STATE_NAME LIKE ‘Miss%’</p></td>
+</tr>
+<tr class="row-even"><td><p>BETWEEN
+&lt;value1&gt;
+AND
+&lt;value2&gt;</p></td>
+<td><p>Selects a record if it has a value greater than or equal
+to &lt;value1&gt; and less than or equal to &lt;value2&gt;.
+For example, this expression selects all records with
+an HHSIZE value greater than or equal to 3 and less
+than or equal to 10:</p>
+<p>HHSIZE BETWEEN 3 AND 10</p>
+<p>The above is equivalent to:</p>
+<p>HHSIZE &gt;= 3 AND HHSIZE &lt;= 10
+This operator applies to numeric or date fields.
+Here is an example of a date query on the field ObsDate:</p>
+<p>ObsDate BETWEEN ‘1998-04-30 00:00:00’ AND ‘1998-04-30 23:59:59’</p>
+<p>Time is optional.</p>
+</td>
+</tr>
+<tr class="row-odd"><td><p>NOT
+BETWEEN
+&lt;value1&gt;
+AND
+&lt;value2&gt;</p></td>
+<td><p>Selects a record if it has a value outside the range between
+&lt;value1&gt; and less than or equal to &lt;value2&gt;.
+For example, this expression selects all records whose
+HHSIZE value is less than 5 and greater than 7.</p>
+<p>HHSIZE NOT BETWEEN 5 AND 7</p>
+<p>The above is equivalent to:</p>
+<p>HHSIZE &lt; 5 OR HHSIZE &gt; 7
+This operator applies to numeric or date fields.</p>
+<p><strong>Note</strong></p>
+<p>You can use the contains relationship with points and lines.
+For example, you have a layer of street centerlines (lines) and
+a layer of manhole covers (points), and you want to find streets
+that contain a manhole cover. You could use contains to find
+streets that contain manhole covers, but in order for a line to
+contain a point, the point must be exactly on the line (that is,
+in GIS terms, they are snapped to each other). If there is any
+doubt about this, use the withinDistance relationship with a
+suitable distance value.</p>
+</td>
+</tr>
+</tbody>
+</table>
+<p>Example spatial expression:
+{</p>
+<blockquote>
+<div><p>“operator”: “and”,
+“layer”: 0,
+“spatialRel”: “withinDistance”,
+“selectingLayer”: 1,
+“distance”: 10,
+“units”: “miles”</p>
+</div></blockquote>
+<p>}</p>
+<ul class="simple">
+<li><p>operator can be either <code class="docutils literal notranslate"><span class="pre">and</span></code> or <code class="docutils literal notranslate"><span class="pre">or</span></code></p></li>
+<li><p>layer is the index of the layer in <code class="docutils literal notranslate"><span class="pre">the</span> <span class="pre">input_layers</span></code> parameter. The result of the expression is features in this layer.</p></li>
+<li><p>spatialRel is the spatial relationship. There are nine spatial relationships.</p></li>
+<li><p>distance is the distance to use for the withinDistance and notWithinDistance spatial relationship.</p></li>
+<li><p>units is the units for distance.</p></li>
+</ul>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 18%" />
+<col style="width: 82%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p>spatialRel</p></td>
+<td><p>Description</p></td>
+</tr>
+<tr class="row-even"><td><p>intersects</p>
+<p>notIntersects</p>
+</td>
+<td><p><img alt="intersect" src="_images/intersect.png" /></p>
+<p>A feature in layer passes the intersect test if it overlaps
+any part of a feature in selectingLayer, including touches
+(where features share a common point).</p>
+<ul class="simple">
+<li><p>intersects-If a feature in layer intersects a feature in
+selectingLayer, the portion of the feature in layer that
+intersects the feature in selectingLayer is included in
+the output.</p></li>
+<li><p>notintersects-If a feature in layer intersects a feature in
+selectingLayer, the portion of the feature in layer that
+intersects the feature in selectingLayer is excluded from
+the output.</p></li>
+</ul>
+</td>
+</tr>
+<tr class="row-odd"><td><p>withinDistance</p>
+<p>notWithinDistance</p>
+</td>
+<td><p><img alt="distance" src="_images/distance.png" /></p>
+<p>The within a distance relationship uses the straight-line
+distance between features in layer to those in selectingLayer.
+withinDistance-The portion of the feature in layer that is
+within the specified distance of a feature in selectingLayer
+is included in the output.
+notwithinDistance-The portion of the feature in layer that is
+within the specified distance of a feature in selectingLayer is
+excluded from output. You can think of this relationship as
+“is farther away than”.</p>
+</td>
+</tr>
+<tr class="row-even"><td><p>contains</p>
+<p>notContains</p>
+</td>
+<td><p><img alt="intersect" src="_images/intersect.png" /></p>
+<p>A feature in layer passes this test if it completely
+surrounds a feature in selectingLayer. No portion of the
+containing feature; however, the contained feature is allowed
+to touch the containing feature (that is, share a common
+point along its boundary).</p>
+<p>contains-If a feature in layer contains a feature in
+selectingLayer, the feature in layer is included in the output.
+notcontains-If a feature in layer contains a feature in
+selectingLayer, the feature in the first layer is excluded</p>
+</td>
+</tr>
+<tr class="row-odd"><td><p>within</p>
+<p>notWithin</p>
+</td>
+<td><p><img alt="within" src="_images/within.png" /></p>
+<p>A feature in layer passes this test if it is completely
+surrounded by a feature in selectingLayer. The entire feature
+layer must be within the containing feature; however, the two
+features are allowed to touch (that is, share a common point
+along its boundary).</p>
+<ul class="simple">
+<li><p>within-If a feature in layer is completely within a feature in
+selectingLayer, the feature in layer is included in the output.</p></li>
+<li><p>notwithin-If a feature in layer is completely within a feature
+in selectingLayer, the feature in layer is excluded from the
+output.</p></li>
+</ul>
+<p><strong>Note:</strong></p>
+<p>can use the within relationship for points and lines, just as
+you can with the contains relationship. For example, your first
+layer contains points representing manhole covers and you want
+to find the manholes that are on street centerlines (as opposed
+to parking lots or other non-street features). You could use
+within to find manhole points within street centerlines, but
+in order for a point to contain a line, the point must be exactly
+on the line (that is, in GIS terms, they are snapped to each
+other). If there is any doubt about this, use the withinDistance
+relationship with a suitable distance value.</p>
+</td>
+</tr>
+<tr class="row-even"><td><p>nearest</p></td>
+<td><p><img alt="nearest" src="_images/nearest.png" /></p>
+<p>feature in the first layer passes this test if it is nearest
+to a feature in the second layer.</p>
+<ul class="simple">
+<li><p>nearest-If a feature in the first layer is nearest to a
+feature in the second layer, the feature in the first layer
+is included in the output.</p></li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">distance</span></code> is the distance to use for the withinDistance and notWithinDistance spatial relationship.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">units</span></code> is the units for distance.</p></li>
+</ul>
+<p>Choice list: [‘Meters’, ‘Kilometers’, ‘Feet’, ‘Yards’, ‘Miles’]</p>
+<p>An expression may be a list, which denotes a group. The first operator in the group indicates how the group expression
+is added to the previous expression. Grouping expressions is only necessary when you need to create two or more distinct
+sets of features from the same layer. One way to think of grouping is that without grouping, you would have to execute
+<code class="docutils literal notranslate"><span class="pre">find_existing_locations</span></code> multiple times and merge the results.</p>
+</td>
+</tr>
+<tr class="row-odd"><td><p>output_name</p></td>
+<td><p>Optional string. If provided, the method will create a feature layer of the results. You define the name of the layer.
+If <code class="docutils literal notranslate"><span class="pre">output_name</span></code> is not supplied, the task will return a feature collection.</p></td>
+</tr>
+<tr class="row-even"><td><p>context</p></td>
+<td><p>Optional string. Additional settings such as processing extent and output spatial reference. For <code class="docutils literal notranslate"><span class="pre">find_existing_locations</span></code>, there are two settings.</p>
+<ol class="arabic simple">
+<li><p>Extent (<code class="docutils literal notranslate"><span class="pre">extent</span></code>)-a bounding box that defines the analysis area. Only those points in the input_layers that intersect the bounding box will be analyzed.</p></li>
+<li><p>Output Spatial Reference (<code class="docutils literal notranslate"><span class="pre">outSR</span></code>)-the output features will be projected into the output spatial reference.</p></li>
+</ol>
+</td>
+</tr>
+<tr class="row-odd"><td><p>gis</p></td>
+<td><p>Optional, the GIS on which this tool runs. If not specified, the active GIS is used.</p></td>
+</tr>
+<tr class="row-even"><td><p>estimate</p></td>
+<td><p>Optional boolean. Is true, the number of credits needed to run the operation will be returned as a float.</p></td>
+</tr>
+<tr class="row-odd"><td><p>future</p></td>
+<td><p>Optional boolean. If True, the result will be a GPJob object and results will be returned asynchronously.</p></td>
+</tr>
+</tbody>
+</table>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>result_layer : feature layer Item if output_name is specified, else Feature Collection.</p>
+</dd>
+</dl>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1">#USAGE EXAMPLE: To find busy (where SEGMENT_TY is 1 and where ARTERIAL_C is 1) streets from the existing seattle streets layer.</span>
+
+<span class="n">arterial_streets</span> <span class="o">=</span> <span class="n">find_existing_locations</span><span class="p">(</span><span class="n">input_layers</span><span class="o">=</span><span class="p">[</span><span class="n">bike_route_streets</span><span class="p">],</span>
+                <span class="n">expressions</span><span class="o">=</span><span class="p">[{</span><span class="s2">&quot;operator&quot;</span><span class="p">:</span><span class="s2">&quot;&quot;</span><span class="p">,</span><span class="s2">&quot;layer&quot;</span><span class="p">:</span><span class="mi">0</span><span class="p">,</span><span class="s2">&quot;where&quot;</span><span class="p">:</span><span class="s2">&quot;SEGMENT_TY = 1&quot;</span><span class="p">},</span>
+                             <span class="p">{</span><span class="s2">&quot;operator&quot;</span><span class="p">:</span><span class="s2">&quot;and&quot;</span><span class="p">,</span><span class="s2">&quot;layer&quot;</span><span class="p">:</span><span class="mi">0</span><span class="p">,</span><span class="s2">&quot;where&quot;</span><span class="p">:</span><span class="s2">&quot;ARTERIAL_C = 1&quot;</span><span class="p">}],</span>
+                               <span class="n">output_name</span><span class="o">=</span><span class="s1">&#39;ArterialStreets&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+</div>
+<div class="section" id="derive-new-locations">
+<h2>derive_new_locations<a class="headerlink" href="#derive-new-locations" title="Permalink to this headline">¶</a></h2>
+<dl class="py function">
+<dt id="arcgis.features.find_locations.derive_new_locations">
+<code class="sig-prename descclassname">arcgis.features.find_locations.</code><code class="sig-name descname">derive_new_locations</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">input_layers</span><span class="o">=</span><span class="default_value">[]</span></em>, <em class="sig-param"><span class="n">expressions</span><span class="o">=</span><span class="default_value">[]</span></em>, <em class="sig-param"><span class="n">output_name</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">context</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">gis</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">estimate</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="n">future</span><span class="o">=</span><span class="default_value">False</span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.features.find_locations.derive_new_locations" title="Permalink to this definition">¶</a></dt>
+<dd><img alt="_images/derive_new_locations.png" src="_images/derive_new_locations.png" />
+<p>The <code class="docutils literal notranslate"><span class="pre">derive_new_locations</span></code> method derives new features from the input layers that meet a query you specify. A query is
+made up of one or more expressions. There are two types of expressions: attribute and spatial. An example of an
+attribute expression is that a parcel must be vacant, which is an attribute of the Parcels layer
+(STATUS = ‘VACANT’). An example of a spatial expression is that the parcel must also be within a certain
+distance of a river (Parcels within a distance of 0.75 Miles from Rivers).</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">derive_new_locations</span></code> method is very similar to the <code class="docutils literal notranslate"><span class="pre">find_existing_locations</span></code> method, the main difference is that
+the result of <code class="docutils literal notranslate"><span class="pre">derive_new_locations</span></code> can contain partial features.</p>
+<ul class="simple">
+<li><p>In both methods, the attribute expression  <code class="docutils literal notranslate"><span class="pre">where</span></code> and the spatial relationships within and contains return the same result.
+This is because these relationships return entire features.</p></li>
+<li><p>When <code class="docutils literal notranslate"><span class="pre">intersects</span></code> or <code class="docutils literal notranslate"><span class="pre">within_distance</span></code> is used, <code class="docutils literal notranslate"><span class="pre">derive_new_locations</span></code> creates new features
+in the result. For example, when intersecting a parcel feature and a flood zone area that partially overlap each other,
+<code class="docutils literal notranslate"><span class="pre">find_existing_locations</span></code> will return the entire parcel whereas <code class="docutils literal notranslate"><span class="pre">derive_new_locations</span></code> will return just the portion of
+the parcel that is within the flood zone.</p></li>
+</ul>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 14%" />
+<col style="width: 86%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><strong>Argument</strong></p></td>
+<td><p><strong>Description</strong></p></td>
+</tr>
+<tr class="row-even"><td><p>input_layers</p></td>
+<td><p>Required list of feature layers. A list of layers that will be used in the expressions parameter.
+Each layer in the list can be:</p>
+<ul class="simple">
+<li><p>a feature service layer with an optional filter to select specific features, or</p></li>
+<li><p>a feature collection</p></li>
+</ul>
+</td>
+</tr>
+<tr class="row-odd"><td><p>expressions</p></td>
+<td><p>Required dict. There are two types of expressions, attribute and spatial.</p>
+<p>Example attribute expression:</p>
+<dl class="simple">
+<dt>{</dt><dd><p>“operator”: “and”,
+“layer”: 0,
+“where”: “STATUS = ‘VACANT’”</p>
+</dd>
+</dl>
+<p>}</p>
+<p><strong>Note</strong>
+* operator can be either <code class="docutils literal notranslate"><span class="pre">and</span></code> or <code class="docutils literal notranslate"><span class="pre">or</span></code>
+* layer is the index of the layer in the <code class="docutils literal notranslate"><span class="pre">input_layers</span></code> parameter.
+* The where clause must be surrounded by double quotes.
+* When dealing with text fields, values must be single-quoted (‘VACANT’).
+* Date fields support all queries except LIKE. Dates are strings in YYYY:MM:DD hh:mm:ss format. Here’s an example using the date field ObsDate:</p>
+<blockquote>
+<div><p>“where”: “ObsDate &gt;= ‘1998-04-30 13:30:00’ “</p>
+</div></blockquote>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 13%" />
+<col style="width: 87%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p>=</p></td>
+<td><p>Equal</p></td>
+</tr>
+<tr class="row-even"><td><p>&gt;</p></td>
+<td><p>Greater than</p></td>
+</tr>
+<tr class="row-odd"><td><p>&lt;</p></td>
+<td><p>Less than</p></td>
+</tr>
+<tr class="row-even"><td><p>&gt;=</p></td>
+<td><p>Greater than or equal to</p></td>
+</tr>
+<tr class="row-odd"><td><p>&lt;=</p></td>
+<td><p>Less than or equal to</p></td>
+</tr>
+<tr class="row-even"><td><p>&lt;&gt;</p></td>
+<td><p>Not equal</p></td>
+</tr>
+<tr class="row-odd"><td><p>LIKE ‘%
+&lt;string&gt;’</p></td>
+<td><p>A percent symbol (%) signifies a wildcard, meaning that
+anything is acceptable in its place-one character, a
+hundred characters, or no character. This expression
+would select Mississippi and Missouri among USA
+state names: STATE_NAME LIKE ‘Miss%’</p></td>
+</tr>
+<tr class="row-even"><td><p>BETWEEN
+&lt;value1&gt;
+AND
+&lt;value2&gt;</p></td>
+<td><p>Selects a record if it has a value greater than or equal
+to &lt;value1&gt; and less than or equal to &lt;value2&gt;.
+For example, this expression selects all records with
+an HHSIZE value greater than or equal to 3 and less
+than or equal to 10:</p>
+<p>HHSIZE BETWEEN 3 AND 10</p>
+<p>The above is equivalent to:</p>
+<p>HHSIZE &gt;= 3 AND HHSIZE &lt;= 10
+This operator applies to numeric or date fields.
+Here is an example of a date query on the field ObsDate:</p>
+<p>ObsDate BETWEEN ‘1998-04-30 00:00:00’ AND ‘1998-04-30 23:59:59’</p>
+<p>Time is optional.</p>
+</td>
+</tr>
+<tr class="row-odd"><td><p>NOT
+BETWEEN
+&lt;value1&gt;
+AND
+&lt;value2&gt;</p></td>
+<td><p>Selects a record if it has a value outside the range between
+&lt;value1&gt; and less than or equal to &lt;value2&gt;.
+For example, this expression selects all records whose
+HHSIZE value is less than 5 and greater than 7.</p>
+<p>HHSIZE NOT BETWEEN 5 AND 7</p>
+<p>The above is equivalent to:</p>
+<p>HHSIZE &lt; 5 OR HHSIZE &gt; 7
+This operator applies to numeric or date fields.</p>
+<p><strong>Note</strong></p>
+<p>You can use the contains relationship with points and lines.
+For example, you have a layer of street centerlines (lines) and
+a layer of manhole covers (points), and you want to find streets
+that contain a manhole cover. You could use contains to find
+streets that contain manhole covers, but in order for a line to
+contain a point, the point must be exactly on the line (that is,
+in GIS terms, they are snapped to each other). If there is any
+doubt about this, use the withinDistance relationship with a
+suitable distance value.</p>
+</td>
+</tr>
+</tbody>
+</table>
+<p>Example spatial expression:
+{</p>
+<blockquote>
+<div><p>“operator”: “and”,
+“layer”: 0,
+“spatialRel”: “withinDistance”,
+“selectingLayer”: 1,
+“distance”: 10,
+“units”: “miles”</p>
+</div></blockquote>
+<p>}</p>
+<ul class="simple">
+<li><p>operator can be either <code class="docutils literal notranslate"><span class="pre">and</span></code> or <code class="docutils literal notranslate"><span class="pre">or</span></code></p></li>
+<li><p>layer is the index of the layer in <code class="docutils literal notranslate"><span class="pre">the</span> <span class="pre">input_layers</span></code> parameter. The result of the expression is features in this layer.</p></li>
+<li><p>spatialRel is the spatial relationship. There are nine spatial relationships.</p></li>
+<li><p>distance is the distance to use for the withinDistance and notWithinDistance spatial relationship.</p></li>
+<li><p>units is the units for distance.</p></li>
+</ul>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 18%" />
+<col style="width: 82%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p>spatialRel</p></td>
+<td><p>Description</p></td>
+</tr>
+<tr class="row-even"><td><p>intersects</p>
+<p>notIntersects</p>
+</td>
+<td><p><img alt="intersect" src="_images/intersect.png" /></p>
+<p>A feature in layer passes the intersect test if it overlaps
+any part of a feature in selectingLayer, including touches
+(where features share a common point).</p>
+<ul class="simple">
+<li><p>intersects-If a feature in layer intersects a feature in
+selectingLayer, the portion of the feature in layer that
+intersects the feature in selectingLayer is included in
+the output.</p></li>
+<li><p>notintersects-If a feature in layer intersects a feature in
+selectingLayer, the portion of the feature in layer that
+intersects the feature in selectingLayer is excluded from
+the output.</p></li>
+</ul>
+</td>
+</tr>
+<tr class="row-odd"><td><p>withinDistance</p>
+<p>notWithinDistance</p>
+</td>
+<td><p><img alt="distance" src="_images/distance.png" /></p>
+<p>The within a distance relationship uses the straight-line
+distance between features in layer to those in selectingLayer.
+withinDistance-The portion of the feature in layer that is
+within the specified distance of a feature in selectingLayer
+is included in the output.
+notwithinDistance-The portion of the feature in layer that is
+within the specified distance of a feature in selectingLayer is
+excluded from output. You can think of this relationship as
+“is farther away than”.</p>
+</td>
+</tr>
+<tr class="row-even"><td><p>contains</p>
+<p>notContains</p>
+</td>
+<td><p><img alt="intersect" src="_images/intersect.png" /></p>
+<p>A feature in layer passes this test if it completely
+surrounds a feature in selectingLayer. No portion of the
+containing feature; however, the contained feature is allowed
+to touch the containing feature (that is, share a common
+point along its boundary).</p>
+<p>contains-If a feature in layer contains a feature in
+selectingLayer, the feature in layer is included in the output.
+notcontains-If a feature in layer contains a feature in
+selectingLayer, the feature in the first layer is excluded</p>
+</td>
+</tr>
+<tr class="row-odd"><td><p>within</p>
+<p>notWithin</p>
+</td>
+<td><p><img alt="within" src="_images/within.png" /></p>
+<p>A feature in layer passes this test if it is completely
+surrounded by a feature in selectingLayer. The entire feature
+layer must be within the containing feature; however, the two
+features are allowed to touch (that is, share a common point
+along its boundary).</p>
+<ul class="simple">
+<li><p>within-If a feature in layer is completely within a feature in
+selectingLayer, the feature in layer is included in the output.</p></li>
+<li><p>notwithin-If a feature in layer is completely within a feature
+in selectingLayer, the feature in layer is excluded from the
+output.</p></li>
+</ul>
+<p><strong>Note:</strong></p>
+<p>can use the within relationship for points and lines, just as
+you can with the contains relationship. For example, your first
+layer contains points representing manhole covers and you want
+to find the manholes that are on street centerlines (as opposed
+to parking lots or other non-street features). You could use
+within to find manhole points within street centerlines, but
+in order for a point to contain a line, the point must be exactly
+on the line (that is, in GIS terms, they are snapped to each
+other). If there is any doubt about this, use the withinDistance
+relationship with a suitable distance value.</p>
+</td>
+</tr>
+<tr class="row-even"><td><p>nearest</p></td>
+<td><p><img alt="nearest" src="_images/nearest.png" /></p>
+<p>feature in the first layer passes this test if it is nearest
+to a feature in the second layer.</p>
+<ul class="simple">
+<li><p>nearest-If a feature in the first layer is nearest to a
+feature in the second layer, the feature in the first layer
+is included in the output.</p></li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+<tr class="row-odd"><td><p>output_name</p></td>
+<td><p>Optional string. If provided, the task will create a feature layer of the results. You define the name of the layer.                                           If output_name is not supplied, the task will return a feature collection.</p></td>
+</tr>
+<tr class="row-even"><td><p>context</p></td>
+<td><p>Optional string. Additional settings such as processing extent and output spatial reference. For                                                               <code class="docutils literal notranslate"><span class="pre">derive_new_locations</span></code>, there are two settings.</p>
+<ol class="arabic simple">
+<li><p>Extent (extent)-a bounding box that defines the analysis area. Only those points in the input_layers that intersect the bounding box will be analyzed.</p></li>
+<li><p>Output Spatial Reference (outSR)</p></li>
+</ol>
+</td>
+</tr>
+<tr class="row-odd"><td><p>gis</p></td>
+<td><p>Optional, the GIS on which this tool runs. If not specified, the active GIS is used.</p></td>
+</tr>
+<tr class="row-even"><td><p>estimate</p></td>
+<td><p>Optional boolean. Is true, the number of credits needed to run the operation will be returned as a float.</p></td>
+</tr>
+<tr class="row-odd"><td><p>future</p></td>
+<td><p>Optional boolean. If True, the result will be a GPJob object and results will be returned asynchronously.</p></td>
+</tr>
+</tbody>
+</table>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">USAGE</span> <span class="n">EXAMPLE</span><span class="p">:</span> <span class="n">To</span> <span class="n">Identify</span> <span class="n">areas</span> <span class="n">that</span> <span class="n">are</span> <span class="n">suitable</span> <span class="n">cougar</span> <span class="n">habitat</span> <span class="n">using</span> <span class="n">the</span> <span class="n">criteria</span> <span class="n">defined</span> <span class="n">by</span> <span class="n">experts</span><span class="o">.</span>
+
+<span class="n">new_location</span> <span class="o">=</span> <span class="n">derive_new_locations</span><span class="p">(</span><span class="n">input_layers</span><span class="o">=</span><span class="p">[</span><span class="n">slope</span><span class="p">,</span> <span class="n">vegetation</span><span class="p">,</span> <span class="n">streams</span><span class="p">,</span> <span class="n">highways</span><span class="p">],</span>
+                            <span class="n">expressions</span><span class="o">=</span><span class="p">[{</span><span class="s2">&quot;operator&quot;</span><span class="p">:</span><span class="s2">&quot;&quot;</span><span class="p">,</span><span class="s2">&quot;layer&quot;</span><span class="p">:</span><span class="mi">0</span><span class="p">,</span><span class="s2">&quot;selectingLayer&quot;</span><span class="p">:</span><span class="mi">1</span><span class="p">,</span><span class="s2">&quot;spatialRel&quot;</span><span class="p">:</span><span class="s2">&quot;intersects&quot;</span><span class="p">},</span>
+                                         <span class="p">{</span><span class="s2">&quot;operator&quot;</span><span class="p">:</span><span class="s2">&quot;and&quot;</span><span class="p">,</span><span class="s2">&quot;layer&quot;</span><span class="p">:</span><span class="mi">0</span><span class="p">,</span><span class="s2">&quot;selectingLayer&quot;</span><span class="p">:</span><span class="mi">2</span><span class="p">,</span><span class="s2">&quot;spatialRel&quot;</span><span class="p">:</span><span class="s2">&quot;withinDistance&quot;</span><span class="p">,</span><span class="s2">&quot;distance&quot;</span><span class="p">:</span><span class="mi">500</span><span class="p">,</span><span class="s2">&quot;units&quot;</span><span class="p">:</span><span class="s2">&quot;Feet&quot;</span><span class="p">},</span>
+                                         <span class="p">{</span><span class="s2">&quot;operator&quot;</span><span class="p">:</span><span class="s2">&quot;and&quot;</span><span class="p">,</span><span class="s2">&quot;layer&quot;</span><span class="p">:</span><span class="mi">0</span><span class="p">,</span><span class="s2">&quot;selectingLayer&quot;</span><span class="p">:</span><span class="mi">3</span><span class="p">,</span><span class="s2">&quot;spatialRel&quot;</span><span class="p">:</span><span class="s2">&quot;notWithinDistance&quot;</span><span class="p">,</span><span class="s2">&quot;distance&quot;</span><span class="p">:</span><span class="mi">1500</span><span class="p">,</span><span class="s2">&quot;units&quot;</span><span class="p">:</span><span class="s2">&quot;Feet&quot;</span><span class="p">},</span>
+                                         <span class="p">{</span><span class="s2">&quot;operator&quot;</span><span class="p">:</span><span class="s2">&quot;and&quot;</span><span class="p">,</span><span class="s2">&quot;layer&quot;</span><span class="p">:</span><span class="mi">0</span><span class="p">,</span><span class="s2">&quot;where&quot;</span><span class="p">:</span><span class="s2">&quot;GRIDCODE = 1&quot;</span><span class="p">}],</span>
+                            <span class="n">output_name</span><span class="o">=</span><span class="s1">&#39;derive_new_loactions&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+</div>
+<div class="section" id="find-similar-locations">
+<h2>find_similar_locations<a class="headerlink" href="#find-similar-locations" title="Permalink to this headline">¶</a></h2>
+<dl class="py function">
+<dt id="arcgis.features.find_locations.find_similar_locations">
+<code class="sig-prename descclassname">arcgis.features.find_locations.</code><code class="sig-name descname">find_similar_locations</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">input_layer</span></em>, <em class="sig-param"><span class="n">search_layer</span></em>, <em class="sig-param"><span class="n">analysis_fields</span><span class="o">=</span><span class="default_value">[]</span></em>, <em class="sig-param"><span class="n">input_query</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">number_of_results</span><span class="o">=</span><span class="default_value">0</span></em>, <em class="sig-param"><span class="n">output_name</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">context</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">gis</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">estimate</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="n">future</span><span class="o">=</span><span class="default_value">False</span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.features.find_locations.find_similar_locations" title="Permalink to this definition">¶</a></dt>
+<dd><img alt="_images/find_similar_locations.png" src="_images/find_similar_locations.png" />
+<p>The <code class="docutils literal notranslate"><span class="pre">find_similar_locations</span></code> method measures the similarity of candidate locations to one or more reference locations.</p>
+<p>Based on criteria you specify, Find <code class="docutils literal notranslate"><span class="pre">find_similar_locations</span></code> can answer questions such as the following:</p>
+<p>Which of your stores are most similar to your top performers with regard to customer profiles?
+Based on characteristics of villages hardest hit by the disease, which other villages are high risk?
+To answer questions such as these, you provide the reference locations (the <code class="docutils literal notranslate"><span class="pre">input_layer</span></code> parameter), the candidate
+locations (the <code class="docutils literal notranslate"><span class="pre">search_layer</span></code> parameter), and the fields representing the criteria you want to match. For example,
+the <code class="docutils literal notranslate"><span class="pre">input_layer</span></code> might be a layer containing your top performing stores or the villages hardest hit by the disease.
+The <code class="docutils literal notranslate"><span class="pre">search_layer</span></code> contains your candidate locations to search. This might be all of your stores or all other villages.
+Finally, you supply a list of fields to use for measuring similarity. <code class="docutils literal notranslate"><span class="pre">find_similar_locations</span></code> will rank all of the
+candidate locations by how closely they match your reference locations across all of the fields you have selected.</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 16%" />
+<col style="width: 84%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><strong>Argument</strong></p></td>
+<td><p><strong>Description</strong></p></td>
+</tr>
+<tr class="row-even"><td><p>input_layer</p></td>
+<td><p>Required feature layer. The <code class="docutils literal notranslate"><span class="pre">input_layer</span></code> contains one or more
+reference locations against which features in the <code class="docutils literal notranslate"><span class="pre">search_layer</span></code>
+will be evaluated for similarity. For example, the <code class="docutils literal notranslate"><span class="pre">input_layer</span></code>
+might contain your top performing stores or the villages hardest
+hit by a disease.
+It is not uncommon that the <code class="docutils literal notranslate"><span class="pre">input_layer</span></code> and <code class="docutils literal notranslate"><span class="pre">search_layer</span></code> are the
+same feature service. For example, the feature service contains
+locations of all stores, one of which is your top performing store.
+If you want to rank the remaining stores from most to least similar
+to your top performing store, you can provide a filter for both the
+inputLayer and the <code class="docutils literal notranslate"><span class="pre">search_layer</span></code>. The filter on the <code class="docutils literal notranslate"><span class="pre">input_layer</span></code> would
+select the top performing store while the filter on the <code class="docutils literal notranslate"><span class="pre">search_layer</span></code>
+would select all stores except for the top performing store. You can
+also use the optional <code class="docutils literal notranslate"><span class="pre">input_query</span></code> parameter to specify reference locations.</p>
+<p>If there is more than one reference location, similarity will be based
+on averages for the fields you specify in the <code class="docutils literal notranslate"><span class="pre">analysis_fields</span></code> parameter.
+So, for example, if there are two reference locations and you are
+interested in matching population, the task will look for candidate
+locations in the <code class="docutils literal notranslate"><span class="pre">search_layer</span></code> with populations that are most like the
+average population for both reference locations. If the values for the
+reference locations are 100 and 102, for example, the method will look
+for candidate locations with populations near 101. Consequently, you
+will want to use fields for the reference locations fields that have
+similar values. If, for example, the population values for one reference
+location is 100 and the other is 100,000, the tool will look for candidate
+locations with population values near the average of those two values: 50,050.
+Notice that this averaged value is nothing like the population for either
+of the reference locations. See <a class="reference internal" href="arcgis.features.analysis.html#featureinput"><span class="std std-ref">Feature Input</span></a>.</p>
+</td>
+</tr>
+<tr class="row-odd"><td><p>search_layer</p></td>
+<td><p>Required feature layer. The layer containing candidate locations that
+will be evaluated against the reference locations. See <a class="reference internal" href="arcgis.features.analysis.html#featureinput"><span class="std std-ref">Feature Input</span></a>.</p></td>
+</tr>
+<tr class="row-even"><td><p>analysis_fields</p></td>
+<td><p>Required list of strings. A list of fields whose values are used to determine similarity.
+They must be numeric fields and the fields must exist on both the <code class="docutils literal notranslate"><span class="pre">input_layer</span></code> and
+the <code class="docutils literal notranslate"><span class="pre">search_layer</span></code>. The method will find features in the <code class="docutils literal notranslate"><span class="pre">search_layer</span></code> that have field
+values closest to those of the features in your <code class="docutils literal notranslate"><span class="pre">input_layer</span></code>.</p></td>
+</tr>
+<tr class="row-odd"><td><p>input_query</p></td>
+<td><p>Optional string. In the situation where the <code class="docutils literal notranslate"><span class="pre">input_layer</span></code> and the <code class="docutils literal notranslate"><span class="pre">search_layer</span></code> are the same feature service,
+this parameter allows you to input a query on the <code class="docutils literal notranslate"><span class="pre">input_layer</span></code> to specify which features are the reference locations.
+The reference locations specified by this query will not be analyzed as candidates.
+The syntax of <code class="docutils literal notranslate"><span class="pre">input_query</span></code> is the same as a filter.</p></td>
+</tr>
+<tr class="row-even"><td><p>number_of_results</p></td>
+<td><p>Optional int. The number of ranked candidate locations output to the <code class="docutils literal notranslate"><span class="pre">similar_result_layer</span></code>.
+If <code class="docutils literal notranslate"><span class="pre">number_of_results</span></code> is not specified, or set to zero, all candidate locations will be ranked and output.</p></td>
+</tr>
+<tr class="row-odd"><td><p>output_name</p></td>
+<td><p>Optional string. If provided, the method will create a feature service of the results.
+You define the name of the service. If <code class="docutils literal notranslate"><span class="pre">output_name</span></code> is not supplied, the method will return a feature collection.</p></td>
+</tr>
+<tr class="row-even"><td><p>context</p></td>
+<td><p>Optional string. Context contains additional settings that affect method execution.
+For <code class="docutils literal notranslate"><span class="pre">find_similar_locations</span></code>, there are two settings.</p>
+<ol class="arabic simple">
+<li><p>Extent (<code class="docutils literal notranslate"><span class="pre">extent</span></code>) - a bounding box that defines the analysis area. Only those features</p></li>
+</ol>
+<blockquote>
+<div><p>in the <code class="docutils literal notranslate"><span class="pre">input_layer</span></code> that intersect the bounding box will be analyzed.</p>
+</div></blockquote>
+<ol class="arabic simple">
+<li><p>Output Spatial Reference (<code class="docutils literal notranslate"><span class="pre">outSR</span></code>) - the output features will be projected into the output spatial reference.</p></li>
+</ol>
+</td>
+</tr>
+<tr class="row-odd"><td><p>estimate</p></td>
+<td><p>Optional boolean. If True, the number of credits to run the operation will be returned.</p></td>
+</tr>
+<tr class="row-even"><td><p>future</p></td>
+<td><p>Optional boolean. If True, the result will be a GPJob object and results will be returned asynchronously.</p></td>
+</tr>
+</tbody>
+</table>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p><p>result_layer : feature layer Item if <code class="docutils literal notranslate"><span class="pre">output_name</span></code> is specified, else Python dictionary with the following keys:</p>
+<p>”similar_result_layer” : layer (FeatureCollection)</p>
+<p>”process_info” : list of message</p>
+</p>
+</dd>
+</dl>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1">#USAGE EXAMPLE: To find top 4 most locations from the candidates layer that are similar to the target location.</span>
+<span class="n">top_4_most_similar_locations</span> <span class="o">=</span> <span class="n">find_similar_locations</span><span class="p">(</span><span class="n">target_lyr</span><span class="p">,</span> <span class="n">candidates_lyr</span><span class="p">,</span>
+                                            <span class="n">analysis_fields</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;THH17&#39;</span><span class="p">,</span><span class="s1">&#39;THH35&#39;</span><span class="p">,</span><span class="s1">&#39;THH02&#39;</span><span class="p">,</span><span class="s1">&#39;THH05&#39;</span><span class="p">,</span><span class="s1">&#39;POPDENS14&#39;</span><span class="p">,</span><span class="s1">&#39;FAMGRW10_14&#39;</span><span class="p">,</span><span class="s1">&#39;UNEMPRT_CY&#39;</span><span class="p">],</span>
+                                            <span class="n">output_name</span> <span class="o">=</span> <span class="s2">&quot;top 4 similar locations&quot;</span><span class="p">,</span>
+                                            <span class="n">number_of_results</span><span class="o">=</span><span class="mi">4</span><span class="p">)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+</div>
+<div class="section" id="find-centroids">
+<h2>find_centroids<a class="headerlink" href="#find-centroids" title="Permalink to this headline">¶</a></h2>
+<dl class="py function">
+<dt id="arcgis.features.analysis.find_centroids">
+<code class="sig-prename descclassname">arcgis.features.analysis.</code><code class="sig-name descname">find_centroids</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">input_layer</span></em>, <em class="sig-param"><span class="n">point_location</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="n">output_name</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">context</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">gis</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">estimate</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="n">future</span><span class="o">=</span><span class="default_value">False</span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.features.analysis.find_centroids" title="Permalink to this definition">¶</a></dt>
+<dd><img alt="_images/find_centroids.png" src="_images/find_centroids.png" />
+<p>The <code class="docutils literal notranslate"><span class="pre">find_centroids</span></code> method that finds and generates points from the representative center (centroid) of
+each input multipoint, line, or area feature. Finding the centroid of a feature is very common for many analytical
+workflows where the resulting points can then be used in other analytic workflows.</p>
+<p>For example, polygon features that contain demographic data can be converted to centroids that can be used in network analysis.</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 7%" />
+<col style="width: 93%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><strong>Argument</strong></p></td>
+<td><p><strong>Description</strong></p></td>
+</tr>
+<tr class="row-even"><td><p>input_layer</p></td>
+<td><p>Required feature layer. The multipoint, line, or polygon features that will be used to generate centroid point features. See <a class="reference internal" href="arcgis.features.analysis.html#featureinput"><span class="std std-ref">Feature Input</span></a>.</p></td>
+</tr>
+<tr class="row-odd"><td><p>point_location</p></td>
+<td><p>Optional boolean. A Boolean value that determines the output location of the points.</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>True - Output points will be the nearest point to the actual centroid, but located inside or contained by the bounds of the input feature.</p></li>
+<li><p>False - Output point locations will be determined by the calculated geometric center of each input feature. This is the default.</p></li>
+</ul>
+</div></blockquote>
+</td>
+</tr>
+<tr class="row-even"><td><p>output_name</p></td>
+<td><p>Optional string. If provided, the method will create a feature service of the results. You define the name of the service. If <code class="docutils literal notranslate"><span class="pre">output_name</span></code> is not supplied, the method will return a feature collection.</p></td>
+</tr>
+<tr class="row-odd"><td><p>context</p></td>
+<td><p>Optional string. Context contains additional settings that affect method execution. For <code class="docutils literal notranslate"><span class="pre">find_centroids</span></code>, there are two settings.</p>
+<ol class="arabic simple">
+<li><p>Extent (<code class="docutils literal notranslate"><span class="pre">extent</span></code>) - a bounding box that defines the analysis area. Only those features in the <code class="docutils literal notranslate"><span class="pre">input_layer</span></code> that intersect the bounding box will be buffered.</p></li>
+<li><p>Output Spatial Reference (<code class="docutils literal notranslate"><span class="pre">outSR</span></code>) - the output features will be projected into the output spatial reference.</p></li>
+</ol>
+</td>
+</tr>
+<tr class="row-even"><td><p>estimate</p></td>
+<td><p>Optional boolean. If True, the number of credits to run the operation will be returned.</p></td>
+</tr>
+<tr class="row-odd"><td><p>future</p></td>
+<td><p>Optional boolean. If True, the result will be a GPJob object and results will be returned asynchronously.</p></td>
+</tr>
+</tbody>
+</table>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>result_layer : feature layer Item if <code class="docutils literal notranslate"><span class="pre">output_name</span></code> is specified, else Feature Collection.</p>
+</dd>
+</dl>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># USAGE EXAMPLE: To find centroids of madison fields nearest to the actual centroids.</span>
+
+<span class="n">centroid</span> <span class="o">=</span> <span class="n">find_centroids</span><span class="p">(</span><span class="n">madison_fields</span><span class="p">,</span>
+                          <span class="n">point_location</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+                          <span class="n">output_name</span><span class="o">=</span><span class="s1">&#39;find centroids&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+</div>
+<div class="section" id="choose-best-facilities">
+<h2>choose_best_facilities<a class="headerlink" href="#choose-best-facilities" title="Permalink to this headline">¶</a></h2>
+<dl class="py function">
+<dt id="arcgis.features.find_locations.choose_best_facilities">
+<code class="sig-prename descclassname">arcgis.features.find_locations.</code><code class="sig-name descname">choose_best_facilities</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">goal</span><span class="o">=</span><span class="default_value">'Allocate'</span></em>, <em class="sig-param"><span class="n">demand_locations_layer</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">demand</span><span class="o">=</span><span class="default_value">1</span></em>, <em class="sig-param"><span class="n">demand_field</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">max_travel_range</span><span class="o">=</span><span class="default_value">2147483647</span></em>, <em class="sig-param"><span class="n">max_travel_range_field</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">max_travel_range_units</span><span class="o">=</span><span class="default_value">'Minutes'</span></em>, <em class="sig-param"><span class="n">travel_mode</span><span class="o">=</span><span class="default_value">'Driving Time'</span></em>, <em class="sig-param"><span class="n">time_of_day</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">time_zone_for_time_of_day</span><span class="o">=</span><span class="default_value">'GeoLocal'</span></em>, <em class="sig-param"><span class="n">travel_direction</span><span class="o">=</span><span class="default_value">'FacilityToDemand'</span></em>, <em class="sig-param"><span class="n">required_facilities_layer</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">required_facilities_capacity</span><span class="o">=</span><span class="default_value">2147483647</span></em>, <em class="sig-param"><span class="n">required_facilities_capacity_field</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">candidate_facilities_layer</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">candidate_count</span><span class="o">=</span><span class="default_value">1</span></em>, <em class="sig-param"><span class="n">candidate_facilities_capacity</span><span class="o">=</span><span class="default_value">2147483647</span></em>, <em class="sig-param"><span class="n">candidate_facilities_capacity_field</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">percent_demand_coverage</span><span class="o">=</span><span class="default_value">100</span></em>, <em class="sig-param"><span class="n">output_name</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">context</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">gis</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">estimate</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="n">point_barrier_layer</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">line_barrier_layer</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">polygon_barrier_layer</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">future</span><span class="o">=</span><span class="default_value">False</span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.features.find_locations.choose_best_facilities" title="Permalink to this definition">¶</a></dt>
+<dd><img alt="_images/choose_best_facilities.png" src="_images/choose_best_facilities.png" />
+<p>The <code class="docutils literal notranslate"><span class="pre">choose_best_facilities</span></code> method finds the set of facilities that will best serve demand from surrounding areas.</p>
+<p>Facilities might be public institutions that offer a service, such as fire stations, schools, or libraries,
+or they might be commercial ones such as drug stores or distribution centers for a parcel delivery service.
+Demand represents the need for a service that the facilities can meet. Demand is associated with point locations,
+with each location representing a given amount of demand.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p><p>When an output_name is specified, a FeatureLayerCollection Item with 3 layers is returned (see dictionary below for details), else a dict with the following keys:</p>
+<p>”allocated_demand_locations_layer” : layer (FeatureCollection)</p>
+<p>”allocation_lines_layer”  : layer (FeatureCollection)</p>
+<p>”assigned_facilities_layer”   : layer (FeatureCollection)</p>
+</p>
+</dd>
+</dl>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">USAGE</span> <span class="n">EXAMPLE</span><span class="p">:</span> <span class="n">To</span> <span class="n">minimize</span> <span class="n">overall</span> <span class="n">distance</span> <span class="n">travelled</span> <span class="k">for</span> <span class="n">travelling</span> <span class="kn">from</span> <span class="nn">esri</span> <span class="n">offices</span> <span class="n">to</span> <span class="n">glider</span> <span class="n">airports</span><span class="o">.</span>
+
+<span class="n">best_facility</span> <span class="o">=</span> <span class="n">choose_best_facilities</span><span class="p">(</span><span class="n">goal</span><span class="o">=</span><span class="s2">&quot;MinimizeImpedance&quot;</span><span class="p">,</span>
+                            <span class="n">demand_locations_layer</span><span class="o">=</span><span class="n">esri_offices</span><span class="p">,</span>
+                            <span class="n">travel_mode</span><span class="o">=</span><span class="s1">&#39;Driving Distance&#39;</span><span class="p">,</span>
+                            <span class="n">travel_direction</span><span class="o">=</span><span class="s2">&quot;DemandToFacility&quot;</span><span class="p">,</span>
+                            <span class="n">required_facilities_layer</span><span class="o">=</span><span class="n">gliderport_lyr</span><span class="p">,</span>
+                            <span class="n">candidate_facilities_layer</span><span class="o">=</span><span class="n">balloonport_lyr</span><span class="p">,</span>
+                            <span class="n">candidate_count</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span>
+                            <span class="n">output_name</span><span class="o">=</span><span class="s2">&quot;choose best facilities&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+</div>
+<div class="section" id="create-viewshed">
+<h2>create_viewshed<a class="headerlink" href="#create-viewshed" title="Permalink to this headline">¶</a></h2>
+<dl class="py function">
+<dt id="arcgis.features.find_locations.create_viewshed">
+<code class="sig-prename descclassname">arcgis.features.find_locations.</code><code class="sig-name descname">create_viewshed</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">input_layer</span></em>, <em class="sig-param"><span class="n">dem_resolution</span><span class="o">=</span><span class="default_value">'Finest'</span></em>, <em class="sig-param"><span class="n">maximum_distance</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">max_distance_units</span><span class="o">=</span><span class="default_value">'Meters'</span></em>, <em class="sig-param"><span class="n">observer_height</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">observer_height_units</span><span class="o">=</span><span class="default_value">'Meters'</span></em>, <em class="sig-param"><span class="n">target_height</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">target_height_units</span><span class="o">=</span><span class="default_value">'Meters'</span></em>, <em class="sig-param"><span class="n">generalize</span><span class="o">=</span><span class="default_value">True</span></em>, <em class="sig-param"><span class="n">output_name</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">context</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">gis</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">estimate</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="n">future</span><span class="o">=</span><span class="default_value">False</span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.features.find_locations.create_viewshed" title="Permalink to this definition">¶</a></dt>
+<dd><img alt="_images/create_viewshed.png" src="_images/create_viewshed.png" />
+<p>The create_viewshed method identifies visible areas based on the observer locations you provide.
+The results are areas where the observers can see the observed objects (and the observed objects can see the observers).</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 11%" />
+<col style="width: 89%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><strong>Parameter</strong></p></td>
+<td><p><strong>Description</strong></p></td>
+</tr>
+<tr class="row-even"><td><p>input_layer</p></td>
+<td><p>Required point feature layer. The features to use as the observer locations. See <a class="reference internal" href="arcgis.features.analysis.html#featureinput"><span class="std std-ref">Feature Input</span></a>.</p></td>
+</tr>
+<tr class="row-odd"><td><p>dem_resolution</p></td>
+<td><p>Optional string. The approximate spatial resolution (cell size) of the source elevation data used for the calculation.</p>
+<p>The resolution values are an approximation of the spatial resolution of the digital elevation model.
+While many elevation sources are distributed in units of arc seconds, the keyword is an approximation
+of those resolutions in meters for easier understanding.</p>
+<p>Choice list: [‘FINEST’, ‘10m’, ‘24m’, ‘30m’, ‘90m’]</p>
+<p>The default is the finest resolution available.</p>
+</td>
+</tr>
+<tr class="row-even"><td><p>maximum_distance</p></td>
+<td><p>Optional float. This is a cutoff distance where the computation of visible areas stops. Beyond this distance, it is unknown whether the analysis points and the other objects can see each other.</p>
+<p>It is useful for modeling current weather conditions or a given time of day, such as dusk. Large values increase computation time.</p>
+<p>Unless specified, a default maximum distance will be computed based on the resolution and extent of the source DEM. The allowed maximum value is 50 kilometers.
+Use max_distance_units to set the units for maximum_distance.</p>
+</td>
+</tr>
+<tr class="row-odd"><td><p>max_distance_units</p></td>
+<td><p>Optional string. The units for the maximum_distance parameter.</p>
+<p>Choice list: [‘Meters’, ‘Kilometers’, ‘Feet’, ‘Miles’, ‘Yards’]</p>
+<p>The default is ‘Meters’.</p>
+</td>
+</tr>
+<tr class="row-even"><td><p>observer_height</p></td>
+<td><p>Optional float. This is the height above the ground of the observer locations.</p>
+<p>The default is 1.75 meters, which is approximately the average height of a person. If you are looking from an elevated location, such as an observation tower or a tall building, use that height instead.</p>
+<p>Use observer_height_units to set the units for observer_height.</p>
+</td>
+</tr>
+<tr class="row-odd"><td><p>observer_height_units</p></td>
+<td><p>Optional string. The units for the observer_height parameter.</p>
+<p>Choice list: [‘Meters’, ‘Kilometers’, ‘Feet’, ‘Miles’, ‘Yards’]</p>
+<p>The default is ‘Meters’.</p>
+</td>
+</tr>
+<tr class="row-even"><td><p>target_height</p></td>
+<td><p>Optional float. This is the height of structures or people on the ground used to
+establish visibility. The result viewshed are those areas where an input point can see these other objects.
+The converse is also true; the other objects can see an input point.</p>
+<ul class="simple">
+<li><p>If your input points represent wind turbines and you want to determine where people standing on the
+ground can see the turbines, enter the average height of a person (approximately 6 feet).
+The result is those areas where a person standing on the ground can see the wind turbines.</p></li>
+<li><p>If your input points represent fire lookout towers and you want to determine which lookout
+towers can see a smoke plume 20 feet high or higher, enter 20 feet for the height. The result
+is those areas where a fire lookout tower can see a smoke plume at least 20 feet high.</p></li>
+<li><p>If your input points represent scenic overlooks along roads and trails and you want to determine
+where wind turbines 400 feet high or higher can be seen, enter 400 feet for the height. The result
+is those areas where a person standing at a scenic overlook can see a wind turbine at least 400 feet high.</p></li>
+<li><p>If your input points represent scenic overlooks and you want to determine how much area on the ground
+people standing at the overlook can see, enter zero. The result is those areas that can be seen from the scenic overlook.</p></li>
+</ul>
+<p>Use target_height_units to set the units for target_height.</p>
+</td>
+</tr>
+<tr class="row-odd"><td><p>target_height_units</p></td>
+<td><p>Optional string. The units for the target_height parameter.</p>
+<p>Choice list: [‘Meters’, ‘Kilometers’, ‘Feet’, ‘Miles’, ‘Yards’]</p>
+<p>The default is ‘Meters’.</p>
+</td>
+</tr>
+<tr class="row-even"><td><p>generalize</p></td>
+<td><p>Optional boolean. Determines whether or not the viewshed polygons are to be generalized.</p>
+<p>The viewshed calculation is based on a raster elevation model that creates a result with stair-stepped edges.
+To create a more pleasing appearance and improve performance, the default behavior is to generalize the polygons.
+The generalization process smooths the boundary of the visible areas and may remove some single-cell visible areas.</p>
+<p>The default value is True.</p>
+</td>
+</tr>
+<tr class="row-odd"><td><p>output_name</p></td>
+<td><p>Optional string. Output feature service name. If not provided, a feature collection is returned.</p></td>
+</tr>
+<tr class="row-even"><td><p>context</p></td>
+<td><p>Optional dict. Context contains additional settings that affect task execution. For <code class="docutils literal notranslate"><span class="pre">create_viewshed</span></code>, there are two settings.</p>
+<ol class="arabic simple">
+<li><p>Extent (<code class="docutils literal notranslate"><span class="pre">extent</span></code>)-a bounding box that defines the analysis area. Only those points in the <code class="docutils literal notranslate"><span class="pre">input_layer</span></code>
+that intersect the bounding box will be analyzed.</p></li>
+<li><p>Output Spatial Reference (<code class="docutils literal notranslate"><span class="pre">outSR</span></code>) - the output features will be projected into the output spatial reference.</p></li>
+</ol>
+</td>
+</tr>
+<tr class="row-odd"><td><p>gis</p></td>
+<td><p>Optional, the GIS on which this tool runs. If not specified, the active GIS is used.</p></td>
+</tr>
+<tr class="row-even"><td><p>estimate</p></td>
+<td><p>Optional boolean. If True, the estimated number of credits required to run the operation will be returned.</p></td>
+</tr>
+<tr class="row-odd"><td><p>future</p></td>
+<td><p>Optional boolean. If True, the result will be a GPJob object and results will be returned asynchronously.</p></td>
+</tr>
+</tbody>
+</table>
+<p>:returns result_layer : feature layer Item if output_name is specified, else Feature Collection.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">USAGE</span> <span class="n">EXAMPLE</span><span class="p">:</span> <span class="n">To</span> <span class="n">create</span> <span class="n">viewshed</span> <span class="n">around</span> <span class="n">esri</span> <span class="n">headquarter</span> <span class="n">office</span><span class="o">.</span>
+
+<span class="n">viewshed3</span> <span class="o">=</span> <span class="n">create_viewshed</span><span class="p">(</span><span class="n">hq_lyr</span><span class="p">,</span>
+                    <span class="n">maximum_distance</span><span class="o">=</span><span class="mi">9</span><span class="p">,</span>
+                    <span class="n">max_distance_units</span><span class="o">=</span><span class="s1">&#39;Miles&#39;</span><span class="p">,</span>
+                    <span class="n">target_height</span><span class="o">=</span><span class="mi">6</span><span class="p">,</span>
+                    <span class="n">target_height_units</span><span class="o">=</span><span class="s1">&#39;Feet&#39;</span><span class="p">,</span>
+                    <span class="n">output_name</span><span class="o">=</span><span class="s2">&quot;create Viewshed&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+</div>
+<div class="section" id="create-watersheds">
+<h2>create_watersheds<a class="headerlink" href="#create-watersheds" title="Permalink to this headline">¶</a></h2>
+<dl class="py function">
+<dt id="arcgis.features.find_locations.create_watersheds">
+<code class="sig-prename descclassname">arcgis.features.find_locations.</code><code class="sig-name descname">create_watersheds</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">input_layer</span></em>, <em class="sig-param"><span class="n">search_distance</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">search_units</span><span class="o">=</span><span class="default_value">'Meters'</span></em>, <em class="sig-param"><span class="n">source_database</span><span class="o">=</span><span class="default_value">'FINEST'</span></em>, <em class="sig-param"><span class="n">generalize</span><span class="o">=</span><span class="default_value">True</span></em>, <em class="sig-param"><span class="n">output_name</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">context</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">gis</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">estimate</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="n">future</span><span class="o">=</span><span class="default_value">False</span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.features.find_locations.create_watersheds" title="Permalink to this definition">¶</a></dt>
+<dd><img alt="_images/create_watersheds.png" src="_images/create_watersheds.png" />
+<p>The <code class="docutils literal notranslate"><span class="pre">create_watersheds</span></code> method determines the watershed, or upstream contributing area, for each point
+in your analysis layer. For example, suppose you have point features representing locations
+of waterborne contamination, and you want to find the likely sources of the contamination.
+Since the source of the contamination must be somewhere within the watershed upstream of the
+point, you would use this tool to define the watersheds containing the sources of the contaminant.</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 16%" />
+<col style="width: 84%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><strong>Parameter</strong></p></td>
+<td><p><strong>Description</strong></p></td>
+</tr>
+<tr class="row-even"><td><p>input_layer</p></td>
+<td><p>Required point feature layer. The point features used for calculating watersheds.
+These are referred to as pour points, because it is the location at which water pours out of the watershed.
+See <a class="reference internal" href="arcgis.features.analysis.html#featureinput"><span class="std std-ref">Feature Input</span></a>.</p></td>
+</tr>
+<tr class="row-odd"><td><p>search_distance</p></td>
+<td><p>Optional float. The maximum distance to move the location of an input point.
+Use search_units to set the units for search_distance.</p>
+<p>If your input points are located away from a drainage line, the resulting watersheds
+are likely to be very small and not of much use in determining the upstream source of
+contamination. In most cases, you want your input points to snap to the nearest drainage
+line in order to find the watersheds that flows to a point located on the drainage line.
+To find the closest drainage line, specify a search distance. If you do not specify a
+search distance, the tool will compute and use a conservative search distance.</p>
+<p>To use the exact location of your input point, specify a search distance of zero.</p>
+<p>For analysis purposes, drainage lines have been precomputed by Esri using standard
+hydrologic models. If there is no drainage line within the search distance, the location
+containing the highest flow accumulation within the search distance is used.</p>
+</td>
+</tr>
+<tr class="row-even"><td><p>search_units</p></td>
+<td><p>Optional string. The linear units specified for the search distance.</p>
+<p>Choice list: [‘Meters’, ‘Kilometers’, ‘Feet’, ‘Miles’, ‘Yards’]</p>
+</td>
+</tr>
+<tr class="row-odd"><td><p>source_database</p></td>
+<td><p>Optional string. Keyword indicating the data source resolution that will be used in the analysis.</p>
+<p>Choice list: [‘Finest’, ‘30m’, ‘90m’]</p>
+<ul class="simple">
+<li><p>Finest (Default): Finest resolution available at each location from all possible data sources.</p></li>
+<li><p>30m: The hydrologic source was built from 1 arc second - approximately 30 meter resolution, elevation data.</p></li>
+<li><p>90m: The hydrologic source was built from 3 arc second - approximately 90 meter resolution, elevation data.</p></li>
+</ul>
+</td>
+</tr>
+<tr class="row-even"><td><p>generalize</p></td>
+<td><p>Optional boolean. Determines if the output watersheds will be smoothed into simpler shapes or conform
+to the cell edges of the original DEM.</p>
+<ul class="simple">
+<li><p>True: The polygons will be smoothed into simpler shapes. This is the default.</p></li>
+<li><p>False: The edge of the polygons will conform to the edges of the original DEM.</p></li>
+</ul>
+<p>The default value is True.</p>
+</td>
+</tr>
+<tr class="row-odd"><td><p>output_name</p></td>
+<td><p>Optional string. Output feature service name. If not provided, a feature collection is returned.</p></td>
+</tr>
+<tr class="row-even"><td><p>context</p></td>
+<td><p>Optional dict. Context contains additional settings that affect task execution. For <code class="docutils literal notranslate"><span class="pre">create_watersheds</span></code>, there are two settings.</p>
+<ol class="arabic simple">
+<li><p>Extent (<code class="docutils literal notranslate"><span class="pre">extent</span></code>)-a bounding box that defines the analysis area. Only those points in the <code class="docutils literal notranslate"><span class="pre">input_layer</span></code>
+that intersect the bounding box will be analyzed.</p></li>
+<li><p>Output Spatial Reference (<code class="docutils literal notranslate"><span class="pre">outSR</span></code>) - the output features will be projected into the output spatial reference.</p></li>
+</ol>
+</td>
+</tr>
+<tr class="row-odd"><td><p>gis</p></td>
+<td><p>Optional, the GIS on which this tool runs. If not specified, the active GIS is used.</p></td>
+</tr>
+<tr class="row-even"><td><p>estimate</p></td>
+<td><p>Optional boolean. If True, the estimated number of credits required to run the operation will be returned.</p></td>
+</tr>
+<tr class="row-odd"><td><p>future</p></td>
+<td><p>Optional boolean. If True, the result will be a GPJob object and results will be returned asynchronously.</p></td>
+</tr>
+</tbody>
+</table>
+<p>:returns result_layer : feature layer Item if output_name is specified, else Feature Collection.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">USAGE</span> <span class="n">EXAMPLE</span><span class="p">:</span> <span class="n">To</span> <span class="n">create</span> <span class="n">watersheds</span> <span class="k">for</span> <span class="n">Chennai</span> <span class="n">lakes</span><span class="o">.</span>
+
+<span class="n">lakes_watershed</span> <span class="o">=</span> <span class="n">create_watersheds</span><span class="p">(</span><span class="n">lakes_lyr</span><span class="p">,</span>
+                                    <span class="n">search_distance</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span>
+                                    <span class="n">search_units</span><span class="o">=</span><span class="s1">&#39;Kilometers&#39;</span><span class="p">,</span>
+                                    <span class="n">source_database</span><span class="o">=</span><span class="s1">&#39;90m&#39;</span><span class="p">,</span>
+                                    <span class="n">output_name</span><span class="o">=</span><span class="s1">&#39;create watersheds&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+</div>
+<div class="section" id="trace-downstream">
+<h2>trace_downstream<a class="headerlink" href="#trace-downstream" title="Permalink to this headline">¶</a></h2>
+<dl class="py function">
+<dt id="arcgis.features.find_locations.trace_downstream">
+<code class="sig-prename descclassname">arcgis.features.find_locations.</code><code class="sig-name descname">trace_downstream</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">input_layer</span></em>, <em class="sig-param"><span class="n">split_distance</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">split_units</span><span class="o">=</span><span class="default_value">'Kilometers'</span></em>, <em class="sig-param"><span class="n">max_distance</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">max_distance_units</span><span class="o">=</span><span class="default_value">'Kilometers'</span></em>, <em class="sig-param"><span class="n">bounding_polygon_layer</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">source_database</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">generalize</span><span class="o">=</span><span class="default_value">True</span></em>, <em class="sig-param"><span class="n">output_name</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">context</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">gis</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">estimate</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="n">future</span><span class="o">=</span><span class="default_value">False</span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.features.find_locations.trace_downstream" title="Permalink to this definition">¶</a></dt>
+<dd><img alt="_images/trace_downstream.png" src="_images/trace_downstream.png" />
+<p>The <code class="docutils literal notranslate"><span class="pre">trace_downstream</span></code> method determines the trace, or flow path, in a downstream direction from the points in your analysis layer.</p>
+<p>For example, suppose you have point features representing sources of contamination and you want to determine where in your study
+area the contamination will flow. You can use <code class="docutils literal notranslate"><span class="pre">trace_downstream</span></code> to identify the path the contamination will take. This trace
+can also be divided into individual line segments by specifying a distance value and units. The line being returned can be the
+total length of the flow path, a specified maximum trace length, or clipped to area features such as your study area. In many
+cases, if the total length of the trace path is returned, it will be from the source all the way to the ocean.</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 22%" />
+<col style="width: 78%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><strong>Argument</strong></p></td>
+<td><p><strong>Description</strong></p></td>
+</tr>
+<tr class="row-even"><td><p>input_layer</p></td>
+<td><p>Required feature layer. The point features used for the starting location of a downstream trace.
+See <a class="reference internal" href="arcgis.features.analysis.html#featureinput"><span class="std std-ref">Feature Input</span></a>.</p></td>
+</tr>
+<tr class="row-odd"><td><p>split_distance</p></td>
+<td><p>Optional float. The trace line will be split into multiple lines where each line is of the specified length.
+The resulting trace will have multiple line segments, each with fields FromDistance and ToDistance.</p></td>
+</tr>
+<tr class="row-even"><td><p>split_units</p></td>
+<td><p>Optional string. The units used to specify split distance.</p>
+<p>Choice list: [‘Meters’, ‘Kilometers’, ‘Feet’ ‘Yards’, ‘Miles’].</p>
+<p>The default is ‘Kilometers’.</p>
+</td>
+</tr>
+<tr class="row-odd"><td><p>max_distance</p></td>
+<td><p>Optional float. Determines the total length of the line that will be returned. If you provide a
+<code class="docutils literal notranslate"><span class="pre">bounding_polygon_layer</span></code> to clip the trace, the result will be clipped to the features in <code class="docutils literal notranslate"><span class="pre">bounding_polygon_layer</span></code>,
+regardless of the distance you enter here.</p></td>
+</tr>
+<tr class="row-even"><td><p>max_distance_units</p></td>
+<td><p>Optional string. The units used to specify maximum distance.</p>
+<p>Choice list: [‘Meters’, ‘Kilometers’, ‘Feet’ ‘Yards’, ‘Miles’].</p>
+<p>The default is ‘Kilometers’.</p>
+</td>
+</tr>
+<tr class="row-odd"><td><p>bounding_polygon_layer</p></td>
+<td><p>Optional feature layer. A polygon layer specifying the area(s) where you want the trace
+downstreams to be calculated in. For example, if you only want to calculate the trace downstream
+with in a county polygon, provide a layer containing the county polygon and the resulting trace
+lines will be clipped to the county boundary. See <a class="reference internal" href="arcgis.features.analysis.html#featureinput"><span class="std std-ref">Feature Input</span></a>.</p></td>
+</tr>
+<tr class="row-even"><td><p>source_database</p></td>
+<td><p>Optional string. Keyword indicating the data source resolution that will be used in the analysis.</p>
+<p>Choice list: [‘Finest’, ‘30m’, ‘90m’].</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>Finest: Finest resolution available at each location from all possible data sources.</p></li>
+<li><p>30m: The hydrologic source was built from 1 arc second - approximately 30 meter resolution, elevation data.</p></li>
+<li><p>90m: The hydrologic source was built from 3 arc second - approximately 90 meter resolution, elevation data.</p></li>
+</ul>
+</div></blockquote>
+<p>The default is ‘Finest’.</p>
+</td>
+</tr>
+<tr class="row-odd"><td><p>generalize</p></td>
+<td><p>Optional boolean. Determines if the output trace downstream lines will be smoothed
+into simpler lines or conform to the cell edges of the original DEM.</p></td>
+</tr>
+<tr class="row-even"><td><p>output_name</p></td>
+<td><p>Optional string. If provided, the task will create a feature service of the results.
+You define the name of the service. If <code class="docutils literal notranslate"><span class="pre">output_name</span></code> is not supplied, the task will return a feature collection.</p></td>
+</tr>
+<tr class="row-odd"><td><p>context</p></td>
+<td><p>Optional string. Context contains additional settings that affect task execution. For <code class="docutils literal notranslate"><span class="pre">trace_downstream</span></code>, there are two settings.</p>
+<ol class="arabic simple">
+<li><p>Extent (<code class="docutils literal notranslate"><span class="pre">extent</span></code>) - a bounding box that defines the analysis area. Only those points</p></li>
+</ol>
+<blockquote>
+<div><p>in the <code class="docutils literal notranslate"><span class="pre">input_layer</span></code> that intersect the bounding box will have a downstream trace generated.</p>
+</div></blockquote>
+<ol class="arabic simple">
+<li><p>Output Spatial Reference (<code class="docutils literal notranslate"><span class="pre">outSR</span></code>) - the output features will be projected into the output spatial reference.</p></li>
+</ol>
+</td>
+</tr>
+<tr class="row-even"><td><p>estimate</p></td>
+<td><p>Optional boolean. If True, the number of credits to run the operation will be returned.</p></td>
+</tr>
+<tr class="row-odd"><td><p>future</p></td>
+<td><p>Optional boolean. If True, the result will be a GPJob object and results will be returned asynchronously.</p></td>
+</tr>
+</tbody>
+</table>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>feature layer collection if <code class="docutils literal notranslate"><span class="pre">output_name</span></code> is set, else feature collection.</p>
+</dd>
+</dl>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># USAGE EXAMPLE: To identify the path the water contamination  will take.</span>
+<span class="n">path</span> <span class="o">=</span> <span class="n">trace_downstream</span><span class="p">(</span><span class="n">input_layer</span><span class="o">=</span><span class="n">water_source_lyr</span><span class="p">,</span>
+                        <span class="n">split_distance</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span>
+                        <span class="n">split_units</span><span class="o">=</span><span class="s1">&#39;Miles&#39;</span><span class="p">,</span>
+                        <span class="n">max_distance</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span>
+                        <span class="n">max_distance_units</span><span class="o">=</span><span class="s1">&#39;Miles&#39;</span><span class="p">,</span>
+                        <span class="n">source_database</span><span class="o">=</span><span class="s1">&#39;Finest&#39;</span><span class="p">,</span>
+                        <span class="n">generalize</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+                        <span class="n">output_name</span><span class="o">=</span><span class="s1">&#39;trace downstream&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+</div>
+</div>
+
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="arcgis.features.hydrology.html" class="btn btn-neutral float-right" title="arcgis.features.hydrology module" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="arcgis.features.enrich_data.html" class="btn btn-neutral float-left" title="arcgis.features.enrich_data module" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        
+        &copy; Copyright 2016-2021, Esri
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+    Options v: 1.8.4
+
+  <div class="rst-versions" data-toggle="rst-versions" role="note" aria-label="versions">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      <span class="fa fa-book"> Pick an earlier version</span>
+      v: 1.8.4
+      <span class="fa fa-caret-down"></span>
+    </span>
+    <div class="rst-other-versions">
+      
+      
+      <dl>
+        <dt>Versions</dt>
+        
+          
+          <dd><a href="1.8.3/">1.8.3</a></dd>
+          
+        
+          
+          <dd><a href="1.8.2/">1.8.2</a></dd>
+          
+        
+          
+          <dd><a href="1.8.1/">1.8.1</a></dd>
+          
+        
+          
+          <dd><a href="1.8.0/">1.8.0</a></dd>
+          
+        
+          
+          <dd><a href="1.7.1/">1.7.1</a></dd>
+          
+        
+          
+          <dd><a href="1.7.0/">1.7.0</a></dd>
+          
+        
+          
+          <dd><a href="1.6.2/">1.6.2</a></dd>
+          
+        
+          
+          <dd><a href="1.6.1/">1.6.1</a></dd>
+          
+        
+          
+          <dd><a href="1.6.0/">1.6.0</a></dd>
+          
+        
+          
+          <dd><a href="1.5.3/">1.5.3</a></dd>
+          
+        
+          
+          <dd><a href="1.5.2/">1.5.2</a></dd>
+          
+        
+          
+          <dd><a href="1.5.1/">1.5.1</a></dd>
+          
+        
+          
+          <dd><a href="1.5.0/">1.5.0</a></dd>
+          
+        
+          
+          <dd><a href="1.4.2/">1.4.2</a></dd>
+          
+        
+          
+          <dd><a href="1.4.1/">1.4.1</a></dd>
+          
+        
+          
+          <dd><a href="1.4.0/">1.4.0</a></dd>
+          
+        
+          
+          <dd><a href="1.3.0/">1.3.0</a></dd>
+          
+        
+          
+          <dd><a href="1.2.5/">1.2.5</a></dd>
+          
+        
+          
+          <dd><a href="1.2.4/">1.2.4</a></dd>
+          
+        
+          
+          <dd><a href="1.2.3/">1.2.3</a></dd>
+          
+        
+          
+          <dd><a href="1.2.2/">1.2.2</a></dd>
+          
+        
+          
+          <dd><a href="1.2.1/">1.2.1</a></dd>
+          
+        
+          
+          <dd><a href="1.2.0/">1.2.0</a></dd>
+          
+        
+          
+          <dd><a href="1.0.1/">1.0.1</a></dd>
+          
+        
+          
+          <dd><a href="1.0.0/">1.0.0</a></dd>
+          
+        
+          
+          <dd><a href="0.3.0/">0.3.0</a></dd>
+          
+        
+          
+          <dd><a href="0.2.0/">0.2.0</a></dd>
+          
+        
+          
+          <dd><a href="0.1.0/">0.1.0</a></dd>
+          
+        
+      </dl>
+      
+      
+      
+    </div>
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

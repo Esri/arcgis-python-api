@@ -1,0 +1,39 @@
+arcgis.geocoding module
+=====================================
+
+.. automodule:: arcgis.geocoding
+
+Geocoder
+--------------
+.. autoclass:: arcgis.geocoding.Geocoder
+    :inherited-members:
+    :members:
+    :undoc-members:
+
+get_geocoders
+--------------
+.. automethod:: arcgis.geocoding.get_geocoders
+    
+geocode
+--------------
+.. automethod:: arcgis.geocoding.geocode
+
+geocode_from_items
+------------------
+.. automethod:: arcgis.geocoding.geocode_from_items
+
+analyze_geocode_input
+------------------
+.. automethod:: arcgis.geocoding.analyze_geocode_input
+    
+reverse_geocode
+--------------
+.. automethod:: arcgis.geocoding.reverse_geocode
+
+batch_geocode
+--------------
+.. automethod:: arcgis.geocoding.batch_geocode
+
+suggest
+--------------
+.. automethod:: arcgis.geocoding.suggest

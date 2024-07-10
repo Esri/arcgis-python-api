@@ -1,0 +1,14 @@
+arcgis.geoanalytics.analyze_patterns module
+=======================================
+
+.. automodule:: arcgis.geoanalytics.analyze_patterns
+
+calculate_density
+--------------
+.. automethod:: arcgis.geoanalytics.analyze_patterns.calculate_density
+
+find_hot_spots
+--------------
+.. automethod:: arcgis.geoanalytics.analyze_patterns.find_hot_spots
+
+    

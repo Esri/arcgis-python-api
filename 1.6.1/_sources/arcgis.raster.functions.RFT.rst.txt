@@ -1,0 +1,88 @@
+arcgis.raster.functions.RFT
+---------------------------
+    Represents a callable object created from a Raster Function Template(RFT) portal item. 
+    This object serves as a python function corresponding to the Raster Function Template. 
+
+    Once an RFT class object has been created, a single question mark before, or after the 
+    RFT object will show help relative to it. The help document would display the parameters
+    that were marked as public by the author of the RFT. (This is supported only in 
+    jupyter notebook and IPython environment.)
+
+    If any of the input values need to be given or overriden, the values maybe specified 
+    as inputs directly to the RFT object. RFT objects can only be called using keyword 
+    arguments. On calling the RFT object with the necessary input variables, it creates 
+    an output Imagery Layer with function chain applied on it.
+
+    .. note::
+        Make sure that Raster rendering service is turned turned on, inorder to display the 
+        output dynamically. 
+
+        Also, set the desired extent on the output Imagery Layer before viewing it
+
+    .. code-block:: python
+
+        # Usage Example 1
+
+        rft_item_object = RFT(rft_item)
+        rft_item_object?
+        imagery_layer_output = rft_item_object(param1=<ImageryLayer object>, param2=<value>)
+        # In the above rft object, it is assumed that param1 represents the ImageryLayer input to the RFT.
+        imagery_layer_output #This would display a new ImageryLayer object with the RFT applied on it.
+
+    .. code-block:: python
+
+        # Usage Example 2 
+
+        # If the RFT is capable of working with an array of rasters
+
+        rft_item_object = RFT(rft_item)
+        rft_item_object?
+        imagery_layer_output = rft_item_object(param1=[<ImageryLayer object1>,<ScalarValue>,<ImageryLayer object2>], param2=<value>)
+        imagery_layer_output #This would display a new ImageryLayer object with the RFT applied on it.
+
+..  class:: arcgis.raster.functions.RFT(raster_function_template,gis=None)
+
+    ========================  ====================================================================
+    **Arguments**             **Description**	
+    ------------------------  --------------------------------------------------------------------
+    raster_function_template  required, input portal raster function template item.
+    ------------------------  --------------------------------------------------------------------
+    gis                       optional, GIS on which the RFT object is based on.
+    ========================  ====================================================================
+
+    .. method:: to_json(gis=None)
+
+        Converts the raster function template into a dictionary.
+
+        =================     ====================================================================
+        **Argument**          **Description**
+        -----------------     --------------------------------------------------------------------
+        gis                   optional, GIS on which the RFT object is based on. 
+        =================     ====================================================================
+
+        :return: dictionary
+
+    .. method:: draw_graph(show_attributes=False, graph_size="14.25, 15.25")
+
+        Displays a structural representation of the function chain and it's raster input values. If
+        show_attributes is set to True, then the draw_graph function also displays the attributes
+        of all the functions in the function chain, representing the rasters in a blue rectangular
+        box, attributes in green rectangular box and the raster function names in yellow.
+
+        =================     ====================================================================
+        **Argument**          **Description**
+        -----------------     --------------------------------------------------------------------
+        show_attributes       optional boolean. If True, the graph displayed includes all the
+                              attributes of the function and not only it's function name and raster
+                              inputs
+                              Set to False by default, to display only he raster function name and
+                              the raster inputs to it.
+        -----------------     --------------------------------------------------------------------
+        graph_size            optional string. Maximum width and height of drawing, in inches,
+                              seperated by a comma. If only a single number is given, this is used
+                              for both the width and the height. If defined and the drawing is
+                              larger than the given size, the drawing is uniformly scaled down so
+                              that it fits within the given size.
+        =================     ====================================================================
+
+        :return: Graph

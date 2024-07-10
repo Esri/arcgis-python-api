@@ -1,0 +1,883 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>arcgis.mapping.ogc module &mdash; arcgis 1.8.2 documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="_static/theme_overrides.css" type="text/css" />
+
+  
+  
+    <link rel="shortcut icon" href="_static/favicon.ico"/>
+  
+  
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/doctools.js"></script>
+        <script src="_static/language_data.js"></script>
+        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="arcgis.realtime module" href="arcgis.realtime.html" />
+    <link rel="prev" title="arcgis.mapping module" href="arcgis.mapping.toc.html" />
+<!-- This code block is inserted close near the <head> tag. See http://bit.ly/2BHUQzB -->
+<!-- The point of this code block is to send us google analytics on website views -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-NJGGV5');</script>
+ 
+
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="index.html" class="icon icon-home" alt="Documentation Home"> arcgis
+          
+
+          
+            
+            <img src="_static/python_api_logo.png" class="logo" alt="Logo"/>
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1.8.2
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">arcgis</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="arcgis.gis.toc.html">arcgis.gis module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="arcgis.env.html">arcgis.env module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="arcgis.features.toc.html">arcgis.features module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="arcgis.raster.toc.html">arcgis.raster module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="arcgis.network.toc.html">arcgis.network module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="arcgis.geoanalytics.toc.html">arcgis.geoanalytics module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="arcgis.geocoding.html">arcgis.geocoding module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="arcgis.geoenrichment.html">arcgis.geoenrichment module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="arcgis.geometry.html">arcgis.geometry module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="arcgis.geoprocessing.html">arcgis.geoprocessing module</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="arcgis.mapping.toc.html">arcgis.mapping module</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="arcgis.mapping.toc.html#webmap">WebMap</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.mapping.toc.html#offlinemapareamanager">OfflineMapAreaManager</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.mapping.toc.html#packagingjob">PackagingJob</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.mapping.toc.html#webscene">WebScene</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.mapping.toc.html#mapimagelayer">MapImageLayer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.mapping.toc.html#mapimagelayermanager">MapImageLayerManager</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.mapping.toc.html#vectortilelayer">VectorTileLayer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.mapping.toc.html#scenelayer">SceneLayer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.mapping.toc.html#export-map">export_map</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.mapping.toc.html#get-layout-templates">get_layout_templates</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.mapping.toc.html#module-arcgis.mapping.symbol">Symbology</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.mapping.toc.html#renderers">Renderers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.mapping.toc.html#generate-renderer">generate_renderer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.mapping.toc.html#visual-variables">visual_variables</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="arcgis.mapping.toc.html#submodules">Submodules</a><ul class="current">
+<li class="toctree-l3 current"><a class="current reference internal" href="#">arcgis.mapping.ogc module</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#csvlayer">CSVLayer</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#geojsonlayer">GeoJSONLayer</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#georsslayer">GeoRSSLayer</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#wmslayer">WMSLayer</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#wmtslayer">WMTSLayer</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="arcgis.realtime.html">arcgis.realtime module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="arcgis.schematics.html">arcgis.schematics module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="arcgis.widgets.html">arcgis.widgets module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="arcgis.apps.html">arcgis.apps module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="arcgis.learn.html">arcgis.learn module</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">arcgis</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="arcgis.mapping.toc.html">arcgis.mapping module</a> &raquo;</li>
+        
+      <li>arcgis.mapping.ogc module</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+<!-- This code block is inserted close near the <body> tag. See http://bit.ly/2BHUQzB -->
+<!-- The point of this code block is to send us google analytics on website views -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NJGGV5"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+
+  <div class="section" id="arcgis-mapping-ogc-module">
+<h1>arcgis.mapping.ogc module<a class="headerlink" href="#arcgis-mapping-ogc-module" title="Permalink to this headline">¶</a></h1>
+<span class="target" id="module-arcgis.mapping.ogc"></span><div class="section" id="csvlayer">
+<h2>CSVLayer<a class="headerlink" href="#csvlayer" title="Permalink to this headline">¶</a></h2>
+<dl class="py class">
+<dt id="arcgis.mapping.ogc.CSVLayer">
+<em class="property">class </em><code class="sig-prename descclassname">arcgis.mapping.ogc.</code><code class="sig-name descname">CSVLayer</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">url_or_item</span></em>, <em class="sig-param"><span class="n">gis</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.mapping.ogc.CSVLayer" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">arcgis.mapping.ogc._base.BaseOpenData</span></code></p>
+<p>Represents a CSV File Hosted on a Server.</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 11%" />
+<col style="width: 89%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><strong>Argument</strong></p></td>
+<td><p><strong>Description</strong></p></td>
+</tr>
+<tr class="row-even"><td><p>url_or_item</p></td>
+<td><p>Required String or Item. The web address or <cite>Item</cite> to the CSV resource.</p></td>
+</tr>
+<tr class="row-odd"><td><p>gis</p></td>
+<td><p>Optional GIS. The GIS used to reference the service. The arcgis.env.active_gis is used if not specified.</p></td>
+</tr>
+<tr class="row-even"><td><p>copyright</p></td>
+<td><p>Optional String. Describes limitations and usage of the data.</p></td>
+</tr>
+<tr class="row-odd"><td><p>delimiter</p></td>
+<td><p>Optional String. The separator value. This can be the following:
+, (comma), ‘ ‘ (space), | (pipe), \r (tab), or ; (semicolon).</p></td>
+</tr>
+<tr class="row-even"><td><p>fields</p></td>
+<td><p>Optional List. An array of dictionarys containing the field information.</p></td>
+</tr>
+<tr class="row-odd"><td><p>opacity</p></td>
+<td><p>Optional Float.  This value can range between 1 and 0, where 0 is 100 percent transparent and 1 is completely opaque.</p></td>
+</tr>
+<tr class="row-even"><td><p>scale</p></td>
+<td><p>Optional Tuple. The min/max scale of the layer where the positions are: (min, max) as float values.</p></td>
+</tr>
+<tr class="row-odd"><td><p>sql_expression</p></td>
+<td><p>Optional String. Optional query string to apply to the layer when displayed on the widget or web map.</p></td>
+</tr>
+<tr class="row-even"><td><p>title</p></td>
+<td><p>Optional String. The title of the layer used to identify it in places such as the Legend and Layer List widgets.</p></td>
+</tr>
+</tbody>
+</table>
+<dl class="py method">
+<dt id="arcgis.mapping.ogc.CSVLayer.copyright">
+<em class="property">property </em><code class="sig-name descname">copyright</code><a class="headerlink" href="#arcgis.mapping.ogc.CSVLayer.copyright" title="Permalink to this definition">¶</a></dt>
+<dd><p>Copyright information for the layer.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="arcgis.mapping.ogc.CSVLayer.delimiter">
+<em class="property">property </em><code class="sig-name descname">delimiter</code><a class="headerlink" href="#arcgis.mapping.ogc.CSVLayer.delimiter" title="Permalink to this definition">¶</a></dt>
+<dd><p>Gets/Sets the delimiter for the CSV Layer.  The default is <cite>,</cite></p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 21%" />
+<col style="width: 79%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><strong>Values</strong></p></td>
+<td><p><strong>Description</strong></p></td>
+</tr>
+<tr class="row-even"><td><p>,</p></td>
+<td><p>Comma</p></td>
+</tr>
+<tr class="row-odd"><td><p>” “</p></td>
+<td><p>space</p></td>
+</tr>
+<tr class="row-even"><td><p>;</p></td>
+<td><p>semicolon</p></td>
+</tr>
+<tr class="row-odd"><td><div class="line-block">
+<div class="line"><br /></div>
+</div>
+</td>
+<td><p>pipe</p></td>
+</tr>
+<tr class="row-even"><td><p><cite>r</cite></p></td>
+<td><p>tab</p></td>
+</tr>
+</tbody>
+</table>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>string</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="arcgis.mapping.ogc.CSVLayer.df">
+<em class="property">property </em><code class="sig-name descname">df</code><a class="headerlink" href="#arcgis.mapping.ogc.CSVLayer.df" title="Permalink to this definition">¶</a></dt>
+<dd><p>returns the CSV file as a DataFrame</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>Pandas’ DataFrame</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="arcgis.mapping.ogc.CSVLayer.fields">
+<em class="property">property </em><code class="sig-name descname">fields</code><a class="headerlink" href="#arcgis.mapping.ogc.CSVLayer.fields" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the fields values for the CSV source.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>list of strings</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="arcgis.mapping.ogc.CSVLayer.latitude">
+<em class="property">property </em><code class="sig-name descname">latitude</code><a class="headerlink" href="#arcgis.mapping.ogc.CSVLayer.latitude" title="Permalink to this definition">¶</a></dt>
+<dd><p>The latitude field name. If not specified, the class will look for
+following field names in the CSV source: “lat”, “latitude”,
+“y”, “ycenter”, “latitude83”, “latdecdeg”, “POINT-Y”.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="arcgis.mapping.ogc.CSVLayer.longitude">
+<em class="property">property </em><code class="sig-name descname">longitude</code><a class="headerlink" href="#arcgis.mapping.ogc.CSVLayer.longitude" title="Permalink to this definition">¶</a></dt>
+<dd><p>The longitude field name. If not specified, the <cite>CSVLayer</cite> will
+look for following field names in the CSV source: “lon”, “lng”,
+“long”, “longitude”, “x”, “xcenter”, “longitude83”, “longdecdeg”,
+“POINT-X”.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="arcgis.mapping.ogc.CSVLayer.opacity">
+<em class="property">property </em><code class="sig-name descname">opacity</code><a class="headerlink" href="#arcgis.mapping.ogc.CSVLayer.opacity" title="Permalink to this definition">¶</a></dt>
+<dd><p>This value can range between 1 and 0, where 0 is 100 percent transparent and 1 is completely opaque.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>Float</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="arcgis.mapping.ogc.CSVLayer.properties">
+<em class="property">property </em><code class="sig-name descname">properties</code><a class="headerlink" href="#arcgis.mapping.ogc.CSVLayer.properties" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the properties of the Layer.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>PropertyMap</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="arcgis.mapping.ogc.CSVLayer.renderer">
+<em class="property">property </em><code class="sig-name descname">renderer</code><a class="headerlink" href="#arcgis.mapping.ogc.CSVLayer.renderer" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get/Set the Renderer of the CSV Layer</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>InsensitiveDict</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="arcgis.mapping.ogc.CSVLayer.scale">
+<em class="property">property </em><code class="sig-name descname">scale</code><a class="headerlink" href="#arcgis.mapping.ogc.CSVLayer.scale" title="Permalink to this definition">¶</a></dt>
+<dd><p>Gets/Sets the Min/Max Scale for the layer</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="arcgis.mapping.ogc.CSVLayer.sql_expression">
+<em class="property">property </em><code class="sig-name descname">sql_expression</code><a class="headerlink" href="#arcgis.mapping.ogc.CSVLayer.sql_expression" title="Permalink to this definition">¶</a></dt>
+<dd><p>The SQL where clause used to filter features on the client. Only
+the features that satisfy the definition expression are displayed
+in the widget. Setting a definition expression is useful when the
+dataset is large and you don’t want to bring all features to the
+client for analysis. The <cite>sql_expressions</cite> may be set when a
+layer is constructed prior to it loading in the view or after it
+has been loaded into the class.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>String</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="arcgis.mapping.ogc.CSVLayer.title">
+<em class="property">property </em><code class="sig-name descname">title</code><a class="headerlink" href="#arcgis.mapping.ogc.CSVLayer.title" title="Permalink to this definition">¶</a></dt>
+<dd><p>The title of the layer used to identify it in places such as the Legend and LayerList widgets.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>String</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="geojsonlayer">
+<h2>GeoJSONLayer<a class="headerlink" href="#geojsonlayer" title="Permalink to this headline">¶</a></h2>
+<dl class="py class">
+<dt id="arcgis.mapping.ogc.GeoJSONLayer">
+<em class="property">class </em><code class="sig-prename descclassname">arcgis.mapping.ogc.</code><code class="sig-name descname">GeoJSONLayer</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">url</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.mapping.ogc.GeoJSONLayer" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">arcgis.mapping.ogc._base.BaseOGC</span></code></p>
+<p>The GeoJSONLayer class is used to create a layer based on GeoJSON.
+GeoJSON is a format for encoding a variety of geographic data
+structures. The GeoJSON data must comply with the RFC 7946
+specification which states that the coordinates are in
+spatial reference: WGS84 (wkid 4326).</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 11%" />
+<col style="width: 89%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><strong>Argument</strong></p></td>
+<td><p><strong>Description</strong></p></td>
+</tr>
+<tr class="row-even"><td><p>url</p></td>
+<td><p>Required string. The web location of the GeoJSON file.</p></td>
+</tr>
+<tr class="row-odd"><td><p>copyright</p></td>
+<td><p>Optional String. Describes limitations and usage of the data.</p></td>
+</tr>
+<tr class="row-even"><td><p>opacity</p></td>
+<td><p>Optional Float.  This value can range between 1 and 0, where 0 is 100 percent transparent and 1 is completely opaque.</p></td>
+</tr>
+<tr class="row-odd"><td><p>renderer</p></td>
+<td><p>Optional Dictionary. A custom set of symbology for the given geojson dataset.</p></td>
+</tr>
+<tr class="row-even"><td><p>scale</p></td>
+<td><p>Optional Tuple. The min/max scale of the layer where the positions are: (min, max) as float values.</p></td>
+</tr>
+<tr class="row-odd"><td><p>title</p></td>
+<td><p>Optional String. The title of the layer used to identify it in places such as the Legend and Layer List widgets.</p></td>
+</tr>
+</tbody>
+</table>
+<dl class="py method">
+<dt id="arcgis.mapping.ogc.GeoJSONLayer.copyright">
+<em class="property">property </em><code class="sig-name descname">copyright</code><a class="headerlink" href="#arcgis.mapping.ogc.GeoJSONLayer.copyright" title="Permalink to this definition">¶</a></dt>
+<dd><p>Copyright information for the layer.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="arcgis.mapping.ogc.GeoJSONLayer.opacity">
+<em class="property">property </em><code class="sig-name descname">opacity</code><a class="headerlink" href="#arcgis.mapping.ogc.GeoJSONLayer.opacity" title="Permalink to this definition">¶</a></dt>
+<dd><p>This value can range between 1 and 0, where 0 is 100 percent transparent and 1 is completely opaque.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>Float</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="arcgis.mapping.ogc.GeoJSONLayer.properties">
+<em class="property">property </em><code class="sig-name descname">properties</code><a class="headerlink" href="#arcgis.mapping.ogc.GeoJSONLayer.properties" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the properties of the Layer.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>PropertyMap</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="arcgis.mapping.ogc.GeoJSONLayer.renderer">
+<em class="property">property </em><code class="sig-name descname">renderer</code><a class="headerlink" href="#arcgis.mapping.ogc.GeoJSONLayer.renderer" title="Permalink to this definition">¶</a></dt>
+<dd><p>Gets/Sets the renderer for the layer</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="arcgis.mapping.ogc.GeoJSONLayer.scale">
+<em class="property">property </em><code class="sig-name descname">scale</code><a class="headerlink" href="#arcgis.mapping.ogc.GeoJSONLayer.scale" title="Permalink to this definition">¶</a></dt>
+<dd><p>Gets/Sets the Min/Max Scale for the layer</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="arcgis.mapping.ogc.GeoJSONLayer.title">
+<em class="property">property </em><code class="sig-name descname">title</code><a class="headerlink" href="#arcgis.mapping.ogc.GeoJSONLayer.title" title="Permalink to this definition">¶</a></dt>
+<dd><p>The title of the layer used to identify it in places such as the Legend and LayerList widgets.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>String</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="georsslayer">
+<h2>GeoRSSLayer<a class="headerlink" href="#georsslayer" title="Permalink to this headline">¶</a></h2>
+<dl class="py class">
+<dt id="arcgis.mapping.ogc.GeoRSSLayer">
+<em class="property">class </em><code class="sig-prename descclassname">arcgis.mapping.ogc.</code><code class="sig-name descname">GeoRSSLayer</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">url</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.mapping.ogc.GeoRSSLayer" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">arcgis.mapping.ogc._base.BaseOGC</span></code></p>
+<p>The GeoRSSLayer class is used to create a layer based on GeoRSS. GeoRSS is a
+way to add geographic information to an RSS feed. The GeoRSSLayer supports
+both GeoRSS-Simple and GeoRSS GML encodings, and multiple geometry types.</p>
+<p>It exports custom RSS tags as additional attribute fields in the form of
+simple strings or an array of JSON objects.</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 11%" />
+<col style="width: 89%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><strong>Argument</strong></p></td>
+<td><p><strong>Description</strong></p></td>
+</tr>
+<tr class="row-even"><td><p>url</p></td>
+<td><p>Required string. The web address of the GeoRSS sevice.</p></td>
+</tr>
+<tr class="row-odd"><td><p>copyright</p></td>
+<td><p>Optional String. Describes limitations and usage of the data.</p></td>
+</tr>
+<tr class="row-even"><td><p>line_symbol</p></td>
+<td><p>Optionl Dict. The symbol for the polyline data in the GeoRSS.</p></td>
+</tr>
+<tr class="row-odd"><td><p>opacity</p></td>
+<td><p>Optional Float.  This value can range between 1 and 0, where 0 is 100 percent transparent and 1 is completely opaque.</p></td>
+</tr>
+<tr class="row-even"><td><p>point_symbol</p></td>
+<td><p>Optionl Dict. The symbol for the point data in the GeoRSS.</p></td>
+</tr>
+<tr class="row-odd"><td><p>polygon_symbol</p></td>
+<td><p>Optionl Dict. The symbol for the polygon data in the GeoRSS.</p></td>
+</tr>
+<tr class="row-even"><td><p>title</p></td>
+<td><p>Optional String. The title of the layer used to identify it in places such as the Legend and LayerList widgets.</p></td>
+</tr>
+<tr class="row-odd"><td><p>scale</p></td>
+<td><p>Optional Tuple. The min/max scale of the layer where the positions are: (min, max) as float values.</p></td>
+</tr>
+</tbody>
+</table>
+<dl class="py method">
+<dt id="arcgis.mapping.ogc.GeoRSSLayer.copyright">
+<em class="property">property </em><code class="sig-name descname">copyright</code><a class="headerlink" href="#arcgis.mapping.ogc.GeoRSSLayer.copyright" title="Permalink to this definition">¶</a></dt>
+<dd><p>Copyright information for the layer.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="arcgis.mapping.ogc.GeoRSSLayer.line_symbol">
+<em class="property">property </em><code class="sig-name descname">line_symbol</code><a class="headerlink" href="#arcgis.mapping.ogc.GeoRSSLayer.line_symbol" title="Permalink to this definition">¶</a></dt>
+<dd><p>Gets/Sets the Line Symbol for Polyline Geometries</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>InsensitiveDict</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="arcgis.mapping.ogc.GeoRSSLayer.opacity">
+<em class="property">property </em><code class="sig-name descname">opacity</code><a class="headerlink" href="#arcgis.mapping.ogc.GeoRSSLayer.opacity" title="Permalink to this definition">¶</a></dt>
+<dd><p>This value can range between 1 and 0, where 0 is 100 percent transparent and 1 is completely opaque.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>Float</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="arcgis.mapping.ogc.GeoRSSLayer.point_symbol">
+<em class="property">property </em><code class="sig-name descname">point_symbol</code><a class="headerlink" href="#arcgis.mapping.ogc.GeoRSSLayer.point_symbol" title="Permalink to this definition">¶</a></dt>
+<dd><p>Gets/Sets the Point Symbol for Point Geometries</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>InsensitiveDict</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="arcgis.mapping.ogc.GeoRSSLayer.polygon_symbol">
+<em class="property">property </em><code class="sig-name descname">polygon_symbol</code><a class="headerlink" href="#arcgis.mapping.ogc.GeoRSSLayer.polygon_symbol" title="Permalink to this definition">¶</a></dt>
+<dd><p>Gets/Sets the Polygon Symbol for Polygon Geometries</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>InsensitiveDict</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="arcgis.mapping.ogc.GeoRSSLayer.properties">
+<em class="property">property </em><code class="sig-name descname">properties</code><a class="headerlink" href="#arcgis.mapping.ogc.GeoRSSLayer.properties" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the properties of the Layer.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>PropertyMap</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="arcgis.mapping.ogc.GeoRSSLayer.scale">
+<em class="property">property </em><code class="sig-name descname">scale</code><a class="headerlink" href="#arcgis.mapping.ogc.GeoRSSLayer.scale" title="Permalink to this definition">¶</a></dt>
+<dd><p>Gets/Sets the Min/Max Scale for the layer</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="arcgis.mapping.ogc.GeoRSSLayer.title">
+<em class="property">property </em><code class="sig-name descname">title</code><a class="headerlink" href="#arcgis.mapping.ogc.GeoRSSLayer.title" title="Permalink to this definition">¶</a></dt>
+<dd><p>The title of the layer used to identify it in places such as the Legend and LayerList widgets.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>String</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="wmslayer">
+<h2>WMSLayer<a class="headerlink" href="#wmslayer" title="Permalink to this headline">¶</a></h2>
+<dl class="py class">
+<dt id="arcgis.mapping.ogc.WMSLayer">
+<em class="property">class </em><code class="sig-prename descclassname">arcgis.mapping.ogc.</code><code class="sig-name descname">WMSLayer</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">url</span></em>, <em class="sig-param"><span class="n">version</span><span class="o">=</span><span class="default_value">'1.3.0'</span></em>, <em class="sig-param"><span class="n">gis</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.mapping.ogc.WMSLayer" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">arcgis.mapping.ogc._base.BaseOGC</span></code></p>
+<p>Represents a Web Map Service, which is an OGC web service endpoint.</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 11%" />
+<col style="width: 89%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><strong>Argument</strong></p></td>
+<td><p><strong>Description</strong></p></td>
+</tr>
+<tr class="row-even"><td><p>url</p></td>
+<td><p>Required string. The administration URL for the ArcGIS Server.</p></td>
+</tr>
+<tr class="row-odd"><td><p>version</p></td>
+<td><p>Optional String. The version number of the WMS service.  The default is <cite>1.3.0</cite>.</p></td>
+</tr>
+<tr class="row-even"><td><p>gis</p></td>
+<td><p>Optional GIS. The GIS used to reference the service by. The arcgis.env.active_gis is used if not specified.</p></td>
+</tr>
+<tr class="row-odd"><td><p>copyright</p></td>
+<td><p>Optional String. Describes limitations and usage of the data.</p></td>
+</tr>
+<tr class="row-even"><td><p>scale</p></td>
+<td><p>Optional Tuple. The min/max scale of the layer where the positions are: (min, max) as float values.</p></td>
+</tr>
+<tr class="row-odd"><td><p>opacity</p></td>
+<td><p>Optional Float.  This value can range between 1 and 0, where 0 is 100 percent transparent and 1 is completely opaque.</p></td>
+</tr>
+<tr class="row-even"><td><p>title</p></td>
+<td><p>Optional String. The title of the layer used to identify it in places such as the Legend and Layer List widgets.</p></td>
+</tr>
+</tbody>
+</table>
+<dl class="py method">
+<dt id="arcgis.mapping.ogc.WMSLayer.copyright">
+<em class="property">property </em><code class="sig-name descname">copyright</code><a class="headerlink" href="#arcgis.mapping.ogc.WMSLayer.copyright" title="Permalink to this definition">¶</a></dt>
+<dd><p>Copyright information for the layer.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="arcgis.mapping.ogc.WMSLayer.layers">
+<em class="property">property </em><code class="sig-name descname">layers</code><a class="headerlink" href="#arcgis.mapping.ogc.WMSLayer.layers" title="Permalink to this definition">¶</a></dt>
+<dd><p>returns the layers of the WMS Layer</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="arcgis.mapping.ogc.WMSLayer.opacity">
+<em class="property">property </em><code class="sig-name descname">opacity</code><a class="headerlink" href="#arcgis.mapping.ogc.WMSLayer.opacity" title="Permalink to this definition">¶</a></dt>
+<dd><p>This value can range between 1 and 0, where 0 is 100 percent transparent and 1 is completely opaque.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>Float</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="arcgis.mapping.ogc.WMSLayer.properties">
+<em class="property">property </em><code class="sig-name descname">properties</code><a class="headerlink" href="#arcgis.mapping.ogc.WMSLayer.properties" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the properties of the Layer.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>PropertyMap</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="arcgis.mapping.ogc.WMSLayer.scale">
+<em class="property">property </em><code class="sig-name descname">scale</code><a class="headerlink" href="#arcgis.mapping.ogc.WMSLayer.scale" title="Permalink to this definition">¶</a></dt>
+<dd><p>Gets/Sets the Min/Max Scale for the layer</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="arcgis.mapping.ogc.WMSLayer.title">
+<em class="property">property </em><code class="sig-name descname">title</code><a class="headerlink" href="#arcgis.mapping.ogc.WMSLayer.title" title="Permalink to this definition">¶</a></dt>
+<dd><p>The title of the layer used to identify it in places such as the Legend and LayerList widgets.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>String</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="wmtslayer">
+<h2>WMTSLayer<a class="headerlink" href="#wmtslayer" title="Permalink to this headline">¶</a></h2>
+<dl class="py class">
+<dt id="arcgis.mapping.ogc.WMTSLayer">
+<em class="property">class </em><code class="sig-prename descclassname">arcgis.mapping.ogc.</code><code class="sig-name descname">WMTSLayer</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">url</span></em>, <em class="sig-param"><span class="n">version</span><span class="o">=</span><span class="default_value">'1.0.0'</span></em>, <em class="sig-param"><span class="n">gis</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.mapping.ogc.WMTSLayer" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">arcgis.mapping.ogc._base.BaseOGC</span></code></p>
+<p>Represents a Web Map Tile Service, which is an OGC web service endpoint.</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 11%" />
+<col style="width: 89%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><strong>Argument</strong></p></td>
+<td><p><strong>Description</strong></p></td>
+</tr>
+<tr class="row-even"><td><p>url</p></td>
+<td><p>Required string. The web address of the endpoint.</p></td>
+</tr>
+<tr class="row-odd"><td><p>version</p></td>
+<td><p>Optional String. The version number of the WMTS service.  The default is <cite>1.0.0</cite></p></td>
+</tr>
+<tr class="row-even"><td><p>gis</p></td>
+<td><p>Optional GIS. The GIS used to reference the service by. The arcgis.env.active_gis is used if not specified.</p></td>
+</tr>
+<tr class="row-odd"><td><p>copyright</p></td>
+<td><p>Optional String. Describes limitations and usage of the data.</p></td>
+</tr>
+<tr class="row-even"><td><p>opacity</p></td>
+<td><p>Optional Float.  This value can range between 1 and 0, where 0 is 100 percent transparent and 1 is completely opaque.</p></td>
+</tr>
+<tr class="row-odd"><td><p>scale</p></td>
+<td><p>Optional Tuple. The min/max scale of the layer where the positions are: (min, max) as float values.</p></td>
+</tr>
+<tr class="row-even"><td><p>title</p></td>
+<td><p>Optional String. The title of the layer used to identify it in places such as the Legend and Layer List widgets.</p></td>
+</tr>
+</tbody>
+</table>
+<dl class="py method">
+<dt id="arcgis.mapping.ogc.WMTSLayer.copyright">
+<em class="property">property </em><code class="sig-name descname">copyright</code><a class="headerlink" href="#arcgis.mapping.ogc.WMTSLayer.copyright" title="Permalink to this definition">¶</a></dt>
+<dd><p>Copyright information for the layer.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="arcgis.mapping.ogc.WMTSLayer.opacity">
+<em class="property">property </em><code class="sig-name descname">opacity</code><a class="headerlink" href="#arcgis.mapping.ogc.WMTSLayer.opacity" title="Permalink to this definition">¶</a></dt>
+<dd><p>This value can range between 1 and 0, where 0 is 100 percent transparent and 1 is completely opaque.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>Float</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="arcgis.mapping.ogc.WMTSLayer.properties">
+<em class="property">property </em><code class="sig-name descname">properties</code><a class="headerlink" href="#arcgis.mapping.ogc.WMTSLayer.properties" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the properties of the Layer.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>PropertyMap</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="arcgis.mapping.ogc.WMTSLayer.scale">
+<em class="property">property </em><code class="sig-name descname">scale</code><a class="headerlink" href="#arcgis.mapping.ogc.WMTSLayer.scale" title="Permalink to this definition">¶</a></dt>
+<dd><p>Gets/Sets the Min/Max Scale for the layer</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="arcgis.mapping.ogc.WMTSLayer.title">
+<em class="property">property </em><code class="sig-name descname">title</code><a class="headerlink" href="#arcgis.mapping.ogc.WMTSLayer.title" title="Permalink to this definition">¶</a></dt>
+<dd><p>The title of the layer used to identify it in places such as the Legend and LayerList widgets.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>String</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+</div>
+
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="arcgis.realtime.html" class="btn btn-neutral float-right" title="arcgis.realtime module" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="arcgis.mapping.toc.html" class="btn btn-neutral float-left" title="arcgis.mapping module" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        
+        &copy; Copyright 2016-2019, Esri
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

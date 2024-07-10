@@ -1,0 +1,1842 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>arcgis.widgets module &mdash; arcgis 1.9.1 documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="_static/theme_overrides.css" type="text/css" />
+
+  
+  
+    <link rel="shortcut icon" href="_static/favicon.ico"/>
+  
+  
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/doctools.js"></script>
+        <script src="_static/language_data.js"></script>
+        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="arcgis.apps module" href="arcgis.apps.html" />
+    <link rel="prev" title="arcgis.schematics module" href="arcgis.schematics.html" />
+<!-- This code block is inserted close near the <head> tag. See http://bit.ly/2BHUQzB -->
+<!-- The point of this code block is to send us google analytics on website views -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-NJGGV5');</script>
+ 
+
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="index.html" class="icon icon-home" alt="Documentation Home"> arcgis
+          
+
+          
+            
+            <img src="_static/python_api_logo.png" class="logo" alt="Logo"/>
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1.9.1
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">arcgis</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="arcgis.gis.toc.html">arcgis.gis module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="arcgis.env.html">arcgis.env module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="arcgis.features.toc.html">arcgis.features module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="arcgis.raster.toc.html">arcgis.raster module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="arcgis.network.toc.html">arcgis.network module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="arcgis.geoanalytics.toc.html">arcgis.geoanalytics module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="arcgis.geocoding.html">arcgis.geocoding module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="arcgis.geoenrichment.html">arcgis.geoenrichment module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="arcgis.geometry.html">arcgis.geometry module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="arcgis.geoprocessing.html">arcgis.geoprocessing module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="arcgis.mapping.toc.html">arcgis.mapping module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="arcgis.realtime.html">arcgis.realtime module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="arcgis.schematics.html">arcgis.schematics module</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">arcgis.widgets module</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#mapview">MapView</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="arcgis.apps.html">arcgis.apps module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="arcgis.learn.toc.html">arcgis.learn module</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">arcgis</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
+        
+      <li>arcgis.widgets module</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+<!-- This code block is inserted close near the <body> tag. See http://bit.ly/2BHUQzB -->
+<!-- The point of this code block is to send us google analytics on website views -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NJGGV5"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+
+  <div class="section" id="arcgis-widgets-module">
+<h1>arcgis.widgets module<a class="headerlink" href="#arcgis-widgets-module" title="Permalink to this headline">¶</a></h1>
+<span class="target" id="module-arcgis.widgets"></span><div class="section" id="mapview">
+<h2>MapView<a class="headerlink" href="#mapview" title="Permalink to this headline">¶</a></h2>
+<dl class="py class">
+<dt id="arcgis.widgets.MapView">
+<em class="property">class </em><code class="sig-prename descclassname">arcgis.widgets.</code><code class="sig-name descname">MapView</code><span class="sig-paren">(</span><em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.widgets.MapView" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">ipywidgets.widgets.domwidget.DOMWidget</span></code></p>
+<p>The <code class="docutils literal notranslate"><span class="pre">MapView</span></code> class creates a mapping widget for Jupyter Notebook and JupyterLab.</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 19%" />
+<col style="width: 81%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><strong>Argument</strong></p></td>
+<td><p><strong>Description</strong></p></td>
+</tr>
+<tr class="row-even"><td><p>gis</p></td>
+<td><p>The active <a class="reference internal" href="arcgis.gis.toc.html#arcgis.gis.GIS" title="arcgis.gis.GIS"><code class="xref py py-class docutils literal notranslate"><span class="pre">GIS</span></code></a> instance you want this map widget to use.</p></td>
+</tr>
+<tr class="row-odd"><td><p>item</p></td>
+<td><p>A <code class="docutils literal notranslate"><span class="pre">WebMap</span></code> or <code class="docutils literal notranslate"><span class="pre">WebScene</span></code> item instance that you want to visualize</p></td>
+</tr>
+<tr class="row-even"><td><p>mode</p></td>
+<td><p>Whether to construct a ‘2D’ map or ‘3D’ map. See the <code class="docutils literal notranslate"><span class="pre">mode</span></code> property
+for more information.</p></td>
+</tr>
+</tbody>
+</table>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>If the Jupyter Notebook server is running over http, you need to
+configure your portal/organization to allow your host and port; or else
+you will run into <code class="docutils literal notranslate"><span class="pre">CORS</span></code> issues.</p>
+<p>This can be accomplished programmatically by signing into your organization
+and running this code:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">arcgis.gis</span> <span class="kn">import</span> <span class="n">GIS</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">gis</span> <span class="o">=</span> <span class="n">GIS</span><span class="p">(</span><span class="n">profile</span><span class="o">=</span><span class="s2">&quot;your_admin_profile&quot;</span><span class="p">)</span>
+
+<span class="gp">&gt;&gt;&gt; </span><span class="n">more_origins</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;allowedOrigins&quot;</span><span class="p">:</span><span class="s2">&quot;http://localhost:8888&quot;</span><span class="p">}</span> <span class="c1">#replace your port</span>
+
+<span class="gp">&gt;&gt;&gt; </span><span class="n">gis</span><span class="o">.</span><span class="n">update_properties</span><span class="p">(</span><span class="n">more_origins</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<dl class="py method">
+<dt id="arcgis.widgets.MapView.add_layer">
+<code class="sig-name descname">add_layer</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">item</span></em>, <em class="sig-param"><span class="n">options</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.widgets.MapView.add_layer" title="Permalink to this definition">¶</a></dt>
+<dd><p>The <code class="docutils literal notranslate"><span class="pre">add_layer</span></code> method adds the specified <code class="docutils literal notranslate"><span class="pre">Layer</span></code> or <a class="reference internal" href="arcgis.gis.toc.html#arcgis.gis.Item" title="arcgis.gis.Item"><code class="xref py py-class docutils literal notranslate"><span class="pre">Item</span></code></a> to the
+map widget.</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 17%" />
+<col style="width: 83%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><strong>Argument</strong></p></td>
+<td><p><strong>Description</strong></p></td>
+</tr>
+<tr class="row-even"><td><p>item</p></td>
+<td><p>Required object. You can specify <a class="reference internal" href="arcgis.gis.toc.html#arcgis.gis.Item" title="arcgis.gis.Item"><code class="xref py py-class docutils literal notranslate"><span class="pre">Item</span></code></a> objects, <code class="docutils literal notranslate"><span class="pre">Layer</span></code> objects
+such as <a class="reference internal" href="arcgis.features.toc.html#arcgis.features.FeatureLayer" title="arcgis.features.FeatureLayer"><code class="xref py py-class docutils literal notranslate"><span class="pre">FeatureLayer</span></code></a> , ImageryLayer, MapImageLayer,
+<a class="reference internal" href="arcgis.features.toc.html#arcgis.features.FeatureSet" title="arcgis.features.FeatureSet"><code class="xref py py-class docutils literal notranslate"><span class="pre">FeatureSet</span></code></a> ,
+<code class="xref py py-class docutils literal notranslate"><span class="pre">Collection</span></code>, <a class="reference internal" href="arcgis.raster.toc.html#arcgis.raster.Raster" title="arcgis.raster.Raster"><code class="xref py py-class docutils literal notranslate"><span class="pre">Raster</span></code></a> objects, etc.</p>
+<p><a class="reference internal" href="arcgis.gis.toc.html#arcgis.gis.Item" title="arcgis.gis.Item"><code class="xref py py-class docutils literal notranslate"><span class="pre">Item</span></code></a> objects will have all of their layers individually
+added to the map widget.</p>
+</td>
+</tr>
+<tr class="row-odd"><td><p>options</p></td>
+<td><p>Optional dict. Specify visualization options such as renderer info,
+opacity, definition expressions. See example below</p></td>
+</tr>
+</tbody>
+</table>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Calling <code class="docutils literal notranslate"><span class="pre">MapView.add_layer()</span></code> on an <a class="reference internal" href="arcgis.raster.toc.html#arcgis.raster.Raster" title="arcgis.raster.Raster"><code class="xref py py-class docutils literal notranslate"><span class="pre">Raster</span></code></a> instance
+has the following limitations:</p>
+<ul class="simple">
+<li><p>Local raster overlays do not persist beyond the notebook session on
+published web maps/web scenes – you would need to separately publish
+these local rasters.</p></li>
+<li><p>The entire raster image data is placed on the MapView’s canvas with
+no performance optimizations. This means no pyramids, no dynamic
+downsampling, etc. Please be mindful of the size of the local raster
+and your computer’s hardware limitations.</p></li>
+<li><p>Pixel values and projections are not guaranteed to be accurate,
+especially when the local raster’s Spatial Reference doesn’t
+reproject accurately to Web Mercator (what the <code class="docutils literal notranslate"><span class="pre">MapView</span></code>
+widget uses).</p></li>
+</ul>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># USAGE EXAMPLE: Add a feature layer with smart mapping renderer and</span>
+<span class="c1"># a definition expression to limit the features drawn.</span>
+<span class="n">map1</span> <span class="o">=</span> <span class="n">gis</span><span class="o">.</span><span class="n">map</span><span class="p">(</span><span class="s2">&quot;Seattle, WA&quot;</span><span class="p">)</span>
+<span class="n">map1</span><span class="o">.</span><span class="n">add_layer</span><span class="p">(</span><span class="n">wa_streets_feature_layer</span><span class="p">,</span> <span class="p">{</span><span class="s1">&#39;renderer&#39;</span><span class="p">:</span><span class="s1">&#39;ClassedSizeRenderer&#39;</span><span class="p">,</span>
+                                          <span class="s1">&#39;field_name&#39;</span><span class="p">:</span><span class="s1">&#39;DistMiles&#39;</span><span class="p">,</span>
+                                          <span class="s1">&#39;opacity&#39;</span><span class="p">:</span><span class="mf">0.75</span><span class="p">})</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt id="arcgis.widgets.MapView.basemap">
+<em class="property">property </em><code class="sig-name descname">basemap</code><a class="headerlink" href="#arcgis.widgets.MapView.basemap" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get/Set the basemap you would like to apply to the widget.</p>
+<blockquote>
+<div><table class="docutils align-default">
+<colgroup>
+<col style="width: 16%" />
+<col style="width: 84%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><strong>Argument</strong></p></td>
+<td><p><strong>Description</strong></p></td>
+</tr>
+<tr class="row-even"><td><p>value</p></td>
+<td><p>Required string. Ex: (‘topo’, ‘national-geographic’, etc.).
+.. note:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>See :attr:`~arcgis.widgets.MapView.basemaps` for a full list of possible maps
+</pre></div>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+<dl class="field-list simple">
+<dt class="field-odd">return</dt>
+<dd class="field-odd"><p>basemap being used.</p>
+</dd>
+</dl>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Usage example: Set the widget basemap equal to an item</span>
+
+<span class="kn">from</span> <span class="nn">arcgis.mapping</span> <span class="kn">import</span> <span class="n">WebMap</span>
+<span class="n">widget</span> <span class="o">=</span> <span class="n">gis</span><span class="o">.</span><span class="n">map</span><span class="p">()</span>
+
+<span class="c1"># Use basemap from another item as your own</span>
+<span class="n">widget</span><span class="o">.</span><span class="n">basemap</span> <span class="o">=</span> <span class="n">webmap</span>
+<span class="n">widget</span><span class="o">.</span><span class="n">basemap</span> <span class="o">=</span> <span class="n">tiled_map_service_item</span>
+<span class="n">widget</span><span class="o">.</span><span class="n">basemap</span> <span class="o">=</span> <span class="n">image_layer_item</span>
+<span class="n">widget</span><span class="o">.</span><span class="n">basemap</span> <span class="o">=</span> <span class="n">webmap2</span><span class="o">.</span><span class="n">basemap</span>
+<span class="n">widget</span><span class="o">.</span><span class="n">basemap</span> <span class="o">-</span> <span class="s1">&#39;national-geographic&#39;</span>
+</pre></div>
+</div>
+</div></blockquote>
+</dd></dl>
+
+<dl class="py attribute">
+<dt id="arcgis.widgets.MapView.basemaps">
+<code class="sig-name descname">basemaps</code><em class="property"> = ['dark-gray', 'dark-gray-vector', 'gray', 'gray-vector', 'hybrid', 'national-geographic', 'oceans', 'osm', 'satellite', 'streets', 'streets-navigation-vector', 'streets-night-vector', 'streets-relief-vector', 'streets-vector', 'terrain', 'topo', 'topo-vector']</em><a class="headerlink" href="#arcgis.widgets.MapView.basemaps" title="Permalink to this definition">¶</a></dt>
+<dd><p>The <code class="docutils literal notranslate"><span class="pre">basemaps</span></code> layers are a list of possible basemaps to set <a class="reference internal" href="#arcgis.widgets.MapView.basemap" title="arcgis.widgets.MapView.basemap"><code class="xref py py-attr docutils literal notranslate"><span class="pre">basemap</span></code></a> with:</p>
+<ol class="arabic simple">
+<li><p>Dark Grey</p></li>
+<li><p>Dark Grey Vector</p></li>
+<li><p>Gray</p></li>
+<li><p>Gray Vector</p></li>
+<li><p>Hybrid</p></li>
+<li><p>National Geographic</p></li>
+<li><p>Oceans</p></li>
+<li><p>OSM</p></li>
+<li><p>Satellite</p></li>
+<li><p>Streets</p></li>
+<li><p>Streets Navigation Vector</p></li>
+<li><p>Streets Night Vector</p></li>
+<li><p>Streets Relief Vector</p></li>
+<li><p>Streets Vector</p></li>
+<li><p>Terrain</p></li>
+<li><p>Topo</p></li>
+<li><p>Topographic Vector</p></li>
+</ol>
+</dd></dl>
+
+<dl class="py method">
+<dt id="arcgis.widgets.MapView.center">
+<em class="property">property </em><code class="sig-name descname">center</code><a class="headerlink" href="#arcgis.widgets.MapView.center" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get/Set the center of the <code class="docutils literal notranslate"><span class="pre">Map</span> <span class="pre">Widget</span></code>.</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 21%" />
+<col style="width: 79%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><strong>Argument</strong></p></td>
+<td><p><strong>Description</strong></p></td>
+</tr>
+<tr class="row-even"><td><p>setter</p></td>
+<td><p>A <cite>[lat, long]</cite> list, or a dict that represents the JSON of the map
+widget’s center.</p></td>
+</tr>
+</tbody>
+</table>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>A dict that represents the JSON of the map widget’s center.</p>
+</dd>
+</dl>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1">#Usage Example</span>
+
+<span class="o">&gt;&gt;&gt;</span> <span class="kn">from</span> <span class="nn">arcgis.gis</span> <span class="kn">import</span> <span class="n">GIS</span><span class="p">,</span> <span class="n">Item</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="kn">from</span> <span class="nn">arcgis.widgets</span> <span class="kn">import</span> <span class="n">MapView</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">map2</span> <span class="o">=</span> <span class="n">gis</span><span class="o">.</span><span class="n">map</span><span class="p">(</span><span class="s2">&quot;California&quot;</span><span class="p">)</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">map2</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">map2</span><span class="o">.</span><span class="n">center</span>
+<span class="p">{</span>
+<span class="s1">&#39;spatialReference&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;latestWkid&#39;</span><span class="p">:</span> <span class="mi">3857</span><span class="p">,</span> <span class="s1">&#39;wkid&#39;</span><span class="p">:</span> <span class="mi">102100</span><span class="p">},</span>
+<span class="s1">&#39;x&#39;</span><span class="p">:</span> <span class="o">-</span><span class="mf">13277101.270396618</span><span class="p">,</span>
+<span class="s1">&#39;y&#39;</span><span class="p">:</span> <span class="mf">4374001.4894094905</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt id="arcgis.widgets.MapView.clear_graphics">
+<code class="sig-name descname">clear_graphics</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.widgets.MapView.clear_graphics" title="Permalink to this definition">¶</a></dt>
+<dd><p>The <code class="docutils literal notranslate"><span class="pre">clear_graphics</span></code> method clear the graphics drawn on the map widget.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Graphics are shapes drawn using the <a class="reference internal" href="#arcgis.widgets.MapView.draw" title="arcgis.widgets.MapView.draw"><code class="xref py py-attr docutils literal notranslate"><span class="pre">draw</span></code></a> method.</p>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1">#Usage Example: Drawing two Geometry objects on a map widget.</span>
+
+<span class="o">&gt;&gt;&gt;</span> <span class="kn">from</span> <span class="nn">arcgis.gis</span> <span class="kn">import</span> <span class="n">GIS</span><span class="p">,</span> <span class="n">Item</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="kn">from</span> <span class="nn">arcgis.widgets</span> <span class="kn">import</span> <span class="n">MapView</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="kn">from</span> <span class="nn">arcgis.geometry</span> <span class="kn">import</span> <span class="n">Geometry</span><span class="p">,</span> <span class="n">Polygon</span>
+
+<span class="o">&gt;&gt;&gt;</span> <span class="n">geom</span> <span class="o">=</span> <span class="n">Geometry</span><span class="p">({</span>
+                <span class="s2">&quot;rings&quot;</span> <span class="p">:</span> <span class="p">[[[</span><span class="o">-</span><span class="mf">97.06138</span><span class="p">,</span><span class="mf">32.837</span><span class="p">],[</span><span class="o">-</span><span class="mf">97.06133</span><span class="p">,</span><span class="mf">32.836</span><span class="p">],[</span><span class="o">-</span><span class="mf">97.06124</span><span class="p">,</span><span class="mf">32.834</span><span class="p">],[</span><span class="o">-</span><span class="mf">97.06127</span><span class="p">,</span><span class="mf">32.832</span><span class="p">],</span>
+                            <span class="p">[</span><span class="o">-</span><span class="mf">97.06138</span><span class="p">,</span><span class="mf">32.837</span><span class="p">]],[[</span><span class="o">-</span><span class="mf">97.06326</span><span class="p">,</span><span class="mf">32.759</span><span class="p">],[</span><span class="o">-</span><span class="mf">97.06298</span><span class="p">,</span><span class="mf">32.755</span><span class="p">],[</span><span class="o">-</span><span class="mf">97.06153</span><span class="p">,</span><span class="mf">32.749</span><span class="p">],</span>
+                            <span class="p">[</span><span class="o">-</span><span class="mf">97.06326</span><span class="p">,</span><span class="mf">32.759</span><span class="p">]]],</span>
+                <span class="s2">&quot;spatialReference&quot;</span> <span class="p">:</span> <span class="p">{</span><span class="s2">&quot;wkid&quot;</span> <span class="p">:</span> <span class="mi">4326</span><span class="p">}</span>
+                <span class="p">})</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">map2</span> <span class="o">=</span> <span class="n">gis</span><span class="o">.</span><span class="n">map</span><span class="p">(</span><span class="s2">&quot;Arlington, Texas&quot;</span><span class="p">)</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">map2</span><span class="o">.</span><span class="n">draw</span><span class="p">(</span><span class="n">shape</span><span class="o">=</span><span class="n">geom</span><span class="p">)</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">map2</span>
+<span class="o">&lt;</span><span class="n">Map</span> <span class="n">Widget</span> <span class="n">Displayed</span> <span class="k">with</span> <span class="n">the</span> <span class="n">drawn</span> <span class="n">Polygons</span><span class="o">&gt;</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">map2</span><span class="o">.</span><span class="n">clear_graphics</span><span class="p">()</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">map2</span>
+<span class="o">&lt;</span><span class="n">Map</span> <span class="n">Widget</span> <span class="n">Displayed</span> <span class="n">without</span> <span class="n">the</span> <span class="n">drawn</span> <span class="n">Polygons</span><span class="o">&gt;</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt id="arcgis.widgets.MapView.display_message">
+<code class="sig-name descname">display_message</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">msg</span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.widgets.MapView.display_message" title="Permalink to this definition">¶</a></dt>
+<dd><p>The <code class="docutils literal notranslate"><span class="pre">display_message</span></code> method displays a message on the upper-right corner of the <code class="docutils literal notranslate"><span class="pre">map</span> <span class="pre">widget</span></code>.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Only one message can be sent at a time, multiple messages do not show up.</p>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt id="arcgis.widgets.MapView.draw">
+<code class="sig-name descname">draw</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">shape</span></em>, <em class="sig-param"><span class="n">popup</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">symbol</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">attributes</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.widgets.MapView.draw" title="Permalink to this definition">¶</a></dt>
+<dd><p>The <code class="docutils literal notranslate"><span class="pre">draw</span></code> method draws a shape on the map widget.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Anything can be drawn from known <a class="reference internal" href="arcgis.geometry.html#arcgis.geometry.Geometry" title="arcgis.geometry.Geometry"><code class="xref py py-class docutils literal notranslate"><span class="pre">Geometry</span></code></a> objects, coordinate pairs, and
+<a class="reference internal" href="arcgis.features.toc.html#arcgis.features.FeatureSet" title="arcgis.features.FeatureSet"><code class="xref py py-class docutils literal notranslate"><span class="pre">FeatureSet</span></code></a> objects.</p>
+</div>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 13%" />
+<col style="width: 88%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><strong>Argument</strong></p></td>
+<td><p><strong>Description</strong></p></td>
+</tr>
+<tr class="row-even"><td><p>shape</p></td>
+<td><p>Required object.
+Known <a class="reference internal" href="arcgis.geometry.html#arcgis.geometry.Geometry" title="arcgis.geometry.Geometry"><code class="xref py py-class docutils literal notranslate"><span class="pre">Geometry</span></code></a> objects:
+Shape is one of [<code class="docutils literal notranslate"><span class="pre">circle</span></code>, <code class="docutils literal notranslate"><span class="pre">ellipse</span></code>, <a class="reference internal" href="arcgis.geometry.html#arcgis.geometry.Polygon" title="arcgis.geometry.Polygon"><code class="xref py py-class docutils literal notranslate"><span class="pre">Polygon</span></code></a>,
+<a class="reference internal" href="arcgis.geometry.html#arcgis.geometry.Polyline" title="arcgis.geometry.Polyline"><code class="xref py py-class docutils literal notranslate"><span class="pre">Polyline</span></code></a>,
+<a class="reference internal" href="arcgis.geometry.html#arcgis.geometry.MultiPoint" title="arcgis.geometry.MultiPoint"><code class="xref py py-class docutils literal notranslate"><span class="pre">MultiPoint</span></code></a>, <a class="reference internal" href="arcgis.geometry.html#arcgis.geometry.Point" title="arcgis.geometry.Point"><code class="xref py py-class docutils literal notranslate"><span class="pre">Point</span></code></a>,
+<code class="docutils literal notranslate"><span class="pre">rectangle</span></code>, <code class="docutils literal notranslate"><span class="pre">triangle</span></code>].</p>
+<p>Coordinate pair: specify shape as a list of [lat, long]. Eg: [34, -81]</p>
+<p>FeatureSet: shape can be a <a class="reference internal" href="arcgis.features.toc.html#arcgis.features.FeatureSet" title="arcgis.features.FeatureSet"><code class="xref py py-class docutils literal notranslate"><span class="pre">FeatureSet</span></code></a> object.</p>
+<p>Dict object representing a geometry.</p>
+</td>
+</tr>
+<tr class="row-odd"><td><p>popup</p></td>
+<td><p>Optional dict. Dict containing <code class="docutils literal notranslate"><span class="pre">title</span></code> and <code class="docutils literal notranslate"><span class="pre">content</span></code> as keys that will be displayed
+when the shape is clicked. In case of a <a class="reference internal" href="arcgis.features.toc.html#arcgis.features.FeatureSet" title="arcgis.features.FeatureSet"><code class="xref py py-class docutils literal notranslate"><span class="pre">FeatureSet</span></code></a>,
+<code class="docutils literal notranslate"><span class="pre">title</span></code> and <code class="docutils literal notranslate"><span class="pre">content</span></code> are names of
+attributes of the features in the <code class="docutils literal notranslate"><span class="pre">FeatureSet</span></code> instead of actual string values for
+<code class="docutils literal notranslate"><span class="pre">title</span></code> and <code class="docutils literal notranslate"><span class="pre">content</span></code> .</p></td>
+</tr>
+<tr class="row-even"><td><p>symbol</p></td>
+<td><p>Optional dict. See the <a class="reference external" href="http://resources.arcgis.com/en/help/arcgis-rest-api/index.html#//02r3000000n5000000">Symbol Objects</a>
+page in the ArcGIS REST API documentation for more information. A
+default symbol is used if one is not specified.</p>
+<p>A helper utility to get the symbol format for several predefined symbols is
+available at the <a class="reference external" href="http://esri.github.io/arcgis-python-api/tools/symbol.html">Esri symbol selector.</a></p>
+</td>
+</tr>
+<tr class="row-odd"><td><p>attributes</p></td>
+<td><p>Optional dict. Specify a dict containing name value pairs of fields and field values
+associated with the graphic.</p></td>
+</tr>
+</tbody>
+</table>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1">#Usage Example: Drawing two Geometry objects on a map widget.</span>
+
+<span class="o">&gt;&gt;&gt;</span> <span class="kn">from</span> <span class="nn">arcgis.gis</span> <span class="kn">import</span> <span class="n">GIS</span><span class="p">,</span> <span class="n">Item</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="kn">from</span> <span class="nn">arcgis.widgets</span> <span class="kn">import</span> <span class="n">MapView</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="kn">from</span> <span class="nn">arcgis.geometry</span> <span class="kn">import</span> <span class="n">Geometry</span><span class="p">,</span> <span class="n">Polygon</span>
+
+<span class="o">&gt;&gt;&gt;</span> <span class="n">geom</span> <span class="o">=</span> <span class="n">Geometry</span><span class="p">({</span>
+                <span class="s2">&quot;rings&quot;</span> <span class="p">:</span> <span class="p">[[[</span><span class="o">-</span><span class="mf">97.06138</span><span class="p">,</span><span class="mf">32.837</span><span class="p">],[</span><span class="o">-</span><span class="mf">97.06133</span><span class="p">,</span><span class="mf">32.836</span><span class="p">],[</span><span class="o">-</span><span class="mf">97.06124</span><span class="p">,</span><span class="mf">32.834</span><span class="p">],[</span><span class="o">-</span><span class="mf">97.06127</span><span class="p">,</span><span class="mf">32.832</span><span class="p">],</span>
+                            <span class="p">[</span><span class="o">-</span><span class="mf">97.06138</span><span class="p">,</span><span class="mf">32.837</span><span class="p">]],[[</span><span class="o">-</span><span class="mf">97.06326</span><span class="p">,</span><span class="mf">32.759</span><span class="p">],[</span><span class="o">-</span><span class="mf">97.06298</span><span class="p">,</span><span class="mf">32.755</span><span class="p">],[</span><span class="o">-</span><span class="mf">97.06153</span><span class="p">,</span><span class="mf">32.749</span><span class="p">],</span>
+                            <span class="p">[</span><span class="o">-</span><span class="mf">97.06326</span><span class="p">,</span><span class="mf">32.759</span><span class="p">]]],</span>
+                <span class="s2">&quot;spatialReference&quot;</span> <span class="p">:</span> <span class="p">{</span><span class="s2">&quot;wkid&quot;</span> <span class="p">:</span> <span class="mi">4326</span><span class="p">}</span>
+                <span class="p">})</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">map2</span> <span class="o">=</span> <span class="n">gis</span><span class="o">.</span><span class="n">map</span><span class="p">(</span><span class="s2">&quot;Arlington, Texas&quot;</span><span class="p">)</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">map2</span><span class="o">.</span><span class="n">draw</span><span class="p">(</span><span class="n">shape</span><span class="o">=</span><span class="n">geom</span><span class="p">)</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">map2</span>
+<span class="o">&lt;</span><span class="n">Map</span> <span class="n">Widget</span> <span class="n">Displayed</span> <span class="k">with</span> <span class="n">the</span> <span class="n">drawn</span> <span class="n">Polygons</span><span class="o">&gt;</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt id="arcgis.widgets.MapView.embed">
+<code class="sig-name descname">embed</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">output_in_cell</span><span class="o">=</span><span class="default_value">True</span></em>, <em class="sig-param"><span class="n">set_as_preview</span><span class="o">=</span><span class="default_value">True</span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.widgets.MapView.embed" title="Permalink to this definition">¶</a></dt>
+<dd><p>The <code class="docutils literal notranslate"><span class="pre">embed</span></code> method embeds the current state of the map into the underlying notebook
+as an interactive HTML/JS/CSS element.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>This element will always display
+this ‘snapshot’ state of the map, regardless of any future Python code ran.</p>
+</div>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 21%" />
+<col style="width: 79%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><strong>Argument</strong></p></td>
+<td><p><strong>Description</strong></p></td>
+</tr>
+<tr class="row-even"><td><p>output_in_cell</p></td>
+<td><p>Optional bool, default <code class="docutils literal notranslate"><span class="pre">True</span></code>. Will display the embedded HTML
+interactive map in the output area of the cell where this function
+is called.</p></td>
+</tr>
+<tr class="row-odd"><td><p>set_as_preview</p></td>
+<td><p>Optional bool, default <cite>True</cite>. Will display the embedded HTML
+interactive map in the cell where the map widget is being displayed.
+Use this flag if you want the generated HTML previews of your
+notebook to have an interactive map displayed.</p></td>
+</tr>
+</tbody>
+</table>
+<p>In all notebook outputs, each embedded HTML element will contain
+the entire map state and all relevant HTML wrapped in an &lt;iframe&gt;
+element. This means that the data for the embedded HTML element lives
+inside the notebook file itself, allowing for easy sharing of
+notebooks and generated HTML previews of notebooks.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>When this function is called with <code class="docutils literal notranslate"><span class="pre">set_as_preview</span> <span class="pre">=</span> <span class="pre">True</span></code>, the
+embedded HTML preview element will overwrite the static image
+preview from any previous <cite>MapView.take_screenshot(set_as_preview=True)</cite>
+call</p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Any embedded maps must only reference publicly available data. The
+embedded map must also have access to the <a class="reference external" href="https://unpkg.com">Unpkg</a>
+to load the necessary <cite>JavaScript</cite> components on the page</p>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt id="arcgis.widgets.MapView.end_time">
+<em class="property">property </em><code class="sig-name descname">end_time</code><a class="headerlink" href="#arcgis.widgets.MapView.end_time" title="Permalink to this definition">¶</a></dt>
+<dd><p><code class="docutils literal notranslate"><span class="pre">end_time</span></code> is a <code class="docutils literal notranslate"><span class="pre">datetime.datetime</span></code> property. If <code class="docutils literal notranslate"><span class="pre">time_mode</span></code> == <code class="docutils literal notranslate"><span class="pre">time-window</span></code>
+<code class="docutils literal notranslate"><span class="pre">end_time</span></code> represents the upper bound ‘thumb’ of the time slider. For all other
+<code class="docutils literal notranslate"><span class="pre">time_mode</span></code> values, <code class="docutils literal notranslate"><span class="pre">end_time</span></code> is not used.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="arcgis.widgets.MapView.export_to_html">
+<code class="sig-name descname">export_to_html</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">path_to_file</span></em>, <em class="sig-param"><span class="n">title</span><span class="o">=</span><span class="default_value">'Exported ArcGIS Map Widget'</span></em>, <em class="sig-param"><span class="n">credentials_prompt</span><span class="o">=</span><span class="default_value">False</span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.widgets.MapView.export_to_html" title="Permalink to this definition">¶</a></dt>
+<dd><p>The <code class="docutils literal notranslate"><span class="pre">export_to_html</span></code> method takes the current state of the map widget and exports it to a
+standalone HTML file that can be viewed in any web browser.</p>
+<p>By default, only publicly viewable layers will be visible in any
+exported html map. Specify <code class="docutils literal notranslate"><span class="pre">credentials_prompt=True</span></code> to have a user
+be prompted for their credentials when opening the HTML page to view
+private content.</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Follow best security practices when sharing any HTML page that
+prompts a user for a password.</p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>You cannot successfully authenticate if you open the HTML page in a
+browser locally like <a class="reference external" href="file://path/to/file.html">file://path/to/file.html</a>. The credentials
+prompt will only properly function if served over a HTTP/HTTPS
+server.</p>
+</div>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 20%" />
+<col style="width: 80%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><strong>Argument</strong></p></td>
+<td><p><strong>Description</strong></p></td>
+</tr>
+<tr class="row-even"><td><p>path_to_file</p></td>
+<td><p>Required string. The path to save the HTML file on disk.</p></td>
+</tr>
+<tr class="row-odd"><td><p>title</p></td>
+<td><p>Optional string. The HTML title tag used for the HTML file.</p></td>
+</tr>
+<tr class="row-even"><td><p>credentials_prompt</p></td>
+<td><p>Optional boolean, default <code class="docutils literal notranslate"><span class="pre">False</span></code>. If set to <code class="docutils literal notranslate"><span class="pre">True</span></code>, will display a
+credentials prompt on HTML page load for users to authenticate and
+view private content.</p></td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="py method">
+<dt id="arcgis.widgets.MapView.extent">
+<em class="property">property </em><code class="sig-name descname">extent</code><a class="headerlink" href="#arcgis.widgets.MapView.extent" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get/Set the map widget’s extent.</p>
+<blockquote>
+<div><table class="docutils align-default">
+<colgroup>
+<col style="width: 18%" />
+<col style="width: 82%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><strong>Argument</strong></p></td>
+<td><p><strong>Description</strong></p></td>
+</tr>
+<tr class="row-even"><td><p>value</p></td>
+<td><p>Required dict.
+A <cite>[[xmin, ymin], [xmax, ymax]]</cite> list, Spatially Enabled Data Frame <code class="docutils literal notranslate"><span class="pre">full_extent</span></code>,
+or a dict that represents the JSON of the map widget’s extent.</p>
+<blockquote>
+<div><p>Examples for each:
+web_map.extent = [[-124.35, 32.54], [-114.31, 41.95]]
+web_map.extent = data_frame.spatial.full_extent
+web_map.extent = {</p>
+<blockquote>
+<div><blockquote>
+<div><p>“xmin”: -124.35,
+“ymin”: 32.54,
+“xmax”: -114.31,
+“ymax”: 41.95</p>
+</div></blockquote>
+<p>}</p>
+</div></blockquote>
+</div></blockquote>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1">#Usage Example</span>
+
+<span class="o">&gt;&gt;&gt;</span> <span class="kn">from</span> <span class="nn">arcgis.gis</span> <span class="kn">import</span> <span class="n">GIS</span><span class="p">,</span> <span class="n">Item</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="kn">from</span> <span class="nn">arcgis.widgets</span> <span class="kn">import</span> <span class="n">MapView</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">map2</span> <span class="o">=</span> <span class="n">gis</span><span class="o">.</span><span class="n">map</span><span class="p">(</span><span class="s2">&quot;California&quot;</span><span class="p">)</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">map2</span><span class="o">.</span><span class="n">extent</span>
+<span class="p">{</span>
+<span class="s1">&#39;xmin&#39;</span><span class="p">:</span> <span class="o">-</span><span class="mf">124.20822999999997</span><span class="p">,</span> <span class="s1">&#39;ymin&#39;</span><span class="p">:</span> <span class="mf">31.436105693000048</span><span class="p">,</span>
+<span class="s1">&#39;xmax&#39;</span><span class="p">:</span> <span class="o">-</span><span class="mf">114.33222999999997</span><span class="p">,</span> <span class="s1">&#39;ymax&#39;</span><span class="p">:</span> <span class="mf">41.31210569300005</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div></blockquote>
+</dd></dl>
+
+<dl class="py method">
+<dt id="arcgis.widgets.MapView.gallery_basemaps">
+<em class="property">property </em><code class="sig-name descname">gallery_basemaps</code><a class="headerlink" href="#arcgis.widgets.MapView.gallery_basemaps" title="Permalink to this definition">¶</a></dt>
+<dd><p>The <code class="docutils literal notranslate"><span class="pre">gallery_basemaps</span></code> property allows for viewing of your portal’s custom basemap group.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="arcgis.widgets.MapView.heading">
+<em class="property">property </em><code class="sig-name descname">heading</code><a class="headerlink" href="#arcgis.widgets.MapView.heading" title="Permalink to this definition">¶</a></dt>
+<dd><blockquote>
+<div><p>Get/Set the compass heading of the camera in degrees when in 3D mode. <code class="docutils literal notranslate"><span class="pre">heading</span></code> is
+zero when north is the top of the screen. It increases as the view rotates
+clockwise. The angles are always normalized between 0 and 360 degrees.</p>
+</div></blockquote>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<blockquote>
+<div><p><code class="docutils literal notranslate"><span class="pre">heading</span></code> cannot be set in 2D mode. Rather, 2D mode uses the <a class="reference internal" href="#arcgis.widgets.MapView.rotation" title="arcgis.widgets.MapView.rotation"><code class="xref py py-attr docutils literal notranslate"><span class="pre">rotation</span></code></a>
+property.</p>
+</div></blockquote>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1">#Usage Example in 3D mode</span>
+
+<span class="o">&gt;&gt;&gt;</span> <span class="kn">from</span> <span class="nn">arcgis.gis</span> <span class="kn">import</span> <span class="n">GIS</span><span class="p">,</span> <span class="n">Item</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="kn">from</span> <span class="nn">arcgis.widgets</span> <span class="kn">import</span> <span class="n">MapView</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">map3d</span> <span class="o">=</span> <span class="n">gis</span><span class="o">.</span><span class="n">map</span><span class="p">(</span><span class="s2">&quot;California&quot;</span><span class="p">,</span> <span class="n">mode</span> <span class="o">=</span><span class="s2">&quot;3D&quot;</span><span class="p">)</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">map3d</span><span class="o">.</span><span class="n">heading</span>
+<span class="o">&lt;</span><span class="mf">225.82433689241765</span><span class="o">&gt;</span>
+</pre></div>
+</div>
+</div>
+</dd></dl>
+
+<dl class="py attribute">
+<dt id="arcgis.widgets.MapView.hide_mode_switch">
+<code class="sig-name descname">hide_mode_switch</code><a class="headerlink" href="#arcgis.widgets.MapView.hide_mode_switch" title="Permalink to this definition">¶</a></dt>
+<dd><p>When <code class="docutils literal notranslate"><span class="pre">hide_mode_switch</span></code> is set to <code class="docutils literal notranslate"><span class="pre">True</span></code> the 2D/3D switch button will be hidden from the widget.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Once the button is hidden, it cannot be made visible again: a new MapView instance must be created to see the 
+button.</p>
+</div>
+</dd></dl>
+
+<dl class="py attribute">
+<dt id="arcgis.widgets.MapView.jupyter_target">
+<code class="sig-name descname">jupyter_target</code><a class="headerlink" href="#arcgis.widgets.MapView.jupyter_target" title="Permalink to this definition">¶</a></dt>
+<dd><p><code class="docutils literal notranslate"><span class="pre">jupyter_target</span></code> is a readonly string that is either <code class="docutils literal notranslate"><span class="pre">lab</span></code> or <code class="docutils literal notranslate"><span class="pre">notebook</span></code>: <code class="docutils literal notranslate"><span class="pre">jupyter_target</span></code> represents if
+this widget is drawn in a Jupyter Notebook environment or a JupyterLab
+environment.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="arcgis.widgets.MapView.layers">
+<em class="property">property </em><code class="sig-name descname">layers</code><a class="headerlink" href="#arcgis.widgets.MapView.layers" title="Permalink to this definition">¶</a></dt>
+<dd><p>The <code class="docutils literal notranslate"><span class="pre">layers</span></code> property is a list of the JSON representation of layers added to the map widget
+using the <code class="xref py py-attr docutils literal notranslate"><span class="pre">add_layers</span></code> method.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1">#Usage Example in 2D mode</span>
+
+<span class="o">&gt;&gt;&gt;</span> <span class="kn">from</span> <span class="nn">arcgis.gis</span> <span class="kn">import</span> <span class="n">GIS</span><span class="p">,</span> <span class="n">Item</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="kn">from</span> <span class="nn">arcgis.widgets</span> <span class="kn">import</span> <span class="n">MapView</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">gis</span> <span class="o">=</span> <span class="n">GIS</span><span class="p">(</span><span class="s2">&quot;pro&quot;</span><span class="p">)</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">itms</span> <span class="o">=</span> <span class="n">gis</span><span class="o">.</span><span class="n">content</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="s2">&quot;owner:&quot;</span><span class="o">+</span> <span class="n">gis</span><span class="o">.</span><span class="n">users</span><span class="o">.</span><span class="n">me</span><span class="o">.</span><span class="n">username</span><span class="p">)</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">single_item</span> <span class="o">=</span><span class="n">itms</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">new_layer</span><span class="o">=</span> <span class="n">FeatureLayer</span><span class="o">.</span><span class="n">fromitem</span><span class="p">(</span><span class="n">item</span> <span class="o">=</span> <span class="n">single_item</span><span class="p">)</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">map1</span> <span class="o">=</span> <span class="n">gis</span><span class="o">.</span><span class="n">map</span><span class="p">(</span><span class="s2">&quot;United States&quot;</span><span class="p">)</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">map1</span><span class="o">.</span><span class="n">add_layer</span><span class="p">(</span><span class="n">new_layer</span><span class="p">)</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">map1</span><span class="o">.</span><span class="n">layers</span>
+<span class="p">[</span><span class="o">&lt;</span><span class="n">FeatureLayer</span> <span class="n">url</span><span class="p">:</span><span class="s2">&quot;https://services7.arcgis.com/JEwYeAy2cc8qOe3o/arcgis/rest/services/Power_Plants_Itm/FeatureServer/0&quot;</span><span class="o">&gt;</span><span class="p">]</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py attribute">
+<dt id="arcgis.widgets.MapView.legend">
+<code class="sig-name descname">legend</code><a class="headerlink" href="#arcgis.widgets.MapView.legend" title="Permalink to this definition">¶</a></dt>
+<dd><p>If <code class="docutils literal notranslate"><span class="pre">legend</span></code> is set to <code class="docutils literal notranslate"><span class="pre">True</span></code>, a legend will display in the widget that
+describes all layers added to the map. If set to <code class="docutils literal notranslate"><span class="pre">False</span></code>,the legend will be hidden.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The default is <code class="docutils literal notranslate"><span class="pre">False</span></code> .</p>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt id="arcgis.widgets.MapView.local_raster_file_format">
+<em class="property">property </em><code class="sig-name descname">local_raster_file_format</code><a class="headerlink" href="#arcgis.widgets.MapView.local_raster_file_format" title="Permalink to this definition">¶</a></dt>
+<dd><p>The <code class="docutils literal notranslate"><span class="pre">local_raster_file_format</span></code> method is a string getter &amp; setter. When calling
+<code class="docutils literal notranslate"><span class="pre">map.add_layer(arcgis.raster.Raster())</span></code> for a local raster file,
+an intermediate image file must be written to disk in order to
+successfully display on the map. This file format can be one of
+the following:</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 28%" />
+<col style="width: 72%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><strong>Possible Values</strong></p></td>
+<td><p><strong>Description</strong></p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">&quot;jpg&quot;</span></code> (Default)</p></td>
+<td><p>Write raster to a <code class="docutils literal notranslate"><span class="pre">.JPG</span></code> file. This results
+in a lossy image, but should draw quicker than
+a <code class="docutils literal notranslate"><span class="pre">.PNG</span></code> file. Requires the <code class="docutils literal notranslate"><span class="pre">PIL</span></code> image
+processing package (distributed under the name
+of it’s active fork, “Pillow”)</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">&quot;png&quot;</span></code></p></td>
+<td><p>Write raster to a <code class="docutils literal notranslate"><span class="pre">.PNG</span></code> file. This results
+in a lossless image, but it might take a longer
+time to draw than a <code class="docutils literal notranslate"><span class="pre">.JPG</span></code> file.</p></td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="py attribute">
+<dt id="arcgis.widgets.MapView.mode">
+<code class="sig-name descname">mode</code><a class="headerlink" href="#arcgis.widgets.MapView.mode" title="Permalink to this definition">¶</a></dt>
+<dd><p>The string that specifies whether the map displays in ‘2D’ mode
+(MapView) or ‘3D’ mode (SceneView). Possible values: ‘2D’, ‘3D’.</p>
+<p>Note that you can also toggle between '2D' and
+'3D' mode by pressing the
+<img src=" data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAA
+Bzenr0AAAABmJLR0QA/wD/AP+gvaeTAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAB3RJTUUH4
+gcFFxIGmlhcGAAAAslJREFUWMPt10+IV1UUB/DPNMMYCTqzqV4GLkpCkIwDLgYKbGG4iLIa
+KNNdRoGFUIFFUpYtLNBVhFIQJJQKEaK5CIpgWgxmZxVRWJsIHiSNM4WG5mCbG/x4zPzmzc8
+ZKvDs7r3nvvO958/3nMc1+Zelr3MRERdxZo47K3AOF7AqM5dcDYCBxvpMZq6ZTTkinsAWPJ
+SZUxHx7dV6YKCtYkSsxsPYkJnTCxWC6+ahey8+WkjjrT0QEbdiO+5c6CQcaGG8HxtxfLbXR
+8ThGbZHMnNlTwAiog+bcQrf4BeMzPaRzHysJajWHliBvfi6ABnHXxGxEY9gJyYXMwQbcCNO
+Z+bJ8qKdeAA/4DsMYvmiAMjM9yNi+T/nJSSPZ+baRph+bLj9JXyVmWMde0PYk5nPzrcMa2y
+JiEG8jM8bIK/gz8advVgXEfcU48PYjV298MAkJnAZv2F1KUddkvFKZu7H2lKyu/BKZk617Q
+XzptbZqDsiHsWJzDz//+mGXchoKe7PzCNz6A3iSWzFUAnfBI7gvcy81LzT38L4MryGbVVV9
+dV1faoLXR/D97ipcMWlkoT3YbSqqtN1Xf/RGkApxdexB+twvKqq0aqqxuu67tRbgpPYgZ8R
+uB4/dZT629hXVdWJuq6n23bDN7A7M8+VhBsr7PhiQ+8pTJdXj+KtzHwTR0sXHcrMs/gE21o
+3o5nIo4AYa2xvLS881ii5o/gS5wsnfIrP8E4v80A3uaGEaFlHWDbhjrK8BYexCit7mojmkH
+68Whjz+TI9HcJtmflrB6i7MdwrgJGZWmxpxb8XL/QXGr4ZZ9EkobtKI5s/gDmGiw/xXEnOf
+XgG6/FFRExgc2ZOloQ8tBghOFBmhhcwXhrV9uL2D3A5ItaU+L/b61DazTsX8WAZVtZHxO0d
+x8PlbD82NdmwbyF5vRDS0+XfYQhT5QfmYxwsQK/Jf0v+BvBD+VardrUKAAAAAElFTkSuQmC
+C"> icon in the widget UI.</p></dd></dl>
+
+<dl class="py method">
+<dt id="arcgis.widgets.MapView.on_click">
+<code class="sig-name descname">on_click</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">callback</span></em>, <em class="sig-param"><span class="n">remove</span><span class="o">=</span><span class="default_value">False</span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.widgets.MapView.on_click" title="Permalink to this definition">¶</a></dt>
+<dd><p>The <code class="docutils literal notranslate"><span class="pre">on_click</span></code> method registers a callback to execute when the map is clicked.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The callback will be called with one argument, the clicked widget instance.</p>
+</div>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 21%" />
+<col style="width: 79%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><strong>Argument</strong></p></td>
+<td><p><strong>Description</strong></p></td>
+</tr>
+<tr class="row-even"><td><p>remove</p></td>
+<td><p>Optional boolean. Set to true to remove the callback from the list
+of callbacks.</p></td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="py method">
+<dt id="arcgis.widgets.MapView.on_draw_end">
+<code class="sig-name descname">on_draw_end</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">callback</span></em>, <em class="sig-param"><span class="n">remove</span><span class="o">=</span><span class="default_value">False</span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.widgets.MapView.on_draw_end" title="Permalink to this definition">¶</a></dt>
+<dd><p>The <code class="docutils literal notranslate"><span class="pre">on_draw_end</span></code> method registers a callback to execute when something is drawn.
+The callback will be called with two arguments:
+1. The clicked widget instance
+2. The drawn geometry</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 21%" />
+<col style="width: 79%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><strong>Argument</strong></p></td>
+<td><p><strong>Description</strong></p></td>
+</tr>
+<tr class="row-even"><td><p>remove</p></td>
+<td><p>Optional boolean. Set to true to remove the callback from the list
+of callbacks.</p></td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="py attribute">
+<dt id="arcgis.widgets.MapView.print_service_url">
+<code class="sig-name descname">print_service_url</code><a class="headerlink" href="#arcgis.widgets.MapView.print_service_url" title="Permalink to this definition">¶</a></dt>
+<dd><div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>This property is obselete as of &gt;v1.6 of the Python API, since
+the underlying JavaScript code ran during a <cite>take_screenshot()</cite> Python
+call has been has been changed to <cite>MapView.takeScreenshot()</cite> instead
+of calling a Print Service URL. Any value you set to this property
+will be ignored (2D screenshots will still be taken successfully).</p>
+</div>
+</dd></dl>
+
+<dl class="py attribute">
+<dt id="arcgis.widgets.MapView.ready">
+<code class="sig-name descname">ready</code><a class="headerlink" href="#arcgis.widgets.MapView.ready" title="Permalink to this definition">¶</a></dt>
+<dd><p><code class="docutils literal notranslate"><span class="pre">ready</span></code> is a readonly bool that represents if the map widget has been drawn
+in the notebook.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="arcgis.widgets.MapView.remove_layers">
+<code class="sig-name descname">remove_layers</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">layers</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.widgets.MapView.remove_layers" title="Permalink to this definition">¶</a></dt>
+<dd><p>The <code class="docutils literal notranslate"><span class="pre">remove_layers</span></code> method removes the layers added to the map widget.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>A list of layers added to the widget can be retrieved by querying the</p>
+</div>
+<p><a class="reference internal" href="#arcgis.widgets.MapView.layers" title="arcgis.widgets.MapView.layers"><code class="xref py py-attr docutils literal notranslate"><span class="pre">layers</span></code></a> property.</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 17%" />
+<col style="width: 83%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><strong>Argument</strong></p></td>
+<td><p><strong>Description</strong></p></td>
+</tr>
+<tr class="row-even"><td><p>layers</p></td>
+<td><p>Optional list. Specify the list of layers to be removed from the map widget. You can get
+the list of layers on the map by querying the ‘layers’ property.
+If not specified, it removes all layers added to the widget.</p></td>
+</tr>
+</tbody>
+</table>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>True if layer is successfully removed. Else, False.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="arcgis.widgets.MapView.rotation">
+<em class="property">property </em><code class="sig-name descname">rotation</code><a class="headerlink" href="#arcgis.widgets.MapView.rotation" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get/Set the clockwise rotation of due north in relation to the top
+of the view in degrees in 2D mode.</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 18%" />
+<col style="width: 82%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><strong>Argument</strong></p></td>
+<td><p><strong>Description</strong></p></td>
+</tr>
+<tr class="row-even"><td><p>value</p></td>
+<td><p>Required float.</p></td>
+</tr>
+</tbody>
+</table>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p><code class="docutils literal notranslate"><span class="pre">rotation</span></code> cannot be set in 3D mode. Rather, 3D mode uses the <a class="reference internal" href="#arcgis.widgets.MapView.heading" title="arcgis.widgets.MapView.heading"><code class="xref py py-attr docutils literal notranslate"><span class="pre">heading</span></code></a>
+property.</p>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1">#Usage Example in 2D mode</span>
+
+<span class="o">&gt;&gt;&gt;</span> <span class="kn">from</span> <span class="nn">arcgis.gis</span> <span class="kn">import</span> <span class="n">GIS</span><span class="p">,</span> <span class="n">Item</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="kn">from</span> <span class="nn">arcgis.widgets</span> <span class="kn">import</span> <span class="n">MapView</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">map2</span> <span class="o">=</span> <span class="n">gis</span><span class="o">.</span><span class="n">map</span><span class="p">(</span><span class="s2">&quot;California&quot;</span><span class="p">)</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">map2</span><span class="o">.</span><span class="n">rotation</span>
+<span class="o">&lt;</span><span class="mf">134.17566310758235</span><span class="o">&gt;</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt id="arcgis.widgets.MapView.save">
+<code class="sig-name descname">save</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">item_properties</span></em>, <em class="sig-param"><span class="n">mode</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">thumbnail</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">metadata</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">owner</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">folder</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.widgets.MapView.save" title="Permalink to this definition">¶</a></dt>
+<dd><p>The <code class="docutils literal notranslate"><span class="pre">save</span></code> method saves the map widget object into a new web map <a class="reference internal" href="arcgis.gis.toc.html#arcgis.gis.Item" title="arcgis.gis.Item"><code class="xref py py-class docutils literal notranslate"><span class="pre">Item</span></code></a> or a new web scene
+item in your GIS.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>If you started out with a fresh map widget object, use this method
+to save it as a the webmap/webscene item in your <a class="reference internal" href="arcgis.gis.toc.html#arcgis.gis.GIS" title="arcgis.gis.GIS"><code class="xref py py-class docutils literal notranslate"><span class="pre">GIS</span></code></a>.
+If you started with a map widget object from an existing
+webmap/webscene object, calling this method will create a new item
+with your changes. If you want to update the existing item with your
+changes, call the <a class="reference internal" href="#arcgis.widgets.MapView.update" title="arcgis.widgets.MapView.update"><code class="xref py py-attr docutils literal notranslate"><span class="pre">update</span></code></a> method instead.</p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Saving as a WebScene item only works in a Jupyter environment:
+the map must be visually displayed in the notebook before
+calling this method.</p>
+</div>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 18%" />
+<col style="width: 82%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><strong>Argument</strong></p></td>
+<td><p><strong>Description</strong></p></td>
+</tr>
+<tr class="row-even"><td><p>item_properties</p></td>
+<td><p>Required dictionary. See table below for the keys and values.</p></td>
+</tr>
+<tr class="row-odd"><td><p>mode</p></td>
+<td><p>Optional string. Whether to save this map instance as a 2D WebMap,
+or a 3D WebScene. Possible strings: “2D”, “webmap”, “3D”, or
+“webscene”.</p></td>
+</tr>
+<tr class="row-even"><td><p>thumbnail</p></td>
+<td><p>Optional string. Either a path or URL to a thumbnail image.</p></td>
+</tr>
+<tr class="row-odd"><td><p>metadata</p></td>
+<td><p>Optional string. Either a path or URL to the metadata.</p></td>
+</tr>
+<tr class="row-even"><td><p>owner</p></td>
+<td><p>Optional string. User object corresponding to the desired owner of
+this item. Defaults to the logged in user.</p></td>
+</tr>
+<tr class="row-odd"><td><p>folder</p></td>
+<td><p>Optional string. Name of the folder where placing item.</p></td>
+</tr>
+</tbody>
+</table>
+<p><em>Key:Value Dictionary Options for Argument item_properties</em></p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 20%" />
+<col style="width: 80%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><strong>Key</strong></p></td>
+<td><p><strong>Value</strong></p></td>
+</tr>
+<tr class="row-even"><td><p>typeKeywords</p></td>
+<td><p>Optional string. Provide a lists all sub-types, see URL 1 below for
+valid values.</p></td>
+</tr>
+<tr class="row-odd"><td><p>description</p></td>
+<td><p>Optional string. Description of the item.</p></td>
+</tr>
+<tr class="row-even"><td><p>title</p></td>
+<td><p>Optional string. Name label of the item.</p></td>
+</tr>
+<tr class="row-odd"><td><p>tags</p></td>
+<td><p>Optional string. Tags listed as comma-separated values, or a list of
+strings. Used for searches on items.</p></td>
+</tr>
+<tr class="row-even"><td><p>snippet</p></td>
+<td><p>Optional string. Provide a short summary (limit to max 250
+characters) of the what the item is.</p></td>
+</tr>
+<tr class="row-odd"><td><p>accessInformation</p></td>
+<td><p>Optional string. Information on the source of the content.</p></td>
+</tr>
+<tr class="row-even"><td><p>licenseInfo</p></td>
+<td><p>Optional string.  Any license information or restrictions regarding
+the content.</p></td>
+</tr>
+<tr class="row-odd"><td><p>culture</p></td>
+<td><p>Optional string. Locale, country and language information.</p></td>
+</tr>
+<tr class="row-even"><td><p>access</p></td>
+<td><p>Optional string. Valid values are private, shared, org, or public.</p></td>
+</tr>
+<tr class="row-odd"><td><p>commentsEnabled</p></td>
+<td><p>Optional boolean. Default is true, controls whether comments are
+allowed (true) or not allowed (false).</p></td>
+</tr>
+<tr class="row-even"><td><p>culture</p></td>
+<td><p>Optional string. Language and country information.</p></td>
+</tr>
+</tbody>
+</table>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>Item object corresponding to the new web map Item created.</p>
+</dd>
+</dl>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">USAGE</span> <span class="n">EXAMPLE</span><span class="p">:</span> <span class="n">Save</span> <span class="nb">map</span> <span class="n">widget</span> <span class="k">as</span> <span class="n">a</span> <span class="n">new</span> <span class="n">web</span> <span class="nb">map</span> <span class="n">item</span> <span class="ow">in</span> <span class="n">GIS</span>
+<span class="n">map1</span> <span class="o">=</span> <span class="n">gis</span><span class="o">.</span><span class="n">map</span><span class="p">(</span><span class="s2">&quot;Italy&quot;</span><span class="p">)</span>
+<span class="n">map1</span><span class="o">.</span><span class="n">add_layer</span><span class="p">(</span><span class="n">Italy_streets_item</span><span class="p">)</span>
+<span class="n">map1</span><span class="o">.</span><span class="n">basemap</span> <span class="o">=</span> <span class="s1">&#39;dark-gray&#39;</span>
+<span class="n">italy_streets_map</span> <span class="o">=</span> <span class="n">map1</span><span class="o">.</span><span class="n">save</span><span class="p">({</span><span class="s1">&#39;title&#39;</span><span class="p">:</span><span class="s1">&#39;Italy streets&#39;</span><span class="p">,</span>
+                             <span class="s1">&#39;snippet&#39;</span><span class="p">:</span><span class="s1">&#39;Arterial road network of Italy&#39;</span><span class="p">,</span>
+                             <span class="s1">&#39;tags&#39;</span><span class="p">:</span><span class="s1">&#39;streets, network, roads&#39;</span><span class="p">})</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt id="arcgis.widgets.MapView.scale">
+<em class="property">property </em><code class="sig-name descname">scale</code><a class="headerlink" href="#arcgis.widgets.MapView.scale" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get/Set the map scale at the center of the view. If set to X, the scale
+of the map would be 1:X.</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 18%" />
+<col style="width: 82%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><strong>Argument</strong></p></td>
+<td><p><strong>Description</strong></p></td>
+</tr>
+<tr class="row-even"><td><p>value</p></td>
+<td><p>Required int.</p></td>
+</tr>
+</tbody>
+</table>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>For continuous values to apply and not get “snapped” to the closest
+level of detail, set <cite>mapview.snap_to_zoom = False</cite>.</p>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Usage example: Sets the scale to 1:24000</span>
+
+<span class="nb">map</span> <span class="o">=</span> <span class="n">gis</span><span class="o">.</span><span class="n">map</span><span class="p">()</span>
+<span class="nb">map</span><span class="o">.</span><span class="n">scale</span> <span class="o">=</span> <span class="mi">24000</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt id="arcgis.widgets.MapView.set_js_cdn">
+<em class="property">classmethod </em><code class="sig-name descname">set_js_cdn</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">js_cdn</span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.widgets.MapView.set_js_cdn" title="Permalink to this definition">¶</a></dt>
+<dd><p>The <code class="docutils literal notranslate"><span class="pre">set_js_cdn</span></code> function is called before the creation of any MapView object, and
+each instantiated object will use the specified <code class="docutils literal notranslate"><span class="pre">js_cdn</span></code> parameter as
+the  ArcGIS API for JavaScript CDN URL instead of the default
+<a class="reference external" href="http://js.arcgis.com/4.X/">http://js.arcgis.com/4.X/</a>. This functionality is necessary in
+disconnected  environments if the portal you are connecting to doesn’t
+ship with the minimum necessary JavaScript API version.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>You may not need to call this function to view the widget in
+disconnected environments: if your computer cannot reach js.arcgis.com,
+and you have a <a class="reference internal" href="arcgis.gis.toc.html#arcgis.gis.GIS" title="arcgis.gis.GIS"><code class="xref py py-class docutils literal notranslate"><span class="pre">GIS</span></code></a> connection to a portal, the widget will
+automatically attempt to use that Portal’s JS API that it ships with.</p>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt id="arcgis.widgets.MapView.set_time_extent">
+<code class="sig-name descname">set_time_extent</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">start_time</span></em>, <em class="sig-param"><span class="n">end_time</span></em>, <em class="sig-param"><span class="n">interval</span><span class="o">=</span><span class="default_value">1</span></em>, <em class="sig-param"><span class="n">unit</span><span class="o">=</span><span class="default_value">'milliseconds'</span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.widgets.MapView.set_time_extent" title="Permalink to this definition">¶</a></dt>
+<dd><p>The <code class="docutils literal notranslate"><span class="pre">set_time_extent</span></code> is called when <cite>time_slider = True</cite> and is the time extent to display on the time
+slider.</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 21%" />
+<col style="width: 79%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><strong>Argument</strong></p></td>
+<td><p><strong>Description</strong></p></td>
+</tr>
+<tr class="row-even"><td><p>start_time</p></td>
+<td><p>Required <code class="docutils literal notranslate"><span class="pre">datetime.datetime</span></code>. The lower bound of the time extent to
+display on the time slider.</p></td>
+</tr>
+<tr class="row-odd"><td><p>end_time</p></td>
+<td><p>Required <code class="docutils literal notranslate"><span class="pre">datetime.datetime</span></code>. The upper bound of the time extent to
+display on the time slider.</p></td>
+</tr>
+<tr class="row-even"><td><p>interval</p></td>
+<td><p>Optional number, default <cite>1</cite>. The numerical value of the time
+extent.</p></td>
+</tr>
+<tr class="row-odd"><td><p>unit</p></td>
+<td><p>Optional string, default <cite>“milliseconds”</cite>. Temporal units. Possible
+values: <cite>“milliseconds”</cite>, <cite>“seconds”</cite>, <cite>“minutes”</cite>, <cite>“hours”</cite>,
+<cite>“days”</cite>, <cite>“weeks”</cite>, <cite>“months”</cite>, <cite>“years”</cite>, <cite>“decades”</cite>,
+<cite>“centuries”</cite></p></td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="py method">
+<dt id="arcgis.widgets.MapView.snap_to_zoom">
+<em class="property">property </em><code class="sig-name descname">snap_to_zoom</code><a class="headerlink" href="#arcgis.widgets.MapView.snap_to_zoom" title="Permalink to this definition">¶</a></dt>
+<dd><p>The <code class="docutils literal notranslate"><span class="pre">snap_to_zoom</span></code> property is used to determine how the zoom is enabled when the map widget is created.</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 18%" />
+<col style="width: 82%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><strong>Argument</strong></p></td>
+<td><p><strong>Description</strong></p></td>
+</tr>
+<tr class="row-even"><td><p>value</p></td>
+<td><p>Required bool.
+Values:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>True: snap to the next level of detail when zooming in or out.</p></li>
+<li><p>False: the zoom is continuous.</p></li>
+</ul>
+</div></blockquote>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">snap_to_zoom</span></code> method only applies in 2D mode.</p>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt id="arcgis.widgets.MapView.start_time">
+<em class="property">property </em><code class="sig-name descname">start_time</code><a class="headerlink" href="#arcgis.widgets.MapView.start_time" title="Permalink to this definition">¶</a></dt>
+<dd><p>The <code class="docutils literal notranslate"><span class="pre">start_time</span></code> property is a representation of a <cite>datetime.datetime</cite> property.
+If <cite>time_mode</cite> == <cite>“time-window”</cite>,
+represents the lower bound ‘thumb’ of the time slider. For all other
+<cite>time_mode</cite> values, <code class="docutils literal notranslate"><span class="pre">start_time</span></code> represents the single thumb on the time slider.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="arcgis.widgets.MapView.sync_navigation">
+<code class="sig-name descname">sync_navigation</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">mapview</span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.widgets.MapView.sync_navigation" title="Permalink to this definition">¶</a></dt>
+<dd><p>The <code class="docutils literal notranslate"><span class="pre">sync_navigation</span></code> method synchronizes the navigation from this <a class="reference internal" href="#arcgis.widgets.MapView" title="arcgis.widgets.MapView"><code class="xref py py-class docutils literal notranslate"><span class="pre">MapView</span></code></a> to
+another <a class="reference internal" href="#arcgis.widgets.MapView" title="arcgis.widgets.MapView"><code class="xref py py-class docutils literal notranslate"><span class="pre">MapView</span></code></a> instance so panning/zooming/navigating in one will update the other.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Users can sync more than two class:<cite>~arcgis.widgets.MapView</cite> instances together. For example, a user can
+sync MapView A to MapView B, MapView B to MapView C, and MapView C to MapView D together and all will be in
+sync. Thus, driving one of these <code class="docutils literal notranslate"><span class="pre">MapView</span></code> objects will make the other <code class="docutils literal notranslate"><span class="pre">MapView</span></code> objects follow.</p>
+</div>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 18%" />
+<col style="width: 82%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><strong>Argument</strong></p></td>
+<td><p><strong>Description</strong></p></td>
+</tr>
+<tr class="row-even"><td><p>mapview</p></td>
+<td><p>Either a single <a class="reference internal" href="#arcgis.widgets.MapView" title="arcgis.widgets.MapView"><code class="xref py py-class docutils literal notranslate"><span class="pre">MapView</span></code></a> instance, or a list of <code class="docutils literal notranslate"><span class="pre">MapView</span></code>
+instances to synchronize to.</p></td>
+</tr>
+</tbody>
+</table>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># USAGE EXAMPLE: link the navigation of two maps together</span>
+<span class="kn">from</span> <span class="nn">ipywidgets</span> <span class="kn">import</span> <span class="n">HBox</span>
+<span class="n">map1</span> <span class="o">=</span> <span class="n">gis</span><span class="o">.</span><span class="n">map</span><span class="p">(</span><span class="s2">&quot;Chicago, IL&quot;</span><span class="p">)</span>
+<span class="n">map1</span><span class="o">.</span><span class="n">basemap</span> <span class="o">=</span> <span class="s2">&quot;gray&quot;</span>
+<span class="n">map2</span> <span class="o">=</span> <span class="n">gis</span><span class="o">.</span><span class="n">map</span><span class="p">(</span><span class="s2">&quot;Chicago, IL&quot;</span><span class="p">)</span>
+<span class="n">map2</span><span class="o">.</span><span class="n">basemap</span> <span class="o">=</span> <span class="s2">&quot;dark-gray&quot;</span>
+<span class="n">map1</span><span class="o">.</span><span class="n">sync_navigation</span><span class="p">(</span><span class="n">map2</span><span class="p">)</span>
+<span class="n">HBox</span><span class="p">([</span><span class="n">map1</span><span class="p">,</span> <span class="n">map2</span><span class="p">])</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py attribute">
+<dt id="arcgis.widgets.MapView.tab_mode">
+<code class="sig-name descname">tab_mode</code><a class="headerlink" href="#arcgis.widgets.MapView.tab_mode" title="Permalink to this definition">¶</a></dt>
+<dd><p>The ``tab_mode`` property is a string property that specifies the 'default' behavior of toggling a
+new window in a JupyterLab environment, whether that is called by
+pressing the <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAC
+AAAAAgCAYAAABzenr0AAAABmJLR0QA/wD/AP+gvaeTAAAACXBIWXMAAAsTAAALEwEAmpwYA
+AAAB3RJTUUH4gcUAAIIxu7mQQAAAB1pVFh0Q29tbWVudAAAAAAAQ3JlYXRlZCB3aXRoI
+EdJTVBkLmUHAAABI0lEQVRYw+1Wy3GDMBTch3JLBanA+TQR0gDz4JB0Y1xISkBAA4Eq
+HOeYU6qAzYVkPAyWYSLii/Ymzb63q89qBAQEXBgyNamquYhs5zSw1v72SNOUp3gkd2V
+Z5uP5K1dzkrslqxnzRWQD4MVV4zQw5XguP8uyDckGwBeAm1M10Rrnqqq3fd+3JEVEYh
+c3WkMcQDMM46IoPv7NQJIkdyLS/oiXZXk4VxP5FDfGNEvEz17Cuciy7J7kGwB0XRfXd
+X0Yp+NoZ/waGMQbABzE35ekKfIkDhF5mhJf7Q6o6sOReFwUxd7BzdM0ffR5BALglaQA
+iK21eydZZEsSAFpfBkjy2Rhz7Vr5qimoqurTR4JWeYqDgWDAWwpUNb+ogbn/woCAgL/
+gG9knfWwKBGcvAAAAAElFTkSuQmCC"> icon in the widget UI, or by calling
+<i>toggle_window_view()</i> function without arguments.</p><div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>After a widget is ‘seperated’ from the notebook, you can drag
+it, split it, put it in a new tab, etc. See the JupyterLab guide pages
+for more information.</p>
+</div>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 21%" />
+<col style="width: 79%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><strong>Value</strong></p></td>
+<td><p><strong>Description</strong></p></td>
+</tr>
+<tr class="row-even"><td><p>‘auto’</p></td>
+<td><p>The default tab_mode: will move the widget to a <cite>split-right</cite> view
+if there are no other open windows besides the current notebook,
+otherwise will place the widget in a new tab.</p></td>
+</tr>
+<tr class="row-odd"><td><p>‘split-top’</p></td>
+<td><p>Will move the widget above the current notebook instance.</p></td>
+</tr>
+<tr class="row-even"><td><p>‘split-bottom’</p></td>
+<td><p>Will move the widget below the current notebook instance.</p></td>
+</tr>
+<tr class="row-odd"><td><p>‘split-left’</p></td>
+<td><p>Will move the widget to the left of the current notebook instance.</p></td>
+</tr>
+<tr class="row-even"><td><p>‘split-right’</p></td>
+<td><p>Will move the widget to the right of the current notebook instance.</p></td>
+</tr>
+<tr class="row-odd"><td><p>‘tab-before’</p></td>
+<td><p>Will move the widget to a new tab ‘before’ the tab that represents
+the current notebook instance.</p></td>
+</tr>
+<tr class="row-even"><td><p>‘tab-after’</p></td>
+<td><p>Will move the widget to a new tab ‘after’ the tab that represents
+the current notebook instance.</p></td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="py method">
+<dt id="arcgis.widgets.MapView.take_screenshot">
+<code class="sig-name descname">take_screenshot</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">output_in_cell</span><span class="o">=</span><span class="default_value">True</span></em>, <em class="sig-param"><span class="n">set_as_preview</span><span class="o">=</span><span class="default_value">True</span></em>, <em class="sig-param"><span class="n">file_path</span><span class="o">=</span><span class="default_value">''</span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.widgets.MapView.take_screenshot" title="Permalink to this definition">¶</a></dt>
+<dd><p>The <code class="docutils literal notranslate"><span class="pre">take_screenshot</span></code> method takes a screenshot of the current widget view.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Only works in a Jupyter Notebook environment.</p>
+</div>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 20%" />
+<col style="width: 80%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><strong>Argument</strong></p></td>
+<td><p><strong>Description</strong></p></td>
+</tr>
+<tr class="row-even"><td><p>output_in_cell</p></td>
+<td><p>Optional bool, default <code class="docutils literal notranslate"><span class="pre">True</span></code>. Will display the screenshot in the
+output area of the cell where this function is called.</p></td>
+</tr>
+<tr class="row-odd"><td><p>set_as_preview</p></td>
+<td><p>Optional bool, default <code class="docutils literal notranslate"><span class="pre">True</span></code>. Will set the screenshot as the static
+image preview in the cell where the map widget is being displayed.
+Use this flag if you want the generated HTML previews of your
+notebook to have a map image visible.</p></td>
+</tr>
+<tr class="row-even"><td><p>file_path</p></td>
+<td><p>Optional String, default <cite>“”</cite>. To output the screenshot to a <cite>.png</cite>
+file on disk, set this String to a writeable location file path
+(Ex. <cite>file_path = “/path/to/documents/my_screenshot.png”</cite>).</p></td>
+</tr>
+</tbody>
+</table>
+<p>In all notebook outputs, each image will be encoded to a base64
+data URI and wrapped in an HTML &lt;img&gt; tag, like
+<cite>&lt;img src=”base64Str”&gt;</cite>. This means that the data for the image lives
+inside the notebook file itself, allowing for easy sharing of
+notebooks and generated HTML previews of notebooks.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>This function acts asynchronously, meaning that the Python function
+will return right away, with the notebook outputs/files being
+written after an indeterminate amount of time. Avoid calling this
+function  multiple times in a row if the asynchronous portion of
+the function hasn’t finished yet.</p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>When this function is called with <code class="docutils literal notranslate"><span class="pre">set_as_preview</span> <span class="pre">=</span> <span class="pre">True</span></code>, the
+static image preview will overwrite the embedded HTML element
+preview from any previous <code class="docutils literal notranslate"><span class="pre">MapView.embed_html(set_as_preview=True)</span></code>
+call</p>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt id="arcgis.widgets.MapView.tilt">
+<em class="property">property </em><code class="sig-name descname">tilt</code><a class="headerlink" href="#arcgis.widgets.MapView.tilt" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get/Set the tilt of the camera in degrees with respect to the
+surface as projected down from the camera position, when in 3D mode. <code class="docutils literal notranslate"><span class="pre">tilt</span></code> is zero when
+looking straight down at the surface and 90 degrees when the camera is
+looking parallel to the surface.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">tilt</span></code> method is not applicable, and cannot be set, in 2D mode.</p>
+</div>
+</dd></dl>
+
+<dl class="py attribute">
+<dt id="arcgis.widgets.MapView.time_mode">
+<code class="sig-name descname">time_mode</code><a class="headerlink" href="#arcgis.widgets.MapView.time_mode" title="Permalink to this definition">¶</a></dt>
+<dd><p><code class="docutils literal notranslate"><span class="pre">time_mode</span></code> is the string used for defining if the temporal data will be displayed
+cumulatively up to a point in time, a single instant in time, or
+within a time range.</p>
+<p>Possible values: “instant”, “time-window”, “cumulative-from-start”,
+“cumulative-from-end”. Default: “time-window”</p>
+<p>See the <a class="reference external" href="https://developers.arcgis.com/javascript/latest/api-reference/esri-widgets-TimeSlider.html#mode">TimeSlider</a>
+page in the ArcGIS REST API page for more info.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt id="arcgis.widgets.MapView.time_slider">
+<code class="sig-name descname">time_slider</code><a class="headerlink" href="#arcgis.widgets.MapView.time_slider" title="Permalink to this definition">¶</a></dt>
+<dd><p><code class="docutils literal notranslate"><span class="pre">time_slider</span></code> is a string property that determines whether a time slider exists for a map widget.
+If set to <cite>True</cite>, will display a time slider in the widget that will
+allow you to visualize temporal data for an applicable layer added to
+the map. Default: <cite>False</cite>.</p>
+<p>See the <a class="reference external" href="https://developers.arcgis.com/javascript/latest/api-reference/esri-widgets-TimeSlider.html#mode">TimeSlider</a>
+page in the ArcGIS REST API page for more info.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="arcgis.widgets.MapView.toggle_window_view">
+<code class="sig-name descname">toggle_window_view</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">title</span><span class="o">=</span><span class="default_value">'ArcGIS Map'</span></em>, <em class="sig-param"><span class="n">tab_mode</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.widgets.MapView.toggle_window_view" title="Permalink to this definition">¶</a></dt>
+<dd><p>In a JupyterLab environment, calling <code class="docutils literal notranslate"><span class="pre">toggle_window_view</span></code> will separate
+the drawn map widget to a new window next to the open notebook,
+allowing you to move the widget it, split it, put it in a new tab, etc.
+If the widget is already separated in a new window, calling this
+function will restore the widget to the notebook where it originated
+from.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>See the <a class="reference external" href="https://developers.arcgis.com/python/guide/using-the-jupyter-lab-environment/">JupyterLab guide pages</a>
+for more information.</p>
+</div>
+<p>Note that this functionality can also be achieved by pressing
+the <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAA
+gCAYAAABzenr0AAAABmJLR0QA/wD/AP+gvaeTAAAACXBIWXMAAAsTAAALEwEAmpwYAA
+AAB3RJTUUH4gcUAAIIxu7mQQAAAB1pVFh0Q29tbWVudAAAAAAAQ3JlYXRlZCB3aXRoI
+EdJTVBkLmUHAAABI0lEQVRYw+1Wy3GDMBTch3JLBanA+TQR0gDz4JB0Y1xISkBAA4Eq
+HOeYU6qAzYVkPAyWYSLii/Ymzb63q89qBAQEXBgyNamquYhs5zSw1v72SNOUp3gkd2V
+Z5uP5K1dzkrslqxnzRWQD4MVV4zQw5XguP8uyDckGwBeAm1M10Rrnqqq3fd+3JEVEYh
+c3WkMcQDMM46IoPv7NQJIkdyLS/oiXZXk4VxP5FDfGNEvEz17Cuciy7J7kGwB0XRfXd
+X0Yp+NoZ/waGMQbABzE35ekKfIkDhF5mhJf7Q6o6sOReFwUxd7BzdM0ffR5BALglaQA
+iK21eydZZEsSAFpfBkjy2Rhz7Vr5qimoqurTR4JWeYqDgWDAWwpUNb+ogbn/woCAgL/
+gG9knfWwKBGcvAAAAAElFTkSuQmCC"> icon in the widget UI.</p><table class="docutils align-default">
+<colgroup>
+<col style="width: 21%" />
+<col style="width: 79%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><strong>Argument</strong></p></td>
+<td><p><strong>Description</strong></p></td>
+</tr>
+<tr class="row-even"><td><p>title</p></td>
+<td><p>What text will display as the widget tab. Default: “ArcGIS Map”.</p></td>
+</tr>
+<tr class="row-odd"><td><p>tab_mode</p></td>
+<td><p>The ‘tab mode’ that this window will open in. Will use this
+MapView instance’s <cite>tab_mode</cite> property if not specified. Possible
+values: “auto”, “split-top”, “split-left”, “split-right”,
+“split-bottom”, “tab-before”, “tab-after”</p></td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="py method">
+<dt id="arcgis.widgets.MapView.unsync_navigation">
+<code class="sig-name descname">unsync_navigation</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">mapview</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.widgets.MapView.unsync_navigation" title="Permalink to this definition">¶</a></dt>
+<dd><p>The <code class="docutils literal notranslate"><span class="pre">unsync_navigation</span></code> method unsynchronizes connections made to other <a class="reference internal" href="#arcgis.widgets.MapView" title="arcgis.widgets.MapView"><code class="xref py py-class docutils literal notranslate"><span class="pre">MapView</span></code></a>
+instances made via <cite>my_mapview.sync_navigation(other_mapview)</cite>.</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 21%" />
+<col style="width: 79%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><strong>Argument</strong></p></td>
+<td><p><strong>Description</strong></p></td>
+</tr>
+<tr class="row-even"><td><p>mapview</p></td>
+<td><p>(Optional) Either a single <cite>MapView</cite> instance, or a list of
+<cite>MapView</cite> instances to unsynchronize. If not specified, will
+unsynchronize all synced <cite>MapView</cite> instances</p></td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="py method">
+<dt id="arcgis.widgets.MapView.update">
+<code class="sig-name descname">update</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">mode</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">item_properties</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">thumbnail</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">metadata</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.widgets.MapView.update" title="Permalink to this definition">¶</a></dt>
+<dd><p>The <code class="docutils literal notranslate"><span class="pre">update</span></code> method updates the WebMap/Web Scene item that was used to create the <code class="docutils literal notranslate"><span class="pre">MapWidget</span></code>
+object. In addition, you can update other item properties, thumbnail
+and metadata.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>If you started out a MapView object from an existing
+webmap/webscene item, use this method to update the
+webmap/webscene item in your with your changes.
+If you started out with a fresh <a class="reference internal" href="#arcgis.widgets.MapView" title="arcgis.widgets.MapView"><code class="xref py py-class docutils literal notranslate"><span class="pre">MapView</span></code></a> object (without a
+webmap/webscene item), calling this method will raise a
+RuntimeError exception. If you want to save the map widget into a
+new item, call the <a class="reference internal" href="#arcgis.widgets.MapView.save" title="arcgis.widgets.MapView.save"><code class="xref py py-attr docutils literal notranslate"><span class="pre">save</span></code></a> method instead.
+For <code class="docutils literal notranslate"><span class="pre">item_properties</span></code>, pass in arguments for only the properties you
+want to be updated. All other properties will be untouched.  For
+example, if you want to update only the item’s description, then
+only provide the description argument in item_properties.</p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Saving as a <code class="docutils literal notranslate"><span class="pre">WebScene</span></code> item only works in a Jupyter environment: the
+map must be visually displayed in the notebook before calling this
+method.</p>
+</div>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 18%" />
+<col style="width: 82%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><strong>Argument</strong></p></td>
+<td><p><strong>Description</strong></p></td>
+</tr>
+<tr class="row-even"><td><p>item_properties</p></td>
+<td><p>Optional dictionary. See table below for the keys and values.</p></td>
+</tr>
+<tr class="row-odd"><td><p>mode</p></td>
+<td><p>Optional string. Whether to save this map instance as a 2D WebMap,
+or a 3D WebScene. Possible strings: <code class="docutils literal notranslate"><span class="pre">2D</span></code>, <code class="docutils literal notranslate"><span class="pre">webmap</span></code>, <code class="docutils literal notranslate"><span class="pre">3D</span></code>, or
+<code class="docutils literal notranslate"><span class="pre">webscene</span></code>.</p></td>
+</tr>
+<tr class="row-even"><td><p>thumbnail</p></td>
+<td><p>Optional string. Either a path or URL to a thumbnail image.</p></td>
+</tr>
+<tr class="row-odd"><td><p>metadata</p></td>
+<td><p>Optional string. Either a path or URL to the metadata.</p></td>
+</tr>
+</tbody>
+</table>
+<p><em>Key:Value Dictionary Options for Argument item_properties</em></p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 20%" />
+<col style="width: 80%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><strong>Key</strong></p></td>
+<td><p><strong>Value</strong></p></td>
+</tr>
+<tr class="row-even"><td><p>typeKeywords</p></td>
+<td><p>Optional string. Provide a lists all sub-types, see URL 1 below for
+valid values.</p></td>
+</tr>
+<tr class="row-odd"><td><p>description</p></td>
+<td><p>Optional string. Description of the item.</p></td>
+</tr>
+<tr class="row-even"><td><p>title</p></td>
+<td><p>Optional string. Name label of the item.</p></td>
+</tr>
+<tr class="row-odd"><td><p>tags</p></td>
+<td><p>Optional string. Tags listed as comma-separated values, or a list of
+strings. Used for searches on items.</p></td>
+</tr>
+<tr class="row-even"><td><p>snippet</p></td>
+<td><p>Optional string. Provide a short summary (limit to max 250
+characters) of the what the item is.</p></td>
+</tr>
+<tr class="row-odd"><td><p>accessInformation</p></td>
+<td><p>Optional string. Information on the source of the content.</p></td>
+</tr>
+<tr class="row-even"><td><p>licenseInfo</p></td>
+<td><p>Optional string.  Any license information or restrictions regarding
+the content.</p></td>
+</tr>
+<tr class="row-odd"><td><p>culture</p></td>
+<td><p>Optional string. Locale, country and language information.</p></td>
+</tr>
+<tr class="row-even"><td><p>access</p></td>
+<td><p>Optional string. Valid values are private, shared, org, or public.</p></td>
+</tr>
+<tr class="row-odd"><td><p>commentsEnabled</p></td>
+<td><p>Optional boolean. Default is true, controls whether comments are
+allowed (true) or not allowed (false).</p></td>
+</tr>
+</tbody>
+</table>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>A boolean indicating success (True) or failure (False).</p>
+</dd>
+</dl>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">USAGE</span> <span class="n">EXAMPLE</span><span class="p">:</span> <span class="n">Interactively</span> <span class="n">add</span> <span class="n">a</span> <span class="n">new</span> <span class="n">layer</span> <span class="ow">and</span> <span class="n">change</span> <span class="n">the</span> <span class="n">basemap</span> <span class="n">of</span> <span class="n">an</span> <span class="n">existing</span> <span class="n">web</span> <span class="nb">map</span><span class="o">.</span>
+<span class="n">italy_streets_item</span> <span class="o">=</span> <span class="n">gis</span><span class="o">.</span><span class="n">content</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="s2">&quot;Italy streets&quot;</span><span class="p">,</span> <span class="s2">&quot;Web Map&quot;</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
+<span class="n">map1</span> <span class="o">=</span> <span class="n">MapView</span><span class="p">(</span><span class="n">item</span> <span class="o">=</span> <span class="n">italy_streets_item</span><span class="p">)</span>
+<span class="n">map1</span><span class="o">.</span><span class="n">add_layer</span><span class="p">(</span><span class="n">Italy_streets2</span><span class="p">)</span>
+<span class="n">map1</span><span class="o">.</span><span class="n">basemap</span> <span class="o">=</span> <span class="s1">&#39;dark-gray-vector&#39;</span>
+<span class="n">map1</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">thumbnail</span> <span class="o">=</span> <span class="s1">&#39;./new_webmap.png&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt id="arcgis.widgets.MapView.zoom">
+<em class="property">property </em><code class="sig-name descname">zoom</code><a class="headerlink" href="#arcgis.widgets.MapView.zoom" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get/Set the level of zoom applied to the Map Widget.</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 18%" />
+<col style="width: 82%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><strong>Argument</strong></p></td>
+<td><p><strong>Description</strong></p></td>
+</tr>
+<tr class="row-even"><td><p>value</p></td>
+<td><p>Required int.
+.. note:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">The</span> <span class="n">higher</span> <span class="n">the</span> <span class="n">number</span><span class="p">,</span> <span class="n">the</span> <span class="n">more</span> <span class="n">zoomed</span> <span class="ow">in</span> <span class="n">you</span> <span class="n">are</span><span class="o">.</span>
+</pre></div>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>Int value that represent the zoom level</p>
+</dd>
+</dl>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Usage example</span>
+
+<span class="o">&gt;&gt;&gt;</span> <span class="kn">from</span> <span class="nn">arcgis.gis</span> <span class="kn">import</span> <span class="n">GIS</span><span class="p">,</span> <span class="n">Item</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="kn">from</span> <span class="nn">arcgis.widgets</span> <span class="kn">import</span> <span class="n">MapView</span>
+
+<span class="o">&gt;&gt;&gt;</span> <span class="n">map2</span> <span class="o">=</span> <span class="n">gis</span><span class="o">.</span><span class="n">map</span><span class="p">(</span><span class="s2">&quot;California&quot;</span><span class="p">)</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">map2</span><span class="o">.</span><span class="n">basemap</span> <span class="o">=</span> <span class="s1">&#39;national-geographic&#39;</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">map2</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">map2</span><span class="o">.</span><span class="n">zoom</span> <span class="o">=</span> <span class="mi">200</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt id="arcgis.widgets.MapView.zoom_to_layer">
+<code class="sig-name descname">zoom_to_layer</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">item</span></em>, <em class="sig-param"><span class="n">options</span><span class="o">=</span><span class="default_value">{}</span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.widgets.MapView.zoom_to_layer" title="Permalink to this definition">¶</a></dt>
+<dd><p>The <code class="docutils literal notranslate"><span class="pre">zoom_to_layer</span></code> method snaps the map to the extent of the provided <a class="reference internal" href="arcgis.gis.toc.html#arcgis.gis.Item" title="arcgis.gis.Item"><code class="xref py py-class docutils literal notranslate"><span class="pre">Item</span></code></a> object(s).</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 17%" />
+<col style="width: 83%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><strong>Argument</strong></p></td>
+<td><p><strong>Description</strong></p></td>
+</tr>
+<tr class="row-even"><td><p>item</p></td>
+<td><p>The item at which you want to zoom your map to.
+This can be a single or a list of <a class="reference internal" href="arcgis.gis.toc.html#arcgis.gis.Item" title="arcgis.gis.Item"><code class="xref py py-class docutils literal notranslate"><span class="pre">Item</span></code></a>, <code class="docutils literal notranslate"><span class="pre">Layer</span></code> , <code class="docutils literal notranslate"><span class="pre">DataFrame</span></code> ,
+<a class="reference internal" href="arcgis.features.toc.html#arcgis.features.FeatureSet" title="arcgis.features.FeatureSet"><code class="xref py py-class docutils literal notranslate"><span class="pre">FeatureSet</span></code></a>, or <a class="reference internal" href="arcgis.features.toc.html#arcgis.features.FeatureCollection" title="arcgis.features.FeatureCollection"><code class="xref py py-class docutils literal notranslate"><span class="pre">FeatureCollection</span></code></a>
+objects.</p></td>
+</tr>
+<tr class="row-odd"><td><p>options</p></td>
+<td><p>Optional set of arguments.</p></td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+</div>
+
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="arcgis.apps.html" class="btn btn-neutral float-right" title="arcgis.apps module" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="arcgis.schematics.html" class="btn btn-neutral float-left" title="arcgis.schematics module" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        
+        &copy; Copyright 2016-2021, Esri
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+    Options v: 1.9.1
+
+  <div class="rst-versions" data-toggle="rst-versions" role="note" aria-label="versions">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      <span class="fa fa-book"> Pick an earlier version</span>
+      v: 1.9.1
+      <span class="fa fa-caret-down"></span>
+    </span>
+    <div class="rst-other-versions">
+      
+      
+      <dl>
+        <dt>Versions</dt>
+        
+          
+          <dd><a href="1.9.0/">1.9.0</a></dd>
+          
+        
+          
+          <dd><a href="1.8.5/">1.8.5</a></dd>
+          
+        
+          
+          <dd><a href="1.8.4/">1.8.4</a></dd>
+          
+        
+          
+          <dd><a href="1.8.3/">1.8.3</a></dd>
+          
+        
+          
+          <dd><a href="1.8.2/">1.8.2</a></dd>
+          
+        
+          
+          <dd><a href="1.8.1/">1.8.1</a></dd>
+          
+        
+          
+          <dd><a href="1.8.0/">1.8.0</a></dd>
+          
+        
+          
+          <dd><a href="1.7.1/">1.7.1</a></dd>
+          
+        
+          
+          <dd><a href="1.7.0/">1.7.0</a></dd>
+          
+        
+          
+          <dd><a href="1.6.2/">1.6.2</a></dd>
+          
+        
+          
+          <dd><a href="1.6.1/">1.6.1</a></dd>
+          
+        
+          
+          <dd><a href="1.6.0/">1.6.0</a></dd>
+          
+        
+          
+          <dd><a href="1.5.2/">1.5.2</a></dd>
+          
+        
+          
+          <dd><a href="1.5.1/">1.5.1</a></dd>
+          
+        
+          
+          <dd><a href="1.5.0/">1.5.0</a></dd>
+          
+        
+          
+          <dd><a href="1.4.2/">1.4.2</a></dd>
+          
+        
+          
+          <dd><a href="1.4.1/">1.4.1</a></dd>
+          
+        
+          
+          <dd><a href="1.4.0/">1.4.0</a></dd>
+          
+        
+          
+          <dd><a href="1.3.0/">1.3.0</a></dd>
+          
+        
+          
+          <dd><a href="1.2.5/">1.2.5</a></dd>
+          
+        
+          
+          <dd><a href="1.2.4/">1.2.4</a></dd>
+          
+        
+          
+          <dd><a href="1.2.3/">1.2.3</a></dd>
+          
+        
+          
+          <dd><a href="1.2.2/">1.2.2</a></dd>
+          
+        
+          
+          <dd><a href="1.2.1/">1.2.1</a></dd>
+          
+        
+          
+          <dd><a href="1.2.0/">1.2.0</a></dd>
+          
+        
+          
+          <dd><a href="1.1.0/">1.1.0</a></dd>
+          
+        
+          
+          <dd><a href="1.0.1/">1.0.1</a></dd>
+          
+        
+          
+          <dd><a href="1.0.0/">1.0.0</a></dd>
+          
+        
+          
+          <dd><a href="0.3.0/">0.3.0</a></dd>
+          
+        
+          
+          <dd><a href="0.2.0/">0.2.0</a></dd>
+          
+        
+          
+          <dd><a href="0.1.0/">0.1.0</a></dd>
+          
+        
+      </dl>
+      
+      
+      
+    </div>
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

@@ -1,0 +1,9 @@
+arcgis.geoanalytics.data_enrichment module
+=======================================
+
+.. automodule:: arcgis.geoanalytics.data_enrichment
+
+enrich_from_grid
+--------------
+.. automethod:: arcgis.geoanalytics.data_enrichment.enrich_from_grid
+
