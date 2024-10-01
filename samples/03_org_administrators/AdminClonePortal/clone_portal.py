@@ -1,4 +1,4 @@
-# Script: This script accompanies the notebook explained in https://developers.arcgis.com/python/sample-notebooks/clone-portal-users-groups-and-content/
+# Script: This script accompanies the notebook explained in https://developers.arcgis.com/python-2-3/sample-notebooks/clone-portal-users-groups-and-content/
 # Purpose: Run this script to clone users, groups and items from source to a target Portal for ArcGIS.
 # Note: This script does not copy over services, hence the web layer items continue to have the same URL pointing to
 # services in the source server.
