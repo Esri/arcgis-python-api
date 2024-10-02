@@ -1,13 +1,15 @@
 # Stand-alone Python script to clone portal users groups and content
-This folder contains the stand-alone Python script `clone_portal.py` for the accompanying sample titled [Clone Portal users, groups and content](https://developers.arcgis.com/python/sample-notebooks/clone-portal-users-groups-and-content/)
+
+This folder contains the stand-alone Python script `clone_portal.py` for the accompanying sample titled [Clone Portal users, groups and content](https://developers.arcgis.com/python-2-3/sample-notebooks/clone-portal-users-groups-and-content/)
 
 Running the script produces and output similar to below
 
 ## Script output
+
 ```
 Starting clone portal script
-Enter password for source portal: 
-Enter password for target portal: 
+Enter password for source portal:
+Enter password for target portal:
 
 Getting list of users in source portal
 brown.rogers	:	org_user
@@ -42,13 +44,13 @@ Creating user: taylor.murphy
 Creating user: williams.sanchez
 Creating user: wilson.morgan
 
-Groups in source portal: 
+Groups in source portal:
 Central Services
 Compliance
 Customer Service, Finance, Billing and Accounting
 Demographic Content
 
-Groups in target portal: 
+Groups in target portal:
 Featured Maps and Apps
 
 
@@ -74,55 +76,55 @@ Collecting item ids for wilson.morgan		Number of folders 1 # Number of items 3
 
 Finding which items are shared to groups
 
-set3_Streets                             # 
-set1_mapping_tech                        # 
+set3_Streets                             #
+set1_mapping_tech                        #
 Moore Bell response locations            # shared # ['Compliance', 'Demographic Content']
-USA_cities_Fortune_500                   # 
-set2_Voronoi-diagram                     # 
-FL                                       # 
-LA                                       # 
-AR                                       # 
-set1_GeoJson                             # 
-set2_counties                            # 
-set2_SD_crime                            # 
-set2_empty                               # 
-set2_Chicago                             # 
+USA_cities_Fortune_500                   #
+set2_Voronoi-diagram                     #
+FL                                       #
+LA                                       #
+AR                                       #
+set1_GeoJson                             #
+set2_counties                            #
+set2_SD_crime                            #
+set2_empty                               #
+set2_Chicago                             #
 Williams Sanchez response locations      # shared # ['Customer Service, Finance, Billing and Accounting']
 Johnson Stewart response locations       # shared # ['Central Services']
-IN                                       # 
-NC                                       # 
-NH                                       # 
-NV                                       # 
-set1_Chicago                             # 
-ID                                       # 
+IN                                       #
+NC                                       #
+NH                                       #
+NV                                       #
+set1_Chicago                             #
+ID                                       #
 Brown Rogers response locations          # shared # ['Central Services']
 Smith Collins response locations         # shared # ['Central Services']
 Davis Reed response locations            # shared # ['Demographic Content']
-NV                                       # 
-set1_india                               # 
-set2_catalina-points                     # 
-FL                                       # 
-NH                                       # 
+NV                                       #
+set1_india                               #
+set2_catalina-points                     #
+FL                                       #
+NH                                       #
 Miller Cook response locations           # shared # ['Demographic Content']
-set1_major_cities                        # 
-set1_fortune500                          # 
-LA                                       # 
-KS                                       # 
-IN                                       # 
+set1_major_cities                        #
+set1_fortune500                          #
+LA                                       #
+KS                                       #
+IN                                       #
 Taylor Murphy response locations         # shared # ['Central Services', 'Compliance']
-NC                                       # 
-AZ                                       # 
-set1_gov_sites_registration              # 
-set2_USAcities                           # 
-AR                                       # 
-set1_GeoJson                             # 
-ID                                       # 
+NC                                       #
+AZ                                       #
+set1_gov_sites_registration              #
+set2_USAcities                           #
+AR                                       #
+set1_GeoJson                             #
+ID                                       #
 Wilson Morgan response locations         # shared # ['Compliance', 'Demographic Content']
-Smith Collins response locations         # 
-AZ                                       # 
-set2_australia                           # 
+Smith Collins response locations         #
+AZ                                       #
+set2_australia                           #
 Jones Morris response locations          # shared # ['Customer Service, Finance, Billing and Accounting']
-KS                                       # 
+KS                                       #
 
 Copying items
 --------------
