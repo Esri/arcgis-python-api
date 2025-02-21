@@ -1,0 +1,23 @@
+{
+    "name": "ArcGIS Python API",
+    "image": "mcr.microsoft.com/devcontainers/universal:2",
+    "features": {
+      "ghcr.io/devcontainers/features/conda:1": {}
+    },
+    "postCreateCommand": "chmod +x ./.devcontainer/init_conda_env.sh && ./.devcontainer/init_conda_env.sh",
+    "customizations": {
+		"vscode": {
+			"settings": {
+				"python.defaultInterpreterPath": "/opt/conda/envs/arcgis"
+			},
+			"extensions": [
+				"ms-python.python",
+				"donjayamanne.python-extension-pack",
+				"ms-toolsai.jupyter",
+				"GitHub.codespaces",
+				"ms-azuretools.vscode-docker",
+				"DavidAnson.vscode-markdownlint"
+			]
+		}
+	}
+}
