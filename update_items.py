@@ -182,7 +182,7 @@ class ItemsUploader:
             log.info(f"    Uploaded succeeded -> {item.homepage}")
         except Exception as e:
             self.failed_uploads.append(entry['title'])
-            log.warn(f"    Couldn't upload {entry['title']}: {e}")
+            log.warning(f"    Couldn't upload {entry['title']}: {e}")
             log.debug(traceback.format_exc())
 
     def _infer_item_id(self, url):
