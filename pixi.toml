@@ -1,0 +1,20 @@
+[workspace]
+authors = ["Esri Python <python@esri.com>"]
+# NOTE: Usage of `main` channel is governed by Anaconda, Inc. terms of service
+# Please ensure you are in compliance
+# See https://legal.anaconda.com/policies/en/#terms-of-service
+channels = ["esri", "main"]
+channel-priority = "disabled"
+name = "arcgis-python-api"
+platforms = ["win-64", "linux-64", "osx-arm64", "osx-64"]
+version = "2.4.1"
+
+[dependencies]
+python = "3.11.*"
+arcgis = "2.4.1.*"
+
+[feature.mapping.dependencies]
+arcgis-mapping = "4.31.*"
+
+[environments]
+mapping = { features = ["mapping"] }
