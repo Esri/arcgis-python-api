@@ -2,3 +2,4 @@ guide/gis module/.ipynb_checkpoints/class gis.ContentManager-checkpoint.ipynb
 .ipynb_checkpoints
 .idea/
 .DS_Store
+pixi.lock
