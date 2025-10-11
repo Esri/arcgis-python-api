@@ -11,7 +11,7 @@ on:
       version:
         description: "Version of ArcGIS API for Python to install in the image"
         type: string
-        default: "2.3.1"
+        default: "2.4.1"
       python_version:
         description: "Python version to base image on"
         type: string
