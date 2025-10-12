@@ -2,7 +2,8 @@ ARG python_version="3.11"
 FROM quay.io/jupyter/minimal-notebook:python-${python_version}
 
 ARG python_version
-ARG arcgis_version="2.4.0"
+ARG arcgis_version="2.4.1"
+ARG gdal_version="3.10.2"
 ARG sampleslink="https://github.com/Esri/arcgis-python-api/releases/download/v${arcgis_version}/samples.zip"
 ARG githubfolder="arcgis-python-api"
 ARG env_name=arcgis
@@ -14,14 +15,27 @@ LABEL org.opencontainers.image.source=https://github.com/Esri/arcgis-python-api
 
 USER ${NB_UID}
 
-# Install Python API from Conda
-RUN conda create -n ${env_name} -c esri -c defaults arcgis=${arcgis_version} python=${python_version} -y --quiet --override-channels \
+# Create conda environment with specified python version
+RUN conda create -n ${env_name} -c conda-forge python=${python_version} -y --quiet --override-channels \
+    && conda clean --all -f -y \
+    && find /opt/conda -name __pycache__ -type d -exec rm -rf {} +
+
+# Install gdal
+RUN conda install -n ${env_name} -c conda-forge gdal=${gdal_version} -y --quiet --override-channels \
+    && conda clean --all -f -y \
+    && find /opt/conda -name __pycache__ -type d -exec rm -rf {} +
+
+# Install ArcGIS API for Python from pypi
+RUN . activate ${env_name} \
+    # adding .* ensures the latest patch version is installed
+    && python -m pip install "arcgis==${arcgis_version}.*" \
     && conda clean --all -f -y \
     && find /opt/conda -name __pycache__ -type d -exec rm -rf {} +
 
 # Install arcgis-mapping if arcgis_version >= 2.4.0
 RUN (dpkg --compare-versions $arcgis_version ge 2.4.0 \
-    && conda install -n ${env_name} -c esri -c defaults arcgis-mapping -y --quiet --override-channels \
+    && . activate ${env_name} \
+    && python -m pip install arcgis-mapping \
     && conda clean --all -f -y \
     && find /opt/conda -name __pycache__ -type d -exec rm -rf {} +;) \
     || echo "[INFO] Skipped installing arcgis-mapping for version $arcgis_version (>= 2.4.0 required for arcgis-mapping)"
