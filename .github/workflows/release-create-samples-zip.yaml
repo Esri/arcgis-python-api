@@ -1,0 +1,26 @@
+# This workflow creates samples.zip from samples directory 
+# and uploads it automatically to the release when it is published
+name: Release - Upload samples.zip
+
+on:
+  release:
+    types:
+    # published is triggered when a release is created without a draft
+    # or a draft is published
+      - published
+
+jobs:
+  upload-samples:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Create samples.zip
+        run: |
+          zip -r samples.zip samples
+      - name: Upload samples.zip to release
+        uses: softprops/action-gh-release@v2
+        with:
+          files: |
+            samples.zip
