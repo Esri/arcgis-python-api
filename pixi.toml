@@ -7,14 +7,14 @@ channels = ["esri", "main"]
 channel-priority = "disabled"
 name = "arcgis-python-api"
 platforms = ["win-64", "linux-64", "osx-arm64", "osx-64"]
-version = "2.4.1"
+version = "2.4.2"
 
 [dependencies]
-python = "3.11.*"
-arcgis = "2.4.1.*"
+python = "3.13.*"
+arcgis = "2.4.2.*"
 
 [feature.mapping.dependencies]
-arcgis-mapping = "4.31.*"
+arcgis-mapping = "4.33.*"
 
 [environments]
 mapping = { features = ["mapping"] }
