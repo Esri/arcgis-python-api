@@ -11,15 +11,27 @@ on:
       version:
         description: "Version of ArcGIS API for Python to install in the image"
         type: string
-        default: "2.4.1"
+        default: "2.4.2"
+      arcgis_mapping_version:
+        description: "Version of arcgis-mapping to install in the image (only used if version >= 2.4.0)"
+        type: string
+        default: "4.33.0"
       python_version:
         description: "Python version to base image on"
         type: string
-        default: "3.11"
+        default: "3.13"
       is_latest_release:
         description: "Version of ArcGIS API for Python is Latest current release"
         type: boolean
         default: false
+      arcgis_wheel_url:
+        description: "Use a custom version of ArcGIS API for Python from this wheel URL, if empty, use pypi.org; if provided, `-prerelease` will be appended to the image tag"
+        type: string
+        default: ""
+      arcgis_mapping_wheel_url:
+        description: "Use a custom version of arcgis-mapping from this wheel URL, if empty, install from pypi.org; if provided, `-prerelease` will be appended to the image tag"
+        type: string
+        default: ""
       is_default_supported_python:
         description: "Python version is default supported version (i.e. python used by Pro and Enterprise)"
         type: boolean
@@ -52,10 +64,10 @@ jobs:
           images: |
             ghcr.io/esri/arcgis-python-api-notebook
           tags: |
-            type=raw,value=${{ inputs.version }}-python${{ inputs.python_version }}
-            type=raw,value=${{ inputs.version }},enable=${{ inputs.is_default_supported_python && github.ref_name == github.event.repository.default_branch }}
-            type=raw,value=latest,enable=${{ inputs.is_latest_release && inputs.is_default_supported_python && github.ref_name == github.event.repository.default_branch }}
-            type=schedule,pattern={{date 'YY.MM'}},enable=${{ inputs.is_latest_release && inputs.is_default_supported_python && github.ref_name == github.event.repository.default_branch }}
+            type=raw,value=${{ inputs.version }}-python${{ inputs.python_version }}${{ inputs.arcgis_wheel_url != '' && '-prerelease' || '' }}
+            type=raw,value=${{ inputs.version }},enable=${{ inputs.is_default_supported_python && inputs.arcgis_wheel_url == '' && github.ref_name == github.event.repository.default_branch }}
+            type=raw,value=latest,enable=${{ inputs.arcgis_wheel_url == '' && inputs.is_latest_release && inputs.is_default_supported_python && github.ref_name == github.event.repository.default_branch }}
+            type=schedule,pattern={{date 'YY.MM'}},enable=${{ inputs.arcgis_wheel_url == '' && inputs.is_latest_release && inputs.is_default_supported_python && github.ref_name == github.event.repository.default_branch }}
 
       - id: docker_build
         name: Build image and push to GitHub Container Registry
@@ -67,6 +79,9 @@ jobs:
           build-args: |
             python_version=${{ inputs.python_version }}
             arcgis_version=${{ inputs.version }}
+            arcgis_mapping_version=${{ inputs.arcgis_mapping_version }}
+            arcgis_wheel_url=${{ inputs.arcgis_wheel_url }}
+            arcgis_mapping_wheel_url=${{ inputs.arcgis_mapping_wheel_url }}
           tags: ${{ steps.meta.outputs.tags }}
           provenance: false
           platforms: linux/amd64

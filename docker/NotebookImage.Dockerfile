@@ -1,9 +1,14 @@
-ARG python_version="3.11"
+ARG python_version="3.13"
 FROM quay.io/jupyter/minimal-notebook:python-${python_version}
 
 ARG python_version
-ARG arcgis_version="2.4.1"
-ARG gdal_version="3.10.2"
+ARG arcgis_version="2.4.2"
+ARG arcgis_mapping_version="4.33.0"
+ARG gdal_version="3.11.4"
+# If arcgis_wheel_url is provided, the Dockerfile will attempt to install the ArcGIS API for Python from that URL
+ARG arcgis_wheel_url=""
+ARG arcgis_mapping_wheel_url=""
+
 ARG sampleslink="https://github.com/Esri/arcgis-python-api/releases/download/v${arcgis_version}/samples.zip"
 ARG githubfolder="arcgis-python-api"
 ARG env_name=arcgis
@@ -25,17 +30,20 @@ RUN conda install -n ${env_name} -c conda-forge gdal=${gdal_version} -y --quiet 
     && conda clean --all -f -y \
     && find /opt/conda -name __pycache__ -type d -exec rm -rf {} +
 
+RUN echo "${arcgis_wheel_url:-arcgis==${arcgis_version}.*}" > /tmp/arcgis_source.txt
+
 # Install ArcGIS API for Python from pypi
 RUN . activate ${env_name} \
-    # adding .* ensures the latest patch version is installed
-    && python -m pip install "arcgis==${arcgis_version}.*" \
+    && python -m pip install "$(cat /tmp/arcgis_source.txt)" \
     && conda clean --all -f -y \
     && find /opt/conda -name __pycache__ -type d -exec rm -rf {} +
+
+RUN echo "${arcgis_mapping_wheel_url:-arcgis-mapping==${arcgis_mapping_version}.*}" > /tmp/arcgis_mapping_source.txt
 
 # Install arcgis-mapping if arcgis_version >= 2.4.0
 RUN (dpkg --compare-versions $arcgis_version ge 2.4.0 \
     && . activate ${env_name} \
-    && python -m pip install arcgis-mapping \
+    && python -m pip install "$(cat /tmp/arcgis_mapping_source.txt)" \
     && conda clean --all -f -y \
     && find /opt/conda -name __pycache__ -type d -exec rm -rf {} +;) \
     || echo "[INFO] Skipped installing arcgis-mapping for version $arcgis_version (>= 2.4.0 required for arcgis-mapping)"
