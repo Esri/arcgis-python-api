@@ -11,11 +11,11 @@ on:
       version:
         description: "Version of ArcGIS API for Python to install in the image"
         type: string
-        default: "2.4.1"
+        default: "2.4.4"
       python_version:
         description: "Python version to base image on"
         type: string
-        default: "3.11"
+        default: "3.13"
       is_latest_release:
         description: "Version of ArcGIS API for Python is Latest current release"
         type: boolean

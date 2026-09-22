@@ -2,9 +2,9 @@ ARG python_version="3.13"
 FROM quay.io/jupyter/minimal-notebook:python-${python_version}
 
 ARG python_version
-ARG arcgis_version="2.4.2"
-ARG arcgis_mapping_version="4.33.0"
-ARG gdal_version="3.11.4"
+ARG arcgis_version="2.4.4"
+ARG arcgis_mapping_version="5.1.0"
+ARG gdal_version="3.13.1"
 # If arcgis_wheel_url is provided, the Dockerfile will attempt to install the ArcGIS API for Python from that URL
 ARG arcgis_wheel_url=""
 ARG arcgis_mapping_wheel_url=""

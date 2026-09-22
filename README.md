@@ -27,7 +27,7 @@ Find a bug or want to request a new feature?  Please let us know by submitting a
 Anyone and everyone is welcome to contribute. Please see our contribution guideline [here](https://github.com/Esri/arcgis-python-api/wiki/How-to-contribute-samples-and-guide-chapters).
 
 ## Licensing
-Copyright 2018-2022 Esri
+Copyright 2018-2026 Esri
 
 Licensed under the Apache License, Version 2.0 (the "License");
 you may not use this file except in compliance with the License.
