@@ -1,0 +1,40 @@
+[
+    {
+        "fid": 1,
+        "case": "HY513209",
+        "block": "022XX W ARMITAGE AVE",
+        "ts": "2015-11-23 00:00:00",
+        "x_coordina": 1161083,
+        "y_coordina": 1913248,
+        "latitude": 41.91764073,
+        "longitude": -87.6836028,
+        "location": "(41.91764073, -87.6836028)",
+        "SHAPE": {
+            "x": 443313.0225999998,
+            "y": 4640857.084800001,
+            "spatialReference": {
+                "wkid": 26916,
+                "latestWkid": 26916
+            }
+        }
+    },
+    {
+        "fid": 2,
+        "case": "HY519281",
+        "block": "067XX S LANGLEY AVE",
+        "ts": "2015-11-24 00:00:00",
+        "x_coordina": 1182052,
+        "y_coordina": 1860576,
+        "latitude": 41.77264373,
+        "longitude": -87.60819683,
+        "location": "(41.77264373, -87.60819683)",
+        "SHAPE": {
+            "x": 449452.0482999999,
+            "y": 4624711.476000002,
+            "spatialReference": {
+                "wkid": 26916,
+                "latestWkid": 26916
+            }
+        }
+    }
+]
