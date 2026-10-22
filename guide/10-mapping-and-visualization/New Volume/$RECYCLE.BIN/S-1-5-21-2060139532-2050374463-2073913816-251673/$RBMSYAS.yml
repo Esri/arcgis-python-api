@@ -1,9 +1,0 @@
-# This file is a template for a local configuration file that is only loaded when performing
-# local builds on your machine. Values in this config file override values in all other
-# config files. To set up a local configuration file copy this file to `config.local.yml` and
-# follow the directions for each config options.
-#
-# See https://docs.afd.geocloud.com/doc-authors/configuring-sites for more info.
-
-docLocalFolder: "D:/Projects/arcgis-python-api"
-apiRefLocalFolder: "D:/Projects/geosaurus"
